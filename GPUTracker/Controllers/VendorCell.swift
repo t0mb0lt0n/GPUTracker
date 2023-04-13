@@ -8,7 +8,6 @@
 import UIKit
 
 class VendorCell: UITableViewCell {
-    
     let vendorLogo = UIImageView()
     
     let vendorNameLabel: UILabel = {
@@ -23,14 +22,42 @@ class VendorCell: UITableViewCell {
         label.textColor = .systemGray
         return label
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    //MARK: - custom cell init with cell reuse identifier
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCell()
+        setupConstraints()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
+    private func setupCell() {
+        //add subViews into the cell
+        [vendorLogo, vendorNameLabel, descriptionLabel].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            vendorLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            vendorLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            vendorLogo.heightAnchor.constraint(equalToConstant: 32),
+            vendorLogo.widthAnchor.constraint(equalToConstant: 32),
+            
+            vendorNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            vendorNameLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 8),
+            vendorNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: vendorNameLabel.bottomAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 8),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+        ])
+    }
+    
 }
