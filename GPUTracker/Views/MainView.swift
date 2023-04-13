@@ -12,6 +12,8 @@ class MainView: UIView {
     //MARK: - init
     init() {
         super.init(frame: .zero)
+        setupView()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -22,6 +24,7 @@ class MainView: UIView {
 
 extension MainView {
     private func setupView() {
+        backgroundColor = .systemGreen
         let subViews: [UIView] = []
         
         subViews.forEach {
@@ -31,6 +34,8 @@ extension MainView {
     }
     
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
         
+        ])
     }
 }
