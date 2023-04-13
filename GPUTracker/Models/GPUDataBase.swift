@@ -8,9 +8,18 @@
 import Foundation
 import UIKit
 
-enum ImageName: String {
-    case cpu = "cpu"
-    case cpuFill = "cpu.fill"
+struct Vendor {
+    let name: String
+    let image: UIImage?
+    let description: String
 }
 
-let logoImage: [UIImage?] = [UIImage(systemName: ImageName.cpu.rawValue), UIImage(systemName: ImageName.cpuFill.rawValue)]
+
+struct Source {
+    static func generateVendors() -> [Vendor] {
+        [.init(name: "Nvidia", image: .init(systemName: ImageName.cpu.rawValue), description: "Geforce"),
+         .init(name: "AMD", image: .init(systemName: ImageName.cpuFill.rawValue), description: "Radeon")
+        ]
+    }
+}
+
