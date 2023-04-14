@@ -31,7 +31,7 @@ class MainView: UIView {
 
 extension MainView {
     private func setupView() {
-        backgroundColor = .systemGreen
+        backgroundColor = .secondarySystemBackground
         let subViews: [UIView] = [processorsLabel]
         
         subViews.forEach {
@@ -46,7 +46,6 @@ extension MainView {
             processorsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             processorsLabel.widthAnchor.constraint(equalToConstant: 110),
             processorsLabel.heightAnchor.constraint(equalToConstant: 30),
-        
         ])
     }
 }
