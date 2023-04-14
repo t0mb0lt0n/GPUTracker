@@ -9,8 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     lazy var mainView = view as? MainView
-    let vendors = Source.generateVendors()
-    let tableView = UITableView()
+    let vendors = Source.generateVendorsWithGroups()
+    let tableView = UITableView(frame: .zero, style: .grouped)
+    //let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
-        tableView.sectionHeaderHeight = 50
+        //tableView.sectionHeaderHeight = 50
     }
     
 }
@@ -35,8 +36,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            let nvidiaHeader: String = "Nvidia"
-            return nvidiaHeader
+            return "Nvidia"
         case 1:
             return "AMD"
         default:
@@ -46,14 +46,14 @@ extension MainViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        vendors.count
+        vendors[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "VendorCell", for: indexPath) as? VendorCellView
         else { fatalError() }
         
-        cell.configurateCell(vendor: vendors[indexPath.row])
+        cell.configurateCell(vendor: vendors[indexPath.section][indexPath.row])
         return cell
     }
 }
@@ -70,7 +70,7 @@ extension MainViewController {
             tableView.topAnchor.constraint(equalTo: mainView!.processorsLabel.bottomAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: 300)
+            tableView.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     

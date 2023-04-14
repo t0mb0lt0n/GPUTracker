@@ -21,5 +21,11 @@ struct Source {
          .init(name: "AMD", image: .init(systemName: ImageName.cpuFill.rawValue), description: "Radeon")
         ]
     }
+    
+    static func generateVendorsWithGroups() -> [[Vendor]] {
+        let nvidia = generateVendors().filter { $0.name == "Nvidia" }
+        let amd = generateVendors().filter { $0.name == "AMD"}
+        return [nvidia, amd]
+    }
 }
 
