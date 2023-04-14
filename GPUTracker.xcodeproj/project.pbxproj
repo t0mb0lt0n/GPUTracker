@@ -16,6 +16,7 @@
 		1156987929E88C16009B3638 /* VendorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* VendorCell.swift */; };
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
 		1156987D29E88FFE009B3638 /* ImageDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987C29E88FFE009B3638 /* ImageDataBase.swift */; };
+		1156987F29E9C0D9009B3638 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987E29E9C0D9009B3638 /* CellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1156987829E88C16009B3638 /* VendorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCell.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
 		1156987C29E88FFE009B3638 /* ImageDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataBase.swift; sourceTree = "<group>"; };
+		1156987E29E9C0D9009B3638 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				1156986129E873EE009B3638 /* MainViewController.swift */,
 				1156987829E88C16009B3638 /* VendorCell.swift */,
+				1156987E29E9C0D9009B3638 /* CellViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				1156987929E88C16009B3638 /* VendorCell.swift in Sources */,
+				1156987F29E9C0D9009B3638 /* CellViewController.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1156987D29E88FFE009B3638 /* ImageDataBase.swift in Sources */,
