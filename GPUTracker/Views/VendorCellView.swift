@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VendorCell: UITableViewCell {
+class VendorCellView: UITableViewCell {
     let vendorLogo = UIImageView()
     
     let vendorNameLabel: UILabel = {
