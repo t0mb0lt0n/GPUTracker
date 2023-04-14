@@ -17,6 +17,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemFill
         view = MainView()
+        title = "Vendors"
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
         tableView.register(VendorCellView.self, forCellReuseIdentifier: "VendorCell")
         tableView.delegate = self
@@ -67,7 +70,7 @@ extension MainViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: mainView!.processorsLabel.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.heightAnchor.constraint(equalToConstant: 500)
