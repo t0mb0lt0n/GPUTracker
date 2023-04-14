@@ -60,4 +60,10 @@ class VendorCell: UITableViewCell {
         ])
     }
     
+    func configurateCell(vendor: Vendor) {
+        vendorLogo.image = vendor.image
+        vendorNameLabel.text = vendor.name
+        descriptionLabel.text = vendor.description
+    }
+    
 }

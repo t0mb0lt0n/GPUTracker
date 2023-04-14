@@ -8,18 +8,38 @@
 import UIKit
 
 class CellViewController: UIViewController {
-    let contacts = Source.generateVendors()
+    let vendors = Source.generateVendors()
     let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        tableView.register(VendorCell.self, forCellReuseIdentifier: "VendorCell")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 }
 
+extension CellViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        vendors.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VendorCell", for: indexPath) as? VendorCell
+        else { fatalError() }
+        
+        cell.configurateCell(vendor: vendors[indexPath.row])
+        return cell
+    }
+}
+    
+extension CellViewController: UITableViewDelegate {
+    
+}
+    
 extension CellViewController {
-
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
