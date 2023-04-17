@@ -48,8 +48,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerPadding = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        footerPadding.backgroundColor = .blue
+        let footerPadding = UIView()
         return footerPadding
     }
     
@@ -72,32 +71,39 @@ extension MainViewController: UITableViewDataSource {
     
     //setting footer in section height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        0
+        10
     }
 
     
     //custom header view for table view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let customHeaderView = UIView()
-        customHeaderView.backgroundColor = .green
-        let imageForHeader = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
-        imageForHeader.backgroundColor = .red
-        imageForHeader.contentMode = .scaleAspectFit
-        let imageNvidia = UIImage(named: "nvidia.main.logo1")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        let imageAMD = UIImage(named: "amd.main.logo2")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        let manufacturerNameLabel = UILabel(frame: CGRect(x: imageForHeader.frame.width + 25, y: imageForHeader.center.y - 10, width: 150, height: 15))
+        let imageForHeaderLogo = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
+        let imageForHeaderCard = UIImageView(frame: CGRect(x: 5, y: 0, width: 100, height: 50))
+        imageForHeaderLogo.contentMode = .scaleAspectFit
+        imageForHeaderCard.contentMode = .scaleAspectFit
+        let imageNvidia = UIImage(named: "nvidia.main.logo1")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+        let imageAMD = UIImage(named: "amd.main.logo2")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+        let imageNvidiaCard = UIImage(named: "4090")
+        let imageAMDCard = UIImage(named: "6900xt")
+        let manufacturerNameLabel = UILabel(frame: CGRect(x: imageForHeaderLogo.frame.width + 25, y: imageForHeaderLogo.center.y - 10, width: 150, height: 15))
         manufacturerNameLabel.text = "Manufacturer name"
-        manufacturerNameLabel.backgroundColor = .red
-        customHeaderView.addSubview(manufacturerNameLabel)
-        print(customHeaderView.frame.size.width)
+        manufacturerNameLabel.textColor = .systemGray
+        //customHeaderView.addSubview(manufacturerNameLabel)
         switch section {
         case 0:
-            imageForHeader.image = imageNvidia
-            customHeaderView.addSubview(imageForHeader)
+            imageForHeaderLogo.image = imageNvidia
+            imageForHeaderCard.image = imageNvidiaCard
+            //customHeaderView.addSubview(imageForHeaderLogo)
+            customHeaderView.addSubview(imageForHeaderCard)
+            manufacturerNameLabel.text = "Nvidia"
             return customHeaderView
         case 1:
-            imageForHeader.image = imageAMD
-            customHeaderView.addSubview(imageForHeader)
+            imageForHeaderLogo.image = imageAMD
+            imageForHeaderCard.image = imageAMDCard
+            //customHeaderView.addSubview(imageForHeaderLogo)
+            customHeaderView.addSubview(imageForHeaderCard)
+            manufacturerNameLabel.text = "AMD"
             return customHeaderView
         default:
             return nil

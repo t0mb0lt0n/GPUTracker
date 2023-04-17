@@ -13,4 +13,3 @@ enum ImageName: String {
     case cpuFill = "cpu.fill"
 }
 
-let logoImage: [UIImage?] = [UIImage(systemName: ImageName.cpu.rawValue), UIImage(systemName: ImageName.cpuFill.rawValue)]
