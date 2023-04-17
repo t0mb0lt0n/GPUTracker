@@ -59,6 +59,28 @@ extension MainViewController: UITableViewDataSource {
         cell.configurateCell(vendor: vendors[indexPath.section][indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))
+        let imageForHeader = UIImageView(frame: CGRect(x: 5, y: 5, width: customHeaderView.frame.width - 10, height: customHeaderView.frame.height - 10))
+        imageForHeader.contentMode = .scaleAspectFit
+        let imageNvidia = UIImage(systemName: "circle")
+        let imageAMD = UIImage(systemName: "iphone")
+        
+        switch section {
+        case 0:
+            imageForHeader.image = imageAMD
+            customHeaderView.addSubview(imageForHeader)
+            return customHeaderView
+        case 1:
+            imageForHeader.image = imageNvidia
+            customHeaderView.addSubview(imageForHeader)
+            return customHeaderView
+        default:
+            break
+        }
+        return customHeaderView
+    }
 }
     
 extension MainViewController: UITableViewDelegate {
