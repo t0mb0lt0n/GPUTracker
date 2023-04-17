@@ -47,6 +47,11 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerPadding = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
+        footerPadding.backgroundColor = .blue
+        return footerPadding
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         vendors[section].count
@@ -60,14 +65,29 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
     
+    //setting header in section height
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
+    }
+    
+    //setting footer in section height
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        0
+    }
+    
+   
+    
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))
-        let imageForHeader = UIImageView(frame: CGRect(x: 5, y: 5, width: customHeaderView.frame.width - 10, height: customHeaderView.frame.height - 10))
+        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        customHeaderView.backgroundColor = .green
+        let imageForHeader = UIImageView(frame: CGRect(x: 5, y: 5, width: customHeaderView.frame.size.width - 10, height: customHeaderView.frame.size.height - 10))
         imageForHeader.contentMode = .scaleAspectFit
         let imageNvidia = UIImage(systemName: "circle")
         let imageAMD = UIImage(systemName: "iphone")
         
-        switch section {
+        /*switch section {
         case 0:
             imageForHeader.image = imageAMD
             customHeaderView.addSubview(imageForHeader)
@@ -79,6 +99,11 @@ extension MainViewController: UITableViewDataSource {
         default:
             break
         }
+         */
+        
+        imageForHeader.image = imageAMD
+        customHeaderView.addSubview(imageForHeader)
+        
         return customHeaderView
     }
 }
@@ -93,9 +118,9 @@ extension MainViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalToConstant: 500)
+            tableView.leadingAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: mainView!.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
