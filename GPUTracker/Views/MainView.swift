@@ -8,13 +8,7 @@
 import UIKit
 
 class MainView: UIView {
-    let processorsLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 29)
-        label.text = "Vendors"
-        label.backgroundColor = .white
-        return label
-    }()
+    
     
     //MARK: - init
     init() {
@@ -32,7 +26,7 @@ class MainView: UIView {
 extension MainView {
     private func setupView() {
         backgroundColor = .secondarySystemBackground
-        let subViews: [UIView] = [processorsLabel]
+        let subViews: [UIView] = []
         
         subViews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -42,10 +36,7 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            processorsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            processorsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            processorsLabel.widthAnchor.constraint(equalToConstant: 110),
-            processorsLabel.heightAnchor.constraint(equalToConstant: 30),
+            
         ])
     }
 }

@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemFill
         view = MainView()
-        title = "Vendors"
+        title = "Manufacturers"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
@@ -74,20 +74,22 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         0
     }
+
     
-   
-    
-    
-    
+    //custom header view for table view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let customHeaderView = UIView()
         customHeaderView.backgroundColor = .green
-        let imageForHeader = UIImageView(frame: CGRect(x: 15, y: 0, width: 50, height: 50))
+        let imageForHeader = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
         imageForHeader.backgroundColor = .red
         imageForHeader.contentMode = .scaleAspectFit
-        let imageNvidia = UIImage(named: "nvidia.main.logo1")?.withTintColor(.yellow, renderingMode: .alwaysOriginal)
-        let imageAMD = UIImage(named: "amd.main.logo2")?.withTintColor(.red, renderingMode: .alwaysOriginal)
-        
+        let imageNvidia = UIImage(named: "nvidia.main.logo1")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let imageAMD = UIImage(named: "amd.main.logo2")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let manufacturerNameLabel = UILabel(frame: CGRect(x: imageForHeader.frame.width + 25, y: imageForHeader.center.y - 10, width: 150, height: 15))
+        manufacturerNameLabel.text = "Manufacturer name"
+        manufacturerNameLabel.backgroundColor = .red
+        customHeaderView.addSubview(manufacturerNameLabel)
+        print(customHeaderView.frame.size.width)
         switch section {
         case 0:
             imageForHeader.image = imageNvidia
@@ -98,14 +100,9 @@ extension MainViewController: UITableViewDataSource {
             customHeaderView.addSubview(imageForHeader)
             return customHeaderView
         default:
-            break
+            return nil
         }
-        
-        
-        imageForHeader.image = imageAMD
-        customHeaderView.addSubview(imageForHeader)
-        
-        return customHeaderView
+       
     }
 }
     
