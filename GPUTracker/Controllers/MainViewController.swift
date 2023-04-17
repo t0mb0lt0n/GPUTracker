@@ -80,26 +80,27 @@ extension MainViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let customHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         customHeaderView.backgroundColor = .green
-        let imageForHeader = UIImageView(frame: CGRect(x: 5, y: 5, width: customHeaderView.frame.size.width - 10, height: customHeaderView.frame.size.height - 10))
+        let imageForHeader = UIImageView(frame: CGRect(x: 15, y: 0, width: 50, height: 50))
+        imageForHeader.backgroundColor = .red
         imageForHeader.contentMode = .scaleAspectFit
-        let imageNvidia = UIImage(systemName: "circle")
-        let imageAMD = UIImage(systemName: "iphone")
+        let imageNvidia = UIImage(named: "nvidia.main.logo1")?.withTintColor(.yellow, renderingMode: .alwaysOriginal)
+        let imageAMD = UIImage(named: "amd.main.logo2")?.withTintColor(.red, renderingMode: .alwaysOriginal)
         
-        /*switch section {
+        switch section {
         case 0:
-            imageForHeader.image = imageAMD
+            imageForHeader.image = imageNvidia
             customHeaderView.addSubview(imageForHeader)
             return customHeaderView
         case 1:
-            imageForHeader.image = imageNvidia
+            imageForHeader.image = imageAMD
             customHeaderView.addSubview(imageForHeader)
             return customHeaderView
         default:
             break
         }
-         */
+        
         
         imageForHeader.image = imageAMD
         customHeaderView.addSubview(imageForHeader)
@@ -109,7 +110,18 @@ extension MainViewController: UITableViewDataSource {
 }
     
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            let targetVC = MainViewController()
+            navigationController?.pushViewController(targetVC, animated: true)
+        case 1:
+            let targetVC = UIViewController()
+            navigationController?.pushViewController(targetVC, animated: true)
+        default:
+            break
+        }
+    }
 }
     
 extension MainViewController {
