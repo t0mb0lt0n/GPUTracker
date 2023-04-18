@@ -52,16 +52,16 @@ class VendorCellView: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             vendorLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            vendorLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            vendorLogo.heightAnchor.constraint(equalToConstant: 42),
-            vendorLogo.widthAnchor.constraint(equalToConstant: 65),
+            vendorLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            vendorLogo.heightAnchor.constraint(equalToConstant: 32),
+            vendorLogo.widthAnchor.constraint(equalToConstant: 32),
             
-            vendorNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            vendorNameLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 15),
+            vendorNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            vendorNameLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 10),
             vendorNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
             descriptionLabel.topAnchor.constraint(equalTo: vendorNameLabel.bottomAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 15),
+            descriptionLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             

@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     lazy var mainView = view as? MainView
     let vendors = Source.generateVendorsWithGroups()
-    let tableView = UITableView(frame: .zero, style: .grouped)
+    let tableView = UITableView(frame: .zero, style: .insetGrouped)
     //let tableView = UITableView()
 
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         view = MainView()
         title = "Manufacturers"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
         tableView.register(VendorCellView.self, forCellReuseIdentifier: "VendorCell")
         tableView.delegate = self
@@ -52,6 +52,10 @@ extension MainViewController: UITableViewDataSource {
         let footerPadding = UIView()
         return footerPadding
     }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         vendors[section].count
@@ -124,6 +128,8 @@ extension MainViewController: UITableViewDelegate {
         default:
             break
         }
+        //deselect tableView row 
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
     
@@ -132,7 +138,7 @@ extension MainViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor, constant: 100),
             tableView.leadingAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: mainView!.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor)
