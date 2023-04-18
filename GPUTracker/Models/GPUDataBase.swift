@@ -17,8 +17,8 @@ struct Vendor {
 
 struct Source {
     static func generateVendors() -> [Vendor] {
-        [.init(name: "Nvidia", image: .init(systemName: ImageName.cpu.rawValue)?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal), description: "Gtx/Titan/Tesla processors"),
-         .init(name: "AMD", image: .init(systemName: ImageName.cpuFill.rawValue)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), description: "R-Series/RX/Vega processors")
+        [.init(name: "Nvidia", image: .init(named: "gpu.icon.main")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), description: "Gtx/Titan/Tesla processors"),
+         .init(name: "AMD", image: .init(systemName: "folder.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal), description: "R-Series/RX/Vega processors")
         ]
     }
     

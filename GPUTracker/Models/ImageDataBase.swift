@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum ImageName: String {
-    case cpu = "cpu"
-    case cpuFill = "cpu.fill"
+    case cpu = "cpu.fill"
+    case cpuFill = "folder"
 }
 
