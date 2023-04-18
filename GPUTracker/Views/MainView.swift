@@ -11,7 +11,7 @@ class MainView: UIView {
     
     let appLogoImage: UIImageView = {
         let logo = UIImageView()
-        let logoImage = UIImage(named: "gpu.icon.main")?.withTintColor(.systemGray2, renderingMode: .alwaysOriginal)
+        let logoImage = UIImage(named: "gpu.icon.main")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         logo.image = logoImage
         logo.contentMode = .scaleAspectFit
         return logo
@@ -53,13 +53,17 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
-            appLogoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -12),
-            appLogoImage.widthAnchor.constraint(equalToConstant: 170),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -35),
+            //appLogoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -12),
+            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            //appLogoImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            appLogoImage.widthAnchor.constraint(equalToConstant: 175),
             appLogoImage.heightAnchor.constraint(equalToConstant: 75),
             
-            appNameLabel.bottomAnchor.constraint(equalTo: appLogoImage.bottomAnchor),
-            appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.trailingAnchor, constant: -5),
+            appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            appNameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 45),
+            //appNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 50),
+            //appNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             appNameLabel.heightAnchor.constraint(equalToConstant: 20),
             appNameLabel.widthAnchor.constraint(equalToConstant: 200),
             

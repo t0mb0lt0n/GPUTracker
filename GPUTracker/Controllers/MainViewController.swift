@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         view = MainView()
-        title = "Manufacturers"
+        //title = "Manufacturers"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
@@ -118,10 +118,10 @@ extension MainViewController {
         mainView!.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor, constant: 100),
+            tableView.topAnchor.constraint(equalTo: mainView!.appLogoImage.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: mainView!.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
     }
     
