@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .secondarySystemFill
+        view.backgroundColor = .black
         view = MainView()
         title = "Manufacturers"
         navigationController?.isNavigationBarHidden = false
