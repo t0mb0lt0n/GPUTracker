@@ -11,7 +11,7 @@ class MainView: UIView {
     
     let appLogoImage: UIImageView = {
         let logo = UIImageView()
-        let logoImage = UIImage(named: "gpu.icon.main")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         logo.image = logoImage
         logo.contentMode = .scaleAspectFit
         return logo
@@ -38,7 +38,6 @@ class MainView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension MainView {
@@ -53,20 +52,15 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -35),
-            //appLogoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -12),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -70),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            //appLogoImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            appLogoImage.widthAnchor.constraint(equalToConstant: 175),
-            appLogoImage.heightAnchor.constraint(equalToConstant: 75),
+            appLogoImage.widthAnchor.constraint(equalToConstant: 170),
+            appLogoImage.heightAnchor.constraint(equalToConstant: 170),
             
             appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             appNameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 45),
-            //appNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 50),
-            //appNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             appNameLabel.heightAnchor.constraint(equalToConstant: 20),
             appNameLabel.widthAnchor.constraint(equalToConstant: 200),
-            
         ])
     }
 }

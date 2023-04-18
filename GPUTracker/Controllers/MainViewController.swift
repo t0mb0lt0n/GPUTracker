@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
     lazy var mainView = view as? MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    //let tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +117,7 @@ extension MainViewController {
         mainView!.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: mainView!.appLogoImage.bottomAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: mainView!.appLogoImage.bottomAnchor, constant: -50),
             tableView.leadingAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: mainView!.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor, constant: -50)
