@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     lazy var mainView = view as? MainView
-    let vendors = Source.generateVendorsWithGroups()
+    let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
     //let tableView = UITableView()
 
@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
-        tableView.register(VendorCellView.self, forCellReuseIdentifier: "ManufacturerCell")
+        tableView.register(ManufacturerCell.self, forCellReuseIdentifier: "ManufacturerCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -54,14 +54,14 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        vendors[section].count
+        manufacturers[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell", for: indexPath) as? VendorCellView
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell", for: indexPath) as? ManufacturerCell
         else { fatalError() }
         
-        cell.configurateCell(vendor: vendors[indexPath.section][indexPath.row])
+        cell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
         return cell
     }
     
@@ -115,7 +115,7 @@ extension MainViewController: UITableViewDelegate {
     
 extension MainViewController {
     private func setupTableView() {
-        view.addSubview(tableView)
+        mainView!.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.topAnchor, constant: 100),

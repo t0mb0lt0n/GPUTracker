@@ -1,5 +1,5 @@
 //
-//  VendorCell.swift
+//  ManufacturerCell.swift
 //  GPUTracker
 //
 //  Created by Alexander on 13.04.2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class VendorCellView: UITableViewCell {
-    let vendorLogo = UIImageView()
+class ManufacturerCell: UITableViewCell {
+    let manufacturerLogo = UIImageView()
     
-    let vendorNameLabel: UILabel = {
+    let manufacturerNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -43,7 +43,7 @@ class VendorCellView: UITableViewCell {
     
     private func setupCell() {
         //add subViews into the cell
-        [vendorLogo, vendorNameLabel, descriptionLabel, rightArrowImage].forEach {
+        [manufacturerLogo, manufacturerNameLabel, descriptionLabel, rightArrowImage].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -51,17 +51,17 @@ class VendorCellView: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            vendorLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            vendorLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            vendorLogo.heightAnchor.constraint(equalToConstant: 32),
-            vendorLogo.widthAnchor.constraint(equalToConstant: 32),
+            manufacturerLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            manufacturerLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            manufacturerLogo.heightAnchor.constraint(equalToConstant: 32),
+            manufacturerLogo.widthAnchor.constraint(equalToConstant: 32),
             
-            vendorNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            vendorNameLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 10),
-            vendorNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            manufacturerNameLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
+            manufacturerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            descriptionLabel.topAnchor.constraint(equalTo: vendorNameLabel.bottomAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 10),
+            descriptionLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
@@ -72,10 +72,10 @@ class VendorCellView: UITableViewCell {
         ])
     }
     
-    func configurateCell(vendor: Vendor) {
-        vendorLogo.image = vendor.image
-        vendorNameLabel.text = vendor.name
-        descriptionLabel.text = vendor.description
+    func configurateCell(manufacturer: Manufacturer) {
+        manufacturerLogo.image = manufacturer.image
+        manufacturerNameLabel.text = manufacturer.name
+        descriptionLabel.text = manufacturer.description
     }
     
 }

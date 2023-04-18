@@ -9,6 +9,15 @@ import UIKit
 
 class MainView: UIView {
     
+    let appLogoImage: UIImageView = {
+        let logo = UIImageView()
+        let logoImage = UIImage(named: "gpu.icon.main")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        logo.image = logoImage
+        logo.contentMode = .scaleAspectFit
+        return logo
+    }()
+    
+
     
     //MARK: - init
     init() {
@@ -26,7 +35,7 @@ class MainView: UIView {
 extension MainView {
     private func setupView() {
         backgroundColor = .secondarySystemBackground
-        let subViews: [UIView] = []
+        let subViews: [UIView] = [appLogoImage]
         
         subViews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +45,10 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            appLogoImage.leadingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            appLogoImage.widthAnchor.constraint(equalToConstant: 100),
+            appLogoImage.heightAnchor.constraint(equalToConstant: 200),
             
         ])
     }

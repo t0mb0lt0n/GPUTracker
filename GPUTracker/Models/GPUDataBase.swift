@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Vendor {
+struct Manufacturer {
     let name: String
     let image: UIImage?
     let description: String
@@ -16,15 +16,15 @@ struct Vendor {
 
 
 struct Source {
-    static func generateVendors() -> [Vendor] {
+    static func generateManufacturers() -> [Manufacturer] {
         [.init(name: "Nvidia", image: .init(named: "database")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal), description: "Gtx/Titan/Tesla processors"),
          .init(name: "AMD", image: .init(named: "database")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal), description: "R-Series/RX/Vega processors")
         ]
     }
     
-    static func generateVendorsWithGroups() -> [[Vendor]] {
-        let nvidia = generateVendors().filter { $0.name == "Nvidia" }
-        let amd = generateVendors().filter { $0.name == "AMD"}
+    static func generateManufacturersWithGroups() -> [[Manufacturer]] {
+        let nvidia = generateManufacturers().filter { $0.name == "Nvidia" }
+        let amd = generateManufacturers().filter { $0.name == "AMD"}
         return [nvidia, amd]
     }
 }
