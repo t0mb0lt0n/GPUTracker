@@ -25,7 +25,7 @@ class VendorCellView: UITableViewCell {
     
     let rightArrowImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(systemName: "chevron.right")
+        let arrowImage = UIImage(systemName: "chevron.right")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
         image.image = arrowImage
         return image
     }()
@@ -43,7 +43,7 @@ class VendorCellView: UITableViewCell {
     
     private func setupCell() {
         //add subViews into the cell
-        [vendorLogo, vendorNameLabel, descriptionLabel].forEach {
+        [vendorLogo, vendorNameLabel, descriptionLabel, rightArrowImage].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -63,7 +63,12 @@ class VendorCellView: UITableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: vendorNameLabel.bottomAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: vendorLogo.trailingAnchor, constant: 15),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            rightArrowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            rightArrowImage.widthAnchor.constraint(equalToConstant: 12),
+            rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
