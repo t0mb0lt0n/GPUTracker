@@ -21,11 +21,10 @@ class MainViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
-        tableView.register(VendorCellView.self, forCellReuseIdentifier: "VendorCell")
+        tableView.register(VendorCellView.self, forCellReuseIdentifier: "ManufacturerCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
-        //tableView.sectionHeaderHeight = 50
     }
     
 }
@@ -50,33 +49,30 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerPadding = UIView()
+        footerPadding.backgroundColor = .systemGreen
         return footerPadding
     }
-    
-    
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         vendors[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VendorCell", for: indexPath) as? VendorCellView
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell", for: indexPath) as? VendorCellView
         else { fatalError() }
         
         cell.configurateCell(vendor: vendors[indexPath.section][indexPath.row])
         return cell
     }
     
-    //setting header in section height
+    //setup header in section height
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
     
-    //setting footer in section height
+    //setup footer in section height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        10
+        0
     }
 
     
@@ -112,7 +108,7 @@ extension MainViewController: UITableViewDelegate {
         default:
             break
         }
-        //deselect tableView row 
+        //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
