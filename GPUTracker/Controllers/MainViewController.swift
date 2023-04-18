@@ -83,36 +83,20 @@ extension MainViewController: UITableViewDataSource {
     //custom header view for table view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let customHeaderView = UIView()
-        let imageForHeaderLogo = UIImageView(frame: CGRect(x: 15, y: 5, width: 40, height: 40))
-        let imageForHeaderCard = UIImageView(frame: CGRect(x: 5, y: 0, width: 100, height: 50))
-        imageForHeaderLogo.contentMode = .scaleAspectFit
-        imageForHeaderCard.contentMode = .scaleAspectFit
-        let imageNvidia = UIImage(named: "gpu.icon.main")?.withTintColor(.systemGray2, renderingMode: .alwaysOriginal)
-        let imageAMD = UIImage(named: "amd.logo.3")?.withTintColor(.systemGray2, renderingMode: .alwaysOriginal)
-        let imageNvidiaCard = UIImage(named: "4090")
-        let imageAMDCard = UIImage(named: "6900xt")
-        let manufacturerNameLabel = UILabel(frame: CGRect(x: imageForHeaderLogo.frame.width + 25, y: imageForHeaderLogo.center.y - 10, width: 150, height: 15))
-        manufacturerNameLabel.text = "Manufacturer name"
-        manufacturerNameLabel.textColor = .systemGray
+        let manufacturerNameLabel = UILabel(frame: CGRect(x: 5, y: 20, width: 150, height: 15))
+        manufacturerNameLabel.textColor = .black
+        manufacturerNameLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         customHeaderView.addSubview(manufacturerNameLabel)
+        
         switch section {
         case 0:
-            imageForHeaderLogo.image = imageNvidia
-            imageForHeaderCard.image = imageNvidiaCard
-            customHeaderView.addSubview(imageForHeaderLogo)
-            //customHeaderView.addSubview(imageForHeaderCard)
-            manufacturerNameLabel.text = "Nvidia"
-            return customHeaderView
+            manufacturerNameLabel.text = "nvidia"
         case 1:
-            imageForHeaderLogo.image = imageAMD
-            imageForHeaderCard.image = imageAMDCard
-            customHeaderView.addSubview(imageForHeaderLogo)
-            //customHeaderView.addSubview(imageForHeaderCard)
             manufacturerNameLabel.text = "AMD"
-            return customHeaderView
         default:
             return nil
         }
+        return customHeaderView
     }
 }
     
