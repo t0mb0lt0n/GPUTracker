@@ -9,11 +9,16 @@ import UIKit
 
 class MainView: UIView {
     
-    let appLogoImage: UIImageView = {
-        let logo = UIImageView()
+    let appLogoImage: UIView = {
+        let logo = UIView()
+        logo.backgroundColor = .green
+        let logoContainer = UIImageView(frame: CGRect(x: 25, y: 25, width: 150, height: 150))
         let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        logo.image = logoImage
-        logo.contentMode = .scaleAspectFit
+        logoContainer.image = logoImage
+        logoContainer.backgroundColor = .blue
+        logoContainer.contentMode = .scaleAspectFit
+        logoContainer.clipsToBounds = true
+        logo.addSubview(logoContainer)
         return logo
     }()
     
@@ -52,10 +57,10 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -70),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -0),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            appLogoImage.widthAnchor.constraint(equalToConstant: 125),
-            appLogoImage.heightAnchor.constraint(equalToConstant: 147),
+            appLogoImage.widthAnchor.constraint(equalToConstant: 200),
+            appLogoImage.heightAnchor.constraint(equalToConstant: 200),
             
             appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             appNameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 45),
