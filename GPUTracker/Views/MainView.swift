@@ -11,14 +11,11 @@ class MainView: UIView {
     
     let appLogoImage: UIView = {
         let logo = UIView()
-        logo.backgroundColor = .green
         let logoContainer = UIImageView(frame: CGRect(x: -10, y: -45, width: 155, height: 155))
         let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         logoContainer.image = logoImage
         logo.clipsToBounds = true
-        logoContainer.backgroundColor = .blue
         logoContainer.contentMode = .scaleAspectFit
-        logoContainer.clipsToBounds = true
         logo.addSubview(logoContainer)
         return logo
     }()
@@ -58,7 +55,7 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -50),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -30),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appLogoImage.widthAnchor.constraint(equalToConstant: 135),
             appLogoImage.heightAnchor.constraint(equalToConstant: 115),
