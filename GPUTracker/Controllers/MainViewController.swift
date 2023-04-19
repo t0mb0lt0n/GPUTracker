@@ -16,7 +16,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         view = MainView()
-        //title = "Manufacturers"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
@@ -123,5 +122,4 @@ extension MainViewController {
             tableView.bottomAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
     }
-    
 }

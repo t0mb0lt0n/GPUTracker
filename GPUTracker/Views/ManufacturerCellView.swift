@@ -77,5 +77,4 @@ class ManufacturerCell: UITableViewCell {
         manufacturerNameLabel.text = manufacturer.name
         descriptionLabel.text = manufacturer.description
     }
-    
 }
