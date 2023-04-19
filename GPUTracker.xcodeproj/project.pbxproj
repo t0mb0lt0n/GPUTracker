@@ -15,7 +15,6 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCellView.swift */; };
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
-		1156987D29E88FFE009B3638 /* ImageDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987C29E88FFE009B3638 /* ImageDataBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1156987829E88C16009B3638 /* ManufacturerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCellView.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
-		1156987C29E88FFE009B3638 /* ImageDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
-				1156987C29E88FFE009B3638 /* ImageDataBase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,7 +187,6 @@
 				1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
-				1156987D29E88FFE009B3638 /* ImageDataBase.swift in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */,
 			);
