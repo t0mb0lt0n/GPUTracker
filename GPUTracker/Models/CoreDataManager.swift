@@ -5,10 +5,10 @@
 //  Created by Alexander on 28.04.2023.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-class CoreDataManager: UICollectionViewCell {
+class CoreDataManager {
     static let shared = CoreDataManager()
     private init() {}
     
@@ -17,7 +17,7 @@ class CoreDataManager: UICollectionViewCell {
     }
     
     lazy var context: NSManagedObjectContext = {
-        NSPersistentContainer.viewContext
+        persistentContainer.viewContext
     }()
     
     
