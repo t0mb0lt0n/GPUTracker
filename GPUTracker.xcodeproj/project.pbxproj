@@ -15,6 +15,7 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCellView.swift */; };
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
+		1189290A29FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1189290829FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1156987829E88C16009B3638 /* ManufacturerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCellView.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
+		1189290929FACD1900025FCE /* GPUCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GPUCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				1156985D29E873EE009B3638 /* AppDelegate.swift */,
 				1156985F29E873EE009B3638 /* SceneDelegate.swift */,
+				1189290829FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
+				1189290A29FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */,
 			);
@@ -404,6 +408,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1189290829FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1189290929FACD1900025FCE /* GPUCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 1189290929FACD1900025FCE /* GPUCoreDataModel.xcdatamodel */;
+			path = GPUCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1156985229E873EE009B3638 /* Project object */;
 }
