@@ -16,6 +16,7 @@
 		1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCellView.swift */; };
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
 		1189290A29FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1189290829FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld */; };
+		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1156987829E88C16009B3638 /* ManufacturerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCellView.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
 		1189290929FACD1900025FCE /* GPUCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GPUCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
+				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1189290A29FACD1900025FCE /* GPUCoreDataModel.xcdatamodeld in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
+				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,
 				1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
