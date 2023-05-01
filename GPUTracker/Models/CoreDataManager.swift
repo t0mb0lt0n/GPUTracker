@@ -49,8 +49,12 @@ public final class CoreDataManager: NSObject {
     }
     
     //read from DB (with name)
-    public func fetch(gpuName: String) {
-        
+    public func fetch(gpuName: String) -> GPU? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GPU")
+        do {
+            guard let gpus = try? context.fetch(fetchRequest) as? [GPU] else { return nil }
+            return gpus.first(where: {$0.gpuName == gpuName})
+        }
     }
 
 
