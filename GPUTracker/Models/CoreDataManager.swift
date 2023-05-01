@@ -62,13 +62,32 @@ public final class CoreDataManager: NSObject {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GPU")
         do {
             guard let gpus = try? context.fetch(fetchRequest) as? [GPU],
-                  let gpu = gpus.first(where: { $0.gpuName == gpuName}) else { return }
+                  let gpu = gpus.first(where: { $0.gpuName == gpuName }) else { return }
             gpu.date = newDate ?? 0000
         }
         sceneDelegate.saveContext()
     }
-
-
+    
+    //delete all GPUs from DB
+    public func deleteAll() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GPU")
+        do {
+            guard let gpus = try? context.fetch(fetchRequest) as? [GPU] else { return }
+            gpus.forEach { context.delete($0) }
+        }
+        sceneDelegate.saveContext()
+    }
+    
+    //delete GPU with name
+    public func deleteWith(name gpuName: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GPU")
+        do {
+            guard let gpus = try? context.fetch(fetchRequest) as? [GPU],
+                  let gpu = gpus.first(where: { $0.gpuName == gpuName }) else { return }
+            context.delete(gpu)
+        }
+        sceneDelegate.saveContext()
+    }
 }
 
 
