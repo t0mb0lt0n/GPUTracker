@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoreDataManager.shared.logCoreDataDBPath()
+        //CoreDataManager.shared.logCoreDataDBPath()
+        CoreDataManager.shared.fetchGPUs()
         view.backgroundColor = .black
         view = MainView()
         navigationController?.isNavigationBarHidden = false
