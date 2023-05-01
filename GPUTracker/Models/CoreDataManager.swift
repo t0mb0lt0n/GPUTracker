@@ -18,12 +18,19 @@ public final class CoreDataManager: NSObject {
     //single init for singleton
     private override init() {}
     
-    private var sceneDelegate: SceneDelegate {
-        UIApplication.shared.delegate as! SceneDelegate
+    private var appDelegate: AppDelegate {
+        (UIApplication.shared.delegate as? AppDelegate)!
     }
     
     private var context: NSManagedObjectContext {
-        sceneDelegate.persistantContainer.viewContext
+        appDelegate.persistantContainer.viewContext
+    }
+    
+    //DB URL log
+    public func logCoreDataDBPath() {
+        if let url = appDelegate.persistantContainer.persistentStoreCoordinator.persistentStores.first?.url {
+            print("DB URL - \(url)")
+        }
     }
     
     //add object into DB
@@ -34,7 +41,7 @@ public final class CoreDataManager: NSObject {
         gpu.gpuName = gpuName
         gpu.date = date
         gpu.vendor = vendor
-        sceneDelegate.saveContext()
+        appDelegate.saveContext()
     }
     
     //get all GPUs
@@ -65,7 +72,7 @@ public final class CoreDataManager: NSObject {
                   let gpu = gpus.first(where: { $0.gpuName == gpuName }) else { return }
             gpu.date = newDate ?? 0000
         }
-        sceneDelegate.saveContext()
+        appDelegate.saveContext()
     }
     
     //delete all GPUs from DB
@@ -75,7 +82,7 @@ public final class CoreDataManager: NSObject {
             guard let gpus = try? context.fetch(fetchRequest) as? [GPU] else { return }
             gpus.forEach { context.delete($0) }
         }
-        sceneDelegate.saveContext()
+        appDelegate.saveContext()
     }
     
     //delete GPU with name
@@ -86,7 +93,7 @@ public final class CoreDataManager: NSObject {
                   let gpu = gpus.first(where: { $0.gpuName == gpuName }) else { return }
             context.delete(gpu)
         }
-        sceneDelegate.saveContext()
+        appDelegate.saveContext()
     }
 }
 
