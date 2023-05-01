@@ -70,7 +70,8 @@ public final class CoreDataManager: NSObject {
         do {
             guard let gpus = try? context.fetch(fetchRequest) as? [GPU],
                   let gpu = gpus.first(where: { $0.gpuName == gpuName }) else { return }
-            gpu.date = newDate ?? 0000
+            guard let updatedDate = newDate else { return }
+            gpu.date = updatedDate
         }
         appDelegate.saveContext()
     }

@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //CoreDataManager.shared.logCoreDataDBPath()
-        CoreDataManager.shared.fetchGPUs()
+        //CoreDataManager.shared.fetchGPUs()
+        CoreDataManager.shared.createGPU(imageName: "vega56", gpuName: "RX Vega 56", date: 2016, vendor: "AMD")
         view.backgroundColor = .black
         view = MainView()
         navigationController?.isNavigationBarHidden = false
