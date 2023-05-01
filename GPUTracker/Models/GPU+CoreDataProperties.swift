@@ -15,7 +15,7 @@ public class GPU: NSManagedObject {}
 extension GPU {
     @NSManaged public var imageName: String?
     @NSManaged public var gpuName: String?
-    @NSManaged public var date: Int
+    @NSManaged public var date: Int16
     @NSManaged public var vendor: String?
 }
 

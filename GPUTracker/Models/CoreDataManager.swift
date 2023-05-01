@@ -27,7 +27,7 @@ public final class CoreDataManager: NSObject {
     }
     
     //add object into DB
-    public func createGPU(imageName: String, gpuName: String, date: Int, vendor: String) {
+    public func createGPU(imageName: String, gpuName: String, date: Int16, vendor: String) {
         guard let gpuEntity = NSEntityDescription.entity(forEntityName: "GPU", in: context) else { return }
         let gpu = GPU(entity: gpuEntity, insertInto: context)
         gpu.imageName = imageName
@@ -58,7 +58,7 @@ public final class CoreDataManager: NSObject {
     }
     
     //update gpu description
-    public func updateGPU(with gpuName: String, newDate: Int? = nil) {
+    public func updateGPU(with gpuName: String, newDate: Int16? = nil) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GPU")
         do {
             guard let gpus = try? context.fetch(fetchRequest) as? [GPU],
