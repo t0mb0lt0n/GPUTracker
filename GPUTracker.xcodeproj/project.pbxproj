@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11460F8429FFF282005ABD42 /* GPU+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8229FFF282005ABD42 /* GPU+CoreDataClass.swift */; };
 		11460F8529FFF282005ABD42 /* GPU+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8329FFF282005ABD42 /* GPU+CoreDataProperties.swift */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985F29E873EE009B3638 /* SceneDelegate.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11460F8229FFF282005ABD42 /* GPU+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPU+CoreDataClass.swift"; sourceTree = "<group>"; };
 		11460F8329FFF282005ABD42 /* GPU+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPU+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,10 +112,9 @@
 		1156987529E876AE009B3638 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11460F8229FFF282005ABD42 /* GPU+CoreDataClass.swift */,
 				11460F8329FFF282005ABD42 /* GPU+CoreDataProperties.swift */,
-				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
 				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
+				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,7 +193,6 @@
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
-				11460F8429FFF282005ABD42 /* GPU+CoreDataClass.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,

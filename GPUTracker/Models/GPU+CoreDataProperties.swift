@@ -9,19 +9,14 @@
 import Foundation
 import CoreData
 
+@objc(GPU)
+public class GPU: NSManagedObject {}
 
 extension GPU {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<GPU> {
-        return NSFetchRequest<GPU>(entityName: "GPU")
-    }
-
     @NSManaged public var imageName: String?
     @NSManaged public var gpuName: String?
     @NSManaged public var date: Date?
-
+    @NSManaged public var vendor: String?
 }
 
-extension GPU : Identifiable {
-
-}
+extension GPU : Identifiable {}

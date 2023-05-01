@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         //Make main window Scene
@@ -21,5 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = mainNavController
         window?.makeKeyAndVisible()
     }
+    
+ //MARK: -Core data CFG
+    //Create persistant container
+    lazy var persistantContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CoreData")
+        container.loadPersistentStores { description, error in
+            if let error {
+                print(error.localizedDescription)
+            } else {
+                print("DB URL- ", description.url?.absoluteString ?? "empty")
+            }
+            
+        }
+        return container
+    }()
+    
 }
 

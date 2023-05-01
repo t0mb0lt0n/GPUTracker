@@ -7,18 +7,29 @@
 
 import Foundation
 import CoreData
+import UIKit
 
-class CoreDataManager {
-    static let shared = CoreDataManager()
-    private init() {}
+
+ //MARK: -Create Read Update Delete (CRUD)
+
+public final class CoreDataManager: NSObject {
+    //create singleton for core data manager class
+    public static let shared = CoreDataManager()
+    //single init for singleton
+    private override init() {}
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private var appDelegate: AppDelegate {
+        UIApplication.shared.delegate as! AppDelegate
     }
     
-    lazy var context: NSManagedObjectContext = {
-        persistentContainer.viewContext
-    }()
+    private var context: NSManagedObjectContext {
+        appDelegate.per
+    }
+    
+    
+//    lazy var context: NSManagedObjectContext = {
+//        persistentContainer.viewContext
+//    }()
     
     
     // MARK: - Core Data stack
