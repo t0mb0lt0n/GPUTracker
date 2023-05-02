@@ -14,8 +14,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //CoreDataManager.shared.logCoreDataDBPath()
-        //CoreDataManager.shared.fetchGPUs()
         CoreDataManager.shared.createGPU(imageName: "vega56", gpuName: "RX Vega 56", date: 2016, vendor: "AMD")
         view.backgroundColor = .black
         view = MainView()
@@ -76,7 +74,6 @@ extension MainViewController: UITableViewDataSource {
         0
     }
 
-    
     //custom header view for table view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let customHeaderView = UIView()
