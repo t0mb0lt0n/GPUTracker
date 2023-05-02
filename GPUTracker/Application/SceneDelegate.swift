@@ -21,6 +21,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = mainNavController
         window?.makeKeyAndVisible()
     }
-    
 }
 
