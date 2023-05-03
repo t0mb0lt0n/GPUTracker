@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-func addGPU(add vendor: String) {
+func addGPU(add newVendor: String) {
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -16,10 +16,10 @@ func addGPU(add vendor: String) {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
         let db = try Connection("\(path)/gpuDB.db")
-        let gpu = Table("gpuDB")
-        let vendorField = Expression<String>("vendor")
+        let gpu = Table("gpu")
+        let vendor = Expression<String>("vendor")
         
-        try db.run(gpu.insert(vendorField <- vendor))
+        try db.run(gpu.insert(vendor <- newVendor))
     }
     catch {
         print(error.localizedDescription)
