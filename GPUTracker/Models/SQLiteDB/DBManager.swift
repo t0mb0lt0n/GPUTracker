@@ -8,7 +8,18 @@
 import Foundation
 import SQLite
 
+let func addGPU() {
+    do {
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+        ).first!
 
+        let db = try Connection("\(path)/db.sqlite3")
+    }
+    catch {
+        
+    }
+}
 
 
 
