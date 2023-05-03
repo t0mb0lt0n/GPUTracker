@@ -8,16 +8,21 @@
 import Foundation
 import SQLite
 
-let func addGPU() {
+func addGPU(add vendor: String) {
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
         ).first!
+        _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
-        let db = try Connection("\(path)/db.sqlite3")
+        let db = try Connection("\(path)/gpuDB.db")
+        let gpu = Table("gpuDB")
+        let vendorField = Expression<String>("vendor")
+        
+        try db.run(gpu.insert(vendorField <- vendor))
     }
     catch {
-        
+        print(error.localizedDescription)
     }
 }
 
@@ -26,7 +31,7 @@ let func addGPU() {
 
 func copyDatabaseIfNeeded(sourcePath: String) -> Bool {
     let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-    let destinationPath = documents + "/db.sqlite3"
+    let destinationPath = documents + "/gpuDB.db"
     let exists = FileManager.default.fileExists(atPath: destinationPath)
     guard !exists else { return false }
     do {
