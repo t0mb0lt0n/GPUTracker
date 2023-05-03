@@ -17,6 +17,9 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCellView.swift */; };
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
+		119333DB2A02BBD2006508A9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 119333DA2A02BBD2006508A9 /* SQLite */; };
+		119333DD2A02BCD0006508A9 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 119333DC2A02BCD0006508A9 /* gpuDB.db */; };
+		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
 		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,8 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1156987829E88C16009B3638 /* ManufacturerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCellView.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
+		119333DC2A02BCD0006508A9 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
+		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119333DB2A02BBD2006508A9 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */,
+				119333DC2A02BCD0006508A9 /* gpuDB.db */,
 				11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */,
 				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
 				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
+				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +146,9 @@
 			dependencies = (
 			);
 			name = GPUTracker;
+			packageProductDependencies = (
+				119333DA2A02BBD2006508A9 /* SQLite */,
+			);
 			productName = GPUTracker;
 			productReference = 1156985A29E873EE009B3638 /* GPUTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +177,9 @@
 				Base,
 			);
 			mainGroup = 1156985129E873EE009B3638;
+			packageReferences = (
+				119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 1156985B29E873EE009B3638 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119333DD2A02BCD0006508A9 /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
@@ -197,6 +212,7 @@
 				11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */,
+				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,
@@ -416,6 +432,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		119333DA2A02BBD2006508A9 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */ = {
