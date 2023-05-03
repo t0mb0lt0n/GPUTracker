@@ -120,14 +120,30 @@
 		1156987529E876AE009B3638 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */,
-				119333DC2A02BCD0006508A9 /* gpuDB.db */,
-				11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */,
-				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
-				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
-				119333DE2A02BD7D006508A9 /* DBManager.swift */,
+				119333E12A02C13B006508A9 /* SQLiteDB */,
+				119333E02A02C0FF006508A9 /* CoreDataDB */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		119333E02A02C0FF006508A9 /* CoreDataDB */ = {
+			isa = PBXGroup;
+			children = (
+				11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */,
+				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
+				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
+				11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */,
+			);
+			path = CoreDataDB;
+			sourceTree = "<group>";
+		};
+		119333E12A02C13B006508A9 /* SQLiteDB */ = {
+			isa = PBXGroup;
+			children = (
+				119333DC2A02BCD0006508A9 /* gpuDB.db */,
+				119333DE2A02BD7D006508A9 /* DBManager.swift */,
+			);
+			path = SQLiteDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
