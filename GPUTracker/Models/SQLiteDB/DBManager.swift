@@ -21,13 +21,18 @@ func addGPU(vendor: String, id: Int, description: String) {
         let descriptionField = Expression<String>("description")
         let idField = Expression<Int>("id")
         try db.run(amd.update(vendorField <- vendor))
-        try db.run(amd.update(descriptionField <- description))
-        try db.run(amd.update(idField <- id))
-        print(try db.prepare(amd))
+       
+        
     }
     catch {
         print(error.localizedDescription)
     }
+    
+    
+    
+    
+    
+    
 }
 
 func getFromDB()  {
