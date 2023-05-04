@@ -100,6 +100,7 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             let targetVC = MainViewController()
             addGPU(add: "AMD")
+            getFromDB()
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()

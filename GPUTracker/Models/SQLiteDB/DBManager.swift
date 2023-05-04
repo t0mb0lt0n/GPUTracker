@@ -26,6 +26,31 @@ func addGPU(add newVendor: String) {
     }
 }
 
+func getFromDB() -> String {
+    var result = ""
+    do {
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+        ).first!
+        _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
+
+        let db = try Connection("\(path)/gpuDB.db")
+        let gpu = Table("gpu")
+        let vendor = Expression<String>("vendor")
+        var result = ""
+        
+        //достать из базы
+        for someVendor in try db.prepare(gpu) {
+            //print("id: \(someVendor[vendor])")
+            print((try someVendor.get(Expression<String>("vendor"))))
+        }
+    }
+    catch {
+        print(error.localizedDescription)
+    }
+    
+    return result
+}
 
 
 
