@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-func addGPU(add newVendor: String) {
+func addGPU(vendor: String, id: Int, description: String) {
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -16,10 +16,13 @@ func addGPU(add newVendor: String) {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
         let db = try Connection("\(path)/gpuDB.db")
-        let gpu = Table("gpu")
-        let vendor = Expression<String>("vendor")
-        
-        try db.run(gpu.insert(vendor <- newVendor))
+        let amd = Table("AMD")
+        let vendorField = Expression<String>("vendor")
+        let descriptionField = Expression<String>("description")
+        let idField = Expression<Int>("id")
+        try db.run(amd.insert(vendorField <- vendor))
+        try db.run(amd.insert(descriptionField <- description))
+        try db.run(amd.insert(idField <- id))
     }
     catch {
         print(error.localizedDescription)
@@ -37,17 +40,16 @@ func getFromDB() -> String {
         let db = try Connection("\(path)/gpuDB.db")
         let gpu = Table("gpu")
         let vendor = Expression<String>("vendor")
+        let description = Expression<String>("description")
         var result = ""
         
         //достать из базы
-        for someVendor in try db.prepare(gpu) {
+        for someVendor in try db.prepare(gpu.filter(vendor == "amd")) {
             //print("id: \(someVendor[vendor])")
-            print(try someVendor.get(vendor))
+            print(someVendor)
             //try someVendor.get(Expression<String>("vendor")).where { $0 == "AMD"}
         }
         
-       
-        //print(ab)
     
     }
     catch {
