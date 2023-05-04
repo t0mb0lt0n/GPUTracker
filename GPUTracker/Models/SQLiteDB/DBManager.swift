@@ -42,13 +42,17 @@ func getFromDB() -> String {
         //достать из базы
         for someVendor in try db.prepare(gpu) {
             //print("id: \(someVendor[vendor])")
-            print((try someVendor.get(Expression<String>("vendor"))))
+            print(try someVendor.get(vendor))
+            //try someVendor.get(Expression<String>("vendor")).where { $0 == "AMD"}
         }
+        
+       
+        //print(ab)
+    
     }
     catch {
         print(error.localizedDescription)
     }
-    
     return result
 }
 

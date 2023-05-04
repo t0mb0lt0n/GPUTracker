@@ -99,7 +99,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = MainViewController()
-            addGPU(add: "AMD")
+            //addGPU(add: "some vendor")
             getFromDB()
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
