@@ -52,21 +52,26 @@ func getFromDB()  {
         let idField = Expression<String>("id")
         let vendorField = Expression<String>("vendor")
 
-        for item in try db.prepare(nvidiaTable) {
+        //let get = try nvidiaTable.get(idField)
+        // option 2: transform results using `map()`
+        
+        let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
+        let filtered = nvidiaTable.where(idField == "GTX-780")
+        let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
+        let gpuIds = try mapRowIterator.map { $0[vendorField] }
+        //print(type(of: mapRowIterator ))
+        
+        for item in try db.prepare(filtered) {
             do {
-                //print(type(of: try item.get(idField, vendorField)))
                 
+               
+                print("name: \(try item.get(idField))")
             } catch {
                 // handle
             }
         }
         
-        // option 2: transform results using `map()`
         
-        let filtered = nvidiaTable.where(idField != "GTX-780")
-        let mapRowIterator = try db.prepareRowIterator(nvidiaTable)
-        let gpuIds = try mapRowIterator.map { $0[vendorField] }
-        print(filtered)
        
         
 
