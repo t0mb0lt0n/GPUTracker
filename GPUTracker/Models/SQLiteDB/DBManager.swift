@@ -39,7 +39,7 @@ func addGPU(vendor: String, id: Int, description: String) {
     
 }
 
-func getFromDB()  {
+func getGPU(withName gpuID: String )  {
     
     do {
         let path = NSSearchPathForDirectoriesInDomains(
@@ -51,6 +51,7 @@ func getFromDB()  {
         let nvidiaTable = Table("Nvidia")
         let idField = Expression<String>("id")
         let vendorField = Expression<String>("vendor")
+        let positionField = Expression<Int>("position")
 
         //let get = try nvidiaTable.get(idField)
         // option 2: transform results using `map()`
@@ -59,14 +60,15 @@ func getFromDB()  {
         let filtered = nvidiaTable.where(vendorField == "amd")
         let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
         let gpuIds = try mapRowIterator.map { $0[vendorField] }
-        //print(type(of: mapRowIterator ))
-       // let get = try nvidiaTable.get()
+      
         
-        for item in try db.prepare(nvidiaTable.filter(idField == "GTX-780")) {
+        for item in try db.prepare(nvidiaTable.filter(idField == gpuID)) {
             do {
                 
                
                 print("name: \(try item.get(idField))")
+                print("name: \(try item.get(vendorField))")
+                print("name: \(try item.get(positionField))")
             } catch {
                 // handle
             }
