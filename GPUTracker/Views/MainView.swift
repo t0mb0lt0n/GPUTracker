@@ -55,7 +55,7 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -30),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appLogoImage.widthAnchor.constraint(equalToConstant: 135),
             appLogoImage.heightAnchor.constraint(equalToConstant: 115),
