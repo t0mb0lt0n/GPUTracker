@@ -52,7 +52,7 @@ func getGPU(withName gpuID: String ) -> (String, String, Int) {
 }
 
 
-
+//MARK: - copy DB func (required)
 func copyDatabaseIfNeeded(sourcePath: String) -> Bool {
     let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
     let destinationPath = documents + "/gpuDB.db"

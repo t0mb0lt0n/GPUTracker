@@ -17,7 +17,6 @@ class GPUDescriptionViewControrller: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = false
     }
-    
 }
 
 
