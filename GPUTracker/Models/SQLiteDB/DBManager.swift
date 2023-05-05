@@ -48,12 +48,26 @@ func getFromDB()  {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
         let db = try Connection("\(path)/gpuDB.db")
-        let amd = Table("Nvidia")
-        let vendorField = Expression<String>("id")
-//        let descriptionField = Expression<String>("description")
-//        let idField = Expression<Int>("id")
+        let nvidiaTable = Table("Nvidia")
+        let idField = Expression<String>("id")
+        let vendorField = Expression<String>("vendor")
 
-        print(try db.get(vendorField))
+        for item in try db.prepare(nvidiaTable) {
+            do {
+                //print(type(of: try item.get(idField, vendorField)))
+                
+            } catch {
+                // handle
+            }
+        }
+        
+        // option 2: transform results using `map()`
+        
+        let filtered = nvidiaTable.where(idField != "GTX-780")
+        let mapRowIterator = try db.prepareRowIterator(nvidiaTable)
+        let gpuIds = try mapRowIterator.map { $0[vendorField] }
+        print(filtered)
+       
         
 
     }
