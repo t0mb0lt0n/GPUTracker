@@ -98,7 +98,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let targetVC = MainViewController()
+            let targetVC = GPUDescriptionViewControrller()
             getGPU(withName: "GTX TITAN")
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
