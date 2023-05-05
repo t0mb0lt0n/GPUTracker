@@ -54,7 +54,6 @@ func getGPU(withName gpuID: String ) -> (String, String, Int) {
         let nvidiaTable = Table("Nvidia")
         let idField = Expression<String>("id")
         let vendorField = Expression<String>("vendor")
-        let positionField = Expression<Int>("position")
         let gpuCoresField = Expression<Int>("gpCores")
 
         //let get = try nvidiaTable.get(idField)
@@ -82,7 +81,7 @@ func getGPU(withName gpuID: String ) -> (String, String, Int) {
         print(error.localizedDescription)
     }
     
-    return (gpuName, gpuID, gpuCores)
+    return (gpuName, vendor, gpuCores)
 }
 
 
