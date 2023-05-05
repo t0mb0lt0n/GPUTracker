@@ -56,12 +56,13 @@ func getFromDB()  {
         // option 2: transform results using `map()`
         
         let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
-        let filtered = nvidiaTable.where(idField == "GTX-780")
+        let filtered = nvidiaTable.where(vendorField == "amd")
         let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
         let gpuIds = try mapRowIterator.map { $0[vendorField] }
         //print(type(of: mapRowIterator ))
+       // let get = try nvidiaTable.get()
         
-        for item in try db.prepare(filtered) {
+        for item in try db.prepare(nvidiaTable.filter(idField == "GTX-780")) {
             do {
                 
                
@@ -71,7 +72,7 @@ func getFromDB()  {
             }
         }
         
-        
+    
        
         
 
