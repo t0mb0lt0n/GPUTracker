@@ -78,7 +78,7 @@ extension GPUDescriptionView {
             appLogoImage.heightAnchor.constraint(equalToConstant: 115),
             
             gpuNameLabel.topAnchor.constraint(equalTo: appLogoImage.bottomAnchor, constant: 50),
-            gpuNameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            gpuNameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 25),
             gpuNameLabel.heightAnchor.constraint(equalToConstant: 20),
             gpuNameLabel.widthAnchor.constraint(equalToConstant: 200),
             

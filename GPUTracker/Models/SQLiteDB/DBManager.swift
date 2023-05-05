@@ -39,7 +39,10 @@ func addGPU(vendor: String, id: Int, description: String) {
     
 }
 
-func getGPU(withName gpuID: String )  {
+func getGPU(withName gpuID: String ) -> (String, String, Int) {
+    var gpuName = "empty"
+    var vendor = "empty"
+    var gpuCores = 0
     
     do {
         let path = NSSearchPathForDirectoriesInDomains(
@@ -52,37 +55,34 @@ func getGPU(withName gpuID: String )  {
         let idField = Expression<String>("id")
         let vendorField = Expression<String>("vendor")
         let positionField = Expression<Int>("position")
+        let gpuCoresField = Expression<Int>("gpCores")
 
         //let get = try nvidiaTable.get(idField)
         // option 2: transform results using `map()`
-        
-        let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
-        let filtered = nvidiaTable.where(vendorField == "amd")
-        let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
-        let gpuIds = try mapRowIterator.map { $0[vendorField] }
+//        
+//        let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
+//        let filtered = nvidiaTable.where(vendorField == "amd")
+//        let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
+//        let gpuIds = try mapRowIterator.map { $0[vendorField] }
       
-        
+    
         for item in try db.prepare(nvidiaTable.filter(idField == gpuID)) {
             do {
                 
-               
-                print("name: \(try item.get(idField))")
-                print("name: \(try item.get(vendorField))")
-                print("name: \(try item.get(positionField))")
+                gpuName = try item.get(idField)
+                vendor = try item.get(vendorField)
+                gpuCores = try item.get(gpuCoresField)
+                
             } catch {
                 // handle
             }
         }
-        
-    
-       
-        
-
     }
     catch {
         print(error.localizedDescription)
     }
     
+    return (gpuName, gpuID, gpuCores)
 }
 
 
