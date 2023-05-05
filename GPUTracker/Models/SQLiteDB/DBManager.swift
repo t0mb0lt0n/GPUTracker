@@ -16,7 +16,7 @@ func addGPU(vendor: String, id: Int, description: String) {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
         let db = try Connection("\(path)/gpuDB.db")
-        let amd = Table("AMD")
+        let amd = Table("Nvidia")
         let vendorField = Expression<String>("vendor")
         let descriptionField = Expression<String>("description")
         let idField = Expression<Int>("id")
@@ -40,7 +40,7 @@ func addGPU(vendor: String, id: Int, description: String) {
 }
 
 func getFromDB()  {
-    var result = ""
+    
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -48,18 +48,13 @@ func getFromDB()  {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
 
         let db = try Connection("\(path)/gpuDB.db")
-        let gpu = Table("AMD")
-        let vendor = Expression<String>("vendor")
-        let description = Expression<String>("description")
-        var result = ""
+        let amd = Table("Nvidia")
+        let vendorField = Expression<String>("id")
+//        let descriptionField = Expression<String>("description")
+//        let idField = Expression<Int>("id")
 
-        //get data
-        for someVendor in try db.prepare(gpu.filter(vendor == "amd")) {
-            //print("id: \(someVendor[vendor])")
-            print(someVendor)
-           try someVendor.get(Expression<String>("vendor")).where { $0 == "AMD"}
-      }
-
+        print(try db.get(vendorField))
+        
 
     }
     catch {
