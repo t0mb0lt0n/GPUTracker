@@ -5,13 +5,6 @@
 //  Created by Alexander on 05.05.2023.
 //
 
-//
-//  ViewController.swift
-//  GPUTracker
-//
-//  Created by Alexander on 13.04.2023.
-//
-
 import UIKit
 
 class GPUDescriptionViewControrller: UIViewController {
