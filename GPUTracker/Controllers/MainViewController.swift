@@ -99,12 +99,12 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let targetVC = GPUDescriptionViewControrller()
+            let targetVC = GPUListViewController()
             // MARK: - DB test zone
             let gpuInfoFields = getGPU(withName: "GTX-780TI")
-            targetVC.mainView?.vendorLabel.text = String(gpuInfoFields.0)
-            targetVC.mainView?.gpuNameLabel.text = gpuInfoFields.1
-            targetVC.mainView?.gpuCoresLabel.text = String(gpuInfoFields.2)
+            //targetVC.mainView?.vendorLabel.text = String(gpuInfoFields.0)
+            //targetVC.mainView?.gpuNameLabel.text = gpuInfoFields.1
+            //targetVC.mainView?.gpuCoresLabel.text = String(gpuInfoFields.2)
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()

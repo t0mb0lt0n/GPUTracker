@@ -30,7 +30,7 @@ class GPUInfoCellView: UITableViewCell {
         return image
     }()
     
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -71,11 +71,13 @@ class GPUInfoCellView: UITableViewCell {
         ])
     }
     
-    private func configurateCell() {
-//        func configurateCell(manufacturer: Manufacturer) {
-//            manufacturerLogo.image = manufacturer.image
-//            manufacturerNameLabel.text = manufacturer.name
-//            descriptionLabel.text = manufacturer.description
-//        }
+}
+    
+extension GPUInfoCellView {
+     func configurateCell(manufacturer: Manufacturer) {
+        //      func configurateCell(manufacturer: Manufacturer) {
+        cardImage.image = manufacturer.image
+        cardNameLabel.text = manufacturer.name
+        descriptionLabel.text = manufacturer.description
     }
 }
