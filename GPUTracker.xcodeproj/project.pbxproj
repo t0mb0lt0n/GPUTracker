@@ -25,6 +25,7 @@
 		11D010002A09361D009EB57E /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 11D00FFF2A09361D009EB57E /* gpuDB.db */; };
 		11D010022A093D80009EB57E /* GPUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010012A093D80009EB57E /* GPUList.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
+		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		11D00FFF2A09361D009EB57E /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		11D010012A093D80009EB57E /* GPUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUList.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
+		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				1156986129E873EE009B3638 /* MainViewController.swift */,
 				119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */,
+				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				119333EE2A05978A006508A9 /* GPUDescriptionViewControrller.swift in Sources */,
 				119333F02A059855006508A9 /* GPUDescriptionView.swift in Sources */,
+				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCellView.swift in Sources */,
 				11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */,
