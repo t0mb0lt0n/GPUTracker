@@ -19,10 +19,10 @@
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
 		119333DB2A02BBD2006508A9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 119333DA2A02BBD2006508A9 /* SQLite */; };
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
-		119333EC2A05943C006508A9 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 119333EB2A05943C006508A9 /* gpuDB.db */; };
 		119333EE2A05978A006508A9 /* GPUDescriptionViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */; };
 		119333F02A059855006508A9 /* GPUDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333EF2A059855006508A9 /* GPUDescriptionView.swift */; };
 		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
+		11D010002A09361D009EB57E /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 11D00FFF2A09361D009EB57E /* gpuDB.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,10 +39,10 @@
 		1156987829E88C16009B3638 /* ManufacturerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCellView.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		119333EB2A05943C006508A9 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDescriptionViewControrller.swift; sourceTree = "<group>"; };
 		119333EF2A059855006508A9 /* GPUDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDescriptionView.swift; sourceTree = "<group>"; };
 		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		11D00FFF2A09361D009EB57E /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,6 @@
 				1156986829E873F0009B3638 /* LaunchScreen.storyboard */,
 				1156986B29E873F0009B3638 /* Info.plist */,
 				1156986629E873F0009B3638 /* Assets.xcassets */,
-				119333EB2A05943C006508A9 /* gpuDB.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
+				11D00FFF2A09361D009EB57E /* gpuDB.db */,
 			);
 			path = SQLiteDB;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119333EC2A05943C006508A9 /* gpuDB.db in Resources */,
+				11D010002A09361D009EB57E /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);

@@ -101,8 +101,8 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             let targetVC = GPUDescriptionViewControrller()
             // MARK: - DB test zone
-            let gpuInfoFields = getGPU(withName: "GTX TITAN")
-            targetVC.mainView?.vendorLabel.text = gpuInfoFields.0
+            let gpuInfoFields = getGPU(withName: "GTX-780TI")
+            targetVC.mainView?.vendorLabel.text = String(gpuInfoFields.0)
             targetVC.mainView?.gpuNameLabel.text = gpuInfoFields.1
             targetVC.mainView?.gpuCoresLabel.text = String(gpuInfoFields.2)
             navigationController?.pushViewController(targetVC, animated: true)

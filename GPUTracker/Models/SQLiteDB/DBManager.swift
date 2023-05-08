@@ -9,11 +9,11 @@ import Foundation
 import SQLite
 
 
-func getGPU(withName gpuID: String ) -> (String, String, Int) {
-    var gpuName = "empty"
+func getGPU(withName gpuID: String ) -> (Int, String, Int) {
+    var gpuName = 0
     var vendor = "empty"
     var gpuCores = 0
-    
+    var gpuCount = 0
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -25,6 +25,7 @@ func getGPU(withName gpuID: String ) -> (String, String, Int) {
         let idField = Expression<String>("id")
         let vendorField = Expression<String>("vendor")
         let gpuCoresField = Expression<Int>("gpCores")
+        let positionField = Expression<Int>("position")
 
         //let get = try nvidiaTable.get(idField)
         // option 2: transform results using `map()`
@@ -37,10 +38,11 @@ func getGPU(withName gpuID: String ) -> (String, String, Int) {
     
         for item in try db.prepare(nvidiaTable.filter(idField == gpuID)) {
             do {
-                gpuName = try item.get(idField)
+                gpuName = try item.get(idField).count
                 vendor = try item.get(vendorField)
                 gpuCores = try item.get(gpuCoresField)
-                
+                gpuCount += 1
+                print(gpuCount)
             }
         }
     }
