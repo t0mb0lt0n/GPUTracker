@@ -18,7 +18,7 @@ class GPUListViewController: UIViewController {
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
         gpuListTableView.dataSource = self
-        gpuListTableView.isScrollEnabled = false
+        gpuListTableView.isScrollEnabled = true
         setupTableView()
     }
     
@@ -35,10 +35,10 @@ extension GPUListViewController {
         view.addSubview(gpuListTableView)
         gpuListTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            gpuListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            gpuListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             gpuListTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             gpuListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gpuListTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            gpuListTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
@@ -47,7 +47,8 @@ extension GPUListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
-        //customCell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
+        let item = SelectedItem()
+        customCell.cardNameLabel.text = item.gpuName
         return customCell
     }
     
@@ -65,7 +66,7 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SelectedItem.gpuCount
+        100
     }
 }
 
