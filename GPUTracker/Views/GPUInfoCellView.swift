@@ -10,7 +10,7 @@ import UIKit
 class GPUInfoCellView: UITableViewCell {
     let cardImage = UIImageView()
     
-    let cardName: UILabel = {
+    let cardNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         return label
@@ -42,14 +42,40 @@ class GPUInfoCellView: UITableViewCell {
     }
     
     private func setupCell() {
-        [cardImage, cardName, descriptionLabel, rightArrowImage].forEach { subView in
+        [cardImage, cardNameLabel, descriptionLabel, rightArrowImage].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
     }
     
     private func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            cardImage.heightAnchor.constraint(equalToConstant: 32),
+            cardImage.widthAnchor.constraint(equalToConstant: 32),
+            
+            cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 10),
+            cardNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 10),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            
+            rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            rightArrowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            rightArrowImage.widthAnchor.constraint(equalToConstant: 12),
+            rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
+        ])
     }
     
+    private func configurateCell() {
+//        func configurateCell(manufacturer: Manufacturer) {
+//            manufacturerLogo.image = manufacturer.image
+//            manufacturerNameLabel.text = manufacturer.name
+//            descriptionLabel.text = manufacturer.description
+//        }
+    }
 }
