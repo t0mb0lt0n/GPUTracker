@@ -8,7 +8,7 @@
 import UIKit
 
 class GPUListViewController: UIViewController {
-    let gpuListTableView = UITableView(frame: .zero, style: .plain)
+    let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
     let manufacturers = Source.generateManufacturersWithGroups()
 
     override func viewDidLoad() {
@@ -51,12 +51,23 @@ extension GPUListViewController: UITableViewDataSource {
         return customCell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Nvidia"
+        case 1:
+            return "AMD"
+        default:
+            return "not found"
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        manufacturers[section].count
     }
 }
 
