@@ -18,7 +18,7 @@ class GPUListViewController: UIViewController {
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
         gpuListTableView.dataSource = self
-        gpuListTableView.isScrollEnabled = true
+        gpuListTableView.isScrollEnabled = false
         setupTableView()
     }
     
@@ -47,7 +47,7 @@ extension GPUListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
-        customCell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
+        //customCell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
         return customCell
     }
     
@@ -65,7 +65,7 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        manufacturers[section].count
+        SelectedItem.gpuCount
     }
 }
 
