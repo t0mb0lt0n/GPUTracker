@@ -16,8 +16,8 @@ class GPUListViewController: UIViewController {
         view.backgroundColor = .secondarySystemBackground
         //Cell registration
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
-        gpuListTableView.delegate.self
-        gpuListTableView.dataSource.self
+        gpuListTableView.delegate = self
+        gpuListTableView.dataSource = self
         gpuListTableView.isScrollEnabled = true
         setupTableView()
     }
@@ -55,15 +55,13 @@ extension GPUListViewController: UITableViewDataSource {
         switch section {
         case 0:
             return "Nvidia"
-        case 1:
-            return "AMD"
         default:
             return "not found"
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -19,11 +19,8 @@
 		1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987A29E88FB1009B3638 /* GPUDataBase.swift */; };
 		119333DB2A02BBD2006508A9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 119333DA2A02BBD2006508A9 /* SQLite */; };
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
-		119333EE2A05978A006508A9 /* GPUDescriptionViewControrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */; };
-		119333F02A059855006508A9 /* GPUDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333EF2A059855006508A9 /* GPUDescriptionView.swift */; };
 		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
 		11D010002A09361D009EB57E /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 11D00FFF2A09361D009EB57E /* gpuDB.db */; };
-		11D010022A093D80009EB57E /* GPUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010012A093D80009EB57E /* GPUList.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,11 +39,8 @@
 		1156987829E88C16009B3638 /* ManufacturerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCell.swift; sourceTree = "<group>"; };
 		1156987A29E88FB1009B3638 /* GPUDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDataBase.swift; sourceTree = "<group>"; };
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDescriptionViewControrller.swift; sourceTree = "<group>"; };
-		119333EF2A059855006508A9 /* GPUDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUDescriptionView.swift; sourceTree = "<group>"; };
 		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		11D00FFF2A09361D009EB57E /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
-		11D010012A093D80009EB57E /* GPUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUList.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +91,6 @@
 				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
 				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
 				1156987629E887AB009B3638 /* MainView.swift */,
-				119333EF2A059855006508A9 /* GPUDescriptionView.swift */,
-				11D010012A093D80009EB57E /* GPUList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				1156986129E873EE009B3638 /* MainViewController.swift */,
-				119333ED2A05978A006508A9 /* GPUDescriptionViewControrller.swift */,
 				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
 			);
 			path = Controllers;
@@ -239,8 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
-				119333EE2A05978A006508A9 /* GPUDescriptionViewControrller.swift in Sources */,
-				119333F02A059855006508A9 /* GPUDescriptionView.swift in Sources */,
 				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
@@ -252,7 +241,6 @@
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,
 				1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */,
-				11D010022A093D80009EB57E /* GPUList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
