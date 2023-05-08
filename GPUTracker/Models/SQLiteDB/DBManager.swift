@@ -8,10 +8,46 @@
 import Foundation
 import SQLite
 
+enum Fields: String {
+    case position = "posotion"
+    case id = "id"
+    case vendor = "vendor"
+}
+
 struct SelectedItem {
+    enum Fields: String {
+        case position = "posotion"
+        case id = "id"
+        case vendor = "vendor"
+    }
+    
     static var gpuCount: Int = {
         getAllDBRecords()
     }()
+    var gpuName: String = {
+        getGPUField(with: .id)
+    }()
+    
+   
+}
+
+func getGPUField(with field: Fields) -> String {
+    var data: String = ""
+    do {
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+        ).first!
+        _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
+        
+        let db = try Connection("\(path)/gpuDB.db")
+        let nvidiaTable = Table("Nvidia")
+        let arr = Array(try db.prepare(nvidiaTable))
+        data = try arr[0].get(Expression<String>("\(field)"))
+    }
+    catch {
+        print(error.localizedDescription)
+    }
+    return data
 }
 
 func getGPU(withName gpuID: String ) -> (Int, String, Int) {
@@ -32,10 +68,6 @@ func getGPU(withName gpuID: String ) -> (Int, String, Int) {
         let gpuCoresField = Expression<Int>("gpCores")
         let positionField = Expression<Int>("position")
         let arr = Array(try db.prepare(nvidiaTable))
-
-        //let get = try nvidiaTable.get(idField)
-        // option 2: transform results using `map()`
-//
 //        let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
 //        let filtered = nvidiaTable.where(vendorField == "amd")
 //        let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
