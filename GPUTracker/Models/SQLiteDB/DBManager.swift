@@ -26,6 +26,7 @@ func getGPU(withName gpuID: String ) -> (Int, String, Int) {
         let vendorField = Expression<String>("vendor")
         let gpuCoresField = Expression<Int>("gpCores")
         let positionField = Expression<Int>("position")
+        let arr = Array(try db.prepare(nvidiaTable))
 
         //let get = try nvidiaTable.get(idField)
         // option 2: transform results using `map()`
@@ -42,7 +43,7 @@ func getGPU(withName gpuID: String ) -> (Int, String, Int) {
                 vendor = try item.get(vendorField)
                 gpuCores = try item.get(gpuCoresField)
                 gpuCount += 1
-                print(gpuCount)
+                print(try arr[0].get(vendorField))
             }
         }
     }
