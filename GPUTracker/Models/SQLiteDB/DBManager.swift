@@ -49,6 +49,7 @@ func getGPUFields(with index: IndexPath) -> [String: String] {
         let baseClockField   = Expression<String>("baseClock")
         let boostClockField  = Expression<String>("boostClock")
         let memClockField    = Expression<String>("memClock")
+        let memSizeField     = Expression<String>("memorySize")
         let memTypeField     = Expression<String>("memType")
         let busField         = Expression<String>("bus")
         let tdpField         = Expression<String>("tdp")
@@ -73,26 +74,41 @@ func getGPUFields(with index: IndexPath) -> [String: String] {
         let baseClockResult = try arr[index.row].get(baseClockField)
         let boostClockResult = try arr[index.row].get(boostClockField)
         let memClockResult = try arr[index.row].get(memClockField)
+        let memSizeResult = try arr[index.row].get(memSizeField)
         let memTypeResult = try arr[index.row].get(memTypeField)
         let busResult = try arr[index.row].get(busField)
         let tdpResult = try arr[index.row].get(tdpField)
         let psuResult = try arr[index.row].get(psuField)
         let directXResult = try arr[index.row].get(directXField)
         let openCLResult = try arr[index.row].get(openCLField)
-        let openGLonResult = try arr[index.row].get(openGLField)
+        let openGLResult = try arr[index.row].get(openGLField)
         let vulcanResult = try arr[index.row].get(vulcanField)
         let cudaVersionResult = try arr[index.row].get(cudaVersionField)
-        let sahderModelResult = try arr[index.row].get(shaderModelField)
+        let shaderModelResult = try arr[index.row].get(shaderModelField)
         
-        result = ["position": String(positionResult),
-                  "id"      : idResult,
-                  "vendor"  : vendorResult,
-                  "gpuCores": gpuCoresResult,
-                  "gpName"  : gpNameResult,
-                  "tmus"    : tmusResult,
-                  "rops"    : ropsResult,
-                  ""
-                            ]
+        result = ["position"    : String(positionResult),
+                  "id"          : idResult,
+                  "vendor"      : vendorResult,
+                  "gpuCores"    : gpuCoresResult,
+                  "gpName"      : gpNameResult,
+                  "tmus"        : tmusResult,
+                  "rops"        : ropsResult,
+                  "l1"          : l1Result,
+                  "l2"          : l2Result,
+                  "baseClock"   : baseClockResult,
+                  "boostClock"  : boostClockResult,
+                  "memClock"    : memClockResult,
+                  "memSize"     : memSizeResult,
+                  "memType"     : memTypeResult,
+                  "bus"         : busResult,
+                  "tdp"         : tdpResult,
+                  "psu"         : psuResult,
+                  "directx"     : directXResult,
+                  "openGL"      : openGLResult,
+                  "openCL"      : openCLResult,
+                  "vulcan"      : vulcanResult,
+                  "cuda"        : cudaVersionResult,
+                  "shaderModel" : shaderModelResult ]
     
         
     } catch {
