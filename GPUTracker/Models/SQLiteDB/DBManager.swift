@@ -27,7 +27,7 @@ struct SelectedItem {
 }
 
 func getGPUFields(with index: Int) -> [String: String] {
-    var gpuData: [String: String] = [:]
+    var gpuFieldsData: [String: String] = [:]
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -84,9 +84,11 @@ func getGPUFields(with index: Int) -> [String: String] {
                        Expression<String>("openCL"),
                        Expression<String>("vulcan"),
                        Expression<String>("cuda"),
-                       Expression<String>("shaderModel") ] as [Any]
-        queries.forEach { querry in
-            let result = try get(querry)
+                       Expression<String>("shaderModel") ] as [Expression<Any>]
+        
+       try queries.forEach { querry in
+            let arr = Array(try db.prepare(nvidiaTable))
+            let result = try arr[index].get(querry)
         }
         
         //transform records to Rows Array
@@ -116,7 +118,7 @@ func getGPUFields(with index: Int) -> [String: String] {
         let cudaVersionResult = try arr[index].get(cudaVersionField)
         let shaderModelResult = try arr[index].get(shaderModelField)
         
-        result = ["position"    : String(positionResult),
+        gpuFieldsData = ["position"    : String(positionResult),
                   "id"          : idResult,
                   "vendor"      : vendorResult,
                   "gpuCores"    : gpuCoresResult,
@@ -140,11 +142,11 @@ func getGPUFields(with index: Int) -> [String: String] {
                   "cuda"        : cudaVersionResult,
                   "shaderModel" : shaderModelResult ]
         
-        print(result["gpName"]!)
+        print(gpuFieldsData["gpName"]!)
     } catch {
         print(error.localizedDescription)
     }
-    return result
+    return gpuFieldsData
 }
 
 
