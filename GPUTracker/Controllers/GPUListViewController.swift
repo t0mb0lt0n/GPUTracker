@@ -51,6 +51,7 @@ extension GPUListViewController: UITableViewDataSource {
         let gpuFieldsData = getGPUFields(with: indexPath.row)
         customCell.cardNameLabel.text = gpuFieldsData["id"]
         customCell.descriptionLabel.text = gpuFieldsData["vendor"]
+        customCell.cardImage.image = UIImage(named: gpuFieldsData["id"]!)
         
         
         return customCell

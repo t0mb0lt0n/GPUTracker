@@ -111,7 +111,7 @@ func getGPUFields(with index: Int) -> [String: String] {
                   "cuda"        : cudaVersionResult,
                   "shaderModel" : shaderModelResult ]
         
-        print(arr)
+        print(result["gpName"])
     } catch {
         print(error.localizedDescription)
     }
