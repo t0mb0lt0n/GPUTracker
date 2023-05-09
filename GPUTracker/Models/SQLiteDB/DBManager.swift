@@ -37,7 +37,7 @@ func getGPUFields(with index: Int) -> [String: String] {
         let db = try Connection("\(path)/gpuDB.db")
         let nvidiaTable = Table("Nvidia")
         ///Field requests to Rows
-        let positionField    = Expression<String>("position")
+        let positionField    = Expression<Int>("position")
         let idField          = Expression<String>("id")
         let vendorField      = Expression<String>("vendor")
         let gpuCoresField    = Expression<String>("gpCores")
@@ -111,43 +111,13 @@ func getGPUFields(with index: Int) -> [String: String] {
                   "cuda"        : cudaVersionResult,
                   "shaderModel" : shaderModelResult ]
         
-        print(result.values)
+        print(arr)
     } catch {
         print(error.localizedDescription)
     }
     return result
 }
 
-func getGPU(withName gpuID: String ) {
-    do {
-        let path = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory, .userDomainMask, true
-        ).first!
-        _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
-
-        let db = try Connection("\(path)/gpuDB.db")
-        let nvidiaTable = Table("Nvidia")
-        let idField = Expression<String>("id")
-        let vendorField = Expression<String>("vendor")
-        let gpuCoresField = Expression<Int>("gpCores")
-        let positionField = Expression<Int>("position")
-        let arr = Array(try db.prepare(nvidiaTable))
-      
-    
-        for item in try db.prepare(nvidiaTable.filter(idField == gpuID)) {
-            do {
-//                gpuName = try item.get(idField).count
-//                vendor = try item.get(vendorField)
-//                gpuCores = try item.get(gpuCoresField)
-//                gpuCount += 1
-                print(try arr[0].get(vendorField))
-            }
-        }
-    }
-    catch {
-        print(error.localizedDescription)
-    }
-}
 
 func getAllDBRecords() -> Int {
     var records: Int = 0

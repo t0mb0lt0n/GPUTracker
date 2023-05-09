@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SQLite
 
 class MainViewController: UIViewController {
     lazy var mainView = view as? MainView
@@ -101,8 +102,9 @@ extension MainViewController: UITableViewDelegate {
         case 0:
             let targetVC = GPUListViewController()
             // MARK: - DB test zone
-            let gpuInfoFields = getGPU(withName: "GTX-780TI")
-            getGPUFields(with: 0)
+            
+            //getGPUFields(with: 0)
+            print(getGPUFields(with: 1).values)
             //targetVC.mainView?.vendorLabel.text = String(gpuInfoFields.0)
             //targetVC.mainView?.gpuNameLabel.text = gpuInfoFields.1
             //targetVC.mainView?.gpuCoresLabel.text = String(gpuInfoFields.2)
