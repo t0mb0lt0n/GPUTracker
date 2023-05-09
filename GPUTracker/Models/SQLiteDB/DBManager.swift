@@ -119,30 +119,28 @@ func getGPUFields(with index: Int) -> [String: String] {
         let shaderModelResult = try arr[index].get(shaderModelField)
         
         gpuFieldsData = ["position"    : String(positionResult),
-                  "id"          : idResult,
-                  "vendor"      : vendorResult,
-                  "gpuCores"    : gpuCoresResult,
-                  "gpName"      : gpNameResult,
-                  "tmus"        : tmusResult,
-                  "rops"        : ropsResult,
-                  "l1"          : l1Result,
-                  "l2"          : l2Result,
-                  "baseClock"   : baseClockResult,
-                  "boostClock"  : boostClockResult,
-                  "memClock"    : memClockResult,
-                  "memSize"     : memSizeResult,
-                  "memType"     : memTypeResult,
-                  "bus"         : busResult,
-                  "tdp"         : tdpResult,
-                  "psu"         : psuResult,
-                  "directx"     : directXResult,
-                  "openGL"      : openGLResult,
-                  "openCL"      : openCLResult,
-                  "vulcan"      : vulcanResult,
-                  "cuda"        : cudaVersionResult,
-                  "shaderModel" : shaderModelResult ]
-        
-        print(gpuFieldsData["gpName"]!)
+                         "id"          : idResult,
+                         "vendor"      : vendorResult,
+                         "gpuCores"    : gpuCoresResult,
+                         "gpName"      : gpNameResult,
+                         "tmus"        : tmusResult,
+                         "rops"        : ropsResult,
+                         "l1"          : l1Result,
+                         "l2"          : l2Result,
+                         "baseClock"   : baseClockResult,
+                         "boostClock"  : boostClockResult,
+                         "memClock"    : memClockResult,
+                         "memSize"     : memSizeResult,
+                         "memType"     : memTypeResult,
+                         "bus"         : busResult,
+                         "tdp"         : tdpResult,
+                         "psu"         : psuResult,
+                         "directx"     : directXResult,
+                         "openGL"      : openGLResult,
+                         "openCL"      : openCLResult,
+                         "vulcan"      : vulcanResult,
+                         "cuda"        : cudaVersionResult,
+                         "shaderModel" : shaderModelResult ]
     } catch {
         print(error.localizedDescription)
     }

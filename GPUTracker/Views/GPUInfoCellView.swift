@@ -50,17 +50,17 @@ class GPUInfoCellView: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
             cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            cardImage.heightAnchor.constraint(equalToConstant: 32),
+            cardImage.heightAnchor.constraint(equalToConstant: 43),
             cardImage.widthAnchor.constraint(equalToConstant: 100),
             
             cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 10),
+            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 25),
             cardNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
             descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 10),
+            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 25),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
@@ -75,7 +75,6 @@ class GPUInfoCellView: UITableViewCell {
     
 extension GPUInfoCellView {
      func configurateCell(manufacturer: Manufacturer) {
-        //      func configurateCell(manufacturer: Manufacturer) {
         cardImage.image = manufacturer.image
         cardNameLabel.text = manufacturer.name
         descriptionLabel.text = manufacturer.description

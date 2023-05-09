@@ -15,6 +15,7 @@ class GPUListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
+        title = "Nvidia"
         //Cell registration
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
@@ -50,24 +51,10 @@ extension GPUListViewController: UITableViewDataSource {
         else { fatalError() }
         let gpuFieldsData = getGPUFields(with: indexPath.row)
         customCell.cardNameLabel.text = gpuFieldsData["id"]
-        customCell.descriptionLabel.text = gpuFieldsData["vendor"]
+        customCell.descriptionLabel.text = gpuFieldsData["gpuCores"]
         customCell.cardImage.image = UIImage(named: gpuFieldsData["id"]!)
         
-        
         return customCell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Nvidia"
-        default:
-            return "not found"
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,8 +68,7 @@ extension GPUListViewController: UITableViewDelegate {
         case 0:
             let targetVC = GPUListViewController()
             // MARK: - DB test zone
-            //let gpuInfoFields = getGPU(withName: "GTX-780TI")
-            navigationController?.pushViewController(targetVC, animated: true)
+            present(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()
             navigationController?.pushViewController(targetVC, animated: true)
