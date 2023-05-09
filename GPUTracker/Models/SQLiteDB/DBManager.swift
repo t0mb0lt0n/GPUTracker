@@ -27,7 +27,7 @@ struct SelectedItem {
 }
 
 func getGPUFields(with index: Int) -> [String: String] {
-    var result: [String: String] = [:]
+    var gpuData: [String: String] = [:]
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -60,6 +60,35 @@ func getGPUFields(with index: Int) -> [String: String] {
         let vulcanField      = Expression<String>("vulcan")
         let cudaVersionField = Expression<String>("cuda")
         let shaderModelField = Expression<String>("shaderModel")
+    
+        
+        let queries = [Expression<Int>("position"),
+                       Expression<String>("id"),
+                       Expression<String>("vendor"),
+                       Expression<String>("gpCores"),
+                       Expression<String>("gpName"),
+                       Expression<String>("tmus"),
+                       Expression<String>("rops"),
+                       Expression<String>("l1"),
+                       Expression<String>("l2"),
+                       Expression<String>("baseClock"),
+                       Expression<String>("boostClock"),
+                       Expression<String>("memClock"),
+                       Expression<String>("memorySize"),
+                       Expression<String>("memType"),
+                       Expression<String>("bus"),
+                       Expression<String>("tdp"),
+                       Expression<String>("psu"),
+                       Expression<String>("directx"),
+                       Expression<String>("openGL"),
+                       Expression<String>("openCL"),
+                       Expression<String>("vulcan"),
+                       Expression<String>("cuda"),
+                       Expression<String>("shaderModel") ] as [Any]
+        queries.forEach { querry in
+            let result = try get(querry)
+        }
+        
         //transform records to Rows Array
         let arr = Array(try db.prepare(nvidiaTable))
         // Fields results
@@ -111,7 +140,7 @@ func getGPUFields(with index: Int) -> [String: String] {
                   "cuda"        : cudaVersionResult,
                   "shaderModel" : shaderModelResult ]
         
-        print(result["gpName"])
+        print(result["gpName"]!)
     } catch {
         print(error.localizedDescription)
     }
