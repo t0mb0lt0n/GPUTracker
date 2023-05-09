@@ -49,7 +49,6 @@ extension GPUListViewController: UITableViewDataSource {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
         let item = SelectedItem()
-        customCell.cardNameLabel.text = item.gpuName
         let arr = [String]()
         do {
             let path = NSSearchPathForDirectoriesInDomains(
@@ -67,6 +66,7 @@ extension GPUListViewController: UITableViewDataSource {
         } catch {
             print(error.localizedDescription)
         }
+        getGPUFields(with: indexPath.row)
         return customCell
     }
     

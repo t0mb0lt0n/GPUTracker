@@ -26,8 +26,8 @@ struct SelectedItem {
    
 }
 
-func getGPUFields(with index: IndexPath) -> [String: String] {
-    var result: [String: String]
+func getGPUFields(with index: Int) -> [String: String] {
+    var result: [String: String] = [:]
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -60,31 +60,32 @@ func getGPUFields(with index: IndexPath) -> [String: String] {
         let vulcanField      = Expression<String>("vulcan")
         let cudaVersionField = Expression<String>("cuda")
         let shaderModelField = Expression<String>("shaderModel")
+        //transform records to Rows Array
         let arr = Array(try db.prepare(nvidiaTable))
-        
-        let positionResult = try arr[index.row].get(positionField)
-        let idResult = try arr[index.row].get(idField)
-        let vendorResult = try arr[index.row].get(vendorField)
-        let gpuCoresResult = try arr[index.row].get(gpuCoresField)
-        let gpNameResult = try arr[index.row].get(gpNameField)
-        let tmusResult = try arr[index.row].get(tmusField)
-        let ropsResult = try arr[index.row].get(ropsField)
-        let l1Result = try arr[index.row].get(l1Field)
-        let l2Result = try arr[index.row].get(l2Field)
-        let baseClockResult = try arr[index.row].get(baseClockField)
-        let boostClockResult = try arr[index.row].get(boostClockField)
-        let memClockResult = try arr[index.row].get(memClockField)
-        let memSizeResult = try arr[index.row].get(memSizeField)
-        let memTypeResult = try arr[index.row].get(memTypeField)
-        let busResult = try arr[index.row].get(busField)
-        let tdpResult = try arr[index.row].get(tdpField)
-        let psuResult = try arr[index.row].get(psuField)
-        let directXResult = try arr[index.row].get(directXField)
-        let openCLResult = try arr[index.row].get(openCLField)
-        let openGLResult = try arr[index.row].get(openGLField)
-        let vulcanResult = try arr[index.row].get(vulcanField)
-        let cudaVersionResult = try arr[index.row].get(cudaVersionField)
-        let shaderModelResult = try arr[index.row].get(shaderModelField)
+        // Fields results
+        let positionResult = try arr[index].get(positionField)
+        let idResult = try arr[index].get(idField)
+        let vendorResult = try arr[index].get(vendorField)
+        let gpuCoresResult = try arr[index].get(gpuCoresField)
+        let gpNameResult = try arr[index].get(gpNameField)
+        let tmusResult = try arr[index].get(tmusField)
+        let ropsResult = try arr[index].get(ropsField)
+        let l1Result = try arr[index].get(l1Field)
+        let l2Result = try arr[index].get(l2Field)
+        let baseClockResult = try arr[index].get(baseClockField)
+        let boostClockResult = try arr[index].get(boostClockField)
+        let memClockResult = try arr[index].get(memClockField)
+        let memSizeResult = try arr[index].get(memSizeField)
+        let memTypeResult = try arr[index].get(memTypeField)
+        let busResult = try arr[index].get(busField)
+        let tdpResult = try arr[index].get(tdpField)
+        let psuResult = try arr[index].get(psuField)
+        let directXResult = try arr[index].get(directXField)
+        let openCLResult = try arr[index].get(openCLField)
+        let openGLResult = try arr[index].get(openGLField)
+        let vulcanResult = try arr[index].get(vulcanField)
+        let cudaVersionResult = try arr[index].get(cudaVersionField)
+        let shaderModelResult = try arr[index].get(shaderModelField)
         
         result = ["position"    : String(positionResult),
                   "id"          : idResult,
@@ -109,19 +110,15 @@ func getGPUFields(with index: IndexPath) -> [String: String] {
                   "vulcan"      : vulcanResult,
                   "cuda"        : cudaVersionResult,
                   "shaderModel" : shaderModelResult ]
-    
         
+        print(result.values)
     } catch {
         print(error.localizedDescription)
     }
-    return data
+    return result
 }
 
-func getGPU(withName gpuID: String ) -> (Int, String, Int) {
-    var gpuName = 0
-    var vendor = "empty"
-    var gpuCores = 0
-    var gpuCount = 0
+func getGPU(withName gpuID: String ) {
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -135,18 +132,14 @@ func getGPU(withName gpuID: String ) -> (Int, String, Int) {
         let gpuCoresField = Expression<Int>("gpCores")
         let positionField = Expression<Int>("position")
         let arr = Array(try db.prepare(nvidiaTable))
-//        let filtered1 = nvidiaTable.where(idField.like("GTX-780"))
-//        let filtered = nvidiaTable.where(vendorField == "amd")
-//        let mapRowIterator = try db.prepareRowIterator(nvidiaTable.where(idField.like("GTX-780")))
-//        let gpuIds = try mapRowIterator.map { $0[vendorField] }
       
     
         for item in try db.prepare(nvidiaTable.filter(idField == gpuID)) {
             do {
-                gpuName = try item.get(idField).count
-                vendor = try item.get(vendorField)
-                gpuCores = try item.get(gpuCoresField)
-                gpuCount += 1
+//                gpuName = try item.get(idField).count
+//                vendor = try item.get(vendorField)
+//                gpuCores = try item.get(gpuCoresField)
+//                gpuCount += 1
                 print(try arr[0].get(vendorField))
             }
         }
@@ -154,8 +147,6 @@ func getGPU(withName gpuID: String ) -> (Int, String, Int) {
     catch {
         print(error.localizedDescription)
     }
-    
-    return (gpuName, vendor, gpuCores)
 }
 
 func getAllDBRecords() -> Int {
