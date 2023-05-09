@@ -62,7 +62,7 @@ func getGPUFields(with index: Int) -> [String: String] {
         let shaderModelField = Expression<String>("shaderModel")
     
         
-        let queries = [Expression<Int>("position"),
+        let queries = [//Expression<Int>("position"),
                        Expression<String>("id"),
                        Expression<String>("vendor"),
                        Expression<String>("gpCores"),
@@ -84,9 +84,9 @@ func getGPUFields(with index: Int) -> [String: String] {
                        Expression<String>("openCL"),
                        Expression<String>("vulcan"),
                        Expression<String>("cuda"),
-                       Expression<String>("shaderModel") ] as [Expression<Any>]
+                       Expression<String>("shaderModel") ] as [Expression<String>]
         
-       try queries.forEach { querry in
+        try queries.forEach { querry in
             let arr = Array(try db.prepare(nvidiaTable))
             let result = try arr[index].get(querry)
         }
