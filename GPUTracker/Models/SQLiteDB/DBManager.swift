@@ -15,18 +15,10 @@ enum Fields: String {
 }
 
 struct SelectedItem {
-    enum Fields: String {
-        case position = "posotion"
-        case id = "id"
-        case vendor = "vendor"
-    }
-    
     static var gpuCount: Int = {
         getAllDBRecords()
     }()
-    var gpuName: String = {
-        getGPUField(with: .id)
-    }()
+   
     
     
     
@@ -34,8 +26,8 @@ struct SelectedItem {
    
 }
 
-func getGPUField(with field: Fields) -> String {
-    var data: String = ""
+func getGPUFields(with index: IndexPath) -> [String: String] {
+    var result: [String: String]
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
@@ -44,10 +36,66 @@ func getGPUField(with field: Fields) -> String {
         
         let db = try Connection("\(path)/gpuDB.db")
         let nvidiaTable = Table("Nvidia")
+        ///Field requests to Rows
+        let positionField    = Expression<String>("position")
+        let idField          = Expression<String>("id")
+        let vendorField      = Expression<String>("vendor")
+        let gpuCoresField    = Expression<String>("gpCores")
+        let gpNameField      = Expression<String>("gpName")
+        let tmusField        = Expression<String>("tmus")
+        let ropsField        = Expression<String>("rops")
+        let l1Field          = Expression<String>("l1")
+        let l2Field          = Expression<String>("l2")
+        let baseClockField   = Expression<String>("baseClock")
+        let boostClockField  = Expression<String>("boostClock")
+        let memClockField    = Expression<String>("memClock")
+        let memTypeField     = Expression<String>("memType")
+        let busField         = Expression<String>("bus")
+        let tdpField         = Expression<String>("tdp")
+        let psuField         = Expression<String>("psu")
+        let directXField     = Expression<String>("directx")
+        let openGLField      = Expression<String>("openGL")
+        let openCLField      = Expression<String>("openCL")
+        let vulcanField      = Expression<String>("vulcan")
+        let cudaVersionField = Expression<String>("cuda")
+        let shaderModelField = Expression<String>("shaderModel")
         let arr = Array(try db.prepare(nvidiaTable))
-        data = try arr[0].get(Expression<String>("\(field)"))
-    }
-    catch {
+        
+        let positionResult = try arr[index.row].get(positionField)
+        let idResult = try arr[index.row].get(idField)
+        let vendorResult = try arr[index.row].get(vendorField)
+        let gpuCoresResult = try arr[index.row].get(gpuCoresField)
+        let gpNameResult = try arr[index.row].get(gpNameField)
+        let tmusResult = try arr[index.row].get(tmusField)
+        let ropsResult = try arr[index.row].get(ropsField)
+        let l1Result = try arr[index.row].get(l1Field)
+        let l2Result = try arr[index.row].get(l2Field)
+        let baseClockResult = try arr[index.row].get(baseClockField)
+        let boostClockResult = try arr[index.row].get(boostClockField)
+        let memClockResult = try arr[index.row].get(memClockField)
+        let memTypeResult = try arr[index.row].get(memTypeField)
+        let busResult = try arr[index.row].get(busField)
+        let tdpResult = try arr[index.row].get(tdpField)
+        let psuResult = try arr[index.row].get(psuField)
+        let directXResult = try arr[index.row].get(directXField)
+        let openCLResult = try arr[index.row].get(openCLField)
+        let openGLonResult = try arr[index.row].get(openGLField)
+        let vulcanResult = try arr[index.row].get(vulcanField)
+        let cudaVersionResult = try arr[index.row].get(cudaVersionField)
+        let sahderModelResult = try arr[index.row].get(shaderModelField)
+        
+        result = ["position": String(positionResult),
+                  "id"      : idResult,
+                  "vendor"  : vendorResult,
+                  "gpuCores": gpuCoresResult,
+                  "gpName"  : gpNameResult,
+                  "tmus"    : tmusResult,
+                  "rops"    : ropsResult,
+                  ""
+                            ]
+    
+        
+    } catch {
         print(error.localizedDescription)
     }
     return data

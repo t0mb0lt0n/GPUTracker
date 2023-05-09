@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SQLite
 
 class GPUListViewController: UIViewController {
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -49,6 +50,23 @@ extension GPUListViewController: UITableViewDataSource {
         else { fatalError() }
         let item = SelectedItem()
         customCell.cardNameLabel.text = item.gpuName
+        let arr = [String]()
+        do {
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+            ).first!
+            _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
+            
+            let db = try Connection("\(path)/gpuDB.db")
+            let nvidiaTable = Table("Nvidia")
+            let vendorField = Expression<String>("vendor")
+            let arr = Array(try db.prepare(nvidiaTable))
+            customCell.cardNameLabel.text = try arr[indexPath.row].get(vendorField)
+            print(indexPath.row)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
         return customCell
     }
     
@@ -66,7 +84,23 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        100
+        var rowCount: Int = 0
+        do {
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+            ).first!
+            _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
+            
+            let db = try Connection("\(path)/gpuDB.db")
+            let nvidiaTable = Table("Nvidia")
+            let positionField = Expression<String>("position")
+            let arr = Array(try db.prepare(nvidiaTable))
+            rowCount = arr.count
+          
+        } catch {
+            print(error.localizedDescription)
+        }
+        return rowCount
     }
 }
 
