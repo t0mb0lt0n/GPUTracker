@@ -48,22 +48,11 @@ extension GPUListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
-        do {
-            let path = NSSearchPathForDirectoriesInDomains(
-                .documentDirectory, .userDomainMask, true
-            ).first!
-            _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
-            
-            let db = try Connection("\(path)/gpuDB.db")
-            let nvidiaTable = Table("Nvidia")
-            let vendorField = Expression<String>("vendor")
-            let arr = Array(try db.prepare(nvidiaTable))
-            customCell.cardNameLabel.text = try arr[indexPath.row].get(vendorField)
-            print(indexPath.row)
-            
-        } catch {
-            print(error.localizedDescription)
-        }
+        let gpuFieldsData = getGPUFields(with: indexPath.row)
+        customCell.cardNameLabel.text = gpuFieldsData["id"]
+        customCell.descriptionLabel.text = gpuFieldsData["vendor"]
+        
+        
         return customCell
     }
     
@@ -81,23 +70,7 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rowCount: Int = 0
-        do {
-            let path = NSSearchPathForDirectoriesInDomains(
-                .documentDirectory, .userDomainMask, true
-            ).first!
-            _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
-            
-            let db = try Connection("\(path)/gpuDB.db")
-            let nvidiaTable = Table("Nvidia")
-            let positionField = Expression<String>("position")
-            let arr = Array(try db.prepare(nvidiaTable))
-            rowCount = arr.count
-          
-        } catch {
-            print(error.localizedDescription)
-        }
-        return rowCount
+        getAllDBRecords()
     }
 }
 
