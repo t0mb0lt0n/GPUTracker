@@ -66,7 +66,7 @@ extension GPUListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let targetVC = GPUListViewController()
+            let targetVC = DescriptionViewController()
             // MARK: - DB test zone
             present(targetVC, animated: true)
         case 1:

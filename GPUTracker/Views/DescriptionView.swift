@@ -8,14 +8,23 @@
 import UIKit
 
 class DescriptionView: UIView {
-    
     let infoStackView = UIStackView()
+    
+    let infoView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        view.backgroundColor = .systemGreen
+        view.layer.cornerRadius = 10
+        return view
+    }()
 
     
     
     
     init() {
         super.init(frame: .zero)
+        setupStackView()
+        setupConstraintsForStackView()
+        addItemsToStackView()
     }
     
     required init?(coder: NSCoder) {
@@ -37,22 +46,19 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForStackView: [UIView] = [macBookItemCard,
-                                         watchBandItemCard,
-                                         macBookCaseItemCard,
-                                         iPhoneItemCard]
+        let itemsForStackView: [UIView] = [infoView, infoView, infoView]
         for item in itemsForStackView {
-            stackView.addArrangedSubview(item)
+            infoStackView.addArrangedSubview(item)
             print("passed")
         }
     }
     
     private func setupConstraintsForStackView() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        infoStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: scrollViewItems.topAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: scrollViewItems.contentSize.height),
-            stackView.widthAnchor.constraint(equalToConstant: scrollViewItems.contentSize.width),
+            infoStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            infoStackView.heightAnchor.constraint(equalToConstant: 500),
+            infoStackView.widthAnchor.constraint(equalToConstant: 500),
         ])
     }
 }
