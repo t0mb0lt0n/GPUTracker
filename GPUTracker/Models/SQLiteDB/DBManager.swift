@@ -86,11 +86,6 @@ func getGPUFields(with index: Int) -> [String: String] {
                        Expression<String>("cuda"),
                        Expression<String>("shaderModel") ] as [Expression<String>]
         
-        try queries.forEach { querry in
-            let arr = Array(try db.prepare(nvidiaTable))
-            let result = try arr[index].get(querry)
-        }
-        
         //transform records to Rows Array
         let arr = Array(try db.prepare(nvidiaTable))
         // Fields results
