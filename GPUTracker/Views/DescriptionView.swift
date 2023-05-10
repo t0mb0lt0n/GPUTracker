@@ -25,7 +25,7 @@ class DescriptionView: UIView {
     }()
     
     let infoView3: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let view = UIView()
         view.backgroundColor = .orange
         view.layer.cornerRadius = 10
         return view
@@ -59,12 +59,14 @@ extension DescriptionView {
     }
     
     func setupStackView() {
+        //setupConstraints()
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
-        //infoStackView.alignment = .fill
-        infoStackView.spacing = 10
+        infoStackView.alignment = .fill
+        infoStackView.spacing = 39
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
+        infoStackView.sizeToFit()
         addItemsToStackView()
         setupConstraintsForStackView()
     
