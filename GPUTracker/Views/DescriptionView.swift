@@ -16,6 +16,20 @@ class DescriptionView: UIView {
         view.layer.cornerRadius = 10
         return view
     }()
+    
+    let infoView2: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        view.backgroundColor = .orange
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
+    let infoView3: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        view.backgroundColor = .orange
+        view.layer.cornerRadius = 10
+        return view
+    }()
 
     
     
@@ -23,9 +37,9 @@ class DescriptionView: UIView {
     init() {
         super.init(frame: .zero)
         addSubview(infoStackView)
+        setupConstraints()
         setupStackView()
-        addItemsToStackView()
-        setupConstraintsForStackView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -37,18 +51,27 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
+    func setupConstraints() {
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            infoView.widthAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
     func setupStackView() {
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
-        infoStackView.alignment = .fill
+        //infoStackView.alignment = .fill
         infoStackView.spacing = 10
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
+        addItemsToStackView()
+        setupConstraintsForStackView()
     
     }
     
     private func addItemsToStackView() {
-        let itemsForStackView: [UIView] = [infoView]
+        let itemsForStackView: [UIView] = [infoView, infoView2, infoView3]
         for item in itemsForStackView {
             infoStackView.addArrangedSubview(item)
             print("passed")
