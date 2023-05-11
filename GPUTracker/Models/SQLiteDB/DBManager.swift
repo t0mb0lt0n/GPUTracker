@@ -62,7 +62,7 @@ func getGPUFields(with index: Int) -> [String: String] {
         let shaderModelField = Expression<String>("shaderModel")
     
         
-        let queries = [//Expression<Int>("position"),
+        let queries = [Expression<String>("position"),
                        Expression<String>("id"),
                        Expression<String>("vendor"),
                        Expression<String>("gpCores"),
