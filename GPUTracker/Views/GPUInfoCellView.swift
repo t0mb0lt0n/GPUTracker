@@ -70,7 +70,6 @@ class GPUInfoCellView: UITableViewCell {
             rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
-    
 }
     
 extension GPUInfoCellView {

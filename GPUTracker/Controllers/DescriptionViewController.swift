@@ -14,8 +14,6 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         view = DescriptionView()
         mainView?.backgroundColor = .secondarySystemBackground
-        
-        
     }
 }
     
