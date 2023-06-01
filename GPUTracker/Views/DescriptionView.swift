@@ -51,12 +51,13 @@ extension DescriptionView {
     func setupConstraints() {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoView.widthAnchor.constraint(equalToConstant: 20)
+            infoView.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
     func setupStackView() {
         //setupConstraints()
+        infoStackView.sizeToFit()
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
@@ -81,7 +82,7 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             infoStackView.heightAnchor.constraint(equalToConstant: 500),
-            infoStackView.widthAnchor.constraint(equalToConstant: 200),
+            //infoStackView.widthAnchor.constraint(equalToConstant: 200),
         ])
     }
 }
