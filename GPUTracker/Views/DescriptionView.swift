@@ -33,7 +33,7 @@ class DescriptionView: UIView {
 
     
     
-    
+    //MARK: - init
     init() {
         super.init(frame: .zero)
         addSubview(infoStackView)
@@ -45,9 +45,6 @@ class DescriptionView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-
 }
 
 extension DescriptionView {
@@ -69,7 +66,6 @@ extension DescriptionView {
         infoStackView.sizeToFit()
         addItemsToStackView()
         setupConstraintsForStackView()
-    
     }
     
     private func addItemsToStackView() {
