@@ -20,7 +20,6 @@ class MainViewController: UIViewController {
         view.backgroundColor = .black
         view = MainView()
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
         tableView.register(ManufacturerCell.self, forCellReuseIdentifier: "ManufacturerCell")
         tableView.delegate = self
