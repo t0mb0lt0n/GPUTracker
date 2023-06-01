@@ -23,14 +23,9 @@ class GPUListViewController: UIViewController {
         gpuListTableView.isScrollEnabled = true
         setupTableView()
     }
-    
-
-    
-
-
 }
 
-// MARK: -Extensions
+// MARK: -Extensions for TableView CFG
 
 extension GPUListViewController {
     private func setupTableView() {
