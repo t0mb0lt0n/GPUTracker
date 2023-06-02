@@ -10,26 +10,115 @@ import UIKit
 class DescriptionView: UIView {
     let infoStackView = UIStackView()
     
-    let infoView: UIView = {
+    let idView: UIView = {
         let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "ID"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
         return view
     }()
     
-    let infoView2: UIView = {
+    let vendorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "Vendor"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
         view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
         return view
     }()
     
-    let infoView3: UIView = {
+    let gpuCoresView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "gpuCores"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
         view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
         return view
     }()
+    
+    let gpuNameView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "gpuName"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let tmusView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "tmus"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let ropsView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "rops"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let lOneView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "l1"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let lTwoView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "l2"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let baseClockView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "rops"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    
 
     
     
@@ -71,7 +160,7 @@ extension DescriptionView {
         let itemsForStackView: [UIView] = [infoView, infoView2, infoView3]
         for item in itemsForStackView {
             infoStackView.addArrangedSubview(item)
-            print("passed")
+            print("subView added")
         }
     }
     
