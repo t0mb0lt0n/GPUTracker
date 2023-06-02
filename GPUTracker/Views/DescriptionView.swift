@@ -37,7 +37,7 @@ class DescriptionView: UIView {
     init() {
         super.init(frame: .zero)
         addSubview(infoStackView)
-        setupConstraints()
+        setupSubViewConstraints()
         setupStackView()
         
     }
@@ -48,23 +48,22 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-    func setupConstraints() {
+    func setupSubViewConstraints() {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoView.widthAnchor.constraint(equalToConstant: 100)
+            infoView.trailingAnchor.constraint(equalTo: infoStackView.trailingAnchor, constant: 10 )
         ])
     }
     
     func setupStackView() {
-        //setupConstraints()
-        infoStackView.sizeToFit()
+        infoStackView.translatesAutoresizingMaskIntoConstraints = false
+        //infoStackView.sizeToFit()
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
-        infoStackView.alignment = .fill
+        //infoStackView.alignment = .fill
+        infoStackView.contentMode = .scaleToFill
         infoStackView.spacing = 39
-        infoStackView.translatesAutoresizingMaskIntoConstraints = false
-        infoStackView.sizeToFit()
         addItemsToStackView()
         setupConstraintsForStackView()
     }
@@ -82,7 +81,7 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             infoStackView.heightAnchor.constraint(equalToConstant: 500),
-            //infoStackView.widthAnchor.constraint(equalToConstant: 200),
+            infoStackView.widthAnchor.constraint(equalToConstant: 200),
         ])
     }
 }
