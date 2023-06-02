@@ -346,6 +346,15 @@ extension DescriptionView {
                                                   memTypeView,
                                                   busView,
                                                     ]
+        
+        let itemsForRightStackView: [UIView] = [tdpView,
+                                                psuView,
+                                                directXView,
+                                                openGLView,
+                                                openCLView,
+                                                vulcanView,
+                                                cudaView,
+                                                shaderView]
                                            
         
         for item in itemsForLeftStackView {
@@ -355,6 +364,10 @@ extension DescriptionView {
         
         for item in itemsForeCentralStackView {
             centralInfoStackView.addArrangedSubview(item)
+        }
+        
+        for item in itemsForRightStackView {
+            rightInfoStackView.addArrangedSubview(item)
         }
     }
     
