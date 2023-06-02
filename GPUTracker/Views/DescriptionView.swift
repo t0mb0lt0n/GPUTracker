@@ -11,38 +11,40 @@ class DescriptionView: UIView {
     let infoStackView = UIStackView()
     
     let idView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "ID"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
+        view.backgroundColor = .orange
         return view
     }()
     
     let vendorView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "Vendor"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
+        view.backgroundColor = .orange
         return view
     }()
     
     let gpuCoresView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "gpuCores"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
+        view.backgroundColor = .orange
         return view
     }()
     
@@ -52,9 +54,9 @@ class DescriptionView: UIView {
         idLabel.textColor = .systemGray
         idLabel.text = "gpuName"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
+        view.backgroundColor = .orange
         return view
     }()
     
@@ -64,7 +66,7 @@ class DescriptionView: UIView {
         idLabel.textColor = .systemGray
         idLabel.text = "tmus"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
+        view.backgroundColor = .orange
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
         return view
@@ -279,7 +281,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         addSubview(infoStackView)
         setupStackView()
-        setupSubViewConstraints()
+        //setupSubViewConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -288,24 +290,24 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-    func setupSubViewConstraints() {
-        idView.translatesAutoresizingMaskIntoConstraints = false
-        vendorView.translatesAutoresizingMaskIntoConstraints = false
-        gpuCoresView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            idView.widthAnchor.constraint(equalToConstant: 100),
-            vendorView.widthAnchor.constraint(equalToConstant: 150),
-            gpuCoresView.widthAnchor.constraint(equalToConstant: 200),
-        ])
-    }
+//    func setupSubViewConstraints() {
+//        idView.translatesAutoresizingMaskIntoConstraints = false
+//        vendorView.translatesAutoresizingMaskIntoConstraints = false
+//        gpuCoresView.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            idView.widthAnchor.constraint(equalToConstant: 100),
+//            vendorView.widthAnchor.constraint(equalToConstant: 150),
+//            gpuCoresView.widthAnchor.constraint(equalToConstant: 200),
+//        ])
+//    }
     
     func setupStackView() {
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
-        infoStackView.alignment = .center
-        infoStackView.spacing = 39
+        infoStackView.alignment = .fill
+        infoStackView.spacing = 20
         addItemsToStackView()
         setupConstraintsForStackView()
     }
@@ -318,21 +320,23 @@ extension DescriptionView {
                                            tmusView,
                                            ropsView,
                                            lOneView,
-                                           lTwoView,
-                                           baseClockView,
-                                           boostClockView,
-                                           memClockView,
-                                           memSizeView,
-                                           memTypeView,
-                                           busView,
-                                           tdpView,
-                                           psuView,
-                                           directXView,
-                                           openGLView,
-                                           openCLView,
-                                           vulcanView,
-                                           cudaView,
-                                           shaderView]
+//                                           lTwoView,
+//                                           baseClockView,
+//                                           boostClockView,
+//                                           memClockView,
+//                                           memSizeView,
+//                                           memTypeView,
+//                                           busView,
+//                                           tdpView,
+//                                           psuView,
+//                                           directXView,
+//                                           openGLView,
+//                                           openCLView,
+//                                           vulcanView,
+//                                           cudaView,
+//                                           shaderView
+                                                        ]
+                                           
         
         for item in itemsForStackView {
             infoStackView.addArrangedSubview(item)
@@ -343,8 +347,8 @@ extension DescriptionView {
     private func setupConstraintsForStackView() {
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            infoStackView.heightAnchor.constraint(equalToConstant: 500),
+            infoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            infoStackView.heightAnchor.constraint(equalToConstant: 300),
             infoStackView.widthAnchor.constraint(equalToConstant: 270),
             infoStackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0)
         ])
