@@ -9,7 +9,7 @@ import UIKit
 
 class DescriptionView: UIView {
     let leftInfoStackView   = UIStackView()
-    let centerInfoStackView = UIStackView()
+    let centralInfoStackView = UIStackView()
     let rightInfoStackView  = UIStackView()
     
     let idView: UIView = {
@@ -307,6 +307,7 @@ extension DescriptionView {
     
     func setupStackViews() {
         leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
+        centralInfoStackView.translatesAutoresizingMaskIntoConstraints = false
         leftInfoStackView.backgroundColor = .green
         leftInfoStackView.axis = .vertical
         leftInfoStackView.distribution = .fillEqually
@@ -327,7 +328,7 @@ extension DescriptionView {
 //
 //
 //
-//                                          
+//
 //                                           tdpView,
 //                                           psuView,
 //                                           directXView,
@@ -337,7 +338,7 @@ extension DescriptionView {
 //                                           cudaView,
 //                                           shaderView
                                                         ]
-        let itemsForeCenterStackView: [UIView] = [lTwoView,
+        let itemsForeCentralStackView: [UIView] = [lTwoView,
                                                   baseClockView,
                                                   boostClockView,
                                                   memClockView,
@@ -352,8 +353,8 @@ extension DescriptionView {
             print("subView added")
         }
         
-        for item in itemsForeCenterStackView {
-            rightInfoStackView.addArrangedSubview(item)
+        for item in itemsForeCentralStackView {
+            centralInfoStackView.addArrangedSubview(item)
         }
     }
     
