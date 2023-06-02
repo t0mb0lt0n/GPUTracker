@@ -39,7 +39,6 @@ class DescriptionView: UIView {
         addSubview(infoStackView)
         setupStackView()
         setupSubViewConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -59,12 +58,10 @@ extension DescriptionView {
     
     func setupStackView() {
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
-        //infoStackView.sizeToFit()
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
         infoStackView.distribution = .fillEqually
-        infoStackView.alignment = .leading
-        //infoStackView.contentMode = .scaleToFill
+        infoStackView.alignment = .center
         infoStackView.spacing = 39
         addItemsToStackView()
         setupConstraintsForStackView()
