@@ -283,7 +283,7 @@ class DescriptionView: UIView {
     //MARK: - init
     init() {
         super.init(frame: .zero)
-        addSubview(infoStackView)
+        addSubview(leftInfoStackView)
         setupStackViews()
         //setupSubViewConstraints()
     }
@@ -306,12 +306,12 @@ extension DescriptionView {
 //    }
     
     func setupStackViews() {
-        infoStackView.translatesAutoresizingMaskIntoConstraints = false
-        infoStackView.backgroundColor = .green
-        infoStackView.axis = .vertical
-        infoStackView.distribution = .fillEqually
-        infoStackView.alignment = .fill
-        infoStackView.spacing = 20
+        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
+        leftInfoStackView.backgroundColor = .green
+        leftInfoStackView.axis = .vertical
+        leftInfoStackView.distribution = .fillEqually
+        leftInfoStackView.alignment = .fill
+        leftInfoStackView.spacing = 20
         addItemsToStackView()
         setupConstraintsForStackView()
     }
@@ -343,18 +343,18 @@ extension DescriptionView {
                                            
         
         for item in itemsForStackView {
-            infoStackView.addArrangedSubview(item)
+            leftInfoStackView.addArrangedSubview(item)
             print("subView added")
         }
     }
     
     private func setupConstraintsForStackView() {
-        infoStackView.translatesAutoresizingMaskIntoConstraints = false
+        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            infoStackView.heightAnchor.constraint(equalToConstant: 300),
-            infoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            infoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -100)
+            leftInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
+            leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -100)
         ])
     }
 }
