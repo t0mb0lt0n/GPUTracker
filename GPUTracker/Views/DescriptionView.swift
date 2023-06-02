@@ -110,7 +110,7 @@ class DescriptionView: UIView {
         let view = UIView()
         let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
         idLabel.textColor = .systemGray
-        idLabel.text = "rops"
+        idLabel.text = "baseclc"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 10
@@ -118,9 +118,161 @@ class DescriptionView: UIView {
         return view
     }()
     
+    let boostClockView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "boostclc"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
     
-
+    let memClockView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "memclc"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
     
+    let memSizeView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "memsize"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let memTypeView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "memType"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let busView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "bus"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let tdpView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "tdp"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let psuView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "psu"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let directXView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "directx"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let openGLView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "openGl"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let openCLView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "openCl"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let vulcanView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "vulcan"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let cudaView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "cuda"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
+    
+    let shaderView: UIView = {
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        idLabel.textColor = .systemGray
+        idLabel.text = "sahder"
+        idLabel.font = .systemFont(ofSize: 15, weight: .light)
+        view.backgroundColor = .blue
+        view.layer.cornerRadius = 10
+        view.addSubview(idLabel)
+        return view
+    }()
     
     //MARK: - init
     init() {
@@ -137,11 +289,13 @@ class DescriptionView: UIView {
 
 extension DescriptionView {
     func setupSubViewConstraints() {
-        infoView.translatesAutoresizingMaskIntoConstraints = false
+        idView.translatesAutoresizingMaskIntoConstraints = false
+        vendorView.translatesAutoresizingMaskIntoConstraints = false
+        gpuCoresView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoView.widthAnchor.constraint(equalToConstant: 100),
-            infoView2.widthAnchor.constraint(equalToConstant: 150),
-            infoView3.widthAnchor.constraint(equalToConstant: 200),
+            idView.widthAnchor.constraint(equalToConstant: 100),
+            vendorView.widthAnchor.constraint(equalToConstant: 150),
+            gpuCoresView.widthAnchor.constraint(equalToConstant: 200),
         ])
     }
     
@@ -157,7 +311,29 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForStackView: [UIView] = [infoView, infoView2, infoView3]
+        let itemsForStackView: [UIView] = [idView,
+                                           vendorView,
+                                           gpuCoresView,
+                                           gpuNameView,
+                                           tmusView,
+                                           ropsView,
+                                           lOneView,
+                                           lTwoView,
+                                           baseClockView,
+                                           boostClockView,
+                                           memClockView,
+                                           memSizeView,
+                                           memTypeView,
+                                           busView,
+                                           tdpView,
+                                           psuView,
+                                           directXView,
+                                           openGLView,
+                                           openCLView,
+                                           vulcanView,
+                                           cudaView,
+                                           shaderView]
+        
         for item in itemsForStackView {
             infoStackView.addArrangedSubview(item)
             print("subView added")
