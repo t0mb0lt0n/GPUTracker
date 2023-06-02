@@ -53,7 +53,7 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        getAllDBRecords()
+        getDBRecordsCount()
     }
 }
 
