@@ -306,46 +306,34 @@ extension DescriptionView {
 //    }
     
     func setupStackViews() {
-        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
-        centralInfoStackView.translatesAutoresizingMaskIntoConstraints = false
+        leftInfoStackView.translatesAutoresizingMaskIntoConstraints     = false
+        centralInfoStackView.translatesAutoresizingMaskIntoConstraints  = false
+        rightInfoStackView.translatesAutoresizingMaskIntoConstraints    = false
         leftInfoStackView.backgroundColor = .green
-        leftInfoStackView.axis = .vertical
-        leftInfoStackView.distribution = .fillEqually
-        leftInfoStackView.alignment = .fill
-        leftInfoStackView.spacing = 20
+        leftInfoStackView.axis            = .vertical
+        leftInfoStackView.distribution    = .fillEqually
+        leftInfoStackView.alignment       = .fill
+        leftInfoStackView.spacing         = 20
         addItemsToStackView()
         setupConstraintsForStackView()
     }
     
     private func addItemsToStackView() {
         let itemsForLeftStackView: [UIView] = [idView,
-                                           vendorView,
-                                           gpuCoresView,
-                                           gpuNameView,
-                                           tmusView,
-                                           ropsView,
-                                           lOneView,
-//
-//
-//
-//
-//                                           tdpView,
-//                                           psuView,
-//                                           directXView,
-//                                           openGLView,
-//                                           openCLView,
-//                                           vulcanView,
-//                                           cudaView,
-//                                           shaderView
-                                                        ]
+                                               vendorView,
+                                               gpuCoresView,
+                                               gpuNameView,
+                                               tmusView,
+                                               ropsView,
+                                               lOneView]
+        
         let itemsForeCentralStackView: [UIView] = [lTwoView,
-                                                  baseClockView,
-                                                  boostClockView,
-                                                  memClockView,
-                                                  memSizeView,
-                                                  memTypeView,
-                                                  busView,
-                                                    ]
+                                                   baseClockView,
+                                                   boostClockView,
+                                                   memClockView,
+                                                   memSizeView,
+                                                   memTypeView,
+                                                   busView]
         
         let itemsForRightStackView: [UIView] = [tdpView,
                                                 psuView,
@@ -355,7 +343,6 @@ extension DescriptionView {
                                                 vulcanView,
                                                 cudaView,
                                                 shaderView]
-                                           
         
         for item in itemsForLeftStackView {
             leftInfoStackView.addArrangedSubview(item)
