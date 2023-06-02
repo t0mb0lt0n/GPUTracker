@@ -317,20 +317,17 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForStackView: [UIView] = [idView,
+        let itemsForLeftStackView: [UIView] = [idView,
                                            vendorView,
                                            gpuCoresView,
                                            gpuNameView,
                                            tmusView,
                                            ropsView,
                                            lOneView,
-//                                           lTwoView,
-//                                           baseClockView,
-//                                           boostClockView,
-//                                           memClockView,
-//                                           memSizeView,
-//                                           memTypeView,
-//                                           busView,
+//
+//
+//
+//                                          
 //                                           tdpView,
 //                                           psuView,
 //                                           directXView,
@@ -340,11 +337,23 @@ extension DescriptionView {
 //                                           cudaView,
 //                                           shaderView
                                                         ]
+        let itemsForeCenterStackView: [UIView] = [lTwoView,
+                                                  baseClockView,
+                                                  boostClockView,
+                                                  memClockView,
+                                                  memSizeView,
+                                                  memTypeView,
+                                                  busView,
+                                                    ]
                                            
         
-        for item in itemsForStackView {
+        for item in itemsForLeftStackView {
             leftInfoStackView.addArrangedSubview(item)
             print("subView added")
+        }
+        
+        for item in itemsForeCenterStackView {
+            rightInfoStackView.addArrangedSubview(item)
         }
     }
     
