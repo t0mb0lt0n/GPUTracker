@@ -12,13 +12,15 @@ class DescriptionView: UIView {
     
     let idView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 50, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "ID"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = 5
         view.addSubview(idLabel)
         view.backgroundColor = .orange
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.systemBlue.cgColor
         return view
     }()
     
@@ -301,7 +303,7 @@ extension DescriptionView {
 //        ])
 //    }
     
-    func setupStackView() {
+    func setupStackViews() {
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
         infoStackView.backgroundColor = .green
         infoStackView.axis = .vertical
@@ -349,8 +351,8 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             infoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             infoStackView.heightAnchor.constraint(equalToConstant: 300),
-            infoStackView.widthAnchor.constraint(equalToConstant: 270),
-            infoStackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0)
+            infoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            infoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -100)
         ])
     }
 }
