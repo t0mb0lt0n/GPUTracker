@@ -284,6 +284,8 @@ class DescriptionView: UIView {
     init() {
         super.init(frame: .zero)
         addSubview(leftInfoStackView)
+        addSubview(centralInfoStackView)
+        addSubview(rightInfoStackView)
         setupStackViews()
         //setupSubViewConstraints()
     }
@@ -364,7 +366,17 @@ extension DescriptionView {
             leftInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
             leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -100)
+            leftInfoStackView.trailingAnchor.constraint(equalTo: centralInfoStackView.leadingAnchor, constant: -3),
+            
+            centralInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            centralInfoStackView.heightAnchor.constraint(equalToConstant: 300),
+            centralInfoStackView.leadingAnchor.constraint(equalTo: leftInfoStackView.trailingAnchor, constant: 3),
+            centralInfoStackView.trailingAnchor.constraint(equalTo: rightInfoStackView.leadingAnchor, constant: -3),
+            
+            rightInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            rightInfoStackView.heightAnchor.constraint(equalToConstant: 300),
+            rightInfoStackView.leadingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor, constant: 3),
+            rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
         ])
     }
 }
