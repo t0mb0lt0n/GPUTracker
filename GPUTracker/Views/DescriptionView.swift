@@ -8,13 +8,20 @@
 import UIKit
 
 class DescriptionView: UIView {
-    let leftInfoStackView   = UIStackView()
-    let centralInfoStackView = UIStackView()
-    let rightInfoStackView  = UIStackView()
+    let leftInfoStackView       = UIStackView()
+    let centralInfoStackView    = UIStackView()
+    let rightInfoStackView      = UIStackView()
     
     let idView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.width, height: 20))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 200 , height: 20))
+//        idLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            idLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            idLabel.topAnchor.constraint(equalTo: view.topAnchor),
+//            idLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//        ])
         idLabel.textColor = .systemGray
         idLabel.backgroundColor = .red
         idLabel.text = "ID"
@@ -24,7 +31,7 @@ class DescriptionView: UIView {
         view.backgroundColor = .orange
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.systemBlue.cgColor
-        view.clipsToBounds = false
+        view.clipsToBounds = true
         return view
     }()
     
