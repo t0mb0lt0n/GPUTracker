@@ -43,12 +43,15 @@ class DescriptionView: UIView {
     }()
     
     let testLabel1: UILabel = {
-        let Label = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
+        let Label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         Label.textColor = .black
         Label.backgroundColor = .red
-        Label.text = "ID"
+        Label.text = "IDkjkljkljlkjklljk"
         Label.font = .systemFont(ofSize: 20, weight: .light)
-        Label.layer.borderWidth = 3
+        Label.layer.borderWidth = 1
+        Label.layer.cornerRadius = 7
+        Label.textAlignment = .center
+        Label.clipsToBounds = true
         
         return Label
     }()
@@ -355,7 +358,8 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             testLabel1.topAnchor.constraint(equalTo: testView.topAnchor, constant: 10),
             testLabel1.leadingAnchor.constraint(equalTo: testView.leadingAnchor, constant: 10),
-            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3)
+            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3),
+            testLabel1.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
