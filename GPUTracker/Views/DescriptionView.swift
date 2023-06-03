@@ -12,9 +12,51 @@ class DescriptionView: UIView {
     let centralInfoStackView    = UIStackView()
     let rightInfoStackView      = UIStackView()
     
+    let testView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 7
+        view.backgroundColor = .systemGray6
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let testView2: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 7
+        view.backgroundColor = .systemGray6
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let testView3: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 7
+        view.backgroundColor = .systemGray6
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let testLabel1: UILabel = {
+        let Label = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
+        Label.textColor = .black
+        Label.backgroundColor = .red
+        Label.text = "ID"
+        Label.font = .systemFont(ofSize: 20, weight: .light)
+        Label.layer.borderWidth = 3
+        
+        return Label
+    }()
+
+    
     let idView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 200 , height: 20))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
 //        idLabel.translatesAutoresizingMaskIntoConstraints = false
 //        NSLayoutConstraint.activate([
 //            idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -22,29 +64,29 @@ class DescriptionView: UIView {
 //            idLabel.topAnchor.constraint(equalTo: view.topAnchor),
 //            idLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 //        ])
-        idLabel.textColor = .systemGray
-        idLabel.backgroundColor = .red
+        idLabel.textColor = .black
+        //idLabel.backgroundColor = .red
         idLabel.text = "ID"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.layer.cornerRadius = 5
+        idLabel.font = .systemFont(ofSize: 20, weight: .light)
+        idLabel.layer.borderWidth = 3
+        view.layer.cornerRadius = 7
         view.addSubview(idLabel)
-        view.backgroundColor = .orange
+        //view.backgroundColor = .orange
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.systemBlue.cgColor
+        view.layer.borderColor = UIColor.black.cgColor
         view.clipsToBounds = true
         return view
     }()
     
     let vendorView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.width, height: 20))
-        idLabel.textColor = .systemGray
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
+        idLabel.textColor = .black
         idLabel.text = "Vendor"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.backgroundColor = .blue
         view.layer.cornerRadius = 10
         view.addSubview(idLabel)
-        view.backgroundColor = .orange
         return view
     }()
     
@@ -295,7 +337,9 @@ class DescriptionView: UIView {
         addSubview(leftInfoStackView)
         addSubview(centralInfoStackView)
         addSubview(rightInfoStackView)
+        addSubview(testLabel1)
         setupStackViews()
+        setupLabelConstraints()
         //setupSubViewConstraints()
     }
     
@@ -305,23 +349,22 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-//    func setupSubViewConstraints() {
-//        idView.translatesAutoresizingMaskIntoConstraints = false
-//        vendorView.translatesAutoresizingMaskIntoConstraints = false
-//        gpuCoresView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            idView.widthAnchor.constraint(equalToConstant: 100),
-//            vendorView.widthAnchor.constraint(equalToConstant: 150),
-//            gpuCoresView.widthAnchor.constraint(equalToConstant: 200),
-//        ])
-//    }
+    
+    func setupLabelConstraints() {
+        testLabel1.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            testLabel1.topAnchor.constraint(equalTo: testView.topAnchor, constant: 10),
+            testLabel1.leadingAnchor.constraint(equalTo: testView.leadingAnchor, constant: 10),
+            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3)
+        ])
+    }
     
     func setupStackViews() {
         leftInfoStackView.translatesAutoresizingMaskIntoConstraints     = false
         centralInfoStackView.translatesAutoresizingMaskIntoConstraints  = false
         rightInfoStackView.translatesAutoresizingMaskIntoConstraints    = false
         
-        leftInfoStackView.backgroundColor = .green
+        
         leftInfoStackView.axis            = .vertical
         leftInfoStackView.distribution    = .fillEqually
         leftInfoStackView.alignment       = .fill
@@ -345,13 +388,16 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForLeftStackView: [UIView] = [idView,
-                                               vendorView,
-                                               gpuCoresView,
-                                               gpuNameView,
-                                               tmusView,
-                                               ropsView,
-                                               lOneView]
+        let itemsForLeftStackView: [UIView] = [ testView,
+                                                testView2,
+        testView3]
+                                                //idView,
+//                                               vendorView,
+//                                               gpuCoresView,
+//                                               gpuNameView,
+//                                               tmusView,
+//                                               ropsView,
+//                                               lOneView]
         
         let itemsForeCentralStackView: [UIView] = [lTwoView,
                                                    baseClockView,
