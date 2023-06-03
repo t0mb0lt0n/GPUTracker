@@ -13,9 +13,10 @@ class DescriptionView: UIView {
     let rightInfoStackView  = UIStackView()
     
     let idView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 50, height: 20))
+        let view = UIView()
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.width, height: 20))
         idLabel.textColor = .systemGray
+        idLabel.backgroundColor = .red
         idLabel.text = "ID"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
         view.layer.cornerRadius = 5
@@ -23,12 +24,13 @@ class DescriptionView: UIView {
         view.backgroundColor = .orange
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.systemBlue.cgColor
+        view.clipsToBounds = false
         return view
     }()
     
     let vendorView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: view.frame.width, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "Vendor"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -41,7 +43,7 @@ class DescriptionView: UIView {
     
     let gpuCoresView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 50, height: 20))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 50, height: 20))
         idLabel.textColor = .systemGray
         idLabel.text = "gpuCores"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -54,7 +56,7 @@ class DescriptionView: UIView {
     
     let gpuNameView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "gpuName"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -66,7 +68,7 @@ class DescriptionView: UIView {
     
     let tmusView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "tmus"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -78,7 +80,7 @@ class DescriptionView: UIView {
     
     let ropsView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "rops"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -90,7 +92,7 @@ class DescriptionView: UIView {
     
     let lOneView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "l1"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -102,7 +104,7 @@ class DescriptionView: UIView {
     
     let lTwoView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "l2"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -114,7 +116,7 @@ class DescriptionView: UIView {
     
     let baseClockView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "baseclc"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -126,7 +128,7 @@ class DescriptionView: UIView {
     
     let boostClockView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "boostclc"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -138,7 +140,7 @@ class DescriptionView: UIView {
     
     let memClockView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "memclc"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -150,7 +152,7 @@ class DescriptionView: UIView {
     
     let memSizeView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "memsize"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -162,7 +164,7 @@ class DescriptionView: UIView {
     
     let memTypeView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "memType"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -174,7 +176,7 @@ class DescriptionView: UIView {
     
     let busView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "bus"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -186,7 +188,7 @@ class DescriptionView: UIView {
     
     let tdpView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "tdp"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -198,7 +200,7 @@ class DescriptionView: UIView {
     
     let psuView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "psu"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -210,7 +212,7 @@ class DescriptionView: UIView {
     
     let directXView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "directx"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -222,7 +224,7 @@ class DescriptionView: UIView {
     
     let openGLView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "openGl"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -234,7 +236,7 @@ class DescriptionView: UIView {
     
     let openCLView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "openCl"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -246,7 +248,7 @@ class DescriptionView: UIView {
     
     let vulcanView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "vulcan"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -258,7 +260,7 @@ class DescriptionView: UIView {
     
     let cudaView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "cuda"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -270,7 +272,7 @@ class DescriptionView: UIView {
     
     let shaderView: UIView = {
         let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 20, height: 10))
+        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
         idLabel.textColor = .systemGray
         idLabel.text = "sahder"
         idLabel.font = .systemFont(ofSize: 15, weight: .light)
@@ -311,11 +313,26 @@ extension DescriptionView {
         leftInfoStackView.translatesAutoresizingMaskIntoConstraints     = false
         centralInfoStackView.translatesAutoresizingMaskIntoConstraints  = false
         rightInfoStackView.translatesAutoresizingMaskIntoConstraints    = false
+        
         leftInfoStackView.backgroundColor = .green
         leftInfoStackView.axis            = .vertical
         leftInfoStackView.distribution    = .fillEqually
         leftInfoStackView.alignment       = .fill
-        leftInfoStackView.spacing         = 20
+        leftInfoStackView.spacing         = 5
+        
+        centralInfoStackView.backgroundColor = .green
+        centralInfoStackView.axis            = .vertical
+        centralInfoStackView.distribution    = .fillEqually
+        centralInfoStackView.alignment       = .fill
+        centralInfoStackView.spacing         = 5
+        
+        rightInfoStackView.backgroundColor = .green
+        rightInfoStackView.axis            = .vertical
+        rightInfoStackView.distribution    = .fillEqually
+        rightInfoStackView.alignment       = .fill
+        rightInfoStackView.spacing         = 5
+        
+        
         addItemsToStackView()
         setupConstraintsForStackView()
     }
@@ -365,18 +382,24 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             leftInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-            leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 3),
+            //leftInfoStackView.widthAnchor.constraint(equalToConstant: 20),
             leftInfoStackView.trailingAnchor.constraint(equalTo: centralInfoStackView.leadingAnchor, constant: -3),
             
             centralInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             centralInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-            centralInfoStackView.leadingAnchor.constraint(equalTo: leftInfoStackView.trailingAnchor, constant: 3),
-            centralInfoStackView.trailingAnchor.constraint(equalTo: rightInfoStackView.leadingAnchor, constant: -3),
+            //centralInfoStackView.leadingAnchor.constraint(equalTo: leftInfoStackView.trailingAnchor, constant: 3),
+            //centralInfoStackView.trailingAnchor.constraint(equalTo: rightInfoStackView.leadingAnchor, constant: -3),
+            centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
+            centralInfoStackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+
             
             rightInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             rightInfoStackView.heightAnchor.constraint(equalToConstant: 300),
             rightInfoStackView.leadingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor, constant: 3),
             rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
+            //rightInfoStackView.widthAnchor.constraint(equalToConstant: 20),
+
         ])
     }
 }
