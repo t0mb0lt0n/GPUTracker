@@ -413,11 +413,7 @@ class DescriptionView: UIView {
     //MARK: - init
     init() {
         super.init(frame: .zero)
-        addSubview(leftInfoStackView)
-        addSubview(centralInfoStackView)
-        addSubview(rightInfoStackView)
         setupStackViews()
-        setupLabelConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -426,15 +422,15 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-    
-    func setupLabelConstraints() {
-
-    }
-    
     func setupStackViews() {
-        leftInfoStackView.translatesAutoresizingMaskIntoConstraints     = false
-        centralInfoStackView.translatesAutoresizingMaskIntoConstraints  = false
-        rightInfoStackView.translatesAutoresizingMaskIntoConstraints    = false
+        let stackViews: [UIStackView] = [leftInfoStackView,
+                                         centralInfoStackView,
+                                         rightInfoStackView]
+        stackViews.forEach { subView in
+            subView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(subView)
+        }
+        
         //left stackView cfg
         leftInfoStackView.axis            = .vertical
         leftInfoStackView.distribution    = .fillEqually
@@ -450,7 +446,6 @@ extension DescriptionView {
         rightInfoStackView.distribution    = .fillEqually
         rightInfoStackView.alignment       = .fill
         rightInfoStackView.spacing         = 5
-        
         addItemsToStackView()
         setupConstraintsForStackView()
     }
@@ -501,13 +496,10 @@ extension DescriptionView {
             leftInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
             leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 3),
-            //leftInfoStackView.widthAnchor.constraint(equalToConstant: 20),
             leftInfoStackView.trailingAnchor.constraint(equalTo: centralInfoStackView.leadingAnchor, constant: -3),
             
             centralInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             centralInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-            //centralInfoStackView.leadingAnchor.constraint(equalTo: leftInfoStackView.trailingAnchor, constant: 3),
-            //centralInfoStackView.trailingAnchor.constraint(equalTo: rightInfoStackView.leadingAnchor, constant: -3),
             centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
             centralInfoStackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
 
@@ -516,8 +508,6 @@ extension DescriptionView {
             rightInfoStackView.heightAnchor.constraint(equalToConstant: 270),
             rightInfoStackView.leadingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor, constant: 3),
             rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
-            //rightInfoStackView.widthAnchor.constraint(equalToConstant: 20),
-
         ])
     }
 }
