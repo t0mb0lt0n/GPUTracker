@@ -12,37 +12,8 @@ class DescriptionView: UIView {
     let centralInfoStackView    = UIStackView()
     let rightInfoStackView      = UIStackView()
     
-    let testView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 7
-        view.backgroundColor = .systemGray6
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.clipsToBounds = true
-        return view
-    }()
     
-    let testView2: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 7
-        view.backgroundColor = .systemGray6
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    let testView3: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 7
-        view.backgroundColor = .systemGray6
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    let testLabel1: PaddingLabel = {
+    let idLabel: PaddingLabel = {
         let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
         label.textColor = .black
         label.backgroundColor = .red
@@ -53,10 +24,117 @@ class DescriptionView: UIView {
         label.textAlignment = .center
         label.leftInset = 10
         label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
         label.clipsToBounds = true
         
         return label
     }()
+    
+    let vendorLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        
+        return label
+    }()
+    
+    let gpuCoresLabe: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let gpuNameLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let tmusLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let ropsLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let lOneLabel: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+
+
 
     
     let idView: UIView = {
@@ -342,10 +420,8 @@ class DescriptionView: UIView {
         addSubview(leftInfoStackView)
         addSubview(centralInfoStackView)
         addSubview(rightInfoStackView)
-        addSubview(testLabel1)
         setupStackViews()
         setupLabelConstraints()
-        //setupSubViewConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -356,13 +432,13 @@ class DescriptionView: UIView {
 extension DescriptionView {
     
     func setupLabelConstraints() {
-        testLabel1.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            testLabel1.topAnchor.constraint(equalTo: testView.topAnchor, constant: 10),
-            testLabel1.leadingAnchor.constraint(equalTo: testView.leadingAnchor, constant: 10),
-            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3),
-            testLabel1.heightAnchor.constraint(equalToConstant: 50)
-        ])
+//        testLabel1.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            testLabel1.topAnchor.constraint(equalTo: testView.topAnchor, constant: 10),
+//            testLabel1.leadingAnchor.constraint(equalTo: testView.leadingAnchor, constant: 10),
+//            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3),
+//            //testLabel1.heightAnchor.constraint(equalToConstant: 50)
+//        ])
     }
     
     func setupStackViews() {
@@ -394,16 +470,13 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForLeftStackView: [UIView] = [ testView,
-                                                testView2,
-        testView3]
-                                                //idView,
-//                                               vendorView,
-//                                               gpuCoresView,
-//                                               gpuNameView,
-//                                               tmusView,
-//                                               ropsView,
-//                                               lOneView]
+        let itemsForLeftStackView: [UIView] = [idLabel,
+                                               vendorLabel,
+                                               gpuCoresLabe,
+                                               gpuNameLabel,
+                                               tmusLabel,
+                                               ropsLabel,
+                                               lOneLabel]
         
         let itemsForeCentralStackView: [UIView] = [lTwoView,
                                                    baseClockView,
