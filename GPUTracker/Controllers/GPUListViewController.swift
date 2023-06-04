@@ -66,7 +66,7 @@ extension GPUListViewController: UITableViewDelegate {
             let selectedGPU = getGPUFields(with: indexPath.row)
             targetVC.mainView?.idLabel.text = selectedGPU["id"]
             targetVC.mainView?.gpuNameLabel.text = "Chip \(selectedGPU["gpName"] ?? "not found")"
-            targetVC.mainView?.gpuCoresLabel.text = "Cores \(selectedGPU["gpuCores"] ?? "not found")"
+            
             present(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()

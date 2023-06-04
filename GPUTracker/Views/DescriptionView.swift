@@ -8,9 +8,16 @@
 import UIKit
 
 class DescriptionView: UIView {
-    let leftInfoStackView       = UIStackView()
+    let leftInfoStackView       = UIStackView(frame: CGRect(x: 0, y: 0, width: 100, height: 1000))
     let centralInfoStackView    = UIStackView()
     let rightInfoStackView      = UIStackView()
+    
+    let specScrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.contentSize = CGSize(width: 300, height: 1500)
+        return scrollView
+    }()
     
     let idLabel: PaddingLabel = {
         let label = PaddingLabel()
@@ -410,10 +417,29 @@ class DescriptionView: UIView {
         return label
     }()
     
+    let shaderLabel2: UILabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 200))
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
     //MARK: - init
     init() {
         super.init(frame: .zero)
         setupStackViews()
+        addSubview(specScrollView)
     }
     
     required init?(coder: NSCoder) {
@@ -447,7 +473,7 @@ extension DescriptionView {
         rightInfoStackView.alignment       = .fill
         rightInfoStackView.spacing         = 5
         addItemsToStackView()
-        setupConstraintsForStackView()
+        //setupConstraintsForStackView()
     }
     
     private func addItemsToStackView() {
@@ -488,6 +514,7 @@ extension DescriptionView {
         for item in itemsForRightStackView {
             rightInfoStackView.addArrangedSubview(item)
         }
+        specScrollView.addSubview(leftInfoStackView)
     }
     
     private func setupConstraintsForStackView() {
