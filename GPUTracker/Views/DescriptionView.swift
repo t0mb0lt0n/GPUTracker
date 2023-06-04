@@ -49,7 +49,7 @@ class DescriptionView: UIView {
         return label
     }()
     
-    let gpuCoresLabe: PaddingLabel = {
+    let gpuCoresLabel: PaddingLabel = {
         let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
         label.textColor = .black
         label.backgroundColor = .red
@@ -472,7 +472,7 @@ extension DescriptionView {
     private func addItemsToStackView() {
         let itemsForLeftStackView: [UIView] = [idLabel,
                                                vendorLabel,
-                                               gpuCoresLabe,
+                                               gpuCoresLabel,
                                                gpuNameLabel,
                                                tmusLabel,
                                                ropsLabel,

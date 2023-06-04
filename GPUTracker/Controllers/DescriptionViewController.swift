@@ -8,7 +8,7 @@
 import UIKit
 
 class DescriptionViewController: UIViewController {
-    private lazy var mainView = view as? DescriptionView
+    lazy var mainView = view as? DescriptionView
     
     override func viewDidLoad() {
         super.viewDidLoad()

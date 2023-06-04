@@ -62,7 +62,11 @@ extension GPUListViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = DescriptionViewController()
-            // MARK: - DB test zone
+// MARK: - DB test zone
+            let selectedGPU = getGPUFields(with: indexPath.row)
+            targetVC.mainView?.idLabel.text = selectedGPU["id"]
+            targetVC.mainView?.gpuNameLabel.text = selectedGPU["gpName"]
+            targetVC.mainView?.gpuCoresLabel.text = selectedGPU["gpuCores"]
             present(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()
