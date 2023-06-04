@@ -42,18 +42,20 @@ class DescriptionView: UIView {
         return view
     }()
     
-    let testLabel1: UILabel = {
-        let Label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        Label.textColor = .black
-        Label.backgroundColor = .red
-        Label.text = "IDkjkljkljlkjklljk"
-        Label.font = .systemFont(ofSize: 20, weight: .light)
-        Label.layer.borderWidth = 1
-        Label.layer.cornerRadius = 7
-        Label.textAlignment = .center
-        Label.clipsToBounds = true
+    let testLabel1: PaddingLabel = {
+        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        label.textColor = .black
+        label.backgroundColor = .red
+        label.text = "IDkjkljkljlkjklljk"
+        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 10
+        label.rightInset = 10
+        label.clipsToBounds = true
         
-        return Label
+        return label
     }()
 
     
