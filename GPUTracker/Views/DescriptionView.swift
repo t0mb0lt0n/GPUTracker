@@ -37,7 +37,9 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
@@ -50,10 +52,12 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 18, weight: .light)
-        label.layer.borderWidth = 1
+        //label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.4673101961, green: 0.7937609101, blue: 1, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .lightText
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
@@ -69,7 +73,9 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
@@ -85,7 +91,9 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
@@ -101,7 +109,9 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
@@ -117,7 +127,9 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
