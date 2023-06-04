@@ -137,189 +137,133 @@ class DescriptionView: UIView {
         label.clipsToBounds = true
         return label
     }()
+    
 
-
-
     
-    let idView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
-//        idLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            idLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            idLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            idLabel.topAnchor.constraint(equalTo: view.topAnchor),
-//            idLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//        ])
-        idLabel.textColor = .black
-        //idLabel.backgroundColor = .red
-        idLabel.text = "ID"
-        idLabel.font = .systemFont(ofSize: 20, weight: .light)
-        idLabel.layer.borderWidth = 3
-        view.layer.cornerRadius = 7
-        view.addSubview(idLabel)
-        //view.backgroundColor = .orange
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.clipsToBounds = true
-        return view
+    let lTwoLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let vendorView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 9, width: 200 , height: 20))
-        idLabel.textColor = .black
-        idLabel.text = "Vendor"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let baseClockLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let gpuCoresView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 50, height: 20))
-        idLabel.textColor = .systemGray
-        idLabel.text = "gpuCores"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        view.backgroundColor = .orange
-        return view
+    let boostClockLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let gpuNameView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "gpuName"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        view.backgroundColor = .orange
-        return view
+    let memClockLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let tmusView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "tmus"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .orange
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let memSizeLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let ropsView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "rops"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let memTypeLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let lOneView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "l1"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let lTwoView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "l2"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let baseClockView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "baseclc"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let boostClockView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "boostclc"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let memClockView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "memclc"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let memSizeView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "memsize"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let memTypeView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "memType"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
-    }()
-    
-    let busView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "bus"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let busLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
     let tdpView: UIView = {
@@ -436,38 +380,29 @@ class DescriptionView: UIView {
 extension DescriptionView {
     
     func setupLabelConstraints() {
-//        testLabel1.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            testLabel1.topAnchor.constraint(equalTo: testView.topAnchor, constant: 10),
-//            testLabel1.leadingAnchor.constraint(equalTo: testView.leadingAnchor, constant: 10),
-//            testLabel1.trailingAnchor.constraint(equalTo: testView.trailingAnchor, constant: -3),
-//            //testLabel1.heightAnchor.constraint(equalToConstant: 50)
-//        ])
+
     }
     
     func setupStackViews() {
         leftInfoStackView.translatesAutoresizingMaskIntoConstraints     = false
         centralInfoStackView.translatesAutoresizingMaskIntoConstraints  = false
         rightInfoStackView.translatesAutoresizingMaskIntoConstraints    = false
-        
-        
+        //left stackView cfg
         leftInfoStackView.axis            = .vertical
         leftInfoStackView.distribution    = .fillEqually
         leftInfoStackView.alignment       = .fill
         leftInfoStackView.spacing         = 5
-        
-        centralInfoStackView.backgroundColor = .green
+        //crntral stackView cfg
         centralInfoStackView.axis            = .vertical
         centralInfoStackView.distribution    = .fillEqually
         centralInfoStackView.alignment       = .fill
         centralInfoStackView.spacing         = 5
-        
+        //right stackView cfg
         rightInfoStackView.backgroundColor = .green
         rightInfoStackView.axis            = .vertical
         rightInfoStackView.distribution    = .fillEqually
         rightInfoStackView.alignment       = .fill
         rightInfoStackView.spacing         = 5
-        
         
         addItemsToStackView()
         setupConstraintsForStackView()
@@ -482,13 +417,13 @@ extension DescriptionView {
                                                ropsLabel,
                                                lOneLabel]
         
-        let itemsForeCentralStackView: [UIView] = [lTwoView,
-                                                   baseClockView,
-                                                   boostClockView,
-                                                   memClockView,
-                                                   memSizeView,
-                                                   memTypeView,
-                                                   busView]
+        let itemsForeCentralStackView: [UIView] = [lTwoLabel,
+                                                   baseClockLabel,
+                                                   boostClockLabel,
+                                                   memClockLabel,
+                                                   memSizeLabel,
+                                                   memTypeLabel,
+                                                   busLabel]
         
         let itemsForRightStackView: [UIView] = [tdpView,
                                                 psuView,
