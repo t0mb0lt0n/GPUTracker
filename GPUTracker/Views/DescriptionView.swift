@@ -12,122 +12,114 @@ class DescriptionView: UIView {
     let centralInfoStackView    = UIStackView()
     let rightInfoStackView      = UIStackView()
     
-    
     let idLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
         label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        
-        return label
-    }()
-    
-    let vendorLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
-        label.layer.borderWidth = 1
-        label.layer.cornerRadius = 7
-        label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        
-        return label
-    }()
-    
-    let gpuCoresLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
-        label.layer.borderWidth = 1
-        label.layer.cornerRadius = 7
-        label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
         return label
     }()
     
-    let gpuNameLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
+    let vendorLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
+        label.leftInset = 5
+        label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
         return label
     }()
     
-    let tmusLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
+    let gpuCoresLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
+        label.leftInset = 5
+        label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
         return label
     }()
     
-    let ropsLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
+    let gpuNameLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
+        label.leftInset = 5
+        label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
         return label
     }()
     
-    let lOneLabel: PaddingLabel = {
-        let label = PaddingLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        label.textColor = .black
-        label.backgroundColor = .red
-        label.text = "IDkjkljkljlkjklljk"
-        label.font = .systemFont(ofSize: 20, weight: .light)
+    let tmusLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
         label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.textAlignment = .center
-        label.leftInset = 10
-        label.rightInset = 10
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let ropsLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let lOneLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.textAlignment = .center
+        label.leftInset = 5
+        label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
