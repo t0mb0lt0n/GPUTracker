@@ -266,100 +266,148 @@ class DescriptionView: UIView {
         return label
     }()
     
-    let tdpView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "tdp"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let tdpLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let psuView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "psu"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let psuLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let directXView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "directx"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let directXLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let openGLView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "openGl"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let openGLLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let openCLView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "openCl"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let openCLLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let vulcanView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "vulcan"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let vulcanLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let cudaView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "cuda"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let cudaLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
-    let shaderView: UIView = {
-        let view = UIView()
-        let idLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 20, height: 10))
-        idLabel.textColor = .systemGray
-        idLabel.text = "sahder"
-        idLabel.font = .systemFont(ofSize: 15, weight: .light)
-        view.backgroundColor = .blue
-        view.layer.cornerRadius = 10
-        view.addSubview(idLabel)
-        return view
+    let shaderLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.layer.borderWidth = 1
+        label.layer.borderColor = UIColor.systemGray.cgColor
+        label.layer.cornerRadius = 7
+        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
     }()
     
     //MARK: - init
@@ -392,13 +440,12 @@ extension DescriptionView {
         leftInfoStackView.distribution    = .fillEqually
         leftInfoStackView.alignment       = .fill
         leftInfoStackView.spacing         = 5
-        //crntral stackView cfg
+        //central stackView cfg
         centralInfoStackView.axis            = .vertical
         centralInfoStackView.distribution    = .fillEqually
         centralInfoStackView.alignment       = .fill
         centralInfoStackView.spacing         = 5
         //right stackView cfg
-        rightInfoStackView.backgroundColor = .green
         rightInfoStackView.axis            = .vertical
         rightInfoStackView.distribution    = .fillEqually
         rightInfoStackView.alignment       = .fill
@@ -425,14 +472,14 @@ extension DescriptionView {
                                                    memTypeLabel,
                                                    busLabel]
         
-        let itemsForRightStackView: [UIView] = [tdpView,
-                                                psuView,
-                                                directXView,
-                                                openGLView,
-                                                openCLView,
-                                                vulcanView,
-                                                cudaView,
-                                                shaderView]
+        let itemsForRightStackView: [UIView] = [tdpLabel,
+                                                psuLabel,
+                                                directXLabel,
+                                                openGLLabel,
+                                                openCLLabel,
+                                                vulcanLabel,
+                                                cudaLabel,
+                                                shaderLabel]
         
         for item in itemsForLeftStackView {
             leftInfoStackView.addArrangedSubview(item)
@@ -466,7 +513,7 @@ extension DescriptionView {
 
             
             rightInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            rightInfoStackView.heightAnchor.constraint(equalToConstant: 300),
+            rightInfoStackView.heightAnchor.constraint(equalToConstant: 270),
             rightInfoStackView.leadingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor, constant: 3),
             rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
             //rightInfoStackView.widthAnchor.constraint(equalToConstant: 20),
