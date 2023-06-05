@@ -440,6 +440,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         setupStackViews()
         addSubview(specScrollView)
+        setupConstraintsForStackView2()
     }
     
     required init?(coder: NSCoder) {
@@ -474,6 +475,15 @@ extension DescriptionView {
         rightInfoStackView.spacing         = 5
         addItemsToStackView()
         //setupConstraintsForStackView()
+    }
+    
+    private func setupConstraintsForStackView2() {
+        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            leftInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            leftInfoStackView.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
+            leftInfoStackView.widthAnchor.constraint(equalToConstant: specScrollView.contentSize.width),
+        ])
     }
     
     private func addItemsToStackView() {
