@@ -575,6 +575,7 @@ extension UILabel {
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 10, weight: .bold), range: range)
         self.attributedText = attribute
     }
 }
