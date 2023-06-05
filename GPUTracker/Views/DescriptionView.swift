@@ -34,7 +34,7 @@ class DescriptionView: UIView {
         label.topInset = 3
         label.bottomInset = 3
         label.numberOfLines = 2
-        label.text.line
+        //label.text.line
         label.clipsToBounds = true
         return label
     }()
@@ -567,4 +567,14 @@ extension DescriptionView {
 //            rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
 //        ])
 //    }
+}
+
+extension UILabel {
+    func halfTextColorChange (fullText : String , changeText : String ) {
+        let strNumber: NSString = fullText as NSString
+        let range = (strNumber).range(of: changeText)
+        let attribute = NSMutableAttributedString.init(string: fullText)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
+        self.attributedText = attribute
+    }
 }
