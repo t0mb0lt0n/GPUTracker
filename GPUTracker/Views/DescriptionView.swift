@@ -484,10 +484,12 @@ extension DescriptionView {
     }
     
     private func setupConstraints() {
+        specScrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
             leftInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
