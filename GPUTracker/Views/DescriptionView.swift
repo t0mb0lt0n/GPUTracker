@@ -25,8 +25,8 @@ class DescriptionView: UIView {
         label.font = .systemFont(ofSize: 15, weight: .light)
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .systemFill
+        label.layer.cornerRadius = 10
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -46,7 +46,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -64,7 +64,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .lightText
         label.leftInset = 5
@@ -82,7 +82,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -100,7 +100,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -118,7 +118,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -136,7 +136,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -156,7 +156,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -174,7 +174,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -192,7 +192,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -210,7 +210,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -228,7 +228,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -246,7 +246,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -264,7 +264,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -282,7 +282,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -300,7 +300,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -318,7 +318,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -336,7 +336,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -354,7 +354,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -372,7 +372,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -390,7 +390,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -408,7 +408,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -426,7 +426,7 @@ class DescriptionView: UIView {
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemGray5
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
@@ -486,7 +486,7 @@ extension DescriptionView {
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 250),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
@@ -501,7 +501,7 @@ extension DescriptionView {
             centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             centralInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 5),
             centralInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            //centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
+            centralInfoStackView.heightAnchor.constraint(equalToConstant: 300)
             
             //centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             //centralInfoStackView.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
@@ -552,27 +552,6 @@ extension DescriptionView {
 //        specScrollView.addSubview(rightInfoStackView)
         
     }
-    
-//    private func setupConstraintsForStackView() {
-//        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            leftInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-//            leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-//            leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 3),
-//            leftInfoStackView.trailingAnchor.constraint(equalTo: centralInfoStackView.leadingAnchor, constant: -3),
-//
-//            centralInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-//            centralInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-//            centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
-//            centralInfoStackView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-//
-//
-//            rightInfoStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-//            rightInfoStackView.heightAnchor.constraint(equalToConstant: 270),
-//            rightInfoStackView.leadingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor, constant: 3),
-//            rightInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -3),
-//        ])
-//    }
 }
 
 extension UILabel {
@@ -581,7 +560,7 @@ extension UILabel {
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
-        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .bold), range: range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .semibold), range: range)
         self.attributedText = attribute
     }
 }
