@@ -8,7 +8,7 @@
 import UIKit
 
 class DescriptionView: UIView {
-    let leftInfoStackView       = UIStackView(frame: CGRect(x: 0, y: 0, width: 100, height: 1000))
+    let leftInfoStackView       = UIStackView()
     let centralInfoStackView    = UIStackView()
     let rightInfoStackView      = UIStackView()
     
@@ -484,18 +484,18 @@ extension DescriptionView {
     }
     
     private func setupConstraintsForStackView() {
-        leftInfoStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             leftInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -5),
+            leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
             //leftInfoStackView.le.constraint(equalTo: view?.center - 5),
             
             
             centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            centralInfoStackView.leadingAnchor.constraint(equalTo: leftInfoStackView.trailingAnchor),
-            centralInfoStackView.trailingAnchor.constraint(equalTo: centralInfoStackView.trailingAnchor),
-            centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
+            centralInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 5),
+            centralInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            //centralInfoStackView.widthAnchor.constraint(equalToConstant: 100),
             
             //centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             //centralInfoStackView.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
