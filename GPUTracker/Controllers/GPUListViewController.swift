@@ -69,11 +69,7 @@ extension GPUListViewController: UITableViewDelegate {
             targetVC.mainView?.idLabel.labelTextAttributesChange(fullText: (targetVC.mainView?.idLabel.text)!, changeText: "\(selectedGPU["id"]!)")
             targetVC.mainView?.gpuNameLabel.text = "Chip \(selectedGPU["gpName"] ?? "not found") \n GPU name"
             
-            func changeLabelAttributes(in labels: [UILabel], strings: [String]) {
-                label.forEach { label in
-                    label.labelTextAttributesChange(fullText: <#T##String#>, changeText: <#T##String#>)
-                }
-            }
+           
             
             
             present(targetVC, animated: true)
@@ -85,5 +81,13 @@ extension GPUListViewController: UITableViewDelegate {
         }
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension GPUListViewController {
+    func changeLabelAttributes(in labels: [UILabel], strings: [String]) {
+        labels.forEach { label in
+            label.labelTextAttributesChange(fullText: str, changeText: <#T##String#>)
+        }
     }
 }
