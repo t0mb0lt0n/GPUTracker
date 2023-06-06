@@ -22,18 +22,18 @@ class DescriptionView: UIView {
     let idLabel: PaddingLabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .light)
         label.layer.borderWidth = 1
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
-        label.backgroundColor = #colorLiteral(red: 0.760201905, green: 0.9570156739, blue: 0.8181600242, alpha: 1)
+        label.backgroundColor = .systemFill
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
-        label.numberOfLines = 2
+        label.numberOfLines = 1
         //label.text.line
         label.clipsToBounds = true
         return label
@@ -442,7 +442,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         setupStackViews()
         addSubview(specScrollView)
-        setupConstraintsForStackView()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -483,8 +483,12 @@ extension DescriptionView {
 
     }
     
-    private func setupConstraintsForStackView() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
+            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+            specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            
             leftInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
             leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -5),
@@ -575,7 +579,7 @@ extension UILabel {
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
-        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 10, weight: .bold), range: range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .bold), range: range)
         self.attributedText = attribute
     }
 }

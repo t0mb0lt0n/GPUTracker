@@ -64,9 +64,9 @@ extension GPUListViewController: UITableViewDelegate {
             let targetVC = DescriptionViewController()
 // MARK: - DB test zone
             let selectedGPU = getGPUFields(with: indexPath.row)
-            targetVC.mainView?.idLabel.text = "\(selectedGPU["gpName"] ?? "not found") \n num"
+            targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
             ///change line color
-            targetVC.mainView?.idLabel.halfTextColorChange(fullText: targetVC.mainView?.idLabel.text ?? "", changeText: "GK110")
+            targetVC.mainView?.idLabel.halfTextColorChange(fullText: targetVC.mainView?.idLabel.text ?? "", changeText: "\(selectedGPU["id"]!)")
             targetVC.mainView?.gpuNameLabel.text = "Chip \(selectedGPU["gpName"] ?? "not found") \n GPU name"
             
             
