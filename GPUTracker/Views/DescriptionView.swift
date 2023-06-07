@@ -453,11 +453,17 @@ extension DescriptionView {
         infoStackViewSectorThree.distribution    = .fillEqually
         infoStackViewSectorThree.alignment       = .fill
         infoStackViewSectorThree.spacing         = 5
+        
+        infoStackViewSectorFour.axis            = .vertical
+        infoStackViewSectorFour.distribution    = .fillEqually
+        infoStackViewSectorFour.alignment       = .fill
+        infoStackViewSectorFour.spacing         = 5
         addItemsToStackView()
-        //setupConstraintsForStackView()
         specScrollView.addSubview(infoStackViewSectorOne)
         specScrollView.addSubview(infoStackViewSectorTwo)
         specScrollView.addSubview(infoStackViewSectorThree)
+        specScrollView.addSubview(infoStackViewSectorFour)
+
     }
     
     private func setupConstraints() {
@@ -478,34 +484,34 @@ extension DescriptionView {
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 300),
             
-            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorTwo.bottomAnchor, constant: 3),
-            infoStackViewSectorThree.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
-            infoStackViewSectorThree.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
+            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorOne.bottomAnchor, constant: 3),
+            infoStackViewSectorThree.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            infoStackViewSectorThree.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
+            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: 250),
             
-            infoStackViewSectorFour.topAnchor.constraint(equalTo: infoStackViewSectorTwo.bottomAnchor, constant: 3),
+            infoStackViewSectorFour.topAnchor.constraint(equalTo: infoStackViewSectorThree.topAnchor),
             infoStackViewSectorFour.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
             infoStackViewSectorFour.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
+            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: 250),
         ])
     }
     
     private func addItemsToStackView() {
         let itemsForInfoStackViewSectorOne: [UIView] = [idLabel,
-                                               vendorLabel,
-                                               gpuCoresLabel,
-                                               gpuNameLabel,
-                                               tmusLabel,
-                                               ropsLabel,
-                                               lOneLabel]
+                                                        vendorLabel,
+                                                        gpuCoresLabel,
+                                                        gpuNameLabel,
+                                                        tmusLabel,
+                                                        ropsLabel,
+                                                        lOneLabel]
         
         let itemsForInfoStackViewSectorTwo: [UIView] = [lTwoLabel,
-                                                   baseClockLabel,
-                                                   boostClockLabel,
-                                                   memClockLabel,
-                                                   memSizeLabel,
-                                                   memTypeLabel,
-                                                   busLabel]
+                                                        baseClockLabel,
+                                                        boostClockLabel,
+                                                        memClockLabel,
+                                                        memSizeLabel,
+                                                        memTypeLabel,
+                                                        busLabel]
         
         let itemsForInfoStackViewSectorThree: [UIView] = [tdpLabel,
                                                           psuLabel,
