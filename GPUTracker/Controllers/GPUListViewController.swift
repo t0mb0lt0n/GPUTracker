@@ -64,10 +64,29 @@ extension GPUListViewController: UITableViewDelegate {
             let targetVC = DescriptionViewController()
 // MARK: - DB test zone
             let selectedGPU = getGPUFields(with: indexPath.row)
-            targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
-            ///change line color
-            //targetVC.mainView?.idLabel.labelTextAttributesChange(fullText: (targetVC.mainView?.idLabel.text)!, changeText: "\(selectedGPU["id"]!)")
-            targetVC.mainView?.gpuNameLabel.text = "PROCESSOR: \(selectedGPU["gpName"] ?? "not found") \n GPU name"
+            //targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
+            let prefixes = ["ID",
+                            "VENDOR",
+                            "GPU CORES",
+                            "PROCESSOR",
+                            "TMUs",
+                            "ROPs",
+                            "L1",
+                            "L2",
+                            "Base CLK",
+                            "BOOST CLK",
+                            "MEMORY SIZE",
+                            "MEMORY TYPE",
+                            "BUS",
+                            "TDP",
+                            "PSU",
+                            "DirectX",
+                            "openGL",
+                            "openCL",
+                            "VULCAN",
+                            "CUDA",
+                            "SHADER MODEL"]
+            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: [selectedGPU["id"]!])
             
             changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel,
                                        targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "",
@@ -87,6 +106,15 @@ extension GPUListViewController: UITableViewDelegate {
 }
 
 extension GPUListViewController {
+    func fillLabels(labels: [UILabel], prefix: [String], data: [String]) {
+        var i = 0
+        for label in labels {
+            label.text = "\(prefix[i]): \(data[i] ?? "not found")"
+            i += 1
+        }
+    }
+    
+    
     func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String]) {
         var i = 0
         for label in labels  {
@@ -95,3 +123,28 @@ extension GPUListViewController {
         }
     }
 }
+
+
+arr[index].get(positionField)),
+                 "id"          : try arr[index].get(idField),
+                 "vendor"      : try arr[index].get(vendorField),
+                 "gpuCores"    : try arr[index].get(gpuCoresField),
+                 "gpName"      : try arr[index].get(gpNameField),
+                 "tmus"        : try arr[index].get(tmusField),
+                 "rops"        : try arr[index].get(ropsField),
+                 "l1"          : try arr[index].get(l1Field),
+                 "l2"          : try arr[index].get(l2Field),
+                 "baseClock"   : try arr[index].get(baseClockField),
+                 "boostClock"  : try arr[index].get(boostClockField),
+                 "memClock"    : try arr[index].get(memClockField),
+                 "memSize"     : try arr[index].get(memSizeField),
+                 "memType"     : try arr[index].get(memTypeField),
+                 "bus"         : try arr[index].get(busField),
+                 "tdp"         : try arr[index].get(tdpField),
+                 "psu"         : try arr[index].get(psuField),
+                 "directx"     : try arr[index].get(directXField),
+                 "openGL"      : try arr[index].get(openGLField),
+                 "openCL"      : try arr[index].get(openCLField),
+                 "vulcan"      : try arr[index].get(vulcanField),
+                 "cuda"        : try arr[index].get(cudaVersionField),
+                 "shaderModel" : try arr[index].get(shaderModelField)]
