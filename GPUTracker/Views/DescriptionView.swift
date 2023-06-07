@@ -8,9 +8,10 @@
 import UIKit
 
 class DescriptionView: UIView {
-    let leftInfoStackView       = UIStackView()
-    let centralInfoStackView    = UIStackView()
-    let rightInfoStackView      = UIStackView()
+    let infoStackViewSectorOne       = UIStackView()
+    let infoStackViewSectorTwo       = UIStackView()
+    let infoStackViewSectorThree     = UIStackView()
+    let infoStackViewSectorFour      = UIStackView()
     
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -140,8 +141,6 @@ class DescriptionView: UIView {
         return label
     }()
     
-
-    
     let lTwoLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
@@ -224,6 +223,7 @@ class DescriptionView: UIView {
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
+        label.sizeToFit()
         return label
     }()
     
@@ -429,35 +429,35 @@ class DescriptionView: UIView {
 
 extension DescriptionView {
     func setupStackViews() {
-        let stackViews: [UIStackView] = [leftInfoStackView,
-                                         centralInfoStackView,
-                                         rightInfoStackView]
+        let stackViews: [UIStackView] = [infoStackViewSectorOne,
+                                         infoStackViewSectorTwo,
+                                         infoStackViewSectorThree,
+                                         infoStackViewSectorFour]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(subView)
         }
         
         //left stackView cfg
-        leftInfoStackView.axis            = .vertical
-        leftInfoStackView.distribution    = .fillEqually
-        leftInfoStackView.alignment       = .fill
-        leftInfoStackView.spacing         = 5
+        infoStackViewSectorOne.axis            = .vertical
+        infoStackViewSectorOne.distribution    = .fillEqually
+        infoStackViewSectorOne.alignment       = .fill
+        infoStackViewSectorOne.spacing         = 5
         //central stackView cfg
-        centralInfoStackView.axis            = .vertical
-        centralInfoStackView.distribution    = .fillEqually
-        centralInfoStackView.alignment       = .fill
-        centralInfoStackView.spacing         = 5
+        infoStackViewSectorTwo.axis            = .vertical
+        infoStackViewSectorTwo.distribution    = .fillEqually
+        infoStackViewSectorTwo.alignment       = .fill
+        infoStackViewSectorTwo.spacing         = 5
         //right stackView cfg
-        rightInfoStackView.axis            = .vertical
-        rightInfoStackView.distribution    = .fillEqually
-        rightInfoStackView.alignment       = .fill
-        rightInfoStackView.spacing         = 5
+        infoStackViewSectorThree.axis            = .vertical
+        infoStackViewSectorThree.distribution    = .fillEqually
+        infoStackViewSectorThree.alignment       = .fill
+        infoStackViewSectorThree.spacing         = 5
         addItemsToStackView()
         //setupConstraintsForStackView()
-        specScrollView.addSubview(leftInfoStackView)
-        specScrollView.addSubview(centralInfoStackView)
-        //specScrollView.addSubview(rightInfoStackView)
-
+        specScrollView.addSubview(infoStackViewSectorOne)
+        specScrollView.addSubview(infoStackViewSectorTwo)
+        specScrollView.addSubview(infoStackViewSectorThree)
     }
     
     private func setupConstraints() {
@@ -468,26 +468,30 @@ extension DescriptionView {
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
-            leftInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            leftInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            leftInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
-            leftInfoStackView.heightAnchor.constraint(equalToConstant: 300),
-            //leftInfoStackView.le.constraint(equalTo: view?.center - 5),
+            infoStackViewSectorOne.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
+            infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 300),
             
+            infoStackViewSectorTwo.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
+            infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 300),
             
-            centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            centralInfoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
-            centralInfoStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            centralInfoStackView.heightAnchor.constraint(equalToConstant: 300)
+            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorTwo.bottomAnchor, constant: 3),
+            infoStackViewSectorThree.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
+            infoStackViewSectorThree.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
             
-            //centralInfoStackView.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            //centralInfoStackView.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
-            //centralInfoStackView.widthAnchor.constraint(equalToConstant: specScrollView.contentSize.width),
+            infoStackViewSectorFour.topAnchor.constraint(equalTo: infoStackViewSectorTwo.bottomAnchor, constant: 3),
+            infoStackViewSectorFour.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
+            infoStackViewSectorFour.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: specScrollView.contentSize.height),
         ])
     }
     
     private func addItemsToStackView() {
-        let itemsForLeftStackView: [UIView] = [idLabel,
+        let itemsForInfoStackViewSectorOne: [UIView] = [idLabel,
                                                vendorLabel,
                                                gpuCoresLabel,
                                                gpuNameLabel,
@@ -495,7 +499,7 @@ extension DescriptionView {
                                                ropsLabel,
                                                lOneLabel]
         
-        let itemsForeCentralStackView: [UIView] = [lTwoLabel,
+        let itemsForInfoStackViewSectorTwo: [UIView] = [lTwoLabel,
                                                    baseClockLabel,
                                                    boostClockLabel,
                                                    memClockLabel,
@@ -503,31 +507,32 @@ extension DescriptionView {
                                                    memTypeLabel,
                                                    busLabel]
         
-        let itemsForRightStackView: [UIView] = [tdpLabel,
-                                                psuLabel,
-                                                directXLabel,
-                                                openGLLabel,
-                                                openCLLabel,
-                                                vulcanLabel,
-                                                cudaLabel,
-                                                shaderLabel]
+        let itemsForInfoStackViewSectorThree: [UIView] = [tdpLabel,
+                                                          psuLabel,
+                                                          directXLabel,
+                                                          openGLLabel]
+                                                
         
-        for item in itemsForLeftStackView {
-            leftInfoStackView.addArrangedSubview(item)
-            print("subView added")
+        let itemsForInfoStackViewSectorFour: [UIView] = [openCLLabel,
+                                                         vulcanLabel,
+                                                         cudaLabel,
+                                                         shaderLabel]
+        
+        for item in itemsForInfoStackViewSectorOne {
+            infoStackViewSectorOne.addArrangedSubview(item)
         }
         
-        for item in itemsForeCentralStackView {
-            centralInfoStackView.addArrangedSubview(item)
+        for item in itemsForInfoStackViewSectorTwo {
+            infoStackViewSectorTwo.addArrangedSubview(item)
         }
         
-        for item in itemsForRightStackView {
-            rightInfoStackView.addArrangedSubview(item)
+        for item in itemsForInfoStackViewSectorThree {
+            infoStackViewSectorThree.addArrangedSubview(item)
         }
-//        specScrollView.addSubview(leftInfoStackView)
-//        specScrollView.addSubview(centralInfoStackView)
-//        specScrollView.addSubview(rightInfoStackView)
         
+        for item in itemsForInfoStackViewSectorFour {
+            infoStackViewSectorFour.addArrangedSubview(item)
+        }
     }
 }
 
