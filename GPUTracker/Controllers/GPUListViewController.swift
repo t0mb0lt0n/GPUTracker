@@ -64,7 +64,6 @@ extension GPUListViewController: UITableViewDelegate {
             let targetVC = DescriptionViewController()
 // MARK: - DB test zone
             let selectedGPU = getGPUFields(with: indexPath.row)
-            //targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
             let prefixes = ["ID",
                             "VENDOR",
                             "GPU CORES",
@@ -86,7 +85,7 @@ extension GPUListViewController: UITableViewDelegate {
                             "openCL",
                             "VULCAN",
                             "CUDA",
-                            "SHADER MODEL"]
+                            "SHADERS"]
             
             let data = [selectedGPU["id"],
                         selectedGPU["vendor"],
@@ -136,8 +135,6 @@ extension GPUListViewController: UITableViewDelegate {
             
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
-            
-            
             present(targetVC, animated: true)
         case 1:
             let targetVC = UIViewController()
@@ -152,19 +149,18 @@ extension GPUListViewController: UITableViewDelegate {
 
 extension GPUListViewController {
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
-        var i = 0
+        var index = 0
         for label in labels {
-            label.text = "\(prefix[i]): \(data[i] ?? "not found")"
-            i += 1
+            label.text = "\(prefix[index]): \(data[index] ?? "not found")"
+            index += 1
         }
     }
     
-    
     func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
-        var i = 0
+        var index = 0
         for label in labels  {
-            label.labelTextAttributesChange(fullText: labels[i].text ?? "", changeText: strings[i] ?? "failed")
-            i += 1
+            label.labelTextAttributesChange(fullText: labels[index].text ?? "not found", changeText: strings[index] ?? "failed")
+            index += 1
         }
     }
 }
