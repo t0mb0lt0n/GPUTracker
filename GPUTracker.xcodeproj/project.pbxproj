@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */; };
 		11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */; };
+		114F57A92A30EAFC0032CB25 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 114F57A82A30EAFC0032CB25 /* gpuDB.db */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985F29E873EE009B3638 /* SceneDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
@@ -25,12 +26,12 @@
 		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
-		11D010082A0AB8E6009EB57E /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 11D010072A0AB8E6009EB57E /* gpuDB.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11460F8A2A001BA3005ABD42 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPU+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		114F57A82A30EAFC0032CB25 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156985F29E873EE009B3638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
-		11D010072A0AB8E6009EB57E /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 				1156986829E873F0009B3638 /* LaunchScreen.storyboard */,
 				1156986B29E873F0009B3638 /* Info.plist */,
 				1156986629E873F0009B3638 /* Assets.xcassets */,
-				11D010072A0AB8E6009EB57E /* gpuDB.db */,
+				114F57A82A30EAFC0032CB25 /* gpuDB.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D010082A0AB8E6009EB57E /* gpuDB.db in Resources */,
+				114F57A92A30EAFC0032CB25 /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
