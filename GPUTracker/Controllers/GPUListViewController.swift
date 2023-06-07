@@ -63,7 +63,7 @@ extension GPUListViewController: UITableViewDelegate {
         case 0:
             let targetVC = DescriptionViewController()
 // MARK: - DB test zone
-            let selectedGPU = String(getGPUFields(with: indexPath.row))
+            let selectedGPU = getGPUFields(with: indexPath.row)
             //targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
             let prefixes = ["ID",
                             "VENDOR",
@@ -110,11 +110,16 @@ extension GPUListViewController: UITableViewDelegate {
                         selectedGPU["cuda"],
                         selectedGPU["shaderModel"]]
             
-            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: data])
+            let specLabels = [targetVC.mainView!.idLabel,
+                              targetVC.mainView?.vendorLabel,
+                              targetVC.mainView?.gpuNameLabel,
+                              
+                
+            ]
             
-            changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel,
-                                       targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "",
-                                                                                    selectedGPU["gpName"] ?? ""])
+            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: data)
+            
+            //changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel, targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "", selectedGPU["gpName"] ?? ""])
             
             
             present(targetVC, animated: true)
@@ -130,7 +135,7 @@ extension GPUListViewController: UITableViewDelegate {
 }
 
 extension GPUListViewController {
-    func fillLabels(labels: [UILabel], prefix: [String], data: [String]) {
+    func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         var i = 0
         for label in labels {
             label.text = "\(prefix[i]): \(data[i] ?? "not found")"
