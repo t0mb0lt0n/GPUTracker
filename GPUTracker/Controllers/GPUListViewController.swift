@@ -63,7 +63,7 @@ extension GPUListViewController: UITableViewDelegate {
         case 0:
             let targetVC = DescriptionViewController()
 // MARK: - DB test zone
-            let selectedGPU = getGPUFields(with: indexPath.row)
+            let selectedGPU = String(getGPUFields(with: indexPath.row))
             //targetVC.mainView?.idLabel.text = "ID:  \(selectedGPU["id"] ?? "not found")"
             let prefixes = ["ID",
                             "VENDOR",
@@ -86,7 +86,31 @@ extension GPUListViewController: UITableViewDelegate {
                             "VULCAN",
                             "CUDA",
                             "SHADER MODEL"]
-            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: [selectedGPU["id"]!])
+            
+            let data = [selectedGPU["id"],
+                        selectedGPU["vendor"],
+                        selectedGPU["gpuCores"],
+                        selectedGPU["gpName"],
+                        selectedGPU["tmus"],
+                        selectedGPU["rops"],
+                        selectedGPU["l1"],
+                        selectedGPU["l2"],
+                        selectedGPU["baseClock"],
+                        selectedGPU["boostClock"],
+                        selectedGPU["memClock"],
+                        selectedGPU["memSize"],
+                        selectedGPU["memType"],
+                        selectedGPU["bus"],
+                        selectedGPU["tdp"],
+                        selectedGPU["psu"],
+                        selectedGPU["directx"],
+                        selectedGPU["openGL"],
+                        selectedGPU["openCL"],
+                        selectedGPU["vulcan"],
+                        selectedGPU["cuda"],
+                        selectedGPU["shaderModel"]]
+            
+            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: data])
             
             changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel,
                                        targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "",
@@ -125,26 +149,4 @@ extension GPUListViewController {
 }
 
 
-arr[index].get(positionField)),
-                 "id"          : try arr[index].get(idField),
-                 "vendor"      : try arr[index].get(vendorField),
-                 "gpuCores"    : try arr[index].get(gpuCoresField),
-                 "gpName"      : try arr[index].get(gpNameField),
-                 "tmus"        : try arr[index].get(tmusField),
-                 "rops"        : try arr[index].get(ropsField),
-                 "l1"          : try arr[index].get(l1Field),
-                 "l2"          : try arr[index].get(l2Field),
-                 "baseClock"   : try arr[index].get(baseClockField),
-                 "boostClock"  : try arr[index].get(boostClockField),
-                 "memClock"    : try arr[index].get(memClockField),
-                 "memSize"     : try arr[index].get(memSizeField),
-                 "memType"     : try arr[index].get(memTypeField),
-                 "bus"         : try arr[index].get(busField),
-                 "tdp"         : try arr[index].get(tdpField),
-                 "psu"         : try arr[index].get(psuField),
-                 "directx"     : try arr[index].get(directXField),
-                 "openGL"      : try arr[index].get(openGLField),
-                 "openCL"      : try arr[index].get(openCLField),
-                 "vulcan"      : try arr[index].get(vulcanField),
-                 "cuda"        : try arr[index].get(cudaVersionField),
-                 "shaderModel" : try arr[index].get(shaderModelField)]
+
