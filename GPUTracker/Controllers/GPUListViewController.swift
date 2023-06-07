@@ -75,6 +75,7 @@ extension GPUListViewController: UITableViewDelegate {
                             "L2",
                             "Base CLK",
                             "BOOST CLK",
+                            "MEMORY CLK",
                             "MEMORY SIZE",
                             "MEMORY TYPE",
                             "BUS",
@@ -111,14 +112,30 @@ extension GPUListViewController: UITableViewDelegate {
                         selectedGPU["shaderModel"]]
             
             let specLabels = [targetVC.mainView!.idLabel,
-                              targetVC.mainView?.vendorLabel,
-                              targetVC.mainView?.gpuNameLabel,
-                              
-                
-            ]
+                              targetVC.mainView!.vendorLabel,
+                              targetVC.mainView!.gpuCoresLabel,
+                              targetVC.mainView!.gpuNameLabel,
+                              targetVC.mainView!.tmusLabel,
+                              targetVC.mainView!.ropsLabel,
+                              targetVC.mainView!.lOneLabel,
+                              targetVC.mainView!.lTwoLabel,
+                              targetVC.mainView!.baseClockLabel,
+                              targetVC.mainView!.boostClockLabel,
+                              targetVC.mainView!.memClockLabel,
+                              targetVC.mainView!.memSizeLabel,
+                              targetVC.mainView!.memTypeLabel,
+                              targetVC.mainView!.busLabel,
+                              targetVC.mainView!.tdpLabel,
+                              targetVC.mainView!.psuLabel,
+                              targetVC.mainView!.directXLabel,
+                              targetVC.mainView!.openGLLabel,
+                              targetVC.mainView!.openCLLabel,
+                              targetVC.mainView!.vulcanLabel,
+                              targetVC.mainView!.cudaLabel,
+                              targetVC.mainView!.shaderLabel]
             
-            fillLabels(labels: [targetVC.mainView!.idLabel], prefix: prefixes, data: data)
-            
+            fillLabels(labels: specLabels, prefix: prefixes, data: data)
+            print(selectedGPU["gpuCores"])
             //changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel, targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "", selectedGPU["gpName"] ?? ""])
             
             

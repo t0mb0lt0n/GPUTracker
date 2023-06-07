@@ -58,12 +58,12 @@ class DescriptionView: UIView {
     let gpuCoresLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .light)
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
-        label.textColor = .lightText
+        label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
