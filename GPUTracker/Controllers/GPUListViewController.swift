@@ -135,8 +135,7 @@ extension GPUListViewController: UITableViewDelegate {
                               targetVC.mainView!.shaderLabel]
             
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
-            print(selectedGPU["gpuCores"])
-            //changeLabelAttributes(inLabels: [targetVC.mainView!.idLabel, targetVC.mainView!.gpuNameLabel], inStrings: [selectedGPU["id"] ?? "", selectedGPU["gpName"] ?? ""])
+            changeLabelAttributes(inLabels: specLabels, inStrings: data)
             
             
             present(targetVC, animated: true)
@@ -161,10 +160,10 @@ extension GPUListViewController {
     }
     
     
-    func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String]) {
+    func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
         var i = 0
         for label in labels  {
-            label.labelTextAttributesChange(fullText: labels[i].text ?? "", changeText: strings[i])
+            label.labelTextAttributesChange(fullText: labels[i].text ?? "", changeText: strings[i] ?? "failed")
             i += 1
         }
     }
