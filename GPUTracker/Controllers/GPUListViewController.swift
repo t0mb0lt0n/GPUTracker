@@ -66,18 +66,18 @@ extension GPUListViewController: UITableViewDelegate {
             let selectedGPU = getGPUFields(with: indexPath.row)
             let prefixes = ["ID",
                             "VENDOR",
-                            "GPU CORES",
+                            "CORES",
                             "PROCESSOR",
                             "TMUs",
                             "ROPs",
                             "L1",
                             "L2",
-                            "Base CLK",
+                            "BASE CLK",
                             "BOOST CLK",
                             "MEMORY CLK",
                             "MEMORY SIZE",
                             "MEMORY TYPE",
-                            "BUS",
+                            "BUS WIDTH",
                             "TDP",
                             "PSU",
                             "DirectX",
@@ -151,7 +151,7 @@ extension GPUListViewController {
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         var index = 0
         for label in labels {
-            label.text = "\(prefix[index]): \(data[index] ?? "not found")"
+            label.text = "\(prefix[index])  \(data[index] ?? "not found")"
             index += 1
         }
     }

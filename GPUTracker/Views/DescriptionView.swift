@@ -16,7 +16,7 @@ class DescriptionView: UIView {
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
-        scrollView.contentSize = CGSize(width: 300, height: 1500)
+        scrollView.contentSize = CGSize(width: 0, height: 500)
         return scrollView
     }()
     
@@ -195,7 +195,7 @@ class DescriptionView: UIView {
     let memClockLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .light)
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
@@ -212,7 +212,7 @@ class DescriptionView: UIView {
     let memSizeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .light)
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
@@ -230,14 +230,14 @@ class DescriptionView: UIView {
     let memTypeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = .systemFont(ofSize: 12, weight: .light)
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
         label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
+        label.leftInset = 3
+        label.rightInset = 3
         label.topInset = 3
         label.bottomInset = 3
         label.clipsToBounds = true
@@ -466,15 +466,15 @@ extension DescriptionView {
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 300),
             
-            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorOne.bottomAnchor, constant: 3),
+            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorOne.bottomAnchor, constant: 5),
             infoStackViewSectorThree.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
             infoStackViewSectorThree.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
-            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: 250),
+            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: 180),
             
             infoStackViewSectorFour.topAnchor.constraint(equalTo: infoStackViewSectorThree.topAnchor),
             infoStackViewSectorFour.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
             infoStackViewSectorFour.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: 250),
+            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     
