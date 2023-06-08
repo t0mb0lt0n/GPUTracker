@@ -45,10 +45,9 @@ extension GPUListViewController: UITableViewDataSource {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
         let gpuFieldsData = getGPUFields(with: indexPath.row)
-        customCell.cardNameLabel.text = gpuFieldsData["id"]
-        customCell.descriptionLabel.text = "\(gpuFieldsData["gpName"]!)"
-        customCell.cardImage.image = UIImage(named: gpuFieldsData["id"]!)
-        
+        customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
+        customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
+        customCell.cardImage.image = UIImage(named: gpuFieldsData["id"] ?? "gpu1")
         return customCell
     }
     
@@ -62,7 +61,6 @@ extension GPUListViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = DescriptionViewController()
-// MARK: - DB test zone
             let selectedGPU = getGPUFields(with: indexPath.row)
             let prefixes = ["ID",
                             "VENDOR",
@@ -132,7 +130,7 @@ extension GPUListViewController: UITableViewDelegate {
                               targetVC.mainView!.vulcanLabel,
                               targetVC.mainView!.cudaLabel,
                               targetVC.mainView!.shaderLabel]
-            
+            //
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             present(targetVC, animated: true)
