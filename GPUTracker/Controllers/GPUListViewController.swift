@@ -16,19 +16,11 @@ class GPUListViewController: UIViewController {
     var selectedVendor: String
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, selectedVendor: String) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    init(selectedVendor: String) {
         self.selectedVendor = selectedVendor
+        super.init(nibName: nil, bundle: nil)
     }
-    
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
-//            print("init nibName style")
-//            super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//            tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
-//        }
-    
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
     }
     //let manufacturers = Source.generateManufacturersWithGroups()
