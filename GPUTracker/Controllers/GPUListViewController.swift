@@ -130,7 +130,7 @@ extension GPUListViewController: UITableViewDelegate {
                               targetVC.mainView!.vulcanLabel,
                               targetVC.mainView!.cudaLabel,
                               targetVC.mainView!.shaderLabel]
-            //
+            //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             present(targetVC, animated: true)

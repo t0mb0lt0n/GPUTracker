@@ -15,8 +15,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ///Core data block
-        //CoreDataManager.shared.createGPU(imageName: "vega56", gpuName: "RX Vega 56", date: 2016, vendor: "AMD")
         view.backgroundColor = .black
         view = MainView()
         navigationController?.isNavigationBarHidden = false
@@ -26,7 +24,6 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
     }
-    
 }
 
 //MARK: - extension
@@ -64,17 +61,14 @@ extension MainViewController: UITableViewDataSource {
         cell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
         return cell
     }
-    
     //setup header in section height
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
-    
     //setup footer in section height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         0
     }
-
     //custom header view for table view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let customHeaderView = UIView()
@@ -103,7 +97,7 @@ extension MainViewController: UITableViewDelegate {
             // MARK: - DB test zone
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
-            let targetVC = UIViewController()
+            let targetVC = GPUListViewController()
             navigationController?.pushViewController(targetVC, animated: true)
         default:
             break

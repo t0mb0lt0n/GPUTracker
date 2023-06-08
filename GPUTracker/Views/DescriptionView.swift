@@ -24,7 +24,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -43,7 +42,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -60,7 +58,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -77,7 +74,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -94,7 +90,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -111,7 +106,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -128,7 +122,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -145,7 +138,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -162,7 +154,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -179,7 +170,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -196,7 +186,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 13, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -213,7 +202,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 13, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -231,7 +219,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 12, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -248,7 +235,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -265,7 +251,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -282,7 +267,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -299,7 +283,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -316,7 +299,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -350,7 +332,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -367,7 +348,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -384,7 +364,6 @@ class DescriptionView: UIView {
         let label = PaddingLabel()
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 14, weight: .light)
-        label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
