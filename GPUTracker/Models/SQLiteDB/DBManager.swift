@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-func getGPUFields(with index: Int) -> [String: String] {
+func getGPUFields(fromTable table: String, with index: Int) -> [String: String] {
     var gpuFieldsData: [String: String] = [:]
     do {
         let path = NSSearchPathForDirectoriesInDomains(

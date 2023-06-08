@@ -399,7 +399,6 @@ extension DescriptionView {
             subView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(subView)
         }
-        
         //stackView sector one CFG
         infoStackViewSectorOne.axis            = .vertical
         infoStackViewSectorOne.distribution    = .fillEqually
@@ -488,15 +487,12 @@ extension DescriptionView {
         for item in itemsForInfoStackViewSectorOne {
             infoStackViewSectorOne.addArrangedSubview(item)
         }
-        
         for item in itemsForInfoStackViewSectorTwo {
             infoStackViewSectorTwo.addArrangedSubview(item)
         }
-        
         for item in itemsForInfoStackViewSectorThree {
             infoStackViewSectorThree.addArrangedSubview(item)
         }
-        
         for item in itemsForInfoStackViewSectorFour {
             infoStackViewSectorFour.addArrangedSubview(item)
         }

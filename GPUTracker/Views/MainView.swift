@@ -11,7 +11,7 @@ class MainView: UIView {
     
     let appLogoImage: UIView = {
         let logo = UIView()
-        let logoContainer = UIImageView(frame: CGRect(x: -10, y: -45, width: 155, height: 155))
+        let logoContainer = UIImageView(frame: CGRect(x: -10, y: -45, width: 150, height: 150))
         let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         logoContainer.image = logoImage
         logo.clipsToBounds = true
