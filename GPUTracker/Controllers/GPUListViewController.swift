@@ -13,10 +13,24 @@ class GPUListViewController: UIViewController {
         case nvidia = "Nvidia"
         case amd = "AMD"
     }
-    
-    var selectedVendor: Vendors
+    var selectedVendor: String
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, selectedVendor: String) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.selectedVendor = selectedVendor
+    }
+    
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)   {
+//            print("init nibName style")
+//            super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//            tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+//        }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
+    }
     //let manufacturers = Source.generateManufacturersWithGroups()
 
     override func viewDidLoad() {
@@ -59,13 +73,12 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch Vendor {
-        case .
-            
+        switch selectedVendor {
+        case "Nvidia":
+            return getDBRecordsCount(fromTable: selectedVendor)
         default:
-            <#code#>
+            return 0
         }
-        getDBRecordsCount(fromTable: )
     }
 }
 
@@ -74,7 +87,7 @@ extension GPUListViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = DescriptionViewController()
-            let selectedGPU = getGPUFields(with: indexPath.row)
+            let selectedGPU = getGPUFields(fromTable: "Nvidia", with: indexPath.row)
             let prefixes = ["ID",
                             "VENDOR",
                             "CORES",
