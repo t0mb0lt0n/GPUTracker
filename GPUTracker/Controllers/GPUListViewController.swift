@@ -155,9 +155,9 @@ extension GPUListViewController {
     }
     
     func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
-        for (index, value) in labels.enumerated()  {
+        for (index, value) in labels.enumerated() {
             guard let fullText = labels[index].text, let changeText = strings[index] else {
-                return print("a")
+                break
             }
             value.labelTextAttributesChange(fullText: fullText, changeText: changeText)
         }
