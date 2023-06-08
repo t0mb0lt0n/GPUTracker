@@ -150,13 +150,16 @@ extension GPUListViewController: UITableViewDelegate {
 extension GPUListViewController {
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         for (index, value) in labels.enumerated() {
-            value.text = "\(prefix[index])  \(data[index] ?? "not found")"
+            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
         }
     }
     
     func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
         for (index, value) in labels.enumerated()  {
-            value.labelTextAttributesChange(fullText: labels[index].text ?? "not found", changeText: strings[index] ?? "failed")
+            guard let fullText = labels[index].text, let changeText = strings[index] else {
+                return print("a")
+            }
+            value.labelTextAttributesChange(fullText: fullText, changeText: changeText)
         }
     }
 }
