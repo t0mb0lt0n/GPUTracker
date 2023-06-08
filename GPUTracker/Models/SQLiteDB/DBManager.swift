@@ -17,7 +17,7 @@ func getGPUFields(fromTable table: String, with index: Int) -> [String: String] 
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
         
         let db = try Connection("\(path)/gpuDB.db")
-        let nvidiaTable = Table("Nvidia")
+        let selectedTable = Table(table)
         ///Field requests to Rows
         let positionField    = Expression<Int>("position")
         let idField          = Expression<String>("id")
@@ -44,7 +44,7 @@ func getGPUFields(fromTable table: String, with index: Int) -> [String: String] 
         let shaderModelField = Expression<String>("shaderModel")
     
         //transform records to Rows Array
-        let arr = Array(try db.prepare(nvidiaTable))
+        let arr = Array(try db.prepare(selectedTable))
         /// get field from array index
         gpuFieldsData = ["position"    : String(try arr[index].get(positionField)),
                          "id"          : try arr[index].get(idField),
@@ -76,7 +76,7 @@ func getGPUFields(fromTable table: String, with index: Int) -> [String: String] 
 }
 
 
-func getDBRecordsCount() -> Int {
+func getDBRecordsCount(fromTable table: String) -> Int {
     var records: Int = 0
     do {
         let path = NSSearchPathForDirectoriesInDomains(
@@ -85,8 +85,8 @@ func getDBRecordsCount() -> Int {
         _ = copyDatabaseIfNeeded(sourcePath: Bundle.main.path(forResource: "gpuDB", ofType: "db")!)
         
         let db = try Connection("\(path)/gpuDB.db")
-        let nvidiaTable = Table("Nvidia")
-        let arr = Array(try db.prepare(nvidiaTable))
+        let selectedTable = Table(table)
+        let arr = Array(try db.prepare(selectedTable))
         records = arr.count
     }
     catch {

@@ -9,8 +9,15 @@ import UIKit
 import SQLite
 
 class GPUListViewController: UIViewController {
+    enum Vendors: String {
+        case nvidia = "Nvidia"
+        case amd = "AMD"
+    }
+    
+    var selectedVendor: Vendors
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
-    let manufacturers = Source.generateManufacturersWithGroups()
+    
+    //let manufacturers = Source.generateManufacturersWithGroups()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +51,7 @@ extension GPUListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
-        let gpuFieldsData = getGPUFields(with: indexPath.row)
+        let gpuFieldsData = getGPUFields(fromTable: "Nvidia", with: indexPath.row)
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: gpuFieldsData["id"] ?? "gpu1")
@@ -52,7 +59,13 @@ extension GPUListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        getDBRecordsCount()
+        switch Vendor {
+        case .
+            
+        default:
+            <#code#>
+        }
+        getDBRecordsCount(fromTable: )
     }
 }
 
