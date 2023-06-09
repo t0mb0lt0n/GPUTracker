@@ -141,9 +141,6 @@ extension GPUListViewController: UITableViewDelegate {
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             //print(data)
             present(targetVC, animated: true)
-        specLabels.forEach { label in
-            print(label.text!)
-        }
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
