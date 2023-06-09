@@ -23,11 +23,18 @@ class GPUListViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //let manufacturers = Source.generateManufacturersWithGroups()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
+        switch selectedVendor {
+        case "Nvidia":
+            title = selectedVendor
+        case "AMD":
+            title = selectedVendor
+        default:
+            title = "Empty"
+        }
         //Cell registration
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
@@ -123,16 +130,17 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.vulcanLabel,
                           targetVC.mainView!.cudaLabel,
                           targetVC.mainView!.shaderLabel]
+        
         switch indexPath.section {
         case 0:
-            let selectedGPU = getSelectedGPUFields(fromTable: "Nvidia", with: indexPath.row)
+            let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
             let data = getSelectedGPUData(from: selectedGPU)
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             present(targetVC, animated: true)
         case 1:
-            let selectedGPU = getSelectedGPUFields(fromTable: "AMD", with: indexPath.row)
+            let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
             let data = getSelectedGPUData(from: selectedGPU)
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
