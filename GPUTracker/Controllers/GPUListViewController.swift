@@ -68,6 +68,8 @@ extension GPUListViewController: UITableViewDataSource {
         switch selectedVendor {
         case "Nvidia":
             return getDBRecordsCount(fromTable: selectedVendor)
+        case "AMD":
+            return getDBRecordsCount(fromTable: selectedVendor)
         default:
             return 0
         }
@@ -76,33 +78,56 @@ extension GPUListViewController: UITableViewDataSource {
 
 extension GPUListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let targetVC = DescriptionViewController()
+        let prefixes = ["ID",
+                        "VENDOR",
+                        "CORES",
+                        "PROCESSOR",
+                        "TMUs",
+                        "ROPs",
+                        "L1",
+                        "L2",
+                        "BASE CLK",
+                        "BOOST CLK",
+                        "MEMORY CLK",
+                        "MEMORY SIZE",
+                        "MEMORY TYPE",
+                        "BUS WIDTH",
+                        "TDP",
+                        "PSU",
+                        "DirectX",
+                        "openGL",
+                        "openCL",
+                        "VULCAN",
+                        "CUDA",
+                        "SHADERS"]
+        
+        
+        let specLabels = [targetVC.mainView!.idLabel,
+                          targetVC.mainView!.vendorLabel,
+                          targetVC.mainView!.gpuCoresLabel,
+                          targetVC.mainView!.gpuNameLabel,
+                          targetVC.mainView!.tmusLabel,
+                          targetVC.mainView!.ropsLabel,
+                          targetVC.mainView!.lOneLabel,
+                          targetVC.mainView!.lTwoLabel,
+                          targetVC.mainView!.baseClockLabel,
+                          targetVC.mainView!.boostClockLabel,
+                          targetVC.mainView!.memClockLabel,
+                          targetVC.mainView!.memSizeLabel,
+                          targetVC.mainView!.memTypeLabel,
+                          targetVC.mainView!.busLabel,
+                          targetVC.mainView!.tdpLabel,
+                          targetVC.mainView!.psuLabel,
+                          targetVC.mainView!.directXLabel,
+                          targetVC.mainView!.openGLLabel,
+                          targetVC.mainView!.openCLLabel,
+                          targetVC.mainView!.vulcanLabel,
+                          targetVC.mainView!.cudaLabel,
+                          targetVC.mainView!.shaderLabel]
         switch indexPath.section {
         case 0:
-            let targetVC = DescriptionViewController()
             let selectedGPU = getGPUFields(fromTable: "Nvidia", with: indexPath.row)
-            let prefixes = ["ID",
-                            "VENDOR",
-                            "CORES",
-                            "PROCESSOR",
-                            "TMUs",
-                            "ROPs",
-                            "L1",
-                            "L2",
-                            "BASE CLK",
-                            "BOOST CLK",
-                            "MEMORY CLK",
-                            "MEMORY SIZE",
-                            "MEMORY TYPE",
-                            "BUS WIDTH",
-                            "TDP",
-                            "PSU",
-                            "DirectX",
-                            "openGL",
-                            "openCL",
-                            "VULCAN",
-                            "CUDA",
-                            "SHADERS"]
-            
             let data = [selectedGPU["id"],
                         selectedGPU["vendor"],
                         selectedGPU["gpuCores"],
@@ -125,35 +150,36 @@ extension GPUListViewController: UITableViewDelegate {
                         selectedGPU["vulcan"],
                         selectedGPU["cuda"],
                         selectedGPU["shaderModel"]]
-            
-            let specLabels = [targetVC.mainView!.idLabel,
-                              targetVC.mainView!.vendorLabel,
-                              targetVC.mainView!.gpuCoresLabel,
-                              targetVC.mainView!.gpuNameLabel,
-                              targetVC.mainView!.tmusLabel,
-                              targetVC.mainView!.ropsLabel,
-                              targetVC.mainView!.lOneLabel,
-                              targetVC.mainView!.lTwoLabel,
-                              targetVC.mainView!.baseClockLabel,
-                              targetVC.mainView!.boostClockLabel,
-                              targetVC.mainView!.memClockLabel,
-                              targetVC.mainView!.memSizeLabel,
-                              targetVC.mainView!.memTypeLabel,
-                              targetVC.mainView!.busLabel,
-                              targetVC.mainView!.tdpLabel,
-                              targetVC.mainView!.psuLabel,
-                              targetVC.mainView!.directXLabel,
-                              targetVC.mainView!.openGLLabel,
-                              targetVC.mainView!.openCLLabel,
-                              targetVC.mainView!.vulcanLabel,
-                              targetVC.mainView!.cudaLabel,
-                              targetVC.mainView!.shaderLabel]
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             present(targetVC, animated: true)
         case 1:
-            let targetVC = UIViewController()
+            let selectedGPU = getGPUFields(fromTable: "AMD", with: indexPath.row)
+            let data = [selectedGPU["id"],
+                        selectedGPU["vendor"],
+                        selectedGPU["gpuCores"],
+                        selectedGPU["gpName"],
+                        selectedGPU["tmus"],
+                        selectedGPU["rops"],
+                        selectedGPU["l1"],
+                        selectedGPU["l2"],
+                        selectedGPU["baseClock"],
+                        selectedGPU["boostClock"],
+                        selectedGPU["memClock"],
+                        selectedGPU["memSize"],
+                        selectedGPU["memType"],
+                        selectedGPU["bus"],
+                        selectedGPU["tdp"],
+                        selectedGPU["psu"],
+                        selectedGPU["directx"],
+                        selectedGPU["openGL"],
+                        selectedGPU["openCL"],
+                        selectedGPU["vulcan"],
+                        selectedGPU["cuda"],
+                        selectedGPU["shaderModel"]]
+            fillLabels(labels: specLabels, prefix: prefixes, data: data)
+            changeLabelAttributes(inLabels: specLabels, inStrings: data)
             navigationController?.pushViewController(targetVC, animated: true)
         default:
             break
