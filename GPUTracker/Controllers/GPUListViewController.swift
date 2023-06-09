@@ -128,59 +128,62 @@ extension GPUListViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let selectedGPU = getGPUFields(fromTable: "Nvidia", with: indexPath.row)
-            let data = [selectedGPU["id"],
-                        selectedGPU["vendor"],
-                        selectedGPU["gpuCores"],
-                        selectedGPU["gpName"],
-                        selectedGPU["tmus"],
-                        selectedGPU["rops"],
-                        selectedGPU["l1"],
-                        selectedGPU["l2"],
-                        selectedGPU["baseClock"],
-                        selectedGPU["boostClock"],
-                        selectedGPU["memClock"],
-                        selectedGPU["memSize"],
-                        selectedGPU["memType"],
-                        selectedGPU["bus"],
-                        selectedGPU["tdp"],
-                        selectedGPU["psu"],
-                        selectedGPU["directx"],
-                        selectedGPU["openGL"],
-                        selectedGPU["openCL"],
-                        selectedGPU["vulcan"],
-                        selectedGPU["cuda"],
-                        selectedGPU["shaderModel"]]
+//            let data = [fromDictionary["id"],
+//                        selectedGPU["vendor"],
+//                        selectedGPU["gpuCores"],
+//                        selectedGPU["gpName"],
+//                        selectedGPU["tmus"],
+//                        selectedGPU["rops"],
+//                        selectedGPU["l1"],
+//                        selectedGPU["l2"],
+//                        selectedGPU["baseClock"],
+//                        selectedGPU["boostClock"],
+//                        selectedGPU["memClock"],
+//                        selectedGPU["memSize"],
+//                        selectedGPU["memType"],
+//                        selectedGPU["bus"],
+//                        selectedGPU["tdp"],
+//                        selectedGPU["psu"],
+//                        selectedGPU["directx"],
+//                        selectedGPU["openGL"],
+//                        selectedGPU["openCL"],
+//                        selectedGPU["vulcan"],
+//                        selectedGPU["cuda"],
+//                        selectedGPU["shaderModel"]]
+            let data = getDataField(fromDictionary: selectedGPU)
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             present(targetVC, animated: true)
         case 1:
             let selectedGPU = getGPUFields(fromTable: "AMD", with: indexPath.row)
-            let data = [selectedGPU["id"],
-                        selectedGPU["vendor"],
-                        selectedGPU["gpuCores"],
-                        selectedGPU["gpName"],
-                        selectedGPU["tmus"],
-                        selectedGPU["rops"],
-                        selectedGPU["l1"],
-                        selectedGPU["l2"],
-                        selectedGPU["baseClock"],
-                        selectedGPU["boostClock"],
-                        selectedGPU["memClock"],
-                        selectedGPU["memSize"],
-                        selectedGPU["memType"],
-                        selectedGPU["bus"],
-                        selectedGPU["tdp"],
-                        selectedGPU["psu"],
-                        selectedGPU["directx"],
-                        selectedGPU["openGL"],
-                        selectedGPU["openCL"],
-                        selectedGPU["vulcan"],
-                        selectedGPU["cuda"],
-                        selectedGPU["shaderModel"]]
+//            let data = [selectedGPU["id"],
+//                        selectedGPU["vendor"],
+//                        selectedGPU["gpuCores"],
+//                        selectedGPU["gpName"],
+//                        selectedGPU["tmus"],
+//                        selectedGPU["rops"],
+//                        selectedGPU["l1"],
+//                        selectedGPU["l2"],
+//                        selectedGPU["baseClock"],
+//                        selectedGPU["boostClock"],
+//                        selectedGPU["memClock"],
+//                        selectedGPU["memSize"],
+//                        selectedGPU["memType"],
+//                        selectedGPU["bus"],
+//                        selectedGPU["tdp"],
+//                        selectedGPU["psu"],
+//                        selectedGPU["directx"],
+//                        selectedGPU["openGL"],
+//                        selectedGPU["openCL"],
+//                        selectedGPU["vulcan"],
+//                        selectedGPU["cuda"],
+//                        selectedGPU["shaderModel"]]
+            let data = getDataField(fromDictionary: selectedGPU)
+            //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
-            navigationController?.pushViewController(targetVC, animated: true)
+            present(targetVC, animated: true)
         default:
             break
         }
@@ -192,7 +195,7 @@ extension GPUListViewController: UITableViewDelegate {
 extension GPUListViewController {
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         for (index, value) in labels.enumerated() {
-            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
+            value.text = "\(prefix[index]) \(data[index] ?? "data field is empty")"
         }
     }
     
@@ -203,6 +206,32 @@ extension GPUListViewController {
             }
             value.labelTextAttributesChange(fullText: fullText, changeText: changeText)
         }
+    }
+    
+    func getDataField(fromDictionary: [String : String]) -> [String?] {
+        let resultData = [fromDictionary["id"],
+                          fromDictionary["vendor"],
+                          fromDictionary["gpuCores"],
+                          fromDictionary["gpName"],
+                          fromDictionary["tmus"],
+                          fromDictionary["rops"],
+                          fromDictionary["l1"],
+                          fromDictionary["l2"],
+                          fromDictionary["baseClock"],
+                          fromDictionary["boostClock"],
+                          fromDictionary["memClock"],
+                          fromDictionary["memSize"],
+                          fromDictionary["memType"],
+                          fromDictionary["bus"],
+                          fromDictionary["tdp"],
+                          fromDictionary["psu"],
+                          fromDictionary["directx"],
+                          fromDictionary["openGL"],
+                          fromDictionary["openCL"],
+                          fromDictionary["vulcan"],
+                          fromDictionary["cuda"],
+                          fromDictionary["shaderModel"]]
+        return resultData
     }
 }
 
