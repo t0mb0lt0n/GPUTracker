@@ -140,13 +140,16 @@ extension GPUListViewController: UITableViewDelegate {
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
+            //print(data)
             present(targetVC, animated: true)
         case 1:
             let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
             let data = getSelectedGPUData(from: selectedGPU)
+            print(data)
             //fill subVievs with specData
             fillLabels(labels: specLabels, prefix: prefixes, data: data)
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
+            print(data)
             present(targetVC, animated: true)
         default:
             break
@@ -159,7 +162,7 @@ extension GPUListViewController: UITableViewDelegate {
 extension GPUListViewController {
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         for (index, value) in labels.enumerated() {
-            value.text = "\(prefix[index]) \(data[index] ?? "data field is empty")"
+            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
         }
     }
     //Setting new attributes to the text

@@ -487,15 +487,12 @@ extension DescriptionView {
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
         }
-        
         itemsForInfoStackViewSectorTwo.forEach { item in
             infoStackViewSectorTwo.addArrangedSubview(item)
         }
-        
         itemsForInfoStackViewSectorThree.forEach { item in
             infoStackViewSectorThree.addArrangedSubview(item)
         }
-        
         itemsForInfoStackViewSectorFour.forEach { item in
             infoStackViewSectorFour.addArrangedSubview(item)
         }
