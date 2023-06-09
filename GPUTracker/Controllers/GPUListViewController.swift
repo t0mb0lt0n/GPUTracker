@@ -9,6 +9,7 @@ import UIKit
 import SQLite
 
 class GPUListViewController: UIViewController {
+    
     enum Vendors: String {
         case nvidia = "Nvidia"
         case amd = "AMD"
@@ -83,6 +84,7 @@ extension GPUListViewController: UITableViewDataSource {
 }
 
 extension GPUListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
         let prefixes = ["ID",

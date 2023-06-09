@@ -1,8 +1,8 @@
 //
 //  PaddingLabel.swift
-//  PaddingLabel
+//  GPUTracker
 //
-//  Created by levantAJ on 11/11/18.
+//  Created by Alexander on 10.05.2023.
 //  Copyright © 2018 levantAJ. All rights reserved.
 //
 
