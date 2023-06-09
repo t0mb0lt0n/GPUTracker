@@ -484,16 +484,19 @@ extension DescriptionView {
                                                          cudaLabel,
                                                          shaderLabel]
         
-        for item in itemsForInfoStackViewSectorOne {
+        itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
         }
-        for item in itemsForInfoStackViewSectorTwo {
+        
+        itemsForInfoStackViewSectorTwo.forEach { item in
             infoStackViewSectorTwo.addArrangedSubview(item)
         }
-        for item in itemsForInfoStackViewSectorThree {
+        
+        itemsForInfoStackViewSectorThree.forEach { item in
             infoStackViewSectorThree.addArrangedSubview(item)
         }
-        for item in itemsForInfoStackViewSectorFour {
+        
+        itemsForInfoStackViewSectorFour.forEach { item in
             infoStackViewSectorFour.addArrangedSubview(item)
         }
     }

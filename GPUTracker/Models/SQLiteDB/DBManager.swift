@@ -10,6 +10,7 @@ import SQLite
 
 func getSelectedGPUFields(fromTable table: String, with index: Int) -> [String: String] {
     var gpuFieldsData: [String: String] = [:]
+    
     do {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SQLite3
 
 struct Manufacturer {
     let name: String
