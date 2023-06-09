@@ -64,7 +64,7 @@ extension GPUListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
-        let gpuFieldsData = getSelectedGPUFields(fromTable: "Nvidia", with: indexPath.row)
+        let gpuFieldsData = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: gpuFieldsData["id"] ?? "gpu1")
@@ -76,6 +76,7 @@ extension GPUListViewController: UITableViewDataSource {
         case "Nvidia":
             return getDBRecordsCount(fromTable: selectedVendor)
         case "AMD":
+            print(selectedVendor)
             return getDBRecordsCount(fromTable: selectedVendor)
         default:
             return 0
@@ -87,28 +88,28 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        let prefixes = ["ID",
-                        "VENDOR",
-                        "CORES",
-                        "PROCESSOR",
-                        "TMUs",
-                        "ROPs",
-                        "L1",
-                        "L2",
-                        "BASE CLK",
-                        "BOOST CLK",
-                        "MEMORY CLK",
-                        "MEMORY SIZE",
-                        "MEMORY TYPE",
-                        "BUS WIDTH",
-                        "TDP",
-                        "PSU",
-                        "DirectX",
-                        "openGL",
-                        "openCL",
-                        "VULCAN",
-                        "CUDA",
-                        "SHADERS"]
+        let prefixes = ["ID :",
+                        "Vendor :",
+                        "Cores :",
+                        "Processor :",
+                        "TMUs :",
+                        "ROPs :",
+                        "L1 Cache :",
+                        "L2 Cache :",
+                        "Base CLK :",
+                        "Boost CLK :",
+                        "Memory CLK :",
+                        "Memory SIZE :",
+                        "Memory TYPE :",
+                        "Bus width :",
+                        "TDP :",
+                        "PSU :",
+                        "DirectX :",
+                        "openGL :",
+                        "openCL :",
+                        "vulcan :",
+                        "CUDA :",
+                        "Shaders :"]
         
         let specLabels = [targetVC.mainView!.idLabel,
                           targetVC.mainView!.vendorLabel,
@@ -133,8 +134,6 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.cudaLabel,
                           targetVC.mainView!.shaderLabel]
         
-        switch indexPath.section {
-        case 0:
             let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
             let data = getSelectedGPUData(from: selectedGPU)
             //fill subVievs with specData
@@ -142,17 +141,8 @@ extension GPUListViewController: UITableViewDelegate {
             changeLabelAttributes(inLabels: specLabels, inStrings: data)
             //print(data)
             present(targetVC, animated: true)
-        case 1:
-            let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
-            let data = getSelectedGPUData(from: selectedGPU)
-            print(data)
-            //fill subVievs with specData
-            fillLabels(labels: specLabels, prefix: prefixes, data: data)
-            changeLabelAttributes(inLabels: specLabels, inStrings: data)
-            print(data)
-            present(targetVC, animated: true)
-        default:
-            break
+        specLabels.forEach { label in
+            print(label.text!)
         }
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)

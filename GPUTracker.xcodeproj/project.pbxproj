@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1141F2142A33A6740064B2DC /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 1141F2132A33A6740064B2DC /* gpuDB.db */; };
 		11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */; };
 		11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */; };
-		114F57AB2A325B150032CB25 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 114F57AA2A325B150032CB25 /* gpuDB.db */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985F29E873EE009B3638 /* SceneDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
@@ -29,9 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1141F2132A33A6740064B2DC /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		11460F8A2A001BA3005ABD42 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPU+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		114F57AA2A325B150032CB25 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156985F29E873EE009B3638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				1156986829E873F0009B3638 /* LaunchScreen.storyboard */,
 				1156986B29E873F0009B3638 /* Info.plist */,
 				1156986629E873F0009B3638 /* Assets.xcassets */,
-				114F57AA2A325B150032CB25 /* gpuDB.db */,
+				1141F2132A33A6740064B2DC /* gpuDB.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				114F57AB2A325B150032CB25 /* gpuDB.db in Resources */,
+				1141F2142A33A6740064B2DC /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
@@ -403,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -434,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

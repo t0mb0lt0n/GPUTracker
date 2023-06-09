@@ -23,7 +23,7 @@ class DescriptionView: UIView {
     let idLabel: PaddingLabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -41,7 +41,7 @@ class DescriptionView: UIView {
     let vendorLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -57,7 +57,7 @@ class DescriptionView: UIView {
     let gpuCoresLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -73,7 +73,7 @@ class DescriptionView: UIView {
     let gpuNameLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -89,7 +89,7 @@ class DescriptionView: UIView {
     let tmusLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -105,7 +105,7 @@ class DescriptionView: UIView {
     let ropsLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -121,7 +121,7 @@ class DescriptionView: UIView {
     let lOneLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -137,7 +137,7 @@ class DescriptionView: UIView {
     let lTwoLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -153,7 +153,7 @@ class DescriptionView: UIView {
     let baseClockLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -169,7 +169,7 @@ class DescriptionView: UIView {
     let boostClockLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -185,7 +185,7 @@ class DescriptionView: UIView {
     let memClockLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -201,7 +201,7 @@ class DescriptionView: UIView {
     let memSizeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -218,7 +218,7 @@ class DescriptionView: UIView {
     let memTypeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.font = .systemFont(ofSize: 12, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -234,7 +234,7 @@ class DescriptionView: UIView {
     let busLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -250,7 +250,7 @@ class DescriptionView: UIView {
     let tdpLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -266,7 +266,7 @@ class DescriptionView: UIView {
     let psuLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -282,7 +282,7 @@ class DescriptionView: UIView {
     let directXLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -298,7 +298,7 @@ class DescriptionView: UIView {
     let openGLLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -314,7 +314,7 @@ class DescriptionView: UIView {
     let openCLLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.borderColor = UIColor.systemGray.cgColor
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
@@ -331,7 +331,7 @@ class DescriptionView: UIView {
     let vulcanLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -347,7 +347,7 @@ class DescriptionView: UIView {
     let cudaLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -363,7 +363,7 @@ class DescriptionView: UIView {
     let shaderLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = .systemFont(ofSize: 14, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -429,7 +429,7 @@ extension DescriptionView {
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200),
+            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
@@ -505,7 +505,7 @@ extension UILabel {
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
         attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
-        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .regular), range: range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .medium), range: range)
         self.attributedText = attribute
     }
 }
