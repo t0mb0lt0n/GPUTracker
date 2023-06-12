@@ -15,41 +15,19 @@ class DescriptionView: UIView {
     let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
-        //let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
-        let cardImageView = UIImageView()
-        let cardImage = UIImage(named: "GTX-TITAN")
-        cardImageView.image = cardImage
-        cardImageView.contentMode = .scaleAspectFit
-        return cardImageView
+        let cardView = UIImageView()
+        let cardImage = UIImage(named: "GTX-780")
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
     }()
-    
-//    let macBookItemCard: UIView = {
-//        let itemCard = UIView()
-//        let testImageView = UIImageView(frame: CGRect(x: 0, y: -5, width: 110, height: 100))
-//        testImageView.image = imageStorage.first ?? nil
-//        testImageView.contentMode = .scaleToFill
-//        itemCard.backgroundColor = .systemGray5
-//        itemCard.layer.cornerRadius = 10
-//        itemCard.addSubview(testImageView)
-//        return itemCard
-//    }()
-    
-//    let frontBoardView: UIView = {
-//        let cardView = UIView()
-//        let containerView = UIImageView(frame: CGRect(x: 0, y: -5, width: 200, height: 90))
-//        let cardImage = UIImage(named: "GTX-780 BoardFront")
-//        containerView.image = cardImage
-//        containerView.contentMode = .scaleToFill
-//        cardView.addSubview(containerView)
-//        cardView.backgroundColor = .white
-//        cardView.layer.cornerRadius = 7
-//        cardView.clipsToBounds = true
-//        return cardView
-//    }()
     
     let frontBoardView: UIImageView = {
         let cardView = UIImageView()
-        let cardImage = UIImage(named: "GTX-780 BoardFront")
+        let cardImage = UIImage(named: "GTX-")
         cardView.image = cardImage
         cardView.contentMode = .scaleToFill
         cardView.backgroundColor = .white
@@ -67,11 +45,14 @@ class DescriptionView: UIView {
     }()
     
     let crystalImageView: UIImageView = {
-        let cardImageView = UIImageView()
+        let cardView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 Crystal")
-        cardImageView.image = cardImage
-        cardImageView.contentMode = .scaleAspectFit
-        return cardImageView
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
     }()
 
 
@@ -451,7 +432,8 @@ class DescriptionView: UIView {
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
-        cardImageScrollView.addSubview(frontBoardView)
+        cardImageScrollView.addSubview(cardImageView)
+        cardImageScrollView.addSubview(crystalImageView)
         cardImagesSetupConstraints()
     }
     
@@ -463,14 +445,18 @@ class DescriptionView: UIView {
 extension DescriptionView {
     
     func cardImagesSetupConstraints() {
-        frontBoardView.translatesAutoresizingMaskIntoConstraints = false
-        //frontBoardView.backgroundColor = .blue
+        cardImageView.translatesAutoresizingMaskIntoConstraints = false
+        crystalImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            frontBoardView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 0),
-            frontBoardView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor),
-            frontBoardView.widthAnchor.constraint(equalToConstant: 550),
-            frontBoardView.heightAnchor.constraint(equalToConstant: 250),
-            //cardImageStackView.bottomAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor),
+            crystalImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+            crystalImageView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor, constant: 20),
+            crystalImageView.widthAnchor.constraint(equalToConstant: 190),
+            crystalImageView.heightAnchor.constraint(equalToConstant: 190),
+            
+            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 0),
+            cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
+            cardImageView.widthAnchor.constraint(equalToConstant: 405),
+            cardImageView.heightAnchor.constraint(equalToConstant: 190),
         ])
     }
     
@@ -514,13 +500,12 @@ extension DescriptionView {
         specScrollView.addSubview(infoStackViewSectorTwo)
         specScrollView.addSubview(infoStackViewSectorThree)
         specScrollView.addSubview(infoStackViewSectorFour)
-        cardImageScrollView.addSubview(cardImageStackView)
     }
     
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
-        cardImageScrollView.backgroundColor = .green
+        //cardImageScrollView.backgroundColor = .white
         NSLayoutConstraint.activate([
             cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
             cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -582,12 +567,6 @@ extension DescriptionView {
                                                          vulcanLabel,
                                                          cudaLabel,
                                                          shaderLabel]
-        
-        //let itemsForCardImageStackView: [UIView] = [frontBoardView]
-        
-//        itemsForCardImageStackView.forEach { item in
-//            cardImageStackView.addArrangedSubview(item)
-//        }
         
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
