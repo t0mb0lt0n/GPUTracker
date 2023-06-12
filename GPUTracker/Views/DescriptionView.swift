@@ -15,7 +15,7 @@ class DescriptionView: UIView {
     
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = true
+        scrollView.showsVerticalScrollIndicator = false //remove
         scrollView.contentSize = CGSize(width: 0, height: 500)
         return scrollView
     }()
@@ -32,8 +32,6 @@ class DescriptionView: UIView {
         label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
-        label.numberOfLines = 1
-        //label.text.line
         label.clipsToBounds = true
         return label
     }()
