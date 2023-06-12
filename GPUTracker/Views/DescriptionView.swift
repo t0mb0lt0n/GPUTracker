@@ -435,22 +435,12 @@ extension DescriptionView {
             infoStackViewSectorOne.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
             infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
-            infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 300),
+            infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 400),
             
             infoStackViewSectorTwo.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 300),
-            
-            infoStackViewSectorThree.topAnchor.constraint(equalTo: infoStackViewSectorOne.bottomAnchor, constant: 5),
-            infoStackViewSectorThree.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            infoStackViewSectorThree.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
-            infoStackViewSectorThree.heightAnchor.constraint(equalToConstant: 180),
-            
-            infoStackViewSectorFour.topAnchor.constraint(equalTo: infoStackViewSectorThree.topAnchor),
-            infoStackViewSectorFour.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
-            infoStackViewSectorFour.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            infoStackViewSectorFour.heightAnchor.constraint(equalToConstant: 180)
+            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
     
@@ -461,7 +451,11 @@ extension DescriptionView {
                                                         gpuNameLabel,
                                                         tmusLabel,
                                                         ropsLabel,
-                                                        lOneLabel]
+                                                        lOneLabel,
+                                                        tdpLabel,
+                                                        psuLabel,
+                                                        directXLabel,
+                                                        openGLLabel]
         
         let itemsForInfoStackViewSectorTwo: [UIView] = [lTwoLabel,
                                                         baseClockLabel,
@@ -469,18 +463,22 @@ extension DescriptionView {
                                                         memClockLabel,
                                                         memSizeLabel,
                                                         memTypeLabel,
-                                                        busLabel]
+                                                        busLabel,
+                                                        openCLLabel,
+                                                        vulcanLabel,
+                                                        cudaLabel,
+                                                        shaderLabel]
         
-        let itemsForInfoStackViewSectorThree: [UIView] = [tdpLabel,
-                                                          psuLabel,
-                                                          directXLabel,
-                                                          openGLLabel]
-                                                
-        
-        let itemsForInfoStackViewSectorFour: [UIView] = [openCLLabel,
-                                                         vulcanLabel,
-                                                         cudaLabel,
-                                                         shaderLabel]
+//        let itemsForInfoStackViewSectorThree: [UIView] = [tdpLabel,
+//                                                          psuLabel,
+//                                                          directXLabel,
+//                                                          openGLLabel]
+//
+//
+//        let itemsForInfoStackViewSectorFour: [UIView] = [openCLLabel,
+//                                                         vulcanLabel,
+//                                                         cudaLabel,
+//                                                         shaderLabel]
         
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
@@ -488,12 +486,12 @@ extension DescriptionView {
         itemsForInfoStackViewSectorTwo.forEach { item in
             infoStackViewSectorTwo.addArrangedSubview(item)
         }
-        itemsForInfoStackViewSectorThree.forEach { item in
-            infoStackViewSectorThree.addArrangedSubview(item)
-        }
-        itemsForInfoStackViewSectorFour.forEach { item in
-            infoStackViewSectorFour.addArrangedSubview(item)
-        }
+//        itemsForInfoStackViewSectorThree.forEach { item in
+//            infoStackViewSectorThree.addArrangedSubview(item)
+//        }
+//        itemsForInfoStackViewSectorFour.forEach { item in
+//            infoStackViewSectorFour.addArrangedSubview(item)
+//        }
     }
 }
 
