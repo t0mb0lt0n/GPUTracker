@@ -13,6 +13,13 @@ class DescriptionView: UIView {
     let infoStackViewSectorThree     = UIStackView()
     let infoStackViewSectorFour      = UIStackView()
     
+    let cardImageScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = true
+        scrollView.contentSize = CGSize(width: 300, height: 0)
+        return scrollView
+    }()
+    
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
