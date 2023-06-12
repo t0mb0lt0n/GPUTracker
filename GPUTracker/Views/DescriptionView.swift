@@ -12,6 +12,7 @@ class DescriptionView: UIView {
     let infoStackViewSectorTwo       = UIStackView()
     let infoStackViewSectorThree     = UIStackView()
     let infoStackViewSectorFour      = UIStackView()
+    let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
         let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
@@ -20,6 +21,32 @@ class DescriptionView: UIView {
         cardImageView.contentMode = .scaleAspectFit
         return cardImageView
     }()
+    
+    let frontBoardImageView: UIImageView = {
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+        let cardImage = UIImage(named: "GTX-TITAN")
+        cardImageView.image = cardImage
+        cardImageView.contentMode = .scaleAspectFit
+        return cardImageView
+    }()
+    
+    let backBoardImageView: UIImageView = {
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+        let cardImage = UIImage(named: "GTX-TITAN")
+        cardImageView.image = cardImage
+        cardImageView.contentMode = .scaleAspectFit
+        return cardImageView
+    }()
+    
+    let crystalImageView: UIImageView = {
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+        let cardImage = UIImage(named: "GTX-TITAN")
+        cardImageView.image = cardImage
+        cardImageView.contentMode = .scaleAspectFit
+        return cardImageView
+    }()
+
+
     
     let cardImageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -398,7 +425,6 @@ class DescriptionView: UIView {
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
-        cardImageScrollView.addSubview(cardImageView)
     }
     
     required init?(coder: NSCoder) {
@@ -411,11 +437,17 @@ extension DescriptionView {
         let stackViews: [UIStackView] = [infoStackViewSectorOne,
                                          infoStackViewSectorTwo,
                                          infoStackViewSectorThree,
-                                         infoStackViewSectorFour]
+                                         infoStackViewSectorFour,
+                                         cardImageStackView]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(subView)
         }
+        
+        //cardImageStackView CFG
+        cardImageStackView.axis = .horizontal
+        cardImageStackView.distribution = .fillProportionally
+        cardImageStackView.alignment = .leading
+        cardImageStackView.spacing = 10
         //stackView sector one CFG
         infoStackViewSectorOne.axis            = .vertical
         infoStackViewSectorOne.distribution    = .fillEqually
@@ -446,12 +478,12 @@ extension DescriptionView {
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
-        
+        cardImageScrollView.backgroundColor = .green
         NSLayoutConstraint.activate([
-            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
             cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            cardImageScrollView.heightAnchor.constraint(equalToConstant: 200),
+            cardImageScrollView.heightAnchor.constraint(equalToConstant: 210),
             
             
             specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
@@ -508,6 +540,12 @@ extension DescriptionView {
                                                          vulcanLabel,
                                                          cudaLabel,
                                                          shaderLabel]
+        
+        let itemsForCardImageStackView: [UIView] = []
+        
+        itemsForCardImageStackView.forEach { item in
+            cardImageStackView.addArrangedSubview(item)
+        }
         
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
