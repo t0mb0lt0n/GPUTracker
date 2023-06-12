@@ -13,10 +13,18 @@ class DescriptionView: UIView {
     let infoStackViewSectorThree     = UIStackView()
     let infoStackViewSectorFour      = UIStackView()
     
+    let cardImageView: UIImageView = {
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+        let cardImage = UIImage(named: "GTX-TITAN")
+        cardImageView.image = cardImage
+        cardImageView.contentMode = .scaleAspectFit
+        return cardImageView
+    }()
+    
     let cardImageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = true
-        scrollView.contentSize = CGSize(width: 300, height: 0)
+        scrollView.contentSize = CGSize(width: 1000, height: 0)
         return scrollView
     }()
     
@@ -388,7 +396,9 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         setupStackViews()
         addSubview(specScrollView)
+        addSubview(cardImageScrollView)
         setupConstraints()
+        cardImageScrollView.addSubview(cardImageView)
     }
     
     required init?(coder: NSCoder) {
@@ -435,7 +445,15 @@ extension DescriptionView {
     
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
+        cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
+            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            cardImageScrollView.heightAnchor.constraint(equalToConstant: 200),
+            
+            
             specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
