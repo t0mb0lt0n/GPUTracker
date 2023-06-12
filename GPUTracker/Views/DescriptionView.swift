@@ -15,7 +15,7 @@ class DescriptionView: UIView {
     let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         let cardImage = UIImage(named: "GTX-TITAN")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
@@ -23,24 +23,24 @@ class DescriptionView: UIView {
     }()
     
     let frontBoardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
-        let cardImage = UIImage(named: "GTX-TITAN")
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImage = UIImage(named: "GTX-780 BoardFront")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
         return cardImageView
     }()
     
     let backBoardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
-        let cardImage = UIImage(named: "GTX-TITAN")
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImage = UIImage(named: "GTX-780 BoardBack")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
         return cardImageView
     }()
     
     let crystalImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
-        let cardImage = UIImage(named: "GTX-TITAN")
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImage = UIImage(named: "GTX-780 Crystal")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
         return cardImageView
@@ -51,7 +51,7 @@ class DescriptionView: UIView {
     let cardImageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = true
-        scrollView.contentSize = CGSize(width: 1000, height: 0)
+        scrollView.contentSize = CGSize(width: 3000, height: 0)
         return scrollView
     }()
     
@@ -445,7 +445,7 @@ extension DescriptionView {
         
         //cardImageStackView CFG
         cardImageStackView.axis = .horizontal
-        cardImageStackView.distribution = .fillProportionally
+        cardImageStackView.distribution = .equalSpacing
         cardImageStackView.alignment = .leading
         cardImageStackView.spacing = 10
         //stackView sector one CFG
@@ -473,6 +473,7 @@ extension DescriptionView {
         specScrollView.addSubview(infoStackViewSectorTwo)
         specScrollView.addSubview(infoStackViewSectorThree)
         specScrollView.addSubview(infoStackViewSectorFour)
+        cardImageScrollView.addSubview(cardImageStackView)
     }
     
     private func setupConstraints() {
@@ -541,7 +542,10 @@ extension DescriptionView {
                                                          cudaLabel,
                                                          shaderLabel]
         
-        let itemsForCardImageStackView: [UIView] = []
+        let itemsForCardImageStackView: [UIView] = [cardImageView,
+                                                    frontBoardImageView,
+                                                    backBoardImageView,
+                                                    crystalImageView]
         
         itemsForCardImageStackView.forEach { item in
             cardImageStackView.addArrangedSubview(item)
