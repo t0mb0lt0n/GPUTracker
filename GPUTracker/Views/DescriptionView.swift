@@ -34,12 +34,24 @@ class DescriptionView: UIView {
 //        return itemCard
 //    }()
     
-    let frontBoardView: UIView = {
-        let cardView = UIView()
-        let containerView = UIImageView(frame: CGRect(x: 0, y: -5, width: 100, height: 100))
+//    let frontBoardView: UIView = {
+//        let cardView = UIView()
+//        let containerView = UIImageView(frame: CGRect(x: 0, y: -5, width: 200, height: 90))
+//        let cardImage = UIImage(named: "GTX-780 BoardFront")
+//        containerView.image = cardImage
+//        containerView.contentMode = .scaleToFill
+//        cardView.addSubview(containerView)
+//        cardView.backgroundColor = .white
+//        cardView.layer.cornerRadius = 7
+//        cardView.clipsToBounds = true
+//        return cardView
+//    }()
+    
+    let frontBoardView: UIImageView = {
+        let cardView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 BoardFront")
-        containerView.image = cardImage
-        containerView.contentMode = .scaleToFill
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
         cardView.backgroundColor = .white
         cardView.layer.cornerRadius = 7
         cardView.clipsToBounds = true
@@ -90,8 +102,6 @@ class DescriptionView: UIView {
         label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
-        label.numberOfLines = 1
-        //label.text.line
         label.clipsToBounds = true
         return label
     }()
@@ -458,8 +468,8 @@ extension DescriptionView {
         NSLayoutConstraint.activate([
             frontBoardView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 0),
             frontBoardView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor),
-            frontBoardView.widthAnchor.constraint(equalToConstant: 200),
-            frontBoardView.heightAnchor.constraint(equalToConstant: 100),
+            frontBoardView.widthAnchor.constraint(equalToConstant: 550),
+            frontBoardView.heightAnchor.constraint(equalToConstant: 250),
             //cardImageStackView.bottomAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor),
         ])
     }
