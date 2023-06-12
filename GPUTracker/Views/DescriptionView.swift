@@ -15,7 +15,7 @@ class DescriptionView: UIView {
     let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
         let cardImage = UIImage(named: "GTX-TITAN")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
@@ -23,7 +23,7 @@ class DescriptionView: UIView {
     }()
     
     let frontBoardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImageView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 BoardFront")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
@@ -31,7 +31,7 @@ class DescriptionView: UIView {
     }()
     
     let backBoardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImageView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 BoardBack")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
@@ -39,7 +39,7 @@ class DescriptionView: UIView {
     }()
     
     let crystalImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let cardImageView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 Crystal")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
@@ -425,6 +425,7 @@ class DescriptionView: UIView {
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
+        cardImagesSetupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -433,6 +434,33 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
+//    func cardImagesSetupConstraints() {
+//        cardImageView.translatesAutoresizingMaskIntoConstraints = false
+//        frontBoardImageView.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+//            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
+//            cardImageView.widthAnchor.constraint(equalToConstant: 200),
+//            cardImageView.heightAnchor.constraint(equalToConstant: 150),
+//
+//            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+//            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
+//            cardImageView.widthAnchor.constraint(equalToConstant: 20),
+//            cardImageView.heightAnchor.constraint(equalToConstant: 20),
+//        ])
+//    }
+    
+    func cardImagesSetupConstraints() {
+        cardImageStackView.translatesAutoresizingMaskIntoConstraints = false
+        cardImageStackView.backgroundColor = .blue
+        NSLayoutConstraint.activate([
+            cardImageStackView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: -100),
+            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
+            cardImageStackView.widthAnchor.constraint(equalToConstant: 500),
+            cardImageStackView.bottomAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor),
+        ])
+    }
+    
     func setupStackViews() {
         let stackViews: [UIStackView] = [infoStackViewSectorOne,
                                          infoStackViewSectorTwo,
@@ -445,9 +473,9 @@ extension DescriptionView {
         
         //cardImageStackView CFG
         cardImageStackView.axis = .horizontal
-        cardImageStackView.distribution = .equalSpacing
-        cardImageStackView.alignment = .leading
-        cardImageStackView.spacing = 10
+        cardImageStackView.distribution = .fillEqually
+        cardImageStackView.alignment = .fill
+        cardImageStackView.spacing = 5
         //stackView sector one CFG
         infoStackViewSectorOne.axis            = .vertical
         infoStackViewSectorOne.distribution    = .fillEqually
