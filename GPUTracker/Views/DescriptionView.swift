@@ -469,17 +469,6 @@ extension DescriptionView {
                                                         cudaLabel,
                                                         shaderLabel]
         
-//        let itemsForInfoStackViewSectorThree: [UIView] = [tdpLabel,
-//                                                          psuLabel,
-//                                                          directXLabel,
-//                                                          openGLLabel]
-//
-//
-//        let itemsForInfoStackViewSectorFour: [UIView] = [openCLLabel,
-//                                                         vulcanLabel,
-//                                                         cudaLabel,
-//                                                         shaderLabel]
-        
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
         }
