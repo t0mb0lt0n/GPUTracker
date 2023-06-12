@@ -453,7 +453,7 @@ extension DescriptionView {
             crystalImageView.widthAnchor.constraint(equalToConstant: 190),
             crystalImageView.heightAnchor.constraint(equalToConstant: 190),
             
-            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 0),
+            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
             cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
             cardImageView.widthAnchor.constraint(equalToConstant: 405),
             cardImageView.heightAnchor.constraint(equalToConstant: 190),
