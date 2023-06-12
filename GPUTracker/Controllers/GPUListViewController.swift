@@ -99,8 +99,8 @@ extension GPUListViewController: UITableViewDelegate {
                         "Base CLK :",
                         "Boost CLK :",
                         "Memory CLK :",
-                        "Memory SIZE :",
-                        "Memory TYPE :",
+                        "Memory size :",
+                        "Memory type :",
                         "Bus width :",
                         "TDP :",
                         "PSU :",
@@ -147,6 +147,13 @@ extension GPUListViewController: UITableViewDelegate {
 }
 
 extension GPUListViewController {
+    
+    func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
+        for (index, value) in imageViews.enumerated() {
+            value.image = UIImage(systemName: imageNames[index])
+        }
+    }
+    //fill with data
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         for (index, value) in labels.enumerated() {
             value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
