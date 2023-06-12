@@ -16,7 +16,7 @@ class DescriptionView: UIView {
     
     let cardImageView: UIImageView = {
         let cardView = UIImageView()
-        let cardImage = UIImage(named: "GTX-780")
+        let cardImage = UIImage(named: "GTX-780 BoardFront")
         cardView.image = cardImage
         cardView.contentMode = .scaleToFill
         cardView.backgroundColor = .white
@@ -465,7 +465,7 @@ extension DescriptionView {
                                          infoStackViewSectorTwo,
                                          infoStackViewSectorThree,
                                          infoStackViewSectorFour,
-                                         cardImageStackView]
+                                         ]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
         }

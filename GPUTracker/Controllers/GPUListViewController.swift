@@ -134,13 +134,17 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.cudaLabel,
                           targetVC.mainView!.shaderLabel]
         
-            let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
-            let data = getSelectedGPUData(from: selectedGPU)
-            //fill subVievs with specData
-            fillLabels(labels: specLabels, prefix: prefixes, data: data)
-            changeLabelAttributes(inLabels: specLabels, inStrings: data)
-            //print(data)
-            present(targetVC, animated: true)
+        let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
+        let data = getSelectedGPUData(from: selectedGPU)
+        //fill subVievs with specData
+        fillLabels(labels: specLabels, prefix: prefixes, data: data)
+        changeLabelAttributes(inLabels: specLabels, inStrings: data)
+        let name = [(selectedGPU["id"] ?? "") + " BoardFront"]
+        print(name)
+        setupSelectedGPUImageViews(imageViews: [targetVC.mainView!.cardImageView], imageNames: name)
+        
+        //print(data)
+        present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -151,6 +155,7 @@ extension GPUListViewController {
     func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
         for (index, value) in imageViews.enumerated() {
             value.image = UIImage(systemName: imageNames[index])
+            print(imageNames[index])
         }
     }
     //fill with data
