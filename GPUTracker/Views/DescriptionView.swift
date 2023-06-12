@@ -15,26 +15,42 @@ class DescriptionView: UIView {
     let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
-        let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
+        //let cardImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
+        let cardImageView = UIImageView()
         let cardImage = UIImage(named: "GTX-TITAN")
         cardImageView.image = cardImage
         cardImageView.contentMode = .scaleAspectFit
         return cardImageView
     }()
     
-    let frontBoardImageView: UIImageView = {
-        let cardImageView = UIImageView()
+//    let macBookItemCard: UIView = {
+//        let itemCard = UIView()
+//        let testImageView = UIImageView(frame: CGRect(x: 0, y: -5, width: 110, height: 100))
+//        testImageView.image = imageStorage.first ?? nil
+//        testImageView.contentMode = .scaleToFill
+//        itemCard.backgroundColor = .systemGray5
+//        itemCard.layer.cornerRadius = 10
+//        itemCard.addSubview(testImageView)
+//        return itemCard
+//    }()
+    
+    let frontBoardView: UIView = {
+        let cardView = UIView()
+        let containerView = UIImageView(frame: CGRect(x: 0, y: -5, width: 100, height: 100))
         let cardImage = UIImage(named: "GTX-780 BoardFront")
-        cardImageView.image = cardImage
-        cardImageView.contentMode = .scaleAspectFit
-        return cardImageView
+        containerView.image = cardImage
+        containerView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
     }()
     
     let backBoardImageView: UIImageView = {
         let cardImageView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 BoardBack")
         cardImageView.image = cardImage
-        cardImageView.contentMode = .scaleAspectFit
+        cardImageView.contentMode = .scaleToFill
         return cardImageView
     }()
     
@@ -425,6 +441,7 @@ class DescriptionView: UIView {
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
+        cardImageScrollView.addSubview(frontBoardView)
         cardImagesSetupConstraints()
     }
     
@@ -434,30 +451,16 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-//    func cardImagesSetupConstraints() {
-//        cardImageView.translatesAutoresizingMaskIntoConstraints = false
-//        frontBoardImageView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
-//            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
-//            cardImageView.widthAnchor.constraint(equalToConstant: 200),
-//            cardImageView.heightAnchor.constraint(equalToConstant: 150),
-//
-//            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
-//            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
-//            cardImageView.widthAnchor.constraint(equalToConstant: 20),
-//            cardImageView.heightAnchor.constraint(equalToConstant: 20),
-//        ])
-//    }
     
     func cardImagesSetupConstraints() {
-        cardImageStackView.translatesAutoresizingMaskIntoConstraints = false
-        cardImageStackView.backgroundColor = .blue
+        frontBoardView.translatesAutoresizingMaskIntoConstraints = false
+        //frontBoardView.backgroundColor = .blue
         NSLayoutConstraint.activate([
-            cardImageStackView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: -100),
-            //cardImageView.leadingAnchor.constraint(equalTo: cardImageView.leadingAnchor),
-            cardImageStackView.widthAnchor.constraint(equalToConstant: 500),
-            cardImageStackView.bottomAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor),
+            frontBoardView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 0),
+            frontBoardView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor),
+            frontBoardView.widthAnchor.constraint(equalToConstant: 200),
+            frontBoardView.heightAnchor.constraint(equalToConstant: 100),
+            //cardImageStackView.bottomAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor),
         ])
     }
     
@@ -473,7 +476,7 @@ extension DescriptionView {
         
         //cardImageStackView CFG
         cardImageStackView.axis = .horizontal
-        cardImageStackView.distribution = .fillEqually
+        cardImageStackView.distribution = .fillProportionally
         cardImageStackView.alignment = .fill
         cardImageStackView.spacing = 5
         //stackView sector one CFG
@@ -570,14 +573,11 @@ extension DescriptionView {
                                                          cudaLabel,
                                                          shaderLabel]
         
-        let itemsForCardImageStackView: [UIView] = [cardImageView,
-                                                    frontBoardImageView,
-                                                    backBoardImageView,
-                                                    crystalImageView]
+        //let itemsForCardImageStackView: [UIView] = [frontBoardView]
         
-        itemsForCardImageStackView.forEach { item in
-            cardImageStackView.addArrangedSubview(item)
-        }
+//        itemsForCardImageStackView.forEach { item in
+//            cardImageStackView.addArrangedSubview(item)
+//        }
         
         itemsForInfoStackViewSectorOne.forEach { item in
             infoStackViewSectorOne.addArrangedSubview(item)
