@@ -99,8 +99,8 @@ extension GPUListViewController: UITableViewDelegate {
                         "Base CLK :",
                         "Boost CLK :",
                         "Memory CLK :",
-                        "Memory SIZE :",
-                        "Memory TYPE :",
+                        "Memory size :",
+                        "Memory type :",
                         "Bus width :",
                         "TDP :",
                         "PSU :",
@@ -134,19 +134,31 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.cudaLabel,
                           targetVC.mainView!.shaderLabel]
         
-            let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
-            let data = getSelectedGPUData(from: selectedGPU)
-            //fill subVievs with specData
-            fillLabels(labels: specLabels, prefix: prefixes, data: data)
-            changeLabelAttributes(inLabels: specLabels, inStrings: data)
-            //print(data)
-            present(targetVC, animated: true)
+        let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
+        let data = getSelectedGPUData(from: selectedGPU)
+        //fill subVievs with specData
+        fillLabels(labels: specLabels, prefix: prefixes, data: data)
+        changeLabelAttributes(inLabels: specLabels, inStrings: data)
+        let name = [(selectedGPU["id"] ?? "")]
+        print(name)
+        setupSelectedGPUImageViews(imageViews: [targetVC.mainView!.cardImageView], imageNames: name)
+        
+        //print(data)
+        present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension GPUListViewController {
+    
+    func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
+        for (index, value) in imageViews.enumerated() {
+            value.image = UIImage(named: imageNames[index])
+            print(imageNames[index])
+        }
+    }
+    //fill with data
     func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
         for (index, value) in labels.enumerated() {
             value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"

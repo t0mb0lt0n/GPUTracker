@@ -12,6 +12,57 @@ class DescriptionView: UIView {
     let infoStackViewSectorTwo       = UIStackView()
     let infoStackViewSectorThree     = UIStackView()
     let infoStackViewSectorFour      = UIStackView()
+    let cardImageStackView           = UIStackView()
+    
+    let cardImageView: UIImageView = {
+        let cardView = UIImageView()
+        let cardImage = UIImage(named: "GTX-780 BoardFront")
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
+    }()
+    
+    let frontBoardView: UIImageView = {
+        let cardView = UIImageView()
+        let cardImage = UIImage(named: "GTX-")
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
+    }()
+    
+    let backBoardImageView: UIImageView = {
+        let cardImageView = UIImageView()
+        let cardImage = UIImage(named: "GTX-780 BoardBack")
+        cardImageView.image = cardImage
+        cardImageView.contentMode = .scaleToFill
+        return cardImageView
+    }()
+    
+    let crystalImageView: UIImageView = {
+        let cardView = UIImageView()
+        let cardImage = UIImage(named: "GTX-780 Crystal")
+        cardView.image = cardImage
+        cardView.contentMode = .scaleToFill
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 7
+        cardView.clipsToBounds = true
+        return cardView
+    }()
+
+
+    
+    let cardImageScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = true
+        scrollView.contentSize = CGSize(width: 3000, height: 0)
+        return scrollView
+    }()
     
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -379,7 +430,11 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         setupStackViews()
         addSubview(specScrollView)
+        addSubview(cardImageScrollView)
         setupConstraints()
+        cardImageScrollView.addSubview(cardImageView)
+        cardImageScrollView.addSubview(crystalImageView)
+        cardImagesSetupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -388,15 +443,38 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
+    
+    func cardImagesSetupConstraints() {
+        cardImageView.translatesAutoresizingMaskIntoConstraints = false
+        crystalImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            crystalImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+            crystalImageView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor, constant: 20),
+            crystalImageView.widthAnchor.constraint(equalToConstant: 190),
+            crystalImageView.heightAnchor.constraint(equalToConstant: 190),
+            
+            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+            cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
+            cardImageView.widthAnchor.constraint(equalToConstant: 405),
+            cardImageView.heightAnchor.constraint(equalToConstant: 190),
+        ])
+    }
+    
     func setupStackViews() {
         let stackViews: [UIStackView] = [infoStackViewSectorOne,
                                          infoStackViewSectorTwo,
                                          infoStackViewSectorThree,
-                                         infoStackViewSectorFour]
+                                         infoStackViewSectorFour,
+                                         ]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
-            addSubview(subView)
         }
+        
+        //cardImageStackView CFG
+        cardImageStackView.axis = .horizontal
+        cardImageStackView.distribution = .fillProportionally
+        cardImageStackView.alignment = .fill
+        cardImageStackView.spacing = 5
         //stackView sector one CFG
         infoStackViewSectorOne.axis            = .vertical
         infoStackViewSectorOne.distribution    = .fillEqually
@@ -426,7 +504,15 @@ extension DescriptionView {
     
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
+        cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
+        //cardImageScrollView.backgroundColor = .white
         NSLayoutConstraint.activate([
+            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
+            cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            cardImageScrollView.heightAnchor.constraint(equalToConstant: 210),
+            
+            
             specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
