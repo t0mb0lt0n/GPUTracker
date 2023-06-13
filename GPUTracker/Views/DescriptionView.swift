@@ -464,7 +464,7 @@ extension DescriptionView {
             
             cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
             cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
-            cardImageView.widthAnchor.constraint(equalToConstant: 405),
+            cardImageView.widthAnchor.constraint(equalToConstant: 385),
             cardImageView.heightAnchor.constraint(equalToConstant: 190),
         ])
     }
@@ -475,7 +475,6 @@ extension DescriptionView {
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
         }
-        
         //cardImageStackView CFG
         cardImageStackView.axis = .horizontal
         cardImageStackView.distribution = .fillProportionally
