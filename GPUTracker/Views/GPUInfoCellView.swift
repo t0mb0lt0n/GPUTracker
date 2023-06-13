@@ -53,7 +53,7 @@ class GPUInfoCellView: UITableViewCell {
             cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
             cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             cardImage.heightAnchor.constraint(equalToConstant: 43),
-            cardImage.widthAnchor.constraint(equalToConstant: 100),
+            cardImage.widthAnchor.constraint(equalToConstant: 43),
             
             cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 25),
