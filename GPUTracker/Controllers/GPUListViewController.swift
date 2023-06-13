@@ -98,9 +98,9 @@ extension GPUListViewController: UITableViewDelegate {
                         "L2 Cache :",
                         "Base CLK :",
                         "Boost CLK :",
-                        "Memory CLK :",
-                        "Memory size :",
-                        "Memory type :",
+                        "VRAM CLK :",
+                        "VRAM size :",
+                        "VRAM type :",
                         "Bus width :",
                         "TDP :",
                         "PSU :",
@@ -139,7 +139,8 @@ extension GPUListViewController: UITableViewDelegate {
         //fill subVievs with specData
         fillLabels(labels: specLabels, prefix: prefixes, data: data)
         changeLabelAttributes(inLabels: specLabels, inStrings: data)
-        let name = [(selectedGPU["id"] ?? "")]
+        let imageNames = [(selectedGPU["id"] ?? ""),
+                ]
         print(name)
         setupSelectedGPUImageViews(imageViews: [targetVC.mainView!.cardImageView], imageNames: name)
         
