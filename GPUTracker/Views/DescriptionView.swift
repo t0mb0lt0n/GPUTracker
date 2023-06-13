@@ -10,8 +10,6 @@ import UIKit
 class DescriptionView: UIView {
     let infoStackViewSectorOne       = UIStackView()
     let infoStackViewSectorTwo       = UIStackView()
-    let infoStackViewSectorThree     = UIStackView()
-    let infoStackViewSectorFour      = UIStackView()
     let cardImageStackView           = UIStackView()
     
     let cardImageView: UIImageView = {
@@ -55,8 +53,6 @@ class DescriptionView: UIView {
         return cardView
     }()
 
-
-    
     let cardImageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = true
@@ -425,10 +421,11 @@ class DescriptionView: UIView {
         return label
     }()
     
-    //MARK: - init
+//MARK: - init
     init() {
         super.init(frame: .zero)
         setupStackViews()
+        
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
@@ -462,10 +459,7 @@ extension DescriptionView {
     
     func setupStackViews() {
         let stackViews: [UIStackView] = [infoStackViewSectorOne,
-                                         infoStackViewSectorTwo,
-                                         infoStackViewSectorThree,
-                                         infoStackViewSectorFour,
-                                         ]
+                                         infoStackViewSectorTwo]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -485,33 +479,19 @@ extension DescriptionView {
         infoStackViewSectorTwo.distribution    = .fillEqually
         infoStackViewSectorTwo.alignment       = .fill
         infoStackViewSectorTwo.spacing         = 5
-        //stackView sector three CFG
-        infoStackViewSectorThree.axis            = .vertical
-        infoStackViewSectorThree.distribution    = .fillEqually
-        infoStackViewSectorThree.alignment       = .fill
-        infoStackViewSectorThree.spacing         = 5
-        //stackView sector four CFG
-        infoStackViewSectorFour.axis            = .vertical
-        infoStackViewSectorFour.distribution    = .fillEqually
-        infoStackViewSectorFour.alignment       = .fill
-        infoStackViewSectorFour.spacing         = 5
         addItemsToStackView()
         specScrollView.addSubview(infoStackViewSectorOne)
         specScrollView.addSubview(infoStackViewSectorTwo)
-        specScrollView.addSubview(infoStackViewSectorThree)
-        specScrollView.addSubview(infoStackViewSectorFour)
     }
     
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
-        //cardImageScrollView.backgroundColor = .white
         NSLayoutConstraint.activate([
             cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
             cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             cardImageScrollView.heightAnchor.constraint(equalToConstant: 210),
-            
             
             specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
