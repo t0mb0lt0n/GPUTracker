@@ -9,7 +9,6 @@ import UIKit
 import SQLite
 
 class GPUListViewController: UIViewController {
-    
     enum Vendors: String {
         case nvidia = "Nvidia"
         case amd = "AMD"
@@ -17,6 +16,7 @@ class GPUListViewController: UIViewController {
     var selectedVendor: String
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
     
+//MARK: -init
     init(selectedVendor: String) {
         self.selectedVendor = selectedVendor
         super.init(nibName: nil, bundle: nil)
@@ -91,7 +91,7 @@ extension GPUListViewController: UITableViewDelegate {
         let prefixes = ["ID :",
                         "Vendor :",
                         "Cores :",
-                        "Processor :",
+                        "Crystal :",
                         "TMUs :",
                         "ROPs :",
                         "L1 Cache :",

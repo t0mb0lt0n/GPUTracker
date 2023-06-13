@@ -230,7 +230,7 @@ class DescriptionView: UIView {
     let memClockLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -246,7 +246,7 @@ class DescriptionView: UIView {
     let memSizeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 13, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -263,7 +263,7 @@ class DescriptionView: UIView {
     let memTypeLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -518,11 +518,11 @@ extension DescriptionView {
             
             infoStackViewSectorOne.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -2),
+            infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -20),
             infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 400),
             
             infoStackViewSectorTwo.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 2),
+            infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 2),
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 400)
         ])

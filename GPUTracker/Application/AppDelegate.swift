@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
     //MARK: -Core data CFG
     //Create persistant container
     lazy var persistantContainer: NSPersistentContainer = {
