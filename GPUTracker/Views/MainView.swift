@@ -43,6 +43,7 @@ class MainView: UIView {
     }
 }
 
+//MARK: -Extensions
 extension MainView {
     private func setupView() {
         let subViews: [UIView] = [appLogoImage, appNameLabel]
