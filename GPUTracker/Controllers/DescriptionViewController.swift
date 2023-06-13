@@ -14,6 +14,15 @@ class DescriptionViewController: UIViewController {
         super.viewDidLoad()
         view = DescriptionView()
         mainView?.backgroundColor = .secondarySystemBackground
+        mainView?.closeButtonPressedClosure = { [weak self] in
+            self?.cancelButtonPressed()
+        }
+    }
+}
+
+extension DescriptionViewController {
+    fileprivate func cancelButtonPressed() {
+        dismiss(animated: true)
     }
 }
     

@@ -430,7 +430,6 @@ class DescriptionView: UIView {
     
 //MARK: -closures
     var closeButtonPressedClosure: (()-> Void)?
-
     
 //MARK: - init
     init() {
