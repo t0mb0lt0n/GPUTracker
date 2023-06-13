@@ -139,12 +139,11 @@ extension GPUListViewController: UITableViewDelegate {
         //fill subVievs with specData
         fillLabels(labels: specLabels, prefix: prefixes, data: data)
         changeLabelAttributes(inLabels: specLabels, inStrings: data)
-        let a = selectedGPU["id"]! + "Crystal"
-        let imageNames = [a, selectedGPU["id"]!]
-        print(imageNames)
-        setupSelectedGPUImageViews(imageViews: [targetVC.mainView!.crystalImageView, targetVC.mainView!.cardImageView], imageNames: imageNames)
-        
-        //print(data)
+        let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
+                          (selectedGPU["id"] ?? "")]
+        let imageViews = [targetVC.mainView!.crystalImageView,
+                          targetVC.mainView!.cardImageView]
+        setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
         present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
@@ -156,7 +155,6 @@ extension GPUListViewController {
     func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
         for (index, value) in imageViews.enumerated() {
             value.image = UIImage(named: imageNames[index])
-            //print(imageNames[index])
         }
     }
     //fill with data
