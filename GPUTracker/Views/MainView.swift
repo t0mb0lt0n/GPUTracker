@@ -22,7 +22,7 @@ class MainView: UIView {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "GPUTracker v0.2.5"
+        label.text = "GPUTracker v0.3.0"
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
         return label

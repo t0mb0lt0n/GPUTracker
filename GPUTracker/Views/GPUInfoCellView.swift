@@ -23,9 +23,9 @@ class GPUInfoCellView: UITableViewCell {
         return label
     }()
     
-    let rightArrowImage: UIImageView = {
+    let rightInfoImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(systemName: "chevron.right")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+        let arrowImage = UIImage(systemName: "info.circle")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
         image.image = arrowImage
         return image
     }()
@@ -42,7 +42,7 @@ class GPUInfoCellView: UITableViewCell {
     }
     
     private func setupCell() {
-        [cardImage, cardNameLabel, descriptionLabel, rightArrowImage].forEach { subView in
+        [cardImage, cardNameLabel, descriptionLabel, rightInfoImage].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
@@ -64,10 +64,10 @@ class GPUInfoCellView: UITableViewCell {
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             
-            rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightArrowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            rightArrowImage.widthAnchor.constraint(equalToConstant: 12),
-            rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
+            rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            rightInfoImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
+            rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
 }
