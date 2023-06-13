@@ -56,7 +56,7 @@ class DescriptionView: UIView {
     let cardImageScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = true
-        scrollView.contentSize = CGSize(width: 3000, height: 0)
+        scrollView.contentSize = CGSize(width: 642, height: 0)
         return scrollView
     }()
     
@@ -423,9 +423,8 @@ class DescriptionView: UIView {
     
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
-        //button.configuration = .borderless()
         button.setTitle("Закрыть", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
         return button
     }()
     
@@ -444,6 +443,8 @@ class DescriptionView: UIView {
         cardImageScrollView.addSubview(cardImageView)
         cardImageScrollView.addSubview(crystalImageView)
         cardImagesSetupConstraints()
+        //Targets for buttons
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -560,6 +561,14 @@ extension DescriptionView {
             infoStackViewSectorTwo.addArrangedSubview(item)
         }
     }
+}
+//MARK: -Extensions
+extension DescriptionView {
+    //Button handlers
+    @objc func closeButtonPressed() {
+        closeButtonPressedClosure?()
+    }
+    
 }
 
 extension UILabel {
