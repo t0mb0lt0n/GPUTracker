@@ -421,11 +421,23 @@ class DescriptionView: UIView {
         return label
     }()
     
+    let closeButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        //button.configuration = .borderless()
+        button.setTitle("Закрыть", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .regular)
+        return button
+    }()
+    
+//MARK: -closures
+    var closeButtonPressedClosure: (()-> Void)?
+
+    
 //MARK: - init
     init() {
         super.init(frame: .zero)
         setupStackViews()
-        
+        addSubview(closeButton)
         addSubview(specScrollView)
         addSubview(cardImageScrollView)
         setupConstraints()
@@ -487,7 +499,13 @@ extension DescriptionView {
     private func setupConstraints() {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            closeButton.widthAnchor.constraint(equalToConstant: 100),
+            closeButton.heightAnchor.constraint(equalToConstant: 35),
+            
             cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
             cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
