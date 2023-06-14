@@ -94,7 +94,6 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = GPUListViewController(selectedVendor: "Nvidia")
-            // MARK: - DB test zone
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = GPUListViewController(selectedVendor: "AMD")

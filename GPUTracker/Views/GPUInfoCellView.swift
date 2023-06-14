@@ -12,10 +12,17 @@ class GPUInfoCellView: UITableViewCell {
     
     let cardNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 2
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         return label
     }()
+    
+    let memorySizeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.text = "8 GB"
+        return label
+    }()
+
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
@@ -43,7 +50,11 @@ class GPUInfoCellView: UITableViewCell {
     }
     
     private func setupCell() {
-        [cardImage, cardNameLabel, descriptionLabel, rightInfoImage].forEach { subView in
+        [cardImage,
+         cardNameLabel,
+         descriptionLabel,
+         rightInfoImage,
+         memorySizeLabel].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
@@ -56,14 +67,16 @@ class GPUInfoCellView: UITableViewCell {
             cardImage.heightAnchor.constraint(equalToConstant: 43),
             cardImage.widthAnchor.constraint(equalToConstant: 43),
             
-            cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
-            cardNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor),
+            memorySizeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            memorySizeLabel.leadingAnchor.constraint(equalTo: cardNameLabel.trailingAnchor, constant: 5),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor, constant: 2),
             descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
             rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             rightInfoImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),

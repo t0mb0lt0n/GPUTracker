@@ -42,7 +42,6 @@ class GPUListViewController: UIViewController {
         gpuListTableView.dataSource = self
         gpuListTableView.isScrollEnabled = true
         gpuListTableView.separatorInset = UIEdgeInsets(top: 0, left: 75, bottom: 0, right: 0)
-
         setupTableView()
     }
 }
@@ -70,6 +69,7 @@ extension GPUListViewController: UITableViewDataSource {
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: (gpuFieldsData["id"] ?? "gpu1") + "Crystal")
+        customCell.memorySizeLabel.text = "(\(gpuFieldsData["memSize"] ?? "field is empty"))"
         return customCell
     }
     

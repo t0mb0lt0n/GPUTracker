@@ -12,7 +12,7 @@ class ManufacturerCell: UITableViewCell {
     
     let manufacturerNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         return label
     }()
     
