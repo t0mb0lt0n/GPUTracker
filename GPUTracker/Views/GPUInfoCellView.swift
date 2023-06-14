@@ -19,7 +19,6 @@ class GPUInfoCellView: UITableViewCell {
     let memorySizeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.text = "8 GB"
         return label
     }()
 

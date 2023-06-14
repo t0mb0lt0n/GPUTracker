@@ -527,7 +527,7 @@ extension DescriptionView {
             
             gpuNameLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             gpuNameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 5),
-            gpuNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            gpuNameLabel.trailingAnchor.constraint(equalTo: infoStackViewSectorTwo.trailingAnchor, constant: 0),
             gpuNameLabel.heightAnchor.constraint(equalToConstant: 45),
             
             infoStackViewSectorOne.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 5),

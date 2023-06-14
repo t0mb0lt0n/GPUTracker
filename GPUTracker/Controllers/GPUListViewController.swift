@@ -78,7 +78,6 @@ extension GPUListViewController: UITableViewDataSource {
         case "Nvidia":
             return getDBRecordsCount(fromTable: selectedVendor)
         case "AMD":
-            print(selectedVendor)
             return getDBRecordsCount(fromTable: selectedVendor)
         default:
             return 0
