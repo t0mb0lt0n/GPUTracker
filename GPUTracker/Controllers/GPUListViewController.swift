@@ -94,7 +94,7 @@ extension GPUListViewController: UITableViewDelegate {
         let prefixes = ["ID :",
                         "Vendor :",
                         "Cores :",
-                        "Crystal :",
+                        "GPU Variant :",
                         "TMUs :",
                         "ROPs :",
                         "L1 Cache :",

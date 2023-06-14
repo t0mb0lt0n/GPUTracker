@@ -120,13 +120,14 @@ class DescriptionView: UIView {
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
-        label.backgroundColor = .white
+        label.backgroundColor = .blue
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
+        label.numberOfLines = 2
         label.clipsToBounds = true
         return label
     }()
@@ -491,6 +492,8 @@ extension DescriptionView {
         infoStackViewSectorTwo.alignment       = .fill
         infoStackViewSectorTwo.spacing         = 5
         addItemsToStackView()
+        specScrollView.addSubview(idLabel)
+        specScrollView.addSubview(gpuNameLabel)
         specScrollView.addSubview(infoStackViewSectorOne)
         specScrollView.addSubview(infoStackViewSectorTwo)
     }
@@ -528,25 +531,23 @@ extension DescriptionView {
     }
     
     private func addItemsToStackView() {
-        let itemsForInfoStackViewSectorOne: [UIView] = [idLabel,
-                                                        vendorLabel,
+        let itemsForInfoStackViewSectorOne: [UIView] = [vendorLabel,
                                                         gpuCoresLabel,
-                                                        gpuNameLabel,
                                                         tmusLabel,
                                                         ropsLabel,
                                                         lOneLabel,
+                                                        lTwoLabel,
                                                         tdpLabel,
                                                         psuLabel,
-                                                        directXLabel,
-                                                        openGLLabel]
-        
-        let itemsForInfoStackViewSectorTwo: [UIView] = [lTwoLabel,
                                                         baseClockLabel,
-                                                        boostClockLabel,
-                                                        memClockLabel,
+                                                        boostClockLabel]
+        
+        let itemsForInfoStackViewSectorTwo: [UIView] = [memClockLabel,
                                                         memSizeLabel,
                                                         memTypeLabel,
                                                         busLabel,
+                                                        directXLabel,
+                                                        openGLLabel,
                                                         openCLLabel,
                                                         vulcanLabel,
                                                         cudaLabel,
