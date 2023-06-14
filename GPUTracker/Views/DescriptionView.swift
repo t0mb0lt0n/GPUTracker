@@ -62,8 +62,8 @@ class DescriptionView: UIView {
     
     let specScrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.showsVerticalScrollIndicator = false //remove
-        scrollView.contentSize = CGSize(width: 0, height: 500)
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.contentSize = CGSize(width: 0, height: 590)
         return scrollView
     }()
     
@@ -120,12 +120,12 @@ class DescriptionView: UIView {
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
-        label.backgroundColor = .blue
+        label.backgroundColor = .white
         label.textAlignment = .center
         label.textColor = .systemGray
         label.leftInset = 5
         label.rightInset = 5
-        label.topInset = 3
+        label.topInset = 2
         label.bottomInset = 3
         label.numberOfLines = 2
         label.clipsToBounds = true
@@ -502,6 +502,8 @@ extension DescriptionView {
         specScrollView.translatesAutoresizingMaskIntoConstraints = false
         cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
         closeButton.translatesAutoresizingMaskIntoConstraints = false
+        idLabel.translatesAutoresizingMaskIntoConstraints = false
+        gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
@@ -518,13 +520,23 @@ extension DescriptionView {
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
-            infoStackViewSectorOne.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            idLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            idLabel.leadingAnchor.constraint(equalTo: specScrollView.leadingAnchor, constant: 5),
+            idLabel.trailingAnchor.constraint(equalTo: specScrollView.centerXAnchor, constant: -20),
+            idLabel.heightAnchor.constraint(equalToConstant: 45),
+            
+            gpuNameLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            gpuNameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 5),
+            gpuNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            gpuNameLabel.heightAnchor.constraint(equalToConstant: 45),
+            
+            infoStackViewSectorOne.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 5),
             infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
             infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -20),
             infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 400),
             
-            infoStackViewSectorTwo.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 2),
+            infoStackViewSectorTwo.topAnchor.constraint(equalTo: gpuNameLabel.bottomAnchor, constant: 5),
+            infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 5),
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 400)
         ])
