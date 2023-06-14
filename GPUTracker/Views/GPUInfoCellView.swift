@@ -51,16 +51,16 @@ class GPUInfoCellView: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
-            cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             cardImage.heightAnchor.constraint(equalToConstant: 43),
             cardImage.widthAnchor.constraint(equalToConstant: 43),
             
             cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 25),
+            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
             cardNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
             descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 25),
+            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             

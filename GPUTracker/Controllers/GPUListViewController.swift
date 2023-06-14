@@ -41,6 +41,8 @@ class GPUListViewController: UIViewController {
         gpuListTableView.delegate = self
         gpuListTableView.dataSource = self
         gpuListTableView.isScrollEnabled = true
+        gpuListTableView.separatorInset = UIEdgeInsets(top: 0, left: 75, bottom: 0, right: 0)
+
         setupTableView()
     }
 }
@@ -88,6 +90,7 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
+        targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let prefixes = ["ID :",
                         "Vendor :",
                         "Cores :",
