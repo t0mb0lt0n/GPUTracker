@@ -79,6 +79,7 @@ class DescriptionView: UIView {
         label.rightInset = 5
         label.topInset = 3
         label.bottomInset = 3
+        label.numberOfLines = 2
         label.clipsToBounds = true
         return label
     }()

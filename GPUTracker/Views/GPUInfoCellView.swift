@@ -78,7 +78,7 @@ class GPUInfoCellView: UITableViewCell {
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
             rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightInfoImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            rightInfoImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
             rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
         ])
