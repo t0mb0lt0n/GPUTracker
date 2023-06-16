@@ -23,25 +23,6 @@ class DescriptionView: UIView {
         return cardView
     }()
     
-    let frontBoardView: UIImageView = {
-        let cardView = UIImageView()
-        let cardImage = UIImage(named: "GTX-")
-        cardView.image = cardImage
-        cardView.contentMode = .scaleToFill
-        cardView.backgroundColor = .white
-        cardView.layer.cornerRadius = 7
-        cardView.clipsToBounds = true
-        return cardView
-    }()
-    
-    let backBoardImageView: UIImageView = {
-        let cardImageView = UIImageView()
-        let cardImage = UIImage(named: "GTX-780 BoardBack")
-        cardImageView.image = cardImage
-        cardImageView.contentMode = .scaleToFill
-        return cardImageView
-    }()
-    
     let crystalImageView: UIImageView = {
         let cardView = UIImageView()
         let cardImage = UIImage(named: "GTX-780 Crystal")
@@ -426,7 +407,7 @@ class DescriptionView: UIView {
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Закрыть", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.titleLabel?.font = .systemFont(ofSize: 19, weight: .regular)
         return button
     }()
     
@@ -506,7 +487,7 @@ extension DescriptionView {
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             closeButton.widthAnchor.constraint(equalToConstant: 100),
             closeButton.heightAnchor.constraint(equalToConstant: 35),

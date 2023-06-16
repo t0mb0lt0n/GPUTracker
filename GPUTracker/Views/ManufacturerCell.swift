@@ -56,14 +56,12 @@ class ManufacturerCell: UITableViewCell {
             manufacturerLogo.heightAnchor.constraint(equalToConstant: 32),
             manufacturerLogo.widthAnchor.constraint(equalToConstant: 32),
             
-            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             manufacturerNameLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
-            manufacturerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            descriptionLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor, constant: 2),
             descriptionLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
             rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             rightArrowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
