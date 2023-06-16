@@ -507,7 +507,13 @@ class DescriptionView: UIView {
         return button
     }()
     
-    let separatorView: UIView = {
+    let topSeparatorView: UIView = {
+        let separator = UIView(frame: .zero)
+        separator.backgroundColor = .systemGray2
+        return separator
+    }()
+    
+    let bottomSeparatorView: UIView = {
         let separator = UIView(frame: .zero)
         separator.backgroundColor = .systemGray2
         return separator
@@ -519,11 +525,13 @@ class DescriptionView: UIView {
 //MARK: - init
     init() {
         super.init(frame: .zero)
+        cardImageScrollView.backgroundColor = .white
         setupStackViews()
         [closeButton,
          specScrollView,
          cardImageScrollView,
-         separatorView].forEach { addSubview($0) }
+         //topSeparatorView,
+         ].forEach { addSubview($0) }
         setupConstraints()
         cardImageScrollView.addSubview(cardImageView)
         cardImageScrollView.addSubview(crystalImageView)
@@ -543,12 +551,12 @@ extension DescriptionView {
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
         crystalImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            crystalImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+            crystalImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 25),
             crystalImageView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor, constant: 20),
             crystalImageView.widthAnchor.constraint(equalToConstant: 190),
             crystalImageView.heightAnchor.constraint(equalToConstant: 190),
             
-            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor),
+            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 25),
             cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
             cardImageView.widthAnchor.constraint(equalToConstant: 385),
             cardImageView.heightAnchor.constraint(equalToConstant: 190),
@@ -589,29 +597,30 @@ extension DescriptionView {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        topSeparatorView.translatesAutoresizingMaskIntoConstraints = false
+        bottomSeparatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             closeButton.widthAnchor.constraint(equalToConstant: 100),
             closeButton.heightAnchor.constraint(equalToConstant: 35),
             
-            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
+            cardImageScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 59),
             cardImageScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            cardImageScrollView.heightAnchor.constraint(equalToConstant: 210),
+            cardImageScrollView.heightAnchor.constraint(equalToConstant: 250),
             
-            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 275),
+            specScrollView.topAnchor.constraint(equalTo: cardImageScrollView.bottomAnchor, constant: 0),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             specScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            idLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            idLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor, constant: 20),
             idLabel.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.leadingAnchor),
             idLabel.trailingAnchor.constraint(equalTo: specScrollView.centerXAnchor, constant: -20),
             idLabel.heightAnchor.constraint(equalToConstant: 45),
             
-            gpuNameLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
+            gpuNameLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor, constant: 20),
             gpuNameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 5),
             gpuNameLabel.trailingAnchor.constraint(equalTo: infoStackViewSectorTwo.trailingAnchor),
             gpuNameLabel.heightAnchor.constraint(equalToConstant: 45),
@@ -626,10 +635,15 @@ extension DescriptionView {
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 500),
             
-            separatorView.topAnchor.constraint(equalTo: specScrollView.topAnchor, constant: 5),
-            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 1),
+//            topSeparatorView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: -10),
+//            topSeparatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            topSeparatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            topSeparatorView.heightAnchor.constraint(equalToConstant: 1),
+//
+//            bottomSeparatorView.topAnchor.constraint(equalTo: specScrollView.topAnchor, constant: -5),
+//            bottomSeparatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            bottomSeparatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            bottomSeparatorView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
     
