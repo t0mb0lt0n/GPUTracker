@@ -598,10 +598,10 @@ extension DescriptionView {
             cardImageScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             cardImageScrollView.heightAnchor.constraint(equalToConstant: 210),
             
-            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 300),
+            specScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 275),
             specScrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             specScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            specScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             idLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             idLabel.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.leadingAnchor),
@@ -616,12 +616,12 @@ extension DescriptionView {
             infoStackViewSectorOne.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 5),
             infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -20),
-            infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 400),
+            infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 500),
             
             infoStackViewSectorTwo.topAnchor.constraint(equalTo: gpuNameLabel.bottomAnchor, constant: 5),
             infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 5),
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 400)
+            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     
@@ -635,7 +635,10 @@ extension DescriptionView {
                                                         tdpLabel,
                                                         psuLabel,
                                                         baseClockLabel,
-                                                        boostClockLabel]
+                                                        boostClockLabel,
+                                                        releaseDateLabel,
+                                                        processSizeLabel,
+                                                        architectureLabel]
         
         let itemsForInfoStackViewSectorTwo: [UIView] = [memClockLabel,
                                                         memSizeLabel,
@@ -646,7 +649,10 @@ extension DescriptionView {
                                                         openCLLabel,
                                                         vulcanLabel,
                                                         cudaLabel,
-                                                        shaderLabel]
+                                                        shaderLabel,
+                                                        fp32FloatLabel,
+                                                        foundryLabel,
+                                                        crystalSizeLabel]
         
         itemsForInfoStackViewSectorOne.forEach { infoStackViewSectorOne.addArrangedSubview($0) }
         itemsForInfoStackViewSectorTwo.forEach { infoStackViewSectorTwo.addArrangedSubview($0) }
