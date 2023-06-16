@@ -391,7 +391,7 @@ class DescriptionView: UIView {
     let shaderLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.layer.cornerRadius = 7
         label.backgroundColor = .white
         label.textAlignment = .center
@@ -403,6 +403,107 @@ class DescriptionView: UIView {
         label.clipsToBounds = true
         return label
     }()
+    
+    let releaseDateLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let processSizeLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let architectureLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let fp32FloatLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let foundryLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let crystalSizeLabel: UILabel = {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }()
+
+
+
+
+
     
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)

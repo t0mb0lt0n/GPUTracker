@@ -20,7 +20,7 @@
 		11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11624AB02A2CEC53009022E3 /* PaddingLabel.swift */; };
 		1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */; };
 		1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */; };
-		1186BE572A3C9E6F0031D569 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 1186BE562A3C9E6F0031D569 /* gpuDB.db */; };
+		1186BE592A3CD1160031D569 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 1186BE582A3CD1160031D569 /* gpuDB.db */; };
 		119333DB2A02BBD2006508A9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 119333DA2A02BBD2006508A9 /* SQLite */; };
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
 		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
@@ -44,7 +44,7 @@
 		11624AB02A2CEC53009022E3 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
-		1186BE562A3C9E6F0031D569 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
+		1186BE582A3CD1160031D569 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				1156986829E873F0009B3638 /* LaunchScreen.storyboard */,
 				1156986B29E873F0009B3638 /* Info.plist */,
 				1156986629E873F0009B3638 /* Assets.xcassets */,
-				1186BE562A3C9E6F0031D569 /* gpuDB.db */,
+				1186BE582A3CD1160031D569 /* gpuDB.db */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1186BE572A3C9E6F0031D569 /* gpuDB.db in Resources */,
+				1186BE592A3CD1160031D569 /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
