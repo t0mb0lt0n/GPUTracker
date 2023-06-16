@@ -22,7 +22,7 @@ class MainView: UIView {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "GPUTracker v0.3.5"
+        label.text = "GPUTracker v0.8.1"
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
         label.textAlignment = .center
@@ -57,7 +57,7 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -30),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -25),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appLogoImage.widthAnchor.constraint(equalToConstant: 135),
             appLogoImage.heightAnchor.constraint(equalToConstant: 115),
