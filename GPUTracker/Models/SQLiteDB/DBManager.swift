@@ -20,56 +20,68 @@ func getSelectedGPUFields(fromTable table: String, with index: Int) -> [String: 
         let db = try Connection("\(path)/gpuDB.db")
         let selectedTable = Table(table)
         ///Field requests to Rows
-        let positionField    = Expression<Int>("position")
-        let idField          = Expression<String>("id")
-        let vendorField      = Expression<String>("vendor")
-        let gpuCoresField    = Expression<String>("gpCores")
-        let gpNameField      = Expression<String>("gpName")
-        let tmusField        = Expression<String>("tmus")
-        let ropsField        = Expression<String>("rops")
-        let l1Field          = Expression<String>("l1")
-        let l2Field          = Expression<String>("l2")
-        let baseClockField   = Expression<String>("baseClock")
-        let boostClockField  = Expression<String>("boostClock")
-        let memClockField    = Expression<String>("memClock")
-        let memSizeField     = Expression<String>("memorySize")
-        let memTypeField     = Expression<String>("memType")
-        let busField         = Expression<String>("bus")
-        let tdpField         = Expression<String>("tdp")
-        let psuField         = Expression<String>("psu")
-        let directXField     = Expression<String>("directx")
-        let openGLField      = Expression<String>("openGL")
-        let openCLField      = Expression<String>("openCL")
-        let vulcanField      = Expression<String>("vulcan")
-        let cudaVersionField = Expression<String>("cuda")
-        let shaderModelField = Expression<String>("shaderModel")
-    
-        //transform records to Rows Array
+        let positionField       = Expression<Int>("position")
+        let idField             = Expression<String>("id")
+        let vendorField         = Expression<String>("vendor")
+        let gpuCoresField       = Expression<String>("gpCores")
+        let gpNameField         = Expression<String>("gpName")
+        let tmusField           = Expression<String>("tmus")
+        let ropsField           = Expression<String>("rops")
+        let l1Field             = Expression<String>("l1")
+        let l2Field             = Expression<String>("l2")
+        let baseClockField      = Expression<String>("baseClock")
+        let boostClockField     = Expression<String>("boostClock")
+        let memClockField       = Expression<String>("memClock")
+        let memSizeField        = Expression<String>("memorySize")
+        let memTypeField        = Expression<String>("memType")
+        let busField            = Expression<String>("bus")
+        let tdpField            = Expression<String>("tdp")
+        let psuField            = Expression<String>("psu")
+        let directXField        = Expression<String>("directx")
+        let openGLField         = Expression<String>("openGL")
+        let openCLField         = Expression<String>("openCL")
+        let vulcanField         = Expression<String>("vulcan")
+        let cudaVersionField    = Expression<String>("cuda")
+        let shaderModelField    = Expression<String>("shaderModel")
+        let releaseDateField    = Expression<String>("releaseDate")
+        let processSizeField    = Expression<String>("processSize")
+        let architectureField   = Expression<String>("architecture")
+        let fp32FloatField      = Expression<String>("fp32Float")
+        let foundryField        = Expression<String>("foundry")
+        let crystalSizeField    = Expression<String>("crystalSize")
+
+//MARK: -transform records to Rows Array
         let arr = Array(try db.prepare(selectedTable))
         /// get field from array index
-        gpuFieldsData = ["position"    : String(try arr[index].get(positionField)),
-                         "id"          : try arr[index].get(idField),
-                         "vendor"      : try arr[index].get(vendorField),
-                         "gpuCores"    : try arr[index].get(gpuCoresField),
-                         "gpName"      : try arr[index].get(gpNameField),
-                         "tmus"        : try arr[index].get(tmusField),
-                         "rops"        : try arr[index].get(ropsField),
-                         "l1"          : try arr[index].get(l1Field),
-                         "l2"          : try arr[index].get(l2Field),
-                         "baseClock"   : try arr[index].get(baseClockField),
-                         "boostClock"  : try arr[index].get(boostClockField),
-                         "memClock"    : try arr[index].get(memClockField),
-                         "memSize"     : try arr[index].get(memSizeField),
-                         "memType"     : try arr[index].get(memTypeField),
-                         "bus"         : try arr[index].get(busField),
-                         "tdp"         : try arr[index].get(tdpField),
-                         "psu"         : try arr[index].get(psuField),
-                         "directx"     : try arr[index].get(directXField),
-                         "openGL"      : try arr[index].get(openGLField),
-                         "openCL"      : try arr[index].get(openCLField),
-                         "vulcan"      : try arr[index].get(vulcanField),
-                         "cuda"        : try arr[index].get(cudaVersionField),
-                         "shaderModel" : try arr[index].get(shaderModelField)]
+        gpuFieldsData = ["position"     : String(try arr[index].get(positionField)),
+                         "id"           : try arr[index].get(idField),
+                         "vendor"       : try arr[index].get(vendorField),
+                         "gpuCores"     : try arr[index].get(gpuCoresField),
+                         "gpName"       : try arr[index].get(gpNameField),
+                         "tmus"         : try arr[index].get(tmusField),
+                         "rops"         : try arr[index].get(ropsField),
+                         "l1"           : try arr[index].get(l1Field),
+                         "l2"           : try arr[index].get(l2Field),
+                         "baseClock"    : try arr[index].get(baseClockField),
+                         "boostClock"   : try arr[index].get(boostClockField),
+                         "memClock"     : try arr[index].get(memClockField),
+                         "memSize"      : try arr[index].get(memSizeField),
+                         "memType"      : try arr[index].get(memTypeField),
+                         "bus"          : try arr[index].get(busField),
+                         "tdp"          : try arr[index].get(tdpField),
+                         "psu"          : try arr[index].get(psuField),
+                         "directx"      : try arr[index].get(directXField),
+                         "openGL"       : try arr[index].get(openGLField),
+                         "openCL"       : try arr[index].get(openCLField),
+                         "vulcan"       : try arr[index].get(vulcanField),
+                         "cuda"         : try arr[index].get(cudaVersionField),
+                         "shaderModel"  : try arr[index].get(shaderModelField),
+                         "releaseDate"  : try arr[index].get(releaseDateField),
+                         "processSize"  : try arr[index].get(processSizeField),
+                         "architecture" : try arr[index].get(architectureField),
+                         "fp32Float"    : try arr[index].get(fp32FloatField),
+                         "foundry"      : try arr[index].get(foundryField),
+                         "crystalSize"  : try arr[index].get(crystalSizeField)]
     } catch {
         print(error.localizedDescription)
     }

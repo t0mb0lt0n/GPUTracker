@@ -500,11 +500,6 @@ class DescriptionView: UIView {
         return label
     }()
 
-
-
-
-
-    
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Закрыть", for: .normal)

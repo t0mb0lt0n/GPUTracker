@@ -111,7 +111,13 @@ extension GPUListViewController: UITableViewDelegate {
                         "openCL :",
                         "vulcan :",
                         "CUDA :",
-                        "Shaders :"]
+                        "Shaders :",
+                        "Date: ",
+                        "Process: ",
+                        "Architecture: ",
+                        "fp32Float: ",
+                        "Foundry: ",
+                        "Crystal size: "]
         
         let specLabels = [targetVC.mainView!.idLabel,
                           targetVC.mainView!.vendorLabel,
@@ -134,7 +140,13 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.openCLLabel,
                           targetVC.mainView!.vulcanLabel,
                           targetVC.mainView!.cudaLabel,
-                          targetVC.mainView!.shaderLabel]
+                          targetVC.mainView!.shaderLabel,
+                          targetVC.mainView!.releaseDateLabel,
+                          targetVC.mainView!.processSizeLabel,
+                          targetVC.mainView!.architectureLabel,
+                          targetVC.mainView!.fp32FloatLabel,
+                          targetVC.mainView!.foundryLabel,
+                          targetVC.mainView!.crystalSizeLabel]
         
         let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
         let data = getSelectedGPUData(from: selectedGPU)
@@ -197,7 +209,13 @@ extension GPUListViewController {
                           selectedGPUDict["openCL"],
                           selectedGPUDict["vulcan"],
                           selectedGPUDict["cuda"],
-                          selectedGPUDict["shaderModel"]]
+                          selectedGPUDict["shaderModel"],
+                          selectedGPUDict["releaseDate"],
+                          selectedGPUDict["processSize"],
+                          selectedGPUDict["architecture"],
+                          selectedGPUDict["fp32Float"],
+                          selectedGPUDict["foundry"],
+                          selectedGPUDict["crystalSize"],]
         return resultData
     }
 }
