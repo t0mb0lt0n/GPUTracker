@@ -12,7 +12,7 @@ class MainView: UIView {
     let appLogoImage: UIView = {
         let logo = UIView()
         let logoContainer = UIImageView(frame: CGRect(x: -10, y: -45, width: 150, height: 150))
-        let logoImage = UIImage(named: "gpu3")?.withTintColor(.systemGray2, renderingMode: .alwaysOriginal)
+        let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
         logoContainer.image = logoImage
         logo.clipsToBounds = true
         logoContainer.contentMode = .scaleAspectFit
@@ -23,7 +23,7 @@ class MainView: UIView {
     let appNameLabel: UILabel = {
         let label = UILabel()
         label.text = "GPUTracker v0.3.5"
-        label.textColor = .systemGray2
+        label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
         label.textAlignment = .center
         return label
@@ -62,7 +62,7 @@ extension MainView {
             appLogoImage.widthAnchor.constraint(equalToConstant: 135),
             appLogoImage.heightAnchor.constraint(equalToConstant: 115),
             
-            appNameLabel.bottomAnchor.constraint(equalTo: appLogoImage.bottomAnchor, constant: -30),
+            appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.leadingAnchor, constant: -35),
             appNameLabel.heightAnchor.constraint(equalToConstant: 20),
             appNameLabel.widthAnchor.constraint(equalToConstant: 200),

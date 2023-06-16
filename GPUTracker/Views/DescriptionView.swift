@@ -533,16 +533,15 @@ extension DescriptionView {
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
         crystalImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            crystalImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 25),
+            crystalImageView.centerYAnchor.constraint(equalTo: cardImageScrollView.centerYAnchor),
             crystalImageView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor, constant: 20),
             crystalImageView.widthAnchor.constraint(equalToConstant: 190),
             crystalImageView.heightAnchor.constraint(equalToConstant: 190),
             
-            cardImageView.topAnchor.constraint(equalTo: cardImageScrollView.topAnchor, constant: 25),
+            cardImageView.centerYAnchor.constraint(equalTo: cardImageScrollView.centerYAnchor),
             cardImageView.leadingAnchor.constraint(equalTo: crystalImageView.trailingAnchor, constant: 15),
             cardImageView.widthAnchor.constraint(equalToConstant: 385),
-            cardImageView.heightAnchor.constraint(equalToConstant: 190),
-        ])
+            cardImageView.heightAnchor.constraint(equalToConstant: 190)])
     }
     
     func setupStackViews() {
