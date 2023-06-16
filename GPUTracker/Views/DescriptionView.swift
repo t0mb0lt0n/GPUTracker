@@ -507,6 +507,12 @@ class DescriptionView: UIView {
         return button
     }()
     
+    let separatorView: UIView = {
+        let separator = UIView(frame: .zero)
+        separator.backgroundColor = .systemGray2
+        return separator
+    }()
+    
 //MARK: -closures
     var closeButtonPressedClosure: (()-> Void)?
     
@@ -514,9 +520,10 @@ class DescriptionView: UIView {
     init() {
         super.init(frame: .zero)
         setupStackViews()
-        addSubview(closeButton)
-        addSubview(specScrollView)
-        addSubview(cardImageScrollView)
+        [closeButton,
+         specScrollView,
+         cardImageScrollView,
+         separatorView].forEach { addSubview($0) }
         setupConstraints()
         cardImageScrollView.addSubview(cardImageView)
         cardImageScrollView.addSubview(crystalImageView)
@@ -582,6 +589,7 @@ extension DescriptionView {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
@@ -616,7 +624,12 @@ extension DescriptionView {
             infoStackViewSectorTwo.topAnchor.constraint(equalTo: gpuNameLabel.bottomAnchor, constant: 5),
             infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 5),
             infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 500)
+            infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 500),
+            
+            separatorView.topAnchor.constraint(equalTo: specScrollView.topAnchor, constant: 5),
+            separatorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
     

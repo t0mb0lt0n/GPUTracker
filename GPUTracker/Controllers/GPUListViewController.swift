@@ -69,7 +69,7 @@ extension GPUListViewController: UITableViewDataSource {
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: (gpuFieldsData["id"] ?? "gpu1") + "Crystal")
-        customCell.memorySizeLabel.text = "(\(gpuFieldsData["memSize"] ?? "field is empty"))"
+        //customCell.memorySizeLabel.text = "(\(gpuFieldsData["memSize"] ?? "field is empty"))"
         return customCell
     }
     

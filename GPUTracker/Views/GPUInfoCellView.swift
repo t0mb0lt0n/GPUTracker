@@ -16,13 +16,6 @@ class GPUInfoCellView: UITableViewCell {
         return label
     }()
     
-    let memorySizeLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        return label
-    }()
-
-    
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
@@ -52,8 +45,7 @@ class GPUInfoCellView: UITableViewCell {
         [cardImage,
          cardNameLabel,
          descriptionLabel,
-         rightInfoImage,
-         memorySizeLabel].forEach { subView in
+         rightInfoImage].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
@@ -69,10 +61,6 @@ class GPUInfoCellView: UITableViewCell {
             cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
             cardNameLabel.trailingAnchor.constraint(equalTo: rightInfoImage.leadingAnchor, constant: -10),
-            
-            memorySizeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            memorySizeLabel.leadingAnchor.constraint(equalTo: cardNameLabel.trailingAnchor, constant: 5),
-            memorySizeLabel.trailingAnchor.constraint(equalTo: rightInfoImage.leadingAnchor, constant: -10),
             
             descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor, constant: 2),
             descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
