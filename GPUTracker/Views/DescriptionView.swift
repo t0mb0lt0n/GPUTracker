@@ -522,23 +522,23 @@ extension DescriptionView {
             specScrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
             idLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
-            idLabel.leadingAnchor.constraint(equalTo: specScrollView.leadingAnchor, constant: 5),
+            idLabel.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.leadingAnchor),
             idLabel.trailingAnchor.constraint(equalTo: specScrollView.centerXAnchor, constant: -20),
             idLabel.heightAnchor.constraint(equalToConstant: 45),
             
             gpuNameLabel.topAnchor.constraint(equalTo: specScrollView.topAnchor),
             gpuNameLabel.leadingAnchor.constraint(equalTo: idLabel.trailingAnchor, constant: 5),
-            gpuNameLabel.trailingAnchor.constraint(equalTo: infoStackViewSectorTwo.trailingAnchor, constant: 0),
+            gpuNameLabel.trailingAnchor.constraint(equalTo: infoStackViewSectorTwo.trailingAnchor),
             gpuNameLabel.heightAnchor.constraint(equalToConstant: 45),
             
             infoStackViewSectorOne.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 5),
-            infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
+            infoStackViewSectorOne.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             infoStackViewSectorOne.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: -20),
             infoStackViewSectorOne.heightAnchor.constraint(equalToConstant: 400),
             
             infoStackViewSectorTwo.topAnchor.constraint(equalTo: gpuNameLabel.bottomAnchor, constant: 5),
             infoStackViewSectorTwo.leadingAnchor.constraint(equalTo: infoStackViewSectorOne.trailingAnchor, constant: 5),
-            infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            infoStackViewSectorTwo.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
             infoStackViewSectorTwo.heightAnchor.constraint(equalToConstant: 400)
         ])
     }
