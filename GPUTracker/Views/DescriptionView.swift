@@ -579,6 +579,7 @@ extension DescriptionView {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             closeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
@@ -656,7 +657,6 @@ extension DescriptionView {
     @objc func closeButtonPressed() {
         closeButtonPressedClosure?()
     }
-    
 }
 
 extension UILabel {
