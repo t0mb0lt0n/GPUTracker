@@ -659,6 +659,7 @@ extension DescriptionView {
 }
 
 extension UILabel {
+    //custom text highlight
     func labelTextAttributesChange (fullText : String , changeText : String ) {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: changeText)
