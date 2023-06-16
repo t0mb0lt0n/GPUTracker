@@ -56,7 +56,7 @@ extension GPUListViewController {
             gpuListTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             gpuListTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             gpuListTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gpuListTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            gpuListTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
