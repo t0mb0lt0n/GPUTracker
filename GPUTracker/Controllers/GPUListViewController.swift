@@ -88,36 +88,6 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        targetVC.sheetPresentationController?.prefersGrabberVisible = true
-        let prefixes = ["ID :",
-                        "Vendor :",
-                        "Cores :",
-                        "GPU Variant :",
-                        "TMUs :",
-                        "ROPs :",
-                        "L1 Cache :",
-                        "L2 Cache :",
-                        "Base CLK :",
-                        "Boost CLK :",
-                        "VRAM CLK :",
-                        "VRAM size :",
-                        "VRAM type :",
-                        "Bus width :",
-                        "TDP :",
-                        "PSU :",
-                        "DirectX :",
-                        "openGL :",
-                        "openCL :",
-                        "vulcan :",
-                        "CUDA :",
-                        "Shaders :",
-                        "Date: ",
-                        "Process: ",
-                        "Architecture: ",
-                        "fp32Float: ",
-                        "Foundry: ",
-                        "Crystal size: "]
-        
         let specLabels = [targetVC.mainView!.idLabel,
                           targetVC.mainView!.vendorLabel,
                           targetVC.mainView!.gpuCoresLabel,
@@ -161,6 +131,7 @@ extension GPUListViewController: UITableViewDelegate {
                 self.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
             }
         }
+        targetVC.sheetPresentationController?.prefersGrabberVisible = true
         present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
@@ -191,35 +162,34 @@ extension GPUListViewController {
     }
     //Get all data fields from selected ROW
     func getSelectedGPUData(from selectedGPUDict: [String : String]) -> [String?] {
-        let resultData = [selectedGPUDict["id"],
-                          selectedGPUDict["vendor"],
-                          selectedGPUDict["gpuCores"],
-                          selectedGPUDict["gpName"],
-                          selectedGPUDict["tmus"],
-                          selectedGPUDict["rops"],
-                          selectedGPUDict["l1"],
-                          selectedGPUDict["l2"],
-                          selectedGPUDict["baseClock"],
-                          selectedGPUDict["boostClock"],
-                          selectedGPUDict["memClock"],
-                          selectedGPUDict["memSize"],
-                          selectedGPUDict["memType"],
-                          selectedGPUDict["bus"],
-                          selectedGPUDict["tdp"],
-                          selectedGPUDict["psu"],
-                          selectedGPUDict["directx"],
-                          selectedGPUDict["openGL"],
-                          selectedGPUDict["openCL"],
-                          selectedGPUDict["vulcan"],
-                          selectedGPUDict["cuda"],
-                          selectedGPUDict["shaderModel"],
-                          selectedGPUDict["releaseDate"],
-                          selectedGPUDict["processSize"],
-                          selectedGPUDict["architecture"],
-                          selectedGPUDict["fp32Float"],
-                          selectedGPUDict["foundry"],
-                          selectedGPUDict["crystalSize"]]
-        return resultData
+        [selectedGPUDict["id"],
+         selectedGPUDict["vendor"],
+         selectedGPUDict["gpuCores"],
+         selectedGPUDict["gpName"],
+         selectedGPUDict["tmus"],
+         selectedGPUDict["rops"],
+         selectedGPUDict["l1"],
+         selectedGPUDict["l2"],
+         selectedGPUDict["baseClock"],
+         selectedGPUDict["boostClock"],
+         selectedGPUDict["memClock"],
+         selectedGPUDict["memSize"],
+         selectedGPUDict["memType"],
+         selectedGPUDict["bus"],
+         selectedGPUDict["tdp"],
+         selectedGPUDict["psu"],
+         selectedGPUDict["directx"],
+         selectedGPUDict["openGL"],
+         selectedGPUDict["openCL"],
+         selectedGPUDict["vulcan"],
+         selectedGPUDict["cuda"],
+         selectedGPUDict["shaderModel"],
+         selectedGPUDict["releaseDate"],
+         selectedGPUDict["processSize"],
+         selectedGPUDict["architecture"],
+         selectedGPUDict["fp32Float"],
+         selectedGPUDict["foundry"],
+         selectedGPUDict["crystalSize"]]
     }
 }
 

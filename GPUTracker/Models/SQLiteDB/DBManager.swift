@@ -8,6 +8,35 @@
 import Foundation
 import SQLite
 
+let prefixes = ["ID :",
+                "Vendor :",
+                "Cores :",
+                "GPU Variant :",
+                "TMUs :",
+                "ROPs :",
+                "L1 Cache :",
+                "L2 Cache :",
+                "Base CLK :",
+                "Boost CLK :",
+                "VRAM CLK :",
+                "VRAM size :",
+                "VRAM type :",
+                "Bus width :",
+                "TDP :",
+                "PSU :",
+                "DirectX :",
+                "openGL :",
+                "openCL :",
+                "vulcan :",
+                "CUDA :",
+                "Shaders :",
+                "Date: ",
+                "Process: ",
+                "Architecture: ",
+                "fp32Float: ",
+                "Foundry: ",
+                "Crystal size: "]
+
 func getSelectedGPUFields(fromTable table: String, with index: Int) -> [String: String] {
     var gpuFieldsData: [String: String] = [:]
     
