@@ -69,7 +69,6 @@ extension GPUListViewController: UITableViewDataSource {
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: (gpuFieldsData["id"] ?? "gpu1") + "Crystal")
-        //customCell.memorySizeLabel.text = "(\(gpuFieldsData["memSize"] ?? "field is empty"))"
         return customCell
     }
     
@@ -148,16 +147,20 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.foundryLabel,
                           targetVC.mainView!.crystalSizeLabel]
         
-        let selectedGPU = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
-        let data = getSelectedGPUData(from: selectedGPU)
-        //fill subVievs with specData
-        fillLabels(labels: specLabels, prefix: prefixes, data: data)
-        changeLabelAttributes(inLabels: specLabels, inStrings: data)
-        let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
-                          (selectedGPU["id"] ?? "")]
-        let imageViews = [targetVC.mainView!.crystalImageView,
-                          targetVC.mainView!.cardImageView]
-        setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
+        let userInitiatedQueue = DispatchQueue.global(qos: .userInitiated)
+        userInitiatedQueue.async {
+            let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
+            let data = self.getSelectedGPUData(from: selectedGPU)
+            DispatchQueue.main.async {
+                self.fillLabels(labels: specLabels, prefix: prefixes, data: data)
+                self.changeLabelAttributes(inLabels: specLabels, inStrings: data)
+                let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
+                                  (selectedGPU["id"] ?? "")]
+                let imageViews = [targetVC.mainView!.crystalImageView,
+                                  targetVC.mainView!.cardImageView]
+                self.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
+            }
+        }
         present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
