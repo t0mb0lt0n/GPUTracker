@@ -117,18 +117,18 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView!.foundryLabel,
                           targetVC.mainView!.crystalSizeLabel]
         
-        let userInitiatedQueue = DispatchQueue.global(qos: .userInitiated)
+        let userInitiatedQueue = DispatchQueue.global(qos: .background)
         userInitiatedQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
             let data = self.getSelectedGPUData(from: selectedGPU)
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
                 let imageViews = [targetVC.mainView!.crystalImageView,
                                   targetVC.mainView!.cardImageView]
-                self.fillLabels(labels: specLabels, prefix: prefixes, data: data)
-                self.changeLabelAttributes(inLabels: specLabels, inStrings: data)
-                self.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
+                self?.fillLabels(labels: specLabels, prefix: prefixes, data: data)
+                self?.changeLabelAttributes(inLabels: specLabels, inStrings: data)
+                self?.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
             }
         }
         targetVC.sheetPresentationController?.prefersGrabberVisible = true
