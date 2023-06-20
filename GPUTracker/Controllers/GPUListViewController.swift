@@ -152,12 +152,12 @@ extension GPUListViewController: UITableViewDelegate {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
             let data = self.getSelectedGPUData(from: selectedGPU)
             DispatchQueue.main.async {
-                self.fillLabels(labels: specLabels, prefix: prefixes, data: data)
-                self.changeLabelAttributes(inLabels: specLabels, inStrings: data)
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
                 let imageViews = [targetVC.mainView!.crystalImageView,
                                   targetVC.mainView!.cardImageView]
+                self.fillLabels(labels: specLabels, prefix: prefixes, data: data)
+                self.changeLabelAttributes(inLabels: specLabels, inStrings: data)
                 self.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
             }
         }
@@ -218,7 +218,7 @@ extension GPUListViewController {
                           selectedGPUDict["architecture"],
                           selectedGPUDict["fp32Float"],
                           selectedGPUDict["foundry"],
-                          selectedGPUDict["crystalSize"],]
+                          selectedGPUDict["crystalSize"]]
         return resultData
     }
 }
