@@ -28,14 +28,7 @@ class GPUListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
-        switch selectedVendor {
-        case "Nvidia":
-            title = selectedVendor
-        case "AMD":
-            title = selectedVendor
-        default:
-            title = "Empty"
-        }
+        title = selectedVendor
         //Cell registration
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
