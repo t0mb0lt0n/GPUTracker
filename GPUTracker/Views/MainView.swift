@@ -29,8 +29,6 @@ class MainView: UIView {
         return label
     }()
     
-
-    
     //MARK: - init
     init() {
         super.init(frame: .zero)

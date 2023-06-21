@@ -664,8 +664,12 @@ extension UILabel {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
-        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black , range: range)
-        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 15, weight: .medium), range: range)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor,
+                               value: UIColor.black ,
+                               range: range)
+        attribute.addAttribute(NSAttributedString.Key.font,
+                               value: UIFont.systemFont(ofSize: 15, weight: .medium),
+                               range: range)
         self.attributedText = attribute
     }
 }
