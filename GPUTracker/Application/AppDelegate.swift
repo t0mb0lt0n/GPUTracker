@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: -Core data CFG
     //Create persistant container
-    lazy var persistantContainer: NSPersistentContainer = {
+    var persistantContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
         container.loadPersistentStores { description, error in
             if let error {
