@@ -79,9 +79,7 @@ class DescriptionView: UIView {
     }()
     
     let vendorLabel = PaddingLabel()
-    
     let gpuCoresLabel = PaddingLabel()
-    
     let tmusLabel = PaddingLabel()
     let ropsLabel = PaddingLabel()
     let lOneLabel = PaddingLabel()
