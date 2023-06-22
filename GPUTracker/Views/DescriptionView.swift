@@ -185,18 +185,15 @@ extension DescriptionView {
             subView.translatesAutoresizingMaskIntoConstraints = false
         }
         //cardImageStackView CFG
-        cardImageStackView.axis = .horizontal
-        cardImageStackView.distribution = .fillProportionally
-        cardImageStackView.alignment = .fill
-        cardImageStackView.spacing = 5
+        configurateHorizontalStackView(cardImageStackView)
         //stackView sectors CFG
         configurateVerticalStackView(infoStackViewSectorOne)
         configurateVerticalStackView(infoStackViewSectorTwo)
         addItemsToStackView()
-        specScrollView.addSubview(idLabel)
-        specScrollView.addSubview(gpuNameLabel)
-        specScrollView.addSubview(infoStackViewSectorOne)
-        specScrollView.addSubview(infoStackViewSectorTwo)
+        [idLabel,
+         gpuNameLabel,
+         infoStackViewSectorOne,
+         infoStackViewSectorTwo].forEach { specScrollView.addSubview($0) }
     }
     
     private func setupConstraints() {
