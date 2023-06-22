@@ -61,38 +61,6 @@ class DescriptionView: UIView {
         return label
     }()
     
-    let vendorLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
-    let gpuCoresLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
     let gpuNameLabel: UILabel = {
         let label = PaddingLabel()
         label.textColor = .systemGray
@@ -110,391 +78,51 @@ class DescriptionView: UIView {
         return label
     }()
     
-    let tmusLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let vendorLabel = PaddingLabel()
     
-    let ropsLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let gpuCoresLabel = PaddingLabel()
     
-    let lOneLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
     
-    let lTwoLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let tmusLabel = PaddingLabel()
+    let ropsLabel = PaddingLabel()
+    let lOneLabel = PaddingLabel()
+    let lTwoLabel = PaddingLabel()
+    let baseClockLabel = PaddingLabel()
+    let boostClockLabel = PaddingLabel()
+    let memClockLabel = PaddingLabel()
+    let memSizeLabel = PaddingLabel()
     
-    let baseClockLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let memTypeLabel = PaddingLabel()
     
-    let boostClockLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let busLabel = PaddingLabel()
     
-    let memClockLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let tdpLabel = PaddingLabel()
     
-    let memSizeLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        label.sizeToFit()
-        return label
-    }()
+    let psuLabel = PaddingLabel()
     
-    let memTypeLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 3
-        label.rightInset = 3
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let directXLabel = PaddingLabel()
     
-    let busLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let openGLLabel = PaddingLabel()
     
-    let tdpLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let openCLLabel = PaddingLabel()
     
-    let psuLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let vulcanLabel = PaddingLabel()
     
-    let directXLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let cudaLabel = PaddingLabel()
     
-    let openGLLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let shaderLabel = PaddingLabel()
     
-    let openCLLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.borderColor = UIColor.systemGray.cgColor
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let releaseDateLabel = PaddingLabel()
     
-    let vulcanLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let processSizeLabel = PaddingLabel()
     
-    let cudaLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let architectureLabel = PaddingLabel()
     
-    let shaderLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let fp32FloatLabel = PaddingLabel()
     
-    let releaseDateLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let foundryLabel = PaddingLabel()
     
-    let processSizeLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
-    let architectureLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
-    let fp32FloatLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
-    let foundryLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
-    
-    let crystalSizeLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
-    }()
+    let crystalSizeLabel = PaddingLabel()
 
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
@@ -511,7 +139,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
         setupStackViews()
-        configurateLabel(labels: [])
+        configurateLabel(labels: [gpuCoresLabel, vendorLabel])
         [closeButton,
          specScrollView,
          cardImageScrollView].forEach { addSubview($0) }
