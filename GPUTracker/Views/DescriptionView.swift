@@ -8,9 +8,9 @@
 import UIKit
 
 class DescriptionView: UIView {
-    let infoStackViewSectorOne       = UIStackView()
-    let infoStackViewSectorTwo       = UIStackView()
-    let cardImageStackView           = UIStackView()
+    let infoStackViewSectorOne = UIStackView()
+    let infoStackViewSectorTwo = UIStackView()
+    let cardImageStackView = UIStackView()
     
     let cardImageView: UIImageView = {
         let cardView = UIImageView()
