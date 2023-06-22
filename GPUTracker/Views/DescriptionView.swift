@@ -511,6 +511,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
         setupStackViews()
+        configurateLabel(labels: [])
         [closeButton,
          specScrollView,
          cardImageScrollView].forEach { addSubview($0) }
@@ -656,6 +657,22 @@ extension DescriptionView {
     @objc func closeButtonPressed() {
         closeButtonPressedClosure?()
     }
+        
+    func configurateLabel(labels: [PaddingLabel]) {
+        labels.forEach { label in
+            label.textColor = .systemGray
+            label.font = .systemFont(ofSize: 15, weight: .regular)
+            label.layer.cornerRadius = 7
+            label.backgroundColor = .white
+            label.textAlignment = .center
+            label.textColor = .systemGray
+            label.leftInset = 5
+            label.rightInset = 5
+            label.topInset = 3
+            label.bottomInset = 3
+            label.clipsToBounds = true
+        }
+    }
 }
 
 extension UILabel {
@@ -673,20 +690,21 @@ extension UILabel {
         self.attributedText = attribute
     }
     
-    func configurateLabel() -> UILabel {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.clipsToBounds = true
-        return label
+    
+    func configurateLabel(labels: [PaddingLabel]) {
+        labels.forEach { label in
+            label.textColor = .systemGray
+            label.font = .systemFont(ofSize: 15, weight: .regular)
+            label.layer.cornerRadius = 7
+            label.backgroundColor = .white
+            label.textAlignment = .center
+            label.textColor = .systemGray
+            label.leftInset = 5
+            label.rightInset = 5
+            label.topInset = 3
+            label.bottomInset = 3
+            label.clipsToBounds = true
+        }
     }
 
 }
