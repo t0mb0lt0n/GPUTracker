@@ -672,4 +672,21 @@ extension UILabel {
                                range: range)
         self.attributedText = attribute
     }
+    
+    func configurateLabel() -> UILabel {
+        let label = PaddingLabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.layer.cornerRadius = 7
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.leftInset = 5
+        label.rightInset = 5
+        label.topInset = 3
+        label.bottomInset = 3
+        label.clipsToBounds = true
+        return label
+    }
+
 }
