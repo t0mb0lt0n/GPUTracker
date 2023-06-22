@@ -81,34 +81,34 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        let specLabels = [targetVC.mainView!.idLabel,
-                          targetVC.mainView!.vendorLabel,
-                          targetVC.mainView!.gpuCoresLabel,
-                          targetVC.mainView!.gpuNameLabel,
-                          targetVC.mainView!.tmusLabel,
-                          targetVC.mainView!.ropsLabel,
-                          targetVC.mainView!.lOneLabel,
-                          targetVC.mainView!.lTwoLabel,
-                          targetVC.mainView!.baseClockLabel,
-                          targetVC.mainView!.boostClockLabel,
-                          targetVC.mainView!.memClockLabel,
-                          targetVC.mainView!.memSizeLabel,
-                          targetVC.mainView!.memTypeLabel,
-                          targetVC.mainView!.busLabel,
-                          targetVC.mainView!.tdpLabel,
-                          targetVC.mainView!.psuLabel,
-                          targetVC.mainView!.directXLabel,
-                          targetVC.mainView!.openGLLabel,
-                          targetVC.mainView!.openCLLabel,
-                          targetVC.mainView!.vulcanLabel,
-                          targetVC.mainView!.cudaLabel,
-                          targetVC.mainView!.shaderLabel,
-                          targetVC.mainView!.releaseDateLabel,
-                          targetVC.mainView!.processSizeLabel,
-                          targetVC.mainView!.architectureLabel,
-                          targetVC.mainView!.fp32FloatLabel,
-                          targetVC.mainView!.foundryLabel,
-                          targetVC.mainView!.crystalSizeLabel]
+        let specLabels = [targetVC.mainView.idLabel,
+                          targetVC.mainView.vendorLabel,
+                          targetVC.mainView.gpuCoresLabel,
+                          targetVC.mainView.gpuNameLabel,
+                          targetVC.mainView.tmusLabel,
+                          targetVC.mainView.ropsLabel,
+                          targetVC.mainView.lOneLabel,
+                          targetVC.mainView.lTwoLabel,
+                          targetVC.mainView.baseClockLabel,
+                          targetVC.mainView.boostClockLabel,
+                          targetVC.mainView.memClockLabel,
+                          targetVC.mainView.memSizeLabel,
+                          targetVC.mainView.memTypeLabel,
+                          targetVC.mainView.busLabel,
+                          targetVC.mainView.tdpLabel,
+                          targetVC.mainView.psuLabel,
+                          targetVC.mainView.directXLabel,
+                          targetVC.mainView.openGLLabel,
+                          targetVC.mainView.openCLLabel,
+                          targetVC.mainView.vulcanLabel,
+                          targetVC.mainView.cudaLabel,
+                          targetVC.mainView.shaderLabel,
+                          targetVC.mainView.releaseDateLabel,
+                          targetVC.mainView.processSizeLabel,
+                          targetVC.mainView.architectureLabel,
+                          targetVC.mainView.fp32FloatLabel,
+                          targetVC.mainView.foundryLabel,
+                          targetVC.mainView.crystalSizeLabel]
         
         let userInitiatedQueue = DispatchQueue.global(qos: .background)
         userInitiatedQueue.async {
@@ -117,8 +117,8 @@ extension GPUListViewController: UITableViewDelegate {
             DispatchQueue.main.async { [weak self] in
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
-                let imageViews = [targetVC.mainView!.crystalImageView,
-                                  targetVC.mainView!.cardImageView]
+                let imageViews = [targetVC.mainView.crystalImageView,
+                                  targetVC.mainView.cardImageView]
                 self?.fillLabels(labels: specLabels, prefix: prefixes, data: data)
                 self?.changeLabelAttributes(inLabels: specLabels, inStrings: data)
                 self?.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)

@@ -8,6 +8,13 @@
 import UIKit
 
 class MainView: UIView {
+    enum Constants {
+        static let appLogoHeight: CGFloat = 115.0
+        static let appLogoWidth: CGFloat = 135.0
+        static let appNameLabelHeight:  CGFloat = 20.0
+        static let appNameLabelWidth: CGFloat = 200.0
+        static let appNameLabelLeadingOffsetConstant: CGFloat = -35.0
+    }
     
     let appLogoImage: UIView = {
         let logo = UIView()
@@ -22,7 +29,7 @@ class MainView: UIView {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "GPUTracker v0.8.1"
+        label.text = "GPUTracker v0.9.0.1"
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
         label.textAlignment = .center
@@ -57,13 +64,14 @@ extension MainView {
         NSLayoutConstraint.activate([
             appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -25),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            appLogoImage.widthAnchor.constraint(equalToConstant: 135),
-            appLogoImage.heightAnchor.constraint(equalToConstant: 115),
+            appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
+            appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
             
             appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.leadingAnchor, constant: -35),
-            appNameLabel.heightAnchor.constraint(equalToConstant: 20),
-            appNameLabel.widthAnchor.constraint(equalToConstant: 200),
+            appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.leadingAnchor,
+                                                  constant: Constants.appNameLabelLeadingOffsetConstant),
+            appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
+            appNameLabel.widthAnchor.constraint(equalToConstant: Constants.appNameLabelWidth)
         ])
     }
 }

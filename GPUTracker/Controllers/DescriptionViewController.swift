@@ -8,13 +8,16 @@
 import UIKit
 
 class DescriptionViewController: UIViewController {
-    lazy var mainView = view as? DescriptionView
+    lazy var mainView = view as! DescriptionView
+    
+    override func loadView() {
+        view = DescriptionView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = DescriptionView()
-        mainView?.backgroundColor = .secondarySystemBackground
-        mainView?.closeButtonPressedClosure = { [weak self] in
+        mainView.backgroundColor = .secondarySystemBackground
+        mainView.closeButtonPressedClosure = { [weak self] in
             self?.cancelButtonPressed()
         }
     }

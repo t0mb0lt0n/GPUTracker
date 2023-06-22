@@ -9,14 +9,16 @@ import UIKit
 import SQLite
 
 class MainViewController: UIViewController {
-    lazy var mainView = view as? MainView
+    lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    
+    override func loadView() {
+        view = MainView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        view = MainView()
         navigationController?.isNavigationBarHidden = false
         setupTableView()
         tableView.register(ManufacturerCell.self, forCellReuseIdentifier: "ManufacturerCell")
@@ -108,12 +110,12 @@ extension MainViewController: UITableViewDelegate {
     
 extension MainViewController {
     private func setupTableView() {
-        mainView!.addSubview(tableView)
+        mainView.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35),
-            tableView.leadingAnchor.constraint(equalTo: mainView!.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: mainView!.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
             tableView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
