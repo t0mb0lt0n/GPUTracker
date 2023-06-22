@@ -82,7 +82,6 @@ class DescriptionView: UIView {
     
     let gpuCoresLabel = PaddingLabel()
     
-    
     let tmusLabel = PaddingLabel()
     let ropsLabel = PaddingLabel()
     let lOneLabel = PaddingLabel()
@@ -91,37 +90,21 @@ class DescriptionView: UIView {
     let boostClockLabel = PaddingLabel()
     let memClockLabel = PaddingLabel()
     let memSizeLabel = PaddingLabel()
-    
     let memTypeLabel = PaddingLabel()
-    
     let busLabel = PaddingLabel()
-    
     let tdpLabel = PaddingLabel()
-    
     let psuLabel = PaddingLabel()
-    
     let directXLabel = PaddingLabel()
-    
     let openGLLabel = PaddingLabel()
-    
     let openCLLabel = PaddingLabel()
-    
     let vulcanLabel = PaddingLabel()
-    
     let cudaLabel = PaddingLabel()
-    
     let shaderLabel = PaddingLabel()
-    
     let releaseDateLabel = PaddingLabel()
-    
     let processSizeLabel = PaddingLabel()
-    
     let architectureLabel = PaddingLabel()
-    
     let fp32FloatLabel = PaddingLabel()
-    
     let foundryLabel = PaddingLabel()
-    
     let crystalSizeLabel = PaddingLabel()
 
     let closeButton: UIButton = {
@@ -139,7 +122,32 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
         setupStackViews()
-        configurateLabel(labels: [gpuCoresLabel, vendorLabel])
+        configurateLabels(labels: [gpuCoresLabel,
+                                  vendorLabel,
+                                  tmusLabel,
+                                  ropsLabel,
+                                  lOneLabel,
+                                  lTwoLabel,
+                                  baseClockLabel,
+                                  boostClockLabel,
+                                  memClockLabel,
+                                  memSizeLabel,
+                                  memTypeLabel,
+                                  busLabel,
+                                  tdpLabel,
+                                  psuLabel,
+                                  directXLabel,
+                                  openGLLabel,
+                                  openCLLabel,
+                                  vulcanLabel,
+                                  cudaLabel,
+                                  shaderLabel,
+                                  releaseDateLabel,
+                                  processSizeLabel,
+                                  architectureLabel,
+                                  fp32FloatLabel,
+                                  foundryLabel,
+                                  crystalSizeLabel])
         [closeButton,
          specScrollView,
          cardImageScrollView].forEach { addSubview($0) }
@@ -319,7 +327,7 @@ extension UILabel {
     }
     
     
-    func configurateLabel(labels: [PaddingLabel]) {
+    func configurateLabels(labels: [PaddingLabel]) {
         labels.forEach { label in
             label.textColor = .systemGray
             label.font = .systemFont(ofSize: 15, weight: .regular)
