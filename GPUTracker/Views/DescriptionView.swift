@@ -210,11 +210,17 @@ extension DescriptionView {
     }
     
     private func setupConstraints() {
-        specScrollView.translatesAutoresizingMaskIntoConstraints = false
-        cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        idLabel.translatesAutoresizingMaskIntoConstraints = false
-        gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
+//        specScrollView.translatesAutoresizingMaskIntoConstraints = false
+//        cardImageScrollView.translatesAutoresizingMaskIntoConstraints = false
+//        closeButton.translatesAutoresizingMaskIntoConstraints = false
+//        idLabel.translatesAutoresizingMaskIntoConstraints = false
+//        gpuNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        [specScrollView,
+        cardImageScrollView,
+        closeButton,
+        idLabel,
+         gpuNameLabel].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
