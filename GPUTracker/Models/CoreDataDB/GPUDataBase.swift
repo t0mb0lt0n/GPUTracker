@@ -13,7 +13,6 @@ struct Manufacturer {
     let description: String
 }
 
-
 struct Source {
     static func generateManufacturers() -> [Manufacturer] {
         [.init(name: "Nvidia",

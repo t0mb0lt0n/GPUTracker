@@ -117,7 +117,6 @@ func getSelectedGPUFields(fromTable table: String, with index: Int) -> [String: 
     return gpuFieldsData
 }
 
-
 func getDBRecordsCount(fromTable table: String) -> Int {
     var records: Int = 0
     do {

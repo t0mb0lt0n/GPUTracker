@@ -21,7 +21,7 @@ class DescriptionViewController: UIViewController {
 }
 
 extension DescriptionViewController {
-    fileprivate func cancelButtonPressed() {
+    func cancelButtonPressed() {
         dismiss(animated: true)
     }
 }
