@@ -11,7 +11,6 @@ class DescriptionView: UIView {
     let infoStackViewSectorOne = UIStackView()
     let infoStackViewSectorTwo = UIStackView()
     let cardImageStackView = UIStackView()
-    
     let vendorLabel = PaddingLabel()
     let gpuCoresLabel = PaddingLabel()
     let tmusLabel = PaddingLabel()
@@ -190,16 +189,9 @@ extension DescriptionView {
         cardImageStackView.distribution = .fillProportionally
         cardImageStackView.alignment = .fill
         cardImageStackView.spacing = 5
-        //stackView sector one CFG
-        infoStackViewSectorOne.axis            = .vertical
-        infoStackViewSectorOne.distribution    = .fillEqually
-        infoStackViewSectorOne.alignment       = .fill
-        infoStackViewSectorOne.spacing         = 5
-        //stackView sector two CFG
-        infoStackViewSectorTwo.axis            = .vertical
-        infoStackViewSectorTwo.distribution    = .fillEqually
-        infoStackViewSectorTwo.alignment       = .fill
-        infoStackViewSectorTwo.spacing         = 5
+        //stackView sectors CFG
+        configurateVerticalStackView(infoStackViewSectorOne)
+        configurateVerticalStackView(infoStackViewSectorTwo)
         addItemsToStackView()
         specScrollView.addSubview(idLabel)
         specScrollView.addSubview(gpuNameLabel)
@@ -306,6 +298,20 @@ extension DescriptionView {
             label.bottomInset = 3
             label.clipsToBounds = true
         }
+    }
+    
+    func configurateVerticalStackView(_ stackView: UIStackView) {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 5
+    }
+    
+    func configurateHorizontalStackView(_ stackView: UIStackView) {
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .fill
+        stackView.spacing = 5
     }
 }
 
