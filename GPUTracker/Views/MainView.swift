@@ -9,6 +9,7 @@ import UIKit
 
 class MainView: UIView {
     enum Constants {
+        static let appNameLabelTopOffsetConstant: CGFloat = -25.0
         static let appLogoHeight: CGFloat = 115.0
         static let appLogoWidth: CGFloat = 135.0
         static let appNameLabelHeight:  CGFloat = 20.0
@@ -62,7 +63,8 @@ extension MainView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -25),
+            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
+                                              constant: Constants.appNameLabelTopOffsetConstant),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
             appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
