@@ -310,6 +310,43 @@ extension DescriptionView {
         stackView.alignment = .fill
         stackView.spacing = 5
     }
+    
+    func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
+        for (index, value) in labels.enumerated() {
+            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
+        }
+            
+            let specLabels = [self.idLabel,
+                              self.vendorLabel,
+                              self.gpuCoresLabel,
+                              self.gpuNameLabel,
+                              self.tmusLabel,
+                              self.ropsLabel,
+                              self.lOneLabel,
+                              self.lTwoLabel,
+                              self.baseClockLabel,
+                              self.boostClockLabel,
+                              self.memClockLabel,
+                              self.memSizeLabel,
+                              self.memTypeLabel,
+                              self.busLabel,
+                              self.tdpLabel,
+                              self.psuLabel,
+                              self.directXLabel,
+                              self.openGLLabel,
+                              self.openCLLabel,
+                              self.vulcanLabel,
+                              self.cudaLabel,
+                              self.shaderLabel,
+                              self.releaseDateLabel,
+                              self.processSizeLabel,
+                              self.architectureLabel,
+                              fp32FloatLabel,
+                              foundryLabel,
+                              crystalSizeLabel]
+            
+        }
+
 }
 
 extension UILabel {
