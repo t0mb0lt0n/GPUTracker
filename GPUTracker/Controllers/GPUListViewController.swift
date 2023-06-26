@@ -110,8 +110,8 @@ extension GPUListViewController: UITableViewDelegate {
                           targetVC.mainView.foundryLabel,
                           targetVC.mainView.crystalSizeLabel]
         
-        let userInitiatedQueue = DispatchQueue.global(qos: .background)
-        userInitiatedQueue.async {
+        let backgroundQueue = DispatchQueue.global(qos: .background)
+        backgroundQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
             let data = self.getSelectedGPUData(from: selectedGPU)
             DispatchQueue.main.async {
