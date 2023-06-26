@@ -84,7 +84,7 @@ extension GPUListViewController: UITableViewDelegate {
         let backgroundQueue = DispatchQueue.global(qos: .background)
         backgroundQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
-            let data = self.getSelectedGPUData(from: selectedGPU)
+            let data = getDataFromSelectedRow(from: selectedGPU)
             DispatchQueue.main.async {
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
@@ -104,36 +104,36 @@ extension GPUListViewController: UITableViewDelegate {
 
 extension GPUListViewController {
     //Get all data fields from selected ROW
-    func getSelectedGPUData(from selectedGPUDict: [String : String]) -> [String?] {
-        [selectedGPUDict["id"],
-         selectedGPUDict["vendor"],
-         selectedGPUDict["gpuCores"],
-         selectedGPUDict["gpName"],
-         selectedGPUDict["tmus"],
-         selectedGPUDict["rops"],
-         selectedGPUDict["l1"],
-         selectedGPUDict["l2"],
-         selectedGPUDict["baseClock"],
-         selectedGPUDict["boostClock"],
-         selectedGPUDict["memClock"],
-         selectedGPUDict["memSize"],
-         selectedGPUDict["memType"],
-         selectedGPUDict["bus"],
-         selectedGPUDict["tdp"],
-         selectedGPUDict["psu"],
-         selectedGPUDict["directx"],
-         selectedGPUDict["openGL"],
-         selectedGPUDict["openCL"],
-         selectedGPUDict["vulcan"],
-         selectedGPUDict["cuda"],
-         selectedGPUDict["shaderModel"],
-         selectedGPUDict["releaseDate"],
-         selectedGPUDict["processSize"],
-         selectedGPUDict["architecture"],
-         selectedGPUDict["fp32Float"],
-         selectedGPUDict["foundry"],
-         selectedGPUDict["crystalSize"]]
-    }
+//    func getSelectedGPUData(from selectedGPUDict: [String : String]) -> [String?] {
+//        [selectedGPUDict["id"],
+//         selectedGPUDict["vendor"],
+//         selectedGPUDict["gpuCores"],
+//         selectedGPUDict["gpName"],
+//         selectedGPUDict["tmus"],
+//         selectedGPUDict["rops"],
+//         selectedGPUDict["l1"],
+//         selectedGPUDict["l2"],
+//         selectedGPUDict["baseClock"],
+//         selectedGPUDict["boostClock"],
+//         selectedGPUDict["memClock"],
+//         selectedGPUDict["memSize"],
+//         selectedGPUDict["memType"],
+//         selectedGPUDict["bus"],
+//         selectedGPUDict["tdp"],
+//         selectedGPUDict["psu"],
+//         selectedGPUDict["directx"],
+//         selectedGPUDict["openGL"],
+//         selectedGPUDict["openCL"],
+//         selectedGPUDict["vulcan"],
+//         selectedGPUDict["cuda"],
+//         selectedGPUDict["shaderModel"],
+//         selectedGPUDict["releaseDate"],
+//         selectedGPUDict["processSize"],
+//         selectedGPUDict["architecture"],
+//         selectedGPUDict["fp32Float"],
+//         selectedGPUDict["foundry"],
+//         selectedGPUDict["crystalSize"]]
+//    }
 }
 
 

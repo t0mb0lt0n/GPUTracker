@@ -117,6 +117,37 @@ func getSelectedGPUFields(fromTable table: String, with index: Int) -> [String: 
     return gpuFieldsData
 }
 
+func getDataFromSelectedRow(from selectedGPUDict: [String : String]) -> [String?] {
+    [selectedGPUDict["id"],
+     selectedGPUDict["vendor"],
+     selectedGPUDict["gpuCores"],
+     selectedGPUDict["gpName"],
+     selectedGPUDict["tmus"],
+     selectedGPUDict["rops"],
+     selectedGPUDict["l1"],
+     selectedGPUDict["l2"],
+     selectedGPUDict["baseClock"],
+     selectedGPUDict["boostClock"],
+     selectedGPUDict["memClock"],
+     selectedGPUDict["memSize"],
+     selectedGPUDict["memType"],
+     selectedGPUDict["bus"],
+     selectedGPUDict["tdp"],
+     selectedGPUDict["psu"],
+     selectedGPUDict["directx"],
+     selectedGPUDict["openGL"],
+     selectedGPUDict["openCL"],
+     selectedGPUDict["vulcan"],
+     selectedGPUDict["cuda"],
+     selectedGPUDict["shaderModel"],
+     selectedGPUDict["releaseDate"],
+     selectedGPUDict["processSize"],
+     selectedGPUDict["architecture"],
+     selectedGPUDict["fp32Float"],
+     selectedGPUDict["foundry"],
+     selectedGPUDict["crystalSize"]]
+}
+
 func getDBRecordsCount(fromTable table: String) -> Int {
     var records: Int = 0
     do {
