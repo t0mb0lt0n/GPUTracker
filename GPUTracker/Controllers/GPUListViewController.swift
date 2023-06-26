@@ -81,35 +81,6 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        let specLabels = [targetVC.mainView.idLabel,
-                          targetVC.mainView.vendorLabel,
-                          targetVC.mainView.gpuCoresLabel,
-                          targetVC.mainView.gpuNameLabel,
-                          targetVC.mainView.tmusLabel,
-                          targetVC.mainView.ropsLabel,
-                          targetVC.mainView.lOneLabel,
-                          targetVC.mainView.lTwoLabel,
-                          targetVC.mainView.baseClockLabel,
-                          targetVC.mainView.boostClockLabel,
-                          targetVC.mainView.memClockLabel,
-                          targetVC.mainView.memSizeLabel,
-                          targetVC.mainView.memTypeLabel,
-                          targetVC.mainView.busLabel,
-                          targetVC.mainView.tdpLabel,
-                          targetVC.mainView.psuLabel,
-                          targetVC.mainView.directXLabel,
-                          targetVC.mainView.openGLLabel,
-                          targetVC.mainView.openCLLabel,
-                          targetVC.mainView.vulcanLabel,
-                          targetVC.mainView.cudaLabel,
-                          targetVC.mainView.shaderLabel,
-                          targetVC.mainView.releaseDateLabel,
-                          targetVC.mainView.processSizeLabel,
-                          targetVC.mainView.architectureLabel,
-                          targetVC.mainView.fp32FloatLabel,
-                          targetVC.mainView.foundryLabel,
-                          targetVC.mainView.crystalSizeLabel]
-        
         let backgroundQueue = DispatchQueue.global(qos: .background)
         backgroundQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
