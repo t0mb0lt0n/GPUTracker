@@ -120,7 +120,7 @@ extension GPUListViewController: UITableViewDelegate {
                 let imageViews = [targetVC.mainView.crystalImageView,
                                   targetVC.mainView.cardImageView]
                 targetVC.configurateLabels(prefix: prefixes, data: data)
-                self?.changeLabelAttributes(inLabels: specLabels, inStrings: data)
+                targetVC.changeLabelAttributes(inLabels: specLabels, inStrings: data)
                 self?.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
             }
         }
@@ -136,12 +136,6 @@ extension GPUListViewController {
     func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
         for (index, value) in imageViews.enumerated() {
             value.image = UIImage(named: imageNames[index])
-        }
-    }
-    //fill with data
-    func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
-        for (index, value) in labels.enumerated() {
-            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
         }
     }
     //Setting new attributes to the text
