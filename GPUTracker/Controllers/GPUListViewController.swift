@@ -119,7 +119,7 @@ extension GPUListViewController: UITableViewDelegate {
                                   (selectedGPU["id"] ?? "")]
                 let imageViews = [targetVC.mainView.crystalImageView,
                                   targetVC.mainView.cardImageView]
-                self?.fillLabels(labels: specLabels, prefix: prefixes, data: data)
+                targetVC.configurateLabels(prefix: prefixes, data: data)
                 self?.changeLabelAttributes(inLabels: specLabels, inStrings: data)
                 self?.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
             }

@@ -311,41 +311,40 @@ extension DescriptionView {
         stackView.spacing = 5
     }
     
-    func fillLabels(labels: [UILabel], prefix: [String], data: [String?]) {
-        for (index, value) in labels.enumerated() {
+    func configurateLabels(prefix: [String], data: [String?]) {
+        let specLabels = [idLabel,
+                          vendorLabel,
+                          gpuCoresLabel,
+                          gpuNameLabel,
+                          tmusLabel,
+                          ropsLabel,
+                          lOneLabel,
+                          lTwoLabel,
+                          baseClockLabel,
+                          boostClockLabel,
+                          memClockLabel,
+                          memSizeLabel,
+                          memTypeLabel,
+                          busLabel,
+                          tdpLabel,
+                          psuLabel,
+                          directXLabel,
+                          openGLLabel,
+                          openCLLabel,
+                          vulcanLabel,
+                          cudaLabel,
+                          shaderLabel,
+                          releaseDateLabel,
+                          processSizeLabel,
+                          architectureLabel,
+                          fp32FloatLabel,
+                          foundryLabel,
+                          crystalSizeLabel]
+        
+        for (index, value) in specLabels.enumerated() {
             value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
         }
-            
-            let specLabels = [idLabel,
-                              vendorLabel,
-                              gpuCoresLabel,
-                              gpuNameLabel,
-                              tmusLabel,
-                              ropsLabel,
-                              lOneLabel,
-                              lTwoLabel,
-                              baseClockLabel,
-                              boostClockLabel,
-                              memClockLabel,
-                              memSizeLabel,
-                              memTypeLabel,
-                              busLabel,
-                              tdpLabel,
-                              psuLabel,
-                              directXLabel,
-                              openGLLabel,
-                              openCLLabel,
-                              vulcanLabel,
-                              cudaLabel,
-                              shaderLabel,
-                              releaseDateLabel,
-                              processSizeLabel,
-                              architectureLabel,
-                              fp32FloatLabel,
-                              foundryLabel,
-                              crystalSizeLabel]
-            
-        }
+    }
 
 }
 
