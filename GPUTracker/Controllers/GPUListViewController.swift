@@ -114,14 +114,14 @@ extension GPUListViewController: UITableViewDelegate {
         userInitiatedQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
             let data = self.getSelectedGPUData(from: selectedGPU)
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async {
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
                 let imageViews = [targetVC.mainView.crystalImageView,
                                   targetVC.mainView.cardImageView]
-                targetVC.configurateLabels(prefix: prefixes, data: data)
-                targetVC.changeLabelAttributes(inLabels: specLabels, inStrings: data)
-                self?.setupSelectedGPUImageViews(imageViews: imageViews, imageNames: imageNames)
+                targetVC.configurateLabels(data: data)
+                targetVC.changeLabelAttributes(inStrings: data)
+                targetVC.setupGPUImages(imageViews: imageViews, imageNames: imageNames)
             }
         }
         targetVC.sheetPresentationController?.prefersGrabberVisible = true
@@ -132,21 +132,6 @@ extension GPUListViewController: UITableViewDelegate {
 }
 
 extension GPUListViewController {
-    
-    func setupSelectedGPUImageViews(imageViews: [UIImageView], imageNames: [String]) {
-        for (index, value) in imageViews.enumerated() {
-            value.image = UIImage(named: imageNames[index])
-        }
-    }
-    //Setting new attributes to the text
-    func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
-        for (index, value) in labels.enumerated() {
-            guard let fullText = labels[index].text, let changeText = strings[index] else {
-                break
-            }
-            value.labelTextAttributesChange(fullText: fullText, changeText: changeText)
-        }
-    }
     //Get all data fields from selected ROW
     func getSelectedGPUData(from selectedGPUDict: [String : String]) -> [String?] {
         [selectedGPUDict["id"],

@@ -56,47 +56,24 @@ extension DescriptionViewController {
         dismiss(animated: true)
     }
     
-    func configurateLabels(prefix: [String], data: [String?]) {
-        let specLabels = [mainView.idLabel,
-                          mainView.vendorLabel,
-                          mainView.gpuCoresLabel,
-                          mainView.gpuNameLabel,
-                          mainView.tmusLabel,
-                          mainView.ropsLabel,
-                          mainView.lOneLabel,
-                          mainView.lTwoLabel,
-                          mainView.baseClockLabel,
-                          mainView.boostClockLabel,
-                          mainView.memClockLabel,
-                          mainView.memSizeLabel,
-                          mainView.memTypeLabel,
-                          mainView.busLabel,
-                          mainView.tdpLabel,
-                          mainView.psuLabel,
-                          mainView.directXLabel,
-                          mainView.openGLLabel,
-                          mainView.openCLLabel,
-                          mainView.vulcanLabel,
-                          mainView.cudaLabel,
-                          mainView.shaderLabel,
-                          mainView.releaseDateLabel,
-                          mainView.processSizeLabel,
-                          mainView.architectureLabel,
-                          mainView.fp32FloatLabel,
-                          mainView.foundryLabel,
-                          mainView.crystalSizeLabel]
-        
+    func configurateLabels(data: [String?]) {
         for (index, value) in specLabels.enumerated() {
-            value.text = "\(prefix[index])  \(data[index] ?? "data field is empty")"
+            value.text = "\(prefixes[index])  \(data[index] ?? "data field is empty")"
         }
     }
     
-    func changeLabelAttributes(inLabels labels: [UILabel], inStrings strings: [String?]) {
-        for (index, value) in labels.enumerated() {
-            guard let fullText = labels[index].text, let changeText = strings[index] else {
+    func changeLabelAttributes(inStrings strings: [String?]) {
+        for (index, value) in specLabels.enumerated() {
+            guard let fullText = specLabels[index].text, let changeText = strings[index] else {
                 break
             }
             value.labelTextAttributesChange(fullText: fullText, changeText: changeText)
+        }
+    }
+    
+    func setupGPUImages(imageViews: [UIImageView], imageNames: [String]) {
+        for (index, value) in imageViews.enumerated() {
+            value.image = UIImage(named: imageNames[index])
         }
     }
 }
