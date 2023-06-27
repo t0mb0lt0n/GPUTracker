@@ -403,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0.3;
+				MARKETING_VERSION = 0.9.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -434,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0.3;
+				MARKETING_VERSION = 0.9.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
