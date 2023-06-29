@@ -30,7 +30,7 @@ class MainView: UIView {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "GPUTracker v0.9.0.7"
+        label.text = "GPUTracker v0.9.0.9"
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 15, weight: .light)
         label.textAlignment = .center
