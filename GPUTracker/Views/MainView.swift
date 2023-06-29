@@ -9,12 +9,12 @@ import UIKit
 
 class MainView: UIView {
     enum Constants {
-        static let appNameLabelTopOffsetConstant: CGFloat = -25.0
-        static let appLogoHeight: CGFloat = 115.0
-        static let appLogoWidth: CGFloat = 135.0
-        static let appNameLabelHeight:  CGFloat = 20.0
-        static let appNameLabelWidth: CGFloat = 200.0
-        static let appNameLabelLeadingOffsetConstant: CGFloat = -35.0
+        static let appNameLabelTopOffsetConstant: CGFloat = -25
+        static let appLogoHeight: CGFloat = 115
+        static let appLogoWidth: CGFloat = 135
+        static let appNameLabelHeight:  CGFloat = 20
+        static let appNameLabelWidth: CGFloat = 200
+        static let appNameLabelLeadingOffsetConstant: CGFloat = -35
     }
     
     let appLogoImage: UIView = {
