@@ -148,6 +148,7 @@ class DescriptionView: UIView {
         [closeButton,
          specScrollView,
          cardImageScrollView].forEach { addSubview($0) }
+        
         setupConstraints()
         cardImageScrollView.addSubview(cardImageView)
         cardImageScrollView.addSubview(crystalImageView)
