@@ -43,7 +43,10 @@ class ManufacturerCell: UITableViewCell {
     
     private func setupCell() {
         //add subViews into the cell
-        [manufacturerLogo, manufacturerNameLabel, descriptionLabel, rightArrowImage].forEach {
+        [manufacturerLogo,
+         manufacturerNameLabel,
+         descriptionLabel,
+         rightArrowImage].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
