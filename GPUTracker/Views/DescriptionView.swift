@@ -179,8 +179,7 @@ extension DescriptionView {
     }
     
     func setupStackViews() {
-        let stackViews: [UIStackView] = [infoStackViewSectorOne,
-                                         infoStackViewSectorTwo]
+        let stackViews: [UIStackView] = [infoStackViewSectorOne, infoStackViewSectorTwo]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
         }
