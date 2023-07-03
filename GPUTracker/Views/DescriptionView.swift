@@ -70,39 +70,43 @@ class DescriptionView: UIView {
         return scrollView
     }()
     
-    let idLabel: PaddingLabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 3
-        label.bottomInset = 3
-        label.numberOfLines = 2
-        label.clipsToBounds = true
-        return label
-    }()
+    let idLabel = PaddingLabel()
     
-    let gpuNameLabel: UILabel = {
-        let label = PaddingLabel()
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .regular)
-        label.layer.cornerRadius = 7
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.leftInset = 5
-        label.rightInset = 5
-        label.topInset = 2
-        label.bottomInset = 3
-        label.numberOfLines = 2
-        label.clipsToBounds = true
-        return label
-    }()
+//    let idLabel: PaddingLabel = {
+//        let label = PaddingLabel()
+//        label.textColor = .systemGray
+//        label.font = .systemFont(ofSize: 15, weight: .regular)
+//        label.layer.cornerRadius = 7
+//        label.backgroundColor = .white
+//        label.textAlignment = .center
+//        label.textColor = .systemGray
+//        label.leftInset = 5
+//        label.rightInset = 5
+//        label.topInset = 3
+//        label.bottomInset = 3
+//        label.numberOfLines = 2
+//        label.clipsToBounds = true
+//        return label
+//    }()
+    
+    let gpuNameLabel = PaddingLabel()
+    
+//    let gpuNameLabel: UILabel = {
+//        let label = PaddingLabel()
+//        label.textColor = .systemGray
+//        label.font = .systemFont(ofSize: 15, weight: .regular)
+//        label.layer.cornerRadius = 7
+//        label.backgroundColor = .white
+//        label.textAlignment = .center
+//        label.textColor = .systemGray
+//        label.leftInset = 5
+//        label.rightInset = 5
+//        label.topInset = 2
+//        label.bottomInset = 3
+//        label.numberOfLines = 2
+//        label.clipsToBounds = true
+//        return label
+//    }()
     
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
@@ -119,32 +123,36 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
         setupStackViews()
-        configurateLabels(labels: [gpuCoresLabel,
-                                  vendorLabel,
-                                  tmusLabel,
-                                  ropsLabel,
-                                  lOneLabel,
-                                  lTwoLabel,
-                                  baseClockLabel,
-                                  boostClockLabel,
-                                  memClockLabel,
-                                  memSizeLabel,
-                                  memTypeLabel,
-                                  busLabel,
-                                  tdpLabel,
-                                  psuLabel,
-                                  directXLabel,
-                                  openGLLabel,
-                                  openCLLabel,
-                                  vulcanLabel,
-                                  cudaLabel,
-                                  shaderLabel,
-                                  releaseDateLabel,
-                                  processSizeLabel,
-                                  architectureLabel,
-                                  fp32FloatLabel,
-                                  foundryLabel,
-                                  crystalSizeLabel])
+        idLabel.numberOfLines = 2
+        
+        configurateLabels(labels: [idLabel,
+                                   gpuNameLabel,
+                                   gpuCoresLabel,
+                                   vendorLabel,
+                                   tmusLabel,
+                                   ropsLabel,
+                                   lOneLabel,
+                                   lTwoLabel,
+                                   baseClockLabel,
+                                   boostClockLabel,
+                                   memClockLabel,
+                                   memSizeLabel,
+                                   memTypeLabel,
+                                   busLabel,
+                                   tdpLabel,
+                                   psuLabel,
+                                   directXLabel,
+                                   openGLLabel,
+                                   openCLLabel,
+                                   vulcanLabel,
+                                   cudaLabel,
+                                   shaderLabel,
+                                   releaseDateLabel,
+                                   processSizeLabel,
+                                   architectureLabel,
+                                   fp32FloatLabel,
+                                   foundryLabel,
+                                   crystalSizeLabel])
         [closeButton,
          specScrollView,
          cardImageScrollView].forEach { addSubview($0) }
