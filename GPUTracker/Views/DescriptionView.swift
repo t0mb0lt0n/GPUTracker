@@ -123,8 +123,7 @@ class DescriptionView: UIView {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
         setupStackViews()
-        idLabel.numberOfLines = 2
-        
+        [idLabel, gpuNameLabel].forEach { $0.numberOfLines = 2 }
         configurateLabels(labels: [idLabel,
                                    gpuNameLabel,
                                    gpuCoresLabel,
