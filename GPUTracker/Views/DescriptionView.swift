@@ -165,8 +165,7 @@ class DescriptionView: UIView {
 extension DescriptionView {
     
     func cardImagesSetupConstraints() {
-        cardImageView.translatesAutoresizingMaskIntoConstraints = false
-        crystalImageView.translatesAutoresizingMaskIntoConstraints = false
+        [cardImageView, crystalImageView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         NSLayoutConstraint.activate([
             crystalImageView.centerYAnchor.constraint(equalTo: cardImageScrollView.centerYAnchor),
             crystalImageView.leadingAnchor.constraint(equalTo: cardImageScrollView.leadingAnchor, constant: 20),
