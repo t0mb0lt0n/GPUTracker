@@ -11,6 +11,8 @@ class DescriptionView: UIView {
     let infoStackViewSectorOne = UIStackView()
     let infoStackViewSectorTwo = UIStackView()
     let cardImageStackView = UIStackView()
+    let idLabel = PaddingLabel()
+    let gpuNameLabel = PaddingLabel()
     let vendorLabel = PaddingLabel()
     let gpuCoresLabel = PaddingLabel()
     let tmusLabel = PaddingLabel()
@@ -69,45 +71,6 @@ class DescriptionView: UIView {
         scrollView.contentSize = CGSize(width: 0, height: 590)
         return scrollView
     }()
-    
-    let idLabel = PaddingLabel()
-    
-//    let idLabel: PaddingLabel = {
-//        let label = PaddingLabel()
-//        label.textColor = .systemGray
-//        label.font = .systemFont(ofSize: 15, weight: .regular)
-//        label.layer.cornerRadius = 7
-//        label.backgroundColor = .white
-//        label.textAlignment = .center
-//        label.textColor = .systemGray
-//        label.leftInset = 5
-//        label.rightInset = 5
-//        label.topInset = 3
-//        label.bottomInset = 3
-//        label.numberOfLines = 2
-//        label.clipsToBounds = true
-//        return label
-//    }()
-    
-    let gpuNameLabel = PaddingLabel()
-    
-//    let gpuNameLabel: UILabel = {
-//        let label = PaddingLabel()
-//        label.textColor = .systemGray
-//        label.font = .systemFont(ofSize: 15, weight: .regular)
-//        label.layer.cornerRadius = 7
-//        label.backgroundColor = .white
-//        label.textAlignment = .center
-//        label.textColor = .systemGray
-//        label.leftInset = 5
-//        label.rightInset = 5
-//        label.topInset = 2
-//        label.bottomInset = 3
-//        label.numberOfLines = 2
-//        label.clipsToBounds = true
-//        return label
-//    }()
-    
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Закрыть", for: .normal)
