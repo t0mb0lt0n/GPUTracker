@@ -71,6 +71,7 @@ class DescriptionView: UIView {
         scrollView.contentSize = CGSize(width: 0, height: 590)
         return scrollView
     }()
+    
     let closeButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.setTitle("Закрыть", for: .normal)
@@ -80,7 +81,6 @@ class DescriptionView: UIView {
     
 //MARK: -closures
     var closeButtonPressedClosure: (()-> Void)?
-    
 //MARK: - init
     init() {
         super.init(frame: .zero)
