@@ -81,6 +81,7 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
+        targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let backgroundQueue = DispatchQueue(label: "com.gmail@goralexwizard", qos: .background)
         backgroundQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
@@ -95,7 +96,6 @@ extension GPUListViewController: UITableViewDelegate {
                 targetVC.setupGPUImages(imageViews: imageViews, imageNames: imageNames)
             }
         }
-        targetVC.sheetPresentationController?.prefersGrabberVisible = true
         present(targetVC, animated: true)
         //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)

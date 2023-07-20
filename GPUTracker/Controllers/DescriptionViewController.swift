@@ -58,7 +58,8 @@ extension DescriptionViewController {
     
     func configurateLabels(data: [String?]) {
         for (index, value) in specLabels.enumerated() {
-            value.text = "\(prefixes[index])  \(data[index] ?? "data field is empty")"
+            guard let recivedData = data[index] else {return}
+            value.text = "\(prefixes[index])  \(recivedData)"
         }
     }
     
