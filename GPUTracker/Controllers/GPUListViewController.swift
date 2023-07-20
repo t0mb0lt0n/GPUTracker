@@ -81,11 +81,11 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        let backgroundQueue = DispatchQueue.global(qos: .background)
+        let backgroundQueue = DispatchQueue(label: "com.gmail@goralexwizard", qos: .background)
         backgroundQueue.async {
             let selectedGPU = getSelectedGPUFields(fromTable: self.selectedVendor, with: indexPath.row)
             let datafromSelectedRow = getDataFromSelectedRow(from: selectedGPU)
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 let imageNames = [(selectedGPU["id"] ?? "") + "Crystal",
                                   (selectedGPU["id"] ?? "")]
                 let imageViews = [targetVC.mainView.crystalImageView,
