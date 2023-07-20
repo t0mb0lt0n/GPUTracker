@@ -77,8 +77,12 @@ class GPUInfoCellView: UITableViewCell {
     
 extension GPUInfoCellView {
     func configurateCell(_ gpuDescription: [String: String]) {
-        cardImage.image = UIImage(named: (gpuDescription["id"] ?? "") + "Crystal")
-        cardNameLabel.text = gpuDescription["id"]
-        descriptionLabel.text = gpuDescription["gpName"]
+        guard let image = gpuDescription["id"],
+              let id = gpuDescription["id"],
+              let description = gpuDescription["gpName"] else {return}
+        cardImage.image = UIImage(named: image + "Crystal")
+        cardNameLabel.text = id
+        descriptionLabel.text = description
+        print(description)
     }
 }
