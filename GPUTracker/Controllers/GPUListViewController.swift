@@ -59,6 +59,7 @@ extension GPUListViewController: UITableViewDataSource {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
         else { fatalError() }
         let gpuFieldsData = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
+        
         customCell.cardNameLabel.text = gpuFieldsData["id"] ?? "field is empty"
         customCell.descriptionLabel.text = gpuFieldsData["gpName"] ?? "field is empty"
         customCell.cardImage.image = UIImage(named: (gpuFieldsData["id"] ?? "gpu1") + "Crystal")
