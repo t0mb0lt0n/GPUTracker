@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SQLite
 
 class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
