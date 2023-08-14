@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SQLite
 
 class GPUListViewController: UIViewController {
     enum Vendors: String {
