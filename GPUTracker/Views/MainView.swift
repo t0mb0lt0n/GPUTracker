@@ -15,6 +15,7 @@ class MainView: UIView {
         static let appNameLabelHeight:  CGFloat = 20
         static let appNameLabelWidth: CGFloat = 200
         static let appNameLabelLeadingOffsetConstant: CGFloat = -35
+        static let appNameBottomPadding: CGFloat = -10
     }
     
     let appLogoImage: UIView = {
@@ -67,7 +68,7 @@ extension MainView {
             appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
             appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
             
-            appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: Constants.appNameBottomPadding),
             appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.leadingAnchor,
                                                   constant: Constants.appNameLabelLeadingOffsetConstant),
             appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
