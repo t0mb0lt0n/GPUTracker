@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DescriptionView: UIView {
+final class DescriptionView: UIView {
     let infoStackViewSectorOne = UIStackView()
     let infoStackViewSectorTwo = UIStackView()
     let cardImageStackView = UIStackView()
@@ -133,8 +133,7 @@ class DescriptionView: UIView {
 }
 
 extension DescriptionView {
-    
-    func cardImagesSetupConstraints() {
+    final func cardImagesSetupConstraints() {
         [cardImageView, crystalImageView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         NSLayoutConstraint.activate([
             crystalImageView.centerYAnchor.constraint(equalTo: cardImageScrollView.centerYAnchor),
@@ -148,7 +147,7 @@ extension DescriptionView {
             cardImageView.heightAnchor.constraint(equalToConstant: 190)])
     }
     
-    func setupStackViews() {
+    final func setupStackViews() {
         let stackViews: [UIStackView] = [infoStackViewSectorOne, infoStackViewSectorTwo]
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
@@ -165,7 +164,7 @@ extension DescriptionView {
          infoStackViewSectorTwo].forEach { specScrollView.addSubview($0) }
     }
     
-    private func setupConstraints() {
+    private final func setupConstraints() {
         [specScrollView,
          cardImageScrollView,
          closeButton,
@@ -210,7 +209,7 @@ extension DescriptionView {
         ])
     }
     
-    private func addItemsToStackView() {
+    private final func addItemsToStackView() {
         let itemsForInfoStackViewSectorOne: [UIView] = [vendorLabel,
                                                         gpuCoresLabel,
                                                         tmusLabel,
@@ -250,7 +249,7 @@ extension DescriptionView {
         closeButtonPressedClosure?()
     }
     
-    func configurateLabels(labels: [PaddingLabel]) {
+    final func configurateLabels(labels: [PaddingLabel]) {
         labels.forEach { label in
             label.textColor = .systemGray
             label.font = .systemFont(ofSize: 15, weight: .regular)
@@ -266,14 +265,14 @@ extension DescriptionView {
         }
     }
     
-    func configurateVerticalStackView(_ stackView: UIStackView) {
+    final func configurateVerticalStackView(_ stackView: UIStackView) {
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
         stackView.spacing = 5
     }
     
-    func configurateHorizontalStackView(_ stackView: UIStackView) {
+    final func configurateHorizontalStackView(_ stackView: UIStackView) {
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
         stackView.alignment = .fill
@@ -283,7 +282,7 @@ extension DescriptionView {
 //MARK: - UILabel extension
 extension UILabel {
     //MARK: custom text highlight
-    func labelTextAttributesChange (fullText : String , changeText : String ) {
+    final func labelTextAttributesChange (fullText : String , changeText : String ) {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: changeText)
         let attribute = NSMutableAttributedString.init(string: fullText)
