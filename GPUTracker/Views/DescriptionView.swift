@@ -79,9 +79,9 @@ class DescriptionView: UIView {
         return button
     }()
     
-//MARK: -closures
+    //MARK: Closures
     var closeButtonPressedClosure: (()-> Void)?
-//MARK: - init
+    //MARK: init
     init() {
         super.init(frame: .zero)
         cardImageScrollView.backgroundColor = .white
@@ -123,7 +123,7 @@ class DescriptionView: UIView {
         cardImageScrollView.addSubview(cardImageView)
         cardImageScrollView.addSubview(crystalImageView)
         cardImagesSetupConstraints()
-        //Targets for buttons
+        //MARK: Targets for buttons
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
     }
     
@@ -153,9 +153,9 @@ extension DescriptionView {
         stackViews.forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
         }
-        //cardImageStackView CFG
+        //MARK: cardImageStackView CFG
         configurateHorizontalStackView(cardImageStackView)
-        //stackView sectors CFG
+        //MARK: stackView sectors CFG
         configurateVerticalStackView(infoStackViewSectorOne)
         configurateVerticalStackView(infoStackViewSectorTwo)
         addItemsToStackView()
@@ -243,13 +243,13 @@ extension DescriptionView {
         itemsForInfoStackViewSectorTwo.forEach { infoStackViewSectorTwo.addArrangedSubview($0) }
     }
 }
-//MARK: -Extensions
+//MARK: - DescriptionView extension
 extension DescriptionView {
-    //Button handlers
+    //MARK: Button handlers
     @objc func closeButtonPressed() {
         closeButtonPressedClosure?()
     }
-        
+    
     func configurateLabels(labels: [PaddingLabel]) {
         labels.forEach { label in
             label.textColor = .systemGray
@@ -280,9 +280,9 @@ extension DescriptionView {
         stackView.spacing = 5
     }
 }
-
+//MARK: - UILabel extension
 extension UILabel {
-    //custom text highlight
+    //MARK: custom text highlight
     func labelTextAttributesChange (fullText : String , changeText : String ) {
         let strNumber: NSString = fullText as NSString
         let range = (strNumber).range(of: changeText)
