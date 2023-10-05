@@ -38,7 +38,7 @@ final class GPUListViewController: UIViewController {
     }
 }
 
-// MARK: - GPUListViewController extensions 
+// MARK: - GPUListViewController extensions
 
 extension GPUListViewController {
     private func setupTableView() {
@@ -54,15 +54,15 @@ extension GPUListViewController {
 }
 
 extension GPUListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    final func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let customCell = tableView.dequeueReusableCell(withIdentifier: "GPUInfoCellView", for: indexPath) as? GPUInfoCellView
-        else {fatalError()}
+        else { fatalError() }
         let gpuFieldsData = getSelectedGPUFields(fromTable: selectedVendor, with: indexPath.row)
         customCell.configurateCell(gpuFieldsData)
         return customCell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    final func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedVendor {
         case "Nvidia":
             return getDBRecordsCount(fromTable: selectedVendor)
@@ -75,8 +75,7 @@ extension GPUListViewController: UITableViewDataSource {
 }
 
 extension GPUListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    final func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
         targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let backgroundQueue = DispatchQueue(label: "com.gmail@goralexwizard", qos: .background)
@@ -94,7 +93,6 @@ extension GPUListViewController: UITableViewDelegate {
             }
         }
         present(targetVC, animated: true)
-        //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
