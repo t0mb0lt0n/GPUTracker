@@ -164,7 +164,7 @@ extension DescriptionView {
          infoStackViewSectorTwo].forEach { specScrollView.addSubview($0) }
     }
     
-    private final func setupConstraints() {
+    final private func setupConstraints() {
         [specScrollView,
          cardImageScrollView,
          closeButton,
@@ -209,7 +209,7 @@ extension DescriptionView {
         ])
     }
     
-    private final func addItemsToStackView() {
+    final private func addItemsToStackView() {
         let itemsForInfoStackViewSectorOne: [UIView] = [vendorLabel,
                                                         gpuCoresLabel,
                                                         tmusLabel,
@@ -245,7 +245,7 @@ extension DescriptionView {
 //MARK: - DescriptionView extension
 extension DescriptionView {
     //MARK: Button handlers
-    @objc func closeButtonPressed() {
+    @objc final func closeButtonPressed() {
         closeButtonPressedClosure?()
     }
     

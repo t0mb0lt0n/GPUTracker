@@ -76,7 +76,7 @@ final class GPUInfoCellView: UITableViewCell {
 }
 //MARK: - GPUInfoCellView extensions
 extension GPUInfoCellView {
-    func configurateCell(_ gpuDescription: [String: String]) {
+    final func configurateCell(_ gpuDescription: [String: String]) {
         guard let image = gpuDescription["id"],
               let id = gpuDescription["id"],
               let description = gpuDescription["gpName"] else {return}
