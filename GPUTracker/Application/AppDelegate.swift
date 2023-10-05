@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //MARK: -Core data CFG
+    //MARK: Core data CFG
     //Create persistant container
     var persistantContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
