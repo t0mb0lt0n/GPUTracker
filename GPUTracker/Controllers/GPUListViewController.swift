@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GPUListViewController: UIViewController {
+final class GPUListViewController: UIViewController {
     enum Vendors: String {
         case nvidia = "Nvidia"
         case amd = "AMD"
@@ -15,7 +15,7 @@ class GPUListViewController: UIViewController {
     var selectedVendor: String
     let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
     
-//MARK: -init
+    //MARK: init
     init(selectedVendor: String) {
         self.selectedVendor = selectedVendor
         super.init(nibName: nil, bundle: nil)
@@ -28,7 +28,7 @@ class GPUListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         title = selectedVendor
-        //Cell registration
+        //MARK: Cell configuration
         gpuListTableView.register(GPUInfoCellView.self, forCellReuseIdentifier: "GPUInfoCellView")
         gpuListTableView.delegate = self
         gpuListTableView.dataSource = self
@@ -38,7 +38,7 @@ class GPUListViewController: UIViewController {
     }
 }
 
-// MARK: -Extensions for TableView CFG
+// MARK: - GPUListViewController extensions 
 
 extension GPUListViewController {
     private func setupTableView() {
