@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     }
 }
 
-//MARK: - extension
+//MARK: - MainViewController extensions
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,7 +102,6 @@ extension MainViewController: UITableViewDelegate {
         default:
             break
         }
-        //deselect tableView row
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -39,7 +39,6 @@ final class GPUListViewController: UIViewController {
 }
 
 // MARK: - GPUListViewController extensions
-
 extension GPUListViewController {
     private func setupTableView() {
         view.addSubview(gpuListTableView)

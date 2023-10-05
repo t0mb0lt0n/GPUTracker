@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ManufacturerCell: UITableViewCell {
+final class ManufacturerCell: UITableViewCell {
     let manufacturerLogo = UIImageView()
     
     let manufacturerNameLabel: UILabel = {
@@ -30,7 +30,7 @@ class ManufacturerCell: UITableViewCell {
         return image
     }()
     
-    //MARK: - custom cell init with cell reuse identifier
+    //MARK:  custom cell init with cell reuse identifier
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -42,7 +42,6 @@ class ManufacturerCell: UITableViewCell {
     }
     
     private func setupCell() {
-        //add subViews into the cell
         [manufacturerLogo,
          manufacturerNameLabel,
          descriptionLabel,
