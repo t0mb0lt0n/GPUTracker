@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GPUInfoCellView: UITableViewCell {
+final class GPUInfoCellView: UITableViewCell {
     let cardImage = UIImageView()
     
     let cardNameLabel: UILabel = {
@@ -30,7 +30,7 @@ class GPUInfoCellView: UITableViewCell {
         return image
     }()
     
-//MARK: -init
+    //MARK: init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -74,7 +74,7 @@ class GPUInfoCellView: UITableViewCell {
         ])
     }
 }
-
+//MARK: - GPUInfoCellView extensions
 extension GPUInfoCellView {
     func configurateCell(_ gpuDescription: [String: String]) {
         guard let image = gpuDescription["id"],

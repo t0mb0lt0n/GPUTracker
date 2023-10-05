@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainView: UIView {
+final class MainView: UIView {
     enum Constants {
         static let appNameLabelTopOffsetConstant: CGFloat = -25
         static let appLogoHeight: CGFloat = 115
@@ -38,7 +38,7 @@ class MainView: UIView {
         return label
     }()
     
-    //MARK: - init
+    //MARK: init
     init() {
         super.init(frame: .zero)
         setupView()
@@ -51,16 +51,16 @@ class MainView: UIView {
     }
 }
 
-//MARK: -Extensions
+//MARK: - MainView extensions
 extension MainView {
-    private func setupView() {
+    final private func setupView() {
         [appLogoImage, appNameLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
     }
     
-    private func setupConstraints() {
+    final private func setupConstraints() {
         NSLayoutConstraint.activate([
             appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
                                               constant: Constants.appNameLabelTopOffsetConstant),
