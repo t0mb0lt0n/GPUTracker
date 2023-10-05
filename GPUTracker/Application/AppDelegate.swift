@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //MARK: Core data CFG
-    //Create persistant container
+    //MARK: Create persistant container
     var persistantContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
         container.loadPersistentStores { description, error in
@@ -30,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
-    func saveContext() {
+    final func saveContext() {
         let context = persistantContainer.viewContext
         if context.hasChanges {
             do {

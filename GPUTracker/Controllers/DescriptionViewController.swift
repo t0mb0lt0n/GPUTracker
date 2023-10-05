@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DescriptionViewController: UIViewController {
+final class DescriptionViewController: UIViewController {
     lazy var mainView = view as! DescriptionView
     lazy var specLabels = [mainView.idLabel,
                            mainView.vendorLabel,
@@ -52,18 +52,18 @@ class DescriptionViewController: UIViewController {
 }
 
 extension DescriptionViewController {
-    func cancelButtonPressed() {
+    final func cancelButtonPressed() {
         dismiss(animated: true)
     }
     
-    func configurateLabels(data: [String?]) {
+    final func configurateLabels(data: [String?]) {
         for (index, value) in specLabels.enumerated() {
             guard let recivedData = data[index] else {return}
             value.text = "\(prefixes[index])  \(recivedData)"
         }
     }
     
-    func changeLabelAttributes(inStrings strings: [String?]) {
+    final func changeLabelAttributes(inStrings strings: [String?]) {
         for (index, value) in specLabels.enumerated() {
             guard let fullText = specLabels[index].text, let changeText = strings[index] else {
                 break
@@ -72,7 +72,7 @@ extension DescriptionViewController {
         }
     }
     
-    func setupGPUImages(imageViews: [UIImageView], imageNames: [String]) {
+    final func setupGPUImages(imageViews: [UIImageView], imageNames: [String]) {
         for (index, value) in imageViews.enumerated() {
             value.image = UIImage(named: imageNames[index])
         }
