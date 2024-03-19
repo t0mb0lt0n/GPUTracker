@@ -88,8 +88,8 @@ func getSelectedGPUFields(
         let fp32FloatField      = Expression<String>("fp32Float")
         let foundryField        = Expression<String>("foundry")
         let crystalSizeField    = Expression<String>("crystalSize")
-
-//MARK: -transform records to Rows Array
+        
+        //transform records to Rows Array
         let arr = Array(try db.prepare(selectedTable))
         /// get field from array index
         gpuFieldsData = [

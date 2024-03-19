@@ -52,7 +52,8 @@ final class ManufacturerCell: UITableViewCell {
         [manufacturerLogo,
          manufacturerNameLabel,
          descriptionLabel,
-         rightArrowImage].forEach {
+         rightArrowImage
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
