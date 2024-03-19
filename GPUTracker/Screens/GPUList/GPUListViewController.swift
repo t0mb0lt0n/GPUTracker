@@ -26,7 +26,8 @@ final class GPUListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .secondarySystemBackground
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
+        view.backgroundColor = .white
         title = selectedVendor
         // Cell configuration
         gpuListTableView.register(

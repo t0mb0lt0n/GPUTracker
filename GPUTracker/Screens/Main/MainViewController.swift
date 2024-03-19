@@ -28,6 +28,8 @@ final class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .white
+        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
     }
 }
 

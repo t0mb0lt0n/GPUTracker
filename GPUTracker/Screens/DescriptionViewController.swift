@@ -46,7 +46,7 @@ final class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // mainView.backgroundColor = .secondarySystemBackground
+        mainView.backgroundColor = .white
         mainView.closeButtonPressedClosure = { [weak self] in
             self?.cancelButtonPressed()
         }
