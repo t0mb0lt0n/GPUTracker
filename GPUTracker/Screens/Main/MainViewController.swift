@@ -27,6 +27,7 @@ final class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        mainView.backgroundColor = .white
     }
 }
 
@@ -160,7 +161,8 @@ extension MainViewController {
             tableView.trailingAnchor.constraint(
                 equalTo: mainView.trailingAnchor
             ),
-            tableView.heightAnchor.constraint(equalToConstant: 250)
+            tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+            //tableView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
 }
