@@ -80,35 +80,25 @@
 		1156985C29E873EE009B3638 /* GPUTracker */ = {
 			isa = PBXGroup;
 			children = (
+				11AE40D42BA9F7E9001B52F8 /* CustomViews */,
 				1156987529E876AE009B3638 /* Models */,
-				1156987429E87685009B3638 /* Application */,
-				1156987229E87609009B3638 /* Controllers */,
-				1156987129E875DB009B3638 /* Views */,
+				1156987129E875DB009B3638 /* Screens */,
 				1156987329E87627009B3638 /* Resources */,
+				1156987429E87685009B3638 /* Application */,
 			);
 			path = GPUTracker;
 			sourceTree = "<group>";
 		};
-		1156987129E875DB009B3638 /* Views */ = {
+		1156987129E875DB009B3638 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
-				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
-				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
-				1156987629E887AB009B3638 /* MainView.swift */,
+				11AE40D32BA9F797001B52F8 /* Main */,
+				11AE40D72BA9F934001B52F8 /* GPUList */,
+				11AE40D52BA9F82F001B52F8 /* Description */,
 				1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1156987229E87609009B3638 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				1156986129E873EE009B3638 /* MainViewController.swift */,
-				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
 				1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */,
 			);
-			path = Controllers;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		1156987329E87627009B3638 /* Resources */ = {
@@ -156,6 +146,40 @@
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
 			path = SQLiteDB;
+			sourceTree = "<group>";
+		};
+		11AE40D32BA9F797001B52F8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1156987629E887AB009B3638 /* MainView.swift */,
+				1156986129E873EE009B3638 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		11AE40D42BA9F7E9001B52F8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
+				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
+				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		11AE40D52BA9F82F001B52F8 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Description;
+			sourceTree = "<group>";
+		};
+		11AE40D72BA9F934001B52F8 /* GPUList */ = {
+			isa = PBXGroup;
+			children = (
+				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
+			);
+			path = GPUList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0.9;
+				MARKETING_VERSION = 0.9.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -428,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9.0.9;
+				MARKETING_VERSION = 0.9.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-goralexwizard.GPUTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

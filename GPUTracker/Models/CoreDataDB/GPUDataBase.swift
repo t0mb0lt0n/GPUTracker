@@ -33,7 +33,9 @@ struct Source {
                 .systemRed,
                 renderingMode: .alwaysOriginal
             ),
-            description: "R-Series/RX/Vega processors")]
+            description: "R-Series/RX/Vega processors"
+         )
+        ]
     }
     
     static func generateManufacturersWithGroups() -> [[Manufacturer]] {
