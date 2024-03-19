@@ -10,7 +10,7 @@ import UIKit
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
-    let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    let tableView = UITableView(frame: .zero, style: .grouped)
     
     override func loadView() {
         view = MainView()

@@ -25,12 +25,13 @@ final class GPUInfoCellView: UITableViewCell {
     
     let rightInfoImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(
-            systemName: "info.circle"
-        )?.withTintColor(
-            .systemBlue,
-            renderingMode: .alwaysOriginal
-        )
+        let arrowImage = UIImage(named: "ps3")
+//        let arrowImage = UIImage(
+//            systemName: "info.circle"
+//        )?.withTintColor(
+//            .systemBlue,
+//            renderingMode: .alwaysOriginal
+//        )
         image.image = arrowImage
         return image
     }()

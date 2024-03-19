@@ -30,9 +30,6 @@ final class MainView: UIView {
         )
         let logoImage = UIImage(
             named: "gpu3"
-        )?.withTintColor(
-            .black,
-            renderingMode: .alwaysOriginal
         )
         logoContainer.image = logoImage
         logo.clipsToBounds = true
@@ -55,7 +52,7 @@ final class MainView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
-        backgroundColor = .secondarySystemBackground
+        //backgroundColor = .secondarySystemBackground
     }
     
     required init?(coder: NSCoder) {

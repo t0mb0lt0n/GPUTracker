@@ -15,27 +15,19 @@ struct Manufacturer {
 
 struct Source {
     static func generateManufacturers() -> [Manufacturer] {
-        [.init(
+        let testImage: UIImage? = UIImage(named: "square")
+      return  [.init(
             name: "Nvidia",
-            image: .init(
-                systemName: "tray.full.fill"
-            )?.withTintColor(
-                .systemGreen,
-                renderingMode: .alwaysOriginal
-            ),
+            image: testImage,
             description: "Gtx/Titan/Tesla processors"
         ),
          .init(
             name: "AMD",
-            image: .init(
-                systemName: "tray.full.fill"
-            )?.withTintColor(
-                .systemRed,
-                renderingMode: .alwaysOriginal
-            ),
+            image: testImage,
             description: "R-Series/RX/Vega processors"
          )
         ]
+        //return []
     }
     
     static func generateManufacturersWithGroups() -> [[Manufacturer]] {

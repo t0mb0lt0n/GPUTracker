@@ -13,7 +13,7 @@ final class GPUListViewController: UIViewController {
         case amd = "AMD"
     }
     var selectedVendor: String
-    let gpuListTableView = UITableView(frame: .zero, style: .insetGrouped)
+    let gpuListTableView = UITableView(frame: .zero, style: .grouped)
     
     //MARK: init
     init(selectedVendor: String) {
@@ -26,7 +26,7 @@ final class GPUListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .secondarySystemBackground
+        //view.backgroundColor = .secondarySystemBackground
         title = selectedVendor
         // Cell configuration
         gpuListTableView.register(
@@ -101,7 +101,7 @@ extension GPUListViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         let targetVC = DescriptionViewController()
-        targetVC.sheetPresentationController?.prefersGrabberVisible = true
+        //targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let backgroundQueue = DispatchQueue(
             label: "com.gmail@goralexwizard",
             qos: .background

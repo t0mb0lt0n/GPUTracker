@@ -27,12 +27,13 @@ final class ManufacturerCell: UITableViewCell {
     
     let rightArrowImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(
-            systemName: "chevron.right"
-        )?.withTintColor(
-            .systemGray,
-            renderingMode: .alwaysOriginal
-        )
+        let arrowImage = UIImage(named: "ps3")
+//        let arrowImage = UIImage(
+//            systemName: "chevron.right"
+//        )?.withTintColor(
+//            .systemGray,
+//            renderingMode: .alwaysOriginal
+//        )
         image.image = arrowImage
         return image
     }()
