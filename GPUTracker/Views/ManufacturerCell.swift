@@ -9,10 +9,12 @@ import UIKit
 
 final class ManufacturerCell: UITableViewCell {
     let manufacturerLogo = UIImageView()
-    
     let manufacturerNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(
+            ofSize: 15,
+            weight: .medium
+        )
         return label
     }()
     
@@ -25,7 +27,12 @@ final class ManufacturerCell: UITableViewCell {
     
     let rightArrowImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(systemName: "chevron.right")?.withTintColor(.systemGray, renderingMode: .alwaysOriginal)
+        let arrowImage = UIImage(
+            systemName: "chevron.right"
+        )?.withTintColor(
+            .systemGray,
+            renderingMode: .alwaysOriginal
+        )
         image.image = arrowImage
         return image
     }()
@@ -53,20 +60,44 @@ final class ManufacturerCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            manufacturerLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            manufacturerLogo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            manufacturerLogo.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 12
+            ),
+            manufacturerLogo.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 12
+            ),
             manufacturerLogo.heightAnchor.constraint(equalToConstant: 32),
             manufacturerLogo.widthAnchor.constraint(equalToConstant: 32),
             
-            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            manufacturerNameLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
+            manufacturerNameLabel.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 10
+            ),
+            manufacturerNameLabel.leadingAnchor.constraint(
+                equalTo: manufacturerLogo.trailingAnchor,
+                constant: 10
+            ),
             
-            descriptionLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor, constant: 2),
-            descriptionLabel.leadingAnchor.constraint(equalTo: manufacturerLogo.trailingAnchor, constant: 10),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            descriptionLabel.topAnchor.constraint(
+                equalTo: manufacturerNameLabel.bottomAnchor,
+                constant: 2
+            ),
+            descriptionLabel.leadingAnchor.constraint(
+                equalTo: manufacturerLogo.trailingAnchor,
+                constant: 10
+            ),
+            descriptionLabel.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -10
+            ),
             
             rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightArrowImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            rightArrowImage.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -20
+            ),
             rightArrowImage.widthAnchor.constraint(equalToConstant: 12),
             rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
         ])

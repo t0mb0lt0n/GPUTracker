@@ -20,8 +20,20 @@ final class MainView: UIView {
     
     let appLogoImage: UIView = {
         let logo = UIView()
-        let logoContainer = UIImageView(frame: CGRect(x: -10, y: -45, width: 150, height: 150))
-        let logoImage = UIImage(named: "gpu3")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let logoContainer = UIImageView(
+            frame: CGRect(
+                x: -10,
+                y: -45,
+                width: 150,
+                height: 150
+            )
+        )
+        let logoImage = UIImage(
+            named: "gpu3"
+        )?.withTintColor(
+            .black,
+            renderingMode: .alwaysOriginal
+        )
         logoContainer.image = logoImage
         logo.clipsToBounds = true
         logoContainer.contentMode = .scaleAspectFit
@@ -54,7 +66,9 @@ final class MainView: UIView {
 //MARK: - MainView extensions
 extension MainView {
     final private func setupView() {
-        [appLogoImage, appNameLabel].forEach {
+        [appLogoImage,
+         appNameLabel
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -62,15 +76,22 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                              constant: Constants.appNameLabelTopOffsetConstant),
+            appLogoImage.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor,
+                constant: Constants.appNameLabelTopOffsetConstant
+            ),
             appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
             appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
             
-            appNameLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: Constants.appNameBottomPadding),
-            appNameLabel.leadingAnchor.constraint(equalTo: appLogoImage.leadingAnchor,
-                                                  constant: Constants.appNameLabelLeadingOffsetConstant),
+            appNameLabel.bottomAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.bottomAnchor,
+                constant: Constants.appNameBottomPadding
+            ),
+            appNameLabel.leadingAnchor.constraint(
+                equalTo: appLogoImage.leadingAnchor,
+                constant: Constants.appNameLabelLeadingOffsetConstant
+            ),
             appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
             appNameLabel.widthAnchor.constraint(equalToConstant: Constants.appNameLabelWidth)
         ])

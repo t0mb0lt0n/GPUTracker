@@ -10,7 +10,6 @@
 		11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */; };
 		11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
-		1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985F29E873EE009B3638 /* SceneDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
 		1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156986829E873F0009B3638 /* LaunchScreen.storyboard */; };
@@ -33,7 +32,6 @@
 		11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPU+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1156985F29E873EE009B3638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1156986629E873F0009B3638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1156986929E873F0009B3638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,11 +80,11 @@
 		1156985C29E873EE009B3638 /* GPUTracker */ = {
 			isa = PBXGroup;
 			children = (
-				1156987329E87627009B3638 /* Resources */,
 				1156987529E876AE009B3638 /* Models */,
 				1156987429E87685009B3638 /* Application */,
 				1156987229E87609009B3638 /* Controllers */,
 				1156987129E875DB009B3638 /* Views */,
+				1156987329E87627009B3638 /* Resources */,
 			);
 			path = GPUTracker;
 			sourceTree = "<group>";
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				1156985D29E873EE009B3638 /* AppDelegate.swift */,
-				1156985F29E873EE009B3638 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -252,7 +249,6 @@
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
 				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,
-				1156986029E873EE009B3638 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +392,6 @@
 				INFOPLIST_FILE = GPUTracker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -411,7 +406,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -427,7 +422,6 @@
 				INFOPLIST_FILE = GPUTracker/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -442,7 +436,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

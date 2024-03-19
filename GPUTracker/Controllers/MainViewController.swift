@@ -20,7 +20,10 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
         setupTableView()
-        tableView.register(ManufacturerCell.self, forCellReuseIdentifier: "ManufacturerCell")
+        tableView.register(
+            ManufacturerCell.self,
+            forCellReuseIdentifier: "ManufacturerCell"
+        )
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -34,7 +37,10 @@ extension MainViewController: UITableViewDataSource {
         2
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(
+        _ tableView: UITableView,
+        titleForHeaderInSection section: Int
+    ) -> String? {
         switch section {
         case 0:
             return "Nvidia"
@@ -45,35 +51,65 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(
+        _ tableView: UITableView,
+        viewForFooterInSection section: Int
+    ) -> UIView? {
         let footerPadding = UIView()
         footerPadding.backgroundColor = .systemGreen
         return footerPadding
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         manufacturers[section].count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManufacturerCell", for: indexPath) as? ManufacturerCell
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "ManufacturerCell",
+            for: indexPath
+        ) as? ManufacturerCell
         else { fatalError() }
         
-        cell.configurateCell(manufacturer: manufacturers[indexPath.section][indexPath.row])
+        cell.configurateCell(
+            manufacturer: manufacturers[indexPath.section][indexPath.row]
+        )
         return cell
     }
     //setup header in section height
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForHeaderInSection section: Int
+    ) -> CGFloat {
         50
     }
     //setup footer in section height
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForFooterInSection section: Int
+    ) -> CGFloat {
         0
     }
     //custom header view for table view
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
         let customHeaderView = UIView()
-        let manufacturerNameLabel = UILabel(frame: CGRect(x: 5, y: 20, width: 150, height: 15))
+        let manufacturerNameLabel = UILabel(
+            frame: CGRect(
+                x: 5,
+                y: 20,
+                width: 150,
+                height: 15
+            )
+        )
         manufacturerNameLabel.textColor = .black
         manufacturerNameLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         customHeaderView.addSubview(manufacturerNameLabel)
@@ -91,7 +127,10 @@ extension MainViewController: UITableViewDataSource {
 }
     
 extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         switch indexPath.section {
         case 0:
             let targetVC = GPUListViewController(selectedVendor: "Nvidia")
@@ -111,9 +150,16 @@ extension MainViewController {
         mainView.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35),
-            tableView.leadingAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+            tableView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor,
+                constant: 35
+            ),
+            tableView.leadingAnchor.constraint(
+                equalTo: mainView.safeAreaLayoutGuide.leadingAnchor
+            ),
+            tableView.trailingAnchor.constraint(
+                equalTo: mainView.trailingAnchor
+            ),
             tableView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }

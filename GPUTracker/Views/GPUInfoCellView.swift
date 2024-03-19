@@ -25,7 +25,12 @@ final class GPUInfoCellView: UITableViewCell {
     
     let rightInfoImage: UIImageView = {
         let image = UIImageView()
-        let arrowImage = UIImage(systemName: "info.circle")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        let arrowImage = UIImage(
+            systemName: "info.circle"
+        )?.withTintColor(
+            .systemBlue,
+            renderingMode: .alwaysOriginal
+        )
         image.image = arrowImage
         return image
     }()
@@ -53,22 +58,52 @@ final class GPUInfoCellView: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            cardImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
-            cardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            cardImage.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 7
+            ),
+            cardImage.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 15
+            ),
             cardImage.heightAnchor.constraint(equalToConstant: 43),
             cardImage.widthAnchor.constraint(equalToConstant: 43),
             
-            cardNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            cardNameLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
-            cardNameLabel.trailingAnchor.constraint(equalTo: rightInfoImage.leadingAnchor, constant: -10),
+            cardNameLabel.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 10
+            ),
+            cardNameLabel.leadingAnchor.constraint(
+                equalTo: cardImage.trailingAnchor,
+                constant: 20
+            ),
+            cardNameLabel.trailingAnchor.constraint(
+                equalTo: rightInfoImage.leadingAnchor,
+                constant: -10
+            ),
             
-            descriptionLabel.topAnchor.constraint(equalTo: cardNameLabel.bottomAnchor, constant: 2),
-            descriptionLabel.leadingAnchor.constraint(equalTo: cardImage.trailingAnchor, constant: 20),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            descriptionLabel.topAnchor.constraint(
+                equalTo: cardNameLabel.bottomAnchor,
+                constant: 2
+            ),
+            descriptionLabel.leadingAnchor.constraint(
+                equalTo: cardImage.trailingAnchor,
+                constant: 20
+            ),
+            descriptionLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -8
+            ),
+            descriptionLabel.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -10
+            ),
             
             rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightInfoImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            rightInfoImage.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -15
+            ),
             rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
             rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
         ])
