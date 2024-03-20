@@ -23,7 +23,6 @@
 		1186BE592A3CD1160031D569 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 1186BE582A3CD1160031D569 /* gpuDB.db */; };
 		119333DB2A02BBD2006508A9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 119333DA2A02BBD2006508A9 /* SQLite */; };
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
-		11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4282E29FC1DB700846BCE /* CoreDataManager.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +43,6 @@
 		1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		1186BE582A3CD1160031D569 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		11A4282E29FC1DB700846BCE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +134,6 @@
 			children = (
 				11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */,
 				1156987A29E88FB1009B3638 /* GPUDataBase.swift */,
-				11A4282E29FC1DB700846BCE /* CoreDataManager.swift */,
 			);
 			path = CoreDataDB;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				1156987B29E88FB1009B3638 /* GPUDataBase.swift in Sources */,
-				11A4282F29FC1DB700846BCE /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
