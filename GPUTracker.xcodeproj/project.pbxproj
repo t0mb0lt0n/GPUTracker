@@ -119,25 +119,17 @@
 		1156987529E876AE009B3638 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				119333E12A02C13B006508A9 /* SQLiteDB */,
-				119333E02A02C0FF006508A9 /* CoreDataDB */,
+				119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		119333E02A02C0FF006508A9 /* CoreDataDB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreDataDB;
-			sourceTree = "<group>";
-		};
-		119333E12A02C13B006508A9 /* SQLiteDB */ = {
+		119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */ = {
 			isa = PBXGroup;
 			children = (
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
-			path = SQLiteDB;
+			path = SQLiteSwiftLegacyService;
 			sourceTree = "<group>";
 		};
 		11AE40D32BA9F797001B52F8 /* Main */ = {
