@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1111546D2BAB50B90006DA07 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546C2BAB50B90006DA07 /* Realm */; };
 		1111546F2BAB50B90006DA07 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546E2BAB50B90006DA07 /* RealmSwift */; };
-		11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -27,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11460F8A2A001BA3005ABD42 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		119333E02A02C0FF006508A9 /* CoreDataDB */ = {
 			isa = PBXGroup;
 			children = (
-				11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */,
 			);
 			path = CoreDataDB;
 			sourceTree = "<group>";
@@ -265,7 +262,6 @@
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
-				11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */,
 				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 			);
@@ -518,19 +514,6 @@
 			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				11460F8A2A001BA3005ABD42 /* CoreData.xcdatamodel */,
-			);
-			currentVersion = 11460F8A2A001BA3005ABD42 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1156985229E873EE009B3638 /* Project object */;
 }
