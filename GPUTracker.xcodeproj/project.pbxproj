@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1111546D2BAB50B90006DA07 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546C2BAB50B90006DA07 /* Realm */; };
+		1111546F2BAB50B90006DA07 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546E2BAB50B90006DA07 /* RealmSwift */; };
 		11460F8B2A001BA3005ABD42 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11460F892A001BA3005ABD42 /* CoreData.xcdatamodeld */; };
 		11460F8F2A001C22005ABD42 /* GPU+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11460F8D2A001C22005ABD42 /* GPU+CoreDataProperties.swift */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1111546F2BAB50B90006DA07 /* RealmSwift in Frameworks */,
+				1111546D2BAB50B90006DA07 /* Realm in Frameworks */,
 				119333DB2A02BBD2006508A9 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +204,8 @@
 			name = GPUTracker;
 			packageProductDependencies = (
 				119333DA2A02BBD2006508A9 /* SQLite */,
+				1111546C2BAB50B90006DA07 /* Realm */,
+				1111546E2BAB50B90006DA07 /* RealmSwift */,
 			);
 			productName = GPUTracker;
 			productReference = 1156985A29E873EE009B3638 /* GPUTracker.app */;
@@ -231,6 +237,7 @@
 			mainGroup = 1156985129E873EE009B3638;
 			packageReferences = (
 				119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 1156985B29E873EE009B3638 /* Products */;
 			projectDirPath = "";
@@ -488,6 +495,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.37.2;
+			};
+		};
 		119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
@@ -499,6 +514,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1111546C2BAB50B90006DA07 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		1111546E2BAB50B90006DA07 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		119333DA2A02BBD2006508A9 /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */;

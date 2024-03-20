@@ -140,7 +140,9 @@ extension MainViewController: UITableViewDelegate {
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = GPUListViewController(selectedVendor: "AMD")
-            navigationController?.pushViewController(targetVC, animated: true)
+            let splitVC = UISplitViewController()
+            splitVC.viewControllers = [targetVC, targetVC]
+            navigationController?.pushViewController(splitVC, animated: true)
         default:
             break
         }

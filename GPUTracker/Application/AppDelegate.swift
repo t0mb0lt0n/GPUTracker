@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow()
-        //navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        let splitVC = UISplitViewController()
+        splitVC.viewControllers = [MainViewController(), MainViewController()]
+        window?.rootViewController = splitVC
+        splitVC.preferredDisplayMode = .oneOverSecondary
         window?.rootViewController?.navigationItem.titleView?.tintColor = .systemGray
         window?.makeKeyAndVisible()
         return true
