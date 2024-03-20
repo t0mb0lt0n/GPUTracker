@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1111546D2BAB50B90006DA07 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546C2BAB50B90006DA07 /* Realm */; };
 		1111546F2BAB50B90006DA07 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1111546E2BAB50B90006DA07 /* RealmSwift */; };
+		111154712BAB57620006DA07 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111154702BAB57620006DA07 /* DataBase.swift */; };
+		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111154702BAB57620006DA07 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */,
 				1111546F2BAB50B90006DA07 /* RealmSwift in Frameworks */,
 				1111546D2BAB50B90006DA07 /* Realm in Frameworks */,
 				119333DB2A02BBD2006508A9 /* SQLite in Frameworks */,
@@ -57,11 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113D33522BAB5BAC00CCDDF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1156985129E873EE009B3638 = {
 			isa = PBXGroup;
 			children = (
 				1156985C29E873EE009B3638 /* GPUTracker */,
 				1156985B29E873EE009B3638 /* Products */,
+				113D33522BAB5BAC00CCDDF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */,
+				111154702BAB57620006DA07 /* DataBase.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -248,6 +263,7 @@
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */,
+				111154712BAB57620006DA07 /* DataBase.swift in Sources */,
 				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
 				1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
