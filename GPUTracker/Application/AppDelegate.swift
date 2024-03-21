@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         let splitVC = UISplitViewController()
-        splitVC.viewControllers = [MainViewController(), MainViewController()]
+        let navVC1 = UINavigationController(rootViewController: MainViewController())
+        let navVC2 = UINavigationController(rootViewController: MainViewController())
+        splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary
         window?.rootViewController?.navigationItem.titleView?.tintColor = .systemGray

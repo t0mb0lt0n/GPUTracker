@@ -35,6 +35,7 @@ final class GPUInfoCellView: UITableViewCell {
     }
     
     private func setupCell() {
+        accessoryType = .detailButton
         [cardImage,
          cardNameLabel,
          descriptionLabel,
@@ -66,7 +67,7 @@ final class GPUInfoCellView: UITableViewCell {
                 constant: 20
             ),
             cardNameLabel.trailingAnchor.constraint(
-                equalTo: leadingAnchor,
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -10
             ),
             
@@ -85,15 +86,7 @@ final class GPUInfoCellView: UITableViewCell {
             descriptionLabel.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
                 constant: -10
-            ),
-//
-//            rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-//            rightInfoImage.trailingAnchor.constraint(
-//                equalTo: contentView.trailingAnchor,
-//                constant: -15
-//            ),
-//            rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
-//            rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
+            )
         ])
     }
 }

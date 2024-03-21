@@ -133,6 +133,40 @@ extension GPUListViewController: UITableViewDelegate {
         present(targetVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let targetVC = DescriptionViewController()
+        //targetVC.sheetPresentationController?.prefersGrabberVisible = true
+        let backgroundQueue = DispatchQueue(
+            label: "com.gmail@goralexwizard",
+            qos: .background
+        )
+        backgroundQueue.async {
+            let selectedGPU = getSelectedGPUFields(
+                fromTable: self.selectedVendor,
+                with: indexPath.row
+            )
+            let datafromSelectedRow = getDataFromSelectedRow(from: selectedGPU)
+            DispatchQueue.main.async {
+                let imageNames = [
+                    (selectedGPU["id"] ?? "") + "Crystal",
+                    (selectedGPU["id"] ?? "")
+                ]
+                let imageViews = [
+                    targetVC.mainView.crystalImageView,
+                    targetVC.mainView.cardImageView
+                ]
+                targetVC.configurateLabels(data: datafromSelectedRow)
+                targetVC.changeLabelAttributes(inStrings: datafromSelectedRow)
+                targetVC.setupGPUImages(
+                    imageViews: imageViews,
+                    imageNames: imageNames
+                )
+            }
+        }
+        present(targetVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 

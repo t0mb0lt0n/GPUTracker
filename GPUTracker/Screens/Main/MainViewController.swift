@@ -11,12 +11,14 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
+    //let navVC = UINavigationController(rootViewController: self)
     
     override func loadView() {
         view = MainView()
     }
 
     override func viewDidLoad() {
+        //navigationController = UINavigationController(rootViewController: self)
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
         setupTableView()
@@ -130,6 +132,26 @@ extension MainViewController: UITableViewDataSource {
     }
 }
     
+//extension MainViewController: UITableViewDelegate {
+//    func tableView(
+//        _ tableView: UITableView,
+//        didSelectRowAt indexPath: IndexPath
+//    ) {
+//        switch indexPath.section {
+//        case 0:
+//            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
+//            print("hjkhkj")
+//            navigationController?.pushViewController(targetVC, animated: true)
+//        case 1:
+//            let targetVC = GPUListViewController(selectedVendor: "AMD")
+//            navigationController?.pushViewController(targetVC, animated: true)
+//        default:
+//            break
+//        }
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//}
+
 extension MainViewController: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
@@ -138,7 +160,6 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = GPUListViewController(selectedVendor: "Nvidia")
-            print("hjkhkj")
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = GPUListViewController(selectedVendor: "AMD")
@@ -149,6 +170,9 @@ extension MainViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+
+
     
 extension MainViewController {
     private func setupTableView() {
