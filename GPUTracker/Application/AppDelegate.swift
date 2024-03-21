@@ -17,8 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         let splitVC = UISplitViewController()
+        splitVC.delegate = self
+        splitVC.preferredPrimaryColumnWidthFraction = 50
+        //splitVC.maximumPrimaryColumnWidth = 2000
+       // splitVC.editButtonItem
+
+        splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
+        splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let navVC1 = UINavigationController(rootViewController: MainViewController())
         let navVC2 = UINavigationController(rootViewController: MainViewController())
+        //splitVC.
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary
@@ -26,5 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         return true
     }
+}
+
+extension AppDelegate: UISplitViewControllerDelegate {
+    
+
 }
 

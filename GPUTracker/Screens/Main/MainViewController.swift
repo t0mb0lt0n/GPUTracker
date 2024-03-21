@@ -20,6 +20,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         //navigationController = UINavigationController(rootViewController: self)
         super.viewDidLoad()
+        title = "mainVC"
         navigationController?.isNavigationBarHidden = false
         setupTableView()
         tableView.register(
@@ -85,7 +86,6 @@ extension MainViewController: UITableViewDataSource {
         cell.configurateCell(
             manufacturer: manufacturers[indexPath.section][indexPath.row]
         )
-        cell.accessoryType = .detailDisclosureButton
         return cell
     }
     //setup header in section height

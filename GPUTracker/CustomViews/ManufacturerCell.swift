@@ -37,6 +37,7 @@ final class ManufacturerCell: UITableViewCell {
     }
     
     private func setupCell() {
+        accessoryType = .disclosureIndicator
         [manufacturerLogo,
          manufacturerNameLabel,
          descriptionLabel
