@@ -25,20 +25,7 @@ final class ManufacturerCell: UITableViewCell {
         return label
     }()
     
-    let rightArrowImage: UIImageView = {
-        let image = UIImageView()
-        let arrowImage = UIImage(named: "ps3")
-//        let arrowImage = UIImage(
-//            systemName: "chevron.right"
-//        )?.withTintColor(
-//            .systemGray,
-//            renderingMode: .alwaysOriginal
-//        )
-        image.image = arrowImage
-        return image
-    }()
-    
-    //MARK:  custom cell init with cell reuse identifier
+    // custom cell init with cell reuse identifier
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -52,8 +39,8 @@ final class ManufacturerCell: UITableViewCell {
     private func setupCell() {
         [manufacturerLogo,
          manufacturerNameLabel,
-         descriptionLabel,
-         rightArrowImage].forEach {
+         descriptionLabel
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
@@ -92,15 +79,7 @@ final class ManufacturerCell: UITableViewCell {
             descriptionLabel.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
                 constant: -10
-            ),
-            
-            rightArrowImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightArrowImage.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: -20
-            ),
-            rightArrowImage.widthAnchor.constraint(equalToConstant: 12),
-            rightArrowImage.heightAnchor.constraint(equalToConstant: 18)
+            )
         ])
     }
     

@@ -13,7 +13,7 @@ final class GPUListViewController: UIViewController {
         case amd = "AMD"
     }
     var selectedVendor: String
-    let gpuListTableView = UITableView(frame: .zero, style: .grouped)
+    let gpuListTableView = UITableView(frame: .zero, style: .plain)
     
     //MARK: init
     init(selectedVendor: String) {

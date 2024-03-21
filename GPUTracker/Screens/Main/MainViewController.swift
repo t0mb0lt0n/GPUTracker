@@ -83,6 +83,7 @@ extension MainViewController: UITableViewDataSource {
         cell.configurateCell(
             manufacturer: manufacturers[indexPath.section][indexPath.row]
         )
+        cell.accessoryType = .detailDisclosureButton
         return cell
     }
     //setup header in section height
@@ -137,12 +138,11 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             let targetVC = GPUListViewController(selectedVendor: "Nvidia")
+            print("hjkhkj")
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
             let targetVC = GPUListViewController(selectedVendor: "AMD")
-            let splitVC = UISplitViewController()
-            splitVC.viewControllers = [targetVC, targetVC]
-            navigationController?.pushViewController(splitVC, animated: true)
+            navigationController?.pushViewController(targetVC, animated: true)
         default:
             break
         }
@@ -157,7 +157,7 @@ extension MainViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.topAnchor,
-                constant: 35
+                constant: 150
             ),
             tableView.leadingAnchor.constraint(
                 equalTo: mainView.safeAreaLayoutGuide.leadingAnchor

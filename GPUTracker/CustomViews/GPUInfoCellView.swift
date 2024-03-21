@@ -23,19 +23,6 @@ final class GPUInfoCellView: UITableViewCell {
         return label
     }()
     
-    let rightInfoImage: UIImageView = {
-        let image = UIImageView()
-        let arrowImage = UIImage(named: "ps3")
-//        let arrowImage = UIImage(
-//            systemName: "info.circle"
-//        )?.withTintColor(
-//            .systemBlue,
-//            renderingMode: .alwaysOriginal
-//        )
-        image.image = arrowImage
-        return image
-    }()
-    
     //MARK: init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,7 +38,7 @@ final class GPUInfoCellView: UITableViewCell {
         [cardImage,
          cardNameLabel,
          descriptionLabel,
-         rightInfoImage].forEach { subView in
+        ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
@@ -79,7 +66,7 @@ final class GPUInfoCellView: UITableViewCell {
                 constant: 20
             ),
             cardNameLabel.trailingAnchor.constraint(
-                equalTo: rightInfoImage.leadingAnchor,
+                equalTo: leadingAnchor,
                 constant: -10
             ),
             
@@ -99,14 +86,14 @@ final class GPUInfoCellView: UITableViewCell {
                 equalTo: contentView.bottomAnchor,
                 constant: -10
             ),
-            
-            rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            rightInfoImage.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: -15
-            ),
-            rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
-            rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
+//
+//            rightInfoImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//            rightInfoImage.trailingAnchor.constraint(
+//                equalTo: contentView.trailingAnchor,
+//                constant: -15
+//            ),
+//            rightInfoImage.widthAnchor.constraint(equalToConstant: 25),
+//            rightInfoImage.heightAnchor.constraint(equalToConstant: 25)
         ])
     }
 }

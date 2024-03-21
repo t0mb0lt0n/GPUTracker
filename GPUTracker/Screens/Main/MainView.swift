@@ -28,9 +28,8 @@ final class MainView: UIView {
                 height: 150
             )
         )
-        let logoImage = UIImage(
-            named: "gpu3"
-        )
+        let logoImage = UIImage(named: "3")
+        logo.backgroundColor = .gray
         logoContainer.image = logoImage
         logo.clipsToBounds = true
         logoContainer.contentMode = .scaleAspectFit
@@ -75,9 +74,9 @@ extension MainView {
         NSLayoutConstraint.activate([
             appLogoImage.topAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: Constants.appNameLabelTopOffsetConstant
+                constant: 19
             ),
-            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 20),
             appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
             appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
             
