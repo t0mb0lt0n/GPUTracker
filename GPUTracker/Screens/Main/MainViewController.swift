@@ -6,19 +6,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
-    //let navVC = UINavigationController(rootViewController: self)
-    
+    let realm = try! Realm()
+    var resultsArray: Results<RealmService>!
     override func loadView() {
         view = MainView()
     }
 
     override func viewDidLoad() {
-        //navigationController = UINavigationController(rootViewController: self)
         super.viewDidLoad()
         title = "mainVC"
         navigationController?.isNavigationBarHidden = false
@@ -33,6 +33,10 @@ final class MainViewController: UIViewController {
         mainView.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
+        
+        resultsArray = realm.objects(RealmService.self)
+       
+        
     }
 }
 
@@ -70,7 +74,8 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        manufacturers[section].count
+        // manufacturers[section].count
+        resultsArray.count
     }
     
     func tableView(
@@ -83,9 +88,9 @@ extension MainViewController: UITableViewDataSource {
         ) as? ManufacturerCell
         else { fatalError() }
         
-        cell.configurateCell(
-            manufacturer: manufacturers[indexPath.section][indexPath.row]
-        )
+//        cell.configurateCell(
+//            manufacturer: manufacturers[indexPath.section][indexPath.row]
+//        )
         return cell
     }
     //setup header in section height
@@ -159,11 +164,23 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
-            navigationController?.pushViewController(targetVC, animated: true)
+//            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
+//            navigationController?.pushViewController(targetVC, animated: true)
+            let testDB = RealmService(vendor: "test", itemName: "test", count: 1)
+            let testrecord = RealmService(vendor: "tes2", itemName: "tes2", count: 2)
+            print("saved")
+            try! realm.write {
+                realm.add(testDB)
+            }
+
         case 1:
-            let targetVC = GPUListViewController(selectedVendor: "AMD")
-            navigationController?.pushViewController(targetVC, animated: true)
+//            let targetVC = GPUListViewController(selectedVendor: "AMD")
+//            navigationController?.pushViewController(targetVC, animated: true)
+            let table2 = Table2(table2: "test table")
+            print("saved")
+            try! realm.write {
+                realm.add(table2)
+            }
         default:
             break
         }
