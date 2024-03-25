@@ -36,7 +36,7 @@ final class MainViewController: UIViewController {
         
         resultsArray = realm.objects(RealmService.self)
        
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }
 

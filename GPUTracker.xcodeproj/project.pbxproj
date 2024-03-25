@@ -247,6 +247,7 @@
 			packageReferences = (
 				119333D92A02BBD2006508A9 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				11070CDD2BAE18A000B2C954 /* XCRemoteSwiftPackageReference "realm-cocoa-converter" */,
 			);
 			productRefGroup = 1156985B29E873EE009B3638 /* Products */;
 			projectDirPath = "";
@@ -505,6 +506,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		11070CDD2BAE18A000B2C954 /* XCRemoteSwiftPackageReference "realm-cocoa-converter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa-converter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.4;
+			};
+		};
 		1111546B2BAB50B90006DA07 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
