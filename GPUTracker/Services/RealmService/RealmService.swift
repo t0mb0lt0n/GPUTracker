@@ -12,7 +12,6 @@ class RealmService: Object {
     @Persisted var vendorName: String = ""
     @Persisted var itemName: String = ""
     @Persisted var count: Int = 0
-    //@Persisted var inTable: Table2? = Table2(table2: "")
     
     convenience init(vendor: String, itemName: String, count: Int) {
         self.init()
@@ -20,9 +19,5 @@ class RealmService: Object {
         self.itemName = itemName
         self.count = count
     }
-    
-//    override class func primaryKey() -> String? {
-//            return "realmServiceID"
-//        }
 }
 
