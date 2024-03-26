@@ -13,6 +13,7 @@
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1150798C2BB355E6003D1933 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798B2BB355E6003D1933 /* Realm */; };
 		1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798D2BB355E6003D1933 /* RealmSwift */; };
+		115079912BB3583E003D1933 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 115079902BB3583E003D1933 /* SQLite */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				115079912BB3583E003D1933 /* SQLite in Frameworks */,
 				1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */,
 				1150798C2BB355E6003D1933 /* Realm in Frameworks */,
 				113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */,
@@ -212,6 +214,7 @@
 			packageProductDependencies = (
 				1150798B2BB355E6003D1933 /* Realm */,
 				1150798D2BB355E6003D1933 /* RealmSwift */,
+				115079902BB3583E003D1933 /* SQLite */,
 			);
 			productName = GPUTracker;
 			productReference = 1156985A29E873EE009B3638 /* GPUTracker.app */;
@@ -243,6 +246,7 @@
 			mainGroup = 1156985129E873EE009B3638;
 			packageReferences = (
 				1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1150798F2BB3583E003D1933 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 1156985B29E873EE009B3638 /* Products */;
 			projectDirPath = "";
@@ -509,6 +513,14 @@
 				version = 10.37.2;
 			};
 		};
+		1150798F2BB3583E003D1933 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -521,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		115079902BB3583E003D1933 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1150798F2BB3583E003D1933 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

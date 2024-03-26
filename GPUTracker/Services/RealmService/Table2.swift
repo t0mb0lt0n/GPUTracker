@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import RealmSwift
+import RealmSwift
 
 class Table2: Object {
     @Persisted var table2: String

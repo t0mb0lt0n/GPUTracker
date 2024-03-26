@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import RealmSwift
+import RealmSwift
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
