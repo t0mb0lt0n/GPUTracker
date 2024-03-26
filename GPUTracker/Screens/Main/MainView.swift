@@ -51,7 +51,6 @@ final class MainView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
-        //backgroundColor = .secondarySystemBackground
     }
     
     required init?(coder: NSCoder) {

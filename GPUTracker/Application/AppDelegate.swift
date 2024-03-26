@@ -22,12 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.preferredPrimaryColumnWidthFraction = 50
         //splitVC.maximumPrimaryColumnWidth = 2000
        // splitVC.editButtonItem
-
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let navVC1 = UINavigationController(rootViewController: MainViewController())
         let navVC2 = UINavigationController(rootViewController: MainViewController())
-        //splitVC.
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary
