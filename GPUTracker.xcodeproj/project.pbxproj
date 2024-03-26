@@ -14,6 +14,7 @@
 		1150798C2BB355E6003D1933 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798B2BB355E6003D1933 /* Realm */; };
 		1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798D2BB355E6003D1933 /* RealmSwift */; };
 		115079912BB3583E003D1933 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 115079902BB3583E003D1933 /* SQLite */; };
+		115079972BB36334003D1933 /* imported.realm in Resources */ = {isa = PBXBuildFile; fileRef = 115079962BB36334003D1933 /* imported.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 		11070CDB2BADF76000B2C954 /* Table2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table2.swift; sourceTree = "<group>"; };
 		111154702BAB57620006DA07 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		115079922BB359B2003D1933 /* imported.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = imported.realm; path = ../../../../../imported.realm; sourceTree = "<group>"; };
+		115079962BB36334003D1933 /* imported.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = imported.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 		119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */ = {
 			isa = PBXGroup;
 			children = (
+				115079922BB359B2003D1933 /* imported.realm */,
+				115079962BB36334003D1933 /* imported.realm */,
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
 			path = SQLiteSwiftLegacyService;
@@ -263,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1186BE592A3CD1160031D569 /* gpuDB.db in Resources */,
+				115079972BB36334003D1933 /* imported.realm in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);

@@ -20,5 +20,9 @@ class RealmService: Object {
         self.itemName = itemName
         self.count = count
     }
+    
+//    override class func primaryKey() -> String? {
+//            return "realmServiceID"
+//        }
 }
 

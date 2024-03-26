@@ -12,8 +12,9 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
-    let realm = try! Realm()
+    var realm: Realm!
     var resultsArray: Results<RealmService>!
+    
     override func loadView() {
         view = MainView()
     }
@@ -34,9 +35,18 @@ final class MainViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
         
-        resultsArray = realm.objects(RealmService.self)
+        //resultsArray = realm.objects(RealmService.self)
        
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        
+        let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
+        
+        // configure to read only as file located in Bundle is not writeable
+        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
+        realm = try! Realm(configuration: realmConfiguration)
+        
+       resultsArray = realm.objects(RealmService.self)
     }
 }
 
@@ -166,22 +176,16 @@ extension MainViewController: UITableViewDelegate {
         case 0:
 //            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
 //            navigationController?.pushViewController(targetVC, animated: true)
-            let testDB = RealmService(vendor: "test", itemName: "test", count: 1)
-            let testrecord = RealmService(vendor: "tes2", itemName: "tes2", count: 2)
+            //let testDB = RealmService(vendor: "test", itemName: "test", count: 1)
+            //let testrecord = RealmService(vendor: "tes2", itemName: "tes2", count: 2)
             print("saved")
-            try! realm.write {
-                realm.add(testDB)
-            }
+            
 
         case 1:
 //            let targetVC = GPUListViewController(selectedVendor: "AMD")
 //            navigationController?.pushViewController(targetVC, animated: true)
-            let table2 = Table2(table2: "test table")
             print("saved")
-            try! realm.write {
-                realm.add(table2)
-            }
-        default:
+                    default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
