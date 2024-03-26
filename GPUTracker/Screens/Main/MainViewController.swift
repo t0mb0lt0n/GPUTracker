@@ -34,19 +34,13 @@ final class MainViewController: UIViewController {
         mainView.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .black
         navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
-        
-        //resultsArray = realm.objects(RealmService.self)
-       
-        //print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        
         let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
-        
-        // configure to read only as file located in Bundle is not writeable
         let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
         realm = try! Realm(configuration: realmConfiguration)
         
-       resultsArray = realm.objects(RealmService.self)
+        resultsArray = realm.objects(RealmService.self)
+        print(resultsArray[0])
+        
     }
 }
 
@@ -211,7 +205,6 @@ extension MainViewController {
                 equalTo: mainView.trailingAnchor
             ),
             tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
-            //tableView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
 }
