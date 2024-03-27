@@ -33,7 +33,7 @@ final class MainViewController: UIViewController {
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .black
-        navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
+        //navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
         let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
         let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
         realm = try! Realm(configuration: realmConfiguration)

@@ -15,7 +15,7 @@ final class GPUListViewController: UIViewController {
     var selectedVendor: String
     let gpuListTableView = UITableView(frame: .zero, style: .grouped)
     
-    //MARK: init
+    // init
     init(selectedVendor: String) {
         self.selectedVendor = selectedVendor
         super.init(nibName: nil, bundle: nil)
@@ -29,7 +29,6 @@ final class GPUListViewController: UIViewController {
         navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
         view.backgroundColor = .white
         title = selectedVendor
-        // Cell configuration
         gpuListTableView.register(
             GPUInfoCellView.self,
             forCellReuseIdentifier: "GPUInfoCellView"
@@ -102,7 +101,6 @@ extension GPUListViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         let targetVC = DescriptionViewController()
-        //targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let backgroundQueue = DispatchQueue(
             label: "com.gmail@goralexwizard",
             qos: .background
@@ -136,7 +134,6 @@ extension GPUListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let targetVC = DescriptionViewController()
-        //targetVC.sheetPresentationController?.prefersGrabberVisible = true
         let backgroundQueue = DispatchQueue(
             label: "com.gmail@goralexwizard",
             qos: .background
