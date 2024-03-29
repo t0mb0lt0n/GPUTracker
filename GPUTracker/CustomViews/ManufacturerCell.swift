@@ -84,9 +84,9 @@ final class ManufacturerCell: UITableViewCell {
         ])
     }
     
-    func configurateCell(manufacturer: Manufacturer) {
-        manufacturerLogo.image = manufacturer.image
-        manufacturerNameLabel.text = manufacturer.name
-        descriptionLabel.text = manufacturer.description
+    func configurateCell(manufacturer: RealmService) {
+        manufacturerLogo.image = UIImage(named: "ps3")
+        manufacturerNameLabel.text = manufacturer.itemName
+        descriptionLabel.text = manufacturer.vendorName
     }
 }

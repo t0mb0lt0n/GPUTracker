@@ -95,6 +95,7 @@ extension MainViewController: UITableViewDataSource {
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )
+        cell.configurateCell(manufacturer: resultsArray[0])
         return cell
     }
     //setup header in section height
