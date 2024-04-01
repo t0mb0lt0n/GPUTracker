@@ -13,10 +13,11 @@ final class MainViewController: UIViewController {
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
     var realm: Realm!
-    var itemCollection = {
-        var table1 = realm.objects(Results.self)
-        return 10
-    }()
+    let service = DataService()
+//    var itemCollection = {
+//        var table1 = realm.objects(Results.self)
+//        return 10
+//    }()
     var resultsTable2: Results<Table2>!
     
     override func loadView() {
@@ -41,9 +42,8 @@ final class MainViewController: UIViewController {
         let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
         let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
         realm = try! Realm(configuration: realmConfiguration)
-        
-        resultsArray = realm.
-        print(resultsArray[0])
+//        resultsArray = realm.
+//        print(resultsArray[0])
         
     }
 }
@@ -83,7 +83,7 @@ extension MainViewController: UITableViewDataSource {
         numberOfRowsInSection section: Int
     ) -> Int {
         // manufacturers[section].count
-        resultsArray.count
+        service.groupedItems!.table1.count
     }
     
     func tableView(
@@ -99,7 +99,7 @@ extension MainViewController: UITableViewDataSource {
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )
-        cell.configurateCell(manufacturer: resultsArray[0])
+        cell.configurateCell(manufacturer: service.groupedItems!.table1[0])
         return cell
     }
     //setup header in section height
