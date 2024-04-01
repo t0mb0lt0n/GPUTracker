@@ -28,6 +28,7 @@
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
+		11DDC1D82BBABEFB007D8CF3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
+		11DDC1D72BBABEFB007D8CF3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				11070CD82BADC76100B2C954 /* RealmService.swift */,
 				11070CDB2BADF76000B2C954 /* Table2.swift */,
+				11DDC1D72BBABEFB007D8CF3 /* DataService.swift */,
 			);
 			path = RealmService;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
+				11DDC1D82BBABEFB007D8CF3 /* DataService.swift in Sources */,
 				1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */,
 				111154712BAB57620006DA07 /* DataBase.swift in Sources */,
 				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,

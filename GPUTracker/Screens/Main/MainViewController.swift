@@ -13,7 +13,11 @@ final class MainViewController: UIViewController {
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
     var realm: Realm!
-    var resultsArray: Results<RealmService>!
+    var itemCollection = {
+        var table1 = realm.objects(Results.self)
+        return 10
+    }()
+    var resultsTable2: Results<Table2>!
     
     override func loadView() {
         view = MainView()
@@ -38,7 +42,7 @@ final class MainViewController: UIViewController {
         let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
         realm = try! Realm(configuration: realmConfiguration)
         
-        resultsArray = realm.objects(RealmService.self)
+        resultsArray = realm.
         print(resultsArray[0])
         
     }
@@ -112,6 +116,7 @@ extension MainViewController: UITableViewDataSource {
     ) -> CGFloat {
         0
     }
+    
     //custom header view for table view
     func tableView(
         _ tableView: UITableView,
