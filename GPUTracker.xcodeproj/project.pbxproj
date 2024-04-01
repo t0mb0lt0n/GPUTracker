@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		11070CD92BADC76100B2C954 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11070CD82BADC76100B2C954 /* RealmService.swift */; };
-		11070CDC2BADF76000B2C954 /* Table2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11070CDB2BADF76000B2C954 /* Table2.swift */; };
+		11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11070CDB2BADF76000B2C954 /* TestTable.swift */; };
 		111154712BAB57620006DA07 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111154702BAB57620006DA07 /* DataBase.swift */; };
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1150798C2BB355E6003D1933 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798B2BB355E6003D1933 /* Realm */; };
 		1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798D2BB355E6003D1933 /* RealmSwift */; };
 		115079912BB3583E003D1933 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 115079902BB3583E003D1933 /* SQLite */; };
-		115079992BB368E8003D1933 /* imported.realm in Resources */ = {isa = PBXBuildFile; fileRef = 115079982BB368E8003D1933 /* imported.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -29,14 +28,15 @@
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* DataService.swift */; };
+		11DDC1DA2BBAE057007D8CF3 /* ClearRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* ClearRealm.swift */; };
+		11DDC1DC2BBAE83A007D8CF3 /* imported.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC1DB2BBAE83A007D8CF3 /* imported.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11070CD82BADC76100B2C954 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		11070CDB2BADF76000B2C954 /* Table2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table2.swift; sourceTree = "<group>"; };
+		11070CDB2BADF76000B2C954 /* TestTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTable.swift; sourceTree = "<group>"; };
 		111154702BAB57620006DA07 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		115079982BB368E8003D1933 /* imported.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = imported.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		11DDC1D92BBAE057007D8CF3 /* ClearRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearRealm.swift; sourceTree = "<group>"; };
+		11DDC1DB2BBAE83A007D8CF3 /* imported.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = imported.realm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				11070CD82BADC76100B2C954 /* RealmService.swift */,
-				11070CDB2BADF76000B2C954 /* Table2.swift */,
+				11070CDB2BADF76000B2C954 /* TestTable.swift */,
 				11DDC1D72BBABEFB007D8CF3 /* DataService.swift */,
+				11DDC1D92BBAE057007D8CF3 /* ClearRealm.swift */,
 			);
 			path = RealmService;
 			sourceTree = "<group>";
@@ -161,7 +164,7 @@
 		119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */ = {
 			isa = PBXGroup;
 			children = (
-				115079982BB368E8003D1933 /* imported.realm */,
+				11DDC1DB2BBAE83A007D8CF3 /* imported.realm */,
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
 			path = SQLiteSwiftLegacyService;
@@ -269,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1186BE592A3CD1160031D569 /* gpuDB.db in Resources */,
-				115079992BB368E8003D1933 /* imported.realm in Resources */,
+				11DDC1DC2BBAE83A007D8CF3 /* imported.realm in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
@@ -290,9 +293,10 @@
 				1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
-				11070CDC2BADF76000B2C954 /* Table2.swift in Sources */,
+				11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */,
 				11070CD92BADC76100B2C954 /* RealmService.swift in Sources */,
 				11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */,
+				11DDC1DA2BBAE057007D8CF3 /* ClearRealm.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,

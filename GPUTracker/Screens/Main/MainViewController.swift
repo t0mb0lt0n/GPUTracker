@@ -14,11 +14,7 @@ final class MainViewController: UIViewController {
     let tableView = UITableView(frame: .zero, style: .grouped)
     var realm: Realm!
     let service = DataService()
-//    var itemCollection = {
-//        var table1 = realm.objects(Results.self)
-//        return 10
-//    }()
-    var resultsTable2: Results<Table2>!
+    //let reaalmClear = ClearRealm()
     
     override func loadView() {
         view = MainView()
@@ -38,13 +34,6 @@ final class MainViewController: UIViewController {
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .black
-        //navigationController?.navigationItem.backBarButtonItem?.tintColor = .systemGray
-        let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
-        let realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
-        realm = try! Realm(configuration: realmConfiguration)
-//        resultsArray = realm.
-//        print(resultsArray[0])
-        
     }
 }
 
@@ -83,7 +72,8 @@ extension MainViewController: UITableViewDataSource {
         numberOfRowsInSection section: Int
     ) -> Int {
         // manufacturers[section].count
-        service.groupedItems!.table1.count
+        //service.groupedItems!.table1.count
+        2
     }
     
     func tableView(
@@ -99,7 +89,7 @@ extension MainViewController: UITableViewDataSource {
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )
-        cell.configurateCell(manufacturer: service.groupedItems!.table1[0])
+        //cell.configurateCell(manufacturer: service.groupedItems!.table1[0])
         return cell
     }
     //setup header in section height
