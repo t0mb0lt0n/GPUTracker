@@ -87,7 +87,6 @@ extension MainViewController: UITableViewDataSource {
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )
-        //cell.configurateCell(manufacturer: service.groupedItems!.table1[0])
         return cell
     }
     //setup header in section height

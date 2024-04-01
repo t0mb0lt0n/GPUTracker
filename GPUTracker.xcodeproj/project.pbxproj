@@ -75,6 +75,7 @@
 		11070CDA2BADF35600B2C954 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				11DDC1DB2BBAE83A007D8CF3 /* imported.realm */,
 				11070CDB2BADF76000B2C954 /* TestTable.swift */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
 				11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */,
@@ -164,7 +165,6 @@
 		119333E12A02C13B006508A9 /* SQLiteSwiftLegacyService */ = {
 			isa = PBXGroup;
 			children = (
-				11DDC1DB2BBAE83A007D8CF3 /* imported.realm */,
 				119333DE2A02BD7D006508A9 /* DBManager.swift */,
 			);
 			path = SQLiteSwiftLegacyService;
