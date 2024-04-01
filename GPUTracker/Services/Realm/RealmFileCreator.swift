@@ -1,14 +1,13 @@
 //
-//  ClearRealm.swift
+//  RealmFileCreator.swift
 //  GPUTracker
 //
 //  Created by Alexander on 01.04.2024.
 //
 
-import Foundation
 import RealmSwift
 
-class ClearRealm {
+class RealmFileCreator {
     var emptyRealm = try! Realm()
     
     func createEmptyRealmFile() {

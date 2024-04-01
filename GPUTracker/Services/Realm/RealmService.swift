@@ -1,5 +1,5 @@
 //
-//  DataService.swift
+//  RealmService.swift
 //  GPUTracker
 //
 //  Created by Alexander on 01.04.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class DataService {
+final class RealmService {
     private var realm: Realm!
     //var groupedItems: (table1: Results<RealmService>, table2: Results<Table2>)?
     

@@ -12,9 +12,7 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
-    var realm: Realm!
-    let service = DataService()
-    //let reaalmClear = ClearRealm()
+    let service = RealmService()
     
     override func loadView() {
         view = MainView()
