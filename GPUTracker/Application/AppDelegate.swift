@@ -12,6 +12,9 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
+    
+    
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -31,6 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.preferredDisplayMode = .oneOverSecondary
         window?.rootViewController?.navigationItem.titleView?.tintColor = .systemGray
         window?.makeKeyAndVisible()
+        
+        func performRealmMigrations() {
+                Realm.Configuration.defaultConfiguration = Realm.Configuration(
+                    schemaVersion: 0,
+                    migrationBlock: { migration, oldSchemaVersion in },
+                    deleteRealmIfMigrationNeeded: true
+                )
+                
+                let _ = try! Realm()
+            }
+        
         return true
     }
 }

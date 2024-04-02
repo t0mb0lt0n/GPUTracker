@@ -13,6 +13,7 @@ final class MainViewController: UIViewController {
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
     let service = RealmService()
+    //let fileCreator = RealmFileCreator()
     
     override func loadView() {
         view = MainView()
