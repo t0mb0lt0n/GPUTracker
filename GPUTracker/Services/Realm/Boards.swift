@@ -8,16 +8,15 @@
 import Foundation
 import RealmSwift
 
-//class Boards: Object {
-//    @Persisted var _id: Int
-//    @Persisted var name: String
-//
-//    convenience init(testValue: Int) {
-//        self.init()
-//        _id = testValue
-//        
-//    }
-//}
+class AnalogChip: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var usedIn: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
 
 class Boards: Object {
     @objc dynamic var _id: Int = 0
@@ -50,10 +49,30 @@ class Fans: Object {
     }
 }
 
+class GPU: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var processSize: String = ""
+    @objc dynamic var name: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
 class Heatsink: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var target: String = ""
     @objc dynamic var type: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+class NAND: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var size: String = ""
 
     override static func primaryKey() -> String? {
         return "_id"
@@ -79,6 +98,16 @@ class OriginalXbox360Configurations: Object {
     }
 }
 
+class RAM: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var vendor: String = ""
+    @objc dynamic var name: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
 class RFBoard: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var boardName: String = ""
@@ -97,11 +126,41 @@ class Revision: Object {
     }
 }
 
+class Southbridge: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var usedIn: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
 class UnitComponents: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var board: Boards?
     @objc dynamic var boards: String = ""
     let b = List<Boards>()
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+class XCGPU: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var processSize: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+class XCPU: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var processSize: String = ""
 
     override static func primaryKey() -> String? {
         return "_id"
@@ -125,3 +184,14 @@ class Xbox360SConfigurations: Object {
         return "_id"
     }
 }
+
+class eMMC: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+
