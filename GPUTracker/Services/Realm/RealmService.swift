@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 final class RealmService {
-    private var realm: Realm!
+    private var realm1: Realm!
     private var realm2: Realm!
     public lazy var realmConfig: Realm.Configuration = {
 
@@ -39,11 +39,15 @@ final class RealmService {
     //var groupedItems: (table1: Results<RealmService>, table2: Results<Table2>)?
     
     init() {
-        performRealmMigrations()
-        let realmPath = Bundle.main.url(forResource: "imported", withExtension: "realm")!
-        var realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: false)
-        realmConfiguration.schemaVersion = 7
-        realm = try! Realm(configuration: realmConfiguration)
+        let realmPath1 = Bundle.main.url(forResource: "microsoftTest_V1", withExtension: "realm")!
+        var realmConfiguration1 = Realm.Configuration(fileURL: realmPath1, readOnly: false)
+        realmConfiguration1.schemaVersion = 31
+        realm2 = try! Realm(configuration: realmConfiguration1)
+        
+        let board1 = realm2.objects(DVDDrives.self)
+        print("hjkgdhjsgfhdsgfjhkds", board1[0].revision?.revisionList)
+    
+        
         
     
         
