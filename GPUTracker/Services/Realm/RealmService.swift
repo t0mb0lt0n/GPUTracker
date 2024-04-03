@@ -47,24 +47,23 @@ final class RealmService {
         
     
         
-        let realmPath2 = Bundle.main.url(forResource: "Microsoft", withExtension: "realm")!
+        let realmPath2 = Bundle.main.url(forResource: "microsoftTest", withExtension: "realm")!
         var realmConfiguration2 = Realm.Configuration(fileURL: realmPath2, readOnly: false)
         //performRealmMigrations()
-        realmConfiguration2.schemaVersion = 5
+        realmConfiguration2.schemaVersion = 31
 //        realmConfiguration2.migrationBlock = { newSchemaVersion, oldSchemaVersion in
 //            if oldSchemaVersion < 2 {}
 //            if oldSchemaVersion < 2 {}
 //            if oldSchemaVersion < 1 {}
 //        }
-        //realm2 =
 
         realm2 = try! Realm(configuration: realmConfiguration2)
         
-        
-        //groupedItems = generateItemsWithGroups()
-        print(realm2.objects(Boards.self))
-        print(realm.objects(Boards.self))
-
+        let board = realm2.objects(DVDDrives.self)
+        print(board[0].revision?.revisionList)
+//        //groupedItems = generateItemsWithGroups()
+//        print(realm2.objects(Boards.self))
+//        print(realm.objects(Boards.self))
     }
     
 //    private func generateItemsWithGroups() -> (Results<RealmService>, Results<Table2>) {

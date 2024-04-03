@@ -18,6 +18,9 @@ final class MainView: UIView {
         static let appNameBottomPadding: CGFloat = -10
     }
     
+    let image = UIImage(named: "heart.fill")
+
+    
     let appLogoImage: UIView = {
         let logo = UIView()
         let logoContainer = UIImageView(
@@ -28,7 +31,7 @@ final class MainView: UIView {
                 height: 150
             )
         )
-        let logoImage = UIImage(named: "3")
+        let logoImage = UIImage(named: "heart.fill")
         logo.backgroundColor = .gray
         logoContainer.image = logoImage
         logo.clipsToBounds = true
