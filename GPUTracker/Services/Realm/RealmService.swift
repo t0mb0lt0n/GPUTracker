@@ -45,7 +45,7 @@ final class RealmService {
         realm2 = try! Realm(configuration: realmConfiguration1)
         
         let board1 = realm2.objects(DVDDrives.self)
-        print("hjkgdhjsgfhdsgfjhkds", board1[0].revision?.revisionList)
+        print("hjkgdhjsgfhdsgfjhkds", board1[0] as Any)
     
         
         
