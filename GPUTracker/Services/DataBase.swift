@@ -24,6 +24,11 @@ struct Source {
             name: "AMD",
             image: UIImage(),
             description: "R-Series/RX/Vega processors"
+         ),
+         .init(
+            name: "AMD2",
+            image: UIImage(),
+            description: "R-Series/RX/Vega processors"
          )
         ]
     }

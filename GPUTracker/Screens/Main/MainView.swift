@@ -8,19 +8,6 @@
 import UIKit
 
 final class MainView: UIView {
-    enum Constants {
-        static let appNameLabelTopOffsetConstant: CGFloat = -25
-        static let appLogoHeight: CGFloat = 115
-        static let appLogoWidth: CGFloat = 135
-        static let appNameLabelHeight:  CGFloat = 20
-        static let appNameLabelWidth: CGFloat = 200
-        static let appNameLabelLeadingOffsetConstant: CGFloat = -35
-        static let appNameBottomPadding: CGFloat = -10
-    }
-    
-    let image = UIImage(named: "heart.fill")
-
-    
     let appLogoImage: UIView = {
         let logo = UIView()
         let logoContainer = UIImageView(
@@ -93,5 +80,17 @@ extension MainView {
             appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
             appNameLabel.widthAnchor.constraint(equalToConstant: Constants.appNameLabelWidth)
         ])
+    }
+}
+
+extension MainView {
+    private enum Constants {
+        static let appNameLabelTopOffsetConstant: CGFloat = -25
+        static let appLogoHeight: CGFloat = 115
+        static let appLogoWidth: CGFloat = 135
+        static let appNameLabelHeight:  CGFloat = 20
+        static let appNameLabelWidth: CGFloat = 200
+        static let appNameLabelLeadingOffsetConstant: CGFloat = -35
+        static let appNameBottomPadding: CGFloat = -10
     }
 }

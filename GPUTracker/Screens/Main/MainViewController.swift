@@ -10,14 +10,27 @@ import RealmSwift
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
+    private let viewModel: MainViewModel
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
     let service = RealmService()
     //let fileCreator = RealmFileCreator()
     
+    
+    init() {
+        self.viewModel = MainViewModel(service: .init())
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = MainView()
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +62,11 @@ extension MainViewController: UITableViewDataSource {
     ) -> String? {
         switch section {
         case 0:
-            return "Nvidia"
+            return .microsoftTitle
         case 1:
-            return "AMD"
+            return .sonyTitle
         default:
-            return "not found"
+            return .placeholderTitle
         }
     }
     
@@ -70,9 +83,18 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        // manufacturers[section].count
+        
+        switch section {
+        case 0:
+            return viewModel.numberOfItems
+        case 1:
+            return 10
+        default:
+            return 0
+        }
+         //manufacturers[section].count
         //service.groupedItems!.table1.count
-        2
+        //viewModel.numberOfItems
     }
     
     func tableView(
@@ -125,9 +147,9 @@ extension MainViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            manufacturerNameLabel.text = "nvidia"
+            manufacturerNameLabel.text = .microsoftTitle
         case 1:
-            manufacturerNameLabel.text = "AMD"
+            manufacturerNameLabel.text = .sonyTitle
         default:
             return nil
         }

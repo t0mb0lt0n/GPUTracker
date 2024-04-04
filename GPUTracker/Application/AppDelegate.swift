@@ -28,23 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let navVC1 = UINavigationController(rootViewController: MainViewController())
-        let navVC2 = UINavigationController(rootViewController: MainViewController())
+        let navVC2 = UINavigationController(rootViewController: ItemListViewController())
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary
         window?.rootViewController?.navigationItem.titleView?.tintColor = .systemGray
         window?.makeKeyAndVisible()
-        
-        func performRealmMigrations() {
-                Realm.Configuration.defaultConfiguration = Realm.Configuration(
-                    schemaVersion: 0,
-                    migrationBlock: { migration, oldSchemaVersion in },
-                    deleteRealmIfMigrationNeeded: true
-                )
-                
-                let _ = try! Realm()
-            }
-        
         return true
     }
 }

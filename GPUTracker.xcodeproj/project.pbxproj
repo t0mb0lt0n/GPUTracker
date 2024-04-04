@@ -32,6 +32,9 @@
 		11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */; };
 		11DDC1F82BBED9DC007D8CF3 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */; };
 		11DDC1FB2BBEDA2F007D8CF3 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */; };
+		11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */; };
+		11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */; };
+		11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
 		11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sonyRealm.realm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		11070CDA2BADF35600B2C954 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */,
 				11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */,
 				11070CDB2BADF76000B2C954 /* TestTable.swift */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
@@ -116,6 +123,7 @@
 		1156985C29E873EE009B3638 /* GPUTracker */ = {
 			isa = PBXGroup;
 			children = (
+				11DDC1FC2BBEE466007D8CF3 /* Helpers */,
 				11AE40D42BA9F7E9001B52F8 /* CustomViews */,
 				1156987529E876AE009B3638 /* Services */,
 				1156987129E875DB009B3638 /* Screens */,
@@ -180,6 +188,7 @@
 			children = (
 				1156987629E887AB009B3638 /* MainView.swift */,
 				1156986129E873EE009B3638 /* MainViewController.swift */,
+				11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -216,6 +225,22 @@
 				11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */,
 			);
 			path = ItemList;
+			sourceTree = "<group>";
+		};
+		11DDC1FC2BBEE466007D8CF3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				11DDC1FD2BBEE474007D8CF3 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11DDC1FD2BBEE474007D8CF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */,
 				1186BE592A3CD1160031D569 /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */,
@@ -309,8 +335,10 @@
 				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
 				1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
+				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */,
+				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
 				11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,

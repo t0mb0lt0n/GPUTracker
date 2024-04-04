@@ -9,18 +9,19 @@ import Foundation
 import RealmSwift
 
 final class RealmService {
-    private var realm: Realm!
-    private var realm2: Realm!
+    var microsoftRealm: Realm!
+    var sonyRealm: Realm!
+    static let shared = RealmService()
     //var groupedItems: (table1: Results<RealmService>, table2: Results<Table2>)?
     
     init() {
         let realmPath = Bundle.main.url(forResource: "microsoftTest_V2", withExtension: "realm")!
         var realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: false)
-        realmConfiguration.schemaVersion = 54
-        realm = try! Realm(configuration: realmConfiguration)
+        realmConfiguration.schemaVersion = 57
+        microsoftRealm = try! Realm(configuration: realmConfiguration)
         
-        let board1 = realm.objects(DVDDrives.self)
-        print("hjkgdhjsgfhdsgfjhkds", board1[0] as Any)
+        let product = microsoftRealm.objects(ProductList.self)
+        print("hjkgdhjsgfhdsgfjhkds", product[0] as Any)
  
 
 //        //groupedItems = generateItemsWithGroups()

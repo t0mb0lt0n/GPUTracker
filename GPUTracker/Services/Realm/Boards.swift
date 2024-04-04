@@ -18,6 +18,20 @@ class AnalogChip: Object {
     }
 }
 
+class ProductList: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var shortDescription: String = ""
+
+    enum CodingKeys: String, CodingKey {
+        case shortDescription = "description"
+    }
+    
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
 class Boards: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var revison: String = ""
