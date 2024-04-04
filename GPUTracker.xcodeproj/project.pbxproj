@@ -30,6 +30,8 @@
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* Boards.swift */; };
 		11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */; };
+		11DDC1F82BBED9DC007D8CF3 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */; };
+		11DDC1FB2BBEDA2F007D8CF3 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* Boards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boards.swift; sourceTree = "<group>"; };
 		11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
+		11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		1156987129E875DB009B3638 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				11DDC1F92BBED9F0007D8CF3 /* ItemList */,
 				11AE40D32BA9F797001B52F8 /* Main */,
 				11AE40D72BA9F934001B52F8 /* GPUList */,
 				11AE40D52BA9F82F001B52F8 /* Description */,
@@ -202,6 +207,15 @@
 				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
 			);
 			path = GPUList;
+			sourceTree = "<group>";
+		};
+		11DDC1F92BBED9F0007D8CF3 /* ItemList */ = {
+			isa = PBXGroup;
+			children = (
+				11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */,
+				11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */,
+			);
+			path = ItemList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +300,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
+				11DDC1F82BBED9DC007D8CF3 /* ItemListViewController.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
+				11DDC1FB2BBEDA2F007D8CF3 /* ItemListView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */,
 				1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */,
 				111154712BAB57620006DA07 /* DataBase.swift in Sources */,
