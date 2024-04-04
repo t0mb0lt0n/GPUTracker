@@ -51,8 +51,9 @@ final class MainView: UIView {
 //MARK: - MainView extensions
 extension MainView {
     final private func setupView() {
-        [appLogoImage,
-         appNameLabel
+        [
+        appLogoImage,
+        appNameLabel
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)

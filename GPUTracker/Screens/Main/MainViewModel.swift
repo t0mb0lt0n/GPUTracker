@@ -9,25 +9,23 @@ import Foundation
 import RealmSwift
 
 final class MainViewModel {
-    private let service: RealmService
-    //private(set) var photos: [UnsplashPhoto] = .init()
     private(set) var isContentDownloading = false
     var showLoading: ((Bool) -> Void)?
-    private var currentPage = Constants.startPage
     var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
     
     var numberOfSections: Int {
-        1
+        RealmService.shared.realms.count
     }
     
-    var numberOfItems: Int {
-        service.microsoftRealm.objects(ProductList.self).count
+    var itemsInSection: [String: Int] {
+        [
+        .microsoft: RealmService.shared.realms[0].objects(ProductList.self).count,
+        .sony: RealmService.shared.realms[1].objects(ProductList.self).count
+        ]
     }
     
-    init(service: RealmService) {
-        self.service = service
-    }
+    init() {}
     
     func findPhotos() {
         
@@ -45,5 +43,7 @@ extension MainViewModel {
         static let request: String = "city"
         static let startPage = 1
         static let pageSize = 5
+        static let microsoftKey: String = "Microsoft"
+        static let sonyKey: String = "Sony"
     }
 }

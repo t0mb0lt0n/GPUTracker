@@ -18,7 +18,7 @@ final class MainViewController: UIViewController {
     
     
     init() {
-        self.viewModel = MainViewModel(service: .init())
+        self.viewModel = MainViewModel()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -53,7 +53,7 @@ final class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        viewModel.numberOfSections
     }
     
     func tableView(
@@ -62,9 +62,9 @@ extension MainViewController: UITableViewDataSource {
     ) -> String? {
         switch section {
         case 0:
-            return .microsoftTitle
+            return .microsoft
         case 1:
-            return .sonyTitle
+            return .sony
         default:
             return .placeholderTitle
         }
@@ -86,7 +86,7 @@ extension MainViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            return viewModel.numberOfItems
+            return viewModel.itemsInSection[.microsoft] ?? 0
         case 1:
             return 10
         default:
@@ -147,9 +147,9 @@ extension MainViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            manufacturerNameLabel.text = .microsoftTitle
+            manufacturerNameLabel.text = .microsoft
         case 1:
-            manufacturerNameLabel.text = .sonyTitle
+            manufacturerNameLabel.text = .sony
         default:
             return nil
         }

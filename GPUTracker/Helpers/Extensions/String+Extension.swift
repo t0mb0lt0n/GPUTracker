@@ -6,7 +6,7 @@
 //
 
 extension String {
-    static let microsoftTitle: String = "Microsoft"
-    static let sonyTitle: String = "Sony"
+    static let microsoft: String = "Microsoft"
+    static let sony: String = "Sony"
     static let placeholderTitle: String = "Section title"
 }
