@@ -30,11 +30,13 @@
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* Boards.swift */; };
 		11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */; };
-		11DDC1F82BBED9DC007D8CF3 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */; };
-		11DDC1FB2BBEDA2F007D8CF3 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */; };
+		11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */; };
+		11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */; };
 		11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */; };
 		11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */; };
 		11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */; };
+		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
+		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,11 +62,13 @@
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* Boards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boards.swift; sourceTree = "<group>"; };
 		11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
-		11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
-		11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sonyRealm.realm; sourceTree = "<group>"; };
+		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
+		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
 				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
 				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
+				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -221,8 +226,9 @@
 		11DDC1F92BBED9F0007D8CF3 /* ItemList */ = {
 			isa = PBXGroup;
 			children = (
-				11DDC1FA2BBEDA2F007D8CF3 /* ItemListView.swift */,
-				11DDC1F72BBED9DC007D8CF3 /* ItemListViewController.swift */,
+				11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */,
+				11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */,
+				11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */,
 			);
 			path = ItemList;
 			sourceTree = "<group>";
@@ -326,9 +332,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
-				11DDC1F82BBED9DC007D8CF3 /* ItemListViewController.swift in Sources */,
+				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
+				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
+				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
-				11DDC1FB2BBEDA2F007D8CF3 /* ItemListView.swift in Sources */,
+				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */,
 				1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */,
 				111154712BAB57620006DA07 /* DataBase.swift in Sources */,

@@ -9,4 +9,9 @@ extension String {
     static let microsoft: String = "Microsoft"
     static let sony: String = "Sony"
     static let placeholderTitle: String = "Section title"
+    static let common: String = "Common"
+    static let motherBoards: String = "Motherboards"
+    static let cpuVariants: String = "CPU variants"
+    static let gpuVariants: String = "GPU variants"
+    static let otherComponents: String = "Other Components"
 }
