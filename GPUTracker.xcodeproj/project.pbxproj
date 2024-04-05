@@ -37,6 +37,7 @@
 		11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */; };
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
+		11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2082BC03210007D8CF3 /* Scroll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sonyRealm.realm; sourceTree = "<group>"; };
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
+		11DDC2082BC03210007D8CF3 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
 				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
+				11DDC2082BC03210007D8CF3 /* Scroll.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
 				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
+				11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
 				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */,
