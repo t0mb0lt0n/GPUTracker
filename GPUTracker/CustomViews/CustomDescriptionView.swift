@@ -36,6 +36,17 @@ final class CustomDescriptionView: UIView {
         return label
     }()
     
+    let segmentScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .orange
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.showsHorizontalScrollIndicator = true
+        scrollView.bounces = true
+        scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width), height: 10000)
+        //scrollView.isPagingEnabled = true
+        return scrollView
+    }()
+    
     let testScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .lightGray
@@ -53,15 +64,22 @@ final class CustomDescriptionView: UIView {
         testScrollView.addSubview(label)
     }
     
+    func addScrollView(position: CGFloat, scroll: UIScrollView) {
+        let screeWith = UIScreen.main.bounds.width - 20
+        scroll.frame = CGRect(x: screeWith * position, y: 0, width: screeWith, height: 1100)
+        testScrollView.addSubview(scroll)
+    }
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .gray
         setupView()
         setupConstraints()
-        addLabel(position: 0, label: testLabel1)
-        addLabel(position: 1, label: testLabel2)
-        addLabel(position: 2, label: testLabel3)
-        addLabel(position: 3, label: testLabel4)
+        addScrollView(position: 0, scroll: segmentScrollView)
+        addLabel(position: 1, label: testLabel1)
+        addLabel(position: 2, label: testLabel2)
+        addLabel(position: 3, label: testLabel3)
+        addLabel(position: 4, label: testLabel4)
     }
     
     required init?(coder: NSCoder) {
@@ -88,7 +106,6 @@ final class CustomDescriptionView: UIView {
             testScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
 }
 
 extension CustomDescriptionView: UIScrollViewDelegate {
