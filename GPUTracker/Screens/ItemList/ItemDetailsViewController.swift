@@ -21,6 +21,15 @@ final class ItemDetailsViewController: UIViewController {
         title = "Item List"
         navigationController?.isNavigationBarHidden = false
         mainView.backgroundColor = .white
+        mainView.segmentDidChangedClosure = { [weak self] in
+            self?.segmentChanged()
+        }
+    }
+    
+    func segmentChanged() {
+        let contentOffset = mainView.itemDescriotionView.testLabel1.frame.width
+        let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
+        mainView.itemDescriotionView.testScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
     }
 }
 

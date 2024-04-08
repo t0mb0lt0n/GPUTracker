@@ -18,11 +18,6 @@ final class ItemDetailsView: UIView {
         return logoImageView
     }()
     
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        return scrollView
-    }()
-    
     let itemDescriotionView = CustomDescriptionView()
     
     let pageControl: UIPageControl = {
@@ -73,6 +68,7 @@ final class ItemDetailsView: UIView {
 //MARK: - ItemDetailsView extensions
 extension ItemDetailsView {
     final private func setupView() {
+        itemDescriotionView.testScrollView.isScrollEnabled = false
         [
         itemImageView,
         itemNameLabel,
@@ -82,6 +78,7 @@ extension ItemDetailsView {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
+        segmentedControll.addTarget(self, action: #selector(segmentDidChanged), for: .valueChanged)
     }
     
     final private func setupConstraints() {
@@ -122,9 +119,11 @@ extension ItemDetailsView {
             
         ])
     }
+    
+    @objc func segmentDidChanged() {
+        segmentDidChangedClosure?()
+    }
 }
-
-Int(scrollView.contentOffset.x/UIScreen.main.bounds)
 
 extension ItemDetailsView {
     private enum Constants {
