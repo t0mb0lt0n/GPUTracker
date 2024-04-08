@@ -43,9 +43,6 @@ final class ItemDetailsView: UIView {
         return label
     }()
 
-    
-    
-    
     let segmentedControll: UISegmentedControl = {
         let items: [String] = [
             .common,
@@ -57,8 +54,9 @@ final class ItemDetailsView: UIView {
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         return segmentedControl
-        
     }()
+    
+    var segmentDidChangedClosure: (() -> Void)?
     
     //MARK: init
     init() {
@@ -125,6 +123,8 @@ extension ItemDetailsView {
         ])
     }
 }
+
+Int(scrollView.contentOffset.x/UIScreen.main.bounds)
 
 extension ItemDetailsView {
     private enum Constants {

@@ -21,7 +21,7 @@ final class MainViewModel {
     var itemsInSection: [String: Int] {
         [
         .microsoft: RealmService.shared.realms[0].objects(ProductList.self).count,
-        .sony: RealmService.shared.realms[1].objects(ProductList.self).count
+        .sony: RealmService.shared.realms[0].objects(ProductList.self).count
         ]
     }
     

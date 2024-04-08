@@ -29,7 +29,6 @@
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* Boards.swift */; };
-		11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */; };
 		11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */; };
 		11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */; };
 		11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */; };
@@ -38,6 +37,7 @@
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 		11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2082BC03210007D8CF3 /* Scroll.swift */; };
+		11DDC20B2BC0523B007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,6 @@
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* Boards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boards.swift; sourceTree = "<group>"; };
-		11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
 		11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 		11DDC2082BC03210007D8CF3 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
+		11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +91,8 @@
 		11070CDA2BADF35600B2C954 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */,
 				11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */,
-				11DDC1F52BBDB2B9007D8CF3 /* microsoftTest_V2.realm */,
 				11070CDB2BADF76000B2C954 /* TestTable.swift */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
 				11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */,
@@ -320,9 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */,
+				11DDC20B2BC0523B007D8CF3 /* microsoftTest_V2.realm in Resources */,
 				1186BE592A3CD1160031D569 /* gpuDB.db in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
-				11DDC1F62BBDB2B9007D8CF3 /* microsoftTest_V2.realm in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

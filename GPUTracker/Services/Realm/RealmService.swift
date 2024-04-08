@@ -13,12 +13,11 @@ final class RealmService {
     //var microsoftRealm: Realm!
     //var sonyRealm: Realm!
     static let shared = RealmService()
-    //var groupedItems: (table1: Results<RealmService>, table2: Results<Table2>)?
     
     init() {
         let microsoftRealmPath = Bundle.main.url(forResource: "microsoftTest_V2", withExtension: "realm")!
-        var microsoftRealmConfiguration = Realm.Configuration(fileURL: microsoftRealmPath, readOnly: false)
-        microsoftRealmConfiguration.schemaVersion = 57
+        var microsoftRealmConfiguration = Realm.Configuration(fileURL: microsoftRealmPath, readOnly: true)
+        microsoftRealmConfiguration.schemaVersion = 56
         let microsoftRealm = try! Realm(configuration: microsoftRealmConfiguration)
         
         let product = microsoftRealm.objects(ProductList.self)
@@ -26,8 +25,8 @@ final class RealmService {
         
         
         let sonyRealmPath = Bundle.main.url(forResource: "sonyRealm", withExtension: "realm")!
-        var sonyRealmConfiguration = Realm.Configuration(fileURL: sonyRealmPath, readOnly: false)
-        sonyRealmConfiguration.schemaVersion = 57
+        var sonyRealmConfiguration = Realm.Configuration(fileURL: sonyRealmPath, readOnly: true)
+        sonyRealmConfiguration.schemaVersion = 3
         let sonyRealm = try! Realm(configuration: sonyRealmConfiguration)
         
         let product1 = sonyRealm.objects(ProductList.self)

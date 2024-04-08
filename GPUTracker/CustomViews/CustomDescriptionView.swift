@@ -19,8 +19,9 @@ final class CustomDescriptionView: UIView {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .lightGray
         scrollView.showsVerticalScrollIndicator = true
+        scrollView.showsHorizontalScrollIndicator = true
         scrollView.bounces = true
-        scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) - 20, height: 1000)
+        scrollView.contentSize = CGSize(width: Int(UIScreen.main.bounds.width) * 3, height: 1000)
         var testLable1: UILabel = {
             let label = UILabel()
             label.text = "Test label text"
@@ -29,6 +30,9 @@ final class CustomDescriptionView: UIView {
         }()
         scrollView.addSubview(testLable1)
         scrollView.isPagingEnabled = true
+        
+        
+
         return scrollView
     }()
     
@@ -50,9 +54,7 @@ final class CustomDescriptionView: UIView {
         addLabel(position: 0)
         addLabel(position: 1)
         addLabel(position: 2)
-
         addLabel(position: 3)
-
 
     }
     
@@ -85,5 +87,9 @@ final class CustomDescriptionView: UIView {
             testScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+    
+}
+
+extension CustomDescriptionView: UIScrollViewDelegate {
     
 }
