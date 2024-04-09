@@ -10,6 +10,15 @@ import RealmSwift
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
+    var dataChangedCallback: ((Realm) -> Void)?
+    
+    // Это метод, который будет вызываться, когда вы хотите изменить данные
+    func updateDataSource(newDataSource: Realm) {
+        // Вызываем замыкание, чтобы передать новые данные
+        dataChangedCallback?(newDataSource)
+    }
+    
+
     private let viewModel: MainViewModel
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
@@ -28,10 +37,9 @@ final class MainViewController: UIViewController {
     
     override func loadView() {
         view = MainView()
+        setupViewModel()
     }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "mainVC"
@@ -46,6 +54,12 @@ final class MainViewController: UIViewController {
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .black
+    }
+    
+    private func setupViewModel() {
+        viewModel.reloadClosure = {
+            
+        }
     }
 }
 
@@ -168,8 +182,10 @@ extension MainViewController: UITableViewDelegate {
 //            navigationController?.pushViewController(targetVC, animated: true)
             //let testDB = RealmService(vendor: "test", itemName: "test", count: 1)
             //let testrecord = RealmService(vendor: "tes2", itemName: "tes2", count: 2)
-            print("saved")
             
+            print("saved")
+            let newRealm = RealmService.shared.realms[indexPath.row]
+            updateDataSource(newDataSource: newRealm)
 
         case 1:
 //            let targetVC = GPUListViewController(selectedVendor: "AMD")

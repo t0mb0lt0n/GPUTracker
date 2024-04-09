@@ -10,8 +10,9 @@ import RealmSwift
 
 final class RealmService {
     var realms = [Realm]()
-    //var microsoftRealm: Realm!
-    //var sonyRealm: Realm!
+    var microsoftRealm: Realm!
+    var sonyRealm: Realm!
+    var objects: Results<ProductList>
     static let shared = RealmService()
     
     init() {
@@ -20,16 +21,15 @@ final class RealmService {
         microsoftRealmConfiguration.schemaVersion = 56
         let microsoftRealm = try! Realm(configuration: microsoftRealmConfiguration)
         
-        let product = microsoftRealm.objects(ProductList.self)
-        //print("hjkgdhjsgfhdsgfjhkds", product[0] as Any)
-        
+        objects = microsoftRealm.objects(ProductList.self)
+        //print("hjkgdhjsgfhdsgfjhkds", product[0] as An
         
         let sonyRealmPath = Bundle.main.url(forResource: "sonyRealm", withExtension: "realm")!
         var sonyRealmConfiguration = Realm.Configuration(fileURL: sonyRealmPath, readOnly: true)
         sonyRealmConfiguration.schemaVersion = 3
         let sonyRealm = try! Realm(configuration: sonyRealmConfiguration)
         
-        let product1 = sonyRealm.objects(ProductList.self)
+        //let product1 = sonyRealm.objects(ProductList.self)
         //print("hjkgdhjsgfhdsgfjhkds", product1[0] as Any)
         
         [

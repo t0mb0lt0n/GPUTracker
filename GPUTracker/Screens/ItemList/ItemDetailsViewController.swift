@@ -9,8 +9,19 @@ import UIKit
 import RealmSwift
 
 final class ItemDetailsViewController: UIViewController {
+    var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
     let service = RealmService()
+    private let viewModel: ItemDetailsViewModel
+    
+    init(viewModel: ItemDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = ItemDetailsView()
@@ -24,12 +35,104 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
         }
+//        mainVC?.dataChangedCallback = { [ weak self ] newDataSource in
+//            //self?.viewModel.selectedDataSource = newDataSource
+//        }
+        setupViewModel()
+        setupMainView()
     }
     
     func segmentChanged() {
-        let contentOffset = mainView.itemDescriotionView.testLabel1.frame.width
+        let contentOffset = mainView.itemDescriptionView.testLabel1.frame.width
         let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
-        mainView.itemDescriotionView.testScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
+        mainView.itemDescriptionView.testScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
+    }
+    
+    private func setupMainView() {
+        mainView.itemDescriptionView.generalSegmentTableView.dataSource = self
+        mainView.itemDescriptionView.tableView2.dataSource = self
+        //mainView.collectionView.delegate = self
+        
+        mainView.segmentedControll.selectedSegmentIndex = 0
+        for (index, value) in viewModel.descriptionSegments.enumerated() {
+            mainView.segmentedControll.insertSegment(withTitle: value, at: index, animated: true)
+        }
+    }
+    
+    private func setupViewModel() {
+        viewModel.reloadClosure = { [weak self] in
+            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+            self?.mainView.itemDescriptionView.tableView2.reloadData()
+        }
+        viewModel.showLoading = { [weak self] in
+            if $0 {
+                //self?.mainView.activityIndicator.startAnimating()
+            } else {
+                //self?.mainView.activityIndicator.stopAnimating()
+            }
+        }
+    }
+}
+
+extension ItemDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView.tag {
+        case 0:
+            print("1")
+            //anyObject.get_cuntry_by_id(id: array_of_cities[indexPath.row].id)[indexPath.row].name
+            return 1
+        case 1:
+            print("2")
+            return viewModel.dataSourceForGeneral.count
+        default:
+            return 0
+        }
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        switch tableView.tag {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "GPUInfoCellView",
+                for: indexPath
+            ) as? GPUInfoCellView
+            else { fatalError() }
+            
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "GeneralCell",
+                for: indexPath
+            ) as? GeneralCell
+            else { fatalError() }
+//            let descriptionName = viewModel.dataSource?.objects(ProductList.self)
+//            cell.configurateCell(
+//                descriptionName: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name,
+//                descriptionValue: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name
+//            )
+            cell.configurateCell(
+                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
+                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
+            )
+            
+//            cell.configurateCell(
+//                descriptionName: "test",
+//                descriptionValue: "test"
+//            )
+
+            
+            return cell
+        default:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "ManufacturerCell",
+                for: indexPath
+            ) as? ManufacturerCell
+            else { fatalError() }
+            return cell
+        }
     }
 }
 

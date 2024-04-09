@@ -28,7 +28,7 @@ final class MainViewModel {
     init() {}
     
     func findPhotos() {
-        
+        reloadClosure!()
     }
     
     func handleLoadingEvent(_ isDownloading: Bool) {

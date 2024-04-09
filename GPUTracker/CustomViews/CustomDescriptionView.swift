@@ -8,7 +8,7 @@
 import UIKit
 
 final class CustomDescriptionView: UIView {
-    var tableView = CustomTableView()
+    var generalSegmentTableView = CustomTableView()
     var tableView2 = CustomTableView()
 
     
@@ -84,14 +84,14 @@ final class CustomDescriptionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .gray
-        tableView.tag = 0
+        generalSegmentTableView.tag = 0
         tableView2.tag = 1
-        tableView.dataSource = self
-        tableView2.dataSource = self
+//        generalSegmentTableView.dataSource = self
+//        tableView2.dataSource = self
         setupView()
         setupConstraints()
         addScrollView(position: 0, scroll: segmentScrollView)
-        addTableView(position: 1, table: tableView)
+        addTableView(position: 1, table: generalSegmentTableView)
         addTableView(position: 2, table: tableView2)
         addLabel(position: 3, label: testLabel1)
         addLabel(position: 4, label: testLabel2)
@@ -126,52 +126,4 @@ final class CustomDescriptionView: UIView {
             testScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-}
-
-extension CustomDescriptionView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch tableView.tag {
-        case 0:
-            print("1")
-            return 1
-        case 1:
-            print("2")
-            return 10
-        default:
-            return 0
-        }
-    }
-
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        switch tableView.tag {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GPUInfoCellView",
-                for: indexPath
-            ) as? GPUInfoCellView
-            else { fatalError() }
-     
-            return cell
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GPUInfoCellView",
-                for: indexPath
-            ) as? GPUInfoCellView
-            else { fatalError() }
-     
-            return cell
-        default:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ManufacturerCell",
-                for: indexPath
-            ) as? ManufacturerCell
-            else { fatalError() }
-     
-            return cell
-        }
-    }
-    
 }

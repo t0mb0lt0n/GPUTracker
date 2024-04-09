@@ -41,8 +41,6 @@ final class MainView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
-        let view = UIView()
-        //view.bringSubviewToFront(<#T##view: UIView##UIView#>)
     }
     
     required init?(coder: NSCoder) {

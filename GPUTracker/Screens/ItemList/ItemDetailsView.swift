@@ -18,16 +18,7 @@ final class ItemDetailsView: UIView {
         return logoImageView
     }()
     
-    let itemDescriotionView = CustomDescriptionView()
-    
-    let pageControl: UIPageControl = {
-        //let
-        let pageControl = UIPageControl()
-        //pageControl.addSubview(<#T##UIView#>)
-        pageControl.currentPage = 0
-        //pageControl.setp
-        return pageControl
-    }()
+    let itemDescriptionView = CustomDescriptionView()
     
     let itemNameLabel: UILabel = {
         let label = UILabel()
@@ -38,18 +29,20 @@ final class ItemDetailsView: UIView {
         return label
     }()
 
-    let segmentedControll: UISegmentedControl = {
-        let items: [String] = [
-            .general,
-            .gpuVariants,
-            .cpuVariants,
-            .motherBoards,
-            .otherComponents
-        ]
-        let segmentedControl = UISegmentedControl(items: items)
-        segmentedControl.selectedSegmentIndex = 0
-        return segmentedControl
-    }()
+//    let segmentedControll: UISegmentedControl = {
+//        let items: [String] = [
+//            .general,
+//            .gpuVariants,
+//            .cpuVariants,
+//            .motherBoards,
+//            .otherComponents
+//        ]
+//        let segmentedControl = UISegmentedControl(items: items)
+//        segmentedControl.selectedSegmentIndex = 0
+//        return segmentedControl
+//    }()
+    
+    let segmentedControll = UISegmentedControl()
     
     var segmentDidChangedClosure: (() -> Void)?
     
@@ -68,12 +61,12 @@ final class ItemDetailsView: UIView {
 //MARK: - ItemDetailsView extensions
 extension ItemDetailsView {
     final private func setupView() {
-        itemDescriotionView.testScrollView.isScrollEnabled = false
+        itemDescriptionView.testScrollView.isScrollEnabled = false
         [
         itemImageView,
         itemNameLabel,
         segmentedControll,
-        itemDescriotionView,
+        itemDescriptionView,
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -112,10 +105,10 @@ extension ItemDetailsView {
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
-            itemDescriotionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 1),
-            itemDescriotionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            itemDescriotionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            itemDescriotionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            itemDescriptionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 1),
+            itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            itemDescriptionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
             
         ])
     }

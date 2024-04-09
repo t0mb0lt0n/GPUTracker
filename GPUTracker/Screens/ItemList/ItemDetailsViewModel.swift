@@ -9,30 +9,35 @@ import Foundation
 import RealmSwift
 
 final class ItemDetailsViewModel {
-    private(set) var isContentDownloading = false
+    var dataSourceForGeneral: Results<ProductList>
+    var selectedDataSource = RealmService.shared.realms[1]
     var showLoading: ((Bool) -> Void)?
-    var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
     
-    var numberOfSections: Int {
-        RealmService.shared.realms.count
-    }
+//    var numberOfSections: Int {
+//        RealmService.shared.realms.count
+//    }
     
-    var itemsInSection: [String: Int] {
+    var descriptionSegments: [String] = {
         [
-        .microsoft: RealmService.shared.realms[0].objects(ProductList.self).count,
-        .sony: RealmService.shared.realms[1].objects(ProductList.self).count
+        .general,
+        .gpuVariants,
+        .cpuVariants,
+        .motherBoards,
+        .otherComponents
         ]
+    }()
+    
+    init() {
+        self.dataSourceForGeneral = selectedDataSource.objects(ProductList.self)
     }
     
-    init() {}
+//    init() {
+//    }
+
     
     func findPhotos() {
         
-    }
-    
-    func handleLoadingEvent(_ isDownloading: Bool) {
-        self.isContentDownloading = isDownloading
     }
 }
 
@@ -40,10 +45,5 @@ final class ItemDetailsViewModel {
 
 extension ItemDetailsViewModel {
     private enum Constants {
-        static let request: String = "city"
-        static let startPage = 1
-        static let pageSize = 5
-        static let microsoftKey: String = "Microsoft"
-        static let sonyKey: String = "Sony"
     }
 }

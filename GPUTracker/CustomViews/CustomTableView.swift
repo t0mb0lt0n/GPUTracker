@@ -22,5 +22,9 @@ class CustomTableView: UITableView {
             GPUInfoCellView.self,
             forCellReuseIdentifier: "GPUInfoCellView"
         )
+        register(
+            GeneralCell.self,
+            forCellReuseIdentifier: "GeneralCell"
+        )
     }
 }
