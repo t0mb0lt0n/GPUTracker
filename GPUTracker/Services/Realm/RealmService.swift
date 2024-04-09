@@ -21,7 +21,7 @@ final class RealmService {
         let microsoftRealm = try! Realm(configuration: microsoftRealmConfiguration)
         
         let product = microsoftRealm.objects(ProductList.self)
-        print("hjkgdhjsgfhdsgfjhkds", product[0] as Any)
+        //print("hjkgdhjsgfhdsgfjhkds", product[0] as Any)
         
         
         let sonyRealmPath = Bundle.main.url(forResource: "sonyRealm", withExtension: "realm")!
@@ -30,7 +30,7 @@ final class RealmService {
         let sonyRealm = try! Realm(configuration: sonyRealmConfiguration)
         
         let product1 = sonyRealm.objects(ProductList.self)
-        print("hjkgdhjsgfhdsgfjhkds", product1[0] as Any)
+        //print("hjkgdhjsgfhdsgfjhkds", product1[0] as Any)
         
         [
         microsoftRealm,

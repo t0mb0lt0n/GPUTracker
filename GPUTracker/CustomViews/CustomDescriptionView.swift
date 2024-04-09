@@ -8,6 +8,10 @@
 import UIKit
 
 final class CustomDescriptionView: UIView {
+    var tableView = CustomTableView()
+    var tableView2 = CustomTableView()
+
+    
     var testLabel1: UILabel = {
         let label = UILabel()
         label.text = "Test label text"
@@ -69,17 +73,31 @@ final class CustomDescriptionView: UIView {
         scroll.frame = CGRect(x: screeWith * position, y: 0, width: screeWith, height: 1100)
         testScrollView.addSubview(scroll)
     }
+    
+    func addTableView(position: CGFloat, table: CustomTableView) {
+        let screeWith = UIScreen.main.bounds.width - 20
+        table.frame = CGRect(x: screeWith * position, y: 0, width: screeWith, height: 1100)
+        testScrollView.addSubview(table)
+        table.reloadData()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
         backgroundColor = .gray
+        tableView.tag = 0
+        tableView2.tag = 1
+        tableView.dataSource = self
+        tableView2.dataSource = self
         setupView()
         setupConstraints()
         addScrollView(position: 0, scroll: segmentScrollView)
-        addLabel(position: 1, label: testLabel1)
-        addLabel(position: 2, label: testLabel2)
-        addLabel(position: 3, label: testLabel3)
-        addLabel(position: 4, label: testLabel4)
+        addTableView(position: 1, table: tableView)
+        addTableView(position: 2, table: tableView2)
+        addLabel(position: 3, label: testLabel1)
+        addLabel(position: 4, label: testLabel2)
+        //addTableView(position: 3, table: tableView2)
+        //addLabel(position: 3, label: testLabel3)
+        //addLabel(position: 4, label: testLabel4)
     }
     
     required init?(coder: NSCoder) {
@@ -87,6 +105,8 @@ final class CustomDescriptionView: UIView {
     }
     
     final private func setupView() {
+//        tableView.dataSource = self
+//        tableView2.dataSource = self
         [
         testScrollView,
         ].forEach {
@@ -108,6 +128,50 @@ final class CustomDescriptionView: UIView {
     }
 }
 
-extension CustomDescriptionView: UIScrollViewDelegate {
+extension CustomDescriptionView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView.tag {
+        case 0:
+            print("1")
+            return 1
+        case 1:
+            print("2")
+            return 10
+        default:
+            return 0
+        }
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        switch tableView.tag {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "GPUInfoCellView",
+                for: indexPath
+            ) as? GPUInfoCellView
+            else { fatalError() }
+     
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "GPUInfoCellView",
+                for: indexPath
+            ) as? GPUInfoCellView
+            else { fatalError() }
+     
+            return cell
+        default:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "ManufacturerCell",
+                for: indexPath
+            ) as? ManufacturerCell
+            else { fatalError() }
+     
+            return cell
+        }
+    }
     
 }

@@ -156,26 +156,6 @@ extension MainViewController: UITableViewDataSource {
         return customHeaderView
     }
 }
-    
-//extension MainViewController: UITableViewDelegate {
-//    func tableView(
-//        _ tableView: UITableView,
-//        didSelectRowAt indexPath: IndexPath
-//    ) {
-//        switch indexPath.section {
-//        case 0:
-//            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
-//            print("hjkhkj")
-//            navigationController?.pushViewController(targetVC, animated: true)
-//        case 1:
-//            let targetVC = GPUListViewController(selectedVendor: "AMD")
-//            navigationController?.pushViewController(targetVC, animated: true)
-//        default:
-//            break
-//        }
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-//}
 
 extension MainViewController: UITableViewDelegate {
     func tableView(

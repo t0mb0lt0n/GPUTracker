@@ -38,6 +38,9 @@
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 		11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2082BC03210007D8CF3 /* Scroll.swift */; };
 		11DDC20B2BC0523B007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */; };
+		11FBAA452BC46F46003F568F /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA442BC46F46003F568F /* GeneralView.swift */; };
+		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
+		11FBAA492BC56973003F568F /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA482BC56973003F568F /* GeneralCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 		11DDC2082BC03210007D8CF3 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
+		11FBAA442BC46F46003F568F /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		11FBAA482BC56973003F568F /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,11 +208,14 @@
 		11AE40D42BA9F7E9001B52F8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				11FBAA482BC56973003F568F /* GeneralCell.swift */,
 				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
 				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
 				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
 				11DDC2082BC03210007D8CF3 /* Scroll.swift */,
+				11FBAA442BC46F46003F568F /* GeneralView.swift */,
+				11FBAA462BC47355003F568F /* CustomTableView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -337,7 +346,9 @@
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
+				11FBAA452BC46F46003F568F /* GeneralView.swift in Sources */,
 				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
+				11FBAA492BC56973003F568F /* GeneralCell.swift in Sources */,
 				11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
 				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
@@ -347,6 +358,7 @@
 				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
 				1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
+				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */,

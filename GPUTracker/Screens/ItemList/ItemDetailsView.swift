@@ -40,7 +40,7 @@ final class ItemDetailsView: UIView {
 
     let segmentedControll: UISegmentedControl = {
         let items: [String] = [
-            .common,
+            .general,
             .gpuVariants,
             .cpuVariants,
             .motherBoards,
@@ -112,7 +112,7 @@ extension ItemDetailsView {
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
-            itemDescriotionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 10),
+            itemDescriotionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 1),
             itemDescriotionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
             itemDescriotionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
             itemDescriotionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),

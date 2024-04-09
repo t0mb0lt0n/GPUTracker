@@ -13,6 +13,7 @@ final class GPUInfoCellView: UITableViewCell {
     let cardNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.text = "Text"
         return label
     }()
     
@@ -20,6 +21,7 @@ final class GPUInfoCellView: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .systemGray
+        label.text = "text"
         return label
     }()
     
@@ -28,6 +30,8 @@ final class GPUInfoCellView: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
         setupConstraints()
+        cardImage.image = UIImage(named: "ps3")
+        cardImage.contentMode = .scaleAspectFill
     }
     
     required init?(coder: NSCoder) {
