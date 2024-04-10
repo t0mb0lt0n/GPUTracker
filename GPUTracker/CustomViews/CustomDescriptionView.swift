@@ -23,7 +23,7 @@ final class CustomDescriptionView: UIView {
     }()
     
     func addSubviewOnMainScrollView(position: CGFloat, table: CustomTableView) {
-        let screeWith = UIScreen.main.bounds.width - 20
+        let screeWith = UIScreen.main.bounds.width
         table.frame = CGRect(x: screeWith * position, y: 0, width: screeWith, height: 1100)
         mainScrollView.addSubview(table)
         table.reloadData()

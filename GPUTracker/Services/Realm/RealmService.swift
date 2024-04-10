@@ -18,7 +18,7 @@ final class RealmService {
     init() {
         let microsoftRealmPath = Bundle.main.url(forResource: "microsoftTest_V2", withExtension: "realm")!
         var microsoftRealmConfiguration = Realm.Configuration(fileURL: microsoftRealmPath, readOnly: true)
-        microsoftRealmConfiguration.schemaVersion = 60
+        microsoftRealmConfiguration.schemaVersion = 64
         let microsoftRealm = try! Realm(configuration: microsoftRealmConfiguration)
         
         objects = microsoftRealm.objects(ProductList.self)

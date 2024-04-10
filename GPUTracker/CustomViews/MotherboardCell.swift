@@ -10,15 +10,16 @@ import UIKit
 final class MotherboardCell: UITableViewCell {
     let descriptionHeaderLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .black
-        label.text = "Board name/Revision/GPU variant/CPU variant/HDMI Support"
+        //label.text = "Board name|Revision|GPU variant|CPU variant|HDMI Support"
+        label.text = "Board name|Revision|GPU variant|CPU variant|HDMI Support"
         return label
     }()
     
     let boardNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = .systemGray
         label.text = "Xenon"
         return label

@@ -31,7 +31,6 @@ final class ItemDetailsViewController: UIViewController {
         super.viewDidLoad()
         title = "Item List"
         navigationController?.isNavigationBarHidden = false
-        mainView.backgroundColor = .white
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
         }
@@ -51,12 +50,11 @@ final class ItemDetailsViewController: UIViewController {
     private func setupMainView() {
         mainView.itemDescriptionView.generalSegmentTableView.dataSource = self
         mainView.itemDescriptionView.motherBoardsSegmentTableView.dataSource = self
-        //mainView.collectionView.delegate = self
-        
         mainView.segmentedControll.selectedSegmentIndex = 0
         for (index, value) in viewModel.descriptionSegments.enumerated() {
-            mainView.segmentedControll.insertSegment(withTitle: value, at: index, animated: true)
+            mainView.segmentedControll.insertSegment(withTitle: value, at: index, animated: false)
         }
+        mainView.segmentedControll.selectedSegmentIndex = 0
     }
     
     private func setupViewModel() {
@@ -80,10 +78,10 @@ extension ItemDetailsViewController: UITableViewDataSource {
         case 0:
             print("1")
             //anyObject.get_cuntry_by_id(id: array_of_cities[indexPath.row].id)[indexPath.row].name
-            return 1
+            return viewModel.dataSourceForGeneral.count
         case 1:
             print("2")
-            return viewModel.dataSourceForGeneral.count
+            return 100
         default:
             return 0
         }
@@ -96,11 +94,15 @@ extension ItemDetailsViewController: UITableViewDataSource {
         switch tableView.tag {
         case 0:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GPUInfoCellView",
+                withIdentifier: "GeneralCell",
                 for: indexPath
-            ) as? GPUInfoCellView
+            ) as? GeneralCell
             else { fatalError() }
             
+            cell.configurateCell(
+                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].descriptionName,
+                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].descriptionValue1
+            )
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
@@ -117,6 +119,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
 //                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
 //                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
 //            )
+            
             cell.configurateCell(boardName: "Falcon", revision: "Fat", gpu: "Y2 Rhea 90nm", cpu: "Xcpu", isHdmi: "true")
 
             return cell

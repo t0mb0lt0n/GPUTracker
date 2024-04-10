@@ -9,8 +9,8 @@ import Foundation
 import RealmSwift
 
 final class ItemDetailsViewModel {
-    var dataSourceForGeneral: Results<ProductList>
-    var selectedDataSource = RealmService.shared.realms[1]
+    var dataSourceForGeneral: Results<GeneralTestDescription>
+    var selectedDataSource = RealmService.shared.realms[0]
     var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
     
@@ -26,7 +26,7 @@ final class ItemDetailsViewModel {
     }()
     
     init() {
-        self.dataSourceForGeneral = selectedDataSource.objects(ProductList.self)
+        self.dataSourceForGeneral = selectedDataSource.objects(GeneralTestDescription.self)
     }
     
 //    init() {

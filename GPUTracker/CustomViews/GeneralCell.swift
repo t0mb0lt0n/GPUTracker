@@ -11,16 +11,42 @@ import UIKit
 final class GeneralCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = .black
         label.text = "Introduced"
+        //label.backgroundColor = .yellow
         return label
     }()
     
-    let descriptionValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+//    let descriptionValueLabel: UILabel = {
+//        let label = UILabel()
+//        label.font = .systemFont(ofSize: 15, weight: .regular)
+//        label.textColor = .systemGray
+//        label.text = "October 1990"
+//        label.numberOfLines = 0
+//        //label.textAlignment = .left
+//        //label.lineBreakMode = .byWordWrapping
+//        label.backgroundColor = .yellow
+//        label.sizeToFit()
+//        label.textAlignment = .left
+//        //label.adjustsFontSizeToFitWidth = true
+//        return label
+//    }()
+    
+    let descriptionValueTextView: UITextView = {
+        let label = UITextView()
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textColor = .systemGray
         label.text = "October 1990"
+        //label.numberOfLines = 0
+        //label.textAlignment = .left
+        //label.lineBreakMode = .byWordWrapping
+        //label.backgroundColor = .yellow
+        label.isScrollEnabled = false
+        label.isEditable = false
+       // label.sizeToFit()
+        //label.textAlignment = .left
+        //label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -38,7 +64,7 @@ final class GeneralCell: UITableViewCell {
     private func setupCell() {
         [
          descriptionNameLabel,
-         descriptionValueLabel,
+         descriptionValueTextView,
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -47,23 +73,12 @@ final class GeneralCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-//            cardImage.topAnchor.constraint(
-//                equalTo: contentView.topAnchor,
-//                constant: 7
-//            ),
-//            cardImage.leadingAnchor.constraint(
-//                equalTo: contentView.leadingAnchor,
-//                constant: 15
-//            ),
-//            cardImage.heightAnchor.constraint(equalToConstant: 43),
-//            cardImage.widthAnchor.constraint(equalToConstant: 43),
-            
             descriptionNameLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
                 constant: 10
             ),
             descriptionNameLabel.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                equalTo: contentView.leadingAnchor,
                 constant: 20
             ),
             descriptionNameLabel.trailingAnchor.constraint(
@@ -71,21 +86,22 @@ final class GeneralCell: UITableViewCell {
                 constant: -10
             ),
             
-            descriptionValueLabel.topAnchor.constraint(
+            descriptionValueTextView.topAnchor.constraint(
                 equalTo: descriptionNameLabel.bottomAnchor,
                 constant: 2
             ),
-            descriptionValueLabel.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 20
+            descriptionValueTextView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 15
             ),
-            descriptionValueLabel.trailingAnchor.constraint(
+            descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
                 constant: -8
             ),
-            descriptionValueLabel.bottomAnchor.constraint(
+            descriptionValueTextView.heightAnchor.constraint(equalToConstant: 100),
+            descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
-                constant: -10
+                constant: -15
             )
         ])
     }
@@ -95,6 +111,6 @@ extension GeneralCell {
     final func configurateCell(descriptionName: String?, descriptionValue: String?) {
         guard let descriptionName, let descriptionValue else { return }
         descriptionNameLabel.text = descriptionName
-        descriptionValueLabel.text = descriptionValue
+        descriptionValueTextView.text = descriptionValue
     }
 }

@@ -10,8 +10,7 @@ import UIKit
 final class ItemDetailsView: UIView {
     let itemImageView: UIImageView = {
         let logoImageView = UIImageView()
-        let logoImage = UIImage(named: "xbox360FatWhite")
-        logoImageView.backgroundColor = .gray
+        let logoImage = UIImage(named: "xbox")
         logoImageView.clipsToBounds = true
         logoImageView.contentMode = .scaleAspectFill
         logoImageView.image = logoImage
@@ -38,6 +37,7 @@ final class ItemDetailsView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
+        backgroundColor = .secondarySystemBackground
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +48,7 @@ final class ItemDetailsView: UIView {
 //MARK: - ItemDetailsView extensions
 extension ItemDetailsView {
     final private func setupView() {
-        //itemDescriptionView.testScrollView.isScrollEnabled = false
+        segmentedControll.selectedSegmentIndex = 0
         [
         itemImageView,
         itemNameLabel,
@@ -92,10 +92,10 @@ extension ItemDetailsView {
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
-            itemDescriptionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 1),
-            itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            itemDescriptionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            itemDescriptionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 145),
+            itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            itemDescriptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
         ])
     }

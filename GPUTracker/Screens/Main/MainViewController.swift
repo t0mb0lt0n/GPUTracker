@@ -18,7 +18,6 @@ final class MainViewController: UIViewController {
         dataChangedCallback?(newDataSource)
     }
     
-
     private let viewModel: MainViewModel
     let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
@@ -52,10 +51,9 @@ final class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
-        mainView.backgroundColor = .white
-        navigationController?.navigationBar.backgroundColor = .black
+        mainView.backgroundColor = .secondarySystemBackground
     }
-    
+
     private func setupViewModel() {
         viewModel.reloadClosure = {
             

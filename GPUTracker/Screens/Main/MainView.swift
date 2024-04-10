@@ -52,34 +52,34 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
-        appLogoImage,
-        appNameLabel
+        //appLogoImage,
+        //appNameLabel
         ].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
+            //$0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
     }
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogoImage.topAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: 19
-            ),
-            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 20),
-            appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
-            appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
-            
-            appNameLabel.bottomAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.bottomAnchor,
-                constant: Constants.appNameBottomPadding
-            ),
-            appNameLabel.leadingAnchor.constraint(
-                equalTo: appLogoImage.leadingAnchor,
-                constant: Constants.appNameLabelLeadingOffsetConstant
-            ),
-            appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
-            appNameLabel.widthAnchor.constraint(equalToConstant: Constants.appNameLabelWidth)
+//            appLogoImage.topAnchor.constraint(
+//                equalTo: safeAreaLayoutGuide.topAnchor,
+//                constant: 19
+//            ),
+//            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 20),
+//            appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
+//            appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
+//
+//            appNameLabel.bottomAnchor.constraint(
+//                equalTo: safeAreaLayoutGuide.bottomAnchor,
+//                constant: Constants.appNameBottomPadding
+//            ),
+//            appNameLabel.leadingAnchor.constraint(
+//                equalTo: appLogoImage.leadingAnchor,
+//                constant: Constants.appNameLabelLeadingOffsetConstant
+//            ),
+//            appNameLabel.heightAnchor.constraint(equalToConstant: Constants.appNameLabelHeight),
+//            appNameLabel.widthAnchor.constraint(equalToConstant: Constants.appNameLabelWidth)
         ])
     }
 }

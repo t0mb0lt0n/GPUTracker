@@ -12,9 +12,6 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    
-    
-    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -28,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary
-        window?.rootViewController?.navigationItem.titleView?.tintColor = .systemGray
         window?.makeKeyAndVisible()
         return true
     }

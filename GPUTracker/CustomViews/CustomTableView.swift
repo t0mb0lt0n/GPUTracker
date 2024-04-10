@@ -11,6 +11,7 @@ class CustomTableView: UITableView {
     init() {
         super .init(frame: .zero, style: .grouped)
         setupCollectionView()
+        //backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +32,5 @@ class CustomTableView: UITableView {
             MotherboardCell.self,
             forCellReuseIdentifier: "MotherboardCell"
         )
-
     }
 }
