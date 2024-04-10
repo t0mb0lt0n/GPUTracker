@@ -21,10 +21,7 @@ final class ItemDetailsViewModel {
     var descriptionSegments: [String] = {
         [
         .general,
-        .gpuVariants,
-        .cpuVariants,
         .motherBoards,
-        .otherComponents
         ]
     }()
     

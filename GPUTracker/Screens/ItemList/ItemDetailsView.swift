@@ -28,19 +28,6 @@ final class ItemDetailsView: UIView {
         label.textAlignment = .left
         return label
     }()
-
-//    let segmentedControll: UISegmentedControl = {
-//        let items: [String] = [
-//            .general,
-//            .gpuVariants,
-//            .cpuVariants,
-//            .motherBoards,
-//            .otherComponents
-//        ]
-//        let segmentedControl = UISegmentedControl(items: items)
-//        segmentedControl.selectedSegmentIndex = 0
-//        return segmentedControl
-//    }()
     
     let segmentedControll = UISegmentedControl()
     
@@ -61,7 +48,7 @@ final class ItemDetailsView: UIView {
 //MARK: - ItemDetailsView extensions
 extension ItemDetailsView {
     final private func setupView() {
-        itemDescriptionView.testScrollView.isScrollEnabled = false
+        //itemDescriptionView.testScrollView.isScrollEnabled = false
         [
         itemImageView,
         itemNameLabel,

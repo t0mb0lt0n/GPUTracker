@@ -43,14 +43,14 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     func segmentChanged() {
-        let contentOffset = mainView.itemDescriptionView.testLabel1.frame.width
+        let contentOffset = mainView.itemDescriptionView.generalSegmentTableView.frame.width
         let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
-        mainView.itemDescriptionView.testScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
+        mainView.itemDescriptionView.mainScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
     }
     
     private func setupMainView() {
         mainView.itemDescriptionView.generalSegmentTableView.dataSource = self
-        mainView.itemDescriptionView.tableView2.dataSource = self
+        mainView.itemDescriptionView.motherBoardsSegmentTableView.dataSource = self
         //mainView.collectionView.delegate = self
         
         mainView.segmentedControll.selectedSegmentIndex = 0
@@ -62,7 +62,7 @@ final class ItemDetailsViewController: UIViewController {
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self?.mainView.itemDescriptionView.tableView2.reloadData()
+            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
         }
         viewModel.showLoading = { [weak self] in
             if $0 {
@@ -104,26 +104,20 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GeneralCell",
+                withIdentifier: "MotherboardCell",
                 for: indexPath
-            ) as? GeneralCell
+            ) as? MotherboardCell
             else { fatalError() }
 //            let descriptionName = viewModel.dataSource?.objects(ProductList.self)
 //            cell.configurateCell(
 //                descriptionName: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name,
 //                descriptionValue: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name
 //            )
-            cell.configurateCell(
-                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
-                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
-            )
-            
 //            cell.configurateCell(
-//                descriptionName: "test",
-//                descriptionValue: "test"
+//                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
+//                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
 //            )
 
-            
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(

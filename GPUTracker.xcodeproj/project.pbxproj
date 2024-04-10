@@ -19,13 +19,9 @@
 		1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156986829E873F0009B3638 /* LaunchScreen.storyboard */; };
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCell.swift */; };
-		11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11624AB02A2CEC53009022E3 /* PaddingLabel.swift */; };
-		1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */; };
-		1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */; };
 		1186BE592A3CD1160031D569 /* gpuDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 1186BE582A3CD1160031D569 /* gpuDB.db */; };
 		119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119333DE2A02BD7D006508A9 /* DBManager.swift */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
-		11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010052A0944D8009EB57E /* GPUListViewController.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* Boards.swift */; };
@@ -36,11 +32,11 @@
 		11DDC2032BBF06D9007D8CF3 /* sonyRealm.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */; };
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
-		11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2082BC03210007D8CF3 /* Scroll.swift */; };
 		11DDC20B2BC0523B007D8CF3 /* microsoftTest_V2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */; };
 		11FBAA452BC46F46003F568F /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA442BC46F46003F568F /* GeneralView.swift */; };
 		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
 		11FBAA492BC56973003F568F /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA482BC56973003F568F /* GeneralCell.swift */; };
+		11FBAA4B2BC6EEAD003F568F /* MotherboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,13 +51,9 @@
 		1156986B29E873F0009B3638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1156987829E88C16009B3638 /* ManufacturerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCell.swift; sourceTree = "<group>"; };
-		11624AB02A2CEC53009022E3 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
-		1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		1186BE582A3CD1160031D569 /* gpuDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = gpuDB.db; sourceTree = "<group>"; };
 		119333DE2A02BD7D006508A9 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
-		11D010052A0944D8009EB57E /* GPUListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUListViewController.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* Boards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boards.swift; sourceTree = "<group>"; };
@@ -72,11 +64,11 @@
 		11DDC2022BBF06D9007D8CF3 /* sonyRealm.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sonyRealm.realm; sourceTree = "<group>"; };
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
-		11DDC2082BC03210007D8CF3 /* Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		11DDC20A2BC0523B007D8CF3 /* microsoftTest_V2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = microsoftTest_V2.realm; sourceTree = "<group>"; };
 		11FBAA442BC46F46003F568F /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		11FBAA482BC56973003F568F /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
+		11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherboardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +142,6 @@
 			children = (
 				11DDC1F92BBED9F0007D8CF3 /* ItemList */,
 				11AE40D32BA9F797001B52F8 /* Main */,
-				11AE40D72BA9F934001B52F8 /* GPUList */,
-				11AE40D52BA9F82F001B52F8 /* Description */,
-				1170ACAA2A0BFBCD007B98B0 /* DescriptionView.swift */,
-				1170ACAC2A0C0CC9007B98B0 /* DescriptionViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,31 +196,15 @@
 		11AE40D42BA9F7E9001B52F8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */,
 				11FBAA482BC56973003F568F /* GeneralCell.swift */,
 				11D010032A093E79009EB57E /* GPUInfoCellView.swift */,
 				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
-				11624AB02A2CEC53009022E3 /* PaddingLabel.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
-				11DDC2082BC03210007D8CF3 /* Scroll.swift */,
 				11FBAA442BC46F46003F568F /* GeneralView.swift */,
 				11FBAA462BC47355003F568F /* CustomTableView.swift */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		11AE40D52BA9F82F001B52F8 /* Description */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Description;
-			sourceTree = "<group>";
-		};
-		11AE40D72BA9F934001B52F8 /* GPUList */ = {
-			isa = PBXGroup;
-			children = (
-				11D010052A0944D8009EB57E /* GPUListViewController.swift */,
-			);
-			path = GPUList;
 			sourceTree = "<group>";
 		};
 		11DDC1F92BBED9F0007D8CF3 /* ItemList */ = {
@@ -349,25 +321,21 @@
 				11FBAA452BC46F46003F568F /* GeneralView.swift in Sources */,
 				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
 				11FBAA492BC56973003F568F /* GeneralCell.swift in Sources */,
-				11DDC2092BC03210007D8CF3 /* Scroll.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
 				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* Boards.swift in Sources */,
-				1170ACAD2A0C0CC9007B98B0 /* DescriptionViewController.swift in Sources */,
 				111154712BAB57620006DA07 /* DataBase.swift in Sources */,
-				11D010062A0944D8009EB57E /* GPUListViewController.swift in Sources */,
-				1170ACAB2A0BFBCD007B98B0 /* DescriptionView.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
 				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */,
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
-				11624AB12A2CEC53009022E3 /* PaddingLabel.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
+				11FBAA4B2BC6EEAD003F568F /* MotherboardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
