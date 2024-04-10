@@ -37,6 +37,7 @@
 		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
 		11FBAA492BC56973003F568F /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA482BC56973003F568F /* GeneralCell.swift */; };
 		11FBAA4B2BC6EEAD003F568F /* MotherboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */; };
+		11FBAA4D2BC6F9B0003F568F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4C2BC6F9B0003F568F /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		11FBAA482BC56973003F568F /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
 		11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherboardCell.swift; sourceTree = "<group>"; };
+		11FBAA4C2BC6F9B0003F568F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
 				11FBAA442BC46F46003F568F /* GeneralView.swift */,
 				11FBAA462BC47355003F568F /* CustomTableView.swift */,
+				11FBAA4C2BC6F9B0003F568F /* Stack.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11070CDC2BADF76000B2C954 /* TestTable.swift in Sources */,
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
+				11FBAA4D2BC6F9B0003F568F /* Stack.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				119333DF2A02BD7D006508A9 /* DBManager.swift in Sources */,

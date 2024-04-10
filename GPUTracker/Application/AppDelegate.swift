@@ -21,10 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         let splitVC = UISplitViewController()
-        splitVC.delegate = self
-        splitVC.preferredPrimaryColumnWidthFraction = 50
-        //splitVC.maximumPrimaryColumnWidth = 2000
-       // splitVC.editButtonItem
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let navVC1 = UINavigationController(rootViewController: MainViewController())

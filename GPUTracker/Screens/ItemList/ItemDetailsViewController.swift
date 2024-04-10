@@ -117,6 +117,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
 //                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
 //                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
 //            )
+            cell.configurateCell(boardName: "Falcon", revision: "Fat", gpu: "Y2 Rhea 90nm", cpu: "Xcpu", isHdmi: "true")
 
             return cell
         default:

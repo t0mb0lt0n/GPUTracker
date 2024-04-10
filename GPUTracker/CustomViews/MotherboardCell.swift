@@ -16,46 +16,25 @@ final class MotherboardCell: UITableViewCell {
         return label
     }()
     
-    let boardNameValueLabel: UILabel = {
+    let boardNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .systemGray
-        label.text = "Xenon/Original XBOX 360/90nm Y1/90nm XCPU/No Hdmi"
+        label.text = "Xenon"
         return label
     }()
-    
-    let horizontalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.
-        return stackView
-    }()
-    
     
     let revisionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.text = "Revision"
-        return label
-    }()
-    
-    let revisionValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .systemGray
         label.text = "Original XBOX 360"
         return label
     }()
-
+    
     let gpuLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .systemGray
-        label.text = "GPU variant"
-        return label
-    }()
-    
-    let gpuValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .systemGray
         label.text = "90nm Y1"
         return label
@@ -63,25 +42,50 @@ final class MotherboardCell: UITableViewCell {
     
     let cpuLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .systemGray
-        label.text = "CPU variant"
-        return label
-    }()
-    
-    let cpuValueLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textColor = .systemGray
         label.text = "90nm XCPU"
         return label
     }()
+    
+    let hdmiSupportLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = .systemGray
+        label.text = "No Hdmi"
+        return label
+    }()
+    
+    let horizontalStackView: UIStackView = {
+        let stackView = UIStackView()
+        return stackView
+    }()
+    
+    private func addItemsToStackView() {
+        let itemsForCellStackView: [UIView] = [
+            boardNameLabel,
+            revisionLabel,
+            gpuLabel,
+            cpuLabel,
+            hdmiSupportLabel
+        ]
+        itemsForCellStackView.forEach { horizontalStackView.addArrangedSubview($0) }
+    }
+    
+    private func configurateHorizontalStackView(_ stackView: UIStackView) {
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .leading
+        stackView.spacing = 1
+    }
     
     //MARK: init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
         setupConstraints()
+        addItemsToStackView()
+        configurateHorizontalStackView(horizontalStackView)
     }
     
     required init?(coder: NSCoder) {
@@ -89,16 +93,9 @@ final class MotherboardCell: UITableViewCell {
     }
     
     private func setupCell() {
-        accessoryType = .detailButton
         [
             descriptionHeaderLabel,
-            boardNameValueLabel,
-           // revisionLabel,
-            //revisionValueLabel,
-            //gpuLabel,
-            //gpuValueLabel,
-            //cpuLabel,
-            //cpuValueLabel
+            horizontalStackView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -108,39 +105,58 @@ final class MotherboardCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             
-            boardNameLabel.topAnchor.constraint(
+            descriptionHeaderLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
                 constant: 2
             ),
-            boardNameLabel.leadingAnchor.constraint(
+            descriptionHeaderLabel.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 2
+                constant: 10
             ),
-            boardNameLabel.trailingAnchor.constraint(
+            descriptionHeaderLabel.trailingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -10
             ),
             
-            boardNameValueLabel.topAnchor.constraint(
-                equalTo: boardNameLabel.bottomAnchor,
-                constant: 2
+            horizontalStackView.topAnchor.constraint(
+                equalTo: descriptionHeaderLabel.bottomAnchor,
+                constant: 5
             ),
-            boardNameValueLabel.leadingAnchor.constraint(
+            horizontalStackView.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 2
+                constant: 10
             ),
-            boardNameValueLabel.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: -8
+            horizontalStackView.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -10
             )
+//            horizontalStackView.trailingAnchor.constraint(
+//                equalTo: contentView.trailingAnchor,
+//                constant: -8
+//            )
         ])
     }
 }
 //MARK: - MotherboardCell extensions
 extension MotherboardCell {
-    final func configurateCell(descriptionName: String?, descriptionValue: String?) {
-        guard let descriptionName, let descriptionValue else { return }
-//        descriptionNameLabel.text = descriptionName
-//        descriptionValueLabel.text = descriptionValue
+    final func configurateCell(
+        boardName: String?,
+        revision: String?,
+        gpu: String?,
+        cpu: String?,
+        isHdmi: String?
+    ) {
+        guard
+            let boardName,
+            let revision,
+            let gpu,
+            let cpu,
+            let isHdmi
+        else { return }
+        boardNameLabel.text = boardName
+        revisionLabel.text =  "/" + revision
+        gpuLabel.text = "/" + gpu
+        cpuLabel.text = "/" + cpu
+        hdmiSupportLabel.text = "/" + isHdmi
     }
 }

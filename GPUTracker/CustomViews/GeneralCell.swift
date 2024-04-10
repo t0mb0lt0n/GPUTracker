@@ -36,7 +36,6 @@ final class GeneralCell: UITableViewCell {
     }
     
     private func setupCell() {
-        accessoryType = .detailButton
         [
          descriptionNameLabel,
          descriptionValueLabel,
