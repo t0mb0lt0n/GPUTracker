@@ -113,12 +113,14 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "ManufacturerCell",
-            for: indexPath
-        ) as? ManufacturerCell
-        else { fatalError() }
-        
+//        guard let cell = tableView.dequeueReusableCell(
+//            withIdentifier: "ManufacturerCell",
+//            for: indexPath
+//        ) as? ManufacturerCell
+//        else { fatalError() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YourCellIdentifier", for: indexPath)
+        cell.textLabel = "Description"
+       // cell.textva
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )

@@ -92,11 +92,10 @@ extension ItemDetailsView {
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
-            itemDescriptionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 145),
+            itemDescriptionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 5),
             itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
             itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
             itemDescriptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-            
         ])
     }
     
