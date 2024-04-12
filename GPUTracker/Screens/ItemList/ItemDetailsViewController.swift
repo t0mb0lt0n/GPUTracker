@@ -76,12 +76,9 @@ extension ItemDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
         case 0:
-            print("1")
-            //anyObject.get_cuntry_by_id(id: array_of_cities[indexPath.row].id)[indexPath.row].name
             return viewModel.dataSourceForGeneral.count
         case 1:
-            print("2")
-            return 100
+            return viewModel.dataSourceForBoards.count
         default:
             return 0
         }
@@ -93,27 +90,16 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> UITableViewCell {
         switch tableView.tag {
         case 0:
-//            guard let cell = tableView.dequeueReusableCell(
-//                withIdentifier: "GeneralCell",
-//                for: indexPath
-//            ) as? GeneralCell
-//            else { fatalError() }
             let cellIdentifier = "Cell"
             var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
             
             if cell == nil {
                 cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             }
-            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
             cell?.textLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].descriptionName
             cell?.detailTextLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].value
 
-            
-            
-//            cell.configurateCell(
-//                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].descriptionName,
-//                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].descriptionValue1
-//            )
             return cell!
         case 1:
             guard let cell = tableView.dequeueReusableCell(
@@ -121,19 +107,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 for: indexPath
             ) as? MotherboardCell
             else { fatalError() }
-//            let descriptionName = viewModel.dataSource?.objects(ProductList.self)
-//            cell.configurateCell(
-//                descriptionName: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name,
-//                descriptionValue: viewModel.selectedDataSource.objects(ProductList.self)[indexPath.row].name
-//            )
-//            cell.configurateCell(
-//                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
-//                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
-//            )
-//            let name = viewModel.dataSourceForBoards[indexPath.row].boardName
-//            let value = viewModel.dataSourceForBoards[indexPath.row].value
-//
-//            cell.configurateCell(boardName: name, revision: value, gpu: value, cpu: value, isHdmi: value)
+            
+            let name = viewModel.dataSourceForBoards[indexPath.row].boardName
+            let value = viewModel.dataSourceForBoards[indexPath.row].value
+
+            cell.configurateCell(descriptionHeader: name, boardName: name, revision: value, gpu: value, cpu: value, isHdmi: value)
 
             return cell
         default:

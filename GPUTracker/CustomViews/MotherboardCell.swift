@@ -12,7 +12,6 @@ final class MotherboardCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .black
-        //label.text = "Board name|Revision|GPU variant|CPU variant|HDMI Support"
         label.text = "Board name|Revision|GPU variant|CPU variant|HDMI Support"
         return label
     }()
@@ -131,16 +130,13 @@ final class MotherboardCell: UITableViewCell {
                 equalTo: contentView.bottomAnchor,
                 constant: -10
             )
-//            horizontalStackView.trailingAnchor.constraint(
-//                equalTo: contentView.trailingAnchor,
-//                constant: -8
-//            )
         ])
     }
 }
 //MARK: - MotherboardCell extensions
 extension MotherboardCell {
     final func configurateCell(
+        descriptionHeader: String?,
         boardName: String?,
         revision: String?,
         gpu: String?,
@@ -154,6 +150,7 @@ extension MotherboardCell {
             let cpu,
             let isHdmi
         else { return }
+        descriptionHeaderLabel.text = descriptionHeader
         boardNameLabel.text = boardName
         revisionLabel.text =  "/" + revision
         gpuLabel.text = "/" + gpu

@@ -54,7 +54,7 @@ class General: Object {
     }
 }
 
-class BoardRev: Object {
+class BoardRevision: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var boardName: String = ""
     @objc dynamic var value: String = ""
