@@ -93,17 +93,28 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> UITableViewCell {
         switch tableView.tag {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "GeneralCell",
-                for: indexPath
-            ) as? GeneralCell
-            else { fatalError() }
+//            guard let cell = tableView.dequeueReusableCell(
+//                withIdentifier: "GeneralCell",
+//                for: indexPath
+//            ) as? GeneralCell
+//            else { fatalError() }
+            let cellIdentifier = "Cell"
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
             
-            cell.configurateCell(
-                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].descriptionName,
-                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].descriptionValue1
-            )
-            return cell
+            if cell == nil {
+                cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+            }
+            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+            cell?.textLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].descriptionName
+            cell?.detailTextLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].value
+
+            
+            
+//            cell.configurateCell(
+//                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].descriptionName,
+//                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].descriptionValue1
+//            )
+            return cell!
         case 1:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "MotherboardCell",
@@ -119,8 +130,10 @@ extension ItemDetailsViewController: UITableViewDataSource {
 //                descriptionName: viewModel.dataSourceForGeneral[indexPath.row].name,
 //                descriptionValue: viewModel.dataSourceForGeneral[indexPath.row].shortDescription
 //            )
-            
-            cell.configurateCell(boardName: "Falcon", revision: "Fat", gpu: "Y2 Rhea 90nm", cpu: "Xcpu", isHdmi: "true")
+//            let name = viewModel.dataSourceForBoards[indexPath.row].boardName
+//            let value = viewModel.dataSourceForBoards[indexPath.row].value
+//
+//            cell.configurateCell(boardName: name, revision: value, gpu: value, cpu: value, isHdmi: value)
 
             return cell
         default:

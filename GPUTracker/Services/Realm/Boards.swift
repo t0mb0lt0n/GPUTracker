@@ -43,6 +43,28 @@ class GeneralTestDescription: Object {
     }
 }
 
+class General: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var descriptionName: String = ""
+    @objc dynamic var value: String = ""
+
+    
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+class BoardRev: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var boardName: String = ""
+    @objc dynamic var value: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+
 class Boards: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var revison: String = ""

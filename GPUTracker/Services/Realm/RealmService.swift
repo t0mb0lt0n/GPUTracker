@@ -10,38 +10,61 @@ import RealmSwift
 
 final class RealmService {
     var realms = [Realm]()
-    var microsoftRealm: Realm!
-    var sonyRealm: Realm!
-    var objects: Results<ProductList>
+    var objects: Results<General>
+    var objects2: Results<BoardRev>
+
     static let shared = RealmService()
     
     init() {
-        let microsoftRealmPath = Bundle.main.url(forResource: "microsoftTest_V2", withExtension: "realm")!
-        var microsoftRealmConfiguration = Realm.Configuration(fileURL: microsoftRealmPath, readOnly: true)
-        microsoftRealmConfiguration.schemaVersion = 64
+//        var microsoftRealmConfiguration = Realm.Configuration(
+//        schemaVersion: 68,
+//        migrationBlock: { migration, oldSchemaVersion in
+//            if (oldSchemaVersion < 68) {
+//                // Nothing to do!
+//                // Realm will automatically detect new properties and removed properties
+//                // And will update the schema on disk automatically
+//            }
+//        })
+        
+        var microsoftRealmConfiguration = Realm.Configuration()
+        let microsoftRealmPath = Bundle.main.url(forResource: "microsoftTest_Schema66", withExtension: "realm")!
+        microsoftRealmConfiguration.seedFilePath = microsoftRealmPath
+        microsoftRealmConfiguration.schemaVersion = 69
         let microsoftRealm = try! Realm(configuration: microsoftRealmConfiguration)
+        objects = microsoftRealm.objects(General.self)
+        print("obj", objects.count as Any)
         
-        objects = microsoftRealm.objects(ProductList.self)
-        //print("hjkgdhjsgfhdsgfjhkds", product[0] as An
-        
-        let sonyRealmPath = Bundle.main.url(forResource: "sonyRealm", withExtension: "realm")!
-        var sonyRealmConfiguration = Realm.Configuration(fileURL: sonyRealmPath, readOnly: true)
-        sonyRealmConfiguration.schemaVersion = 3
-        let sonyRealm = try! Realm(configuration: sonyRealmConfiguration)
-        
-        //let product1 = sonyRealm.objects(ProductList.self)
-        //print("hjkgdhjsgfhdsgfjhkds", product1[0] as Any)
-        
+        var microsoftRealmConfiguration2 = Realm.Configuration()
+        let microsoftRealmPath2 = Bundle.main.url(forResource: "microsoftTest_V2", withExtension: "realm")!
+        microsoftRealmConfiguration2.seedFilePath = microsoftRealmPath2
+        //microsoftRealmConfiguration.schemaVersion = 69
+        let microsoftRealm2 = try! Realm(configuration: microsoftRealmConfiguration2)
+        objects2 = microsoftRealm2.objects(BoardRev.self)
+        print("obj2", objects2.count as Any)
+
+
         [
         microsoftRealm,
-        sonyRealm
+        microsoftRealm2
         ].forEach { realm in
             self.realms.append(realm)
         }
- 
     }
-    
-//    private func generateItemsWithGroups() -> (Results<RealmService>, Results<Table2>) {
-//        return (realm.objects(RealmService.self), realm.objects(Table2.self))
-//    }
 }
+
+
+
+// microsoftRealmConfiguration.fileURL?.path = microsoftRealmPath
+ //microsoftRealmConfiguration = Realm.Configuration(fileURL: microsoftRealmPath, readOnly: true)
+//        //Realm.Configuration.defaultConfiguration = microsoftRealmConfiguration
+
+
+//        var microsoftRealmConfiguration = Realm.Configuration(
+//        schemaVersion: 68,
+//        migrationBlock: { migration, oldSchemaVersion in
+//            if (oldSchemaVersion < 68) {
+//                // Nothing to do!
+//                // Realm will automatically detect new properties and removed properties
+//                // And will update the schema on disk automatically
+//            }
+//        })

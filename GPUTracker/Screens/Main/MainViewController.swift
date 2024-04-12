@@ -118,13 +118,24 @@ extension MainViewController: UITableViewDataSource {
 //            for: indexPath
 //        ) as? ManufacturerCell
 //        else { fatalError() }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YourCellIdentifier", for: indexPath)
-        cell.textLabel = "Description"
+        
        // cell.textva
 //        cell.configurateCell(
 //            manufacturer: manufacturers[indexPath.section][indexPath.row]
 //        )
-        return cell
+        let cellIdentifier = "Cell" // Ваш идентификатор ячейки
+           var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+           
+           if cell == nil {
+               cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+           }
+        cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+        cell?.textLabel?.text = "Заголовок"
+        cell?.detailTextLabel?.text = "Дополнительная информация"
+
+        
+        
+        return cell!
     }
     //setup header in section height
     func tableView(
