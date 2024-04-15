@@ -16,5 +16,4 @@ extension String {
     static let otherComponents: String = "Other Components"
     static let xbox360Realm: String = "xbox360"
     static let sonyRealm: String = "sony"
-
 }

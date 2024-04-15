@@ -19,10 +19,7 @@ final class MainViewController: UIViewController {
     }
     
     private let viewModel: MainViewModel
-    let tableView = UITableView(frame: .zero, style: .grouped)
-    //let service = RealmService()
-    //let fileCreator = RealmFileCreator()
-    
+    let tableView = UITableView(frame: .zero, style: .grouped)    
     
     init() {
         self.viewModel = MainViewModel()
