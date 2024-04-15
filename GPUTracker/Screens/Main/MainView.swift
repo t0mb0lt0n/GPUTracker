@@ -69,12 +69,6 @@ extension MainView {
 //            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 20),
 //            appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
 //            appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
-//
-//            appNameLabel.bottomAnchor.constraint(
-//                equalTo: safeAreaLayoutGuide.bottomAnchor,
-//                constant: Constants.appNameBottomPadding
-//            ),
-//    
         ])
     }
 }
