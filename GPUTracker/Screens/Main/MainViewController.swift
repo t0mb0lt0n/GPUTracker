@@ -188,15 +188,21 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            switch indexPath.row {
-            case 0:
-                let targetVC = ItemDetailsViewController(viewModel: .init(forItem: .xbox360Realm))
-                //present(targetVC, animated: true)
-                navigationController?.pushViewController(targetVC, animated: true)
-            default:
-                let targetVC = ItemDetailsViewController(viewModel: .init(forItem: .sonyRealm))
-                present(targetVC, animated: true)
-            }
+            let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithKey: indexPath.row))
+            present(targetVC, animated: true)
+            navigationController?.pushViewController(targetVC, animated: true)
+            
+            
+            
+//            switch indexPath.row {
+//            case 0:
+//                let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithKey: indexPath.row))
+//                //present(targetVC, animated: true)
+//                navigationController?.pushViewController(targetVC, animated: true)
+//            default:
+//                let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithKey: indexPath.row))
+//                present(targetVC, animated: true)
+//            }
 
         case 1:
 //            let targetVC = GPUListViewController(selectedVendor: "AMD")

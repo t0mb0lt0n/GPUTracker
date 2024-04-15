@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct RealmFiles {
+    let realmList: [Int: String] = [
+        0: .xbox360Realm,
+        1: .sonyRealm
+    ]
+}

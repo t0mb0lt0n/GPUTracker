@@ -22,7 +22,7 @@ final class ItemDetailsViewModel {
         ]
     }()
     
-    init(forItem: String) {
+    init(forItemWithKey: Int) {
         selectedDataSource = RealmService(withConfigurationFor: forItem).data
         generalSegmentData = (selectedDataSource?.objects(General.self))!
         boardsSegmentData = (selectedDataSource?.objects(BoardRevision.self))!

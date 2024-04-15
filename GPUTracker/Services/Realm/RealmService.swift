@@ -12,15 +12,14 @@ final class RealmService {
     var data: Realm?
     //static let shared = RealmService()
     
-    init(withConfigurationFor configuration: String ) {
-        let realmPath = Bundle.main.url(forResource: configuration, withExtension: "realm")!
+    init(withConfigurationFor configuration: [String: Int] ) {
+        let realmPath = Bundle.main.url(forResource: configuration[], withExtension: "realm")!
         var realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
         realmConfiguration.schemaVersion = UInt64(RealmConfigurations.configurations[configuration]!)
         let realm = try! Realm(configuration: realmConfiguration)
         let obj0 = realm.objects(Boards.self)
         print("boards ", obj0.count)
         data = realm
-        //let r = RealmConfigurations.configurations["Xbox360"]
     }
 }
 
