@@ -52,8 +52,6 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
-        //appLogoImage,
-        //appNameLabel
         ].forEach {
             //$0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -62,13 +60,6 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-//            appLogoImage.topAnchor.constraint(
-//                equalTo: safeAreaLayoutGuide.topAnchor,
-//                constant: 19
-//            ),
-//            appLogoImage.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor, constant: 20),
-//            appLogoImage.widthAnchor.constraint(equalToConstant: Constants.appLogoWidth),
-//            appLogoImage.heightAnchor.constraint(equalToConstant: Constants.appLogoHeight),
         ])
     }
 }
