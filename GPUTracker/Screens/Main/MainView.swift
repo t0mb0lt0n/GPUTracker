@@ -18,7 +18,6 @@ final class MainView: UIView {
                 height: 150
             )
         )
-        let logoImage = UIImage(named: "heart.fill")
         logo.backgroundColor = .gray
         logoContainer.image = logoImage
         logo.clipsToBounds = true
