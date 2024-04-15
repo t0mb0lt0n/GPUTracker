@@ -32,16 +32,6 @@ class ProductList: Object {
     }
 }
 
-class GeneralTestDescription: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var descriptionName: String = ""
-    @objc dynamic var descriptionValue1: String = ""
-    @objc dynamic var descriptionValue2: String = ""
-    
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
 
 class General: Object {
     @objc dynamic var _id: Int = 0
