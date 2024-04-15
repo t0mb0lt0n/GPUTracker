@@ -126,15 +126,6 @@ class NAND: Object {
     }
 }
 
-class OriginalXbox360: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var configuration: String = ""
-    @objc dynamic var Arcade: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
 
 
 
