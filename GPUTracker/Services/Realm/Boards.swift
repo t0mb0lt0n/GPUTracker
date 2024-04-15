@@ -99,32 +99,6 @@ class Fans: Object {
 class GPU: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var processSize: String = ""
-    @objc dynamic var name: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class Heatsink: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var target: String = ""
-    @objc dynamic var type: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class NAND: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var name: String = ""
-    @objc dynamic var size: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
 
 
 
