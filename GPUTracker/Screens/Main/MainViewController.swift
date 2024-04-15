@@ -19,7 +19,6 @@ final class MainViewController: UIViewController {
     }
     
     private let viewModel: MainViewModel
-    let manufacturers = Source.generateManufacturersWithGroups()
     let tableView = UITableView(frame: .zero, style: .grouped)
     let service = RealmService()
     //let fileCreator = RealmFileCreator()

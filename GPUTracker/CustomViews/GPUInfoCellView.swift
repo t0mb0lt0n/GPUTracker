@@ -12,14 +12,14 @@ final class GPUInfoCellView: UITableViewCell {
     
     let cardNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(ofSize: 17, weight: .medium)
         label.text = "Text"
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .systemGray
         label.text = "text"
         return label

@@ -11,42 +11,19 @@ import UIKit
 final class GeneralCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .black
         label.text = "Introduced"
-        //label.backgroundColor = .yellow
         return label
     }()
-    
-//    let descriptionValueLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 15, weight: .regular)
-//        label.textColor = .systemGray
-//        label.text = "October 1990"
-//        label.numberOfLines = 0
-//        //label.textAlignment = .left
-//        //label.lineBreakMode = .byWordWrapping
-//        label.backgroundColor = .yellow
-//        label.sizeToFit()
-//        label.textAlignment = .left
-//        //label.adjustsFontSizeToFitWidth = true
-//        return label
-//    }()
-    
+        
     let descriptionValueTextView: UITextView = {
         let label = UITextView()
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
         label.text = "October 1990"
-        //label.numberOfLines = 0
-        //label.textAlignment = .left
-        //label.lineBreakMode = .byWordWrapping
-        //label.backgroundColor = .yellow
         label.isScrollEnabled = false
         label.isEditable = false
-       // label.sizeToFit()
-        //label.textAlignment = .left
-        //label.adjustsFontSizeToFitWidth = true
         return label
     }()
     

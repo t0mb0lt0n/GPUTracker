@@ -111,7 +111,14 @@ extension ItemDetailsViewController: UITableViewDataSource {
             let name = viewModel.dataSourceForBoards[indexPath.row].boardName
             let value = viewModel.dataSourceForBoards[indexPath.row].value
 
-            cell.configurateCell(descriptionHeader: name, boardName: name, revision: value, gpu: value, cpu: value, isHdmi: value)
+            cell.configurateCell(
+                descriptionHeader: name,
+                boardName: name,
+                revision: value,
+                gpu: value,
+                cpu: value,
+                isHdmi: value
+            )
 
             return cell
         default:

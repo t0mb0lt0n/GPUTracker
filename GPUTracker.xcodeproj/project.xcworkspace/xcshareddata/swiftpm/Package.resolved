@@ -17,15 +17,6 @@
         "revision" : "80368adfbf58360104042522d9f4623a3de7863b",
         "version" : "10.37.2"
       }
-    },
-    {
-      "identity" : "sqlite.swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephencelis/SQLite.swift.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "c36138022a690d691d2597b11a477b02baa491c6"
-      }
     }
   ],
   "version" : 2

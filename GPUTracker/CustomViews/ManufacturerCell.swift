@@ -84,7 +84,7 @@ final class ManufacturerCell: UITableViewCell {
         ])
     }
     
-    func configurateCell(manufacturer: Manufacturer) {
+    func configurateCell() {
         manufacturerLogo.image = UIImage(named: "ps3")
 //        manufacturerNameLabel.text = manufacturer.itemName
 //        descriptionLabel.text = manufacturer.vendorName

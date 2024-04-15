@@ -28,14 +28,9 @@ final class ItemDetailsViewModel {
     }()
     
     init() {
-        //self.dataSourceForGeneral = selectedDataSource.objects(General.self)
         self.dataSourceForGeneral = selectedDataSource.objects(General.self)
         self.dataSourceForBoards = selectedDataSource2.objects(BoardRevision.self)
     }
-    
-//    init() {
-//    }
-
     
     func findPhotos() {
         
