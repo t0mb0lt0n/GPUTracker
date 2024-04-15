@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
     
     private let viewModel: MainViewModel
     let tableView = UITableView(frame: .zero, style: .grouped)
-    let service = RealmService()
+    //let service = RealmService()
     //let fileCreator = RealmFileCreator()
     
     
@@ -188,14 +188,15 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-//            let targetVC = GPUListViewController(selectedVendor: "Nvidia")
-//            navigationController?.pushViewController(targetVC, animated: true)
-            //let testDB = RealmService(vendor: "test", itemName: "test", count: 1)
-            //let testrecord = RealmService(vendor: "tes2", itemName: "tes2", count: 2)
-            
-            print("saved")
-            let newRealm = RealmService.shared.realms[indexPath.row]
-            updateDataSource(newDataSource: newRealm)
+            switch indexPath.row {
+            case 0:
+                let targetVC = ItemDetailsViewController(viewModel: .init(forItem: .xbox360Realm))
+                //present(targetVC, animated: true)
+                navigationController?.pushViewController(targetVC, animated: true)
+            default:
+                let targetVC = ItemDetailsViewController(viewModel: .init(forItem: .sonyRealm))
+                present(targetVC, animated: true)
+            }
 
         case 1:
 //            let targetVC = GPUListViewController(selectedVendor: "AMD")

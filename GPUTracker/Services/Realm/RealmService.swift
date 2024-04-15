@@ -9,31 +9,18 @@ import Foundation
 import RealmSwift
 
 final class RealmService {
-    var realms = [Realm]()
-    static let shared = RealmService()
+    var data: Realm?
+    //static let shared = RealmService()
     
-    init() {
-        let generalPath = Bundle.main.url(forResource: "microsoftTest_Schema66", withExtension: "realm")!
-        var generalRealmConfiguration = Realm.Configuration(fileURL: generalPath, readOnly: true)
-        generalRealmConfiguration.schemaVersion = 68
-        let general = try! Realm(configuration: generalRealmConfiguration)
-        let obj0 = general.objects(Boards.self)
+    init(withConfigurationFor configuration: String ) {
+        let realmPath = Bundle.main.url(forResource: configuration, withExtension: "realm")!
+        var realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
+        realmConfiguration.schemaVersion = UInt64(RealmConfigurations.configurations[configuration]!)
+        let realm = try! Realm(configuration: realmConfiguration)
+        let obj0 = realm.objects(Boards.self)
         print("boards ", obj0.count)
-        
-        let boardsPath = Bundle.main.url(forResource: "local", withExtension: "realm")!
-        var boardsRealmConfiguration = Realm.Configuration(fileURL: boardsPath, readOnly: true)
-        boardsRealmConfiguration.schemaVersion = 28
-
-        let boards = try! Realm(configuration: boardsRealmConfiguration)
-        let obj = boards.objects(BoardRevision.self)
-        print("boards ", obj.count)
-        
-        [
-            general,
-            boards
-        ].forEach { realm in
-            self.realms.append(realm)
-        }
+        data = realm
+        //let r = RealmConfigurations.configurations["Xbox360"]
     }
 }
 

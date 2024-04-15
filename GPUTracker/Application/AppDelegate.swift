@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let navVC1 = UINavigationController(rootViewController: MainViewController())
-        let navVC2 = UINavigationController(rootViewController: ItemDetailsViewController(viewModel: .init()))
+        let navVC2 = UINavigationController(rootViewController: ItemDetailsViewController(viewModel: .init(forItem: .xbox360Realm)))
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC
         splitVC.preferredDisplayMode = .oneOverSecondary

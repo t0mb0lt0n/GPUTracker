@@ -9,16 +9,11 @@ import Foundation
 import RealmSwift
 
 final class ItemDetailsViewModel {
-    var dataSourceForGeneral: Results<General>
-    var dataSourceForBoards: Results<BoardRevision>
-    var selectedDataSource = RealmService.shared.realms[0]
-    var selectedDataSource2 = RealmService.shared.realms[1]
+    var generalSegmentData: Results<General>
+    var boardsSegmentData: Results<BoardRevision>
+    var selectedDataSource: Realm?
     var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
-    
-//    var numberOfSections: Int {
-//        RealmService.shared.realms.count
-//    }
     
     var descriptionSegments: [String] = {
         [
@@ -27,9 +22,10 @@ final class ItemDetailsViewModel {
         ]
     }()
     
-    init() {
-        self.dataSourceForGeneral = selectedDataSource.objects(General.self)
-        self.dataSourceForBoards = selectedDataSource2.objects(BoardRevision.self)
+    init(forItem: String) {
+        selectedDataSource = RealmService(withConfigurationFor: forItem).data
+        generalSegmentData = (selectedDataSource?.objects(General.self))!
+        boardsSegmentData = (selectedDataSource?.objects(BoardRevision.self))!
     }
     
     func findPhotos() {

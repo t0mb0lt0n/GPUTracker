@@ -11,7 +11,7 @@ import RealmSwift
 final class ItemDetailsViewController: UIViewController {
     var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
-    let service = RealmService()
+    //let service = RealmService()
     private let viewModel: ItemDetailsViewModel
     
     init(viewModel: ItemDetailsViewModel) {
@@ -76,9 +76,9 @@ extension ItemDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.dataSourceForGeneral.count
+            return viewModel.generalSegmentData.count
         case 1:
-            return viewModel.dataSourceForBoards.count
+            return viewModel.boardsSegmentData.count
         default:
             return 0
         }
@@ -97,8 +97,8 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             }
             cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-            cell?.textLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].descriptionName
-            cell?.detailTextLabel?.text = viewModel.dataSourceForGeneral[indexPath.row].value
+            cell?.textLabel?.text = viewModel.generalSegmentData[indexPath.row].descriptionName
+            cell?.detailTextLabel?.text = viewModel.generalSegmentData[indexPath.row].value
 
             return cell!
         case 1:
@@ -108,8 +108,8 @@ extension ItemDetailsViewController: UITableViewDataSource {
             ) as? MotherboardCell
             else { fatalError() }
             
-            let name = viewModel.dataSourceForBoards[indexPath.row].boardName
-            let value = viewModel.dataSourceForBoards[indexPath.row].value
+            let name = viewModel.boardsSegmentData[indexPath.row].boardName
+            let value = viewModel.boardsSegmentData[indexPath.row].value
 
             cell.configurateCell(
                 descriptionHeader: name,

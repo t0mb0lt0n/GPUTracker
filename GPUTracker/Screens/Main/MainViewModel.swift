@@ -15,13 +15,14 @@ final class MainViewModel {
     var reloadClosure: (() -> Void)?
     
     var numberOfSections: Int {
-        RealmService.shared.realms.count
+        let sectionsSource = RealmService(withConfigurationFor: .xbox360Realm).data
+        return sectionsSource!.objects(General.self).count
     }
     
     var itemsInSection: [String: Int] {
         [
-        .microsoft: RealmService.shared.realms[0].objects(ProductList.self).count,
-        .sony: RealmService.shared.realms[0].objects(ProductList.self).count
+        .microsoft: 5,
+        .sony: 5
         ]
     }
     
