@@ -76,32 +76,6 @@ class Boards: Object {
     }
 }
 
-class DVDDrives: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var driveName: String = ""
-    @objc dynamic var revision: Revision?
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class Fans: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var vendorName: String = ""
-    @objc dynamic var fanConfiguration: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class GPU: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var processSize: String = ""
-
-
-
 
 
 
