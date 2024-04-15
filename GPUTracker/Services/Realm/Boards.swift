@@ -194,25 +194,6 @@ class UnitComponents: Object {
     }
 }
 
-class XCGPU: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var name: String = ""
-    @objc dynamic var processSize: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class XCPU: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var name: String = ""
-    @objc dynamic var processSize: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
 
 class Xbox360EConfigurations: Object {
     @objc dynamic var _id: Int = 0
@@ -223,22 +204,6 @@ class Xbox360EConfigurations: Object {
     }
 }
 
-class Xbox360SConfigurations: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var configuration: String = ""
 
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
-
-class eMMC: Object {
-    @objc dynamic var _id: Int = 0
-    @objc dynamic var name: String = ""
-
-    override static func primaryKey() -> String? {
-        return "_id"
-    }
-}
 
 
