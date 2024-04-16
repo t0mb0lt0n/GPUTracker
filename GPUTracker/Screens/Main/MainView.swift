@@ -9,15 +9,6 @@ import UIKit
 
 final class MainView: UIView {
     
-    let appNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "GPUTracker v0.9.1.0"
-        label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 15, weight: .light)
-        label.textAlignment = .center
-        return label
-    }()
-    
     //MARK: init
     init() {
         super.init(frame: .zero)
