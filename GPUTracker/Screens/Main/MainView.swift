@@ -8,23 +8,6 @@
 import UIKit
 
 final class MainView: UIView {
-    let appLogoImage: UIView = {
-        let logo = UIView()
-        let logoContainer = UIImageView(
-            frame: CGRect(
-                x: -10,
-                y: -45,
-                width: 150,
-                height: 150
-            )
-        )
-        logo.backgroundColor = .gray
-        logoContainer.image = logoImage
-        logo.clipsToBounds = true
-        logoContainer.contentMode = .scaleAspectFit
-        logo.addSubview(logoContainer)
-        return logo
-    }()
     
     let appNameLabel: UILabel = {
         let label = UILabel()
