@@ -15,7 +15,7 @@ final class MainViewModel {
     var reloadClosure: (() -> Void)?
     
     var numberOfSections: Int {
-        let sectionsSource = RealmService(withConfigurationFor: .xbox360Realm).data
+        let sectionsSource = RealmService(withRealmName: .xbox360Realm).data
         return sectionsSource!.objects(General.self).count
     }
     

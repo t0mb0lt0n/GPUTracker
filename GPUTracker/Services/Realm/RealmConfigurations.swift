@@ -8,8 +8,12 @@
 import Foundation
 
 struct RealmConfigurations {
-    static let configurations: [String: Int] = [
+    static let realmNames: [String] = [
+        .xbox360Realm,
+        .sonyRealm
+    ]
+    static let schemas: [String: UInt64] = [
         .xbox360Realm: 68,
-        .sonyRealm: 3,
+        .sonyRealm: 0
     ]
 }
