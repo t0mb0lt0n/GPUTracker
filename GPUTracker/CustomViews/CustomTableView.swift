@@ -9,9 +9,13 @@ import UIKit
 
 class CustomTableView: UITableView {
     init() {
-        super .init(frame: .zero, style: .grouped)
+        if #available(iOS 15, macOS 12, *) {
+            super .init(frame: .zero, style: .insetGrouped)
+            backgroundColor = .yellow
+        } else {
+            super .init(frame: .zero, style: .grouped)
+        }
         setupCollectionView()
-        //backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +31,6 @@ class CustomTableView: UITableView {
             GeneralCell.self,
             forCellReuseIdentifier: "GeneralCell"
         )
-        
         register(
             MotherboardCell.self,
             forCellReuseIdentifier: "MotherboardCell"

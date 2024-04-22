@@ -37,7 +37,8 @@ final class ItemDetailsView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
-        backgroundColor = .secondarySystemBackground
+        //backgroundColor = .secondarySystemBackground
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -96,6 +97,7 @@ extension ItemDetailsView {
             itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
             itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
             itemDescriptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            //itemDescriptionView.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     

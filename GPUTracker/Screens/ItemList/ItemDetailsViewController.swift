@@ -29,6 +29,7 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         title = "Item List"
         navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
@@ -96,7 +97,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             if cell == nil {
                 cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             }
-            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             cell?.textLabel?.text = viewModel.generalSegmentData[indexPath.row].descriptionName
             cell?.detailTextLabel?.text = viewModel.generalSegmentData[indexPath.row].value
 
