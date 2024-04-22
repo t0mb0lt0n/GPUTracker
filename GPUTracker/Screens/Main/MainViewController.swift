@@ -100,37 +100,23 @@ extension MainViewController: UITableViewDataSource {
         default:
             return 0
         }
-         //manufacturers[section].count
-        //service.groupedItems!.table1.count
-        //viewModel.numberOfItems
     }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(
-//            withIdentifier: "ManufacturerCell",
-//            for: indexPath
-//        ) as? ManufacturerCell
-//        else { fatalError() }
+        let cellIdentifier = "Apple designed cell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
-       // cell.textva
-//        cell.configurateCell(
-//            manufacturer: manufacturers[indexPath.section][indexPath.row]
-//        )
-        let cellIdentifier = "Cell" // Ваш идентификатор ячейки
-           var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-           
-           if cell == nil {
-               cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-           }
+        if cell == nil {
+            cell = UITableViewCell(
+                style: .value1,
+                reuseIdentifier: cellIdentifier
+            )
+        }
         cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-        cell?.textLabel?.text = "Заголовок"
-        cell?.detailTextLabel?.text = "Дополнительная информация"
 
-        
-        
         return cell!
     }
     //setup header in section height
@@ -185,24 +171,18 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            
             let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
             //present(targetVC, animated: true)
             navigationController?.pushViewController(targetVC, animated: true)
         case 1:
-//            let targetVC = GPUListViewController(selectedVendor: "AMD")
-//            navigationController?.pushViewController(targetVC, animated: true)
             print("saved")
-                    default:
+        default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-
-
-    
 extension MainViewController {
     private func setupTableView() {
         mainView.addSubview(tableView)
