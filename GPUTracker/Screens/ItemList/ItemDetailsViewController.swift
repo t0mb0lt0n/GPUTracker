@@ -66,11 +66,15 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentedControll.selectedSegmentIndex = 0
     }
     
+    func changeLabel() {
+        
+    }
+    
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
 //            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
 //            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self?.mainView.itemNameLabel.text = "Label changed"
+            //self?.mainView.itemNameLabel.text = "Label changed"
         }
         viewModel.showLoading = { [weak self] in
             if $0 {
