@@ -19,34 +19,12 @@ final class CustomDescriptionView: UIView {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .lightGray
         scrollView.contentSize = CGSize(
-            width: Int(UIScreen.main.bounds.width) * 5,
+            width: Int(UIScreen.main.bounds.width) * Constants.numberOfSegmets,
             height: Int(UIScreen.main.bounds.height)
         )
         scrollView.isPagingEnabled = true
         return scrollView
     }()
-    
-    func addSubviewsOnMainScrollView() {
-//        let screenWidth = UIScreen.main.bounds.width
-//        let screenHeight = UIScreen.main.bounds.height
-//        generalSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
-//        motherBoardsSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
-//        mainScrollView.addSubview(generalSegmentTableView)
-//        mainScrollView.addSubview(motherBoardsSegmentTableView)
-//        NSLayoutConstraint.activate([
-//            generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-//            //generalSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-//            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
-//            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-//            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-//
-//            motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-//            motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-//            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-//            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
-//            motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
-//        ])
-    }
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -63,6 +41,8 @@ final class CustomDescriptionView: UIView {
         mainScrollView.isScrollEnabled = false
         generalSegmentTableView.tag = 0
         motherBoardsSegmentTableView.tag = 1
+        generalSegmentTableView.alwaysBounceVertical = false
+        motherBoardsSegmentTableView.alwaysBounceVertical = false
         [
         mainScrollView,
         ].forEach {
@@ -100,5 +80,11 @@ final class CustomDescriptionView: UIView {
             motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
             motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
         ])
+    }
+}
+
+extension CustomDescriptionView {
+    private enum Constants {
+        static let numberOfSegmets: Int = 5
     }
 }

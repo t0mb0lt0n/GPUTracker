@@ -11,7 +11,6 @@ class CustomTableView: UITableView {
     init() {
         if #available(iOS 15, macOS 12, *) {
             super .init(frame: .zero, style: .insetGrouped)
-            backgroundColor = .yellow
         } else {
             super .init(frame: .zero, style: .grouped)
         }
