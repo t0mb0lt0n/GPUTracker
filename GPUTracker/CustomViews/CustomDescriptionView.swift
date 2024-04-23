@@ -14,22 +14,6 @@ final class CustomDescriptionView: UIView {
         let stackView = UIStackView()
         return stackView
     }()
-    
-    private func addItemsToStackView() {
-        let itemsForCellStackView: [UIView] = [
-            generalSegmentTableView,
-            motherBoardsSegmentTableView,
-        ]
-        itemsForCellStackView.forEach { horizontalStackView.addArrangedSubview($0) }
-    }
-    
-    private func configurateHorizontalStackView(_ stackView: UIStackView) {
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .leading
-        stackView.spacing = 1
-    }
-
             
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -48,32 +32,23 @@ final class CustomDescriptionView: UIView {
     func addSubviewsOnMainScrollView() {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
-        //let h = mainScrollView.frame.height
-//        table.frame = CGRect(
-//            x: screenWidth * position,
-//            y: 0,
-//            width: screenWidth,
-//            height: 1000
-//        )
         generalSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
         motherBoardsSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.addSubview(generalSegmentTableView)
         mainScrollView.addSubview(motherBoardsSegmentTableView)
-
         NSLayoutConstraint.activate([
             generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            generalSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-            //generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor, constant: 0),
+            //generalSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
             generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenHeight),
-            
+            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
             motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
             motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
             motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenHeight),
+            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
             motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
         ])
-        //mainScrollView.addSubview(ge)
     }
 
     override init(frame: CGRect) {
@@ -117,7 +92,7 @@ final class CustomDescriptionView: UIView {
             mainScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             horizontalStackView.heightAnchor.constraint(equalToConstant: mainScrollView.contentSize.height),
-            horizontalStackView.wi.constraint(equalToConstant: mainScrollView.contentSize.height),
+            //horizontalStackView.heightAnchor.constraint(equalToConstant: mainScrollView.contentSize.height),
         ])
     }
 }
