@@ -18,37 +18,34 @@ final class CustomDescriptionView: UIView {
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .lightGray
-        scrollView.showsVerticalScrollIndicator = true
-        scrollView.showsVerticalScrollIndicator = true
-        //scrollView.contentInsetAdjustmentBehavior = .scrollableAxes
         scrollView.contentSize = CGSize(
             width: Int(UIScreen.main.bounds.width) * 5,
-            height: 500
+            height: Int(UIScreen.main.bounds.height)
         )
         scrollView.isPagingEnabled = true
         return scrollView
     }()
     
     func addSubviewsOnMainScrollView() {
-        let screenWidth = UIScreen.main.bounds.width
-        let screenHeight = UIScreen.main.bounds.height
-        generalSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
-        motherBoardsSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
-        mainScrollView.addSubview(generalSegmentTableView)
-        mainScrollView.addSubview(motherBoardsSegmentTableView)
-        NSLayoutConstraint.activate([
-            generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            //generalSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
-            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
-            motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
-        ])
+//        let screenWidth = UIScreen.main.bounds.width
+//        let screenHeight = UIScreen.main.bounds.height
+//        generalSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
+//        motherBoardsSegmentTableView.translatesAutoresizingMaskIntoConstraints = false
+//        mainScrollView.addSubview(generalSegmentTableView)
+//        mainScrollView.addSubview(motherBoardsSegmentTableView)
+//        NSLayoutConstraint.activate([
+//            generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+//            //generalSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+//            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
+//            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+//            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//
+//            motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+//            motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+//            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+//            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+//            motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
+//        ])
     }
 
     override init(frame: CGRect) {
@@ -56,9 +53,6 @@ final class CustomDescriptionView: UIView {
         generalSegmentTableView.backgroundColor = .secondarySystemBackground
         setupView()
         setupConstraints()
-        addSubviewsOnMainScrollView()
-        //addSubviewOnMainScrollView(position: 0, table: generalSegmentTableView)
-        //addSubviewOnMainScrollView(position: 1, table: motherBoardsSegmentTableView)
     }
     
     required init?(coder: NSCoder) {
@@ -69,30 +63,42 @@ final class CustomDescriptionView: UIView {
         mainScrollView.isScrollEnabled = false
         generalSegmentTableView.tag = 0
         motherBoardsSegmentTableView.tag = 1
-//        addSubviewOnMainScrollView(position: 0, table: generalSegmentTableView)
-//        addSubviewOnMainScrollView(position: 1, table: motherBoardsSegmentTableView)
         [
         mainScrollView,
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
-//        addSubviewOnMainScrollView(position: 0, table: generalSegmentTableView)
-//        addSubviewOnMainScrollView(position: 1, table: motherBoardsSegmentTableView)
+        
+        [
+        generalSegmentTableView,
+        motherBoardsSegmentTableView,
+        ].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            mainScrollView.addSubview($0)
+        }
+
     }
     
     final private func setupConstraints() {
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
         NSLayoutConstraint.activate([
-            mainScrollView.topAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: 0
-            ),
+            mainScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             mainScrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             mainScrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            horizontalStackView.heightAnchor.constraint(equalToConstant: mainScrollView.contentSize.height),
-            //horizontalStackView.heightAnchor.constraint(equalToConstant: mainScrollView.contentSize.height),
+            generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
+            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+            motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
         ])
     }
 }
