@@ -11,7 +11,6 @@ import RealmSwift
 final class ItemDetailsViewController: UIViewController {
     var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
-    //let service = RealmService()
     private let viewModel: ItemDetailsViewModel
     
     init(viewModel: ItemDetailsViewModel) {
@@ -29,7 +28,6 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         title = "Item List"
         navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
@@ -43,25 +41,36 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     func segmentChanged() {
-        let contentOffset = mainView.itemDescriptionView.generalSegmentTableView.frame.width
+        let contentOffset = Int(mainView.itemDescriptionView.generalSegmentTableView.frame.width)
         let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
-        mainView.itemDescriptionView.mainScrollView.setContentOffset(CGPoint(x: Int(contentOffset) * segmentIndex, y: 0), animated: true)
+        mainView.itemDescriptionView.mainScrollView.setContentOffset(
+            CGPoint(
+                x: contentOffset * segmentIndex,
+                y: 0
+            ),
+            animated: true
+        )
     }
     
     private func setupMainView() {
         mainView.itemDescriptionView.generalSegmentTableView.dataSource = self
         mainView.itemDescriptionView.motherBoardsSegmentTableView.dataSource = self
-        mainView.segmentedControll.selectedSegmentIndex = 0
+        
         for (index, value) in viewModel.descriptionSegments.enumerated() {
-            mainView.segmentedControll.insertSegment(withTitle: value, at: index, animated: false)
+            mainView.segmentedControll.insertSegment(
+                withTitle: value,
+                at: index,
+                animated: false
+            )
         }
         mainView.segmentedControll.selectedSegmentIndex = 0
     }
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
-            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+            self?.mainView.itemNameLabel.text = "Label changed"
         }
         viewModel.showLoading = { [weak self] in
             if $0 {
@@ -79,6 +88,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         case 0:
             return viewModel.generalSegmentData.count
         case 1:
+            print("viewModel.boardsSegmentData.count", viewModel.boardsSegmentData.count)
             return viewModel.boardsSegmentData.count
         default:
             return 0
@@ -91,35 +101,19 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> UITableViewCell {
         switch tableView.tag {
         case 0:
-            let cellIdentifier = "Cell"
-            var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-            
-            if cell == nil {
-                cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-            }
-            cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-            cell?.textLabel?.text = viewModel.generalSegmentData[indexPath.row].descriptionName
-            cell?.detailTextLabel?.text = viewModel.generalSegmentData[indexPath.row].value
+            let cellIdentifier = "Apple designed cell"
+            var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+            cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+            cell.textLabel?.text = viewModel.generalSegmentData[indexPath.row].descriptionName
+            cell.detailTextLabel?.text = viewModel.generalSegmentData[indexPath.row].value
 
-            return cell!
+            return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "MotherboardCell",
-                for: indexPath
-            ) as? MotherboardCell
-            else { fatalError() }
-            
-            let name = viewModel.boardsSegmentData[indexPath.row].boardName
-            let value = viewModel.boardsSegmentData[indexPath.row].value
-
-            cell.configurateCell(
-                descriptionHeader: name,
-                boardName: name,
-                revision: value,
-                gpu: value,
-                cpu: value,
-                isHdmi: value
-            )
+            let cellIdentifier = "Apple designed cell"
+            var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+            cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+            //cell?.textLabel?.text = viewModel.boardsSegmentData.[indexPath.row].hdmi
+            cell.detailTextLabel?.text = viewModel.boardsSegmentData[indexPath.row].boardName
 
             return cell
         default:

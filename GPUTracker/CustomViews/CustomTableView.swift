@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTableView: UITableView {
     init() {
-        if #available(iOS 15, macOS 12, *) {
+        if #available(iOS 15, *) {
             super .init(frame: .zero, style: .insetGrouped)
         } else {
             super .init(frame: .zero, style: .grouped)

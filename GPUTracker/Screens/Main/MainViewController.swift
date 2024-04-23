@@ -11,7 +11,8 @@ import RealmSwift
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     var dataChangedCallback: ((Realm) -> Void)?
-    
+    let detailsVC: ItemDetailsViewController?
+
     // Это метод, который будет вызываться, когда вы хотите изменить данные
     func updateDataSource(newDataSource: Realm) {
         // Вызываем замыкание, чтобы передать новые данные
@@ -21,8 +22,9 @@ final class MainViewController: UIViewController {
     private let viewModel: MainViewModel
     let tableView = UITableView(frame: .zero, style: .grouped)
     
-    init() {
+    init(with detailsVC: ItemDetailsViewController) {
         self.viewModel = MainViewModel()
+        self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,6 +40,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "mainVC"
+        detailsVC?.mainView.itemNameLabel.text = "label changed"
         navigationController?.isNavigationBarHidden = false
         setupTableView()
         tableView.register(

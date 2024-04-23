@@ -8,12 +8,11 @@
 import UIKit
 
 final class MainView: UIView {
-    
     //MARK: init
     init() {
         super.init(frame: .zero)
         setupView()
-        setupConstraints()
+        setupConstraints()        
     }
     
     required init?(coder: NSCoder) {
