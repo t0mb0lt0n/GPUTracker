@@ -72,8 +72,6 @@ final class ItemDetailsViewController: UIViewController {
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
-//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
             //self?.mainView.itemNameLabel.text = "Label changed"
         }
         viewModel.showLoading = { [weak self] in
