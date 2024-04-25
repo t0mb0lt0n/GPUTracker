@@ -10,22 +10,16 @@ import RealmSwift
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
-    var dataChangedCallback: ((Realm) -> Void)?
-    let detailsVC: ItemDetailsViewController?
-
-    // Это метод, который будет вызываться, когда вы хотите изменить данные
-    func updateDataSource(newDataSource: Realm) {
-        // Вызываем замыкание, чтобы передать новые данные
-        dataChangedCallback?(newDataSource)
-    }
-    
+    var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
+    
     let tableView = UITableView(frame: .zero, style: .grouped)
     
     init(with detailsVC: ItemDetailsViewController) {
         self.viewModel = MainViewModel()
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
+        //det.mainView.itemNameLabel.text = "changed"
     }
     
     required init?(coder: NSCoder) {
@@ -40,7 +34,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "mainVC"
-        detailsVC?.mainView.itemNameLabel.text = "label changed"
+        ///detailsVC?.mainView.itemNameLabel.text = "label changed"
         navigationController?.isNavigationBarHidden = false
         setupTableView()
         tableView.register(
@@ -51,6 +45,8 @@ final class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .secondarySystemBackground
+        //vc2?.mainView.itemNameLabel.text = "changed"
+
     }
 
     private func setupViewModel() {
@@ -118,8 +114,8 @@ extension MainViewController: UITableViewDataSource {
                 reuseIdentifier: cellIdentifier
             )
         }
+        
         cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-
         return cell!
     }
     //setup header in section height
@@ -174,9 +170,15 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
-            //present(targetVC, animated: true)
-            navigationController?.pushViewController(targetVC, animated: true)
+//            let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
+//            //present(targetVC, animated: true)
+//            navigationController?.pushViewController(targetVC, animated: true)
+//            if let vc = splitViewController?.viewControllers[1].navigationController?.viewControllers.first as? ItemDetailsViewController {
+//                vc.mainView.itemNameLabel.text = "Changed"
+//                //vc.viewmodel
+//                print("chanded")
+            detailsVC?.mainView.itemNameLabel.text = "changed"
+            
         case 1:
             print("saved")
         default:

@@ -8,6 +8,10 @@
 import UIKit
 import RealmSwift
 
+protocol updateRealmDelegate {
+    
+}
+
 final class ItemDetailsViewController: UIViewController {
     var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView

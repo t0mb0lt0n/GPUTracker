@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110FE7C62BDACB72006923E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 110FE7C52BDACB72006923E5 /* Realm */; };
+		110FE7C82BDACB72006923E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 110FE7C72BDACB72006923E5 /* RealmSwift */; };
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		1150798C2BB355E6003D1933 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798B2BB355E6003D1933 /* Realm */; };
-		1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1150798D2BB355E6003D1933 /* RealmSwift */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -73,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1150798E2BB355E6003D1933 /* RealmSwift in Frameworks */,
-				1150798C2BB355E6003D1933 /* Realm in Frameworks */,
+				110FE7C82BDACB72006923E5 /* RealmSwift in Frameworks */,
+				110FE7C62BDACB72006923E5 /* Realm in Frameworks */,
 				113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,8 +237,8 @@
 			);
 			name = GPUTracker;
 			packageProductDependencies = (
-				1150798B2BB355E6003D1933 /* Realm */,
-				1150798D2BB355E6003D1933 /* RealmSwift */,
+				110FE7C52BDACB72006923E5 /* Realm */,
+				110FE7C72BDACB72006923E5 /* RealmSwift */,
 			);
 			productName = GPUTracker;
 			productReference = 1156985A29E873EE009B3638 /* GPUTracker.app */;
@@ -269,7 +269,7 @@
 			);
 			mainGroup = 1156985129E873EE009B3638;
 			packageReferences = (
-				1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				110FE7C42BDACB72006923E5 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 1156985B29E873EE009B3638 /* Products */;
 			projectDirPath = "";
@@ -535,7 +535,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		110FE7C42BDACB72006923E5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -546,14 +546,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1150798B2BB355E6003D1933 /* Realm */ = {
+		110FE7C52BDACB72006923E5 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 110FE7C42BDACB72006923E5 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		1150798D2BB355E6003D1933 /* RealmSwift */ = {
+		110FE7C72BDACB72006923E5 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1150798A2BB355E6003D1933 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 110FE7C42BDACB72006923E5 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
