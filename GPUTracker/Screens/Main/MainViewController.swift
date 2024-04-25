@@ -170,15 +170,8 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-//            let targetVC = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
-//            //present(targetVC, animated: true)
-//            navigationController?.pushViewController(targetVC, animated: true)
-//            if let vc = splitViewController?.viewControllers[1].navigationController?.viewControllers.first as? ItemDetailsViewController {
-//                vc.mainView.itemNameLabel.text = "Changed"
-//                //vc.viewmodel
-//                print("chanded")
             detailsVC?.mainView.itemNameLabel.text = "changed"
-            
+            detailsVC?.mainView.
         case 1:
             print("saved")
         default:
