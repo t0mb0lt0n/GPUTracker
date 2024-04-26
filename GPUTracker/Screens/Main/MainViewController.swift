@@ -25,6 +25,7 @@ final class MainViewController: UIViewController {
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
+        splitViewController?.delegate = self
         
     }
     
@@ -51,7 +52,6 @@ final class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .secondarySystemBackground
-        
     }
 
     private func setupViewModel() {
@@ -207,5 +207,12 @@ extension MainViewController {
 }
 
 extension MainViewController: UISplitViewControllerDelegate {
+    override func collapseSecondaryViewController(_ secondaryViewController: UIViewController, for splitViewController: UISplitViewController) {
+//        splitViewController.collapseSecondaryViewController(self, for: detailsVC!)
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        true
+    }
     
 }
