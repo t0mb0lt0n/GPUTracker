@@ -63,21 +63,13 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentedControll.selectedSegmentIndex = 0
     }
     
-    func changeLabel() {
-        
-    }
+    
+    
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
             self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-        }
-        viewModel.showLoading = { [weak self] in
-            if $0 {
-                //self?.mainView.activityIndicator.startAnimating()
-            } else {
-                //self?.mainView.activityIndicator.stopAnimating()
-            }
         }
     }
 }

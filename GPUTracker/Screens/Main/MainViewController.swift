@@ -25,7 +25,7 @@ final class MainViewController: UIViewController {
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
-        //det.mainView.itemNameLabel.text = "changed"
+        
     }
     
     required init?(coder: NSCoder) {

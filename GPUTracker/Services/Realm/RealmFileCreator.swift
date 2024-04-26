@@ -11,7 +11,7 @@ class RealmFileCreator {
     var emptyRealm = try! Realm()
     
     func createEmptyRealmFile() {
-        //let testRecord = TestTable(testValue: "Test Value written")
+        //let testRecord = TestTable(testValue: "Empty value is written")
         try! emptyRealm.write {
             //Uncomment required
             //emptyRealm.add(testRecord)
