@@ -64,8 +64,6 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     
-    
-    
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
@@ -104,7 +102,6 @@ extension ItemDetailsViewController: UITableViewDataSource {
             let cellIdentifier = "Apple designed cell"
             var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-            //cell?.textLabel?.text = viewModel.boardsSegmentData.[indexPath.row].hdmi
             cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
 
             return cell
