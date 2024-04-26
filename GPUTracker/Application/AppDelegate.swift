@@ -18,10 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         let splitVC = UISplitViewController()
-        let detailsVC = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
+        let detailsVC = ItemDetailsViewController(
+            viewModel: .init(forItemWithRealmName: .xbox360Realm)
+        )
+        let mainVC = MainViewController(with: detailsVC)
+        detailsVC.mainVC = mainVC
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
-        let navVC1 = UINavigationController(rootViewController: MainViewController(with: detailsVC))
+        let navVC1 = UINavigationController(rootViewController: mainVC)
         let navVC2 = UINavigationController(rootViewController: detailsVC)
         splitVC.viewControllers = [navVC1, navVC2]
         window?.rootViewController = splitVC

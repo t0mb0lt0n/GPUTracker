@@ -52,7 +52,6 @@ final class MainViewController: UIViewController {
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .secondarySystemBackground
         //vc2?.mainView.itemNameLabel.text = "changed"
-
     }
 
     private func setupViewModel() {
@@ -190,6 +189,7 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController {
     private func setupTableView() {
         mainView.addSubview(tableView)
+        tableView.backgroundColor = .yellow
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(

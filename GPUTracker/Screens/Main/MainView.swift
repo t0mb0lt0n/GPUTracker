@@ -8,6 +8,18 @@
 import UIKit
 
 final class MainView: UIView {
+    let itemNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Original Xbox 360"
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.textAlignment = .left
+        label.backgroundColor = .yellow
+        return label
+    }()
+
+    
+    
     //MARK: init
     init() {
         super.init(frame: .zero)
@@ -24,14 +36,23 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
+        itemNameLabel
         ].forEach {
-            //$0.translatesAutoresizingMaskIntoConstraints = false
+            $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
     }
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
+//            itemNameLabel.centerXAnchor.constraint(
+//                equalTo: centerXAnchor,
+//                constant: 0
+//            ),
+            itemNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            itemNameLabel.widthAnchor.constraint(equalToConstant: 170),
+            itemNameLabel.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
