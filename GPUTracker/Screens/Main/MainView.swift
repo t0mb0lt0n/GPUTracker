@@ -45,10 +45,6 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-//            itemNameLabel.centerXAnchor.constraint(
-//                equalTo: centerXAnchor,
-//                constant: 0
-//            ),
             itemNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
             itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             itemNameLabel.widthAnchor.constraint(equalToConstant: 170),
