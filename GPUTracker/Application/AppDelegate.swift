@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow()
+        
         let splitVC = UISplitViewController()
         let detailsVC = ItemDetailsViewController(
             viewModel: .init(forItemWithRealmName: .xbox360Realm)
@@ -37,6 +38,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UISplitViewControllerDelegate {
     
-
 }
 

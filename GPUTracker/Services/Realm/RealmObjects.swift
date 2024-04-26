@@ -28,7 +28,6 @@ class BoardRevision: Object {
     }
 }
 
-
 class Boards: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var revison: String = ""

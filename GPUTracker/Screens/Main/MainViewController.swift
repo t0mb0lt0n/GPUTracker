@@ -51,7 +51,7 @@ final class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         mainView.backgroundColor = .secondarySystemBackground
-        //vc2?.mainView.itemNameLabel.text = "changed"
+        
     }
 
     private func setupViewModel() {
@@ -204,4 +204,8 @@ extension MainViewController {
             tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+}
+
+extension MainViewController: UISplitViewControllerDelegate {
+    
 }
