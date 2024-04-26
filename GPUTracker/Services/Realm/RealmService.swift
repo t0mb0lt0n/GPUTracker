@@ -22,22 +22,3 @@ final class RealmService {
         data = realm
     }
 }
-
-//MARK: - Migration
-//        var generalRealmConfiguration = Realm.Configuration(
-//            schemaVersion: 29, // Увеличьте версию схемы
-//            migrationBlock: { migration, oldSchemaVersion in
-//                if oldSchemaVersion < 29 {
-//                    // Выполните миграцию данных, если это необходимо
-//                }
-//            }
-//        )
-//
-//        var boardsRealmConfiguration = Realm.Configuration(
-//            schemaVersion: 29, // Увеличьте версию схемы
-//            migrationBlock: { migration, oldSchemaVersion in
-//                if oldSchemaVersion < 29 {
-//                    // Выполните миграцию данных, если это необходимо
-//                }
-//            }
-//        )
