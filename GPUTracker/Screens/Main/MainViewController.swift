@@ -8,10 +8,15 @@
 import UIKit
 import RealmSwift
 
+protocol UpdateRealmDelegate: AnyObject {
+    func updateRealm(realmName: String)
+}
+
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
+    weak var delagate: UpdateRealmDelegate?
     
     let tableView = UITableView(frame: .zero, style: .grouped)
     
@@ -19,6 +24,7 @@ final class MainViewController: UIViewController {
         self.viewModel = MainViewModel()
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
+        delagate = detailsVC
         //det.mainView.itemNameLabel.text = "changed"
     }
     
@@ -170,8 +176,8 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            detailsVC?.mainView.itemNameLabel.text = "changed"
-            detailsVC?.mainView.
+            //detailsVC?.mainView.itemNameLabel.text = "changed"
+            delagate?.updateRealm(realmName: "sony")
         case 1:
             print("saved")
         default:

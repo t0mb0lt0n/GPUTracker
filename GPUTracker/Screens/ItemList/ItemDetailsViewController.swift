@@ -8,10 +8,6 @@
 import UIKit
 import RealmSwift
 
-protocol updateRealmDelegate {
-    
-}
-
 final class ItemDetailsViewController: UIViewController {
     var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
@@ -37,9 +33,6 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
         }
-//        mainVC?.dataChangedCallback = { [ weak self ] newDataSource in
-//            //self?.viewModel.selectedDataSource = newDataSource
-//        }
         setupViewModel()
         setupMainView()
     }
@@ -76,7 +69,8 @@ final class ItemDetailsViewController: UIViewController {
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
-            //self?.mainView.itemNameLabel.text = "Label changed"
+            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+            self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
         }
         viewModel.showLoading = { [weak self] in
             if $0 {
@@ -132,6 +126,13 @@ extension ItemDetailsViewController: UITableViewDataSource {
         }
     }
 }
+
+extension ItemDetailsViewController: UpdateRealmDelegate {
+    func updateRealm(realmName: String) {
+        viewModel.selectedDataSource = RealmService(withRealmName: realmName).data
+    }
+}
+
 
 
 

@@ -8,12 +8,15 @@
 import Foundation
 import RealmSwift
 
+
 final class ItemDetailsViewModel {
     var generalSegmentData: Results<General>
     var boardsSegmentData: Results<Boards>
     var selectedDataSource: Realm? {
         didSet {
-            
+            generalSegmentData = (selectedDataSource?.objects(General.self))!
+            boardsSegmentData = (selectedDataSource?.objects(Boards.self))!
+            reloadClosure!()
         }
     }
     var showLoading: ((Bool) -> Void)?
@@ -31,11 +34,6 @@ final class ItemDetailsViewModel {
         selectedDataSource = RealmService(withRealmName: name).data
         generalSegmentData = (selectedDataSource?.objects(General.self))!
         boardsSegmentData = (selectedDataSource?.objects(Boards.self))!
-    }
-    
-    func updateDataBySelection() {
-        selectedDataSource =
-        reloadClosure!()
     }
 }
 
