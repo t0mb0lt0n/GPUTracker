@@ -8,14 +8,13 @@
 import Foundation
 import RealmSwift
 
-
 final class ItemDetailsViewModel {
-    var generalSegmentData: Results<General>
-    var boardsSegmentData: Results<Boards>
-    var selectedDataSource: Realm? {
+    var generalSegmentRealmData: Results<General>
+    var boardsSegmentRealmData: Results<Boards>
+    var currentRealm: Realm? {
         didSet {
-            generalSegmentData = (selectedDataSource?.objects(General.self))!
-            boardsSegmentData = (selectedDataSource?.objects(Boards.self))!
+            generalSegmentRealmData = (currentRealm?.objects(General.self))!
+            boardsSegmentRealmData = (currentRealm?.objects(Boards.self))!
             reloadClosure!()
         }
     }
@@ -31,9 +30,9 @@ final class ItemDetailsViewModel {
     }()
     
     init(forItemWithRealmName name: String) {
-        selectedDataSource = RealmService(withRealmName: name).data
-        generalSegmentData = (selectedDataSource?.objects(General.self))!
-        boardsSegmentData = (selectedDataSource?.objects(Boards.self))!
+        currentRealm = RealmService(withRealmName: name).data
+        generalSegmentRealmData = (currentRealm?.objects(General.self))!
+        boardsSegmentRealmData = (currentRealm?.objects(Boards.self))!
     }
 }
 

@@ -86,10 +86,10 @@ extension ItemDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.generalSegmentData.count
+            return viewModel.generalSegmentRealmData.count
         case 1:
-            print("viewModel.boardsSegmentData.count", viewModel.boardsSegmentData.count)
-            return viewModel.boardsSegmentData.count
+            print("viewModel.boardsSegmentData.count", viewModel.boardsSegmentRealmData.count)
+            return viewModel.boardsSegmentRealmData.count
         default:
             return 0
         }
@@ -104,8 +104,8 @@ extension ItemDetailsViewController: UITableViewDataSource {
             let cellIdentifier = "Apple designed cell"
             var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-            cell.textLabel?.text = viewModel.generalSegmentData[indexPath.row].descriptionName
-            cell.detailTextLabel?.text = viewModel.generalSegmentData[indexPath.row].value
+            cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
+            cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
 
             return cell
         case 1:
@@ -113,7 +113,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             //cell?.textLabel?.text = viewModel.boardsSegmentData.[indexPath.row].hdmi
-            cell.detailTextLabel?.text = viewModel.boardsSegmentData[indexPath.row].boardName
+            cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
 
             return cell
         default:
@@ -129,7 +129,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateRealm(realmName: String) {
-        viewModel.selectedDataSource = RealmService(withRealmName: realmName).data
+        viewModel.currentRealm = RealmService(withRealmName: realmName).data
     }
 }
 
