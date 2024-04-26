@@ -175,7 +175,6 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            //detailsVC?.mainView.itemNameLabel.text = "changed"
             delagate?.updateRealm(realmName: "sony")
         case 1:
             print("saved")

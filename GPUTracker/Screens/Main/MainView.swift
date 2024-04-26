@@ -10,16 +10,11 @@ import UIKit
 final class MainView: UIView {
     let itemNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Original Xbox 360"
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 17, weight: .semibold)
-        label.textAlignment = .left
+        label.text = "Debug Label"
         label.backgroundColor = .yellow
         return label
     }()
 
-    
-    
     //MARK: init
     init() {
         super.init(frame: .zero)
