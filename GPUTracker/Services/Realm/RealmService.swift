@@ -18,7 +18,7 @@ final class RealmService {
         realmConfiguration.schemaVersion = RealmConfigurations.schemas[realmName] ?? 0
         let realm = try! Realm(configuration: realmConfiguration)
         let obj0 = realm.objects(Boards.self)
-        print("boards ", obj0.count)
+        print("inside \(obj0.count) objects")
         data = realm
     }
 }
