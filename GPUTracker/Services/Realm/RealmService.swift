@@ -12,12 +12,25 @@ final class RealmService {
     var data: Realm?
     
     init(withRealmName realmName: String) {
-        let realmPath = Bundle.main.url(forResource: realmName, withExtension: "realm")!
-        var realmConfiguration = Realm.Configuration(fileURL: realmPath, readOnly: true)
-        realmConfiguration.schemaVersion = RealmConfigurations.schemas[realmName] ?? 0
+        guard let realmPath = Bundle.main.url(
+            forResource: realmName,
+            withExtension: "realm"
+        ) else { return }
+        
+        let realmConfiguration = Realm.Configuration(
+            fileURL: realmPath,
+            readOnly: true,
+            schemaVersion: RealmConfigurations.schemas[realmName] ?? Constants.defaultRealmSchemaVersion
+        )
         let realm = try! Realm(configuration: realmConfiguration)
-        let obj0 = realm.objects(Boards.self)
-        print("inside \(obj0.count) objects")
+        let bjcts = realm.objects(General.self)
+        print("inside \(bjcts.count) objects")
         data = realm
+    }
+}
+
+extension RealmService {
+    private enum Constants {
+        static let defaultRealmSchemaVersion: UInt64 = 0
     }
 }
