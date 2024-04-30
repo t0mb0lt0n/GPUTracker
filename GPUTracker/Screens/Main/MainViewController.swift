@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 protocol UpdateRealmDelegate: AnyObject {
-    func updateData(for realmName: String)
+    func updateData(for realmName: String, with itemImage: UIImage)
 }
 
 final class MainViewController: UIViewController {
@@ -175,7 +175,8 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            delagate?.updateRealm(realmName: "sony")
+           / delagate?.updateRealm(realmName: "sony")
+            delegate.
             
         case 1:
             print("saved")
