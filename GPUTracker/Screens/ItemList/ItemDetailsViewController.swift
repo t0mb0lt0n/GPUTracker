@@ -117,7 +117,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
 }
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
-    func updateRealm(realmName: String) {
+    func updateData(for realmName: String) {
         viewModel.currentRealm = RealmService(withRealmName: realmName).data
         mainVC?.mainView.itemNameLabel.text = "text has changed"
     }

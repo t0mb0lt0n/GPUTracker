@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 protocol UpdateRealmDelegate: AnyObject {
-    func updateRealm(realmName: String)
+    func updateData(for realmName: String)
 }
 
 final class MainViewController: UIViewController {
@@ -176,6 +176,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             delagate?.updateRealm(realmName: "sony")
+            
         case 1:
             print("saved")
         default:
@@ -211,7 +212,11 @@ extension MainViewController: UISplitViewControllerDelegate {
 //        splitViewController.collapseSecondaryViewController(self, for: detailsVC!)
     }
     
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController
+    ) -> Bool {
         true
     }
     

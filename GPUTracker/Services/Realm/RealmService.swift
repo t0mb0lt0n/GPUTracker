@@ -10,7 +10,6 @@ import RealmSwift
 
 final class RealmService {
     var data: Realm?
-    //static let shared = RealmService()
     
     init(withRealmName realmName: String) {
         let realmPath = Bundle.main.url(forResource: realmName, withExtension: "realm")!
