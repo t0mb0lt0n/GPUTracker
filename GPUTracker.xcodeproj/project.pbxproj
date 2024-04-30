@@ -19,6 +19,7 @@
 		11733BC02BCD37BF00D3A442 /* RealmFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BBF2BCD37BF00D3A442 /* RealmFiles.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11733BC42BCD499500D3A442 /* sony.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11733BC32BCD499500D3A442 /* sony.realm */; };
+		11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */; };
 		11B2F0E32BC9C0CD0076D775 /* xbox360.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B2F0E22BC9C0CD0076D775 /* xbox360.realm */; };
 		11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D010032A093E79009EB57E /* GPUInfoCellView.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
@@ -50,6 +51,7 @@
 		11733BBF2BCD37BF00D3A442 /* RealmFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFiles.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11733BC32BCD499500D3A442 /* sony.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sony.realm; sourceTree = "<group>"; };
+		11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11B2F0E22BC9C0CD0076D775 /* xbox360.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xbox360.realm; sourceTree = "<group>"; };
 		11D010032A093E79009EB57E /* GPUInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUInfoCellView.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */,
 				11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */,
+				11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* RealmObjects.swift in Sources */,
 				11D010042A093E79009EB57E /* GPUInfoCellView.swift in Sources */,
+				11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */,
 				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,

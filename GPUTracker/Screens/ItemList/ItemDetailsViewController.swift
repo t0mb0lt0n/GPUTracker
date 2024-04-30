@@ -117,12 +117,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
 }
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
-    func updateData(for realmName: String, with itemImage: String) {
+    func updateData(forRealmName realmName: String, withItemImage itemImage: UIImage) {
         viewModel.currentRealm = RealmService(withRealmName: realmName).data
         mainView.itemNameLabel.text = "text has changed"
-        mainView.itemImageView.image = "ps3"
+        mainView.itemImageView.image = .ps3Phat
     }
-
 }
 
 
