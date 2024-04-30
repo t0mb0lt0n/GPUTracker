@@ -175,8 +175,7 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-           / delagate?.updateRealm(realmName: "sony")
-            delagate?.updateDa
+            delagate?.updateData(forRealmName: .sonyRealm, withItemImage: .ps3Phat)
             
         case 1:
             print("saved")
@@ -208,6 +207,7 @@ extension MainViewController {
     }
 }
 
+//MARK: - UISplitViewControllerDelegate
 extension MainViewController: UISplitViewControllerDelegate {
     override func collapseSecondaryViewController(_ secondaryViewController: UIViewController, for splitViewController: UISplitViewController) {
 //        splitViewController.collapseSecondaryViewController(self, for: detailsVC!)
@@ -220,5 +220,4 @@ extension MainViewController: UISplitViewControllerDelegate {
     ) -> Bool {
         true
     }
-    
 }

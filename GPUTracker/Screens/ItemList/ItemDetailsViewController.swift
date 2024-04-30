@@ -120,7 +120,7 @@ extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateData(forRealmName realmName: String, withItemImage itemImage: UIImage) {
         viewModel.currentRealm = RealmService(withRealmName: realmName).data
         mainView.itemNameLabel.text = "text has changed"
-        mainView.itemImageView.image = .ps3Phat
+        mainView.itemImageView.image = itemImage
     }
 }
 

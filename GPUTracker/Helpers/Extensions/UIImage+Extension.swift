@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIImage {
-    static let ps3Phat = UIImage(named: "ps3")
+    static let ps3Phat = UIImage(named: "ps3") ?? UIImage()
 }
