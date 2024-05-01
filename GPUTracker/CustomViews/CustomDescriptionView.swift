@@ -8,13 +8,8 @@
 import UIKit
 
 final class CustomDescriptionView: UIView {
-    var generalSegmentTableView = CustomTableView()
-    var motherBoardsSegmentTableView = CustomTableView()
-    let horizontalStackView: UIStackView = {
-        let stackView = UIStackView()
-        return stackView
-    }()
-            
+    let generalSegmentTableView = CustomTableView()
+    let motherBoardsSegmentTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .lightGray
@@ -57,7 +52,6 @@ final class CustomDescriptionView: UIView {
             $0.translatesAutoresizingMaskIntoConstraints = false
             mainScrollView.addSubview($0)
         }
-
     }
     
     final private func setupConstraints() {

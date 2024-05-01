@@ -94,8 +94,8 @@ final class MotherboardCell: UITableViewCell {
     
     private func setupCell() {
         [
-            descriptionHeaderLabel,
-            horizontalStackView
+        descriptionHeaderLabel,
+        horizontalStackView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -104,7 +104,6 @@ final class MotherboardCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            
             descriptionHeaderLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
                 constant: 2

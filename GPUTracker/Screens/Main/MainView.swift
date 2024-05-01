@@ -14,8 +14,7 @@ final class MainView: UIView {
         label.backgroundColor = .yellow
         return label
     }()
-
-    //MARK: init
+    
     init() {
         super.init(frame: .zero)
         setupView()

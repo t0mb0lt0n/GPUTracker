@@ -37,7 +37,6 @@ final class ItemDetailsViewModel {
 }
 
 //MARK: - Constants
-
 extension ItemDetailsViewModel {
     private enum Constants {
     }
