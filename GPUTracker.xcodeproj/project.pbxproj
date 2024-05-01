@@ -15,7 +15,6 @@
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
 		1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156986829E873F0009B3638 /* LaunchScreen.storyboard */; };
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
-		1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987829E88C16009B3638 /* ManufacturerCell.swift */; };
 		11733BC02BCD37BF00D3A442 /* RealmFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BBF2BCD37BF00D3A442 /* RealmFiles.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11733BC42BCD499500D3A442 /* sony.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11733BC32BCD499500D3A442 /* sony.realm */; };
@@ -46,7 +45,6 @@
 		1156986929E873F0009B3638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1156986B29E873F0009B3638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		1156987829E88C16009B3638 /* ManufacturerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCell.swift; sourceTree = "<group>"; };
 		11733BBF2BCD37BF00D3A442 /* RealmFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFiles.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11733BC32BCD499500D3A442 /* sony.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sony.realm; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */,
 				11FBAA482BC56973003F568F /* GeneralCell.swift */,
-				1156987829E88C16009B3638 /* ManufacturerCell.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
 				11FBAA462BC47355003F568F /* CustomTableView.swift */,
 				11FBAA4C2BC6F9B0003F568F /* Stack.swift */,
@@ -310,7 +307,6 @@
 				11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */,
 				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
-				1156987929E88C16009B3638 /* ManufacturerCell.swift in Sources */,
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
 				11FBAA4D2BC6F9B0003F568F /* Stack.swift in Sources */,
 				11FBAA4F2BC7374C003F568F /* UIColor+Extension.swift in Sources */,

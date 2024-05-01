@@ -43,10 +43,6 @@ final class MainViewController: UIViewController {
         title = "mainVC"
         navigationController?.isNavigationBarHidden = false
         setupTableView()
-//        tableView.register(
-//            ManufacturerCell.self,
-//            forCellReuseIdentifier: "ManufacturerCell"
-//        )
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false

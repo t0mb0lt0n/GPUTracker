@@ -92,7 +92,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         switch tableView.tag {
         case 0:
             let cellIdentifier = "Apple designed cell"
-            var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
             cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
@@ -106,11 +106,8 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "ManufacturerCell",
-                for: indexPath
-            ) as? ManufacturerCell
-            else { fatalError() }
+            let cellIdentifier = "Apple designed cell"
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             return cell
         }
     }
