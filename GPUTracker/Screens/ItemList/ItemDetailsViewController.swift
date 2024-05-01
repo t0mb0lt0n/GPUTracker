@@ -78,7 +78,6 @@ extension ItemDetailsViewController: UITableViewDataSource {
         case 0:
             return viewModel.generalSegmentRealmData.count
         case 1:
-            print("viewModel.boardsSegmentData.count", viewModel.boardsSegmentRealmData.count)
             return viewModel.boardsSegmentRealmData.count
         default:
             return 0
@@ -100,7 +99,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return cell
         case 1:
             let cellIdentifier = "Apple designed cell"
-            var cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
 

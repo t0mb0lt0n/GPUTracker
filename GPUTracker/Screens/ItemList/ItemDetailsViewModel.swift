@@ -11,6 +11,9 @@ import RealmSwift
 final class ItemDetailsViewModel {
     var generalSegmentRealmData: Results<General>
     var boardsSegmentRealmData: Results<Boards>
+    var showLoading: ((Bool) -> Void)?
+    var reloadClosure: (() -> Void)?
+    var dataSourceUpdate: (() -> Void)?
     var currentRealm: Realm? {
         didSet {
             generalSegmentRealmData = (currentRealm?.objects(General.self))!
@@ -18,9 +21,6 @@ final class ItemDetailsViewModel {
             reloadClosure!()
         }
     }
-    var showLoading: ((Bool) -> Void)?
-    var reloadClosure: (() -> Void)?
-    var dataSourceUpdate: (() -> Void)?
     
     var descriptionSegments: [String] = {
         [

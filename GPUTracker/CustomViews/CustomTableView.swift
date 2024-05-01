@@ -14,14 +14,14 @@ class CustomTableView: UITableView {
         } else {
             super .init(frame: .zero, style: .grouped)
         }
-        setupCollectionView()
+        setupTableView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCollectionView() {
+    func setupTableView() {
         register(
             GeneralCell.self,
             forCellReuseIdentifier: "GeneralCell"

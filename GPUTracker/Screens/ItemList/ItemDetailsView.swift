@@ -58,7 +58,11 @@ extension ItemDetailsView {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
-        segmentedControll.addTarget(self, action: #selector(segmentDidChanged), for: .valueChanged)
+        segmentedControll.addTarget(
+            self,
+            action: #selector(segmentDidChanged),
+            for: .valueChanged
+        )
     }
     
     final private func setupConstraints() {
