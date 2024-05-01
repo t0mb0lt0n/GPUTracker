@@ -41,13 +41,12 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "mainVC"
-        ///detailsVC?.mainView.itemNameLabel.text = "label changed"
         navigationController?.isNavigationBarHidden = false
         setupTableView()
-        tableView.register(
-            ManufacturerCell.self,
-            forCellReuseIdentifier: "ManufacturerCell"
-        )
+//        tableView.register(
+//            ManufacturerCell.self,
+//            forCellReuseIdentifier: "ManufacturerCell"
+//        )
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false

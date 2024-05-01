@@ -46,45 +46,4 @@ final class ManufacturerCell: UITableViewCell {
             contentView.addSubview($0)
         }
     }
-    
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            manufacturerLogo.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: 12
-            ),
-            manufacturerLogo.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor,
-                constant: 12
-            ),
-            manufacturerLogo.heightAnchor.constraint(equalToConstant: 32),
-            manufacturerLogo.widthAnchor.constraint(equalToConstant: 32),
-            
-            manufacturerNameLabel.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: 10
-            ),
-            manufacturerNameLabel.leadingAnchor.constraint(
-                equalTo: manufacturerLogo.trailingAnchor,
-                constant: 10
-            ),
-            
-            descriptionLabel.topAnchor.constraint(
-                equalTo: manufacturerNameLabel.bottomAnchor,
-                constant: 2
-            ),
-            descriptionLabel.leadingAnchor.constraint(
-                equalTo: manufacturerLogo.trailingAnchor,
-                constant: 10
-            ),
-            descriptionLabel.bottomAnchor.constraint(
-                equalTo: contentView.bottomAnchor,
-                constant: -10
-            )
-        ])
-    }
-    
-    func configurateCell() {
-        manufacturerLogo.image = UIImage(named: "ps3")
-    }
 }
