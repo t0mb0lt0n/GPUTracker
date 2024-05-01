@@ -8,11 +8,8 @@
 extension String {
     static let microsoft: String = "Microsoft"
     static let sony: String = "Sony"
-    static let placeholderTitle: String = "Section title"
     static let general: String = "General"
     static let motherBoards: String = "Motherboards"
-    static let cpuVariants: String = "CPU variants"
-    static let gpuVariants: String = "GPU variants"
     static let otherComponents: String = "Other Components"
     static let xbox360Realm: String = "xbox360"
     static let sonyRealm: String = "sony"

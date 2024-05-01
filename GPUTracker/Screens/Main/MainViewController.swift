@@ -78,7 +78,7 @@ extension MainViewController: UITableViewDataSource {
         case 1:
             return .sony
         default:
-            return .placeholderTitle
+            return ""
         }
     }
     

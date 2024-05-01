@@ -22,7 +22,7 @@ final class MainViewModel {
     var itemsInSection: [String: Int] {
         [
         .microsoft: 5,
-        .sony: 5
+        .sonyRealm: 5
         ]
     }
     

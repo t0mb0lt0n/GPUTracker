@@ -23,10 +23,6 @@ class CustomTableView: UITableView {
     
     func setupCollectionView() {
         register(
-            GPUInfoCellView.self,
-            forCellReuseIdentifier: "GPUInfoCellView"
-        )
-        register(
             GeneralCell.self,
             forCellReuseIdentifier: "GeneralCell"
         )
