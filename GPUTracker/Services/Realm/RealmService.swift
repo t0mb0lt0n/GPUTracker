@@ -23,8 +23,6 @@ final class RealmService {
             schemaVersion: RealmConfigurations.schemas[realmName] ?? Constants.defaultRealmSchemaVersion
         )
         let realm = try! Realm(configuration: realmConfiguration)
-        let bjcts = realm.objects(General.self)
-        print("inside \(bjcts.count) objects")
         data = realm
     }
 }

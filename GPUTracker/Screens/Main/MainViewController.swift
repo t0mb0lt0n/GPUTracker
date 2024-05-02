@@ -21,12 +21,11 @@ final class MainViewController: UIViewController {
     let tableView = UITableView(frame: .zero, style: .grouped)
     
     init(with detailsVC: ItemDetailsViewController) {
-        self.viewModel = MainViewModel()
+        self.viewModel = MainViewModel(service: .init(withRealmName: "mainProductList"))
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
         splitViewController?.delegate = self
-        
     }
     
     required init?(coder: NSCoder) {
@@ -92,9 +91,9 @@ extension MainViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.itemsInSection[.microsoft] ?? 0
+            return viewModel.itemsInSection[Constants.microsoftSectionNumber]
         case 1:
-            return 10
+            return viewModel.itemsInSection[Constants.sonySectionNumber]
         default:
             return 0
         }
@@ -214,3 +213,11 @@ extension MainViewController: UISplitViewControllerDelegate {
         true
     }
 }
+
+extension MainViewController {
+    private enum Constants {
+        static let microsoftSectionNumber: Int = 0
+        static let sonySectionNumber: Int = 1
+    }
+}
+
