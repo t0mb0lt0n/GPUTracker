@@ -28,7 +28,7 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Item List"
+        title = "Product information"
         navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
@@ -89,8 +89,14 @@ extension ItemDetailsViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cellIdentifier = "Apple designed cell"
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-        cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+        let cell = UITableViewCell(
+            style: .value1,
+            reuseIdentifier: cellIdentifier
+        )
+        cell.textLabel?.font = .systemFont(
+            ofSize: 17,
+            weight: .medium
+        )
         switch tableView.tag {
         case 0:
             cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName

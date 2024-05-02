@@ -19,6 +19,7 @@ class CustomTableView: UITableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        //backgroundColor = .white
     }
     
     func setupTableView() {

@@ -11,14 +11,14 @@ final class MainView: UIView {
     let itemNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Debug Label"
-        label.backgroundColor = .yellow
         return label
     }()
     
     init() {
         super.init(frame: .zero)
         setupView()
-        setupConstraints()        
+        setupConstraints()
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

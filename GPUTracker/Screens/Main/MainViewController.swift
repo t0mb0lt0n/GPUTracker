@@ -45,6 +45,7 @@ final class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        tableView.backgroundColor = .secondarySystemBackground
         mainView.backgroundColor = .secondarySystemBackground
     }
 
@@ -187,7 +188,7 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController {
     private func setupTableView() {
         mainView.addSubview(tableView)
-        tableView.backgroundColor = .yellow
+        tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(
