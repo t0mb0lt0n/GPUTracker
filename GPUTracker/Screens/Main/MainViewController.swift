@@ -173,9 +173,10 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.row])
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            resignFirstResponder()
         case 1:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.row])
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
         default:
             break
         }
