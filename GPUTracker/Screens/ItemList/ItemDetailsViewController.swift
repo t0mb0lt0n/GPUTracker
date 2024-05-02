@@ -88,35 +88,28 @@ extension ItemDetailsViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
+        let cellIdentifier = "Apple designed cell"
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+        cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
         switch tableView.tag {
         case 0:
-            let cellIdentifier = "Apple designed cell"
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-            cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
             cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
-
             return cell
         case 1:
-            let cellIdentifier = "Apple designed cell"
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
-            cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
             cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
-
             return cell
         default:
-            let cellIdentifier = "Apple designed cell"
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
             return cell
         }
     }
 }
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
-    func updateData(forRealmName realmName: String, withItemImage itemImage: UIImage) {
-        viewModel.currentRealm = RealmService(withRealmName: realmName).data
+    func updateData(forItemIndex itemIndexName: String) {
+        viewModel.currentRealm = RealmService(withRealmName: itemIndexName).data
         mainView.itemNameLabel.text = "text has changed"
-        mainView.itemImageView.image = itemImage
+        //mainView.itemImageView.image = itemImage
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 protocol UpdateRealmDelegate: AnyObject {
-    func updateData(forRealmName realmName: String, withItemImage itemImage: UIImage)
+    func updateData(forItemIndex itemIndexName: String)
 }
 
 final class MainViewController: UIViewController {
@@ -173,10 +173,9 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            delagate?.updateData(forRealmName: .sonyRealm, withItemImage: .ps3Phat)
-            
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.row])
         case 1:
-            print("saved")
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.row])
         default:
             break
         }

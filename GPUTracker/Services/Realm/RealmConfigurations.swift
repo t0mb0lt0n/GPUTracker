@@ -8,7 +8,7 @@
 import Foundation
 
 struct RealmConfigurations {
-    static let realmNames: [String] = [
+    static let itemIndexName: [String] = [
         .xbox360Realm,
         .sonyRealm
     ]
