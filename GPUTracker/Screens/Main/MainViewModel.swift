@@ -11,8 +11,8 @@ import RealmSwift
 final class MainViewModel {
     private(set) var isContentDownloading = false
     private var service: RealmService
-    private var microsoftSection: Results<MicrosoftProductList>?
-    private var sonySection: Results<SonyProductList>?
+     var microsoftSection: Results<MicrosoftProductList>?
+     var sonySection: Results<SonyProductList>?
     var showLoading: ((Bool) -> Void)?
     var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?

@@ -105,11 +105,17 @@ extension MainViewController: UITableViewDataSource {
     ) -> UITableViewCell {
         let cellIdentifier = "Apple designed cell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(
+        cell = UITableViewCell(
                 style: .value1,
                 reuseIdentifier: cellIdentifier
             )
+        switch indexPath.section {
+        case 0:
+            cell?.textLabel?.text = viewModel.microsoftSection![indexPath.row].productName
+        case 1:
+            cell?.textLabel?.text = viewModel.sonySection![indexPath.row].productName
+        default:
+            cell?.textLabel?.text = ""
         }
         
         cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
