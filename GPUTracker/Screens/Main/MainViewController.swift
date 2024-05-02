@@ -56,7 +56,7 @@ final class MainViewController: UIViewController {
     }
 }
 
-//MARK: - MainViewController extensions
+//MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,7 +90,6 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        
         switch section {
         case 0:
             return viewModel.itemsInSection[.microsoft] ?? 0
@@ -107,7 +106,6 @@ extension MainViewController: UITableViewDataSource {
     ) -> UITableViewCell {
         let cellIdentifier = "Apple designed cell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        
         if cell == nil {
             cell = UITableViewCell(
                 style: .value1,
