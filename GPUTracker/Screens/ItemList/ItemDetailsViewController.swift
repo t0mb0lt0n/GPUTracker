@@ -109,7 +109,7 @@ extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateData(forItemIndex itemIndexName: String) {
         viewModel.currentRealm = RealmService(withRealmName: itemIndexName).data
         mainView.itemNameLabel.text = "text has changed"
-        //mainView.itemImageView.image = itemImage
+        mainView.itemImageView.image = UIImage(named: itemIndexName)
     }
 }
 
