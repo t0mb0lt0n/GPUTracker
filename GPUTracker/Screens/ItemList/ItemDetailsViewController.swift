@@ -53,7 +53,7 @@ final class ItemDetailsViewController: UIViewController {
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
-        ].forEach { [weak self] tableView in
+        ].forEach { tableView in
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -79,10 +79,7 @@ final class ItemDetailsViewController: UIViewController {
 
 //MARK: - UITableViewDataSource
 extension ItemDetailsViewController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
         case 0:
             return viewModel.generalSegmentRealmData.count
