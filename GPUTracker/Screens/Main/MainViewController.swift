@@ -17,8 +17,10 @@ final class MainViewController: UIViewController {
     var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
     weak var delagate: UpdateRealmDelegate?
-    
-    let tableView = UITableView(frame: .zero, style: .grouped)
+    let tableView = UITableView(
+        frame: .zero,
+        style: .grouped
+    )
     
     init(with detailsVC: ItemDetailsViewController) {
         self.viewModel = MainViewModel(service: .init(withRealmName: "mainProductList"))
@@ -112,11 +114,11 @@ extension MainViewController: UITableViewDataSource {
             )
         switch indexPath.section {
         case 0:
-            cell?.textLabel?.text = viewModel.microsoftSection![indexPath.row].productName
+            cell?.textLabel?.text = viewModel.microsoftSection[indexPath.row].productName
         case 1:
-            cell?.textLabel?.text = viewModel.sonySection![indexPath.row].productName
+            cell?.textLabel?.text = viewModel.sonySection[indexPath.row].productName
         default:
-            cell?.textLabel?.text = ""
+            cell?.textLabel?.text = .failure
         }
         
         cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -167,6 +169,7 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,

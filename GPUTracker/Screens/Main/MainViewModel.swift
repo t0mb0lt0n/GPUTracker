@@ -11,29 +11,29 @@ import RealmSwift
 final class MainViewModel {
     private(set) var isContentDownloading = false
     private var service: RealmService
-     var microsoftSection: Results<MicrosoftProductList>?
-     var sonySection: Results<SonyProductList>?
+    var microsoftSection: Results<MicrosoftProductList>
+    var sonySection: Results<SonyProductList>
     var showLoading: ((Bool) -> Void)?
     var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
         [
-        service.data?.objects(MicrosoftProductList.self) as Any,
-        service.data?.objects(SonyProductList.self) as Any
+            service.data?.objects(MicrosoftProductList.self) as Any,
+            service.data?.objects(SonyProductList.self) as Any
         ].count
     }
     
     var itemsInSection: [Int] {
-        guard
-            let microsoftItemsInSection = microsoftSection?.count,
-            let sonyItemsInSection = sonySection?.count
-        else {
-            return [0,0]
-        }
+//        guard
+//            let microsoftItemsInSection = microsoftSection.count,
+//            let sonyItemsInSection = sonySection.count
+//        else {
+//            return [0,0]
+//        }
         return [
-               microsoftItemsInSection,
-               sonyItemsInSection
-               ]
+            microsoftSection.count,
+            sonySection.count
+        ]
     }
     
     init(service: RealmService) {
@@ -41,8 +41,14 @@ final class MainViewModel {
         guard
             let microsoftSection = self.service.data?.objects(MicrosoftProductList.self),
             let sonySection = self.service.data?.objects(SonyProductList.self)
-        else { return }
-              
+        else {
+            let defaultRealm = RealmFileCreator()
+            defaultRealm.createEmptyRealmFile()
+            microsoftSection = defaultRealm.emptyRealm.objects(MicrosoftProductList.self)
+            sonySection = defaultRealm.emptyRealm.objects(SonyProductList.self)
+            return
+        }
+        
         self.microsoftSection = microsoftSection
         self.sonySection = sonySection
     }

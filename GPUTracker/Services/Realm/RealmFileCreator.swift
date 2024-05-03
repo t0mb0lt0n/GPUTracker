@@ -11,11 +11,11 @@ class RealmFileCreator {
     var emptyRealm = try! Realm()
     
     func createEmptyRealmFile() {
-        //let testRecord = TestTable(testValue: "Empty value is written")
+        let testRecord = SonyProductList(value: AnyObject.self)
         try! emptyRealm.write {
-            //Uncomment required
-            //emptyRealm.add(testRecord)
-            ////emptyRealm.deleteAll()
+            //Uncomment if required
+            emptyRealm.add(testRecord)
+            emptyRealm.deleteAll()
         }
     }
 }

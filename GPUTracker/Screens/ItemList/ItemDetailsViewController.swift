@@ -72,6 +72,7 @@ final class ItemDetailsViewController: UIViewController {
     }
 }
 
+//MARK: - UITableViewDataSource
 extension ItemDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView.tag {
@@ -110,6 +111,17 @@ extension ItemDetailsViewController: UITableViewDataSource {
         }
     }
 }
+
+//MARK: - UITableViewDelegate
+extension ItemDetailsViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateData(forItemIndex itemIndexName: String) {
