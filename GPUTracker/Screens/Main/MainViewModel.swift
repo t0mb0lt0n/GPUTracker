@@ -13,20 +13,23 @@ final class MainViewModel {
     private var service: RealmService
     var microsoftSection: Results<MicrosoftProductList>
     var sonySection: Results<SonyProductList>
+    var segaSection: Results<SegaProductList>
     var showLoading: ((Bool) -> Void)?
     var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
         [
         service.data.objects(MicrosoftProductList.self),
-        service.data.objects(SonyProductList.self)
+        service.data.objects(SonyProductList.self),
+        service.data.objects(SegaProductList.self)
         ].count
     }
     
     var itemsInSection: [Int] {
         [
         microsoftSection.count,
-        sonySection.count
+        sonySection.count,
+        segaSection.count
         ]
     }
     
@@ -34,6 +37,7 @@ final class MainViewModel {
         self.service = service
         microsoftSection = self.service.data.objects(MicrosoftProductList.self)
         sonySection = self.service.data.objects(SonyProductList.self)
+        segaSection = self.service.data.objects(SegaProductList.self)
     }
     
     func findPhotos() {

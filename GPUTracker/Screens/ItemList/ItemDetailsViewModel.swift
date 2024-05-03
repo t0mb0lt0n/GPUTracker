@@ -16,8 +16,8 @@ final class ItemDetailsViewModel {
     var dataSourceUpdate: (() -> Void)?
     var currentRealm: Realm {
         didSet {
-            generalSegmentRealmData = (currentRealm.objects(General.self))
-            boardsSegmentRealmData = (currentRealm.objects(Boards.self))
+            generalSegmentRealmData = currentRealm.objects(General.self)
+            boardsSegmentRealmData = currentRealm.objects(Boards.self)
             reloadClosure!()
         }
     }
@@ -32,8 +32,8 @@ final class ItemDetailsViewModel {
     
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
-        generalSegmentRealmData = (currentRealm.objects(General.self))
-        boardsSegmentRealmData = (currentRealm.objects(Boards.self))
+        generalSegmentRealmData = currentRealm.objects(General.self)
+        boardsSegmentRealmData = currentRealm.objects(Boards.self)
     }
 }
 

@@ -59,6 +59,17 @@ class SonyProductList: Object {
     }
 }
 
+class SegaProductList: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var productName: String = ""
+    @objc dynamic var shortDetails: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
+
+
 
 
 

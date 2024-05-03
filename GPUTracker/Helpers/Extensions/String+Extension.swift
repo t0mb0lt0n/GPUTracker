@@ -7,6 +7,7 @@
 
 extension String {
     static let microsoftHeader: String = "Microsoft"
+    static let segaHeader: String = "Sega"
     static let sonyHeader: String = "Sony"
     static let generalSegmentHeader: String = "General"
     static let motherboardsSegmentHeader: String = "Motherboards"

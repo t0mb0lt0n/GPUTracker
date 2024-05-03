@@ -49,6 +49,10 @@ final class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        tableView.register(
+            MainCell.self,
+            forCellReuseIdentifier: "\(MainCell.self)"
+        )
         tableView.backgroundColor = .secondarySystemBackground
         mainView.backgroundColor = .secondarySystemBackground
     }
@@ -62,7 +66,6 @@ final class MainViewController: UIViewController {
 
 //MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections
     }
@@ -99,6 +102,8 @@ extension MainViewController: UITableViewDataSource {
             return viewModel.itemsInSection[Constants.microsoftSectionNumber]
         case 1:
             return viewModel.itemsInSection[Constants.sonySectionNumber]
+        case 2:
+            return viewModel.itemsInSection[Constants.segaSectionNumber]
         default:
             return 0
         }
@@ -108,26 +113,38 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cellIdentifier = "Apple designed cell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        cell = UITableViewCell(
-                style: .value1,
-                reuseIdentifier: cellIdentifier
-            )
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "\(MainCell.self)",
+            for: indexPath
+        ) as? MainCell else {
+            fatalError("Cell dequeue error")
+        }
+//        cell = UITableViewCell(
+//            style: .value1,
+//            reuseIdentifier: cellIdentifier
+//        )
+//        cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+//        cell.accessoryType = .disclosureIndicator
+//        cell.accessoryType = .detailButton
+        
         switch indexPath.section {
         case 0:
-            cell?.accessoryType = .disclosureIndicator
-            cell?.accessoryType = .detailButton
-            cell?.textLabel?.text = viewModel.microsoftSection[indexPath.row].productName
-            cell?.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            //            cell.textLabel?.text = viewModel.microsoftSection[indexPath.row].productName
+            //            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            //cell.onlineStatusImageView.image = viewModel.microsoftSection[indexPath.row].shortDetails
         case 1:
-            cell?.textLabel?.text = viewModel.sonySection[indexPath.row].productName
+            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
+            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
+        case 2:
+            cell.textLabel?.text = viewModel.segaSection[indexPath.row].productName
+            cell.detailTextLabel?.text = viewModel.segaSection[indexPath.row].shortDetails
         default:
-            cell?.textLabel?.text = .failurePlaceholder
+            cell.textLabel?.text = .failurePlaceholder
         }
         
-        cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
-        return cell!
+        return cell
     }
     //setup header in section height
     func tableView(
@@ -150,26 +167,29 @@ extension MainViewController: UITableViewDataSource {
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let customHeaderView = UIView()
-        let manufacturerNameLabel = UILabel(
+        let developerNameLabel = UILabel(
             frame: CGRect(
-                x: 5,
+                x: 15,
                 y: 20,
                 width: 150,
                 height: 23
             )
         )
-        manufacturerNameLabel.textColor = .black
-        manufacturerNameLabel.font = .systemFont(ofSize: 20, weight: .semibold)
-        customHeaderView.addSubview(manufacturerNameLabel)
+        developerNameLabel.textColor = .gray
+        //manufacturerNameLabel.font = .systemFont(ofSize: 17, weight: .regular)
+        customHeaderView.addSubview(developerNameLabel)
         
         switch section {
         case 0:
-            manufacturerNameLabel.text = .microsoftHeader
+            developerNameLabel.text = .microsoftHeader
         case 1:
-            manufacturerNameLabel.text = .sonyHeader
+            developerNameLabel.text = .sonyHeader
+        case 2:
+            developerNameLabel.text = .segaHeader
         default:
             return nil
         }
+        
         return customHeaderView
     }
 }
@@ -186,6 +206,8 @@ extension MainViewController: UITableViewDelegate {
             resignFirstResponder()
         case 1:
             delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+        case 2:
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
         default:
             break
         }
@@ -198,6 +220,8 @@ extension MainViewController: UITableViewDelegate {
             delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
             resignFirstResponder()
         case 1:
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+        case 2:
             delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
         default:
             break
@@ -245,6 +269,8 @@ extension MainViewController {
     private enum Constants {
         static let microsoftSectionNumber: Int = 0
         static let sonySectionNumber: Int = 1
+        static let segaSectionNumber: Int = 2
+
     }
 }
 
