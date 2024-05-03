@@ -50,8 +50,13 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupMainView() {
-        mainView.itemDescriptionView.generalSegmentTableView.dataSource = self
-        mainView.itemDescriptionView.motherBoardsSegmentTableView.dataSource = self
+        [
+        mainView.itemDescriptionView.generalSegmentTableView,
+        mainView.itemDescriptionView.motherBoardsSegmentTableView
+        ].forEach { tableView in
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
         
         for (index, value) in viewModel.descriptionSegments.enumerated() {
             mainView.segmentedControll.insertSegment(
@@ -121,7 +126,6 @@ extension ItemDetailsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateData(forItemIndex itemIndexName: String) {
