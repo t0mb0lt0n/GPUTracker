@@ -18,39 +18,22 @@ final class MainViewModel {
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
         [
-            service.data?.objects(MicrosoftProductList.self) as Any,
-            service.data?.objects(SonyProductList.self) as Any
+        service.data.objects(MicrosoftProductList.self),
+        service.data.objects(SonyProductList.self)
         ].count
     }
     
     var itemsInSection: [Int] {
-//        guard
-//            let microsoftItemsInSection = microsoftSection.count,
-//            let sonyItemsInSection = sonySection.count
-//        else {
-//            return [0,0]
-//        }
-        return [
-            microsoftSection.count,
-            sonySection.count
+        [
+        microsoftSection.count,
+        sonySection.count
         ]
     }
     
     init(service: RealmService) {
         self.service = service
-        guard
-            let microsoftSection = self.service.data?.objects(MicrosoftProductList.self),
-            let sonySection = self.service.data?.objects(SonyProductList.self)
-        else {
-            let defaultRealm = RealmFileCreator()
-            defaultRealm.createEmptyRealmFile()
-            microsoftSection = defaultRealm.emptyRealm.objects(MicrosoftProductList.self)
-            sonySection = defaultRealm.emptyRealm.objects(SonyProductList.self)
-            return
-        }
-        
-        self.microsoftSection = microsoftSection
-        self.sonySection = sonySection
+        microsoftSection = self.service.data.objects(MicrosoftProductList.self)
+        sonySection = self.service.data.objects(SonyProductList.self)
     }
     
     func findPhotos() {

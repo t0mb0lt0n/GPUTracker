@@ -9,14 +9,13 @@ import Foundation
 import RealmSwift
 
 final class RealmService {
-    var data: Realm?
+    var data: Realm
     
     init(withRealmName realmName: String) {
-        guard let realmPath = Bundle.main.url(
+        let realmPath = Bundle.main.url(
             forResource: realmName,
             withExtension: "realm"
-        ) else { return }
-        
+        )
         let realmConfiguration = Realm.Configuration(
             fileURL: realmPath,
             readOnly: true,
