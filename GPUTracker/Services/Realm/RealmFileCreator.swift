@@ -6,16 +6,35 @@
 //
 
 import RealmSwift
+import Foundation
 
 class RealmFileCreator {
-    var emptyRealm = try! Realm()
-    
-    func createEmptyRealmFile() {
-        let testRecord = SonyProductList(value: AnyObject.self)
-        try! emptyRealm.write {
-            //Uncomment if required
-            emptyRealm.add(testRecord)
-            emptyRealm.deleteAll()
-        }
-    }
+//    var emptyRealm: Realm
+//    
+//    init() {
+////        guard let realmPath = Bundle.main.url(
+////            forResource: ,
+////            withExtension: "realm"
+////        ) else {
+////            let defaultRealm = RealmFileCreator()
+////            data = defaultRealm.emptyRealm
+////            return
+////        }
+//        
+//        let realmConfiguration = Realm.Configuration(
+//            readOnly: false,
+//            schemaVersion: 68
+//        )
+//        let realm = try! Realm(configuration: realmConfiguration)
+//        emptyRealm = realm
+//    }
+//    
+//    func createEmptyRealmFile() {
+//        let testRecord = SonyProductList(value: AnyObject.self)
+//        try! emptyRealm.write {
+//            //Uncomment if required
+//            emptyRealm.add(testRecord)
+//            emptyRealm.deleteAll()
+//        }
+//    }
 }
