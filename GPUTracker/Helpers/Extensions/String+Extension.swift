@@ -6,16 +6,15 @@
 //
 
 extension String {
-    static let microsoft: String = "Microsoft"
-    static let sony: String = "Sony"
-    static let general: String = "General"
-    static let motherBoards: String = "Motherboards"
-    static let otherComponents: String = "Other Components"
+    static let microsoftHeader: String = "Microsoft"
+    static let sonyHeader: String = "Sony"
+    static let generalSegmentHeader: String = "General"
+    static let motherboardsSegmentHeader: String = "Motherboards"
+    static let otherComponentsSegmentHeader: String = "Other Components"
     static let xbox360Realm: String = "xbox360"
     static let sonyRealm: String = "sony"
-    static let failure: String = "failure"
-    static let realms: [String] = [
-        xbox360Realm,
-        sonyRealm
-    ]
+    static let mainProductListRealm: String = "mainProductList"
+    static let failurePlaceholder: String = "failure"
+    static let productDetailsHeader: String = "Product details"
+    static let mainCatalogue: String = "Main catalogue"
 }

@@ -14,25 +14,26 @@ final class ItemDetailsViewModel {
     var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
     var dataSourceUpdate: (() -> Void)?
-    var currentRealm: Realm? {
+    var currentRealm: Realm {
         didSet {
-            generalSegmentRealmData = (currentRealm?.objects(General.self))!
-            boardsSegmentRealmData = (currentRealm?.objects(Boards.self))!
+            generalSegmentRealmData = (currentRealm.objects(General.self))
+            boardsSegmentRealmData = (currentRealm.objects(Boards.self))
             reloadClosure!()
         }
     }
     
     var descriptionSegments: [String] = {
         [
-        .general,
-        .motherBoards,
+        .generalSegmentHeader,
+        .motherboardsSegmentHeader,
+        .otherComponentsSegmentHeader
         ]
     }()
     
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
-        generalSegmentRealmData = (currentRealm?.objects(General.self))!
-        boardsSegmentRealmData = (currentRealm?.objects(Boards.self))!
+        generalSegmentRealmData = (currentRealm.objects(General.self))
+        boardsSegmentRealmData = (currentRealm.objects(Boards.self))
     }
 }
 

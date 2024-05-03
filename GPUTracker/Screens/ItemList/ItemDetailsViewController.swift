@@ -28,7 +28,7 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Product information"
+        title = .productDetailsHeader
         navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()

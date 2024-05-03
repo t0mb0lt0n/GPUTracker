@@ -20,10 +20,12 @@ final class MainViewController: UIViewController {
     let tableView = UITableView(
         frame: .zero,
         style: .grouped
+        
     )
     
+    
     init(with detailsVC: ItemDetailsViewController) {
-        self.viewModel = MainViewModel(service: .init(withRealmName: "mainProductList"))
+        self.viewModel = MainViewModel(service: .init(withRealmName: .mainProductListRealm))
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
@@ -41,7 +43,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "mainVC"
+        title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
         setupTableView()
         tableView.delegate = self
@@ -71,11 +73,11 @@ extension MainViewController: UITableViewDataSource {
     ) -> String? {
         switch section {
         case 0:
-            return .microsoft
+            return .microsoftHeader
         case 1:
-            return .sony
+            return .sonyHeader
         default:
-            return ""
+            return .failurePlaceholder
         }
     }
     
@@ -114,11 +116,14 @@ extension MainViewController: UITableViewDataSource {
             )
         switch indexPath.section {
         case 0:
+            cell?.accessoryType = .disclosureIndicator
+            cell?.accessoryType = .detailButton
             cell?.textLabel?.text = viewModel.microsoftSection[indexPath.row].productName
+            cell?.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
         case 1:
             cell?.textLabel?.text = viewModel.sonySection[indexPath.row].productName
         default:
-            cell?.textLabel?.text = .failure
+            cell?.textLabel?.text = .failurePlaceholder
         }
         
         cell?.textLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
@@ -150,7 +155,7 @@ extension MainViewController: UITableViewDataSource {
                 x: 5,
                 y: 20,
                 width: 150,
-                height: 15
+                height: 23
             )
         )
         manufacturerNameLabel.textColor = .black
@@ -159,9 +164,9 @@ extension MainViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            manufacturerNameLabel.text = .microsoft
+            manufacturerNameLabel.text = .microsoftHeader
         case 1:
-            manufacturerNameLabel.text = .sony
+            manufacturerNameLabel.text = .sonyHeader
         default:
             return nil
         }
@@ -185,6 +190,18 @@ extension MainViewController: UITableViewDelegate {
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            resignFirstResponder()
+        case 1:
+            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+        default:
+            break
+        }
     }
 }
 
