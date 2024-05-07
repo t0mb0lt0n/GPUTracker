@@ -8,6 +8,24 @@
 import UIKit
 
 final class MainView: UIView {
+    lazy var mainTableView: UITableView = {
+        let tableView = UITableView(
+            frame: .zero,
+            style: .grouped
+        )
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.isScrollEnabled = false
+        tableView.register(
+            MainCell.self,
+            forCellReuseIdentifier: "\(MainCell.self)"
+        )
+        tableView.backgroundColor = .secondarySystemBackground
+        tableView.estimatedRowHeight = 10
+        tableView.rowHeight = UITableView.automaticDimension
+        return tableView
+    }()
+    
     let itemNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Debug Label"
@@ -30,7 +48,8 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
-        itemNameLabel
+        itemNameLabel,
+        mainTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -42,7 +61,12 @@ extension MainView {
             itemNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
             itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             itemNameLabel.widthAnchor.constraint(equalToConstant: 170),
-            itemNameLabel.heightAnchor.constraint(equalToConstant: 100)
+            itemNameLabel.heightAnchor.constraint(equalToConstant: 100),
+            
+            mainTableView.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 50),
+            mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

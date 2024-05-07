@@ -15,9 +15,7 @@ final class MainViewModel {
     var sonySection: Results<SonyProductList>
     var segaSection: Results<SegaProductList>
     var showLoading: ((Bool) -> Void)?
-    var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
-    var estimatedCellHeight: CGFloat = 0
     var numberOfSections: Int {
         [
         service.data.objects(MicrosoftProductList.self),
@@ -32,6 +30,10 @@ final class MainViewModel {
         sonySection.count,
         segaSection.count
         ]
+    }
+    
+    func reloadData() {
+        reloadClosure!()
     }
     
     init(service: RealmService) {

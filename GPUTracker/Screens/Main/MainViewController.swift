@@ -17,10 +17,10 @@ final class MainViewController: UIViewController {
     var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
     weak var delagate: UpdateRealmDelegate?
-    let tableView = UITableView(
-        frame: .zero,
-        style: .grouped
-    )
+//    let tableView = UITableView(
+//        frame: .zero,
+//        style: .grouped
+//    )
     
     
     init(with detailsVC: ItemDetailsViewController) {
@@ -29,8 +29,8 @@ final class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
         splitViewController?.delegate = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     required init?(coder: NSCoder) {
@@ -46,28 +46,32 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
-        setupTableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = false
-        tableView.register(
-            MainCell.self,
-            forCellReuseIdentifier: "\(MainCell.self)"
-        )
-        tableView.backgroundColor = .secondarySystemBackground
+        //setupTableView()
+        mainView.mainTableView.delegate = self
+        mainView.mainTableView.dataSource = self
+//        tableView.isScrollEnabled = false
+//        tableView.register(
+//            MainCell.self,
+//            forCellReuseIdentifier: "\(MainCell.self)"
+//        )
+//        tableView.backgroundColor = .secondarySystemBackground
         mainView.backgroundColor = .secondarySystemBackground
-        tableView.estimatedRowHeight = 10
-        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 10
+//        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
+        viewModel.reloadData()
     }
 
     private func setupViewModel() {
         viewModel.reloadClosure = {
-            
+            self.reloadTableView()
         }
+    }
+    
+    private func reloadTableView() {
+        mainView.mainTableView.reloadData()
     }
 }
 
@@ -129,8 +133,8 @@ extension MainViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            //cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
-            //cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
             //tableView.reloadData()
             print()
         case 1:
@@ -248,22 +252,22 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController {
     private func setupTableView() {
-        mainView.addSubview(tableView)
-        tableView.backgroundColor = .white
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.topAnchor,
-                constant: 150
-            ),
-            tableView.leadingAnchor.constraint(
-                equalTo: mainView.safeAreaLayoutGuide.leadingAnchor
-            ),
-            tableView.trailingAnchor.constraint(
-                equalTo: mainView.trailingAnchor
-            ),
-            tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
-        ])
+        //mainView.addSubview(tableView)
+//        tableView.backgroundColor = .white
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            tableView.topAnchor.constraint(
+//                equalTo: view.safeAreaLayoutGuide.topAnchor,
+//                constant: 150
+//            ),
+//            tableView.leadingAnchor.constraint(
+//                equalTo: mainView.safeAreaLayoutGuide.leadingAnchor
+//            ),
+//            tableView.trailingAnchor.constraint(
+//                equalTo: mainView.trailingAnchor
+//            ),
+//            tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
+//        ])
     }
 }
 
