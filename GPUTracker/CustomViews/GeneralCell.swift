@@ -39,11 +39,12 @@ final class GeneralCell: UITableViewCell {
     private func setupCell() {
         [
          descriptionNameLabel,
-         descriptionValueTextView,
+         //descriptionValueTextView,
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
+        contentView.addSubview(descriptionValueTextView)
     }
     
     private func setupConstraints() {

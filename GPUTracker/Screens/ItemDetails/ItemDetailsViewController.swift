@@ -68,7 +68,6 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentedControll.selectedSegmentIndex = 0
     }
     
-    
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
@@ -129,7 +128,9 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: UpdateRealmDelegate {
     func updateData(forItemIndex itemIndexName: String) {
-        viewModel.currentRealm = RealmService(withRealmName: itemIndexName).data
+        viewModel.currentRealm = RealmService(
+            withRealmName: itemIndexName
+        ).data
         mainView.itemNameLabel.text = "text has changed"
         mainView.itemImageView.image = UIImage(named: itemIndexName)
     }

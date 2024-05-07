@@ -138,7 +138,7 @@
 		1156987129E875DB009B3638 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				11DDC1F92BBED9F0007D8CF3 /* ItemList */,
+				11DDC1F92BBED9F0007D8CF3 /* ItemDetails */,
 				11AE40D32BA9F797001B52F8 /* Main */,
 			);
 			path = Screens;
@@ -192,14 +192,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		11DDC1F92BBED9F0007D8CF3 /* ItemList */ = {
+		11DDC1F92BBED9F0007D8CF3 /* ItemDetails */ = {
 			isa = PBXGroup;
 			children = (
 				11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */,
 				11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */,
 				11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */,
 			);
-			path = ItemList;
+			path = ItemDetails;
 			sourceTree = "<group>";
 		};
 		11DDC1FC2BBEE466007D8CF3 /* Helpers */ = {

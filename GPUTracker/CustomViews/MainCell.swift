@@ -19,15 +19,27 @@ final class MainCell: UITableViewCell {
     var onlineStatusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .onlineStatusImage
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
+    
+//    let itemImageView: UIImageView = {
+//        let logoImageView = UIImageView()
+//        let logoImage = UIImage(named: "xbox")
+//        logoImageView.clipsToBounds = true
+//        logoImageView.contentMode = .scaleAspectFill
+//        logoImageView.image = logoImage
+//        return logoImageView
+//    }()
         
     let descriptionValueTextView: UITextView = {
-        let label = UITextView()
+        let label = UITextView(frame: CGRect(x: 150, y: 0, width: 100, height: 0))
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
-        label.text = "October 1990"
+        label.text = "jkhjkhjklhjklhkljhkjlhkjhkjhjkhkjlhkjlhjkhkjlkljl;kj;lkj;ljkljlk;kll"
         label.isScrollEnabled = false
+        //label.numberOfLines = 2
         label.isEditable = false
         return label
     }()
@@ -46,7 +58,7 @@ final class MainCell: UITableViewCell {
         [
          descriptionNameLabel,
          descriptionValueTextView,
-         onlineStatusImageView
+         //onlineStatusImageView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -57,7 +69,7 @@ final class MainCell: UITableViewCell {
         NSLayoutConstraint.activate([
             descriptionNameLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: 10
+                constant: 0
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
@@ -70,26 +82,27 @@ final class MainCell: UITableViewCell {
             
             descriptionValueTextView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: 10
+                constant: 0
             ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: 15
+                constant: -15
             ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: leadingAnchor,
                 constant: 150
             ),
-            descriptionValueTextView.heightAnchor.constraint(equalToConstant: 100),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
-                constant: -15
+                constant: 0
             ),
             
-            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 20),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 20),
-            onlineStatusImageView.leadingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor, constant: 10)
+//            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+//            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 20),
+//            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 20),
+//            //onlineStatusImageView.leadingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor, constant: 10)
+//            onlineStatusImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+//            onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 }

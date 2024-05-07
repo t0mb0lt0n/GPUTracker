@@ -17,6 +17,7 @@ final class MainViewModel {
     var showLoading: ((Bool) -> Void)?
     var hideContent: (() -> Void)?
     var reloadClosure: (() -> Void)?
+    var estimatedCellHeight: CGFloat = 0
     var numberOfSections: Int {
         [
         service.data.objects(MicrosoftProductList.self),
@@ -38,10 +39,6 @@ final class MainViewModel {
         microsoftSection = self.service.data.objects(MicrosoftProductList.self)
         sonySection = self.service.data.objects(SonyProductList.self)
         segaSection = self.service.data.objects(SegaProductList.self)
-    }
-    
-    func findPhotos() {
-        reloadClosure!()
     }
     
     func handleLoadingEvent(_ isDownloading: Bool) {

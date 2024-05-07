@@ -20,7 +20,6 @@ final class MainViewController: UIViewController {
     let tableView = UITableView(
         frame: .zero,
         style: .grouped
-        
     )
     
     
@@ -30,6 +29,8 @@ final class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
         splitViewController?.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +56,12 @@ final class MainViewController: UIViewController {
         )
         tableView.backgroundColor = .secondarySystemBackground
         mainView.backgroundColor = .secondarySystemBackground
+        tableView.estimatedRowHeight = 10
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     private func setupViewModel() {
@@ -119,27 +126,21 @@ extension MainViewController: UITableViewDataSource {
         ) as? MainCell else {
             fatalError("Cell dequeue error")
         }
-//        cell = UITableViewCell(
-//            style: .value1,
-//            reuseIdentifier: cellIdentifier
-//        )
-//        cell.textLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-//        cell.accessoryType = .disclosureIndicator
-//        cell.accessoryType = .detailButton
         
         switch indexPath.section {
         case 0:
-            //            cell.textLabel?.text = viewModel.microsoftSection[indexPath.row].productName
-            //            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
-            cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
-            //cell.onlineStatusImageView.image = viewModel.microsoftSection[indexPath.row].shortDetails
+            //cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
+            //cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            //tableView.reloadData()
+            print()
         case 1:
-            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
-            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetails
+//            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
+//            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetail
+            print()
         case 2:
-            cell.textLabel?.text = viewModel.segaSection[indexPath.row].productName
-            cell.detailTextLabel?.text = viewModel.segaSection[indexPath.row].shortDetails
+//            cell.textLabel?.text = viewModel.segaSection[indexPath.row].productName
+//            cell.detailTextLabel?.text = viewModel.segaSection[indexPath.row].shortDetails
+            print()
         default:
             cell.textLabel?.text = .failurePlaceholder
         }
@@ -203,7 +204,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
-            resignFirstResponder()
+            tableView.reloadData()
         case 1:
             delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
         case 2:
@@ -227,7 +228,23 @@ extension MainViewController: UITableViewDelegate {
             break
         }
     }
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return 200// Например, 100 для каждой ячейки
+//    }
+
 }
+
+
 
 extension MainViewController {
     private func setupTableView() {
