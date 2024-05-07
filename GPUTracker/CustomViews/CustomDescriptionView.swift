@@ -80,6 +80,6 @@ final class CustomDescriptionView: UIView {
 
 extension CustomDescriptionView {
     private enum Constants {
-        static let numberOfSegmets: Int = 5
+        static let numberOfSegmets: Int = 3
     }
 }
