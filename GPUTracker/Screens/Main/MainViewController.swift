@@ -17,20 +17,15 @@ final class MainViewController: UIViewController {
     var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
     weak var delagate: UpdateRealmDelegate?
-//    let tableView = UITableView(
-//        frame: .zero,
-//        style: .grouped
-//    )
-    
     
     init(with detailsVC: ItemDetailsViewController) {
-        self.viewModel = MainViewModel(service: .init(withRealmName: .mainProductListRealm))
+        self.viewModel = MainViewModel(
+            service: .init(withRealmName: .mainProductListRealm)
+        )
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
         splitViewController?.delegate = self
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     required init?(coder: NSCoder) {
@@ -40,28 +35,24 @@ final class MainViewController: UIViewController {
     override func loadView() {
         view = MainView()
         setupViewModel()
+        setupMainView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
-        //setupTableView()
-        mainView.mainTableView.delegate = self
-        mainView.mainTableView.dataSource = self
-//        tableView.isScrollEnabled = false
-//        tableView.register(
-//            MainCell.self,
-//            forCellReuseIdentifier: "\(MainCell.self)"
-//        )
-//        tableView.backgroundColor = .secondarySystemBackground
-        mainView.backgroundColor = .secondarySystemBackground
-//        tableView.estimatedRowHeight = 10
-//        tableView.rowHeight = UITableView.automaticDimension
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        viewModel.reloadData()
+    override func viewDidLayoutSubviews() {
+        viewModel.updateData()
+
+    }
+    
+    private func setupMainView() {
+        mainView.mainTableView.delegate = self
+        mainView.mainTableView.dataSource = self
+        mainView.backgroundColor = .secondarySystemBackground
     }
 
     private func setupViewModel() {

@@ -32,7 +32,7 @@ final class MainViewModel {
         ]
     }
     
-    func reloadData() {
+    func updateData() {
         reloadClosure!()
     }
     

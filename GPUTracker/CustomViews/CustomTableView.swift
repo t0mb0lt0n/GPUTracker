@@ -23,6 +23,9 @@ class CustomTableView: UITableView {
     }
     
     func setupTableView() {
+        backgroundColor = .secondarySystemBackground
+        estimatedRowHeight = UITableView.automaticDimension
+        rowHeight = UITableView.automaticDimension
         register(
             GeneralCell.self,
             forCellReuseIdentifier: "GeneralCell"
