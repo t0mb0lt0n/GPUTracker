@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 final class ItemDetailsViewModel {
+    let selectedSegmentIndex = Constants.selectedSegmentIndex
     var generalSegmentRealmData: Results<General>
     var boardsSegmentRealmData: Results<Boards>
     var showLoading: ((Bool) -> Void)?
@@ -40,5 +41,6 @@ final class ItemDetailsViewModel {
 //MARK: - Constants
 extension ItemDetailsViewModel {
     private enum Constants {
+        static let selectedSegmentIndex = 0
     }
 }

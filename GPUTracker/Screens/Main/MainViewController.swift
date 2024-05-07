@@ -25,7 +25,6 @@ final class MainViewController: UIViewController {
         self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
         delagate = detailsVC
-        splitViewController?.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -126,9 +125,6 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
-            let topInset = cell.contentView.layoutMargins.right
-            //tableView.reloadData()
-            print(topInset)
         case 1:
 //            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
 //            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetail
@@ -173,7 +169,6 @@ extension MainViewController: UITableViewDataSource {
             )
         )
         developerNameLabel.textColor = .gray
-        //manufacturerNameLabel.font = .systemFont(ofSize: 17, weight: .regular)
         customHeaderView.addSubview(developerNameLabel)
         
         switch section {
@@ -223,23 +218,6 @@ extension MainViewController: UITableViewDelegate {
         default:
             break
         }
-    }
-}
-
-
-
-//MARK: - UISplitViewControllerDelegate
-extension MainViewController: UISplitViewControllerDelegate {
-    override func collapseSecondaryViewController(_ secondaryViewController: UIViewController, for splitViewController: UISplitViewController) {
-//        splitViewController.collapseSecondaryViewController(self, for: detailsVC!)
-    }
-    
-    func splitViewController(
-        _ splitViewController: UISplitViewController,
-        collapseSecondary secondaryViewController: UIViewController,
-        onto primaryViewController: UIViewController
-    ) -> Bool {
-        true
     }
 }
 

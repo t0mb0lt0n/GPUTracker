@@ -65,7 +65,7 @@ final class ItemDetailsViewController: UIViewController {
                 animated: false
             )
         }
-        mainView.segmentedControll.selectedSegmentIndex = 0
+        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
     }
     
     private func setupViewModel() {

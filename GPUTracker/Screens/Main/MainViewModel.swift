@@ -49,7 +49,6 @@ final class MainViewModel {
 }
 
 //MARK: - Constants
-
 extension MainViewModel {
     private enum Constants {
     }
