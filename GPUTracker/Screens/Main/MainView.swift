@@ -21,7 +21,7 @@ final class MainView: UIView {
             forCellReuseIdentifier: "\(MainCell.self)"
         )
         tableView.backgroundColor = .secondarySystemBackground
-        tableView.estimatedRowHeight = 10
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
@@ -80,5 +80,6 @@ extension MainView {
         static let appNameLabelWidth: CGFloat = 200
         static let appNameLabelLeadingOffsetConstant: CGFloat = -35
         static let appNameBottomPadding: CGFloat = -10
+        static let defaultTopSystemInset: CGFloat = 8.0
     }
 }

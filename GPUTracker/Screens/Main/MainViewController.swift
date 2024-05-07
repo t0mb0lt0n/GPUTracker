@@ -135,8 +135,9 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            let topInset = cell.contentView.layoutMargins.top
             //tableView.reloadData()
-            print()
+            print(topInset)
         case 1:
 //            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
 //            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetail
@@ -232,44 +233,9 @@ extension MainViewController: UITableViewDelegate {
             break
         }
     }
-    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-//
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        return 200// Например, 100 для каждой ячейки
-//    }
-
 }
 
 
-
-extension MainViewController {
-    private func setupTableView() {
-        //mainView.addSubview(tableView)
-//        tableView.backgroundColor = .white
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            tableView.topAnchor.constraint(
-//                equalTo: view.safeAreaLayoutGuide.topAnchor,
-//                constant: 150
-//            ),
-//            tableView.leadingAnchor.constraint(
-//                equalTo: mainView.safeAreaLayoutGuide.leadingAnchor
-//            ),
-//            tableView.trailingAnchor.constraint(
-//                equalTo: mainView.trailingAnchor
-//            ),
-//            tableView.bottomAnchor.constraint(equalTo: mainView.safeAreaLayoutGuide.bottomAnchor)
-//        ])
-    }
-}
 
 //MARK: - UISplitViewControllerDelegate
 extension MainViewController: UISplitViewControllerDelegate {
@@ -291,7 +257,6 @@ extension MainViewController {
         static let microsoftSectionNumber: Int = 0
         static let sonySectionNumber: Int = 1
         static let segaSectionNumber: Int = 2
-
     }
 }
 

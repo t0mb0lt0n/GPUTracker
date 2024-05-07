@@ -34,13 +34,13 @@ final class MainCell: UITableViewCell {
 //    }()
         
     let descriptionValueTextView: UITextView = {
-        let label = UITextView(frame: CGRect(x: 150, y: 0, width: 100, height: 0))
+        let label = UITextView()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
         label.text = "jkhjkhjklhjklhkljhkjlhkjhkjhjkhkjlhkjlh"
         label.isScrollEnabled = false
-        //label.numberOfLines = 2
         label.isEditable = false
+        //label.backgroundColor = .systemGray
         return label
     }()
     
@@ -68,8 +68,8 @@ final class MainCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             descriptionNameLabel.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: 0
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
+                constant: Constants.defaultTopSystemInset
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
@@ -97,12 +97,12 @@ final class MainCell: UITableViewCell {
                 constant: 0
             ),
             
-//            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-//            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 20),
-//            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 20),
-//            //onlineStatusImageView.leadingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor, constant: 10)
-//            onlineStatusImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-//            onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.defaultTopSystemInset),
+            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 20),
+            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 20),
+            //onlineStatusImageView.leadingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor, constant: 10)
+            onlineStatusImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 }
@@ -114,3 +114,11 @@ extension MainCell {
         descriptionValueTextView.text = descriptionValue
     }
 }
+
+//MARK: - Constants
+extension MainCell {
+    private enum Constants {
+        static let defaultTopSystemInset: CGFloat = 8.0
+    }
+}
+
