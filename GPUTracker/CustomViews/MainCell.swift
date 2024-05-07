@@ -37,7 +37,7 @@ final class MainCell: UITableViewCell {
         let label = UITextView(frame: CGRect(x: 150, y: 0, width: 100, height: 0))
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
-        label.text = "jkhjkhjklhjklhkljhkjlhkjhkjhjkhkjlhkjlhjkhkjlkljl;kj;lkj;ljkljlk;kll"
+        label.text = "jkhjkhjklhjklhkljhkjlhkjhkjhjkhkjlhkjlh"
         label.isScrollEnabled = false
         //label.numberOfLines = 2
         label.isEditable = false
