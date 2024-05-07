@@ -135,7 +135,7 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
-            let topInset = cell.contentView.layoutMargins.top
+            let topInset = cell.contentView.layoutMargins.right
             //tableView.reloadData()
             print(topInset)
         case 1:

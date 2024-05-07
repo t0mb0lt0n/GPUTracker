@@ -58,7 +58,7 @@ final class MainCell: UITableViewCell {
         [
          descriptionNameLabel,
          descriptionValueTextView,
-         //onlineStatusImageView
+         onlineStatusImageView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -69,11 +69,11 @@ final class MainCell: UITableViewCell {
         NSLayoutConstraint.activate([
             descriptionNameLabel.topAnchor.constraint(
                 equalTo: contentView.safeAreaLayoutGuide.topAnchor,
-                constant: Constants.defaultTopSystemInset
+                constant: contentView.layoutMargins.top
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 20
+                constant: contentView.layoutMargins.left
             ),
             descriptionNameLabel.trailingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
@@ -97,12 +97,10 @@ final class MainCell: UITableViewCell {
                 constant: 0
             ),
             
-            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.defaultTopSystemInset),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 20),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 20),
-            //onlineStatusImageView.leadingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor, constant: 10)
-            onlineStatusImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentView.layoutMargins.top),
+            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 17),
+            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 17),
+            onlineStatusImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -contentView.layoutMargins.right),
         ])
     }
 }
