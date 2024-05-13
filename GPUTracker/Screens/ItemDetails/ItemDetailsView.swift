@@ -23,7 +23,10 @@ final class ItemDetailsView: UIView {
         let label = UILabel()
         label.text = "Original Xbox 360"
         label.textColor = .black
-        label.font = .systemFont(ofSize: 35, weight: .semibold)
+        label.font = .systemFont(
+            ofSize: 35,
+            weight: .semibold
+        )
         label.textAlignment = .left
         return label
     }()
@@ -71,7 +74,10 @@ extension ItemDetailsView {
                 equalTo: safeAreaLayoutGuide.topAnchor,
                 constant: 0
             ),
-            itemImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            itemImageView.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 20
+            ),
             itemImageView.widthAnchor.constraint(equalToConstant: 70),
             itemImageView.heightAnchor.constraint(equalToConstant: 105),
             
@@ -79,8 +85,14 @@ extension ItemDetailsView {
                 equalTo: itemImageView.bottomAnchor,
                 constant: 10
             ),
-            segmentedControll.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            segmentedControll.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            segmentedControll.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 10
+            ),
+            segmentedControll.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -10
+            ),
             
             itemNameLabel.centerYAnchor.constraint(
                 equalTo: itemImageView.centerYAnchor,
@@ -96,10 +108,22 @@ extension ItemDetailsView {
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
-            itemDescriptionView.topAnchor.constraint(equalTo: segmentedControll.bottomAnchor, constant: 5),
-            itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
-            itemDescriptionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            itemDescriptionView.topAnchor.constraint(
+                equalTo: segmentedControll.bottomAnchor,
+                constant: 5
+            ),
+            itemDescriptionView.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 0
+            ),
+            itemDescriptionView.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: 0
+            ),
+            itemDescriptionView.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: 0
+            )
         ])
     }
     
