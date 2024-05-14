@@ -123,8 +123,8 @@ extension MainViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.descriptionNameLabel.text = viewModel.microsoftSection[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.microsoftSection[indexPath.row].shortDetails
+            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
         case 1:
 //            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
 //            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetail
@@ -193,27 +193,41 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case 0:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
             tableView.reloadData()
         case 1:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
         case 2:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
         default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        accessoryButtonTappedForRowWith indexPath: IndexPath
+    ) {
         switch indexPath.section {
         case 0:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
-            resignFirstResponder()
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
         case 1:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
         case 2:
-            delagate?.updateData(forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row])
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
         default:
             break
         }

@@ -11,9 +11,9 @@ import RealmSwift
 final class MainViewModel {
     private(set) var isContentDownloading = false
     private var service: RealmService
-    var microsoftSection: Results<MicrosoftProductList>
-    var sonySection: Results<SonyProductList>
-    var segaSection: Results<SegaProductList>
+    var microsoftSectionDataSource: Results<MicrosoftProductList>
+    var sonySectionDataSource: Results<SonyProductList>
+    var segaSectionDataSource: Results<SegaProductList>
     var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
@@ -26,9 +26,9 @@ final class MainViewModel {
     
     var itemsInSection: [Int] {
         [
-        microsoftSection.count,
-        sonySection.count,
-        segaSection.count
+        microsoftSectionDataSource.count,
+        sonySectionDataSource.count,
+        segaSectionDataSource.count
         ]
     }
     
@@ -38,9 +38,9 @@ final class MainViewModel {
     
     init(service: RealmService) {
         self.service = service
-        microsoftSection = self.service.data.objects(MicrosoftProductList.self)
-        sonySection = self.service.data.objects(SonyProductList.self)
-        segaSection = self.service.data.objects(SegaProductList.self)
+        microsoftSectionDataSource = self.service.data.objects(MicrosoftProductList.self)
+        sonySectionDataSource = self.service.data.objects(SonyProductList.self)
+        segaSectionDataSource = self.service.data.objects(SegaProductList.self)
     }
     
     func handleLoadingEvent(_ isDownloading: Bool) {
