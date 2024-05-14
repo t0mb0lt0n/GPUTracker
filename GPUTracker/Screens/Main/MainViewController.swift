@@ -45,7 +45,6 @@ final class MainViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         viewModel.updateData()
-
     }
     
     private func setupMainView() {
