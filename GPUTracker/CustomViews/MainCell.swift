@@ -104,8 +104,8 @@ final class MainCell: UITableViewCell {
                 equalTo: contentView.topAnchor,
                 constant: contentView.layoutMargins.top
             ),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 17),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 17),
+            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 12),
+            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 12),
             onlineStatusImageView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
                 constant: -contentView.layoutMargins.right
