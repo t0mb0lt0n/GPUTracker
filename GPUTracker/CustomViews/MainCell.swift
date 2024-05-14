@@ -10,7 +10,10 @@ import UIKit
 final class MainCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .semibold
+        )
         label.textColor = .black
         label.text = "Introduced"
         return label

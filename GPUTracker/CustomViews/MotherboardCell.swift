@@ -10,15 +10,21 @@ import UIKit
 final class MotherboardCell: UITableViewCell {
     let descriptionHeaderLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .semibold
+        )
         label.textColor = .black
-        label.text = "Board name|Revision|GPU variant|CPU variant|HDMI Support"
+        label.text = "Board name"
         return label
     }()
     
     let boardNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .regular
+        )
         label.textColor = .systemGray
         label.text = "Xenon"
         return label
@@ -26,7 +32,10 @@ final class MotherboardCell: UITableViewCell {
     
     let revisionLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.font = .systemFont(
+            ofSize: 15,
+            weight: .medium
+        )
         label.textColor = .systemGray
         label.text = "Original XBOX 360"
         return label
@@ -34,7 +43,10 @@ final class MotherboardCell: UITableViewCell {
     
     let gpuLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .medium
+        )
         label.textColor = .systemGray
         label.text = "90nm Y1"
         return label
@@ -42,7 +54,10 @@ final class MotherboardCell: UITableViewCell {
     
     let cpuLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .medium
+        )
         label.textColor = .systemGray
         label.text = "90nm XCPU"
         return label
@@ -50,7 +65,10 @@ final class MotherboardCell: UITableViewCell {
     
     let hdmiSupportLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .medium
+        )
         label.textColor = .systemGray
         label.text = "No Hdmi"
         return label

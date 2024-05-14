@@ -126,7 +126,7 @@ extension ItemDetailsViewController: UITableViewDelegate {
     }
 }
 
-extension ItemDetailsViewController: UpdateRealmDelegate {
+extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemIndex itemIndexName: String) {
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName

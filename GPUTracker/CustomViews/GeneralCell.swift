@@ -10,7 +10,10 @@ import UIKit
 final class GeneralCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .semibold
+        )
         label.textColor = .black
         label.text = "Introduced"
         return label
@@ -18,7 +21,10 @@ final class GeneralCell: UITableViewCell {
         
     let descriptionValueTextView: UITextView = {
         let label = UITextView()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .regular
+        )
         label.textColor = .systemGray
         label.text = "October 1990"
         label.isScrollEnabled = false

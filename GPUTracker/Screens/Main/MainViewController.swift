@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-protocol UpdateRealmDelegate: AnyObject {
+protocol RealmUpdateDelegate: AnyObject {
     func updateData(forItemIndex itemIndexName: String)
 }
 
@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
-    weak var delagate: UpdateRealmDelegate?
+    weak var delagate: RealmUpdateDelegate?
     
     init(with detailsVC: ItemDetailsViewController) {
         self.viewModel = MainViewModel(
@@ -153,7 +153,6 @@ extension MainViewController: UITableViewDataSource {
     ) -> CGFloat {
         0
     }
-    
     //custom header view for table view
     func tableView(
         _ tableView: UITableView,
