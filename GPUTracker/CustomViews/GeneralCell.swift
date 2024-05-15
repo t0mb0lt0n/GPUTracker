@@ -90,7 +90,10 @@ final class GeneralCell: UITableViewCell {
 }
 //MARK: - GPUInfoCellView extensions
 extension GeneralCell {
-    final func configurateCell(descriptionName: String?, descriptionValue: String?) {
+    final func configurateCell(
+        descriptionName: String?,
+        descriptionValue: String?
+    ) {
         guard let descriptionName, let descriptionValue else { return }
         descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue

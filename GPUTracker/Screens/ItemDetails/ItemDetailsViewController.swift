@@ -53,7 +53,7 @@ final class ItemDetailsViewController: UIViewController {
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
-        ].forEach { tableView in
+        ].forEach { [weak self] tableView in
             tableView.delegate = self
             tableView.dataSource = self
         }

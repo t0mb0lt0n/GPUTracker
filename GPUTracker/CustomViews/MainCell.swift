@@ -26,28 +26,21 @@ final class MainCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
-//    let itemImageView: UIImageView = {
-//        let logoImageView = UIImageView()
-//        let logoImage = UIImage(named: "xbox")
-//        logoImageView.clipsToBounds = true
-//        logoImageView.contentMode = .scaleAspectFill
-//        logoImageView.image = logoImage
-//        return logoImageView
-//    }()
-        
+            
     let descriptionValueTextView: UITextView = {
         let label = UITextView()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
-        label.text = "jkhjkhjklhjklhkljhkjlhkjhkjhjkhkjlhkjlh"
+        label.text = "Test placeholder"
         label.isScrollEnabled = false
         label.isEditable = false
-        //label.backgroundColor = .systemGray
         return label
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(
+        style: UITableViewCell.CellStyle,
+        reuseIdentifier: String?
+    ) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
         setupConstraints()
@@ -115,8 +108,14 @@ final class MainCell: UITableViewCell {
 }
 //MARK: - GPUInfoCellView extensions
 extension MainCell {
-    final func configurateCell(descriptionName: String?, descriptionValue: String?) {
-        guard let descriptionName, let descriptionValue else { return }
+    final func configurateCell(
+        descriptionName: String?,
+        descriptionValue: String?
+    ) {
+        guard
+            let descriptionName,
+            let descriptionValue
+        else { return }
         descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue
     }
