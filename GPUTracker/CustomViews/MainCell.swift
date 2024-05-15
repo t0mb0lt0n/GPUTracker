@@ -34,6 +34,7 @@ final class MainCell: UITableViewCell {
         label.text = "Test placeholder"
         label.isScrollEnabled = false
         label.isEditable = false
+        label.isUserInteractionEnabled = false
         return label
     }()
     
@@ -85,8 +86,8 @@ final class MainCell: UITableViewCell {
                 constant: -15
             ),
             descriptionValueTextView.leadingAnchor.constraint(
-                equalTo: leadingAnchor,
-                constant: 150
+                equalTo: contentView.leadingAnchor,
+                constant: contentView.layoutMargins.left
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
