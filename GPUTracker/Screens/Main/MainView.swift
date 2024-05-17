@@ -58,12 +58,18 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            itemNameLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            itemNameLabel.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 0
+            ),
             itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             itemNameLabel.widthAnchor.constraint(equalToConstant: 170),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 100),
             
-            mainTableView.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: 50),
+            mainTableView.topAnchor.constraint(
+                equalTo: itemNameLabel.bottomAnchor,
+                constant: 50
+            ),
             mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
