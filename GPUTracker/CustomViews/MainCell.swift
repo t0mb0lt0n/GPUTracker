@@ -29,7 +29,10 @@ final class MainCell: UITableViewCell {
             
     let descriptionValueTextView: UITextView = {
         let label = UITextView()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(
+            ofSize: 17,
+            weight: .regular
+        )
         label.textColor = .systemGray
         label.text = "debug placeholder"
         label.isScrollEnabled = false
