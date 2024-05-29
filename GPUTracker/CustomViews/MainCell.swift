@@ -15,7 +15,7 @@ final class MainCell: UITableViewCell {
             weight: .semibold
         )
         label.textColor = .black
-        label.text = "Introduced"
+        label.text = "debug text"
         return label
     }()
     
@@ -31,7 +31,7 @@ final class MainCell: UITableViewCell {
         let label = UITextView()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .systemGray
-        label.text = "Test placeholder"
+        label.text = "debug placeholder"
         label.isScrollEnabled = false
         label.isEditable = false
         label.isUserInteractionEnabled = false
