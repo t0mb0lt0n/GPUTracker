@@ -134,7 +134,7 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
-        mainView.itemNameLabel.text = "text has changed"
+        mainView.itemNameLabel.text = "Text has changed"
         mainView.itemImageView.image = UIImage(named: itemIndexName)
     }
 }

@@ -125,12 +125,8 @@ extension MainViewController: UITableViewDataSource {
             cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
         case 1:
-//            cell.textLabel?.text = viewModel.sonySection[indexPath.row].productName
-//            cell.detailTextLabel?.text = viewModel.microsoftSection[indexPath.row].shortDetail
             print()
         case 2:
-//            cell.textLabel?.text = viewModel.segaSection[indexPath.row].productName
-//            cell.detailTextLabel?.text = viewModel.segaSection[indexPath.row].shortDetails
             print()
         default:
             cell.textLabel?.text = .failurePlaceholder
