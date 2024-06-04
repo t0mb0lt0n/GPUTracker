@@ -99,7 +99,10 @@ final class MotherboardCell: UITableViewCell {
         stackView.spacing = 1
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(
+        style: UITableViewCell.CellStyle,
+        reuseIdentifier: String?
+    ) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
         setupConstraints()
@@ -151,6 +154,7 @@ final class MotherboardCell: UITableViewCell {
         ])
     }
 }
+
 //MARK: - MotherboardCell extensions
 extension MotherboardCell {
     final func configurateCell(
