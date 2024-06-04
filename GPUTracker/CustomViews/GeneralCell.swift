@@ -45,7 +45,6 @@ final class GeneralCell: UITableViewCell {
     private func setupCell() {
         [
          descriptionNameLabel,
-         //descriptionValueTextView,
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)

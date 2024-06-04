@@ -87,7 +87,9 @@ final class MotherboardCell: UITableViewCell {
             cpuLabel,
             hdmiSupportLabel
         ]
-        itemsForCellStackView.forEach { horizontalStackView.addArrangedSubview($0) }
+        itemsForCellStackView.forEach {
+            horizontalStackView.addArrangedSubview($0)
+        }
     }
     
     private func configurateHorizontalStackView(_ stackView: UIStackView) {
@@ -97,7 +99,6 @@ final class MotherboardCell: UITableViewCell {
         stackView.spacing = 1
     }
     
-    //MARK: init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
