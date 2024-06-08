@@ -38,7 +38,9 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     func segmentChanged() {
-        let contentOffset = Int(mainView.itemDescriptionView.generalSegmentTableView.frame.width)
+        let contentOffset = Int(
+            mainView.itemDescriptionView.generalSegmentTableView.frame.width
+        )
         let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
         mainView.itemDescriptionView.mainScrollView.setContentOffset(
             CGPoint(
