@@ -34,7 +34,7 @@ final class MainCell: UITableViewCell {
             weight: .regular
         )
         label.textColor = .systemGray
-        label.text = "debug placeholder"
+        label.text = "debug text"
         label.isScrollEnabled = false
         label.isEditable = false
         label.isUserInteractionEnabled = false
@@ -45,7 +45,10 @@ final class MainCell: UITableViewCell {
         style: UITableViewCell.CellStyle,
         reuseIdentifier: String?
     ) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(
+            style: style,
+            reuseIdentifier: reuseIdentifier
+        )
         setupCell()
         setupConstraints()
     }
