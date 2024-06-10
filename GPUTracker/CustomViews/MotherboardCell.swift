@@ -37,7 +37,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "Original XBOX"
+        label.text = "Original"
         return label
     }()
     
@@ -48,7 +48,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "90nm"
+        label.text = "90"
         return label
     }()
     
