@@ -59,7 +59,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "90nm XCPU"
+        label.text = "90nm"
         return label
     }()
     
@@ -70,7 +70,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "No Hdmi"
+        label.text = "placeholder"
         return label
     }()
     
