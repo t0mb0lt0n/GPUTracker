@@ -59,7 +59,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "90nm"
+        label.text = "Placeholder"
         return label
     }()
     
@@ -70,7 +70,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "placeholder"
+        label.text = "Placeholder"
         return label
     }()
     
