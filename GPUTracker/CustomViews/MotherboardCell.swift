@@ -37,7 +37,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "Original"
+        label.text = "Placeholder"
         return label
     }()
     
