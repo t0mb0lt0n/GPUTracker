@@ -15,7 +15,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .semibold
         )
         label.textColor = .black
-        label.text = "Board name"
+        label.text = "Placeholder"
         return label
     }()
     
@@ -26,7 +26,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .regular
         )
         label.textColor = .systemGray
-        label.text = "Xenon"
+        label.text = "boardNameLabel"
         return label
     }()
     
