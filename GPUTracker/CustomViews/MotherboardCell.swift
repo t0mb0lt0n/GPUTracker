@@ -15,7 +15,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .semibold
         )
         label.textColor = .black
-        label.text = "Placeholder"
+        label.text = "descriptionHeaderLabel"
         return label
     }()
     
@@ -37,7 +37,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "Placeholder"
+        label.text = "revisionLabel"
         return label
     }()
     
