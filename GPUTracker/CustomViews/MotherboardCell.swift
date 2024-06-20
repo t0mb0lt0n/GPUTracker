@@ -48,7 +48,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "Placeholder"
+        label.text = "gpuLabel"
         return label
     }()
     
