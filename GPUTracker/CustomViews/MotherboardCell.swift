@@ -70,7 +70,7 @@ final class MotherboardCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .systemGray
-        label.text = "Placeholder"
+        label.text = "hdmiSupportLabel"
         return label
     }()
     
