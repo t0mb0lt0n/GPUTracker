@@ -15,7 +15,7 @@ final class GeneralCell: UITableViewCell {
             weight: .semibold
         )
         label.textColor = .black
-        label.text = "descriptionNameLabel"
+        label.text = ""
         return label
     }()
         
