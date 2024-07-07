@@ -26,7 +26,7 @@ final class GeneralCell: UITableViewCell {
             weight: .regular
         )
         label.textColor = .systemGray
-        label.text = "placegolder"
+        label.text = "descriptionValueTextView"
         label.isScrollEnabled = false
         label.isEditable = false
         return label
