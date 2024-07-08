@@ -14,18 +14,26 @@ protocol RealmUpdateDelegate: AnyObject {
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
-    var detailsVC: ItemDetailsViewController?
+    //var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
     weak var delagate: RealmUpdateDelegate?
     
-    init(with detailsVC: ItemDetailsViewController) {
+//    init(with detailsVC: ItemDetailsViewController) {
+//        self.viewModel = MainViewModel(
+//            service: .init(withRealmName: .mainProductListRealm)
+//        )
+//        self.detailsVC = detailsVC
+//        super.init(nibName: nil, bundle: nil)
+//        delagate = detailsVC
+//    }
+    
+    init() {
         self.viewModel = MainViewModel(
             service: .init(withRealmName: .mainProductListRealm)
         )
-        self.detailsVC = detailsVC
         super.init(nibName: nil, bundle: nil)
-        delagate = detailsVC
     }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

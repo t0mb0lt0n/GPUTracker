@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let detailsVC = ItemDetailsViewController(
             viewModel: .init(forItemWithRealmName: .xbox360Realm)
         )
-        let mainVC = MainViewController(with: detailsVC)
+        let mainVC = MainViewController()
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let mainNavVC = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = mainNavVC
