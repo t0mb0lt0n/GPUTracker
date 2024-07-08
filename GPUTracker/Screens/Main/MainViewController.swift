@@ -14,22 +14,14 @@ protocol RealmUpdateDelegate: AnyObject {
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
-    //var detailsVC: ItemDetailsViewController?
     private let viewModel: MainViewModel
     weak var delagate: RealmUpdateDelegate?
     
-//    init(with detailsVC: ItemDetailsViewController) {
-//        self.viewModel = MainViewModel(
-//            service: .init(withRealmName: .mainProductListRealm)
-//        )
-//        self.detailsVC = detailsVC
-//        super.init(nibName: nil, bundle: nil)
-//        delagate = detailsVC
-//    }
-    
     init() {
         self.viewModel = MainViewModel(
-            service: .init(withRealmName: .mainProductListRealm)
+            service: .init(
+                withRealmName: .mainProductListRealm
+            )
         )
         super.init(nibName: nil, bundle: nil)
     }
