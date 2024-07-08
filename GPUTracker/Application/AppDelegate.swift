@@ -26,10 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         detailsVC.mainVC = mainVC
         splitVC.preferredDisplayMode = UISplitViewController.DisplayMode.allVisible
         splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
-        let navVC1 = UINavigationController(rootViewController: mainVC)
-        let navVC2 = UINavigationController(rootViewController: detailsVC)
-        splitVC.viewControllers = [navVC1, navVC2]
-        window?.rootViewController = splitVC
+        let mainNavVC = UINavigationController(rootViewController: mainVC)
+        //let navVC2 = UINavigationController(rootViewController: detailsVC)
+        //splitVC.viewControllers = [navVC1, navVC2]
+        window?.rootViewController = mainNavVC
         splitVC.preferredDisplayMode = .oneOverSecondary
         window?.makeKeyAndVisible()
         return true
