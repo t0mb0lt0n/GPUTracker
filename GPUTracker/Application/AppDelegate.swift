@@ -18,15 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         
-        let splitVC = UISplitViewController()
-        let detailsVC = ItemDetailsViewController(
-            viewModel: .init(forItemWithRealmName: .xbox360Realm)
-        )
         let mainVC = MainViewController()
-        splitVC.minimumPrimaryColumnWidth = .greatestFiniteMagnitude
         let mainNavVC = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = mainNavVC
-        splitVC.preferredDisplayMode = .oneOverSecondary
         window?.makeKeyAndVisible()
         return true
     }
