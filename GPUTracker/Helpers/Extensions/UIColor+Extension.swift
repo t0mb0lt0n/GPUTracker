@@ -7,7 +7,7 @@
 import UIKit
 
 extension UIColor {
-    static let secondarySystemBackground = UIColor(
+    static let secondaryCustomSystemBackground = UIColor(
         red: 240/255,
         green: 240/255,
         blue: 247/255,
