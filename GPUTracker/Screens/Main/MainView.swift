@@ -20,7 +20,7 @@ final class MainView: UIView {
             MainCell.self,
             forCellReuseIdentifier: "\(MainCell.self)"
         )
-        tableView.backgroundColor = .secondarySystemBackground
+        tableView.backgroundColor = .white
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         return tableView

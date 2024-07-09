@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 protocol RealmUpdateDelegate: AnyObject {
     func updateData(forItemIndex itemIndexName: String)
@@ -50,7 +51,7 @@ final class MainViewController: UIViewController {
     private func setupMainView() {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
-        mainView.backgroundColor = .secondarySystemBackground
+        mainView.backgroundColor = .tertiarySystemGroupedBackground
     }
 
     private func setupViewModel() {
@@ -235,5 +236,24 @@ extension MainViewController {
         static let sonySectionNumber: Int = 1
         static let segaSectionNumber: Int = 2
     }
+}
+
+//MARK: - UITableViewDelegate
+
+struct ContentViewPreviewss: PreviewProvider {
+    struct ViewControllerContainer: UIViewControllerRepresentable {
+        
+        func makeUIViewController(context: Context) -> some UIViewController {
+            UINavigationController(rootViewController: MainViewController())
+        }
+        
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+            
+        }
+    }
+    static var previews: some View {
+        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+    }
+    
 }
 
