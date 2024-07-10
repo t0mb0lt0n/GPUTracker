@@ -11,7 +11,7 @@ final class MainView: UIView {
     lazy var mainTableView: UITableView = {
         let tableView = UITableView(
             frame: .zero,
-            style: .grouped
+            style: .insetGrouped
         )
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -20,7 +20,7 @@ final class MainView: UIView {
             MainCell.self,
             forCellReuseIdentifier: "\(MainCell.self)"
         )
-        tableView.backgroundColor = .white
+        //tableView.backgroundColor =
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         return tableView

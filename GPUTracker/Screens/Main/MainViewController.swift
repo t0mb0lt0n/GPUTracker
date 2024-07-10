@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import RealmSwift
 import SwiftUI
+import RealmSwift
 
 protocol RealmUpdateDelegate: AnyObject {
     func updateData(forItemIndex itemIndexName: String)
