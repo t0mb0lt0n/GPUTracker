@@ -9,9 +9,9 @@ import UIKit
 import SwiftUI
 import RealmSwift
 
-//protocol RealmUpdateDelegate: AnyObject {
-//    func updateData(forItemIndex itemIndexName: String)
-//}
+protocol RealmUpdateDelegate: AnyObject {
+    func updateData(forItemIndex itemIndexName: String)
+}
 
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
