@@ -130,7 +130,7 @@ extension MainViewController: UITableViewDataSource {
         case 2:
             print()
         default:
-            //cell.textLabel?.text = .failurePlaceholder
+            cell.textLabel?.text = .failurePlaceholder
         }
         
         return cell
