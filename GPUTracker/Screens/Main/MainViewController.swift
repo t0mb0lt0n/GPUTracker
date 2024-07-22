@@ -240,7 +240,7 @@ extension MainViewController {
     }
 }
 
-//MARK: - UITableViewDelegate
+//MARK: - UIKit Preview
 
 struct ContentViewPreviewss: PreviewProvider {
     struct ViewControllerContainer: UIViewControllerRepresentable {
