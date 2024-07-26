@@ -242,6 +242,10 @@ extension MainViewController {
 
 //MARK: - UIKit Preview
 struct ContentViewPreviewss: PreviewProvider {
+    static var previews: some View {
+        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+    }
+    
     struct ViewControllerContainer: UIViewControllerRepresentable {
         func makeUIViewController(context: Context) -> some UIViewController {
             UINavigationController(rootViewController: MainViewController())
@@ -251,8 +255,5 @@ struct ContentViewPreviewss: PreviewProvider {
             _ uiViewController: UIViewControllerType,
             context: Context
         ) {}
-    }
-    static var previews: some View {
-        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
