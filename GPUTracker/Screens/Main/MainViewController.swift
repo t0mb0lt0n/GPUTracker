@@ -246,8 +246,6 @@ struct ContentViewPreviewss: PreviewProvider {
         ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
     
-    
-    
     struct ViewControllerContainer: UIViewControllerRepresentable {
         func makeUIViewController(context: Context) -> some UIViewController {
             UINavigationController(rootViewController: MainViewController())
