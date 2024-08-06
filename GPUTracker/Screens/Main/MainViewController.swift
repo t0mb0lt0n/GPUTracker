@@ -250,7 +250,6 @@ struct ContentViewPreviewss: PreviewProvider {
         func makeUIViewController(context: Context) -> some UIViewController {
             UINavigationController(rootViewController: MainViewController())
         }
-        
         func updateUIViewController(
             _ uiViewController: UIViewControllerType,
             context: Context
