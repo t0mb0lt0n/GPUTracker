@@ -232,6 +232,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
+
 extension MainViewController {
     private enum Constants {
         static let microsoftSectionNumber: Int = 0
