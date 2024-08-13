@@ -131,7 +131,6 @@ extension MainViewController: UITableViewDataSource {
         default:
             cell.textLabel?.text = .failurePlaceholder
         }
-        
         return cell
     }
     //setup header in section height
@@ -179,9 +178,6 @@ extension MainViewController: UITableViewDataSource {
         return customHeaderView
     }
 }
-
-
-
 
 //MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
