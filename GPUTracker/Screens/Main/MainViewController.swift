@@ -236,21 +236,21 @@ extension MainViewController {
         static let segaSectionNumber: Int = 2
     }
 }
-
-//MARK: - UIKit Preview
-struct ContentViewPreviewss: PreviewProvider {
-    static var previews: some View {
-        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-    }
-    
-    struct ViewControllerContainer: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> some UIViewController {
-            UINavigationController(rootViewController: MainViewController())
-        }
-        
-        func updateUIViewController(
-            _ uiViewController: UIViewControllerType,
-            context: Context
-        ) {}
-    }
-}
+//
+////MARK: - UIKit Preview
+//struct ContentViewPreviewss: PreviewProvider {
+//    static var previews: some View {
+//        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+//    }
+//    
+//    struct ViewControllerContainer: UIViewControllerRepresentable {
+//        func makeUIViewController(context: Context) -> some UIViewController {
+//            UINavigationController(rootViewController: MainViewController())
+//        }
+//        
+//        func updateUIViewController(
+//            _ uiViewController: UIViewControllerType,
+//            context: Context
+//        ) {}
+//    }
+//}
