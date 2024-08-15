@@ -10,9 +10,15 @@ import UIKit
 class CustomTableView: UITableView {
     init() {
         if #available(iOS 15, *) {
-            super .init(frame: .zero, style: .insetGrouped)
+            super .init(
+                frame: .zero,
+                style: .insetGrouped
+            )
         } else {
-            super .init(frame: .zero, style: .grouped)
+            super .init(
+                frame: .zero,
+                style: .grouped
+            )
         }
         setupTableView()
     }
