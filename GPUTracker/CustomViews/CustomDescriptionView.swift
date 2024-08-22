@@ -20,7 +20,6 @@ final class CustomDescriptionView: UIView {
         scrollView.isPagingEnabled = true
         return scrollView
     }()
-    
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
