@@ -9,14 +9,10 @@ import Foundation
 
 struct RealmConfigurations {
     static let itemIndexName: [[String]] = [
-        [
-        .xbox360Realm,
-        .sonyRealm
-        ],
-        [
-        .xbox360Realm,
-        .sonyRealm
-        ]
+        [.xbox360Realm,
+        .sonyRealm],
+        [.xbox360Realm,
+        .sonyRealm]
     ]
     static let schemas: [String: UInt64] = [
         .xbox360Realm: 68,
