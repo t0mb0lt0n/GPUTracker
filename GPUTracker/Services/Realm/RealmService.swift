@@ -27,8 +27,8 @@ final class RealmService {
     }
 }
 
-//extension RealmService {
-//    private enum Constants {
-//        static let defaultRealmSchemaVersion: UInt64 = 0
-//    }
-//}
+extension RealmService {
+    private enum Constants {
+        static let defaultRealmSchemaVersion: UInt64 = 0
+    }
+}
