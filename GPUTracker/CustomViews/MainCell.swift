@@ -15,7 +15,7 @@ final class MainCell: UITableViewCell {
             weight: .semibold
         )
         label.textColor = .black
-        label.text = "debug text"
+        label.text = "Debug text"
         return label
     }()
     

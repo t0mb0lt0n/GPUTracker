@@ -25,7 +25,7 @@ final class MainView: UIView {
         return tableView
     }()
     
-    let itemNameLabel: UILabel = {
+    let debugLabel: UILabel = {
         let label = UILabel()
         label.text = "Debug Label"
         return label
@@ -47,7 +47,7 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
-        itemNameLabel,
+        debugLabel,
         mainTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -57,16 +57,16 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            itemNameLabel.leadingAnchor.constraint(
+            debugLabel.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 0
+                constant: Constants.debugLabelOffset
             ),
-            itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            itemNameLabel.widthAnchor.constraint(equalToConstant: 170),
-            itemNameLabel.heightAnchor.constraint(equalToConstant: 100),
+            debugLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            debugLabel.widthAnchor.constraint(equalToConstant: 170),
+            debugLabel.heightAnchor.constraint(equalToConstant: 100),
             
             mainTableView.topAnchor.constraint(
-                equalTo: itemNameLabel.bottomAnchor,
+                equalTo: debugLabel.bottomAnchor,
                 constant: 50
             ),
             mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -86,5 +86,6 @@ extension MainView {
         static let appNameLabelLeadingOffsetConstant: CGFloat = -35
         static let appNameBottomPadding: CGFloat = -10
         static let defaultTopSystemInset: CGFloat = 8.0
+        static let debugLabelOffset: CGFloat = 100
     }
 }
