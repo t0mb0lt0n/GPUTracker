@@ -120,7 +120,7 @@ extension MainViewController: UITableViewDataSource {
             fatalError("Cell dequeue error")
         }
         cell.selectionStyle = .default
-        cell.backgroundColor = .blue
+        
         switch indexPath.section {
         case 0:
             //cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName

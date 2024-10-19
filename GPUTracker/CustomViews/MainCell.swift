@@ -40,6 +40,7 @@ final class MainCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
+        //textView.backgroundColor = .cyan
         return textView
     }()
     
@@ -78,11 +79,11 @@ final class MainCell: UITableViewCell {
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.left
+                constant: contentView.layoutMargins.right
             ),
             descriptionNameLabel.trailingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: -10
+                equalTo: contentView.trailingAnchor,
+                constant: contentView.layoutMargins.right
             ),
             
             descriptionValueTextView.topAnchor.constraint(
@@ -91,11 +92,11 @@ final class MainCell: UITableViewCell {
             ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: -15
+                constant: contentView.layoutMargins.right
             ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.left
+                constant: 100
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
@@ -134,6 +135,7 @@ extension MainCell {
 extension MainCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
+        //contentView.layoutMargins.left + 100
     }
 }
 
