@@ -20,8 +20,8 @@ final class MainView: UIView {
             MainCell.self,
             forCellReuseIdentifier: "\(MainCell.self)"
         )
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = UITableView.automaticDimension
+//        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     

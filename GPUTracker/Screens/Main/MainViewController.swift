@@ -119,7 +119,7 @@ extension MainViewController: UITableViewDataSource {
         ) as? MainCell else {
             fatalError("Cell dequeue error")
         }
-        
+        cell.selectionStyle = .none
         switch indexPath.section {
         case 0:
             cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
