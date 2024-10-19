@@ -30,16 +30,16 @@ final class MainCell: UITableViewCell {
             
     let descriptionValueTextView: UITextView = {
         let textView = UITextView()
+        textView.backgroundColor = .clear
+        textView.textColor = .systemGray
         textView.font = .systemFont(
             ofSize: 17,
             weight: .regular
         )
-        textView.textColor = .systemGray
         textView.text = "debug text"
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -61,7 +61,7 @@ final class MainCell: UITableViewCell {
     
     private func setupCell() {
         [
-         //descriptionNameLabel,
+         descriptionNameLabel,
          descriptionValueTextView,
          onlineStatusImageView
         ].forEach { subView in
@@ -72,18 +72,18 @@ final class MainCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-//            descriptionNameLabel.topAnchor.constraint(
-//                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
-//                constant: contentView.layoutMargins.top
-//            ),
-//            descriptionNameLabel.leadingAnchor.constraint(
-//                equalTo: contentView.leadingAnchor,
-//                constant: contentView.layoutMargins.left
-//            ),
-//            descriptionNameLabel.trailingAnchor.constraint(
-//                equalTo: safeAreaLayoutGuide.trailingAnchor,
-//                constant: -10
-//            ),
+            descriptionNameLabel.topAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
+                constant: contentView.layoutMargins.top
+            ),
+            descriptionNameLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: contentView.layoutMargins.left
+            ),
+            descriptionNameLabel.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -10
+            ),
             
             descriptionValueTextView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
