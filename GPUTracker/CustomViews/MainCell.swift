@@ -39,7 +39,8 @@ final class MainCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        return label
+        textView.backgroundColor = .clear
+        return textView
     }()
     
     override init(
