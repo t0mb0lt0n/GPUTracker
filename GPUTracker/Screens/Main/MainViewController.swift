@@ -119,11 +119,13 @@ extension MainViewController: UITableViewDataSource {
         ) as? MainCell else {
             fatalError("Cell dequeue error")
         }
-        cell.selectionStyle = .none
+        cell.selectionStyle = .default
+        cell.backgroundColor = .blue
         switch indexPath.section {
         case 0:
-            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+            //cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
+            //cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+            print()
         case 1:
             print()
         case 2:
@@ -174,7 +176,6 @@ extension MainViewController: UITableViewDataSource {
         default:
             return nil
         }
-        
         return customHeaderView
     }
 }
