@@ -125,16 +125,18 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
-            print()
         case 1:
-            print()
+            cell.descriptionNameLabel.text = viewModel.sonySectionDataSource[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.sonySectionDataSource[indexPath.row].shortDetails
         case 2:
-            print()
+            cell.descriptionNameLabel.text = viewModel.segaSectionDataSource[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.segaSectionDataSource[indexPath.row].shortDetails
         default:
             cell.textLabel?.text = .failurePlaceholder
         }
         return cell
     }
+    
     //setup header in section height
     func tableView(
         _ tableView: UITableView,

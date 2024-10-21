@@ -88,7 +88,7 @@ final class MainCell: UITableViewCell {
                 constant: Constants.descriptionNameLabelTrailingInset
             ),
             
-            descriptionValueTextView.topAnchor.constraint(equalTo: descriptionNameLabel.bottomAnchor),
+            descriptionValueTextView.topAnchor.constraint(equalTo: descriptionNameLabel.bottomAnchor, constant: 2),
             descriptionValueTextView.trailingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
