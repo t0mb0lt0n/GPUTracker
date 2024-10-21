@@ -82,26 +82,20 @@ final class MainCell: UITableViewCell {
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 20
+                constant: Constants.descriptionNameLabelLeadingInset
             ),
             descriptionNameLabel.trailingAnchor.constraint(
                 equalTo: onlineStatusImageView.leadingAnchor,
-                constant: -2
+                constant: Constants.descriptionNameLabelTrailingInset
             ),
             
-            descriptionValueTextView.topAnchor.constraint(
-                equalTo: descriptionNameLabel.bottomAnchor,
-                constant: 0
-            ),
+            descriptionValueTextView.topAnchor.constraint(equalTo: descriptionNameLabel.bottomAnchor),
             descriptionValueTextView.trailingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
                 constant: Constants.descriptionValueTextViewLeftInset
             ),
-            descriptionValueTextView.bottomAnchor.constraint(
-                equalTo: contentView.bottomAnchor,
-                constant: 0
-            ),
+            descriptionValueTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             onlineStatusImageView.centerYAnchor.constraint(equalTo: descriptionNameLabel.centerYAnchor),
             onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
@@ -132,6 +126,8 @@ extension MainCell {
 extension MainCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
+        static let descriptionNameLabelLeadingInset: CGFloat = 20
+        static let descriptionNameLabelTrailingInset: CGFloat = -2
         static let onlineStatusImageViewWidth: CGFloat = 10
         static let onlineStatusImageViewHeight: CGFloat = 10
         static let descriptionValueTextViewLeftInset: CGFloat = 20
