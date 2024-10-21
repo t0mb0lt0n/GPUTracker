@@ -93,21 +93,20 @@ final class MainCell: UITableViewCell {
                 constant: 0
             ),
             descriptionValueTextView.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: contentView.layoutMargins.right
+                equalTo: descriptionNameLabel.trailingAnchor
             ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 15
+                constant: 20
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
                 constant: 0
             ),
             
-            onlineStatusImageView.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: contentView.layoutMargins.top
+            onlineStatusImageView.centerYAnchor.constraint(
+                equalTo: descriptionNameLabel.centerYAnchor
+                //constant: descriptionNameLabel.centerYAnchor
             ),
             onlineStatusImageView.widthAnchor.constraint(equalToConstant: 12),
             onlineStatusImageView.heightAnchor.constraint(equalToConstant: 12),
