@@ -12,11 +12,11 @@ final class MainCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(
             ofSize: 17,
-            weight: .semibold
+            weight: .regular
         )
         label.textColor = .black
         label.text = "Debug text"
-        label.backgroundColor = .red
+        //label.backgroundColor = .red
         return label
     }()
     
@@ -33,16 +33,15 @@ final class MainCell: UITableViewCell {
         textView.backgroundColor = .clear
         textView.textColor = .systemGray
         textView.font = .systemFont(
-            ofSize: 17,
+            ofSize: 16,
             weight: .regular
         )
         textView.text = "debug text"
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        textView.backgroundColor = .cyan
+        //textView.backgroundColor = .cyan
         textView.textContainer.lineFragmentPadding = 0
-        //textView.contentInset = .zero
         textView.textContainerInset = .zero
         return textView
     }()
@@ -95,7 +94,7 @@ final class MainCell: UITableViewCell {
                 equalTo: contentView.leadingAnchor,
                 constant: Constants.descriptionValueTextViewLeftInset
             ),
-            descriptionValueTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            descriptionValueTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
             onlineStatusImageView.centerYAnchor.constraint(equalTo: descriptionNameLabel.centerYAnchor),
             onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
