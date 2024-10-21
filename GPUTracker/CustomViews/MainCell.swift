@@ -40,7 +40,9 @@ final class MainCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        //textView.backgroundColor = .cyan
+        textView.backgroundColor = .cyan
+        //textView.contentInset = .zero
+        textView.textContainer.lineFragmentPadding = 0
         return textView
     }()
     
@@ -88,7 +90,7 @@ final class MainCell: UITableViewCell {
             
             descriptionValueTextView.topAnchor.constraint(
                 equalTo: descriptionNameLabel.bottomAnchor,
-                constant: 5
+                constant: 0
             ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
@@ -96,7 +98,7 @@ final class MainCell: UITableViewCell {
             ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.left
+                constant: 15
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
