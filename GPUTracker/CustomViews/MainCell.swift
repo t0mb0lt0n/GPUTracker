@@ -41,8 +41,9 @@ final class MainCell: UITableViewCell {
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
         textView.backgroundColor = .cyan
-        //textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = 0
+        //textView.contentInset = .zero
+        textView.textContainerInset = .zero
         return textView
     }()
     
