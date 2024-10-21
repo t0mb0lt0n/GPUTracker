@@ -15,7 +15,7 @@ final class MainView: UIView {
         )
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.register(
             MainCell.self,
             forCellReuseIdentifier: "\(MainCell.self)"
@@ -45,7 +45,7 @@ final class MainView: UIView {
 extension MainView {
     final private func setupView() {
         [
-        debugLabel,
+        //debugLabel,
         mainTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -55,18 +55,15 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            debugLabel.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: Constants.debugLabelOffset
-            ),
-            debugLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            debugLabel.widthAnchor.constraint(equalToConstant: 170),
-            debugLabel.heightAnchor.constraint(equalToConstant: 100),
+//            debugLabel.leadingAnchor.constraint(
+//                equalTo: safeAreaLayoutGuide.leadingAnchor,
+//                constant: Constants.debugLabelOffset
+//            ),
+//            debugLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+//            debugLabel.widthAnchor.constraint(equalToConstant: 50),
+//            debugLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            mainTableView.topAnchor.constraint(
-                equalTo: debugLabel.bottomAnchor,
-                constant: 50
-            ),
+            mainTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
