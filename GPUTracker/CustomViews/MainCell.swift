@@ -104,8 +104,8 @@ final class MainCell: UITableViewCell {
             ),
             
             onlineStatusImageView.centerYAnchor.constraint(equalTo: descriptionNameLabel.centerYAnchor),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: 12),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: 12),
+            onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
+            onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
             onlineStatusImageView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
                 constant: -contentView.layoutMargins.right
@@ -132,7 +132,8 @@ extension MainCell {
 extension MainCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
+        static let onlineStatusImageViewWidth: CGFloat = 10
+        static let onlineStatusImageViewHeight: CGFloat = 10
         //contentView.layoutMargins.left + 100
     }
 }
-
