@@ -96,7 +96,7 @@ final class MainCell: UITableViewCell {
             descriptionValueTextView.trailingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 20
+                constant: Constants.descriptionValueTextViewLeftInset
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
@@ -134,6 +134,6 @@ extension MainCell {
         static let defaultTopSystemInset: CGFloat = 8.0
         static let onlineStatusImageViewWidth: CGFloat = 10
         static let onlineStatusImageViewHeight: CGFloat = 10
-        //contentView.layoutMargins.left + 100
+        static let descriptionValueTextViewLeftInset: CGFloat = 20
     }
 }
