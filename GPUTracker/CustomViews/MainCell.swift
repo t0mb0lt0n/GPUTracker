@@ -79,16 +79,16 @@ final class MainCell: UITableViewCell {
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.right
+                constant: 20
             ),
             descriptionNameLabel.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: contentView.layoutMargins.right
+                equalTo: onlineStatusImageView.leadingAnchor,
+                constant: -2
             ),
             
             descriptionValueTextView.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: 0
+                equalTo: descriptionNameLabel.bottomAnchor,
+                constant: 5
             ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
@@ -96,7 +96,7 @@ final class MainCell: UITableViewCell {
             ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: 100
+                constant: contentView.layoutMargins.left
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,

@@ -123,8 +123,8 @@ extension MainViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            //cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
-            //cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
+            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
             print()
         case 1:
             print()
