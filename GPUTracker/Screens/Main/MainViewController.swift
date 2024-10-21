@@ -191,15 +191,11 @@ extension MainViewController: UITableViewDelegate {
         let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .mainProductListRealm))
         switch indexPath.section {
         case 0:
-            switch indexPath.row {
-                delagate?.updateData(
-                    forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
-                )
-                tableView.reloadData()
-                navigationController?.pushViewController(vc, animated: true)
-            default:
-                break
-            }
+            delagate?.updateData(
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            )
+            tableView.reloadData()
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
