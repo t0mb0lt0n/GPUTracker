@@ -40,7 +40,7 @@ final class ItemDetailsView: UIView {
         super.init(frame: .zero)
         setupView()
         setupConstraints()
-        backgroundColor = .white
+        backgroundColor = .secondarySystemBackground
     }
     
     required init?(coder: NSCoder) {

@@ -114,6 +114,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return cell
         case 1:
             cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
+            cell.textLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
             return cell
         default:
             return cell

@@ -62,7 +62,7 @@ final class GeneralCell: UITableViewCell {
         NSLayoutConstraint.activate([
             descriptionNameLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: 10
+                constant: 100
             ),
             descriptionNameLabel.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,

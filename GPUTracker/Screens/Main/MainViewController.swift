@@ -41,6 +41,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -188,7 +189,7 @@ extension MainViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .mainProductListRealm))
+        let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
         switch indexPath.section {
         case 0:
             delagate?.updateData(

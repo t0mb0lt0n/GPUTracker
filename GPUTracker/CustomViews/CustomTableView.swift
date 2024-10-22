@@ -8,7 +8,7 @@ import UIKit
 
 class CustomTableView: UITableView {
     init() {
-        if #available(iOS 15, *) {
+        if #available(iOS 16, *) {
             super .init(frame: .zero, style: .insetGrouped)
         } else {
             super .init(frame: .zero, style: .grouped)
