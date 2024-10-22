@@ -8,11 +8,7 @@ import UIKit
 
 class CustomTableView: UITableView {
     init() {
-        if #available(iOS 16, *) {
-            super .init(frame: .zero, style: .insetGrouped)
-        } else {
-            super .init(frame: .zero, style: .grouped)
-        }
+        super .init(frame: .zero, style: .grouped)
         setupTableView()
     }
     
@@ -31,6 +27,10 @@ class CustomTableView: UITableView {
         register(
             MotherboardCell.self,
             forCellReuseIdentifier: "MotherboardCell"
+        )
+        register(
+            MainCell.self,
+            forCellReuseIdentifier: "\(MainCell.self)"
         )
     }
 }

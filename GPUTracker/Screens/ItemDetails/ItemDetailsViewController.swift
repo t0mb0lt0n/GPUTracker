@@ -107,15 +107,23 @@ extension ItemDetailsViewController: UITableViewDataSource {
             ofSize: 17,
             weight: .medium
         )
+        guard let cell2 = tableView.dequeueReusableCell(
+            withIdentifier: "\(MainCell.self)",
+            for: indexPath
+        ) as? MainCell else {
+            fatalError("Cell dequeue error")
+        }
         switch tableView.tag {
         case 0:
             cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
             cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
             return cell
         case 1:
-            cell.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
-            cell.textLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
-            return cell
+            //cell2.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
+            //cell2.textLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
+            cell2.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
+            cell2.descriptionValueTextView.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
+            return cell2
         default:
             return cell
         }
