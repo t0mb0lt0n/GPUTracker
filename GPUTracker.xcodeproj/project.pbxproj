@@ -21,6 +21,7 @@
 		11B152D02BE3A887004F6FBC /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B152CF2BE3A887004F6FBC /* mainProductList.realm */; };
 		11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainCell.swift */; };
 		11B2F0E32BC9C0CD0076D775 /* xbox360.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B2F0E22BC9C0CD0076D775 /* xbox360.realm */; };
+		11C422B82CC838A70058C627 /* UniversalCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C422B72CC838A70058C627 /* UniversalCustomCell.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */; };
@@ -51,6 +52,7 @@
 		11B152CF2BE3A887004F6FBC /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
 		11B152D12BE559D7004F6FBC /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		11B2F0E22BC9C0CD0076D775 /* xbox360.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xbox360.realm; sourceTree = "<group>"; };
+		11C422B72CC838A70058C627 /* UniversalCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalCustomCell.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				11FBAA482BC56973003F568F /* GeneralCell.swift */,
 				11B152D12BE559D7004F6FBC /* MainCell.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
+				11C422B72CC838A70058C627 /* UniversalCustomCell.swift */,
 				11FBAA462BC47355003F568F /* CustomTableView.swift */,
 			);
 			path = CustomViews;
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C422B82CC838A70058C627 /* UniversalCustomCell.swift in Sources */,
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,

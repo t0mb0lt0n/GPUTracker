@@ -99,15 +99,15 @@ extension ItemDetailsViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cellIdentifier = "Apple designed cell"
-        let cell = UITableViewCell(
+        let defaultCell = UITableViewCell(
             style: .value1,
             reuseIdentifier: cellIdentifier
         )
-        cell.textLabel?.font = .systemFont(
+        defaultCell.textLabel?.font = .systemFont(
             ofSize: 17,
             weight: .medium
         )
-        guard let cell2 = tableView.dequeueReusableCell(
+        guard let boardsSegmentTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(MainCell.self)",
             for: indexPath
         ) as? MainCell else {
@@ -115,15 +115,13 @@ extension ItemDetailsViewController: UITableViewDataSource {
         }
         switch tableView.tag {
         case 0:
-            cell.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
+            ll.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
             cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
             return cell
         case 1:
-            //cell2.detailTextLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
-            //cell2.textLabel?.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
-            cell2.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
-            cell2.descriptionValueTextView.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
-            return cell2
+            boardsSegmentTableViewCell.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
+            boardsSegmentTableViewCell.descriptionValueTextView.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
+            return boardsSegmentTableViewCell
         default:
             return cell
         }
