@@ -15,16 +15,9 @@ final class UniversalCustomCell: UITableViewCell {
             weight: .regular
         )
         label.textColor = .black
+        label.backgroundColor = .red
         label.text = "Debug text"
         return label
-    }()
-    
-    var onlineStatusImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .onlineStatusImage
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
     }()
             
     let descriptionValueTextView: UITextView = {
@@ -65,7 +58,6 @@ final class UniversalCustomCell: UITableViewCell {
         [
          descriptionNameLabel,
          descriptionValueTextView,
-         onlineStatusImageView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -94,19 +86,11 @@ final class UniversalCustomCell: UITableViewCell {
                 constant: Constants.descriptionValueTextViewLeftInset
             ),
             descriptionValueTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            
-            onlineStatusImageView.centerYAnchor.constraint(equalTo: descriptionNameLabel.centerYAnchor),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
-            onlineStatusImageView.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: -contentView.layoutMargins.right
-            ),
         ])
     }
 }
 //MARK: - GPUInfoCellView extensions
-extension MainCell {
+extension UniversalCustomCell {
     final func configurateCell(
         descriptionName: String?,
         descriptionValue: String?
@@ -121,7 +105,7 @@ extension MainCell {
 }
 
 //MARK: - Constants
-extension MainCell {
+extension UniversalCustomCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
         static let descriptionNameLabelLeadingInset: CGFloat = 20
