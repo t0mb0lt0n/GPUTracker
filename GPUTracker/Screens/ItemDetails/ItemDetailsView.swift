@@ -53,7 +53,6 @@ extension ItemDetailsView {
     final private func setupView() {
         segmentedControll.selectedSegmentIndex = 0
         [
-        itemImageView,
         itemNameLabel,
         segmentedControll,
         itemDescriptionView,
@@ -70,41 +69,17 @@ extension ItemDetailsView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            itemImageView.topAnchor.constraint(
+            itemNameLabel.topAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.topAnchor,
                 constant: 0
             ),
-            itemImageView.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 20
-            ),
-            itemImageView.widthAnchor.constraint(equalToConstant: 70),
-            itemImageView.heightAnchor.constraint(equalToConstant: 105),
-            
-            segmentedControll.topAnchor.constraint(
-                equalTo: itemImageView.bottomAnchor,
-                constant: 10
-            ),
-            segmentedControll.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 10
-            ),
-            segmentedControll.trailingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: -10
-            ),
-            
-            itemNameLabel.centerYAnchor.constraint(
-                equalTo: itemImageView.centerYAnchor,
+            itemNameLabel.leadingAnchor.constraint(
+                equalTo: segmentedControll.leadingAnchor,
                 constant: 0
             ),
-            itemNameLabel.leadingAnchor.constraint(
-                equalTo: itemImageView.trailingAnchor,
-                constant: 20
-            ),
             itemNameLabel.trailingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: 20
+                equalTo: segmentedControll.trailingAnchor,
+                constant: 0
             ),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
             
@@ -123,7 +98,20 @@ extension ItemDetailsView {
             itemDescriptionView.bottomAnchor.constraint(
                 equalTo: bottomAnchor,
                 constant: 0
-            )
+            ),
+            
+            segmentedControll.topAnchor.constraint(
+                equalTo: itemNameLabel.bottomAnchor,
+                constant: 0
+            ),
+            segmentedControll.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 10
+            ),
+            segmentedControll.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: -10
+            ),
         ])
     }
     

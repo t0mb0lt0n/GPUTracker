@@ -15,7 +15,6 @@ final class UniversalCustomCell: UITableViewCell {
             weight: .regular
         )
         label.textColor = .black
-        label.backgroundColor = .red
         label.text = "Debug text"
         return label
     }()
@@ -32,7 +31,6 @@ final class UniversalCustomCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        //textView.backgroundColor = .cyan
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = .zero
         return textView
@@ -79,17 +77,23 @@ final class UniversalCustomCell: UITableViewCell {
                 constant: Constants.descriptionNameLabelTrailingInset
             ),
             
-            descriptionValueTextView.topAnchor.constraint(equalTo: descriptionNameLabel.bottomAnchor, constant: 2),
+            descriptionValueTextView.topAnchor.constraint(
+                equalTo: descriptionNameLabel.bottomAnchor,
+                constant: Constants.descriptionValueTextViewTopInset
+            ),
             descriptionValueTextView.trailingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
                 constant: Constants.descriptionValueTextViewLeftInset
             ),
-            descriptionValueTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            descriptionValueTextView.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: Constants.descriptionValueTextViewBottomInset
+            ),
         ])
     }
 }
-//MARK: - GPUInfoCellView extensions
+//MARK: - UniversalCustomCell extensions
 extension UniversalCustomCell {
     final func configurateCell(
         descriptionName: String?,
@@ -113,5 +117,7 @@ extension UniversalCustomCell {
         static let onlineStatusImageViewWidth: CGFloat = 10
         static let onlineStatusImageViewHeight: CGFloat = 10
         static let descriptionValueTextViewLeftInset: CGFloat = 20
+        static let descriptionValueTextViewTopInset: CGFloat = 2
+        static let descriptionValueTextViewBottomInset: CGFloat = -5
     }
 }

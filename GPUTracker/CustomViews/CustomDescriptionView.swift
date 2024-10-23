@@ -23,8 +23,6 @@ final class CustomDescriptionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        generalSegmentTableView.backgroundColor = .white
-        motherBoardsSegmentTableView.backgroundColor = .white
         setupView()
         setupConstraints()
     }
