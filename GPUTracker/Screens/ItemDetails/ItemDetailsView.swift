@@ -24,7 +24,7 @@ final class ItemDetailsView: UIView {
         label.text = "Original Xbox 360"
         label.textColor = .black
         label.font = .systemFont(
-            ofSize: 35,
+            ofSize: 25,
             weight: .semibold
         )
         label.textAlignment = .left
@@ -81,7 +81,7 @@ extension ItemDetailsView {
                 equalTo: segmentedControll.trailingAnchor,
                 constant: 0
             ),
-            itemNameLabel.heightAnchor.constraint(equalToConstant: 55),
+            itemNameLabel.heightAnchor.constraint(equalToConstant: 50),
             
             itemDescriptionView.topAnchor.constraint(
                 equalTo: segmentedControll.bottomAnchor,
