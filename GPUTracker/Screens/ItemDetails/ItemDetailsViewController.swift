@@ -108,22 +108,30 @@ extension ItemDetailsViewController: UITableViewDataSource {
             weight: .medium
         )
         guard let boardsSegmentTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: "\(MainCell.self)",
+            withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
-        ) as? MainCell else {
+        ) as? UniversalCustomCell else {
             fatalError("Cell dequeue error")
         }
+        
+        guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: "\(UniversalCustomCell.self)",
+            for: indexPath
+        ) as? UniversalCustomCell else {
+            fatalError("Cell dequeue error")
+        }
+
         switch tableView.tag {
         case 0:
-            ll.textLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
-            cell.detailTextLabel?.text = viewModel.generalSegmentRealmData[indexPath.row].value
-            return cell
+            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
+            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].value
+            return generalSegmentTableViewCell
         case 1:
             boardsSegmentTableViewCell.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
             boardsSegmentTableViewCell.descriptionValueTextView.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
             return boardsSegmentTableViewCell
         default:
-            return cell
+            return boardsSegmentTableViewCell
         }
     }
 }

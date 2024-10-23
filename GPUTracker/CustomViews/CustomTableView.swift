@@ -29,8 +29,8 @@ class CustomTableView: UITableView {
             forCellReuseIdentifier: "MotherboardCell"
         )
         register(
-            MainCell.self,
-            forCellReuseIdentifier: "\(MainCell.self)"
+            UniversalCustomCell.self,
+            forCellReuseIdentifier: "\(UniversalCustomCell.self)"
         )
     }
 }

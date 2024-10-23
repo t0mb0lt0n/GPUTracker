@@ -75,7 +75,7 @@ final class UniversalCustomCell: UITableViewCell {
                 constant: Constants.descriptionNameLabelLeadingInset
             ),
             descriptionNameLabel.trailingAnchor.constraint(
-                equalTo: onlineStatusImageView.leadingAnchor,
+                equalTo: contentView.trailingAnchor,
                 constant: Constants.descriptionNameLabelTrailingInset
             ),
             
