@@ -16,7 +16,6 @@ final class MainCell: UITableViewCell {
         )
         label.textColor = .black
         label.text = "Debug text"
-        //label.backgroundColor = .red
         return label
     }()
     
@@ -40,7 +39,6 @@ final class MainCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        //textView.backgroundColor = .cyan
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = .zero
         return textView
@@ -106,7 +104,7 @@ final class MainCell: UITableViewCell {
             onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
             onlineStatusImageView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: contentView.layoutMargins.right - 11
+                constant: contentView.layoutMargins.right - Constants.onlineStatusImageViewRightOffset
             ),
         ])
     }
@@ -134,6 +132,7 @@ extension MainCell {
         static let descriptionNameLabelTrailingInset: CGFloat = -10
         static let onlineStatusImageViewWidth: CGFloat = 10
         static let onlineStatusImageViewHeight: CGFloat = 10
+        static let onlineStatusImageViewRightOffset: CGFloat = 11
         static let descriptionValueTextViewLeftInset: CGFloat = 20
         static let descriptionValueTextViewTopInset: CGFloat = 2
         static let descriptionValueTextViewBottomInset: CGFloat = -5

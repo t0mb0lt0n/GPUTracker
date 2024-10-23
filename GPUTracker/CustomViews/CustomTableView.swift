@@ -20,10 +20,6 @@ class CustomTableView: UITableView {
         backgroundColor = .secondarySystemBackground
         estimatedRowHeight = UITableView.automaticDimension
         rowHeight = UITableView.automaticDimension
-//        register(
-//            GeneralCell.self,
-//            forCellReuseIdentifier: "GeneralCell"
-//        )
         register(
             MotherboardCell.self,
             forCellReuseIdentifier: "MotherboardCell"
