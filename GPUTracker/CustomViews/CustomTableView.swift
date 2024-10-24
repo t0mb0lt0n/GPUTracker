@@ -21,10 +21,6 @@ class CustomTableView: UITableView {
         estimatedRowHeight = UITableView.automaticDimension
         rowHeight = UITableView.automaticDimension
         register(
-            MotherboardCell.self,
-            forCellReuseIdentifier: "MotherboardCell"
-        )
-        register(
             UniversalCustomCell.self,
             forCellReuseIdentifier: "\(UniversalCustomCell.self)"
         )
