@@ -58,9 +58,3 @@ extension MainView {
         ])
     }
 }
-
-extension MainView {
-    private enum Constants {
-        static let appNameLabelTopOffsetConstant: CGFloat = -25
-    }
-}
