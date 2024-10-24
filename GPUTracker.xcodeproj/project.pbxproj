@@ -32,7 +32,6 @@
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
-		11FBAA4B2BC6EEAD003F568F /* MotherboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */; };
 		11FBAA4F2BC7374C003F568F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +61,6 @@
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherboardCell.swift; sourceTree = "<group>"; };
 		11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +178,6 @@
 		11AE40D42BA9F7E9001B52F8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				11FBAA4A2BC6EEAD003F568F /* MotherboardCell.swift */,
 				11B152D12BE559D7004F6FBC /* MainCell.swift */,
 				11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */,
 				11C422B72CC838A70058C627 /* UniversalCustomCell.swift */,
@@ -315,7 +312,6 @@
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */,
-				11FBAA4B2BC6EEAD003F568F /* MotherboardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
