@@ -23,11 +23,6 @@ final class MainView: UIView {
         return tableView
     }()
     
-    let debugLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Debug Label"
-   
-    
     init() {
         super.init(frame: .zero)
         setupView()
