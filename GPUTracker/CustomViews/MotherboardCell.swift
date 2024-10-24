@@ -128,7 +128,7 @@ final class MotherboardCell: UITableViewCell {
         NSLayoutConstraint.activate([
             descriptionHeaderLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: 2
+                constant: Constants.descriptionHeaderLabelTopInset
             ),
             descriptionHeaderLabel.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
@@ -178,5 +178,11 @@ extension MotherboardCell {
         gpuLabel.text = "/" + gpu
         cpuLabel.text = "/" + cpu
         hdmiSupportLabel.text = "/" + isHdmi
+    }
+}
+
+extension MotherboardCell {
+    private enum Constants {
+        static let descriptionHeaderLabelTopInset: CGFloat = 2
     }
 }
