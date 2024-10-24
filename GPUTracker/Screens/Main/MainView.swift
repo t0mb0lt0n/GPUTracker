@@ -26,8 +26,7 @@ final class MainView: UIView {
     let debugLabel: UILabel = {
         let label = UILabel()
         label.text = "Debug Label"
-        return label
-    }()
+   
     
     init() {
         super.init(frame: .zero)
