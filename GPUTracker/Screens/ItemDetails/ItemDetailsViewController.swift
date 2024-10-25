@@ -123,7 +123,6 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
         switch tableView.tag {
         case 0:
-            //generalSegmentTableViewCell.accessoryType = .disclosureIndicator
             generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
             generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].value
             return generalSegmentTableViewCell
