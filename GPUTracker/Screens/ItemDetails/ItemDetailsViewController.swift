@@ -26,14 +26,6 @@ final class ItemDetailsViewController: UIViewController {
         view = ItemDetailsView()
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = .productDetailsHeader
