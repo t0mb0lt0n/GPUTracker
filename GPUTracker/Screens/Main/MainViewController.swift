@@ -124,8 +124,13 @@ extension MainViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
-            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+//            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
+//            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+            
+            cell.configurateCellSafe(
+                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
+                descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+            )
         case 1:
             cell.descriptionNameLabel.text = viewModel.sonySectionDataSource[indexPath.row].productName
             cell.descriptionValueTextView.text = viewModel.sonySectionDataSource[indexPath.row].shortDetails
