@@ -111,7 +111,7 @@ final class MainCell: UITableViewCell {
 }
 //MARK: - GPUInfoCellView extensions
 extension MainCell {
-    final func configurateCell(
+    final func configurateCellSafe(
         descriptionName: String?,
         descriptionValue: String?
     ) {
@@ -119,6 +119,14 @@ extension MainCell {
             let descriptionName,
             let descriptionValue
         else { return }
+        descriptionNameLabel.text = descriptionName
+        descriptionValueTextView.text = descriptionValue
+    }
+    
+    final func configurateCellUnsafe(
+        descriptionName: String?,
+        descriptionValue: String?
+    ) {
         descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue
     }
