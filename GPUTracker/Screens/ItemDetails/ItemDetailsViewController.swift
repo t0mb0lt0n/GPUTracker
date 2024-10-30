@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 final class ItemDetailsViewController: UIViewController {
-    var mainVC: MainViewController?
+    //var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
     init(viewModel: ItemDetailsViewModel) {
@@ -51,7 +51,6 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupMainView() {
-        mainVC?.delagate = self
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
@@ -74,6 +73,7 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = { [weak self] in
             self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
             self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+            print("reloaded")
         }
     }
 }

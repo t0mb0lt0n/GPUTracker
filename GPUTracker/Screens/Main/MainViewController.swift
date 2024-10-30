@@ -202,8 +202,6 @@ extension MainViewController: UITableViewDelegate {
             self.delagate?.updateData(
                 forItemIndex: .sonyRealm
             )
-            tableView.reloadData()
-            ///vc.mainView.itemNameLabel.text = "changed"
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             delagate?.updateData(
