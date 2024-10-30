@@ -8,15 +8,6 @@
 import UIKit
 
 final class ItemDetailsView: UIView {
-    let itemImageView: UIImageView = {
-        let logoImageView = UIImageView()
-        let logoImage = UIImage(named: "xbox")
-        logoImageView.clipsToBounds = true
-        logoImageView.contentMode = .scaleAspectFill
-        logoImageView.image = logoImage
-        return logoImageView
-    }()
-    
     let itemDescriptionView = CustomDescriptionView()
     
     let itemNameLabel: UILabel = {

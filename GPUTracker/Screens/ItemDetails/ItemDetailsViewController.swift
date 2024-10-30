@@ -12,7 +12,6 @@ final class ItemDetailsViewController: UIViewController {
     var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
-    
     init(viewModel: ItemDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -52,6 +51,7 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupMainView() {
+        mainVC?.delagate = self
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
@@ -152,7 +152,9 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
             withRealmName: itemIndexName
         ).data
         mainView.itemNameLabel.text = "Text has changed"
-        mainView.itemImageView.image = UIImage(named: itemIndexName)
+        mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+        mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+        print("Delegate")
     }
 }
 

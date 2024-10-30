@@ -41,7 +41,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
-        
+        self.delagate?.updateData(forItemIndex: .sonyRealm)
     }
     
     override func viewDidLayoutSubviews() {
@@ -198,15 +198,19 @@ extension MainViewController: UITableViewDelegate {
         let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
         switch indexPath.section {
         case 0:
-            delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+            self.delagate?.updateData(
+                forItemIndex: .sonyRealm
             )
             tableView.reloadData()
+            ///vc.mainView.itemNameLabel.text = "changed"
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
+            tableView.reloadData()
+            navigationController?.pushViewController(vc, animated: true)
+
         case 2:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
