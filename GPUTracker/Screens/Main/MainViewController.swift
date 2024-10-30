@@ -196,6 +196,7 @@ extension MainViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
+        self.delagate = vc
         switch indexPath.section {
         case 0:
             self.delagate?.updateData(

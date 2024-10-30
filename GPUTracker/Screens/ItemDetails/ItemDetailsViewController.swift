@@ -148,12 +148,12 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemIndex itemIndexName: String) {
-        viewModel.currentRealm = RealmService(
-            withRealmName: itemIndexName
-        ).data
+//        viewModel.currentRealm = RealmService(
+//            withRealmName: itemIndexName
+//        ).data
         mainView.itemNameLabel.text = "Text has changed"
-        mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-        mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+        //mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+        //mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
         print("Delegate")
     }
 }
