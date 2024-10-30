@@ -124,19 +124,20 @@ extension MainViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
-//            cell.descriptionNameLabel.text = viewModel.microsoftSectionDataSource[indexPath.row].productName
-//            cell.descriptionValueTextView.text = viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
-            
-            cell.configurateCellSafe(
+            cell.configurateCellUnsafe(
                 descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
             )
         case 1:
-            cell.descriptionNameLabel.text = viewModel.sonySectionDataSource[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.sonySectionDataSource[indexPath.row].shortDetails
+            cell.configurateCellUnsafe(
+                descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
+                descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails
+            )
         case 2:
-            cell.descriptionNameLabel.text = viewModel.segaSectionDataSource[indexPath.row].productName
-            cell.descriptionValueTextView.text = viewModel.segaSectionDataSource[indexPath.row].shortDetails
+            cell.configurateCellUnsafe(
+                descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
+                descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails
+            )
         default:
             cell.textLabel?.text = .failurePlaceholder
         }
