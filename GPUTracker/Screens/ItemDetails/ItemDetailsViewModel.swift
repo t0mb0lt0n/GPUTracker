@@ -12,9 +12,7 @@ final class ItemDetailsViewModel {
     let selectedSegmentIndex = Constants.selectedSegmentIndex
     var generalSegmentRealmData: Results<General>
     var boardsSegmentRealmData: Results<Boards>
-    var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
-    var dataSourceUpdate: (() -> Void)?
     var currentRealm: Realm {
         didSet {
             generalSegmentRealmData = currentRealm.objects(General.self)

@@ -77,7 +77,7 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = { 
 //            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
 //            self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-            print("reloaded")
+//            print("reloaded")
         }
     }
 }
