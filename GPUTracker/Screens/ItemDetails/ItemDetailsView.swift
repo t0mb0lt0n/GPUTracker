@@ -84,12 +84,6 @@ extension ItemDetailsView {
 
 extension ItemDetailsView {
     private enum Constants {
-        static let appNameLabelTopOffsetConstant: CGFloat = -25
-        static let appLogoHeight: CGFloat = 50
-        static let appLogoWidth: CGFloat = 50
-        static let appNameLabelHeight:  CGFloat = 20
-        static let appNameLabelWidth: CGFloat = 200
-        static let appNameLabelLeadingOffsetConstant: CGFloat = -35
-        static let appNameBottomPadding: CGFloat = -10
+        static let appNameLabelTopOffsetConstant: CGFloat = 99
     }
 }
