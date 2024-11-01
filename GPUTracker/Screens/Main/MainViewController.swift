@@ -39,9 +39,12 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBarStyle(isLarge: true, title: .mainCatalogue, titleColor: .black)
         navigationController?.isNavigationBarHidden = false
-        //self.delagate?.updateData(forItemIndex: .sonyRealm)
+        setupNavigationBarStyle(
+            isLarge: true,
+            title: .mainCatalogue,
+            titleColor: .black
+        )
     }
     
     override func viewDidLayoutSubviews() {
@@ -169,13 +172,13 @@ extension MainViewController: UITableViewDataSource {
         let customHeaderView = UIView()
         let developerNameLabel = UILabel(
             frame: CGRect(
-                x: 15,
+                x: 20,
                 y: 20,
                 width: 150,
                 height: 23
             )
         )
-        developerNameLabel.textColor = .gray
+        developerNameLabel.textColor = .systemGray
         customHeaderView.addSubview(developerNameLabel)
         
         switch section {
