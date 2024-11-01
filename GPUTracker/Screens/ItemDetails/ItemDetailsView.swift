@@ -10,17 +10,17 @@ import UIKit
 final class ItemDetailsView: UIView {
     let itemDescriptionView = CustomDescriptionView()
     
-    let itemNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Original Xbox 360"
-        label.textColor = .black
-        label.font = .systemFont(
-            ofSize: 25,
-            weight: .semibold
-        )
-        label.textAlignment = .left
-        return label
-    }()
+//    let itemNameLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "Original Xbox 360"
+//        label.textColor = .black
+//        label.font = .systemFont(
+//            ofSize: 25,
+//            weight: .semibold
+//        )
+//        label.textAlignment = .left
+//        return label
+//    }()
     
     let segmentedControll = UISegmentedControl()
     
@@ -44,7 +44,6 @@ extension ItemDetailsView {
     final private func setupView() {
         segmentedControll.selectedSegmentIndex = 0
         [
-        itemNameLabel,
         segmentedControll,
         itemDescriptionView,
         ].forEach {
@@ -60,19 +59,19 @@ extension ItemDetailsView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            itemNameLabel.topAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: 0
-            ),
-            itemNameLabel.leadingAnchor.constraint(
-                equalTo: segmentedControll.leadingAnchor,
-                constant: 0
-            ),
-            itemNameLabel.trailingAnchor.constraint(
-                equalTo: segmentedControll.trailingAnchor,
-                constant: 0
-            ),
-            itemNameLabel.heightAnchor.constraint(equalToConstant: 50),
+//            itemNameLabel.topAnchor.constraint(
+//                equalTo: safeAreaLayoutGuide.topAnchor,
+//                constant: 0
+//            ),
+//            itemNameLabel.leadingAnchor.constraint(
+//                equalTo: segmentedControll.leadingAnchor,
+//                constant: 0
+//            ),
+//            itemNameLabel.trailingAnchor.constraint(
+//                equalTo: segmentedControll.trailingAnchor,
+//                constant: 0
+//            ),
+//            itemNameLabel.heightAnchor.constraint(equalToConstant: 50),
             
             itemDescriptionView.topAnchor.constraint(
                 equalTo: segmentedControll.bottomAnchor,
@@ -92,7 +91,7 @@ extension ItemDetailsView {
             ),
             
             segmentedControll.topAnchor.constraint(
-                equalTo: itemNameLabel.bottomAnchor,
+                equalTo: safeAreaLayoutGuide.topAnchor,
                 constant: 0
             ),
             segmentedControll.leadingAnchor.constraint(
