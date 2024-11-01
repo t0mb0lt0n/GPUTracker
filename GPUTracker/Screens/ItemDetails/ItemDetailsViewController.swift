@@ -32,8 +32,6 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //title = .productDetailsHeader
-        //navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
         }
@@ -156,7 +154,6 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
-        //mainView.itemNameLabel.text = "Text 
         mainView.itemDescriptionView.generalSegmentTableView.reloadData()
         mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
         print("Delegate")
