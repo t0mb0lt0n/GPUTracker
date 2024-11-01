@@ -37,6 +37,7 @@ final class ItemDetailsViewController: UIViewController {
         }
         setupMainView()
         setupViewModel()
+        viewModel.loadSelectedData()
     }
     
     func segmentDidChange() {
@@ -73,9 +74,9 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        viewModel.reloadClosure = { [weak self] in
-            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+        viewModel.reloadClosure = { 
+//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+//            self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
             print("reloaded")
         }
     }

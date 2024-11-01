@@ -29,6 +29,7 @@ final class MainViewController: UIViewController {
             withViewModel: .init(forItemWithRealmName: .xbox360Realm),
             andBarTitle: .xbox360Realm
         )
+        self.delagate = itemDetailsVC
         super.init(nibName: nil, bundle: nil)
         setupMainView()
     }
@@ -211,7 +212,6 @@ extension MainViewController: UITableViewDelegate {
             withViewModel: .init(forItemWithRealmName: .xbox360Realm),
             andBarTitle: "Item Name"
         )
-        self.delagate = itemDetailsVC
         switch indexPath.section {
         case 0:
 //            let detailsVC = ItemDetailsViewController(
