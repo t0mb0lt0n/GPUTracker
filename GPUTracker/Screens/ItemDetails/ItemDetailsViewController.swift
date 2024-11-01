@@ -152,8 +152,8 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
             withRealmName: itemIndexName
         ).data
         mainView.itemNameLabel.text = "Text has changed"
-        //mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-        //mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+        mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+        mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
         print("Delegate")
     }
 }

@@ -43,6 +43,7 @@ class MicrosoftProductList: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var productName: String = ""
     @objc dynamic var shortDetails: String = ""
+    @objc dynamic var onlineStatus: String = ""
     
     override static func primaryKey() -> String? {
         return "_id"

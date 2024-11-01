@@ -200,7 +200,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             self.delagate?.updateData(
-                forItemIndex: .xbox360Realm
+                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
             navigationController?.pushViewController(vc, animated: true)
         case 1:
