@@ -124,11 +124,19 @@ extension MainCell {
     }
     
     final func configurateCellUnsafe(
-        descriptionName: String?,
-        descriptionValue: String?
+        descriptionName: String,
+        descriptionValue: String,
+        onlineStatus: String
     ) {
         descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue
+        switch onlineStatus {
+        case "online":
+            onlineStatusImageView.image = .offlineStatusImage
+        default:
+            break
+        }
+        onlineStatusImageView.image = .offlineStatusImage
     }
 }
 

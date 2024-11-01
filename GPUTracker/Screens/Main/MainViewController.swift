@@ -41,6 +41,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
+        navigationController.lar
         self.delagate?.updateData(forItemIndex: .sonyRealm)
     }
     
@@ -126,17 +127,20 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             cell.configurateCellUnsafe(
                 descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails
+                descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
+                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         case 1:
             cell.configurateCellUnsafe(
                 descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails
+                descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
+                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         case 2:
             cell.configurateCellUnsafe(
                 descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails
+                descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
+                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         default:
             cell.textLabel?.text = .failurePlaceholder
