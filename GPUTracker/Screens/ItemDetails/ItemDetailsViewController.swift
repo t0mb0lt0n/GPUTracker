@@ -9,7 +9,6 @@ import UIKit
 import RealmSwift
 
 final class ItemDetailsViewController: UIViewController {
-    //var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
     
@@ -20,6 +19,7 @@ final class ItemDetailsViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.title = barTitle
+       // setupViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +35,8 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentDidChangeClosure = { [weak self] in
             self?.segmentDidChange()
         }
-        setupViewModel()
         setupMainView()
+        setupViewModel()
     }
     
     func segmentDidChange() {
@@ -151,12 +151,13 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemIndex itemIndexName: String) {
+        print("Delegate")
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
-        mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-        mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-        print("Delegate")
+        viewModel.loadSelectedData()
+        //mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+        //mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
     }
 }
 
