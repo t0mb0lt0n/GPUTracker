@@ -201,21 +201,24 @@ extension MainViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        let vc = ItemDetailsViewController(viewModel: .init(forItemWithRealmName: .xbox360Realm))
-        self.delagate = vc
+        let detailsVC = ItemDetailsViewController(
+            withViewModel: .init(forItemWithRealmName: .xbox360Realm),
+            andBarTitle: "Item Name"
+        )
+        self.delagate = detailsVC
         switch indexPath.section {
         case 0:
             self.delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(detailsVC, animated: true)
         case 1:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
+            detailsVC.title = "Title changed"
             tableView.reloadData()
-            navigationController?.pushViewController(vc, animated: true)
-
+            navigationController?.pushViewController(detailsVC, animated: true)
         case 2:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]

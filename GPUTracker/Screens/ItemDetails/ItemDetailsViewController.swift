@@ -12,9 +12,14 @@ final class ItemDetailsViewController: UIViewController {
     //var mainVC: MainViewController?
     lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
-    init(viewModel: ItemDetailsViewModel) {
+    
+    init(
+        withViewModel viewModel: ItemDetailsViewModel,
+        andBarTitle barTitle: String
+    ) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = barTitle
     }
     
     required init?(coder: NSCoder) {
@@ -27,8 +32,8 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = .productDetailsHeader
-        navigationController?.isNavigationBarHidden = false
+        //title = .productDetailsHeader
+        //navigationController?.isNavigationBarHidden = false
         mainView.segmentDidChangedClosure = { [weak self] in
             self?.segmentChanged()
         }
