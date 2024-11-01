@@ -17,7 +17,7 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11733BC42BCD499500D3A442 /* sony.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11733BC32BCD499500D3A442 /* sony.realm */; };
-		11A604272CD512B200A16F01 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extensions.swift */; };
+		11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extension.swift */; };
 		11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */; };
 		11B152D02BE3A887004F6FBC /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B152CF2BE3A887004F6FBC /* mainProductList.realm */; };
 		11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainCell.swift */; };
@@ -47,7 +47,7 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11733BC32BCD499500D3A442 /* sony.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = sony.realm; sourceTree = "<group>"; };
-		11A604262CD512B200A16F01 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		11A604262CD512B200A16F01 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11B152CF2BE3A887004F6FBC /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
 		11B152D12BE559D7004F6FBC /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */,
 				11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */,
 				11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */,
-				11A604262CD512B200A16F01 /* UIViewController+Extensions.swift */,
+				11A604262CD512B200A16F01 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
 				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
 				11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */,
-				11A604272CD512B200A16F01 /* UIViewController+Extensions.swift in Sources */,
+				11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */,
 				11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */,
 				11DDC1E22BBC7D48007D8CF3 /* RealmObjects.swift in Sources */,
 				11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */,

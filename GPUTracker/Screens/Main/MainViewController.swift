@@ -39,9 +39,9 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBarStyle(isLarge: true, title: .mainCatalogue, titleColor: .systemBlue)
         title = .mainCatalogue
         navigationController?.isNavigationBarHidden = false
-        navigationController.lar
         self.delagate?.updateData(forItemIndex: .sonyRealm)
     }
     
