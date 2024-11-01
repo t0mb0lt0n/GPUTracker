@@ -32,14 +32,14 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.segmentDidChangedClosure = { [weak self] in
-            self?.segmentChanged()
+        mainView.segmentDidChangeClosure = { [weak self] in
+            self?.segmentDidChange()
         }
         setupViewModel()
         setupMainView()
     }
     
-    func segmentChanged() {
+    func segmentDidChange() {
         let contentOffset = Int(
             mainView.itemDescriptionView.generalSegmentTableView.frame.width
         )

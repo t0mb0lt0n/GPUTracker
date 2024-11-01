@@ -24,7 +24,7 @@ final class ItemDetailsView: UIView {
     
     let segmentedControll = UISegmentedControl()
     
-    var segmentDidChangedClosure: (() -> Void)?
+    var segmentDidChangeClosure: (() -> Void)?
     
     //MARK: init
     init() {
@@ -106,7 +106,7 @@ extension ItemDetailsView {
     }
     
     @objc func segmentDidChanged() {
-        segmentDidChangedClosure?()
+        segmentDidChangeClosure?()
     }
 }
 
