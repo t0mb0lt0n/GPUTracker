@@ -15,10 +15,10 @@ final class ItemDetailsViewModel {
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
+            print("didSet + reload")
             generalSegmentRealmData = currentRealm.objects(General.self)
             boardsSegmentRealmData = currentRealm.objects(Boards.self)
             reloadClosure?()
-            print("didSet + reload")
         }
     }
 

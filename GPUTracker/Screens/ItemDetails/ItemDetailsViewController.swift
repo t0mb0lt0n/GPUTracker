@@ -75,9 +75,9 @@ final class ItemDetailsViewController: UIViewController {
     
     private func setupViewModel() {
         viewModel.reloadClosure = {
+            print("reload closure")
             self.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
             self.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-            print("reload closure")
         }
     }
 }
@@ -152,10 +152,10 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemIndex itemIndexName: String) {
+        print("Delegate")
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
-        print("Delegate")
     }
 }
 
