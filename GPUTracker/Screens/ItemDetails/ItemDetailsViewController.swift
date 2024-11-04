@@ -152,10 +152,10 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemIndex itemIndexName: String) {
-        print("Delegate")
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
+        print("Delegate")
     }
 }
 
