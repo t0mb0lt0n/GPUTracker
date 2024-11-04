@@ -33,6 +33,7 @@ final class ItemDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func segmentDidChange() {

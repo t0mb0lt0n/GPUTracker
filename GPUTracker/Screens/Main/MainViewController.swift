@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     private let viewModel: MainViewModel
     weak var delagate: RealmUpdateDelegate?
-    var itemDetailsVC: ItemDetailsViewController
+    var itemDetailsVC: ItemDetailsViewController?
     
     init() {
         viewModel = MainViewModel(
@@ -31,6 +31,7 @@ final class MainViewController: UIViewController {
         )
         self.delagate = itemDetailsVC
         super.init(nibName: nil, bundle: nil)
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupMainView()
     }
 
@@ -42,16 +43,31 @@ final class MainViewController: UIViewController {
         view = MainView()
         setupViewModel()
         setupMainView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
         setupNavigationBarStyle(
             isLarge: true,
             title: .mainCatalogue,
             titleColor: .black
         )
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+        setupNavigationBarStyle(
+            isLarge: true,
+            title: .mainCatalogue,
+            titleColor: .black
+        )
+        if let navigationBar = self.navigationController?.navigationBar {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.backgroundColor = .blue
+            navigationBar.standardAppearance = navBarAppearance
+            navigationBar.scrollEdgeAppearance = navBarAppearance
+            
+            let navBarHeight = CGFloat(100) // Set custom height
+            navigationBar.frame.size.height = navBarHeight
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -217,7 +233,7 @@ extension MainViewController: UITableViewDelegate {
             self.delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
-            navigationController?.pushViewController(itemDetailsVC, animated: true)
+            navigationController?.pushViewController(itemDetailsVC!, animated: true)
         case 1:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
