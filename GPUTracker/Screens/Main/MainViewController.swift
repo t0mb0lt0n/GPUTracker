@@ -29,20 +29,10 @@ final class MainViewController: UIViewController {
             withViewModel: .init(forItemWithRealmName: .xbox360Realm),
             andBarTitle: .xbox360Realm
         )
-        self.delagate = itemDetailsVC
         super.init(nibName: nil, bundle: nil)
-//        setupMainView()
-//
-//        self.setupNavigationBarStyle(
-//            isLarge: true,
-//            title: .mainCatalogue,
-//            titleColor: .black
-//        )
-//
-        //navigationController?.navigationBar.prefersLargeTitles = true
-//        setupViewModel()
+        setupViewModel()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,7 +50,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationController?.isNavigationBarHidden = true
+        self.delagate = itemDetailsVC
         setupNavigationBarStyle(
             isLarge: true,
             title: .mainCatalogue,
@@ -236,9 +226,8 @@ extension MainViewController: UITableViewDelegate {
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
-            detailsVC.title = "Title changed"
-            tableView.reloadData()
-            navigationController?.pushViewController(detailsVC, animated: true)
+            itemDetailsVC.title = "Title changed"
+            navigationController?.pushViewController(itemDetailsVC!, animated: true)
         case 2:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
