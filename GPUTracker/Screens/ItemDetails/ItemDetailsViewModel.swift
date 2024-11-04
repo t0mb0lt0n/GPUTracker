@@ -17,16 +17,11 @@ final class ItemDetailsViewModel {
         didSet {
             generalSegmentRealmData = currentRealm.objects(General.self)
             boardsSegmentRealmData = currentRealm.objects(Boards.self)
-            //reloadClosure!()
-            print("didSet")
+            reloadClosure!()
+            print("didSet + reload")
         }
     }
-    
-    func loadSelectedData() {
-        reloadClosure!()
-        print("reloaded")
-    }
-    
+
     var descriptionSegments: [String] = {
         [
         .generalSegmentHeader,

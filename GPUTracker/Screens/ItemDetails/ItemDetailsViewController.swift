@@ -32,11 +32,10 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.segmentDidChangeClosure = { [weak self] in
-            self?.segmentDidChange()
-        }
+//        mainView.segmentDidChangeClosure = { [weak self] in
+//            self?.segmentDidChange()
+//        }
         setupMainView()
-        viewModel.loadSelectedData()
     }
     
     func segmentDidChange() {
@@ -54,6 +53,12 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupMainView() {
+        mainView.segmentDidChangeClosure = { [weak self] in
+            self?.segmentDidChange()
+        }
+        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
+
+
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
@@ -69,14 +74,12 @@ final class ItemDetailsViewController: UIViewController {
                 animated: false
             )
         }
-        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
     }
     
     private func setupViewModel() {
         viewModel.reloadClosure = {
             self.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
             self.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-            print("reloaded")
         }
     }
 }
@@ -155,7 +158,6 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemIndexName
         ).data
-        viewModel.loadSelectedData()
     }
 }
 
