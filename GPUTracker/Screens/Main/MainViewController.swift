@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     private let viewModel: MainViewModel
     weak var delagate: RealmUpdateDelegate?
-    var itemDetailsVC: ItemDetailsViewController?
+    var itemDetailsVC: ItemDetailsViewController
     
     init() {
         viewModel = MainViewModel(
@@ -214,15 +214,10 @@ extension MainViewController: UITableViewDelegate {
         )
         switch indexPath.section {
         case 0:
-//            let detailsVC = ItemDetailsViewController(
-//                withViewModel: .init(forItemWithRealmName: .xbox360Realm),
-//                andBarTitle: "Item Name"
-//            )
-            //self.delagate = detailsVC
             self.delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
             )
-            navigationController?.pushViewController(itemDetailsVC!, animated: true)
+            navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 1:
             delagate?.updateData(
                 forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
