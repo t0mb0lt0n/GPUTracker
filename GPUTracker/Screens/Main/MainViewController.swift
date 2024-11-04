@@ -39,13 +39,12 @@ final class MainViewController: UIViewController {
     
     override func loadView() {
         view = MainView()
-        setupViewModel()
         setupMainView()
-        setupNavigationBarStyle(
-            isLarge: true,
-            title: .mainCatalogue,
-            titleColor: .black
-        )
+//        setupNavigationBarStyle(
+//            isLarge: true,
+//            title: .mainCatalogue,
+//            titleColor: .black
+//        )
     }
     
     override func viewDidLoad() {
