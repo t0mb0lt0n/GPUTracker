@@ -32,9 +32,6 @@ final class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mainView.segmentDidChangeClosure = { [weak self] in
-//            self?.segmentDidChange()
-//        }
         setupMainView()
     }
     
