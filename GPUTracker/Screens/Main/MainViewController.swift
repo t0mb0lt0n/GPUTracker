@@ -39,22 +39,12 @@ final class MainViewController: UIViewController {
     
     override func loadView() {
         view = MainView()
-        setupMainView()
-//        setupNavigationBarStyle(
-//            isLarge: true,
-//            title: .mainCatalogue,
-//            titleColor: .black
-//        )
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delagate = itemDetailsVC
-        setupNavigationBarStyle(
-            isLarge: true,
-            title: .mainCatalogue,
-            titleColor: .black
-        )
+        setupMainView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,6 +55,11 @@ final class MainViewController: UIViewController {
         mainView.mainTableView.delegate = self
         mainView.mainTableView.dataSource = self
         mainView.backgroundColor = .tertiarySystemGroupedBackground
+        setupNavigationBarStyle(
+            isLarge: true,
+            title: .mainCatalogue,
+            titleColor: .black
+        )
     }
 
     private func setupViewModel() {
