@@ -31,8 +31,16 @@ final class MainViewController: UIViewController {
         )
         self.delagate = itemDetailsVC
         super.init(nibName: nil, bundle: nil)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        setupMainView()
+//        setupMainView()
+//
+//        self.setupNavigationBarStyle(
+//            isLarge: true,
+//            title: .mainCatalogue,
+//            titleColor: .black
+//        )
+//
+        //navigationController?.navigationBar.prefersLargeTitles = true
+//        setupViewModel()
     }
 
     required init?(coder: NSCoder) {
@@ -52,22 +60,12 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+        //navigationController?.isNavigationBarHidden = true
         setupNavigationBarStyle(
             isLarge: true,
             title: .mainCatalogue,
             titleColor: .black
         )
-        if let navigationBar = self.navigationController?.navigationBar {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.backgroundColor = .blue
-            navigationBar.standardAppearance = navBarAppearance
-            navigationBar.scrollEdgeAppearance = navBarAppearance
-            
-            let navBarHeight = CGFloat(100) // Set custom height
-            navigationBar.frame.size.height = navBarHeight
-        }
     }
     
     override func viewDidLayoutSubviews() {
