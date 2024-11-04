@@ -19,7 +19,7 @@ final class ItemDetailsViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.title = barTitle
-       // setupViewModel()
+        setupViewModel()
     }
     
     required init?(coder: NSCoder) {
@@ -36,7 +36,6 @@ final class ItemDetailsViewController: UIViewController {
             self?.segmentDidChange()
         }
         setupMainView()
-        setupViewModel()
         viewModel.loadSelectedData()
     }
     
@@ -74,10 +73,10 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        viewModel.reloadClosure = { 
-//            self?.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-//            self?.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
-//            print("reloaded")
+        viewModel.reloadClosure = {
+            self.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
+            self.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+            print("reloaded")
         }
     }
 }
@@ -157,8 +156,6 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
             withRealmName: itemIndexName
         ).data
         viewModel.loadSelectedData()
-        //mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-        //mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
     }
 }
 
