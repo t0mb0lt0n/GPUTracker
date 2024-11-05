@@ -11,7 +11,7 @@ import RealmSwift
 class General: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
-    @objc dynamic var value: String = ""
+    @objc dynamic var descriptionValue: String = ""
 
     override static func primaryKey() -> String? {
         return "_id"
