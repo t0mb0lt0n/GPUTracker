@@ -10,7 +10,7 @@ import SwiftUI
 import RealmSwift
 
 protocol RealmUpdateDelegate: AnyObject {
-    func updateData(forItemIndex itemIndexName: String)
+    func updateData(forItemWithName itemIndexName: String)
 }
 
 final class MainViewController: UIViewController {
@@ -209,18 +209,18 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             self.delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
             navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 1:
             delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
             itemDetailsVC.title = "Title changed"
             navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 2:
             delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
         default:
             break
@@ -235,15 +235,15 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case 0:
             delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
         case 1:
             delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
         case 2:
             delagate?.updateData(
-                forItemIndex: RealmConfigurations.itemIndexName[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
         default:
             break
