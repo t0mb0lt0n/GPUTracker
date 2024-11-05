@@ -53,7 +53,6 @@ final class ItemDetailsViewController: UIViewController {
         mainView.segmentDidChangeClosure = { [weak self] in
             self?.segmentDidChange()
         }
-        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
         
         [
         mainView.itemDescriptionView.generalSegmentTableView,
@@ -70,6 +69,7 @@ final class ItemDetailsViewController: UIViewController {
                 animated: false
             )
         }
+        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
     }
     
     private func setupViewModel() {
