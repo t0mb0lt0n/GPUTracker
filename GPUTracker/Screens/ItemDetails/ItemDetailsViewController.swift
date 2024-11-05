@@ -54,8 +54,7 @@ final class ItemDetailsViewController: UIViewController {
             self?.segmentDidChange()
         }
         mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
-
-
+        
         [
         mainView.itemDescriptionView.generalSegmentTableView,
         mainView.itemDescriptionView.motherBoardsSegmentTableView
