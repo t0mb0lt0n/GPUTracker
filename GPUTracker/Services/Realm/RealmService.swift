@@ -18,7 +18,7 @@ final class RealmService {
         )
         let realmConfiguration = Realm.Configuration(
             fileURL: realmPath,
-            readOnly: false,
+            readOnly: true,
             schemaVersion: RealmConfigurations.schemas[realmName] ??
             Constants.defaultRealmSchemaVersion
         )
