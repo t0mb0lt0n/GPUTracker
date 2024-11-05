@@ -14,6 +14,7 @@ extension String {
     static let otherComponentsSegmentHeader: String = "Other Components"
     static let xbox360Realm: String = "xbox360"
     static let sonyRealm: String = "sony"
+    static let playstation3: String = "playstation3"
     static let mainProductListRealm: String = "mainProductList"
     static let failurePlaceholder: String = "failure"
     static let productDetailsHeader: String = "Product details"

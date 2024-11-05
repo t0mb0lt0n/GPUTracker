@@ -8,6 +8,16 @@
 import Foundation
 import RealmSwift
 
+//class General: Object {
+//    @objc dynamic var _id: Int = 0
+//    @objc dynamic var descriptionName: String = ""
+//    @objc dynamic var value: String = ""
+//
+//    override static func primaryKey() -> String? {
+//        return "_id"
+//    }
+//}
+
 class General: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
@@ -17,6 +27,7 @@ class General: Object {
         return "_id"
     }
 }
+
 
 class BoardRevision: Object {
     @objc dynamic var _id: Int = 0
