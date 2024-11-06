@@ -25,7 +25,7 @@ final class ItemDetailsViewModel {
     var descriptionSegments: [String] = {
         [
         .generalSegmentHeader,
-        .motherboardsSegmentHeader,
+        .components,
         .otherComponentsSegmentHeader
         ]
     }()

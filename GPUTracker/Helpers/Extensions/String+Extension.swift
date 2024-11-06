@@ -12,6 +12,7 @@ extension String {
     static let generalSegmentHeader: String = "General"
     static let motherboardsSegmentHeader: String = "Motherboards"
     static let otherComponentsSegmentHeader: String = "Other Components"
+    static let components: String = "Components"
     static let xbox360Realm: String = "xbox360"
     static let sonyRealm: String = "sony"
     static let playstation3: String = "playstation3"
