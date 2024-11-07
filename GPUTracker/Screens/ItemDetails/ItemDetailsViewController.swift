@@ -127,7 +127,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         switch tableView.tag {
         case 0:
             generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
-            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionValue
+            //generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
             boardsSegmentTableViewCell.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
