@@ -90,8 +90,8 @@ extension ItemDetailsView {
         static let itemDescriptionViewTopInset: CGFloat = 10
         static let sectionLineTopInset: CGFloat = 10
         static let sectionLineHeight: CGFloat = 1
-        static let segmentedControllLeadingInset: CGFloat = 5
-        static let segmentedControllTrailingInset: CGFloat = -5
+        static let segmentedControllLeadingInset: CGFloat = 10
+        static let segmentedControllTrailingInset: CGFloat = -10
         static let selectedSegmentIndex: Int = 1
     }
 }
