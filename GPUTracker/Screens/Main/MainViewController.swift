@@ -213,11 +213,7 @@ extension MainViewController: UITableViewDelegate {
             )
             navigationController?.pushViewController(itemDetailsVC!, animated: true)
         case 1:
-//            delagate?.updateData(
-//                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
-//            )
-            //itemDetailsVC.title = "Title changed"
-            //navigationController?.pushViewController(itemDetailsVC, animated: true)
+
             print("")
         case 2:
             delagate?.updateData(
