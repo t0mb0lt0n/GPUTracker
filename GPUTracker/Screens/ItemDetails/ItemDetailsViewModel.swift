@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 final class ItemDetailsViewModel {
     let selectedSegmentIndex = Constants.selectedSegmentIndex
@@ -27,6 +28,14 @@ final class ItemDetailsViewModel {
         .generalSegmentHeader,
         .components,
         .otherComponentsSegmentHeader
+        ]
+    }()
+    
+    var segmentImages: [UIImage] = {
+        [
+            .genegalImage,
+            .genegalImage,
+            .genegalImage
         ]
     }()
     

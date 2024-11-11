@@ -12,4 +12,5 @@ extension UIImage {
     static let onlineStatusImage = UIImage(named: "onlineStatusImage") ?? UIImage()
     static let offlineStatusImage = UIImage(named: "offlineStatusImage") ?? UIImage()
     static let partiallyAvailableStatusImage = UIImage(named: "offlineStatusImage") ?? UIImage()
+    static let genegalImage = UIImage(systemName: "building.columns") ?? UIImage()
 }

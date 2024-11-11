@@ -62,12 +62,13 @@ final class ItemDetailsViewController: UIViewController {
             tableView.dataSource = self
         }
         
-        for (index, value) in viewModel.descriptionSegments.enumerated() {
-            mainView.segmentedControll.insertSegment(
-                withTitle: value,
-                at: index,
-                animated: false
-            )
+        for (index, value) in viewModel.segmentImages.enumerated() {
+//            mainView.segmentedControll.insertSegment(
+//                withTitle: value,
+//                at: index,
+//                animated: false
+//            )
+            mainView.segmentedControll.insertSegment(with: value, at: index, animated: false)
         }
         mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
     }
