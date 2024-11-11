@@ -12,6 +12,12 @@ final class ItemDetailsView: UIView {
     let segmentedControll = UISegmentedControl()
     var segmentDidChangeClosure: (() -> Void)?
     
+    let sectionLine:  UIView = {
+        let line = UIView(frame: .zero)
+        line.backgroundColor = .systemGray5
+        return line
+    }()
+    
     //MARK: init
     init() {
         super.init(frame: .zero)
@@ -32,6 +38,7 @@ extension ItemDetailsView {
         [
         segmentedControll,
         itemDescriptionView,
+        sectionLine
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -47,7 +54,7 @@ extension ItemDetailsView {
         NSLayoutConstraint.activate([
             itemDescriptionView.topAnchor.constraint(
                 equalTo: segmentedControll.bottomAnchor,
-                constant: 5
+                constant: 10
             ),
             itemDescriptionView.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
@@ -68,12 +75,28 @@ extension ItemDetailsView {
             ),
             segmentedControll.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 10
+                constant: 5
             ),
             segmentedControll.trailingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: -10
+                constant: -5
             ),
+            
+            sectionLine.topAnchor.constraint(
+                equalTo: segmentedControll.bottomAnchor,
+                constant: 10
+            ),
+            sectionLine.leadingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.leadingAnchor,
+                constant: 0
+            ),
+            sectionLine.trailingAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.trailingAnchor,
+                constant: 0
+            ),
+            sectionLine.heightAnchor.constraint(equalToConstant: 1)
+            
+            
         ])
     }
     
