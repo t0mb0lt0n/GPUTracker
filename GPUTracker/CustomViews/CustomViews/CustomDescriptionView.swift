@@ -34,14 +34,7 @@ final class CustomDescriptionView: UIView {
     final private func setupView() {
         mainScrollView.isScrollEnabled = false
         generalSegmentTableView.tag = 0
-        //generalSegmentTableView.sectionHeaderHeight = .zero
-        //generalSegmentTableView.separatorInset = UIEdgeInsets.zero
-        //generalSegmentTableView.automaticallyAdjustsScrollIndicatorInsets = false
-        //generalSegmentTableView.backgroundColor = .green
-        //generalSegmentTableView.contentInsetAdjustmentBehavior = .never
-        //generalSegmentTableView.sectionHeaderTopPadding = 0
-        //generalSegmentTableView.style = .plain
-
+        //generalSegmentTableView.backgroundColor = .white
         motherBoardsSegmentTableView.tag = 1
         generalSegmentTableView.alwaysBounceVertical = false
         motherBoardsSegmentTableView.alwaysBounceVertical = false

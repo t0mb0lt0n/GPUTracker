@@ -56,23 +56,11 @@ extension ItemDetailsView {
                 equalTo: segmentedControll.bottomAnchor,
                 constant: 10
             ),
-            itemDescriptionView.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 0
-            ),
-            itemDescriptionView.trailingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: 0
-            ),
-            itemDescriptionView.bottomAnchor.constraint(
-                equalTo: bottomAnchor,
-                constant: 0
-            ),
+            itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            itemDescriptionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            segmentedControll.topAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: 0
-            ),
+            segmentedControll.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             segmentedControll.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
                 constant: 5
@@ -86,17 +74,9 @@ extension ItemDetailsView {
                 equalTo: segmentedControll.bottomAnchor,
                 constant: 10
             ),
-            sectionLine.leadingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 0
-            ),
-            sectionLine.trailingAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: 0
-            ),
+            sectionLine.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            sectionLine.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             sectionLine.heightAnchor.constraint(equalToConstant: 1)
-            
-            
         ])
     }
     
