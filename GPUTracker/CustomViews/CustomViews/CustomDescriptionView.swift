@@ -12,7 +12,7 @@ final class CustomDescriptionView: UIView {
     let motherBoardsSegmentTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .lightGray
+        scrollView.backgroundColor = .clear
         scrollView.contentSize = CGSize(
             width: Int(UIScreen.main.bounds.width) * Constants.numberOfSegmets,
             height: Int(UIScreen.main.bounds.height)
@@ -34,6 +34,14 @@ final class CustomDescriptionView: UIView {
     final private func setupView() {
         mainScrollView.isScrollEnabled = false
         generalSegmentTableView.tag = 0
+        //generalSegmentTableView.sectionHeaderHeight = .zero
+        //generalSegmentTableView.separatorInset = UIEdgeInsets.zero
+        //generalSegmentTableView.automaticallyAdjustsScrollIndicatorInsets = false
+        //generalSegmentTableView.backgroundColor = .green
+        //generalSegmentTableView.contentInsetAdjustmentBehavior = .never
+        //generalSegmentTableView.sectionHeaderTopPadding = 0
+        //generalSegmentTableView.style = .plain
+
         motherBoardsSegmentTableView.tag = 1
         generalSegmentTableView.alwaysBounceVertical = false
         motherBoardsSegmentTableView.alwaysBounceVertical = false

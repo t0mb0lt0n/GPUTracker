@@ -8,7 +8,7 @@ import UIKit
 
 class CustomTableView: UITableView {
     init() {
-        super .init(frame: .zero, style: .grouped)
+        super .init(frame: .zero, style: .plain)
         setupTableView()
     }
     
