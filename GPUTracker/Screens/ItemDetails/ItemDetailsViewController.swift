@@ -155,6 +155,7 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data
+        title = viewModel.generalSegmentRealmData.last?.descriptionValue
     }
 }
 

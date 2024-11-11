@@ -12,13 +12,13 @@ final class ItemDetailsView: UIView {
     let segmentedControll = UISegmentedControl()
     var segmentDidChangeClosure: (() -> Void)?
     
-    let sectionLine:  UIView = {
+    let sectionLine: UIView = {
         let line = UIView(frame: .zero)
         line.backgroundColor = .systemGray5
         return line
     }()
     
-    //MARK: init
+    //MARK: - init
     init() {
         super.init(frame: .zero)
         setupView()
@@ -34,7 +34,7 @@ final class ItemDetailsView: UIView {
 //MARK: - ItemDetailsView extensions
 extension ItemDetailsView {
     final private func setupView() {
-        segmentedControll.selectedSegmentIndex = 0
+        segmentedControll.selectedSegmentIndex = Constants.selectedSegmentIndex
         [
         segmentedControll,
         itemDescriptionView,
@@ -92,5 +92,6 @@ extension ItemDetailsView {
         static let sectionLineHeight: CGFloat = 1
         static let segmentedControllLeadingInset: CGFloat = 5
         static let segmentedControllTrailingInset: CGFloat = -5
+        static let selectedSegmentIndex: Int = 1
     }
 }
