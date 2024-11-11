@@ -11,13 +11,13 @@ import RealmSwift
 final class ItemDetailsViewModel {
     let selectedSegmentIndex = Constants.selectedSegmentIndex
     var generalSegmentRealmData: Results<General>
-    var boardsSegmentRealmData: Results<Boards>
+    var componentsSegmentRealmData: Results<Components>
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
             print("didSet + reload")
             generalSegmentRealmData = currentRealm.objects(General.self)
-            boardsSegmentRealmData = currentRealm.objects(Boards.self)
+            componentsSegmentRealmData = currentRealm.objects(Components.self)
             reloadClosure?()
         }
     }
@@ -33,7 +33,7 @@ final class ItemDetailsViewModel {
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
         generalSegmentRealmData = currentRealm.objects(General.self)
-        boardsSegmentRealmData = currentRealm.objects(Boards.self)
+        componentsSegmentRealmData = currentRealm.objects(Components.self)
     }
 }
 

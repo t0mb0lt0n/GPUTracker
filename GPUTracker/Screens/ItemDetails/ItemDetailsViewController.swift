@@ -91,7 +91,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         case 0:
             return viewModel.generalSegmentRealmData.count
         case 1:
-            return viewModel.boardsSegmentRealmData.count
+            return viewModel.componentsSegmentRealmData.count
         default:
             return 0
         }
@@ -110,7 +110,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             ofSize: 17,
             weight: .medium
         )
-        guard let boardsSegmentTableViewCell = tableView.dequeueReusableCell(
+        guard let componentsSegmentTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
@@ -130,11 +130,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
             generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
-            boardsSegmentTableViewCell.descriptionNameLabel.text = viewModel.boardsSegmentRealmData[indexPath.row].boardName
-            boardsSegmentTableViewCell.descriptionValueTextView.text = viewModel.boardsSegmentRealmData[indexPath.row].revison
-            return boardsSegmentTableViewCell
+            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.componentsSegmentRealmData[indexPath.row].descriptionName
+            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.componentsSegmentRealmData[indexPath.row].descriptionValue
+            return componentsSegmentTableViewCell
         default:
-            return boardsSegmentTableViewCell
+            return componentsSegmentTableViewCell
         }
     }
 }
@@ -152,10 +152,10 @@ extension ItemDetailsViewController: UITableViewDelegate {
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemWithName itemName: String) {
         print("Delegate")
+        title = viewModel.generalSegmentRealmData.last?.descriptionValue
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data
-        title = viewModel.generalSegmentRealmData.last?.descriptionValue
     }
 }
 
