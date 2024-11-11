@@ -54,7 +54,7 @@ extension ItemDetailsView {
         NSLayoutConstraint.activate([
             itemDescriptionView.topAnchor.constraint(
                 equalTo: segmentedControll.bottomAnchor,
-                constant: 10
+                constant: Constants.itemDescriptionViewTopInset
             ),
             itemDescriptionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             itemDescriptionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
@@ -63,20 +63,20 @@ extension ItemDetailsView {
             segmentedControll.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             segmentedControll.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
-                constant: 5
+                constant: Constants.segmentedControllLeadingInset
             ),
             segmentedControll.trailingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
-                constant: -5
+                constant: Constants.segmentedControllTrailingInset
             ),
             
             sectionLine.topAnchor.constraint(
                 equalTo: segmentedControll.bottomAnchor,
-                constant: 10
+                constant: Constants.sectionLineTopInset
             ),
             sectionLine.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             sectionLine.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            sectionLine.heightAnchor.constraint(equalToConstant: 1)
+            sectionLine.heightAnchor.constraint(equalToConstant: Constants.sectionLineHeight)
         ])
     }
     
@@ -87,6 +87,10 @@ extension ItemDetailsView {
 
 extension ItemDetailsView {
     private enum Constants {
-        static let appNameLabelTopOffsetConstant: CGFloat = 99
+        static let itemDescriptionViewTopInset: CGFloat = 10
+        static let sectionLineTopInset: CGFloat = 10
+        static let sectionLineHeight: CGFloat = 1
+        static let segmentedControllLeadingInset: CGFloat = 5
+        static let segmentedControllTrailingInset: CGFloat = -5
     }
 }
