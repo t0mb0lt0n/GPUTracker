@@ -94,9 +94,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.generalSegmentRealmData.count
+            return viewModel.generalSegmentDataSource.count
         case 1:
-            return viewModel.componentsSegmentRealmData.count
+            return viewModel.consoleComponentsSegmentDataSource.count
+        case 2:
+            return viewModel.motherboardComponentsSegmentDataSource.count
         default:
             return 0
         }
@@ -131,12 +133,16 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
         switch tableView.tag {
         case 0:
-            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionName
-            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentRealmData[indexPath.row].descriptionValue
+            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionName
+            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
-            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.componentsSegmentRealmData[indexPath.row].descriptionName
-            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.componentsSegmentRealmData[indexPath.row].descriptionValue
+            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
+            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+            return componentsSegmentTableViewCell
+        case 2:
+            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
+            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
             return componentsSegmentTableViewCell
         default:
             return componentsSegmentTableViewCell
@@ -157,7 +163,7 @@ extension ItemDetailsViewController: UITableViewDelegate {
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemWithName itemName: String) {
         print("Delegate")
-        title = viewModel.generalSegmentRealmData.last?.descriptionValue
+        title = viewModel.generalSegmentDataSource.last?.descriptionValue
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data

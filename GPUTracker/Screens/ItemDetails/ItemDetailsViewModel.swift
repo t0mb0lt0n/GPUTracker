@@ -11,15 +11,15 @@ import UIKit
 
 final class ItemDetailsViewModel {
     let selectedSegmentIndex = Constants.selectedSegmentIndex
-    var generalSegmentRealmData: Results<General>
-    var consoleComponentsSegmentRealmData: Results<Components>
-    var motherboardComponentsSegmentRealmData: Results<Components>
+    var generalSegmentDataSource: Results<General>
+    var consoleComponentsSegmentDataSource: Results<Components>
+    var motherboardComponentsSegmentDataSource: Results<MotherboardComponents>
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
             print("didSet + reload")
-            generalSegmentRealmData = currentRealm.objects(General.self)
-            componentsSegmentRealmData = currentRealm.objects(Components.self)
+            generalSegmentDataSource = currentRealm.objects(General.self)
+            consoleComponentsSegmentDataSource = currentRealm.objects(Components.self)
             reloadClosure?()
         }
     }
@@ -42,8 +42,9 @@ final class ItemDetailsViewModel {
     
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
-        generalSegmentRealmData = currentRealm.objects(General.self)
-        componentsSegmentRealmData = currentRealm.objects(Components.self)
+        generalSegmentDataSource = currentRealm.objects(General.self)
+        consoleComponentsSegmentDataSource = currentRealm.objects(Components.self)
+        motherboardComponentsSegmentDataSource = currentRealm.objects(MotherboardComponents.self)
     }
 }
 

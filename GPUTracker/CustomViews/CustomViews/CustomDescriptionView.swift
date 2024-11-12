@@ -9,7 +9,7 @@ import UIKit
 
 final class CustomDescriptionView: UIView {
     let generalSegmentTableView = CustomTableView()
-    let motherBoardsSegmentTableView = CustomTableView()
+    let mSegmentTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
