@@ -56,7 +56,8 @@ final class ItemDetailsViewController: UIViewController {
         
         [
         mainView.itemDescriptionView.generalSegmentTableView,
-        mainView.itemDescriptionView.motherBoardsSegmentTableView
+        mainView.itemDescriptionView.consoleComponentsSegmentTableView,
+        mainView.itemDescriptionView.motherboardComponentsSegmentTableView
         ].forEach { [weak self] tableView in
             tableView.delegate = self
             tableView.dataSource = self
@@ -81,7 +82,9 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = {
             print("reload closure")
             self.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self.mainView.itemDescriptionView.motherBoardsSegmentTableView.reloadData()
+            self.mainView.itemDescriptionView.consoleComponentsSegmentTableView.reloadData()
+            self.mainView.itemDescriptionView.motherboardComponentsSegmentTableView.reloadData()
+
         }
     }
 }

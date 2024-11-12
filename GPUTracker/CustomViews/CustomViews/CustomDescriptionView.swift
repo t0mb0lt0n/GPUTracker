@@ -9,7 +9,8 @@ import UIKit
 
 final class CustomDescriptionView: UIView {
     let generalSegmentTableView = CustomTableView()
-    let mSegmentTableView = CustomTableView()
+    let consoleComponentsSegmentTableView = CustomTableView()
+    let motherboardComponentsSegmentTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
@@ -35,9 +36,11 @@ final class CustomDescriptionView: UIView {
         mainScrollView.isScrollEnabled = false
         generalSegmentTableView.tag = 0
         //generalSegmentTableView.backgroundColor = .white
-        motherBoardsSegmentTableView.tag = 1
+        consoleComponentsSegmentTableView.tag = 1
+        motherboardComponentsSegmentTableView.tag = 2
         generalSegmentTableView.alwaysBounceVertical = false
-        motherBoardsSegmentTableView.alwaysBounceVertical = false
+        consoleComponentsSegmentTableView.alwaysBounceVertical = false
+        motherboardComponentsSegmentTableView.alwaysBounceVertical = false
         [
         mainScrollView,
         ].forEach {
@@ -47,7 +50,8 @@ final class CustomDescriptionView: UIView {
         
         [
         generalSegmentTableView,
-        motherBoardsSegmentTableView,
+        consoleComponentsSegmentTableView,
+        motherboardComponentsSegmentTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             mainScrollView.addSubview($0)
@@ -68,11 +72,18 @@ final class CustomDescriptionView: UIView {
             generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
             generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            motherBoardsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            motherBoardsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
-            motherBoardsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            motherBoardsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
-            motherBoardsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
+            consoleComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            consoleComponentsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            consoleComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            consoleComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+            consoleComponentsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
+            
+            motherboardComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            motherboardComponentsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            motherboardComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            motherboardComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+            motherboardComponentsSegmentTableView.leadingAnchor.constraint(equalTo: consoleComponentsSegmentTableView.trailingAnchor),
+
         ])
     }
 }
