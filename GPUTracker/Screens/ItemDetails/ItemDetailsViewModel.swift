@@ -12,7 +12,8 @@ import UIKit
 final class ItemDetailsViewModel {
     let selectedSegmentIndex = Constants.selectedSegmentIndex
     var generalSegmentRealmData: Results<General>
-    var componentsSegmentRealmData: Results<Components>
+    var consoleComponentsSegmentRealmData: Results<Components>
+    var motherboardComponentsSegmentRealmData: Results<Components>
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {

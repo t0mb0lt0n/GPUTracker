@@ -68,7 +68,11 @@ final class ItemDetailsViewController: UIViewController {
 //                at: index,
 //                animated: false
 //            )
-            mainView.segmentedControll.insertSegment(with: value, at: index, animated: false)
+            mainView.segmentedControll.insertSegment(
+                with: value,
+                at: index,
+                animated: false
+            )
         }
         mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
     }
