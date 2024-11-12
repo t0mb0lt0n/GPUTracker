@@ -120,19 +120,27 @@ extension ItemDetailsViewController: UITableViewDataSource {
             ofSize: 17,
             weight: .medium
         )
-        guard let componentsSegmentTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: "\(UniversalCustomCell.self)",
-            for: indexPath
-        ) as? UniversalCustomCell else {
-            fatalError("Cell dequeue error")
-        }
-        
         guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
             fatalError("Cell dequeue error")
         }
+        
+        guard let consoleComponentsSegmentTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: "\(UniversalCustomCell.self)",
+            for: indexPath
+        ) as? UniversalCustomCell else {
+            fatalError("Cell dequeue error")
+        }
+        
+        guard let motherboardComponentsSegmentTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: "\(UniversalCustomCell.self)",
+            for: indexPath
+        ) as? UniversalCustomCell else {
+            fatalError("Cell dequeue error")
+        }
+
 
         switch tableView.tag {
         case 0:
@@ -140,15 +148,15 @@ extension ItemDetailsViewController: UITableViewDataSource {
             generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
-            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
-            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
-            return componentsSegmentTableViewCell
+            consoleComponentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
+            consoleComponentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+            return consoleComponentsSegmentTableViewCell
         case 2:
-            componentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
-            componentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
-            return componentsSegmentTableViewCell
+            motherboardComponentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
+            motherboardComponentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
+            return motherboardComponentsSegmentTableViewCell
         default:
-            return componentsSegmentTableViewCell
+            return defaultCell
         }
     }
 }

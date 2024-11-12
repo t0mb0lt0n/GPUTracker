@@ -18,6 +18,6 @@ struct RealmConfigurations {
         .xbox360Realm: 68,
         .sonyRealm: 3,
         .mainProductListRealm: 10,
-        .playstation3: 6
+        .playstation3: 9
     ]
 }
