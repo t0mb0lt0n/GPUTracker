@@ -38,9 +38,6 @@ final class CustomDescriptionView: UIView {
         //generalSegmentTableView.backgroundColor = .white
         consoleComponentsSegmentTableView.tag = 1
         motherboardComponentsSegmentTableView.tag = 2
-        generalSegmentTableView.alwaysBounceVertical = false
-        consoleComponentsSegmentTableView.alwaysBounceVertical = false
-        motherboardComponentsSegmentTableView.alwaysBounceVertical = false
         [
         mainScrollView,
         ].forEach {
