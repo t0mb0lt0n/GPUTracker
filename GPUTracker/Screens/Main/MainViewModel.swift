@@ -33,7 +33,7 @@ final class MainViewModel {
     }
     
     func updateData() {
-        reloadClosure!()
+        reloadClosure?()
     }
     
     init(service: RealmService) {

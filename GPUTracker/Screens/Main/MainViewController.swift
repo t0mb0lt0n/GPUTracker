@@ -56,7 +56,7 @@ final class MainViewController: UIViewController {
         mainView.mainTableView.dataSource = self
         mainView.backgroundColor = .tertiarySystemGroupedBackground
         setupNavigationBarStyle(
-            isLarge: false,
+            isLarge: true,
             title: .mainCatalogue,
             titleColor: .black
         )
@@ -212,10 +212,9 @@ extension MainViewController: UITableViewDelegate {
             self.delagate?.updateData(
                 forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
-            itemDetailsVC?.navigationController?.navigationBar.prefersLargeTitles = false
-            navigationController?.pushViewController(itemDetailsVC!, animated: true)
+            guard let itemDetailsVC else { return }
+            navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 1:
-
             print("")
         case 2:
             delagate?.updateData(
