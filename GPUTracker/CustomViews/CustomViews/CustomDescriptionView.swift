@@ -8,9 +8,9 @@
 import UIKit
 
 final class CustomDescriptionView: UIView {
-    let generalSegmentTableView = CustomTableView()
-    let consoleComponentsSegmentTableView = CustomTableView()
-    let motherboardComponentsSegmentTableView = CustomTableView()
+    let generalTableView = CustomTableView()
+    let consoleComponentsTableView = CustomTableView()
+    let motherboardComponentsTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
@@ -34,10 +34,9 @@ final class CustomDescriptionView: UIView {
     
     final private func setupView() {
         mainScrollView.isScrollEnabled = false
-        generalSegmentTableView.tag = 0
-        //generalSegmentTableView.backgroundColor = .white
-        consoleComponentsSegmentTableView.tag = 1
-        motherboardComponentsSegmentTableView.tag = 2
+        generalTableView.tag = 0
+        consoleComponentsTableView.tag = 1
+        motherboardComponentsTableView.tag = 2
         [
         mainScrollView,
         ].forEach {
@@ -46,9 +45,9 @@ final class CustomDescriptionView: UIView {
         }
         
         [
-        generalSegmentTableView,
-        consoleComponentsSegmentTableView,
-        motherboardComponentsSegmentTableView
+        generalTableView,
+        consoleComponentsTableView,
+        motherboardComponentsTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             mainScrollView.addSubview($0)
@@ -64,22 +63,20 @@ final class CustomDescriptionView: UIView {
             mainScrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            generalSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            generalSegmentTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
-            generalSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            generalTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            generalTableView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor),
+            generalTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            generalTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            consoleComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            consoleComponentsSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            consoleComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            //consoleComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
-            consoleComponentsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
+            consoleComponentsTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            consoleComponentsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            consoleComponentsTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            consoleComponentsTableView.leadingAnchor.constraint(equalTo: generalTableView.trailingAnchor),
             
-            motherboardComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            motherboardComponentsSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            motherboardComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            //motherboardComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
-            motherboardComponentsSegmentTableView.leadingAnchor.constraint(equalTo: consoleComponentsSegmentTableView.trailingAnchor),
+            motherboardComponentsTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            motherboardComponentsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            motherboardComponentsTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            motherboardComponentsTableView.leadingAnchor.constraint(equalTo: consoleComponentsTableView.trailingAnchor),
         ])
     }
 }
@@ -87,5 +84,8 @@ final class CustomDescriptionView: UIView {
 extension CustomDescriptionView {
     private enum Constants {
         static let numberOfSegmets: Int = 3
+        static let generalTableViewTag = 0
+        static let consoleComponentsTableViewTag = 1
+        static let motherboardComponentsTableViewTag = 2
     }
 }
