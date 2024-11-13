@@ -26,7 +26,9 @@ final class MainViewController: UIViewController {
             )
         )
         itemDetailsVC = .init(
-            withViewModel: .init(forItemWithRealmName: .playstation3),
+            withViewModel: .init(
+                forItemWithRealmName: .playstation3
+            ),
             andBarTitle: .playstation3
         )
         super.init(nibName: nil, bundle: nil)
@@ -147,7 +149,7 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
     ) -> CGFloat {
-        50
+        Constants.heightForHeaderInSection
     }
     //setup footer in section height
     func tableView(
@@ -245,6 +247,7 @@ extension MainViewController {
         static let developerNameWidth: Int = 150
         static let developerNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0
+        static let heightForHeaderInSection: CGFloat = 50
 
     }
 }
