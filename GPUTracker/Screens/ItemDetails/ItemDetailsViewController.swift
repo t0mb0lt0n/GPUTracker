@@ -37,7 +37,7 @@ final class ItemDetailsViewController: UIViewController {
     
     func segmentDidChange() {
         let contentOffset = Int(
-            mainView.itemDescriptionView.generalSegmentTableView.frame.width
+            mainView.itemDescriptionView.generalTableView.frame.width
         )
         let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
         mainView.itemDescriptionView.mainScrollView.setContentOffset(
@@ -61,9 +61,9 @@ final class ItemDetailsViewController: UIViewController {
         }
         
         [
-        mainView.itemDescriptionView.generalSegmentTableView,
-        mainView.itemDescriptionView.consoleComponentsSegmentTableView,
-        mainView.itemDescriptionView.motherboardComponentsSegmentTableView
+        mainView.itemDescriptionView.generalTableView,
+        mainView.itemDescriptionView.consoleComponentsTableView,
+        mainView.itemDescriptionView.motherboardComponentsTableView
         ].forEach { [weak self] tableView in
             tableView.delegate = self
             tableView.dataSource = self
@@ -87,9 +87,9 @@ final class ItemDetailsViewController: UIViewController {
     private func setupViewModel() {
         viewModel.reloadClosure = {
             print("reload closure")
-            self.mainView.itemDescriptionView.generalSegmentTableView.reloadData()
-            self.mainView.itemDescriptionView.consoleComponentsSegmentTableView.reloadData()
-            self.mainView.itemDescriptionView.motherboardComponentsSegmentTableView.reloadData()
+            self.mainView.itemDescriptionView.generalTableView.reloadData()
+            self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
+            self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
 
         }
     }
@@ -133,20 +133,19 @@ extension ItemDetailsViewController: UITableViewDataSource {
             fatalError("Cell dequeue error")
         }
         
-        guard let consoleComponentsSegmentTableViewCell = tableView.dequeueReusableCell(
+        guard let consoleComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
             fatalError("Cell dequeue error")
         }
         
-        guard let motherboardComponentsSegmentTableViewCell = tableView.dequeueReusableCell(
+        guard let motherboardComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
             fatalError("Cell dequeue error")
         }
-
 
         switch tableView.tag {
         case 0:
@@ -154,13 +153,13 @@ extension ItemDetailsViewController: UITableViewDataSource {
             generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
-            consoleComponentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
-            consoleComponentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
-            return consoleComponentsSegmentTableViewCell
+            consoleComponentsTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
+            consoleComponentsTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+            return consoleComponentsTableViewCell
         case 2:
-            motherboardComponentsSegmentTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
-            motherboardComponentsSegmentTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
-            return motherboardComponentsSegmentTableViewCell
+            motherboardComponentsTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
+            motherboardComponentsTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
+            return motherboardComponentsTableViewCell
         default:
             return defaultCell
         }
