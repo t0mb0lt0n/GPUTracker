@@ -56,7 +56,7 @@ final class MainViewController: UIViewController {
         mainView.mainTableView.dataSource = self
         mainView.backgroundColor = .tertiarySystemGroupedBackground
         setupNavigationBarStyle(
-            isLarge: true,
+            isLarge: false,
             title: .mainCatalogue,
             titleColor: .black
         )
