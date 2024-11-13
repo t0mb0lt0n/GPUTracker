@@ -111,32 +111,19 @@ final class MainCell: UITableViewCell {
 }
 //MARK: - GPUInfoCellView extensions
 extension MainCell {
-    final func configurateCellSafe(
-        descriptionName: String?,
-        descriptionValue: String?
-    ) {
-        guard
-            let descriptionName,
-            let descriptionValue
-        else { return }
-        descriptionNameLabel.text = descriptionName
-        descriptionValueTextView.text = descriptionValue
-    }
-    
-    final func configurateCellUnsafe(
+    final func configurateCell(
         descriptionName: String,
         descriptionValue: String,
         onlineStatus: String
     ) {
-        descriptionNameLabel.text = descriptionName
-        descriptionValueTextView.text = descriptionValue
         switch onlineStatus {
         case "online":
-            onlineStatusImageView.image = .offlineStatusImage
+            onlineStatusImageView.image = .onlineStatusImage
         default:
-            break
+            onlineStatusImageView.image = .offlineStatusImage
         }
-        onlineStatusImageView.image = .offlineStatusImage
+        descriptionNameLabel.text = descriptionName
+        descriptionValueTextView.text = descriptionValue
     }
 }
 

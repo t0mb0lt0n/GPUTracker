@@ -82,20 +82,6 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(
         _ tableView: UITableView,
-        titleForHeaderInSection section: Int
-    ) -> String? {
-        switch section {
-        case 0:
-            return .microsoftHeader
-        case 1:
-            return .sonyHeader
-        default:
-            return .failurePlaceholder
-        }
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
         viewForFooterInSection section: Int
     ) -> UIView? {
         let footerPadding = UIView()
@@ -133,19 +119,19 @@ extension MainViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
-            cell.configurateCellUnsafe(
+            cell.configurateCell(
                 descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         case 1:
-            cell.configurateCellUnsafe(
+            cell.configurateCell(
                 descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         case 2:
-            cell.configurateCellUnsafe(
+            cell.configurateCell(
                 descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
@@ -168,7 +154,7 @@ extension MainViewController: UITableViewDataSource {
         _ tableView: UITableView,
         heightForFooterInSection section: Int
     ) -> CGFloat {
-        0
+        Constants.heightForFooterInSection
     }
     //custom header view for table view
     func tableView(
@@ -178,10 +164,10 @@ extension MainViewController: UITableViewDataSource {
         let customHeaderView = UIView()
         let developerNameLabel = UILabel(
             frame: CGRect(
-                x: 20,
-                y: 20,
-                width: 150,
-                height: 23
+                x: Constants.developerNameXAxis,
+                y: Constants.developerNameYAxis,
+                width: Constants.developerNameWidth,
+                height: Constants.developerNameHeight
             )
         )
         developerNameLabel.textColor = .systemGray
@@ -249,14 +235,20 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-
 extension MainViewController {
     private enum Constants {
         static let microsoftSectionNumber: Int = 0
         static let sonySectionNumber: Int = 1
         static let segaSectionNumber: Int = 2
+        static let developerNameXAxis: Int = 20
+        static let developerNameYAxis: Int = 20
+        static let developerNameWidth: Int = 150
+        static let developerNameHeight: Int = 23
+        static let heightForFooterInSection: CGFloat = 0
+
     }
 }
+
 //
 ////MARK: - UIKit Preview
 //struct ContentViewPreviewss: PreviewProvider {

@@ -149,8 +149,9 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
         switch tableView.tag {
         case 0:
-            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionName
-            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
+            generalSegmentTableViewCell.configurateCell(descriptionName: viewModel.generalSegmentDataSource[indexPath.row].descriptionName, descriptionValue: viewModel.generalSegmentDataSource[indexPath.row].descriptionValue)
+//            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionName
+//            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
             return generalSegmentTableViewCell
         case 1:
             consoleComponentsTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
