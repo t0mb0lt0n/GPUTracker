@@ -60,6 +60,7 @@ final class MainViewController: UIViewController {
             title: .mainCatalogue,
             titleColor: .black
         )
+        itemDetailsVC?.navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private func setupViewModel() {
@@ -211,6 +212,7 @@ extension MainViewController: UITableViewDelegate {
             self.delagate?.updateData(
                 forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
+            itemDetailsVC?.navigationController?.navigationBar.prefersLargeTitles = false
             navigationController?.pushViewController(itemDetailsVC!, animated: true)
         case 1:
 
