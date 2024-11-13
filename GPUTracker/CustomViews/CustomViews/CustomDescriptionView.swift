@@ -70,17 +70,16 @@ final class CustomDescriptionView: UIView {
             generalSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             consoleComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            consoleComponentsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            consoleComponentsSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             consoleComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            consoleComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+            //consoleComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
             consoleComponentsSegmentTableView.leadingAnchor.constraint(equalTo: generalSegmentTableView.trailingAnchor),
             
             motherboardComponentsSegmentTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
-            motherboardComponentsSegmentTableView.bottomAnchor.constraint(equalTo: mainScrollView.bottomAnchor),
+            motherboardComponentsSegmentTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             motherboardComponentsSegmentTableView.widthAnchor.constraint(equalToConstant: screenWidth),
-            motherboardComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
+            //motherboardComponentsSegmentTableView.heightAnchor.constraint(equalToConstant: screenHeight),
             motherboardComponentsSegmentTableView.leadingAnchor.constraint(equalTo: consoleComponentsSegmentTableView.trailingAnchor),
-
         ])
     }
 }
