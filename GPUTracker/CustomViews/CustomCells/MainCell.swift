@@ -11,17 +11,16 @@ final class MainCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(
-            ofSize: 17,
+            ofSize: Constants.descriptionNameLabelFontSize,
             weight: .regular
         )
         label.textColor = .black
-        label.text = "Debug text"
         return label
     }()
     
     var onlineStatusImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .onlineStatusImage
+        imageView.image = .online
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -32,14 +31,13 @@ final class MainCell: UITableViewCell {
         textView.backgroundColor = .clear
         textView.textColor = .systemGray
         textView.font = .systemFont(
-            ofSize: 16,
+            ofSize: Constants.textViewFontSize,
             weight: .regular
         )
-        textView.text = "debug text"
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainer.lineFragmentPadding = Constants.lineFragmentPadding
         textView.textContainerInset = .zero
         return textView
     }()
@@ -118,9 +116,11 @@ extension MainCell {
     ) {
         switch onlineStatus {
         case "online":
-            onlineStatusImageView.image = .onlineStatusImage
+            onlineStatusImageView.image = .online
+        case "partially online":
+            onlineStatusImageView.image = .partiallyOnline
         default:
-            onlineStatusImageView.image = .offlineStatusImage
+            onlineStatusImageView.image = .offline
         }
         descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue
@@ -139,5 +139,9 @@ extension MainCell {
         static let descriptionValueTextViewLeftInset: CGFloat = 20
         static let descriptionValueTextViewTopInset: CGFloat = 2
         static let descriptionValueTextViewBottomInset: CGFloat = -5
+        static let lineFragmentPadding: CGFloat = 0
+        static let descriptionNameLabelFontSize: CGFloat = 17
+        static let textViewFontSize: CGFloat = 16
+
     }
 }

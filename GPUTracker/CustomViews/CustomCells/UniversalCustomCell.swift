@@ -11,7 +11,7 @@ final class UniversalCustomCell: UITableViewCell {
     let descriptionNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(
-            ofSize: 17,
+            ofSize: Constants.descriptionNameLabelFontSize,
             weight: .regular
         )
         label.textColor = .black
@@ -31,7 +31,7 @@ final class UniversalCustomCell: UITableViewCell {
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
-        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainer.lineFragmentPadding = Constants.lineFragmentPadding
         textView.textContainerInset = .zero
         return textView
     }()
@@ -119,5 +119,8 @@ extension UniversalCustomCell {
         static let descriptionValueTextViewLeftInset: CGFloat = 20
         static let descriptionValueTextViewTopInset: CGFloat = 2
         static let descriptionValueTextViewBottomInset: CGFloat = -5
+        static let lineFragmentPadding: CGFloat = 0
+        static let descriptionNameLabelFontSize: CGFloat = 17
+        static let textViewFontSize: CGFloat = 16
     }
 }
