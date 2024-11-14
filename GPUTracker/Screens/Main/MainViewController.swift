@@ -97,11 +97,11 @@ extension MainViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.itemsInSection[Constants.microsoftSectionNumber]
+            return viewModel.microsoftSectionDataSource.count
         case 1:
-            return viewModel.itemsInSection[Constants.sonySectionNumber]
+            return viewModel.sonySectionDataSource.count
         case 2:
-            return viewModel.itemsInSection[Constants.segaSectionNumber]
+            return viewModel.segaSectionDataSource.count
         default:
             return 0
         }
@@ -174,16 +174,10 @@ extension MainViewController: UITableViewDataSource {
         )
         developerNameLabel.textColor = .systemGray
         customHeaderView.addSubview(developerNameLabel)
-        
+        developerNameLabel.backgroundColor = .systemBlue
         switch section {
-        case 0:
-            developerNameLabel.text = .microsoftHeader
-        case 1:
-            developerNameLabel.text = .sonyHeader
-        case 2:
-            developerNameLabel.text = .segaHeader
-        default:
-            return nil
+        case let sectionNumber:
+            developerNameLabel.text = viewModel.developerListDataSource[sectionNumber].developerName
         }
         return customHeaderView
     }
@@ -244,7 +238,8 @@ extension MainViewController {
         static let segaSectionNumber: Int = 2
         static let developerNameXAxis: Int = 20
         static let developerNameYAxis: Int = 20
-        static let developerNameWidth: Int = 150
+        static let developerNameBaseLeadingOffset: Int = 20
+        static let developerNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (developerNameXAxis + developerNameBaseLeadingOffset)
         static let developerNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0
         static let heightForHeaderInSection: CGFloat = 50

@@ -34,10 +34,10 @@ final class ItemDetailsViewModel {
     
     var segmentImages: [UIImage] = {
         [
-            .generalImage,
-            .consoleComponentsImage,
-            .motherboardComponentsImage,
-            .historyImage
+        .generalImage,
+        .consoleComponentsImage,
+        .motherboardComponentsImage,
+        .historyImage
         ]
     }()
     

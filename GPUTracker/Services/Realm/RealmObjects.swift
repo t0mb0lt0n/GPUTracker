@@ -17,6 +17,14 @@ import RealmSwift
 //        return "_id"
 //    }
 //}
+class DeveloperList: Object {
+    @objc dynamic var _id: Int = 0
+    @objc dynamic var developerName: String = ""
+
+    override static func primaryKey() -> String? {
+        return "_id"
+    }
+}
 
 class General: Object {
     @objc dynamic var _id: Int = 0
