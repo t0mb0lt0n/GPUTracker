@@ -174,7 +174,7 @@ extension MainViewController: UITableViewDataSource {
         )
         developerNameLabel.textColor = .systemGray
         customHeaderView.addSubview(developerNameLabel)
-        developerNameLabel.backgroundColor = .systemBlue
+        
         switch section {
         case let sectionNumber:
             developerNameLabel.text = viewModel.developerListDataSource[sectionNumber].developerName
@@ -189,15 +189,18 @@ extension MainViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        guard let itemDetailsVC else { return }
         switch indexPath.section {
         case 0:
             self.delagate?.updateData(
                 forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
             )
-            guard let itemDetailsVC else { return }
             navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 1:
-            print("")
+            self.delagate?.updateData(
+                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
+            )
+            navigationController?.pushViewController(itemDetailsVC, animated: true)
         case 2:
             delagate?.updateData(
                 forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
@@ -233,9 +236,6 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController {
     private enum Constants {
-        static let microsoftSectionNumber: Int = 0
-        static let sonySectionNumber: Int = 1
-        static let segaSectionNumber: Int = 2
         static let developerNameXAxis: Int = 20
         static let developerNameYAxis: Int = 20
         static let developerNameBaseLeadingOffset: Int = 20
@@ -243,7 +243,6 @@ extension MainViewController {
         static let developerNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0
         static let heightForHeaderInSection: CGFloat = 50
-
     }
 }
 
