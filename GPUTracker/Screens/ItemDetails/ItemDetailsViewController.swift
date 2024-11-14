@@ -43,7 +43,7 @@ final class ItemDetailsViewController: UIViewController {
         mainView.itemDescriptionView.mainScrollView.setContentOffset(
             CGPoint(
                 x: contentOffset * segmentIndex,
-                y: 0
+                y: Constatnts.segmentedControlSelectionOffsetYAxis
             ),
             animated: true
         )
@@ -123,7 +123,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             reuseIdentifier: cellIdentifier
         )
         defaultCell.textLabel?.font = .systemFont(
-            ofSize: 17,
+            ofSize: Constatnts.fontSize,
             weight: .medium
         )
         guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
@@ -149,13 +149,18 @@ extension ItemDetailsViewController: UITableViewDataSource {
 
         switch tableView.tag {
         case 0:
-            generalSegmentTableViewCell.configurateCell(descriptionName: viewModel.generalSegmentDataSource[indexPath.row].descriptionName, descriptionValue: viewModel.generalSegmentDataSource[indexPath.row].descriptionValue)
-//            generalSegmentTableViewCell.descriptionNameLabel.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionName
-//            generalSegmentTableViewCell.descriptionValueTextView.text = viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
+            generalSegmentTableViewCell.configurateCell(
+                descriptionName: viewModel.generalSegmentDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
+            )
             return generalSegmentTableViewCell
         case 1:
             consoleComponentsTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
             consoleComponentsTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+            generalSegmentTableViewCell.configurateCell(
+                descriptionName: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+            )
             return consoleComponentsTableViewCell
         case 2:
             motherboardComponentsTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
@@ -184,6 +189,13 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data
+    }
+}
+
+extension ItemDetailsViewController {
+    private enum Constatnts {
+        static let segmentedControlSelectionOffsetYAxis: Int = 0
+        static let fontSize: CGFloat = 17
     }
 }
 
