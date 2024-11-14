@@ -155,16 +155,16 @@ extension ItemDetailsViewController: UITableViewDataSource {
             )
             return generalSegmentTableViewCell
         case 1:
-            consoleComponentsTableViewCell.descriptionNameLabel.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName
-            consoleComponentsTableViewCell.descriptionValueTextView.text = viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
-            generalSegmentTableViewCell.configurateCell(
+            consoleComponentsTableViewCell.configurateCell(
                 descriptionName: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName,
                 descriptionValue: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
             )
             return consoleComponentsTableViewCell
         case 2:
-            motherboardComponentsTableViewCell.descriptionNameLabel.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName
-            motherboardComponentsTableViewCell.descriptionValueTextView.text = viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
+            motherboardComponentsTableViewCell.configurateCell(
+                descriptionName: viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
+            )
             return motherboardComponentsTableViewCell
         default:
             return defaultCell
