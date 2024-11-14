@@ -139,7 +139,7 @@ extension MainViewController: UITableViewDataSource {
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         default:
-            cell.textLabel?.text = .failurePlaceholder
+            cell.textLabel?.text = .failure
         }
         return cell
     }
@@ -190,23 +190,13 @@ extension MainViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         guard let itemDetailsVC else { return }
+        
         switch indexPath.section {
-        case 0:
+        case let sectionNumber:
             self.delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[sectionNumber][indexPath.row]
             )
             navigationController?.pushViewController(itemDetailsVC, animated: true)
-        case 1:
-            self.delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
-            )
-            navigationController?.pushViewController(itemDetailsVC, animated: true)
-        case 2:
-            delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
-            )
-        default:
-            break
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -216,20 +206,10 @@ extension MainViewController: UITableViewDelegate {
         accessoryButtonTappedForRowWith indexPath: IndexPath
     ) {
         switch indexPath.section {
-        case 0:
+        case let sectionNumber:
             delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
+                forItemWithName: RealmConfigurations.itemList[sectionNumber][indexPath.row]
             )
-        case 1:
-            delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
-            )
-        case 2:
-            delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[indexPath.section][indexPath.row]
-            )
-        default:
-            break
         }
     }
 }

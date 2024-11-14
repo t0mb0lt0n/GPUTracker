@@ -75,7 +75,7 @@ final class ItemDetailsViewController: UIViewController {
                 animated: false
             )
         }
-        mainView.segmentedControll.selectedSegmentIndex = viewModel.selectedSegmentIndex
+        mainView.segmentedControll.selectedSegmentIndex = viewModel.initialSegmentIndex
     }
     
     private func setupViewModel() {
@@ -84,7 +84,6 @@ final class ItemDetailsViewController: UIViewController {
             self.mainView.itemDescriptionView.generalTableView.reloadData()
             self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
-
         }
     }
 }
@@ -97,11 +96,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.generalSegmentDataSource.count
+            return viewModel.generalDataSource.count
         case 1:
-            return viewModel.consoleComponentsSegmentDataSource.count
+            return viewModel.consoleComponentsDataSource.count
         case 2:
-            return viewModel.motherboardComponentsSegmentDataSource.count
+            return viewModel.motherboardComponentsDataSource.count
         default:
             return 0
         }
@@ -111,15 +110,11 @@ extension ItemDetailsViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cellIdentifier = "Apple designed cell"
         let defaultCell = UITableViewCell(
             style: .value1,
-            reuseIdentifier: cellIdentifier
+            reuseIdentifier: "Apple designed cell"
         )
-        defaultCell.textLabel?.font = .systemFont(
-            ofSize: Constatnts.fontSize,
-            weight: .medium
-        )
+        
         guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
@@ -144,20 +139,20 @@ extension ItemDetailsViewController: UITableViewDataSource {
         switch tableView.tag {
         case 0:
             generalSegmentTableViewCell.configurateCell(
-                descriptionName: viewModel.generalSegmentDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.generalSegmentDataSource[indexPath.row].descriptionValue
+                descriptionName: viewModel.generalDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.generalDataSource[indexPath.row].descriptionValue
             )
             return generalSegmentTableViewCell
         case 1:
             consoleComponentsTableViewCell.configurateCell(
-                descriptionName: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.consoleComponentsSegmentDataSource[indexPath.row].descriptionValue
+                descriptionName: viewModel.consoleComponentsDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.consoleComponentsDataSource[indexPath.row].descriptionValue
             )
             return consoleComponentsTableViewCell
         case 2:
             motherboardComponentsTableViewCell.configurateCell(
-                descriptionName: viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.motherboardComponentsSegmentDataSource[indexPath.row].descriptionValue
+                descriptionName: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionValue
             )
             return motherboardComponentsTableViewCell
         default:
@@ -179,7 +174,7 @@ extension ItemDetailsViewController: UITableViewDelegate {
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemWithName itemName: String) {
         print("Delegate")
-        title = viewModel.generalSegmentDataSource.last?.descriptionValue
+        title = viewModel.generalDataSource.last?.descriptionValue
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data

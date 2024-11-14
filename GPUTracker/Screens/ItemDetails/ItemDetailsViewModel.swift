@@ -10,27 +10,20 @@ import RealmSwift
 import UIKit
 
 final class ItemDetailsViewModel {
-    let selectedSegmentIndex = Constants.selectedSegmentIndex
-    var generalSegmentDataSource: Results<General>
-    var consoleComponentsSegmentDataSource: Results<Components>
-    var motherboardComponentsSegmentDataSource: Results<MotherboardComponents>
+    let initialSegmentIndex = Constants.initialSegmentIndex
+    var generalDataSource: Results<General>
+    var consoleComponentsDataSource: Results<Components>
+    var motherboardComponentsDataSource: Results<MotherboardComponents>
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
             print("didSet + reload")
-            generalSegmentDataSource = currentRealm.objects(General.self)
-            consoleComponentsSegmentDataSource = currentRealm.objects(Components.self)
+            generalDataSource = currentRealm.objects(General.self)
+            consoleComponentsDataSource = currentRealm.objects(Components.self)
+            motherboardComponentsDataSource = currentRealm.objects(MotherboardComponents.self)
             reloadClosure?()
         }
     }
-
-    var descriptionSegments: [String] = {
-        [
-        .generalSegmentHeader,
-        .components,
-        .otherComponentsSegmentHeader
-        ]
-    }()
     
     var segmentImages: [UIImage] = {
         [
@@ -43,15 +36,15 @@ final class ItemDetailsViewModel {
     
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
-        generalSegmentDataSource = currentRealm.objects(General.self)
-        consoleComponentsSegmentDataSource = currentRealm.objects(Components.self)
-        motherboardComponentsSegmentDataSource = currentRealm.objects(MotherboardComponents.self)
+        generalDataSource = currentRealm.objects(General.self)
+        consoleComponentsDataSource = currentRealm.objects(Components.self)
+        motherboardComponentsDataSource = currentRealm.objects(MotherboardComponents.self)
     }
 }
 
 //MARK: - Constants
 extension ItemDetailsViewModel {
     private enum Constants {
-        static let selectedSegmentIndex = 0
+        static let initialSegmentIndex = 0
     }
 }
