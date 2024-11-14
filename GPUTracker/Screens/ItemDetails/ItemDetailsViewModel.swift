@@ -36,7 +36,8 @@ final class ItemDetailsViewModel {
         [
             .generalImage,
             .consoleComponentsImage,
-            .motherboardComponentsImage
+            .motherboardComponentsImage,
+            .historyImage
         ]
     }()
     

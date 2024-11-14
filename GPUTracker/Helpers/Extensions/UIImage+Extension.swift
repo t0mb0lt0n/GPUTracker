@@ -14,4 +14,5 @@ extension UIImage {
     static let generalImage = UIImage(systemName: "graduationcap.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) ?? UIImage()
     static let consoleComponentsImage = UIImage(systemName: "gearshape.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) ?? UIImage()
     static let motherboardComponentsImage = UIImage(systemName: "wrench.and.screwdriver.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) ?? UIImage()
+    static let historyImage = UIImage(systemName: "building.columns.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal) ?? UIImage()
 }

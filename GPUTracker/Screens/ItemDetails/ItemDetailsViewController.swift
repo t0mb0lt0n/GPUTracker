@@ -50,12 +50,6 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupMainView() {
-        setupNavigationBarStyle(
-            isLarge: false,
-            title: .mainCatalogue,
-            titleColor: .black
-        )
-
         mainView.segmentDidChangeClosure = { [weak self] in
             self?.segmentDidChange()
         }

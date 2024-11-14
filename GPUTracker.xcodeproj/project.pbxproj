@@ -32,7 +32,6 @@
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
-		11FBAA4F2BC7374C003F568F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +60,6 @@
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */,
-				11FBAA4E2BC7374C003F568F /* UIColor+Extension.swift */,
 				11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */,
 				11A604262CD512B200A16F01 /* UIViewController+Extension.swift */,
 			);
@@ -322,7 +319,6 @@
 				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
-				11FBAA4F2BC7374C003F568F /* UIColor+Extension.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
