@@ -35,7 +35,7 @@ extension UIImage {
     ) ?? UIImage()
     
     static let historyImage = UIImage(
-        systemName: "scroll.fill"
+        systemName: "gamecontroller.fill"
     )?.withTintColor(
         .systemBlue,
         renderingMode: .alwaysOriginal
