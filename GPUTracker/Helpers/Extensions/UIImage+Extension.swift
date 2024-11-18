@@ -34,6 +34,14 @@ extension UIImage {
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
+    static let motherboardComponentsImage2 = UIImage(
+        named: "motherboardComponentsImage"
+    )?.withTintColor(
+        .systemBlue,
+        renderingMode: .alwaysOriginal
+    ) ?? UIImage()
+
+    
     static let historyImage = UIImage(
         systemName: "gamecontroller.fill"
     )?.withTintColor(

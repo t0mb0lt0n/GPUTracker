@@ -12,7 +12,7 @@ final class UniversalCustomCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(
             ofSize: Constants.descriptionNameLabelFontSize,
-            weight: .regular
+            weight: .medium
         )
         label.textColor = .black
         label.text = "Debug text"
@@ -24,7 +24,7 @@ final class UniversalCustomCell: UITableViewCell {
         textView.backgroundColor = .clear
         textView.textColor = .systemGray
         textView.font = .systemFont(
-            ofSize: 16,
+            ofSize: Constants.descriptionValueLabelFontSize,
             weight: .regular
         )
         textView.text = "debug text"
@@ -121,6 +121,7 @@ extension UniversalCustomCell {
         static let descriptionValueTextViewBottomInset: CGFloat = -5
         static let lineFragmentPadding: CGFloat = 0
         static let descriptionNameLabelFontSize: CGFloat = 17
+        static let descriptionValueLabelFontSize: CGFloat = 16
         static let textViewFontSize: CGFloat = 16
     }
 }

@@ -34,6 +34,8 @@ final class ItemDetailsViewModel {
         ]
     }()
     
+    
+    
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data
         generalDataSource = currentRealm.objects(General.self)

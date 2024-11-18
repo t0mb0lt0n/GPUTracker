@@ -12,7 +12,7 @@ final class MainCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(
             ofSize: Constants.descriptionNameLabelFontSize,
-            weight: .regular
+            weight: .medium
         )
         label.textColor = .black
         return label
