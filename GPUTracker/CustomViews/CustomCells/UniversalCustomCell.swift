@@ -81,7 +81,10 @@ final class UniversalCustomCell: UITableViewCell {
                 equalTo: descriptionNameLabel.bottomAnchor,
                 constant: Constants.descriptionValueTextViewTopInset
             ),
-            descriptionValueTextView.trailingAnchor.constraint(equalTo: descriptionNameLabel.trailingAnchor),
+            descriptionValueTextView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: Constants.descriptionValueTextViewRightInset
+            ),
             descriptionValueTextView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
                 constant: Constants.descriptionValueTextViewLeftInset
@@ -117,6 +120,7 @@ extension UniversalCustomCell {
         static let onlineStatusImageViewWidth: CGFloat = 10
         static let onlineStatusImageViewHeight: CGFloat = 10
         static let descriptionValueTextViewLeftInset: CGFloat = 20
+        static let descriptionValueTextViewRightInset: CGFloat = -10
         static let descriptionValueTextViewTopInset: CGFloat = 2
         static let descriptionValueTextViewBottomInset: CGFloat = -5
         static let lineFragmentPadding: CGFloat = 0
