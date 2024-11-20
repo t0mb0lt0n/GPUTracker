@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainNavVC = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = mainNavVC
         window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .light
         return true
     }
 }

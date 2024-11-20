@@ -11,6 +11,7 @@ final class CustomDescriptionView: UIView {
     let generalTableView = CustomTableView()
     let consoleComponentsTableView = CustomTableView()
     let motherboardComponentsTableView = CustomTableView()
+    let controllersTableView = CustomTableView()
     let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
@@ -34,11 +35,21 @@ final class CustomDescriptionView: UIView {
     
     final private func setupView() {
         mainScrollView.isScrollEnabled = false
-        generalTableView.tag = 0
-        consoleComponentsTableView.tag = 1
-        motherboardComponentsTableView.tag = 2
+//        generalTableView.tag = 0
+//        consoleComponentsTableView.tag = 1
+//        motherboardComponentsTableView.tag = 2
+//        controllersTableView.tag = 3
+        let tableViews = [generalTableView,
+                          consoleComponentsTableView,
+                          motherboardComponentsTableView,
+                          controllersTableView
+        ]
+        for (index, value) in tableViews.enumerated() {
+            value.tag = index
+        }
+        
         [
-        mainScrollView,
+        mainScrollView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
