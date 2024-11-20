@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 import RealmSwift
 
 protocol RealmUpdateDelegate: AnyObject {
@@ -144,21 +143,21 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
     
-    //setup header in section height
+    //setup height for header in section
     func tableView(
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
     ) -> CGFloat {
         Constants.heightForHeaderInSection
     }
-    //setup footer in section height
+    //setup height for footer in section
     func tableView(
         _ tableView: UITableView,
         heightForFooterInSection section: Int
     ) -> CGFloat {
         Constants.heightForFooterInSection
     }
-    //custom header view for table view
+    //custom headerView
     func tableView(
         _ tableView: UITableView,
         viewForHeaderInSection section: Int
