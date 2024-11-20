@@ -49,7 +49,8 @@ final class CustomDescriptionView: UIView {
         [
         generalTableView,
         consoleComponentsTableView,
-        motherboardComponentsTableView
+        motherboardComponentsTableView,
+        controllersTableView
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             mainScrollView.addSubview($0)
@@ -79,13 +80,18 @@ final class CustomDescriptionView: UIView {
             motherboardComponentsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             motherboardComponentsTableView.widthAnchor.constraint(equalToConstant: screenWidth),
             motherboardComponentsTableView.leadingAnchor.constraint(equalTo: consoleComponentsTableView.trailingAnchor),
+            
+            controllersTableView.topAnchor.constraint(equalTo: mainScrollView.topAnchor),
+            controllersTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            controllersTableView.widthAnchor.constraint(equalToConstant: screenWidth),
+            controllersTableView.leadingAnchor.constraint(equalTo: motherboardComponentsTableView.trailingAnchor),
         ])
     }
 }
 
 extension CustomDescriptionView {
     private enum Constants {
-        static let numberOfSegmets: Int = 3
+        static let numberOfSegmets: Int = 4
         static let generalTableViewTag = 0
         static let consoleComponentsTableViewTag = 1
         static let motherboardComponentsTableViewTag = 2
