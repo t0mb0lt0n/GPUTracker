@@ -35,10 +35,8 @@ final class CustomDescriptionView: UIView {
     
     final private func setupView() {
         mainScrollView.isScrollEnabled = false
-//        generalTableView.tag = 0
-//        consoleComponentsTableView.tag = 1
-//        motherboardComponentsTableView.tag = 2
-//        controllersTableView.tag = 3
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(mainScrollView)
         let tableViews = [generalTableView,
                           consoleComponentsTableView,
                           motherboardComponentsTableView,
@@ -46,13 +44,6 @@ final class CustomDescriptionView: UIView {
         ]
         for (index, value) in tableViews.enumerated() {
             value.tag = index
-        }
-        
-        [
-        mainScrollView
-        ].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
         }
         
         [
