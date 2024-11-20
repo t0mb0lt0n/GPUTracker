@@ -57,18 +57,14 @@ final class ItemDetailsViewController: UIViewController {
         [
         mainView.itemDescriptionView.generalTableView,
         mainView.itemDescriptionView.consoleComponentsTableView,
-        mainView.itemDescriptionView.motherboardComponentsTableView
+        mainView.itemDescriptionView.motherboardComponentsTableView,
+        mainView.itemDescriptionView.controllersTableView
         ].forEach { [weak self] tableView in
             tableView.delegate = self
             tableView.dataSource = self
         }
         
         for (index, value) in viewModel.segmentImages.enumerated() {
-//            mainView.segmentedControll.insertSegment(
-//                withTitle: value,
-//                at: index,
-//                animated: false
-//            )
             mainView.segmentedControll.insertSegment(
                 with: value,
                 at: index,
@@ -84,6 +80,7 @@ final class ItemDetailsViewController: UIViewController {
             self.mainView.itemDescriptionView.generalTableView.reloadData()
             self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
+            self.mainView.itemDescriptionView.controllersTableView.reloadData()
         }
     }
 }
@@ -101,6 +98,8 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return viewModel.consoleComponentsDataSource.count
         case 2:
             return viewModel.motherboardComponentsDataSource.count
+        case 3:
+            return viewModel.controllersDataSource.count
         default:
             return 0
         }
@@ -135,6 +134,13 @@ extension ItemDetailsViewController: UITableViewDataSource {
         ) as? UniversalCustomCell else {
             fatalError("Cell dequeue error")
         }
+        
+        guard let controllersTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: "\(UniversalCustomCell.self)",
+            for: indexPath
+        ) as? UniversalCustomCell else {
+            fatalError("Cell dequeue error")
+        }
 
         switch tableView.tag {
         case 0:
@@ -155,6 +161,12 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 descriptionValue: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionValue
             )
             return motherboardComponentsTableViewCell
+        case 3:
+            controllersTableViewCell.configurateCell(
+                descriptionName: viewModel.controllersDataSource[indexPath.row].descriptionName,
+                descriptionValue: viewModel.controllersDataSource[indexPath.row].descriptionValue
+            )
+            return controllersTableViewCell
         default:
             return defaultCell
         }

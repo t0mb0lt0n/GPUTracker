@@ -16,6 +16,6 @@ struct RealmConfigurations {
     ]
     static let schemas: [String: UInt64] = [
         .mainProductListRealm: 16,
-        .playstation3: 9
+        .playstation3: 12
     ]
 }

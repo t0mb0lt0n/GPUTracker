@@ -11,7 +11,7 @@
 		110FE7C82BDACB72006923E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 110FE7C72BDACB72006923E5 /* RealmSwift */; };
 		11361DBF2CE676E2009438EC /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11361DBE2CE676E2009438EC /* mainProductList.realm */; };
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		114307B52CEBBE220055C33A /* playstation3.realm in Resources */ = {isa = PBXBuildFile; fileRef = 114307B42CEBBE220055C33A /* playstation3.realm */; };
+		114307B72CEE15670055C33A /* playstation3.realm in Resources */ = {isa = PBXBuildFile; fileRef = 114307B62CEE15660055C33A /* playstation3.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
 		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		11361DBE2CE676E2009438EC /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
 		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		114307B42CEBBE220055C33A /* playstation3.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation3.realm; sourceTree = "<group>"; };
+		114307B62CEE15660055C33A /* playstation3.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation3.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				11361DBE2CE676E2009438EC /* mainProductList.realm */,
-				114307B42CEBBE220055C33A /* playstation3.realm */,
+				114307B62CEE15660055C33A /* playstation3.realm */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
 				11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */,
 				11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */,
@@ -292,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				114307B52CEBBE220055C33A /* playstation3.realm in Resources */,
+				114307B72CEE15670055C33A /* playstation3.realm in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				11361DBF2CE676E2009438EC /* mainProductList.realm in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,

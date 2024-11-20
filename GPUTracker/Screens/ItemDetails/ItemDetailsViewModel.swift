@@ -14,6 +14,7 @@ final class ItemDetailsViewModel {
     var generalDataSource: Results<General>
     var consoleComponentsDataSource: Results<Components>
     var motherboardComponentsDataSource: Results<MotherboardComponents>
+    var controllersDataSource: Results<Controllers>
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
@@ -21,6 +22,7 @@ final class ItemDetailsViewModel {
             generalDataSource = currentRealm.objects(General.self)
             consoleComponentsDataSource = currentRealm.objects(Components.self)
             motherboardComponentsDataSource = currentRealm.objects(MotherboardComponents.self)
+            controllersDataSource = currentRealm.objects(Controllers.self)
             reloadClosure?()
         }
     }
@@ -41,6 +43,7 @@ final class ItemDetailsViewModel {
         generalDataSource = currentRealm.objects(General.self)
         consoleComponentsDataSource = currentRealm.objects(Components.self)
         motherboardComponentsDataSource = currentRealm.objects(MotherboardComponents.self)
+        controllersDataSource = currentRealm.objects(Controllers.self)
     }
 }
 
