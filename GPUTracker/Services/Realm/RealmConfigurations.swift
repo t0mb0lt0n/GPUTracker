@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RealmConfigurations {
+struct RealmConfiguration {
     static let itemList: [[String]] = [
         [.playstation3,
          .playstation3],
@@ -15,7 +15,14 @@ struct RealmConfigurations {
          .playstation3]
     ]
     static let schemas: [String: UInt64] = [
-        .mainProductListRealm: 16,
-        .playstation3: 12
+        .mainProductListRealm: Constants.mainProductListSchema,
+        .playstation3: Constants.palystation3Schema
     ]
+}
+
+extension RealmConfiguration {
+    private enum Constants {
+        static let mainProductListSchema: UInt64 = 16
+        static let palystation3Schema: UInt64 = 12
+    }
 }

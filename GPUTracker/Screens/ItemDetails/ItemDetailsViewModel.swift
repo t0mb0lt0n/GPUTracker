@@ -32,11 +32,9 @@ final class ItemDetailsViewModel {
         .generalImage,
         .consoleComponentsImage,
         .motherboardComponentsImage,
-        .historyImage
+        .controllersImage
         ]
     }()
-    
-    
     
     init(forItemWithRealmName name: String) {
         currentRealm = RealmService(withRealmName: name).data

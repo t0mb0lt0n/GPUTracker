@@ -19,7 +19,7 @@ final class RealmService {
         let realmConfiguration = Realm.Configuration(
             fileURL: realmPath,
             readOnly: true,
-            schemaVersion: RealmConfigurations.schemas[realmName] ??
+            schemaVersion: RealmConfiguration.schemas[realmName] ??
             Constants.defaultRealmSchemaVersion
         )
         lazy var realm = try! Realm(configuration: realmConfiguration)

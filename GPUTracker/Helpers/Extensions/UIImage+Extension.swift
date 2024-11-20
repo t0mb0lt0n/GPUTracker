@@ -11,7 +11,6 @@ extension UIImage {
     static let online = UIImage(named: "onlineStsImage") ?? UIImage()
     static let partiallyOnline = UIImage(named: "semiOnlineStsImage") ?? UIImage()
     static let offline = UIImage(named: "offlineStsImage") ?? UIImage()
-    //static let partiallyAvailableStatusImage = UIImage(named: "offlineStatusImag.fill") ?? UIImage()
     
     static let generalImage = UIImage(
         systemName: "building.columns.fill"
@@ -41,8 +40,7 @@ extension UIImage {
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
 
-    
-    static let historyImage = UIImage(
+    static let controllersImage = UIImage(
         systemName: "gamecontroller.fill"
     )?.withTintColor(
         .systemBlue,

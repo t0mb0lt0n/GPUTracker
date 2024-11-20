@@ -194,7 +194,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case let sectionNumber:
             self.delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[sectionNumber][indexPath.row]
+                forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
             )
             navigationController?.pushViewController(itemDetailsVC, animated: true)
         }
@@ -208,7 +208,7 @@ extension MainViewController: UITableViewDelegate {
         switch indexPath.section {
         case let sectionNumber:
             delagate?.updateData(
-                forItemWithName: RealmConfigurations.itemList[sectionNumber][indexPath.row]
+                forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
             )
         }
     }
