@@ -176,6 +176,7 @@ extension MainViewController: UITableViewDataSource {
         
         switch section {
         case let sectionNumber:
+            //cell will setup
             developerNameLabel.text = viewModel.developerListDataSource[sectionNumber].developerName
         }
         return customHeaderView
