@@ -81,6 +81,7 @@ final class ItemDetailsViewController: UIViewController {
             self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.controllersTableView.reloadData()
+            self.title = self.viewModel.generalDataSource.last?.descriptionValue
         }
     }
 }
