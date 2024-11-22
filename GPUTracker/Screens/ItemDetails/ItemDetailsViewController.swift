@@ -78,10 +78,10 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = {
             print("reload closure")
             self.mainView.itemDescriptionView.generalTableView.reloadData()
+            self.title = self.viewModel.generalDataSource.last?.descriptionValue
             self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
             self.mainView.itemDescriptionView.controllersTableView.reloadData()
-            self.title = self.viewModel.generalDataSource.last?.descriptionValue
         }
     }
 }
