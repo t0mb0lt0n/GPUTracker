@@ -115,7 +115,7 @@ extension MainViewController: UITableViewDataSource {
             withIdentifier: "\(MainCell.self)",
             for: indexPath
         ) as? MainCell else {
-            fatalError("Cell dequeue error")
+            fatalError(.cellError)
         }
         cell.selectionStyle = .default
         cell.accessoryType = .disclosureIndicator

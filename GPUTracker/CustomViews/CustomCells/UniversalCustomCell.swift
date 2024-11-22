@@ -15,7 +15,6 @@ final class UniversalCustomCell: UITableViewCell {
             weight: .medium
         )
         label.textColor = .black
-        label.text = "Debug text"
         return label
     }()
             
@@ -27,7 +26,6 @@ final class UniversalCustomCell: UITableViewCell {
             ofSize: Constants.descriptionValueLabelFontSize,
             weight: .regular
         )
-        textView.text = "debug text"
         textView.isScrollEnabled = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
