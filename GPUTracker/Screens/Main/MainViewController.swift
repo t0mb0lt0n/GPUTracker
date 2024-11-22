@@ -59,7 +59,8 @@ final class MainViewController: UIViewController {
         setupNavigationBarStyle(
             isLarge: true,
             title: .mainCatalogue,
-            titleColor: .black
+            titleColor: .black,
+            backBarButtonTitle: .mainCatalogue
         )
         itemDetailsVC?.navigationController?.navigationBar.prefersLargeTitles = false
     }

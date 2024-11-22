@@ -15,35 +15,35 @@ extension UIImage {
     static let generalImage = UIImage(
         systemName: "building.columns.fill"
     )?.withTintColor(
-        .systemBlue,
+        .black,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let consoleComponentsImage = UIImage(
         systemName: "gearshape.fill"
     )?.withTintColor(
-        .systemBlue,
+        .black,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let motherboardComponentsImage = UIImage(
         systemName: "wrench.and.screwdriver.fill"
     )?.withTintColor(
-        .systemBlue,
+        .black,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let motherboardComponentsImage2 = UIImage(
         named: "motherboardComponentsImage"
     )?.withTintColor(
-        .systemBlue,
+        .black,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
 
     static let controllersImage = UIImage(
         systemName: "gamecontroller.fill"
     )?.withTintColor(
-        .systemBlue,
+        .black,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
 }

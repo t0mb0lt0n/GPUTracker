@@ -10,7 +10,8 @@ extension UIViewController {
     final func setupNavigationBarStyle(
         isLarge: Bool,
         title: String?,
-        titleColor: UIColor?
+        titleColor: UIColor?,
+        backBarButtonTitle: String?
     ) {
         navigationController?.navigationBar.prefersLargeTitles = isLarge
         guard
@@ -25,5 +26,12 @@ extension UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: titleColor
         ]
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+            title: backBarButtonTitle,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+        self.navigationController?.navigationBar.tintColor = titleColor
     }
 }
