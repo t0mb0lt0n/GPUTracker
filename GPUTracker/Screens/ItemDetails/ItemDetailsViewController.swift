@@ -119,28 +119,28 @@ extension ItemDetailsViewController: UITableViewDataSource {
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
-            fatalError("Cell dequeue error")
+            fatalError(.cellError)
         }
         
         guard let consoleComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
-            fatalError("Cell dequeue error")
+            fatalError(.cellError)
         }
         
         guard let motherboardComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
-            fatalError("Cell dequeue error")
+            fatalError(.cellError)
         }
         
         guard let controllersTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: "\(UniversalCustomCell.self)",
             for: indexPath
         ) as? UniversalCustomCell else {
-            fatalError("Cell dequeue error")
+            fatalError(.cellError)
         }
 
         switch tableView.tag {
