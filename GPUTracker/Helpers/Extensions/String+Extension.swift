@@ -11,4 +11,5 @@ extension String {
     static let mainProductListRealm: String = "mainProductList"
     static let failure: String = "failure"
     static let mainCatalogue: String = "Main catalogue"
+    static let cellError: String = "Cell dequeue error"
 }
