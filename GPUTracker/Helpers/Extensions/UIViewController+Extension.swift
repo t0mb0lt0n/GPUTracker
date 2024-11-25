@@ -34,6 +34,5 @@ extension UIViewController {
         )
         self.navigationController?.navigationBar.tintColor = titleColor
         self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .systemBlue
-
     }
 }
