@@ -18,7 +18,7 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC622CF4CD05001A84C9 /* playstation2.realm */; };
-		11A5FC652CF4D076001A84C9 /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC642CF4D076001A84C9 /* mainProductList.realm */; };
+		11A5FC672CF4D3A3001A84C9 /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC662CF4D3A3001A84C9 /* mainProductList.realm */; };
 		11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extension.swift */; };
 		11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */; };
 		11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainCell.swift */; };
@@ -47,7 +47,7 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11A5FC622CF4CD05001A84C9 /* playstation2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation2.realm; sourceTree = "<group>"; };
-		11A5FC642CF4D076001A84C9 /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
+		11A5FC662CF4D3A3001A84C9 /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
 		11A604262CD512B200A16F01 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11B152D12BE559D7004F6FBC /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		11070CDA2BADF35600B2C954 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				11A5FC642CF4D076001A84C9 /* mainProductList.realm */,
+				11A5FC662CF4D3A3001A84C9 /* mainProductList.realm */,
 				114307B82CEE1FA50055C33A /* playstation3.realm */,
 				11A5FC622CF4CD05001A84C9 /* playstation2.realm */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
@@ -295,7 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11A5FC652CF4D076001A84C9 /* mainProductList.realm in Resources */,
+				11A5FC672CF4D3A3001A84C9 /* mainProductList.realm in Resources */,
 				114307B92CEE1FA50055C33A /* playstation3.realm in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */,
