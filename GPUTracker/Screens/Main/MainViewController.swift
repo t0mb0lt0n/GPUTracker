@@ -130,13 +130,13 @@ extension MainViewController: UITableViewDataSource {
             cell.configurateCell(
                 descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
+                onlineStatus: viewModel.sonySectionDataSource[indexPath.row].onlineStatus
             )
         case 2:
             cell.configurateCell(
                 descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
+                onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
             )
         default:
             cell.textLabel?.text = .failure

@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImage {
     static let online = UIImage(named: "onlineStsImage") ?? UIImage()
-    static let partiallyOnline = UIImage(named: "semiOnlineStsImage") ?? UIImage()
+    static let partially = UIImage(named: "partiallyStsImage") ?? UIImage()
     static let offline = UIImage(named: "offlineStsImage") ?? UIImage()
     
     static let generalImage = UIImage(
