@@ -62,7 +62,6 @@ final class MainViewController: UIViewController {
             titleColor: .black,
             backBarButtonTitle: .mainCatalogue
         )
-        itemDetailsVC?.navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private func setupViewModel() {

@@ -13,37 +13,30 @@ extension UIImage {
     static let offline = UIImage(named: "offlineStsImage") ?? UIImage()
     
     static let generalImage = UIImage(
-        systemName: "building.columns.fill"
+        systemName: "building.columns"
     )?.withTintColor(
-        .black,
+        .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let consoleComponentsImage = UIImage(
-        systemName: "gearshape.fill"
+        systemName: "gearshape"
     )?.withTintColor(
-        .black,
+        .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let motherboardComponentsImage = UIImage(
-        systemName: "wrench.and.screwdriver.fill"
+        systemName: "wrench.and.screwdriver"
     )?.withTintColor(
-        .black,
+        .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
-    static let motherboardComponentsImage2 = UIImage(
-        named: "motherboardComponentsImage"
-    )?.withTintColor(
-        .black,
-        renderingMode: .alwaysOriginal
-    ) ?? UIImage()
-
     static let controllersImage = UIImage(
-        systemName: "gamecontroller.fill"
+        systemName: "gamecontroller"
     )?.withTintColor(
-        .black,
+        .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
 }
