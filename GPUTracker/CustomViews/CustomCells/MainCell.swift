@@ -117,7 +117,7 @@ extension MainCell {
         switch onlineStatus {
         case "online":
             onlineStatusImageView.image = .online
-        case "partially online":
+        case "partially":
             onlineStatusImageView.image = .partiallyOnline
         default:
             onlineStatusImageView.image = .offline
