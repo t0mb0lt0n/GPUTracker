@@ -47,9 +47,9 @@ final class UniversalCustomCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         descriptionNameLabel.text = nil
         descriptionValueTextView.text = nil
-        super.prepareForReuse()
     }
 
     

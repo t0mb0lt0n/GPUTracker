@@ -59,10 +59,10 @@ final class MainCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         descriptionNameLabel.text = nil
         descriptionValueTextView.text = nil
         onlineStatusImageView.image = nil
-        super.prepareForReuse()
     }
     
     private func setupCell() {
