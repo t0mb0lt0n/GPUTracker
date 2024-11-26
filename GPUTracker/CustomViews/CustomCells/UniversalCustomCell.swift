@@ -46,6 +46,13 @@ final class UniversalCustomCell: UITableViewCell {
         setupConstraints()
     }
     
+    override func prepareForReuse() {
+        descriptionNameLabel.text = nil
+        descriptionValueTextView.text = nil
+        super.prepareForReuse()
+    }
+
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -58,6 +58,13 @@ final class MainCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        descriptionNameLabel.text = nil
+        descriptionValueTextView.text = nil
+        onlineStatusImageView.image = nil
+        super.prepareForReuse()
+    }
+    
     private func setupCell() {
         [
          descriptionNameLabel,
