@@ -20,10 +20,15 @@ final class ItemDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.title = barTitle
         setupViewModel()
+        print("init ItemDetailsViewController")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        print("deinit ItemDetailsViewController")
     }
     
     override func loadView() {
@@ -75,7 +80,8 @@ final class ItemDetailsViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        viewModel.reloadClosure = {
+        viewModel.reloadClosure = { [weak self] in
+            guard let self = self else { return }
             print("reload closure")
             self.mainView.itemDescriptionView.generalTableView.reloadData()
             self.title = self.viewModel.generalDataSource.last?.descriptionValue

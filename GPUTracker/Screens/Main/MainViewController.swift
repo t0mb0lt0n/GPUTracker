@@ -15,8 +15,8 @@ protocol RealmUpdateDelegate: AnyObject {
 final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     private let viewModel: MainViewModel
-    weak var delagate: RealmUpdateDelegate?
-    var itemDetailsVC: ItemDetailsViewController?
+    weak var delegate: RealmUpdateDelegate?
+    //var itemDetailsVC: ItemDetailsViewController?
     
     init() {
         viewModel = MainViewModel(
@@ -24,12 +24,12 @@ final class MainViewController: UIViewController {
                 withRealmName: .mainProductListRealm
             )
         )
-        itemDetailsVC = .init(
-            withViewModel: .init(
-                forItemWithRealmName: .playstation3
-            ),
-            andBarTitle: .playstation3
-        )
+//        itemDetailsVC = .init(
+//            withViewModel: .init(
+//                forItemWithRealmName: .playstation3
+//            ),
+//            andBarTitle: .playstation3
+//        )
         super.init(nibName: nil, bundle: nil)
         setupViewModel()
     }
@@ -44,7 +44,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delagate = itemDetailsVC
+        //self.delegate = itemDetailsVC
         setupMainView()
     }
     
@@ -188,11 +188,20 @@ extension MainViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        guard let itemDetailsVC else { return }
+        //guard let itemDetailsVC else { return }
+        
+        let itemDetailsVC = ItemDetailsViewController(
+            withViewModel: .init(
+                forItemWithRealmName: .playstation3
+            ),
+            andBarTitle: .playstation3
+        )
+        
+        delegate = itemDetailsVC
         
         switch indexPath.section {
         case let sectionNumber:
-            self.delagate?.updateData(
+            self.delegate?.updateData(
                 forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
             )
             navigationController?.pushViewController(itemDetailsVC, animated: true)
@@ -206,7 +215,7 @@ extension MainViewController: UITableViewDelegate {
     ) {
         switch indexPath.section {
         case let sectionNumber:
-            delagate?.updateData(
+            delegate?.updateData(
                 forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
             )
         }
