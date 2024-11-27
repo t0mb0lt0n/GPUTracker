@@ -16,7 +16,6 @@ final class MainViewController: UIViewController {
     lazy var mainView = view as! MainView
     private let viewModel: MainViewModel
     weak var delegate: RealmUpdateDelegate?
-    //var itemDetailsVC: ItemDetailsViewController?
     
     init() {
         viewModel = MainViewModel(
@@ -24,12 +23,6 @@ final class MainViewController: UIViewController {
                 withRealmName: .mainProductListRealm
             )
         )
-//        itemDetailsVC = .init(
-//            withViewModel: .init(
-//                forItemWithRealmName: .playstation3
-//            ),
-//            andBarTitle: .playstation3
-//        )
         super.init(nibName: nil, bundle: nil)
         setupViewModel()
     }
@@ -44,7 +37,6 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.delegate = itemDetailsVC
         setupMainView()
     }
     
@@ -65,8 +57,8 @@ final class MainViewController: UIViewController {
     }
 
     private func setupViewModel() {
-        viewModel.reloadClosure = {
-            self.reloadTableView()
+        viewModel.reloadClosure = { [weak self] in
+            self?.reloadTableView()
         }
     }
     
@@ -188,15 +180,12 @@ extension MainViewController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        //guard let itemDetailsVC else { return }
-        
         let itemDetailsVC = ItemDetailsViewController(
             withViewModel: .init(
                 forItemWithRealmName: .playstation3
             ),
             andBarTitle: .playstation3
         )
-        
         delegate = itemDetailsVC
         
         switch indexPath.section {

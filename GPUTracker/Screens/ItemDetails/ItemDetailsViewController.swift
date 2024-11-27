@@ -81,7 +81,7 @@ final class ItemDetailsViewController: UIViewController {
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             print("reload closure")
             self.mainView.itemDescriptionView.generalTableView.reloadData()
             self.title = self.viewModel.generalDataSource.last?.descriptionValue
