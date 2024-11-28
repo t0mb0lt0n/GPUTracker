@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class CustomTableView: UITableView {
+final class CustomTableView: UITableView {
     init() {
         super .init(frame: .zero, style: .plain)
         setupTableView()

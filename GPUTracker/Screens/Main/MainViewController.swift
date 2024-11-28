@@ -6,16 +6,16 @@
 //
 
 import UIKit
-import RealmSwift
+import Realm
 
 protocol RealmUpdateDelegate: AnyObject {
     func updateData(forItemWithName itemIndexName: String)
 }
 
 final class MainViewController: UIViewController {
-    lazy var mainView = view as! MainView
+    private lazy var mainView = view as! MainView
     private let viewModel: MainViewModel
-    weak var delegate: RealmUpdateDelegate?
+    private weak var delegate: RealmUpdateDelegate?
     
     init() {
         viewModel = MainViewModel(

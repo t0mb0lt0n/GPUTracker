@@ -12,4 +12,8 @@ extension String {
     static let failure: String = "failure"
     static let mainCatalogue: String = "Main catalogue"
     static let cellError: String = "Cell dequeue error"
+    static let online: String = "online"
+    static let partially: String = "partially"
+    static let offline: String = "offline"
+
 }

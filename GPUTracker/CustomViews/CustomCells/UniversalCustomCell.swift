@@ -8,7 +8,7 @@
 import UIKit
 
 final class UniversalCustomCell: UITableViewCell {
-    let descriptionNameLabel: UILabel = {
+    private let descriptionNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(
             ofSize: Constants.descriptionNameLabelFontSize,
@@ -18,7 +18,7 @@ final class UniversalCustomCell: UITableViewCell {
         return label
     }()
             
-    let descriptionValueTextView: UITextView = {
+    private let descriptionValueTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .clear
         textView.textColor = .systemGray

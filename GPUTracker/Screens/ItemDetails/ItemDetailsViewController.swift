@@ -40,7 +40,7 @@ final class ItemDetailsViewController: UIViewController {
         setupMainView()
     }
     
-    func segmentDidChange() {
+    private func segmentDidChange() {
         let contentOffset = Int(
             mainView.itemDescriptionView.generalTableView.frame.width
         )

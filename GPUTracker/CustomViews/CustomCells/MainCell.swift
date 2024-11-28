@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainCell: UITableViewCell {
-    let descriptionNameLabel: UILabel = {
+    private let descriptionNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(
             ofSize: Constants.descriptionNameLabelFontSize,
@@ -18,7 +18,7 @@ final class MainCell: UITableViewCell {
         return label
     }()
     
-    var onlineStatusImageView: UIImageView = {
+    private let onlineStatusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .online
         imageView.clipsToBounds = true
@@ -26,7 +26,7 @@ final class MainCell: UITableViewCell {
         return imageView
     }()
             
-    let descriptionValueTextView: UITextView = {
+    private let descriptionValueTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .clear
         textView.textColor = .systemGray
@@ -122,9 +122,9 @@ extension MainCell {
         onlineStatus: String
     ) {
         switch onlineStatus {
-        case "online":
+        case .online:
             onlineStatusImageView.image = .online
-        case "partially":
+        case .partially:
             onlineStatusImageView.image = .partially
         default:
             onlineStatusImageView.image = .offline
@@ -149,6 +149,5 @@ extension MainCell {
         static let lineFragmentPadding: CGFloat = 0
         static let descriptionNameLabelFontSize: CGFloat = 17
         static let textViewFontSize: CGFloat = 16
-
     }
 }

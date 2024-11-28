@@ -12,7 +12,7 @@ final class ItemDetailsView: UIView {
     let segmentedControll = UISegmentedControl()
     var segmentDidChangeClosure: (() -> Void)?
     
-    let sectionLine: UIView = {
+    private let sectionLine: UIView = {
         let line = UIView(frame: .zero)
         line.backgroundColor = .systemGray5
         return line
