@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIImage {
+    //MARK: - Online sts
     static let online = UIImage(
         systemName: .circleFill
     )?.withTintColor(
@@ -29,6 +30,7 @@ extension UIImage {
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
+    //MARK: - Segmented controll icons
     static let generalImage = UIImage(
         systemName: .building
     )?.withTintColor(
