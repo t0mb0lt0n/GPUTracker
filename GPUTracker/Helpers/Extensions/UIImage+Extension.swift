@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImage {
-    //MARK: - Online sts
+    //MARK: - Online sts icons
     static let online = UIImage(
         systemName: .circleFill
     )?.withTintColor(
