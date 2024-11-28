@@ -30,28 +30,28 @@ extension UIImage {
     ) ?? UIImage()
     
     static let generalImage = UIImage(
-        systemName: "building.columns"
+        systemName: .building
     )?.withTintColor(
         .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let consoleComponentsImage = UIImage(
-        systemName: "gearshape"
+        systemName: .gearshape
     )?.withTintColor(
         .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let motherboardComponentsImage = UIImage(
-        systemName: "wrench.and.screwdriver"
+        systemName: .wrench
     )?.withTintColor(
         .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
     
     static let controllersImage = UIImage(
-        systemName: "gamecontroller"
+        systemName: .gamecontroller
     )?.withTintColor(
         .systemBlue,
         renderingMode: .alwaysOriginal
