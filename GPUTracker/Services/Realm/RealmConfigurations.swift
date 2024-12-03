@@ -9,7 +9,8 @@ import Foundation
 
 struct RealmConfiguration {
     static let itemList: [[String]] = [
-        [.playstation3,
+        [.xboxOriginal,
+         .xbox360,
          .xbox360],
         [.playstation3,
          .playstation2]
@@ -18,7 +19,8 @@ struct RealmConfiguration {
         .mainProductListRealm: Constants.mainProductListSchema,
         .playstation3: Constants.palystation3Schema,
         .playstation2: Constants.palystation2Schema,
-        .xbox360: Constants.xbox360Schema
+        .xbox360: Constants.xbox360Schema,
+        .xboxOriginal: Constants.xboxOriginalSchema
     ]
 }
 
@@ -28,5 +30,6 @@ extension RealmConfiguration {
         static let palystation3Schema: UInt64 = 12
         static let palystation2Schema: UInt64 = 12
         static let xbox360Schema: UInt64 = 12
+        static let xboxOriginalSchema: UInt64 = 12
     }
 }
