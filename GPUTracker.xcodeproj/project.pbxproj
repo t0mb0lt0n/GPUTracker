@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		110FE7C62BDACB72006923E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 110FE7C52BDACB72006923E5 /* Realm */; };
 		110FE7C82BDACB72006923E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 110FE7C72BDACB72006923E5 /* RealmSwift */; };
-		1131C93B2CFF206C00FC0208 /* xbox360.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C93A2CFF206C00FC0208 /* xbox360.realm */; };
+		1131C93D2CFF234200FC0208 /* xbox360.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C93C2CFF234200FC0208 /* xbox360.realm */; };
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		114307B92CEE1FA50055C33A /* playstation3.realm in Resources */ = {isa = PBXBuildFile; fileRef = 114307B82CEE1FA50055C33A /* playstation3.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1131C93A2CFF206C00FC0208 /* xbox360.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xbox360.realm; sourceTree = "<group>"; };
+		1131C93C2CFF234200FC0208 /* xbox360.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xbox360.realm; sourceTree = "<group>"; };
 		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		114307B82CEE1FA50055C33A /* playstation3.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation3.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 				11A5FC682CF4D3EF001A84C9 /* mainProductList.realm */,
 				114307B82CEE1FA50055C33A /* playstation3.realm */,
 				11A5FC622CF4CD05001A84C9 /* playstation2.realm */,
-				1131C93A2CFF206C00FC0208 /* xbox360.realm */,
+				1131C93C2CFF234200FC0208 /* xbox360.realm */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
 				11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */,
 				11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */,
@@ -302,7 +302,7 @@
 				114307B92CEE1FA50055C33A /* playstation3.realm in Resources */,
 				1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */,
 				11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */,
-				1131C93B2CFF206C00FC0208 /* xbox360.realm in Resources */,
+				1131C93D2CFF234200FC0208 /* xbox360.realm in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
