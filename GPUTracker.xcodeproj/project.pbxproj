@@ -12,6 +12,7 @@
 		1131C9412CFF2CAE00FC0208 /* xbox360.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C9402CFF2CAE00FC0208 /* xbox360.realm */; };
 		1131C94D2D00D82100FC0208 /* xboxOriginal.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C94C2D00D82100FC0208 /* xboxOriginal.realm */; };
 		1131C95F2D02080D00FC0208 /* mainProductList.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C95E2D02080D00FC0208 /* mainProductList.realm */; };
+		1131C9652D0224D600FC0208 /* playstation4.realm in Resources */ = {isa = PBXBuildFile; fileRef = 1131C9642D0224D600FC0208 /* playstation4.realm */; };
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		114307B92CEE1FA50055C33A /* playstation3.realm in Resources */ = {isa = PBXBuildFile; fileRef = 114307B82CEE1FA50055C33A /* playstation3.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		1131C9402CFF2CAE00FC0208 /* xbox360.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xbox360.realm; sourceTree = "<group>"; };
 		1131C94C2D00D82100FC0208 /* xboxOriginal.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = xboxOriginal.realm; sourceTree = "<group>"; };
 		1131C95E2D02080D00FC0208 /* mainProductList.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = mainProductList.realm; sourceTree = "<group>"; };
+		1131C9642D0224D600FC0208 /* playstation4.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation4.realm; sourceTree = "<group>"; };
 		113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		114307B82CEE1FA50055C33A /* playstation3.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation3.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				11A5FC622CF4CD05001A84C9 /* playstation2.realm */,
 				114307B82CEE1FA50055C33A /* playstation3.realm */,
+				1131C9642D0224D600FC0208 /* playstation4.realm */,
 			);
 			path = PlaystationRealms;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */,
 				1131C9412CFF2CAE00FC0208 /* xbox360.realm in Resources */,
 				1131C95F2D02080D00FC0208 /* mainProductList.realm in Resources */,
+				1131C9652D0224D600FC0208 /* playstation4.realm in Resources */,
 				1131C94D2D00D82100FC0208 /* xboxOriginal.realm in Resources */,
 				1156986729E873F0009B3638 /* Assets.xcassets in Resources */,
 			);

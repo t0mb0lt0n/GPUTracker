@@ -8,6 +8,7 @@
 extension String {
     static let playstation3: String = "playstation3"
     static let playstation2: String = "playstation2"
+    static let playstation4: String = "playstation4"
     static let xbox360: String = "xbox360"
     static let xboxOriginal: String = "xboxOriginal"
     static let mainProductListRealm: String = "mainProductList"
