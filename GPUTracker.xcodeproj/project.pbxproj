@@ -85,17 +85,48 @@
 		11070CDA2BADF35600B2C954 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				1131C95E2D02080D00FC0208 /* mainProductList.realm */,
-				114307B82CEE1FA50055C33A /* playstation3.realm */,
-				11A5FC622CF4CD05001A84C9 /* playstation2.realm */,
-				1131C9402CFF2CAE00FC0208 /* xbox360.realm */,
-				1131C94C2D00D82100FC0208 /* xboxOriginal.realm */,
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
 				11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */,
 				11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */,
 				11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		1131C9602D02095200FC0208 /* LocalRealms */ = {
+			isa = PBXGroup;
+			children = (
+				1131C9632D0209BF00FC0208 /* MainRealm */,
+				1131C9622D02099100FC0208 /* PlaystationRealms */,
+				1131C9612D02096E00FC0208 /* XBOXRealms */,
+			);
+			path = LocalRealms;
+			sourceTree = "<group>";
+		};
+		1131C9612D02096E00FC0208 /* XBOXRealms */ = {
+			isa = PBXGroup;
+			children = (
+				1131C94C2D00D82100FC0208 /* xboxOriginal.realm */,
+				1131C9402CFF2CAE00FC0208 /* xbox360.realm */,
+			);
+			path = XBOXRealms;
+			sourceTree = "<group>";
+		};
+		1131C9622D02099100FC0208 /* PlaystationRealms */ = {
+			isa = PBXGroup;
+			children = (
+				11A5FC622CF4CD05001A84C9 /* playstation2.realm */,
+				114307B82CEE1FA50055C33A /* playstation3.realm */,
+			);
+			path = PlaystationRealms;
+			sourceTree = "<group>";
+		};
+		1131C9632D0209BF00FC0208 /* MainRealm */ = {
+			isa = PBXGroup;
+			children = (
+				1131C95E2D02080D00FC0208 /* mainProductList.realm */,
+			);
+			path = MainRealm;
 			sourceTree = "<group>";
 		};
 		113D33522BAB5BAC00CCDDF9 /* Frameworks */ = {
@@ -148,6 +179,7 @@
 		1156987329E87627009B3638 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1131C9602D02095200FC0208 /* LocalRealms */,
 				1156986829E873F0009B3638 /* LaunchScreen.storyboard */,
 				1156986B29E873F0009B3638 /* Info.plist */,
 				1156986629E873F0009B3638 /* Assets.xcassets */,
