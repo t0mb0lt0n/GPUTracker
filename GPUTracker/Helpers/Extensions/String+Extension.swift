@@ -6,12 +6,18 @@
 //
 
 extension String {
-    static let playstation3: String = "playstation3"
+    //MARK: - Sony
+    static let playstation: String = "playstation"
     static let playstation2: String = "playstation2"
+    static let playstation3: String = "playstation3"
     static let playstation4: String = "playstation4"
+    //MARK: - Microsoft
     static let xbox360: String = "xbox360"
     static let xboxOriginal: String = "xboxOriginal"
-    static let mainProductListRealm: String = "mainProductList"
+    //MARK: - SEGA
+    static let dreamCast: String = "dreamcast"
+    //MARK: - Others
+    static let mainProductList: String = "mainProductList"
     static let failure: String = "failure"
     static let mainCatalogue: String = "Main catalogue"
     static let cellError: String = "Cell dequeue error"

@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
     init() {
         viewModel = MainViewModel(
             service: .init(
-                withRealmName: .mainProductListRealm
+                withRealmName: .mainProductList
             )
         )
         super.init(nibName: nil, bundle: nil)
