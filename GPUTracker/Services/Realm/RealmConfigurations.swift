@@ -14,7 +14,8 @@ struct RealmConfiguration {
         [.playstation,
          .playstation2,
          .playstation3,
-         .playstation4]
+         .playstation4],
+        [.dreamCast]
     ]
     static let schemas: [String: UInt64] = [
         .mainProductList: Constants.mainProductListSchema,
@@ -24,6 +25,7 @@ struct RealmConfiguration {
         .playstation4: Constants.palystation4Schema,
         .xbox360: Constants.xbox360Schema,
         .xboxOriginal: Constants.xboxOriginalSchema,
+        .dreamCast: Constants.dreamCastSchema
     ]
 }
 
@@ -36,5 +38,6 @@ extension RealmConfiguration {
         static let palystation4Schema: UInt64 = 12
         static let xbox360Schema: UInt64 = 12
         static let xboxOriginalSchema: UInt64 = 12
+        static let dreamCastSchema: UInt64 = 12
     }
 }

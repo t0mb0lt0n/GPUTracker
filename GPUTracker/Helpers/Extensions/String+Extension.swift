@@ -15,7 +15,7 @@ extension String {
     static let xbox360: String = "xbox360"
     static let xboxOriginal: String = "xboxOriginal"
     //MARK: - SEGA
-    static let dreamCast: String = "dreamcast"
+    static let dreamCast: String = "dreamCast"
     //MARK: - Others
     static let mainProductList: String = "mainProductList"
     static let failure: String = "failure"
