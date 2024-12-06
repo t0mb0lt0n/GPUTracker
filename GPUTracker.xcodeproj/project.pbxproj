@@ -103,18 +103,18 @@
 				1131C9632D0209BF00FC0208 /* MainRealm */,
 				11B11C722D03705300058A4F /* SegaRealm */,
 				1131C9622D02099100FC0208 /* SonyRealms */,
-				1131C9612D02096E00FC0208 /* XBOXRealms */,
+				1131C9612D02096E00FC0208 /* MicrosoftRealms */,
 			);
 			path = LocalRealms;
 			sourceTree = "<group>";
 		};
-		1131C9612D02096E00FC0208 /* XBOXRealms */ = {
+		1131C9612D02096E00FC0208 /* MicrosoftRealms */ = {
 			isa = PBXGroup;
 			children = (
 				1131C94C2D00D82100FC0208 /* xboxOriginal.realm */,
 				1131C9402CFF2CAE00FC0208 /* xbox360.realm */,
 			);
-			path = XBOXRealms;
+			path = MicrosoftRealms;
 			sourceTree = "<group>";
 		};
 		1131C9622D02099100FC0208 /* SonyRealms */ = {
