@@ -101,7 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				1131C9632D0209BF00FC0208 /* MainRealm */,
-				1131C9622D02099100FC0208 /* PlaystationRealms */,
+				11B11C722D03705300058A4F /* SegaRealm */,
+				1131C9622D02099100FC0208 /* SonyRealms */,
 				1131C9612D02096E00FC0208 /* XBOXRealms */,
 			);
 			path = LocalRealms;
@@ -116,7 +117,7 @@
 			path = XBOXRealms;
 			sourceTree = "<group>";
 		};
-		1131C9622D02099100FC0208 /* PlaystationRealms */ = {
+		1131C9622D02099100FC0208 /* SonyRealms */ = {
 			isa = PBXGroup;
 			children = (
 				11B11C702D035DE900058A4F /* playstation.realm */,
@@ -124,7 +125,7 @@
 				114307B82CEE1FA50055C33A /* playstation3.realm */,
 				1131C9642D0224D600FC0208 /* playstation4.realm */,
 			);
-			path = PlaystationRealms;
+			path = SonyRealms;
 			sourceTree = "<group>";
 		};
 		1131C9632D0209BF00FC0208 /* MainRealm */ = {
@@ -226,6 +227,13 @@
 				11C422BA2CCAEA460058C627 /* CustomViews */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		11B11C722D03705300058A4F /* SegaRealm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SegaRealm;
 			sourceTree = "<group>";
 		};
 		11C422B92CCAEA270058C627 /* CustomCells */ = {
