@@ -1,5 +1,5 @@
 <div align="center">
-             <img src="Resources/ReadmeLogo.png" alt="Logo" width="256" />
+             <img src="Resources/ReadmeLogo.png" alt="GTrackerLogo" width="256" />
              <h1>GTracker</h1>
 </div>
 
@@ -16,7 +16,7 @@ This app helps video game collectors and users quickly check the system in offli
 
 ----------
 
-Noteworthy features of OpenCore Legacy Patcher:
+Noteworthy features of GTracker:
 
 * 
 
