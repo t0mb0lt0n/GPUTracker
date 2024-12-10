@@ -1,5 +1,5 @@
 <div align="center">
-             <img src="ReadmeLogo.png" alt="OpenCore Patcher Logo" width="256" />
+             <img src="Resources/ReadmeLogo.png" alt="Logo" width="256" />
              <h1>GTracker</h1>
 </div>
 
