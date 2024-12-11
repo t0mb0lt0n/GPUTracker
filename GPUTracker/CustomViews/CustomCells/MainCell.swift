@@ -114,7 +114,7 @@ final class MainCell: UITableViewCell {
         ])
     }
 }
-//MARK: - GPUInfoCellView extensions
+//MARK: - MainCell extensions
 extension MainCell {
     final func configurateCell(
         descriptionName: String,
