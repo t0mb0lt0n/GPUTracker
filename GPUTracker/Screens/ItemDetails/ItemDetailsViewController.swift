@@ -82,11 +82,13 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = { [weak self] in
             guard let self else { return }
             print("reload closure")
-            self.mainView.itemDescriptionView.generalTableView.reloadData()
-            self.title = self.viewModel.generalDataSource.last?.descriptionValue
-            self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
-            self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
-            self.mainView.itemDescriptionView.controllersTableView.reloadData()
+            DispatchQueue.main.async {
+                self.mainView.itemDescriptionView.generalTableView.reloadData()
+                self.title = self.viewModel.generalDataSource.last?.descriptionValue
+                self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
+                self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
+                self.mainView.itemDescriptionView.controllersTableView.reloadData()
+            }
         }
     }
 }
@@ -110,14 +112,14 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return 0
         }
     }
-
+    
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let defaultCell = UITableViewCell(
             style: .value1,
-            reuseIdentifier: "Apple designed cell"
+            reuseIdentifier: .appleBasicCellID
         )
         
         guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
@@ -147,7 +149,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         ) as? UniversalCustomCell else {
             fatalError(.cellError)
         }
-
+        
         switch tableView.tag {
         case 0:
             generalSegmentTableViewCell.configurateCell(
