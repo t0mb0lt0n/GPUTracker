@@ -531,7 +531,7 @@
 				DEVELOPMENT_TEAM = H6V9DX349Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GPUTracker/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = XTracker;
+				INFOPLIST_KEY_CFBundleDisplayName = GPUTracker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -564,7 +564,7 @@
 				DEVELOPMENT_TEAM = H6V9DX349Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GPUTracker/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = XTracker;
+				INFOPLIST_KEY_CFBundleDisplayName = GPUTracker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;

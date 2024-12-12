@@ -82,13 +82,11 @@ final class ItemDetailsViewController: UIViewController {
         viewModel.reloadClosure = { [weak self] in
             guard let self else { return }
             print("reload closure")
-            DispatchQueue.main.async {
                 self.mainView.itemDescriptionView.generalTableView.reloadData()
                 self.title = self.viewModel.generalDataSource.last?.descriptionValue
                 self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
                 self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
                 self.mainView.itemDescriptionView.controllersTableView.reloadData()
-            }
         }
     }
 }
