@@ -20,7 +20,6 @@ final class ItemDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.title = barTitle
         setupViewModel()
-        print("init ItemDetailsViewController")
     }
     
     required init?(coder: NSCoder) {

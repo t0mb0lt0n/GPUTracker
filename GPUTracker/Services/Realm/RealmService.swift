@@ -14,7 +14,7 @@ final class RealmService {
     init(withRealmName realmName: String) {
         let realmPath = Bundle.main.url(
             forResource: realmName,
-            withExtension: "realm"
+            withExtension: .realmExtension
         )
         let realmConfiguration = Realm.Configuration(
             fileURL: realmPath,

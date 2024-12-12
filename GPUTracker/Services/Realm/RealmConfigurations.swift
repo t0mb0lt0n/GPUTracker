@@ -32,13 +32,6 @@ struct RealmConfiguration {
 extension RealmConfiguration {
     private enum Constants {
         static let mainProductListSchema: UInt64 = 16
-//        static let palystationSchema: UInt64 = 12
-//        static let palystation2Schema: UInt64 = 12
-//        static let palystation3Schema: UInt64 = 12
-//        static let palystation4Schema: UInt64 = 12
-//        static let xbox360Schema: UInt64 = 12
-//        static let xboxOriginalSchema: UInt64 = 12
-//        static let dreamCastSchema: UInt64 = 12
         static let basicSelectedItemSchema: UInt64 = 12
     }
 }

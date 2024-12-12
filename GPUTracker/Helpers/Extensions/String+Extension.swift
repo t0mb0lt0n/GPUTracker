@@ -17,6 +17,7 @@ extension String {
     //MARK: - SEGA
     static let dreamCast: String = "dreamCast"
     //MARK: - Others
+    static let realmExtension: String = "realm"
     static let mainProductList: String = "mainProductList"
     static let failure: String = "failure"
     static let mainCatalogue: String = "Main catalogue"
