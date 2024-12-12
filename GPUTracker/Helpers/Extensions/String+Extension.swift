@@ -25,8 +25,8 @@ extension String {
     static let partially: String = "partially"
     static let offline: String = "offline"
     static let circleFill: String = "circle.fill"
-    static let building: String = "building.columns"
-    static let gearshape: String = "gearshape"
-    static let wrench: String =  "wrench.and.screwdriver"
-    static let gamecontroller: String =  "gamecontroller"
+    static let building: String = "building.columns.fill"
+    static let gearshape: String = "gearshape.fill"
+    static let wrench: String =  "wrench.and.screwdriver.fill"
+    static let gamecontroller: String =  "gamecontroller.fill"
 }
