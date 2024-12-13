@@ -177,6 +177,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return defaultCell
         }
     }
+    
 }
 
 //MARK: - UITableViewDelegate
