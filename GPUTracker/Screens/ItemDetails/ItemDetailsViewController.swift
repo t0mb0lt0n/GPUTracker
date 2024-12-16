@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 final class ItemDetailsViewController: UIViewController {
     lazy var mainView = view as! ItemDetailsView
@@ -81,7 +80,6 @@ final class ItemDetailsViewController: UIViewController {
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             guard let self else { return }
-            print("reload closure")
                 self.mainView.itemDescriptionView.generalTableView.reloadData()
                 self.title = self.viewModel.generalDataSource.last?.descriptionValue
                 self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
@@ -177,7 +175,6 @@ extension ItemDetailsViewController: UITableViewDataSource {
             return defaultCell
         }
     }
-    
 }
 
 //MARK: - UITableViewDelegate
