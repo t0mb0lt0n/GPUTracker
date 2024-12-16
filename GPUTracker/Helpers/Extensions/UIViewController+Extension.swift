@@ -33,6 +33,6 @@ extension UIViewController {
             action: nil
         )
         self.navigationController?.navigationBar.tintColor = titleColor
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .orange
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .systemBlue
     }
 }
