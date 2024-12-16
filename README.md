@@ -1,7 +1,6 @@
 <div align="center">
              <img src="Resources/ReadmeLogo.png" alt="GTrackerLogo" width="256" />
-             <h1>GPU</h1>
-             <h1>Tracker</h1>
+             <h1>GPU Tracker</h1>
 
 </div>
 
