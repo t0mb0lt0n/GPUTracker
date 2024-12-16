@@ -1,6 +1,8 @@
 <div align="center">
              <img src="Resources/ReadmeLogo.png" alt="GTrackerLogo" width="256" />
-             <h1>GTracker</h1>
+             <h1>GPU</h1>
+             <h1>Tracker</h1>
+
 </div>
 
 ![License](https://img.shields.io/github/license/t0mb0lt0n/GPUTracker?/style=flat-square)
