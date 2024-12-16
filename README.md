@@ -17,6 +17,8 @@ but also detailed hardware specifications such as peripherals, motherboard compo
 <p>This app helps video game collectors and users quickly check the system in offline mode 📖💡.<p>
 <p>📢 The databases will be updated over time 🕒.<p>
 ## Requirements 📌 
+  
+## Requirements 📌
 
 - iOS 15.5 or later
 - Xcode 14.2 or later
