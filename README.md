@@ -26,7 +26,7 @@ but also detailed hardware specifications such as peripherals, motherboard compo
   
 ## Installation ⚙️
 
-- Clone or download the project using the repository URL: 🔗 `https://github.com/t0mb0lt0n/GPUTracker`
+- Clone or download the project using the repository URL: 🔗 ```https://github.com/t0mb0lt0n/GPUTracker```
 - Basically, all dependencies are installed automatically ✅. If they are not, you should open: <br>
   `File > Swift Packages > Add Package Dependency> 🔍 Search "realm-swift"> select Dependency Rule "Exact Version" > enter version 10.37.2`.
 
