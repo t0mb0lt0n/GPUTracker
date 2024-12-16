@@ -4,7 +4,7 @@
 
 </div>
 
-![License](https://img.shields.io/github/license/t0mb0lt0n/GPUTracker?/style=flat-square)
+![License](https://img.shields.io/badge/License-CC BYNC 4.0-brightgreen?)
 ![Swift language](https://img.shields.io/badge/Swift-gray?logo=swift)
 ![Realm Swift](https://img.shields.io/badge/Realm-gray?logo=realm)
 ![GitHub top language](https://img.shields.io/github/languages/top/t0mb0lt0n/GPUTracker?color=FF6800&style=flat-square)
