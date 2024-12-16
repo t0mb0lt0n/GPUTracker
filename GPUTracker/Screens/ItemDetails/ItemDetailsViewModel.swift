@@ -18,7 +18,6 @@ final class ItemDetailsViewModel {
     var reloadClosure: (() -> Void)?
     var currentRealm: Realm {
         didSet {
-            print("didSet + reload")
             generalDataSource = currentRealm.objects(General.self)
             consoleComponentsDataSource = currentRealm.objects(Components.self)
             motherboardComponentsDataSource = currentRealm.objects(MotherboardComponents.self)

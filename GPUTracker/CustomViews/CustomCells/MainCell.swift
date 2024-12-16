@@ -52,7 +52,6 @@ final class MainCell: UITableViewCell {
         )
         setupCell()
         setupConstraints()
-    
     }
     
     required init?(coder: NSCoder) {

@@ -58,6 +58,7 @@ final class UniversalCustomCell: UITableViewCell {
     }
     
     private func setupCell() {
+        isUserInteractionEnabled = false
         [
          descriptionNameLabel,
          descriptionValueTextView,
