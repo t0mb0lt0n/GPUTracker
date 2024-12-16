@@ -14,8 +14,8 @@ A Swift-based project for iOS devices wich provides detailed information about r
 <p>The main goal of the project is to provide quick access to databases containing not only common information about consoles
 but also detailed hardware specifications such as peripherals, motherboard components, revisions, and GPU/CPU variations. <p>
 
-This app helps video game collectors and users quickly check the system in offline mode.
-
+<p>This app helps video game collectors and users quickly check the system in offline mode 📖💡.<p>
+<p>📢 The databases will be updated over time 🕒.<p>
 ## Requirements 📌 
 
 - iOS 15.5 or later
