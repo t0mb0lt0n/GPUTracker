@@ -192,7 +192,6 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemWithName itemName: String) {
-        print("Delegate")
         title = viewModel.generalDataSource.last?.descriptionValue
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
