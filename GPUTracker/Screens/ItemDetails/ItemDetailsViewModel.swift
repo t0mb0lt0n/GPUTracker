@@ -26,7 +26,7 @@ final class ItemDetailsViewModel {
         }
     }
     
-    var segmentImages: [UIImage] = {
+    let segmentImages: [UIImage] = {
         [
         .generalImage,
         .consoleComponentsImage,

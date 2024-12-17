@@ -9,12 +9,11 @@ import Foundation
 import RealmSwift
 
 final class MainViewModel {
-    private(set) var isContentDownloading = false
     private var service: RealmService
     let developerListDataSource: Results<DeveloperList>
     let microsoftSectionDataSource: Results<MicrosoftProductList>
-    var sonySectionDataSource: Results<SonyProductList>
-    var segaSectionDataSource: Results<SegaProductList>
+    let sonySectionDataSource: Results<SonyProductList>
+    let segaSectionDataSource: Results<SegaProductList>
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
         [
@@ -34,15 +33,5 @@ final class MainViewModel {
         microsoftSectionDataSource = self.service.data.objects(MicrosoftProductList.self)
         sonySectionDataSource = self.service.data.objects(SonyProductList.self)
         segaSectionDataSource = self.service.data.objects(SegaProductList.self)
-    }
-    
-    func handleLoadingEvent(_ isDownloading: Bool) {
-        self.isContentDownloading = isDownloading
-    }
-}
-
-//MARK: - Constants
-extension MainViewModel {
-    private enum Constants {
     }
 }

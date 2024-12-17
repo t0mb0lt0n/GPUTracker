@@ -4,9 +4,7 @@
 //
 //  Created by Alexander on 13.04.2023.
 //
-
 import UIKit
-import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,4 +24,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

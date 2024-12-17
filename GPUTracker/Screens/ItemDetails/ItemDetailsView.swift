@@ -13,10 +13,9 @@ final class ItemDetailsView: UIView {
     var segmentDidChangeClosure: (() -> Void)?
     
     private let sectionLine: UIView = {
-        let line = UIView(frame: .zero)
-        line.backgroundColor = .systemGray5
-        return line
-    }()
+        $0.backgroundColor = .systemGray5
+        return $0
+    }(UIView(frame: .zero))
     
     //MARK: - init
     init() {
