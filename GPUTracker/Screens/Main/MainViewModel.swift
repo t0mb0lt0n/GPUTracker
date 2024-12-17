@@ -15,7 +15,6 @@ final class MainViewModel {
     let microsoftSectionDataSource: Results<MicrosoftProductList>
     var sonySectionDataSource: Results<SonyProductList>
     var segaSectionDataSource: Results<SegaProductList>
-    var showLoading: ((Bool) -> Void)?
     var reloadClosure: (() -> Void)?
     var numberOfSections: Int {
         [
