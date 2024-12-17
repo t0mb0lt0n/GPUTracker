@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UICollectionViewCell {
+extension UITableViewCell {
     class var defaultIdentifier: String {
         String(describing: self)
     }

@@ -18,7 +18,7 @@ final class MainView: UIView {
         tableView.isScrollEnabled = true
         tableView.register(
             MainCell.self,
-            forCellReuseIdentifier: "\(MainCell.self)"
+            forCellReuseIdentifier: MainCell.defaultIdentifier
         )
         return tableView
     }()

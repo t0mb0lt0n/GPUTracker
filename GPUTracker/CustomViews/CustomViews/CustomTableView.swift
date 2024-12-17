@@ -22,7 +22,7 @@ final class CustomTableView: UITableView {
         rowHeight = UITableView.automaticDimension
         register(
             UniversalCustomCell.self,
-            forCellReuseIdentifier: "\(UniversalCustomCell.self)"
+            forCellReuseIdentifier: UniversalCustomCell.defaultIdentifier
         )
     }
 }

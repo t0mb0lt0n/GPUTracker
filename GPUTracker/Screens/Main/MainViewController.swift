@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: "\(MainCell.self)",
+            withIdentifier: MainCell.defaultIdentifier,
             for: indexPath
         ) as? MainCell else {
             fatalError(.cellError)
