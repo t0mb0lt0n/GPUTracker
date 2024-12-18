@@ -79,7 +79,7 @@ extension InfoViewController: UITableViewDataSource {
             fatalError(.cellError)
         }
         cell.selectionStyle = .default
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryType = .checkmark
         switch indexPath.row {
         case 0:
             cell.configurateCell(

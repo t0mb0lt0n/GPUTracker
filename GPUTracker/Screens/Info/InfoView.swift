@@ -47,11 +47,5 @@ class InfoView: UIView {
             infoTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-
     }
-    
-    
-    
-    
-
 }
