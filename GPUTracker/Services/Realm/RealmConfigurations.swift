@@ -9,13 +9,17 @@ import Foundation
 
 struct RealmConfiguration {
     static let itemList: [[String]] = [
-        [.xboxOriginal,
-         .xbox360],
-        [.playstation,
-         .playstation2,
-         .playstation3,
-         .playstation4],
-        [.dreamCast]
+        [
+        .xboxOriginal,
+        .xbox360],
+        [
+        .playstation,
+        .playstation2,
+        .playstation3,
+        .playstation4],
+        [
+        .dreamCast
+        ]
     ]
     static let schemas: [String: UInt64] = [
         .mainProductList: Constants.mainProductListSchema,

@@ -86,11 +86,11 @@ extension ItemDetailsView {
 
 extension ItemDetailsView {
     private enum Constants {
-        static let itemDescriptionViewTopInset: CGFloat = 10
-        static let sectionLineTopInset: CGFloat = 10
-        static let sectionLineHeight: CGFloat = 1
-        static let segmentedControllLeadingInset: CGFloat = 10
-        static let segmentedControllTrailingInset: CGFloat = -10
+        static let itemDescriptionViewTopInset: CGFloat = 10.0
+        static let sectionLineTopInset: CGFloat = 10.0
+        static let sectionLineHeight: CGFloat = 1.0
+        static let segmentedControllLeadingInset: CGFloat = 10.0
+        static let segmentedControllTrailingInset: CGFloat = -10.0
         static let selectedSegmentIndex: Int = 1
     }
 }
