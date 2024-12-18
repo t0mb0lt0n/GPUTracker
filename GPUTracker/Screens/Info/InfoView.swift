@@ -23,6 +23,16 @@ class InfoView: UIView {
         return tableView
     }()
     
+    let appVersionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Version 0.9.8.1"
+        label.font = .systemFont(
+            ofSize: Constants.textViewFontSize,
+            weight: .regular
+        )
+        return label
+    }()
+    
     init() {
         super.init(frame: .zero)
         setupView()
@@ -34,7 +44,10 @@ class InfoView: UIView {
     }
     
     private func setupView() {
-        [infoTableView].forEach {
+        [
+        infoTableView,
+        appVersionLabel
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -45,7 +58,11 @@ class InfoView: UIView {
             infoTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             infoTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            appVersionLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            //appVersionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            appVersionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
     }
 }
