@@ -32,6 +32,7 @@
 		11B1E1F52D130AF2004BDA9C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F42D130AF2004BDA9C /* InfoView.swift */; };
 		11B1E1F72D130B18004BDA9C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F62D130B18004BDA9C /* InfoViewController.swift */; };
 		11B1E1F92D130B45004BDA9C /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F82D130B45004BDA9C /* InfoViewModel.swift */; };
+		11B1E1FD2D131DD7004BDA9C /* LegendDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1FC2D131DD7004BDA9C /* LegendDescription.swift */; };
 		11C422B82CC838A70058C627 /* UniversalCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C422B72CC838A70058C627 /* UniversalCustomCell.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
@@ -71,6 +72,7 @@
 		11B1E1F42D130AF2004BDA9C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		11B1E1F62D130B18004BDA9C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		11B1E1F82D130B45004BDA9C /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		11B1E1FC2D131DD7004BDA9C /* LegendDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendDescription.swift; sourceTree = "<group>"; };
 		11C422B72CC838A70058C627 /* UniversalCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalCustomCell.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		1156985C29E873EE009B3638 /* GPUTracker */ = {
 			isa = PBXGroup;
 			children = (
+				11B1E1FB2D131DCD004BDA9C /* Models */,
 				11DDC1FC2BBEE466007D8CF3 /* Helpers */,
 				11AE40D42BA9F7E9001B52F8 /* CustomViews */,
 				1156987529E876AE009B3638 /* Services */,
@@ -258,6 +261,14 @@
 				11B1E1F82D130B45004BDA9C /* InfoViewModel.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		11B1E1FB2D131DCD004BDA9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11B1E1FC2D131DD7004BDA9C /* LegendDescription.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		11C422B92CCAEA270058C627 /* CustomCells */ = {
@@ -406,6 +417,7 @@
 				11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */,
 				11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */,
 				11B1E1F72D130B18004BDA9C /* InfoViewController.swift in Sources */,
+				11B1E1FD2D131DD7004BDA9C /* LegendDescription.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				11B1E1F52D130AF2004BDA9C /* InfoView.swift in Sources */,
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,

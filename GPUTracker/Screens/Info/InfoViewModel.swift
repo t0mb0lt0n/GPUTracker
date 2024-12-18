@@ -9,9 +9,7 @@ import Foundation
 final class InfoViewModel {
     var reloadClosure: (() -> Void)?
     var infoButtonClosure: (() -> Void)?
-    var numberOfSections: Int {
-        1
-    }
+    let numberOfSections = Constants.numberOfSections
     
     func updateData() {
         reloadClosure?()
@@ -25,5 +23,12 @@ final class InfoViewModel {
     init() {
         
        
+    }
+}
+
+//MARK: - Constants
+extension InfoViewModel {
+    private enum Constants {
+        static let numberOfSections: Int = 1
     }
 }

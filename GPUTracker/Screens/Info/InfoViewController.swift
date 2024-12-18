@@ -64,11 +64,7 @@ extension InfoViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.microsoftSectionDataSource.count
-        case 1:
-            return viewModel.sonySectionDataSource.count
-        case 2:
-            return viewModel.segaSectionDataSource.count
+            return viewModel.numberOfSections
         default:
             return 0
         }
@@ -89,7 +85,7 @@ extension InfoViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell.configurateCell(
-                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
+                descriptionName: viewModel.,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
