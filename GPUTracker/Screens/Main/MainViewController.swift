@@ -232,26 +232,7 @@ extension MainViewController {
         static let developerNameBaseLeadingOffset: Int = 20
         static let developerNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (developerNameXAxis + developerNameBaseLeadingOffset)
         static let developerNameHeight: Int = 23
-        static let heightForFooterInSection: CGFloat = 0
-        static let heightForHeaderInSection: CGFloat = 50
+        static let heightForFooterInSection: CGFloat = 0.0
+        static let heightForHeaderInSection: CGFloat = 50.0
     }
 }
-
-//
-////MARK: - UIKit Preview
-//struct ContentViewPreviewss: PreviewProvider {
-//    static var previews: some View {
-//        ViewControllerContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-//    }
-//    
-//    struct ViewControllerContainer: UIViewControllerRepresentable {
-//        func makeUIViewController(context: Context) -> some UIViewController {
-//            UINavigationController(rootViewController: MainViewController())
-//        }
-//        
-//        func updateUIViewController(
-//            _ uiViewController: UIViewControllerType,
-//            context: Context
-//        ) {}
-//    }
-//}

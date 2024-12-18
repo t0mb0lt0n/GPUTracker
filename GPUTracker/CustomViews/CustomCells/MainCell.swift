@@ -138,16 +138,16 @@ extension MainCell {
 extension MainCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
-        static let descriptionNameLabelLeadingInset: CGFloat = 20
-        static let descriptionNameLabelTrailingInset: CGFloat = -10
-        static let onlineStatusImageViewWidth: CGFloat = 10
-        static let onlineStatusImageViewHeight: CGFloat = 10
-        static let onlineStatusImageViewRightOffset: CGFloat = 11
-        static let descriptionValueTextViewLeftInset: CGFloat = 20
-        static let descriptionValueTextViewTopInset: CGFloat = 2
-        static let descriptionValueTextViewBottomInset: CGFloat = -5
-        static let lineFragmentPadding: CGFloat = 0
-        static let descriptionNameLabelFontSize: CGFloat = 17
-        static let textViewFontSize: CGFloat = 16
+        static let descriptionNameLabelLeadingInset: CGFloat = 20.0
+        static let descriptionNameLabelTrailingInset: CGFloat = -10.0
+        static let onlineStatusImageViewWidth: CGFloat = 10.0
+        static let onlineStatusImageViewHeight: CGFloat = 10.0
+        static let onlineStatusImageViewRightOffset: CGFloat = 11.0
+        static let descriptionValueTextViewLeftInset: CGFloat = 20.0
+        static let descriptionValueTextViewTopInset: CGFloat = 2.0
+        static let descriptionValueTextViewBottomInset: CGFloat = -5.0
+        static let lineFragmentPadding: CGFloat = 0.0
+        static let descriptionNameLabelFontSize: CGFloat = 17.0
+        static let textViewFontSize: CGFloat = 16.0
     }
 }

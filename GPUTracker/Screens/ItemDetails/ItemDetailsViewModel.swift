@@ -47,6 +47,6 @@ final class ItemDetailsViewModel {
 //MARK: - Constants
 extension ItemDetailsViewModel {
     private enum Constants {
-        static let initialSegmentIndex = 0
+        static let initialSegmentIndex: Int = 0
     }
 }
