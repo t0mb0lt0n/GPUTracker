@@ -18,7 +18,7 @@ final class InfoTableViewCell: UITableViewCell {
             
     private let descriptionValueTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .clear
+        textView.backgroundColor = .green
         textView.textColor = .systemGray
         textView.font = .systemFont(
             ofSize: Constants.textViewFontSize,
@@ -84,7 +84,7 @@ final class InfoTableViewCell: UITableViewCell {
             onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
             onlineStatusImageView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.left - Constants.onlineStatusImageViewRightOffset
+                constant: contentView.layoutMargins.left
             ),
         ])
     }
@@ -114,7 +114,7 @@ extension InfoTableViewCell {
         static let onlineStatusImageViewWidth: CGFloat = 10.0
         static let onlineStatusImageViewHeight: CGFloat = 10.0
         static let onlineStatusImageViewRightOffset: CGFloat = 11.0
-        static let descriptionValueTextViewLeftInset: CGFloat = 16.0
+        static let descriptionValueTextViewLeftInset: CGFloat = 5
         static let descriptionValueTextViewTopInset: CGFloat = 2.0
         static let descriptionValueTextViewBottomInset: CGFloat = -5.0
         static let lineFragmentPadding: CGFloat = 0.0

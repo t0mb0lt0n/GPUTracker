@@ -80,6 +80,7 @@ extension InfoViewController: UITableViewDataSource {
         }
         cell.selectionStyle = .default
         cell.accessoryType = .checkmark
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
         switch indexPath.row {
         case 0:
             cell.configurateCell(
