@@ -54,6 +54,16 @@ final class MainViewController: UIViewController {
             titleColor: .black,
             backBarButtonTitle: .mainCatalogue
         )
+        let infoButton: UIBarButtonItem = {
+            let button = UIBarButtonItem(
+                image: .infoButtonImage,
+                style: .done,
+                target: self,
+                action: #selector(infoButtonTapped)
+            )
+            return button
+        }()
+        navigationItem.rightBarButtonItem = infoButton
     }
 
     private func setupViewModel() {
@@ -64,6 +74,10 @@ final class MainViewController: UIViewController {
     
     private func reloadTableView() {
         mainView.mainTableView.reloadData()
+    }
+    
+    @objc private func infoButtonTapped() {
+        print("info")
     }
 }
 

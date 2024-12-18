@@ -31,4 +31,5 @@ extension String {
     static let gearshape: String = "gearshape"
     static let wrench: String =  "wrench.and.screwdriver"
     static let gamecontroller: String =  "gamecontroller"
+    static let infoButtonIcon: String =  "info.circle"
 }

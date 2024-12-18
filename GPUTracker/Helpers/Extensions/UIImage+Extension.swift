@@ -58,4 +58,11 @@ extension UIImage {
         .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
+    //MARK: - Info button icon
+    static let infoButtonImage = UIImage(
+        systemName: .infoButtonIcon
+    )?.withTintColor(
+        .systemBlue,
+        renderingMode: .alwaysOriginal
+    ) ?? UIImage()
 }

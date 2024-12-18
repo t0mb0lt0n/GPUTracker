@@ -15,6 +15,7 @@ final class MainViewModel {
     let sonySectionDataSource: Results<SonyProductList>
     let segaSectionDataSource: Results<SegaProductList>
     var reloadClosure: (() -> Void)?
+    var infoButtonClosure: (() -> Void)?
     var numberOfSections: Int {
         [
         service.data.objects(MicrosoftProductList.self),
@@ -26,6 +27,11 @@ final class MainViewModel {
     func updateData() {
         reloadClosure?()
     }
+    
+    @objc func infoButtonTapped() {
+        infoButtonClosure?()
+    }
+
     
     init(service: RealmService) {
         self.service = service
