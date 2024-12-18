@@ -116,7 +116,6 @@ final class InfoTableViewCell: UITableViewCell {
 //MARK: - MainCell extensions
 extension InfoTableViewCell {
     final func configurateCell(
-        descriptionName: String,
         descriptionValue: String,
         onlineStatus: String
     ) {
@@ -128,7 +127,6 @@ extension InfoTableViewCell {
         default:
             onlineStatusImageView.image = .offline
         }
-        descriptionNameLabel.text = descriptionName
         descriptionValueTextView.text = descriptionValue
     }
 }

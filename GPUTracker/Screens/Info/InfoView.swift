@@ -34,11 +34,20 @@ class InfoView: UIView {
     }
     
     private func setupView() {
-        
+        [infoTableView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
     }
     
     private func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            infoTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            infoTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
     }
     
     

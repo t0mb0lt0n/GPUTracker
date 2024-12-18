@@ -33,14 +33,12 @@ class InfoViewController: UIViewController {
     
     private func setupMainView() {
         mainView.infoTableView.dataSource = self
+        mainView.infoTableView.delegate = self
     }
     
     private func setupViewModel() {
         
     }
-
-    
-
 }
 
 //MARK: - UITableViewDataSource
@@ -49,7 +47,7 @@ extension InfoViewController: UITableViewDataSource {
         viewModel.numberOfSections
     }
     
-    private func tableView(
+    internal func tableView(
         _ tableView: UITableView,
         viewForFooterInSection section: Int
     ) -> UIView? {
@@ -64,7 +62,7 @@ extension InfoViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.numberOfSections
+            return 3
         default:
             return 0
         }
@@ -75,31 +73,28 @@ extension InfoViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: MainCell.defaultIdentifier,
+            withIdentifier: InfoTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? MainCell else {
+        ) as? InfoTableViewCell else {
             fatalError(.cellError)
         }
         cell.selectionStyle = .default
         cell.accessoryType = .disclosureIndicator
-        switch indexPath.section {
+        switch indexPath.row {
         case 0:
             cell.configurateCell(
-                descriptionName: viewModel.,
-                descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
+                descriptionValue: LegendDescription.onlineDescription.rawValue,
+                onlineStatus: .online
             )
         case 1:
             cell.configurateCell(
-                descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.sonySectionDataSource[indexPath.row].onlineStatus
+                descriptionValue: LegendDescription.partiallyDescription.rawValue,
+                onlineStatus: .partially
             )
         case 2:
             cell.configurateCell(
-                descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
+                descriptionValue: LegendDescription.offlineDescription.rawValue,
+                onlineStatus: .offline
             )
         default:
             cell.textLabel?.text = .failure
@@ -108,26 +103,26 @@ extension InfoViewController: UITableViewDataSource {
     }
     
     //setup height for header in section
-    private func tableView(
+    func tableView(
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
     ) -> CGFloat {
         Constants.heightForHeaderInSection
     }
     //setup height for footer in section
-    private func tableView(
+    func tableView(
         _ tableView: UITableView,
         heightForFooterInSection section: Int
     ) -> CGFloat {
         Constants.heightForFooterInSection
     }
     //custom headerView
-    private func tableView(
+    func tableView(
         _ tableView: UITableView,
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let customHeaderView = UIView()
-        let developerNameLabel = UILabel(
+        let sectionNameLabel = UILabel(
             frame: CGRect(
                 x: Constants.developerNameXAxis,
                 y: Constants.developerNameYAxis,
@@ -135,16 +130,28 @@ extension InfoViewController: UITableViewDataSource {
                 height: Constants.developerNameHeight
             )
         )
-        developerNameLabel.textColor = .systemGray
-        customHeaderView.addSubview(developerNameLabel)
+        sectionNameLabel.textColor = .systemGray
+        customHeaderView.addSubview(sectionNameLabel)
         
         switch section {
-        case let sectionNumber:
-            developerNameLabel.text = viewModel.developerListDataSource[sectionNumber].developerName
+        case 0:
+            sectionNameLabel.text = LegendDescription.legendName.rawValue
+        default:
+            return nil
         }
         return customHeaderView
     }
 }
+
+extension InfoViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
 
 extension InfoViewController {
     private enum Constants {

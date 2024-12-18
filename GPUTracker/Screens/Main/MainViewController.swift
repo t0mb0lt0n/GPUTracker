@@ -77,7 +77,17 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func infoButtonTapped() {
-        print("info")
+        let infoViewController = InfoViewController()
+        
+        if let sheet = infoViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = nil
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+            sheet.prefersGrabberVisible = true
+        }
+        navigationController?.present(infoViewController, animated: true)
     }
 }
 
