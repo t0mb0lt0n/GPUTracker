@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class DeveloperList: Object {
+final class DeveloperList: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var developerName: String = ""
 
@@ -17,7 +17,7 @@ class DeveloperList: Object {
     }
 }
 
-class General: Object {
+final class General: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
     @objc dynamic var descriptionValue: String = ""
@@ -27,7 +27,7 @@ class General: Object {
     }
 }
 
-class Components: Object {
+final class Components: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
     @objc dynamic var descriptionValue: String = ""
@@ -37,7 +37,7 @@ class Components: Object {
     }
 }
 
-class MotherboardComponents: Object {
+final class MotherboardComponents: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
     @objc dynamic var descriptionValue: String = ""
@@ -47,7 +47,7 @@ class MotherboardComponents: Object {
     }
 }
 
-class Controllers: Object {
+final class Controllers: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var descriptionName: String = ""
     @objc dynamic var descriptionValue: String = ""
@@ -57,7 +57,7 @@ class Controllers: Object {
     }
 }
 
-class MicrosoftProductList: Object {
+final class MicrosoftProductList: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var productName: String = ""
     @objc dynamic var shortDetails: String = ""
@@ -68,7 +68,7 @@ class MicrosoftProductList: Object {
     }
 }
 
-class SonyProductList: Object {
+final class SonyProductList: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var productName: String = ""
     @objc dynamic var shortDetails: String = ""
@@ -79,7 +79,7 @@ class SonyProductList: Object {
     }
 }
 
-class SegaProductList: Object {
+final class SegaProductList: Object {
     @objc dynamic var _id: Int = 0
     @objc dynamic var productName: String = ""
     @objc dynamic var shortDetails: String = ""

@@ -199,7 +199,7 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
 extension ItemDetailsViewController {
     private enum Constatnts {
         static let segmentedControlSelectionOffsetYAxis: Int = 0
-        static let fontSize: CGFloat = 17
+        static let fontSize: CGFloat = 17.0
     }
 }
 

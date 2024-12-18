@@ -26,13 +26,13 @@ extension UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: titleColor
         ]
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
             title: backBarButtonTitle,
             style: .plain,
             target: nil,
             action: nil
         )
         navigationController?.navigationBar.tintColor = titleColor
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .systemBlue
+        navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .systemBlue
     }
 }
