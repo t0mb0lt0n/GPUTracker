@@ -8,7 +8,7 @@
 import UIKit
 
 final class ItemDetailsViewController: UIViewController {
-    lazy var mainView = view as! ItemDetailsView
+    private lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
     
     init(

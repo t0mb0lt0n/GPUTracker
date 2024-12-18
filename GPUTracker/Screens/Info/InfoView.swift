@@ -15,10 +15,10 @@ class InfoView: UIView {
         )
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.isScrollEnabled = true
+        tableView.isScrollEnabled = false
         tableView.register(
-            MainCell.self,
-            forCellReuseIdentifier: MainCell.defaultIdentifier
+            InfoTableViewCell.self,
+            forCellReuseIdentifier: InfoTableViewCell.defaultIdentifier
         )
         return tableView
     }()
