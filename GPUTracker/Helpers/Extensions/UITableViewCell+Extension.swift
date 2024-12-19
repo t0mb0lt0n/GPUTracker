@@ -13,10 +13,9 @@ extension UITableViewCell {
     }
     
     func setupCellSeparator() {
-        print("cell separator")
         self.separatorInset = UIEdgeInsets(
             top: Constants.separatorTopInset,
-            left: 100,
+            left: Constants.separatorLeftInset,
             bottom: Constants.separatorBottomInset,
             right: Constants.separatorRightInset
         )

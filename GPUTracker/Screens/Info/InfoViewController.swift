@@ -29,11 +29,16 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         setupMainView()
         setupViewModel()
+        
     }
     
     private func setupMainView() {
         mainView.infoTableView.dataSource = self
         mainView.infoTableView.delegate = self
+    }
+    
+    @objc private func closeButtonTapped() {
+        
     }
     
     private func setupViewModel() {
@@ -80,13 +85,7 @@ extension InfoViewController: UITableViewDataSource {
         ) as? InfoTableViewCell else {
             fatalError(.cellError)
         }
-//        cell.separatorInset = UIEdgeInsets(
-//            top: Constants.separatorTopInset,
-//            left: Constants.separatorLeftInset,
-//            bottom: Constants.separatorBottomInset,
-//            right: Constants.separatorRightInset
-//        )
-        
+    
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: InfoTableViewCell.defaultIdentifier,
             for: indexPath
@@ -96,16 +95,6 @@ extension InfoViewController: UITableViewDataSource {
         cell.setupCellSeparator()
 
         
-        func setupCellSeparator(in cell: UITableViewCell) {
-            cell.selectionStyle = .default
-            cell.accessoryType = .checkmark
-//            cell.separatorInset = UIEdgeInsets(
-//                top: Constants.separatorTopInset,
-//                left: Constants.separatorLeftInset,
-//                bottom: Constants.separatorBottomInset,
-//                right: Constants.separatorRightInset
-//            )
-        }
         switch indexPath.section {
         case 0:
             cell.configurateCell(

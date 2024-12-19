@@ -70,16 +70,7 @@ final class InfoTableViewCell: UITableViewCell {
             contentView.addSubview(subView)
         }
     }
-    
-//    func setupCellSeparator() {
-//        self.separatorInset = UIEdgeInsets(
-//            top: Constants.separatorTopInset,
-//            left: Constants.separatorLeftInset,
-//            bottom: Constants.separatorBottomInset,
-//            right: Constants.separatorRightInset
-//        )
-//    }
-    
+        
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             descriptionValueTextView.topAnchor.constraint(
