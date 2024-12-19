@@ -50,7 +50,10 @@ final class MainCell: UITableViewCell {
             style: style,
             reuseIdentifier: reuseIdentifier
         )
-        setupCell()
+        setupCell(
+            selectionStyle: .default,
+            accessoryType: .disclosureIndicator
+        )
         setupConstraints()
     }
     
@@ -65,7 +68,12 @@ final class MainCell: UITableViewCell {
         onlineStatusImageView.image = nil
     }
     
-    private func setupCell() {
+    private func setupCell(
+        selectionStyle: UITableViewCell.SelectionStyle,
+        accessoryType: UITableViewCell.AccessoryType
+    ) {
+        self.selectionStyle = selectionStyle
+        self.accessoryType = accessoryType
         [
          descriptionNameLabel,
          descriptionValueTextView,

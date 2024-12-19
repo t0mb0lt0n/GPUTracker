@@ -7,16 +7,16 @@
 import UIKit
 
 struct Legend {
-    enum LegendName: String, CaseIterable {
-        case statusLegend = "Online Status Description"
-        case sectionLegend = "Sections Description"
-    }
     static let sectionImage: [UIImage] = [
         .generalImage,
         .consoleComponentsImage,
         .motherboardComponentsImage,
         .controllersImage
     ]
+    enum LegendName: String, CaseIterable {
+        case statusLegend = "Online Status Description"
+        case sectionLegend = "Sections Description"
+    }
     enum SectionDesccription: String, CaseIterable {
         case general = "General information."
         case consoleComponents = "Console components info."

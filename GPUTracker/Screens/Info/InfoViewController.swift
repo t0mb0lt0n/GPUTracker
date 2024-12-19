@@ -80,14 +80,32 @@ extension InfoViewController: UITableViewDataSource {
         ) as? InfoTableViewCell else {
             fatalError(.cellError)
         }
-        cell.selectionStyle = .default
-        cell.accessoryType = .checkmark
-        cell.separatorInset = UIEdgeInsets(
-            top: Constants.separatorTopInset,
-            left: Constants.separatorLeftInset,
-            bottom: Constants.separatorBottomInset,
-            right: Constants.separatorRightInset
-        )
+//        cell.separatorInset = UIEdgeInsets(
+//            top: Constants.separatorTopInset,
+//            left: Constants.separatorLeftInset,
+//            bottom: Constants.separatorBottomInset,
+//            right: Constants.separatorRightInset
+//        )
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: InfoTableViewCell.defaultIdentifier,
+            for: indexPath
+        ) as? InfoTableViewCell else {
+            fatalError(.cellError)
+        }
+        cell.setupCellSeparator()
+
+        
+        func setupCellSeparator(in cell: UITableViewCell) {
+            cell.selectionStyle = .default
+            cell.accessoryType = .checkmark
+//            cell.separatorInset = UIEdgeInsets(
+//                top: Constants.separatorTopInset,
+//                left: Constants.separatorLeftInset,
+//                bottom: Constants.separatorBottomInset,
+//                right: Constants.separatorRightInset
+//            )
+        }
         switch indexPath.section {
         case 0:
             cell.configurateCell(
@@ -163,10 +181,6 @@ extension InfoViewController {
         static let developerNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
-        static let separatorRightInset: CGFloat = 0.0
-        static let separatorLeftInset: CGFloat = 30.0
-        static let separatorTopInset: CGFloat = 0.0
-        static let separatorBottomInset: CGFloat = 0.0
     }
 }
 

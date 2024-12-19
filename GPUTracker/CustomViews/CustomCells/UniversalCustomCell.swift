@@ -42,7 +42,10 @@ final class UniversalCustomCell: UITableViewCell {
             style: style,
             reuseIdentifier: reuseIdentifier
         )
-        setupCell()
+        setupCell(
+            selectionStyle: .none,
+            accessoryType: .none
+        )
         setupConstraints()
     }
     
@@ -56,7 +59,12 @@ final class UniversalCustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupCell() {
+    private func setupCell(
+        selectionStyle: UITableViewCell.SelectionStyle,
+        accessoryType: UITableViewCell.AccessoryType
+    ) {
+        self.selectionStyle = selectionStyle
+        self.accessoryType = accessoryType
         isUserInteractionEnabled = false
         [
          descriptionNameLabel,

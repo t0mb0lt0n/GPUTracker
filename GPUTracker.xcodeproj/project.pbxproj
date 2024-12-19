@@ -21,7 +21,7 @@
 		1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156986829E873F0009B3638 /* LaunchScreen.storyboard */; };
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
-		11840A222D11BB0A00938487 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11840A212D11BB0A00938487 /* UICollectionViewCell+Extension.swift */; };
+		11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */; };
 		11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC622CF4CD05001A84C9 /* playstation2.realm */; };
 		11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extension.swift */; };
 		11B11C712D035DE900058A4F /* playstation.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C702D035DE900058A4F /* playstation.realm */; };
@@ -61,7 +61,7 @@
 		1156986B29E873F0009B3638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
-		11840A212D11BB0A00938487 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		11A5FC622CF4CD05001A84C9 /* playstation2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation2.realm; sourceTree = "<group>"; };
 		11A604262CD512B200A16F01 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11B11C702D035DE900058A4F /* playstation.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation.realm; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 				11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */,
 				11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */,
 				11A604262CD512B200A16F01 /* UIViewController+Extension.swift */,
-				11840A212D11BB0A00938487 /* UICollectionViewCell+Extension.swift */,
+				11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,7 +425,7 @@
 				11B1E1F92D130B45004BDA9C /* InfoViewModel.swift in Sources */,
 				11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
-				11840A222D11BB0A00938487 /* UICollectionViewCell+Extension.swift in Sources */,
+				11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */,
 			);

@@ -39,7 +39,10 @@ final class InfoTableViewCell: UITableViewCell {
             style: style,
             reuseIdentifier: reuseIdentifier
         )
-        setupCell()
+        setupCell(
+            selectionStyle: .none,
+            accessoryType: .checkmark
+        )
         setupConstraints()
     }
     
@@ -53,7 +56,12 @@ final class InfoTableViewCell: UITableViewCell {
         onlineStatusImageView.image = nil
     }
     
-    private func setupCell() {
+    private func setupCell(
+        selectionStyle: UITableViewCell.SelectionStyle,
+        accessoryType: UITableViewCell.AccessoryType
+    ) {
+        self.selectionStyle = selectionStyle
+        self.accessoryType = accessoryType
         [
          descriptionValueTextView,
          onlineStatusImageView
@@ -62,6 +70,15 @@ final class InfoTableViewCell: UITableViewCell {
             contentView.addSubview(subView)
         }
     }
+    
+//    func setupCellSeparator() {
+//        self.separatorInset = UIEdgeInsets(
+//            top: Constants.separatorTopInset,
+//            left: Constants.separatorLeftInset,
+//            bottom: Constants.separatorBottomInset,
+//            right: Constants.separatorRightInset
+//        )
+//    }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
