@@ -63,6 +63,8 @@ extension InfoViewController: UITableViewDataSource {
         switch section {
         case 0:
             return 3
+        case 1:
+            return 4
         default:
             return 0
         }
@@ -80,11 +82,16 @@ extension InfoViewController: UITableViewDataSource {
         }
         cell.selectionStyle = .default
         cell.accessoryType = .checkmark
-        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 50)
-        switch indexPath.row {
+        cell.separatorInset = UIEdgeInsets(
+            top: Constants.separatorTopInset,
+            left: Constants.separatorLeftInset,
+            bottom: Constants.separatorBottomInset,
+            right: Constants.separatorRightInset
+        )
+        switch indexPath.section {
         case 0:
             cell.configurateCell(
-                descriptionValue: LegendDescription.onlineDescription.rawValue,
+                descriptionValue: viewModel.legendDescriptionDataSource[indexPath.row],
                 onlineStatus: .online
             )
         case 1:
@@ -92,11 +99,11 @@ extension InfoViewController: UITableViewDataSource {
                 descriptionValue: LegendDescription.partiallyDescription.rawValue,
                 onlineStatus: .partially
             )
-        case 2:
-            cell.configurateCell(
-                descriptionValue: LegendDescription.offlineDescription.rawValue,
-                onlineStatus: .offline
-            )
+//        case 2:
+//            cell.configurateCell(
+//                descriptionValue: LegendDescription.offlineDescription.rawValue,
+//                onlineStatus: .offline
+//            )
         default:
             cell.textLabel?.text = .failure
         }
@@ -163,6 +170,10 @@ extension InfoViewController {
         static let developerNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
+        static let separatorRightInset: CGFloat = 0.0
+        static let separatorLeftInset: CGFloat = 30.0
+        static let separatorTopInset: CGFloat = 0.0
+        static let separatorBottomInset: CGFloat = 0.0
     }
 }
 

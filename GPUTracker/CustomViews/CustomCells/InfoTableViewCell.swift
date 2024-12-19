@@ -15,10 +15,9 @@ final class InfoTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-            
+    
     private let descriptionValueTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .green
         textView.textColor = .systemGray
         textView.font = .systemFont(
             ofSize: Constants.textViewFontSize,
@@ -70,7 +69,10 @@ final class InfoTableViewCell: UITableViewCell {
                 equalTo: contentView.topAnchor,
                 constant: Constants.descriptionValueTextViewTopInset
             ),
-            descriptionValueTextView.leadingAnchor.constraint(equalTo: onlineStatusImageView.trailingAnchor, constant: Constants.descriptionValueTextViewLeftInset),
+            descriptionValueTextView.leadingAnchor.constraint(
+                equalTo: onlineStatusImageView.trailingAnchor,
+                constant: Constants.descriptionValueTextViewLeftInset
+            ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
                 constant: -Constants.descriptionValueTextViewLeftInset
@@ -84,7 +86,7 @@ final class InfoTableViewCell: UITableViewCell {
             onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
             onlineStatusImageView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: contentView.layoutMargins.left
+                constant: Constants.onlineStatusImageViewLeftInset
             ),
         ])
     }
@@ -114,7 +116,8 @@ extension InfoTableViewCell {
         static let onlineStatusImageViewWidth: CGFloat = 10.0
         static let onlineStatusImageViewHeight: CGFloat = 10.0
         static let onlineStatusImageViewRightOffset: CGFloat = 11.0
-        static let descriptionValueTextViewLeftInset: CGFloat = 5
+        static let descriptionValueTextViewLeftInset: CGFloat = 10
+        static let onlineStatusImageViewLeftInset: CGFloat = 10
         static let descriptionValueTextViewTopInset: CGFloat = 2.0
         static let descriptionValueTextViewBottomInset: CGFloat = -5.0
         static let lineFragmentPadding: CGFloat = 0.0
