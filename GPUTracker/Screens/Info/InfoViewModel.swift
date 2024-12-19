@@ -11,9 +11,9 @@ final class InfoViewModel {
     var infoButtonClosure: (() -> Void)?
     let numberOfSections = Constants.numberOfSections
     let legendDescriptionDataSource: [String] = [
-        LegendDescription.offlineDescription.rawValue,
-        LegendDescription.partiallyDescription.rawValue,
-        LegendDescription.offlineDescription.rawValue
+//        LegendDescription.offlineDescription.rawValue,
+//        LegendDescription.partiallyDescription.rawValue,
+//        LegendDescription.offlineDescription.rawValue
     ]
     func updateData() {
         reloadClosure?()

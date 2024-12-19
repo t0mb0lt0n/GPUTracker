@@ -90,13 +90,15 @@ extension InfoViewController: UITableViewDataSource {
         )
         switch indexPath.section {
         case 0:
+            let cases = Array(Legend.StatusDescription.allCases)
+            print(String(describing: cases[1]))
             cell.configurateCell(
-                descriptionValue: viewModel.legendDescriptionDataSource[indexPath.row],
-                onlineStatus: .online
+                descriptionValue: Legend.StatusDescription.allCases[indexPath.row].rawValue,
+                onlineStatus: String(describing: Legend.StatusDescription.allCases[indexPath.row])
             )
         case 1:
             cell.configurateCell(
-                descriptionValue: LegendDescription.partiallyDescription.rawValue,
+                descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
                 onlineStatus: .partially
             )
 //        case 2:
@@ -143,7 +145,7 @@ extension InfoViewController: UITableViewDataSource {
         
         switch section {
         case 0:
-            sectionNameLabel.text = LegendDescription.legendName.rawValue
+            sectionNameLabel.text = Legend.legendName[0]
         default:
             return nil
         }
