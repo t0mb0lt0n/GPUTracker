@@ -9,12 +9,10 @@ import Foundation
 final class InfoViewModel {
     var reloadClosure: (() -> Void)?
     var infoButtonClosure: (() -> Void)?
-    let numberOfSections = Constants.numberOfSections
-    let legendDescriptionDataSource: [String] = [
-//        LegendDescription.offlineDescription.rawValue,
-//        LegendDescription.partiallyDescription.rawValue,
-//        LegendDescription.offlineDescription.rawValue
-    ]
+    let numberOfSections: Int = Constants.numberOfSections
+    let numbersOfRowsInStatusSection: Int = Legend.StatusDescription.allCases.count
+    let numbersOfRowsInSectionDescription: Int = Legend.SectionDesccription.allCases.count
+    
     func updateData() {
         reloadClosure?()
     }
@@ -22,17 +20,11 @@ final class InfoViewModel {
     @objc func infoButtonTapped() {
         infoButtonClosure?()
     }
-
-    
-    init() {
-        
-       
-    }
 }
 
 //MARK: - Constants
 extension InfoViewModel {
     private enum Constants {
-        static let numberOfSections: Int = 1
+        static let numberOfSections: Int = 2
     }
 }

@@ -62,9 +62,9 @@ extension InfoViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return 3
+            return viewModel.numbersOfRowsInStatusSection
         case 1:
-            return 4
+            return viewModel.numbersOfRowsInSectionDescription
         default:
             return 0
         }
@@ -90,8 +90,6 @@ extension InfoViewController: UITableViewDataSource {
         )
         switch indexPath.section {
         case 0:
-            let cases = Array(Legend.StatusDescription.allCases)
-            print(String(describing: cases[1]))
             cell.configurateCell(
                 descriptionValue: Legend.StatusDescription.allCases[indexPath.row].rawValue,
                 onlineStatus: String(describing: Legend.StatusDescription.allCases[indexPath.row])
@@ -101,11 +99,6 @@ extension InfoViewController: UITableViewDataSource {
                 descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
                 onlineStatus: .partially
             )
-//        case 2:
-//            cell.configurateCell(
-//                descriptionValue: LegendDescription.offlineDescription.rawValue,
-//                onlineStatus: .offline
-//            )
         default:
             cell.textLabel?.text = .failure
         }
@@ -144,10 +137,8 @@ extension InfoViewController: UITableViewDataSource {
         customHeaderView.addSubview(sectionNameLabel)
         
         switch section {
-        case 0:
-            sectionNameLabel.text = Legend.legendName[0]
-        default:
-            return nil
+        case let sectionNumber:
+            sectionNameLabel.text = String(describing: Legend.LegendName.allCases[sectionNumber].rawValue)
         }
         return customHeaderView
     }
@@ -165,7 +156,7 @@ extension InfoViewController: UITableViewDelegate {
 
 extension InfoViewController {
     private enum Constants {
-        static let developerNameXAxis: Int = 20
+        static let developerNameXAxis: Int = 30
         static let developerNameYAxis: Int = 20
         static let developerNameBaseLeadingOffset: Int = 20
         static let developerNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (developerNameXAxis + developerNameBaseLeadingOffset)
