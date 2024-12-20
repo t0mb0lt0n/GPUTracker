@@ -111,7 +111,7 @@ final class BasicTableViewCell: UITableViewCell {
 }
 //MARK: - UniversalCustomCell extensions
 extension BasicTableViewCell {
-    final func configurateCell(
+    final func setupCellSubviews(
         descriptionName: String?,
         descriptionValue: String?
     ) {

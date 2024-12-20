@@ -148,25 +148,25 @@ extension ItemDetailsViewController: UITableViewDataSource {
         
         switch tableView.tag {
         case 0:
-            generalSegmentTableViewCell.configurateCell(
+            generalSegmentTableViewCell.setupCellSubviews(
                 descriptionName: viewModel.generalDataSource[indexPath.row].descriptionName,
                 descriptionValue: viewModel.generalDataSource[indexPath.row].descriptionValue
             )
             return generalSegmentTableViewCell
         case 1:
-            consoleComponentsTableViewCell.configurateCell(
+            consoleComponentsTableViewCell.setupCellSubviews(
                 descriptionName: viewModel.consoleComponentsDataSource[indexPath.row].descriptionName,
                 descriptionValue: viewModel.consoleComponentsDataSource[indexPath.row].descriptionValue
             )
             return consoleComponentsTableViewCell
         case 2:
-            motherboardComponentsTableViewCell.configurateCell(
+            motherboardComponentsTableViewCell.setupCellSubviews(
                 descriptionName: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionName,
                 descriptionValue: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionValue
             )
             return motherboardComponentsTableViewCell
         case 3:
-            controllersTableViewCell.configurateCell(
+            controllersTableViewCell.setupCellSubviews(
                 descriptionName: viewModel.controllersDataSource[indexPath.row].descriptionName,
                 descriptionValue: viewModel.controllersDataSource[indexPath.row].descriptionValue
             )

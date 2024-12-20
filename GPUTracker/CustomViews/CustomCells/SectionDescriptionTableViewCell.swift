@@ -97,7 +97,7 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
 }
 //MARK: - MainCell extensions
 extension SectionDescriptionTableViewCell {
-    final func configurateCell(
+    final func setupCellSubviews(
         descriptionValue: String,
         sectionImage: UIImage
     ) {

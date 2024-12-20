@@ -101,18 +101,11 @@ final class OnlineStatusTableViewCell: UITableViewCell {
 }
 //MARK: - MainCell extensions
 extension OnlineStatusTableViewCell {
-    final func configurateCell(
+    final func setupCellSubviews(
         descriptionValue: String,
-        onlineStatus: String
+        statusImage: UIImage
     ) {
-        switch onlineStatus {
-        case .online:
-            onlineStatusImageView.image = .online
-        case .partially:
-            onlineStatusImageView.image = .partially
-        default:
-            onlineStatusImageView.image = .offline
-        }
+        onlineStatusImageView.image = statusImage
         descriptionValueTextView.text = descriptionValue
     }
 }

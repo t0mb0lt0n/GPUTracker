@@ -97,13 +97,13 @@ extension InfoViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 0:
-            statusDescriptionCell.configurateCell(
+            statusDescriptionCell.setupCellSubviews(
                 descriptionValue: Legend.StatusDescription.allCases[indexPath.row].rawValue,
-                onlineStatus: String(describing: Legend.StatusDescription.allCases[indexPath.row])
+                statusImage: Legend.statusImage[indexPath.row]
             )
             return statusDescriptionCell
         case 1:
-            sectionDescriptionCell.configurateCell(
+            sectionDescriptionCell.setupCellSubviews(
                 descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
                 sectionImage: Legend.sectionImage[indexPath.row]
             )
@@ -134,20 +134,31 @@ extension InfoViewController: UITableViewDataSource {
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let customHeaderView = UIView()
-        let sectionNameLabel = UILabel(
-            frame: CGRect(
-                x: Constants.developerNameXAxis,
-                y: Constants.developerNameYAxis,
-                width: Constants.developerNameWidth,
-                height: Constants.developerNameHeight
+        let sectionLabel: [UILabel] = [
+            .init(
+                frame: CGRect(
+                    x: Constants.onlineStatusSectionNameXAxis,
+                    y: Constants.onlineStatusSectionNameYAxis,
+                    width: Constants.onlineStatusSectionNameWidth,
+                    height: Constants.onlineStatusSectionNameHeight
+                )
+            ),
+            .init(
+                frame: CGRect(
+                    x: Constants.descriptionSectionNameXAxis,
+                    y: Constants.descriptionSectionNameYAxis,
+                    width: Constants.descriptionSectionNameWidth,
+                    height: Constants.descriptionSectionNameHeight
+                )
             )
-        )
-        sectionNameLabel.textColor = .systemGray
-        customHeaderView.addSubview(sectionNameLabel)
-        
+        ]
         switch section {
         case let sectionNumber:
-            sectionNameLabel.text = String(describing: Legend.LegendName.allCases[sectionNumber].rawValue)
+            customHeaderView.addSubview(sectionLabel[section])
+            sectionLabel[section].textColor = .systemGray
+            sectionLabel[section].text = String(
+                describing: Legend.LegendName.allCases[sectionNumber].rawValue
+            )
         }
         return customHeaderView
     }
@@ -162,14 +173,17 @@ extension InfoViewController: UITableViewDelegate {
     }
 }
 
-
 extension InfoViewController {
     private enum Constants {
-        static let developerNameXAxis: Int = 30
-        static let developerNameYAxis: Int = 20
+        static let onlineStatusSectionNameXAxis: Int = 20
+        static let onlineStatusSectionNameYAxis: Int = 20
+        static let descriptionSectionNameXAxis: Int = 20
+        static let descriptionSectionNameYAxis: Int = 20
         static let developerNameBaseLeadingOffset: Int = 20
-        static let developerNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (developerNameXAxis + developerNameBaseLeadingOffset)
-        static let developerNameHeight: Int = 23
+        static let onlineStatusSectionNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (onlineStatusSectionNameXAxis + developerNameBaseLeadingOffset)
+        static let descriptionSectionNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (descriptionSectionNameXAxis + developerNameBaseLeadingOffset)
+        static let onlineStatusSectionNameHeight: Int = 23
+        static let descriptionSectionNameHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
     }

@@ -7,6 +7,11 @@
 import UIKit
 
 struct Legend {
+    static let statusImage: [UIImage] = [
+        .online,
+        .partially,
+        .offline
+    ]
     static let sectionImage: [UIImage] = [
         .generalImage,
         .consoleComponentsImage,

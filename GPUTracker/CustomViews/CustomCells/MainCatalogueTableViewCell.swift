@@ -124,7 +124,7 @@ final class MainTableViewCell: UITableViewCell {
 }
 //MARK: - MainCell extensions
 extension MainTableViewCell {
-    final func configurateCell(
+    final func setupCellSubviews(
         descriptionName: String,
         descriptionValue: String,
         onlineStatus: String

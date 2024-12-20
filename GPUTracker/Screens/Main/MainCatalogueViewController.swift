@@ -136,19 +136,19 @@ extension MainCatalogueViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
-            cell.configurateCell(
+            cell.setupCellSubviews(
                 descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
         case 1:
-            cell.configurateCell(
+            cell.setupCellSubviews(
                 descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.sonySectionDataSource[indexPath.row].onlineStatus
             )
         case 2:
-            cell.configurateCell(
+            cell.setupCellSubviews(
                 descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
