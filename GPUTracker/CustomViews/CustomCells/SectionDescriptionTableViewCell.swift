@@ -19,10 +19,6 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
     private let descriptionValueLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray
-        label.font = .systemFont(
-            ofSize: Constants.textViewFontSize,
-            weight: .regular
-        )
         label.isUserInteractionEnabled = false
         return label
     }()
@@ -113,17 +109,12 @@ extension SectionDescriptionTableViewCell {
 //MARK: - Constants
 extension SectionDescriptionTableViewCell {
     private enum Constants {
-        static let defaultTopSystemInset: CGFloat = 8.0
         static let sectionImageViewWidth: CGFloat = 30.0
         static let sectionImageViewHeight: CGFloat = 30.0
-        static let sectionImageViewRightOffset: CGFloat = 11.0
         static let descriptionValueLabelLeftInset: CGFloat = 10
         static let descriptionValueLabelRightInset: CGFloat = -10
         static let sectionImageViewLeftInset: CGFloat = 10
         static let descriptionValueLabelTopInset: CGFloat = 2.0
         static let descriptionValueLabelBottomInset: CGFloat = -5.0
-        static let lineFragmentPadding: CGFloat = 0.0
-        static let descriptionValueLabelFontSize: CGFloat = 17.0
-        static let textViewFontSize: CGFloat = 16.0
     }
 }

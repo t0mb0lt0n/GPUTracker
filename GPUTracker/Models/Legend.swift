@@ -24,9 +24,9 @@ struct Legend {
         case controllersImage = "Information about controllers."
     }
     enum StatusDescription: String, CaseIterable {
-        case online = "All online services and functions are available."
+        case online = "All online services are available."
         case partially = "Some services are disconnected, but the main ones are working."
-        case offline = "All services are disconnected and unavailable."
+        case offline = "All services are unavailable."
     }
 }
 
