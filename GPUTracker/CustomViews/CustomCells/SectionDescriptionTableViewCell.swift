@@ -8,7 +8,7 @@
 import UIKit
 
 final class SectionDescriptionTableViewCell: UITableViewCell {
-    private let onlineStatusImageView: UIImageView = {
+    private let sectionImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .generalImage
         imageView.clipsToBounds = true
@@ -23,11 +23,7 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
             ofSize: Constants.textViewFontSize,
             weight: .regular
         )
-        //label.isScrollEnabled = false
-        //label.isEditable = false
         label.isUserInteractionEnabled = false
-        //label.textContainer.lineFragmentPadding = Constants.lineFragmentPadding
-        //label.textContainerInset = .zero
         return label
     }()
     
@@ -52,8 +48,8 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        descriptionValueTextView.text = nil
-        onlineStatusImageView.image = nil
+        descriptionValueLabel.text = nil
+        sectionImageView.image = nil
     }
     
     private func setupCell(
@@ -63,8 +59,8 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
         self.selectionStyle = selectionStyle
         self.accessoryType = accessoryType
         [
-         descriptionValueTextView,
-         onlineStatusImageView
+         descriptionValueLabel,
+         sectionImageView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
@@ -73,33 +69,32 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
         
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            descriptionValueTextView.topAnchor.constraint(
+            descriptionValueLabel.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
-                constant: Constants.descriptionValueTextViewTopInset
+                constant: Constants.descriptionValueLabelTopInset
             ),
-            descriptionValueTextView.leadingAnchor.constraint(
-                equalTo: onlineStatusImageView.trailingAnchor,
-                constant: Constants.descriptionValueTextViewLeftInset
+            descriptionValueLabel.leadingAnchor.constraint(
+                equalTo: sectionImageView.trailingAnchor,
+                constant: Constants.descriptionValueLabelLeftInset
             ),
-            descriptionValueTextView.trailingAnchor.constraint(
+            descriptionValueLabel.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: -Constants.descriptionValueTextViewLeftInset
+                constant: Constants.descriptionValueLabelRightInset
             ),
-            descriptionValueTextView.bottomAnchor.constraint(
+            descriptionValueLabel.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
-                constant: Constants.descriptionValueTextViewBottomInset
+                constant: Constants.descriptionValueLabelBottomInset
             ),
-            descriptionValueTextView.centerYAnchor.constraint(
+            descriptionValueLabel.centerYAnchor.constraint(
                 equalTo: contentView.centerYAnchor
             ),
-            //onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
-            onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
-            onlineStatusImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            onlineStatusImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            onlineStatusImageView.leadingAnchor.constraint(
+            sectionImageView.widthAnchor.constraint(equalToConstant: Constants.sectionImageViewWidth),
+            sectionImageView.heightAnchor.constraint(equalToConstant: Constants.sectionImageViewHeight),
+            sectionImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            sectionImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            sectionImageView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: Constants.onlineStatusImageViewLeftInset
+                constant: Constants.sectionImageViewLeftInset
             ),
         ])
     }
@@ -110,8 +105,8 @@ extension SectionDescriptionTableViewCell {
         descriptionValue: String,
         sectionImage: UIImage
     ) {
-        onlineStatusImageView.image = sectionImage
-        descriptionValueTextView.text = descriptionValue
+        sectionImageView.image = sectionImage
+        descriptionValueLabel.text = descriptionValue
     }
 }
 
@@ -119,15 +114,16 @@ extension SectionDescriptionTableViewCell {
 extension SectionDescriptionTableViewCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
-        static let onlineStatusImageViewWidth: CGFloat = 30.0
-        static let onlineStatusImageViewHeight: CGFloat = 30.0
-        static let onlineStatusImageViewRightOffset: CGFloat = 11.0
-        static let descriptionValueTextViewLeftInset: CGFloat = 10
-        static let onlineStatusImageViewLeftInset: CGFloat = 10
-        static let descriptionValueTextViewTopInset: CGFloat = 2.0
-        static let descriptionValueTextViewBottomInset: CGFloat = -5.0
+        static let sectionImageViewWidth: CGFloat = 30.0
+        static let sectionImageViewHeight: CGFloat = 30.0
+        static let sectionImageViewRightOffset: CGFloat = 11.0
+        static let descriptionValueLabelLeftInset: CGFloat = 10
+        static let descriptionValueLabelRightInset: CGFloat = -10
+        static let sectionImageViewLeftInset: CGFloat = 10
+        static let descriptionValueLabelTopInset: CGFloat = 2.0
+        static let descriptionValueLabelBottomInset: CGFloat = -5.0
         static let lineFragmentPadding: CGFloat = 0.0
-        static let descriptionNameLabelFontSize: CGFloat = 17.0
+        static let descriptionValueLabelFontSize: CGFloat = 17.0
         static let textViewFontSize: CGFloat = 16.0
     }
 }
