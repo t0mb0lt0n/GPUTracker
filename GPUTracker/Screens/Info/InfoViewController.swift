@@ -32,21 +32,19 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
-        setupViewModel()
-        
     }
     
     private func setupMainView() {
         mainView.infoTableView.dataSource = self
         mainView.infoTableView.delegate = self
+        mainView.dismissButtonClosure = { [weak self] in
+            self?.viewModel.dismissButtonTapped()
+        }
     }
-    
-    @objc private func closeButtonTapped() {
-        
-    }
-    
     private func setupViewModel() {
-        
+        viewModel.dismissButtonClosure = { [weak self] in
+            self?.dismiss(animated: true)
+        }
     }
 }
 

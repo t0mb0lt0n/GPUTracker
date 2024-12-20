@@ -7,14 +7,13 @@
 import Foundation
 
 final class InfoViewModel {
-    var reloadClosure: (() -> Void)?
-    var infoButtonClosure: (() -> Void)?
+    var dismissButtonClosure: (() -> Void)?
     let numberOfSections: Int = Constants.numberOfSections
     let numbersOfRowsInStatusSection: Int = Legend.StatusDescription.allCases.count
     let numbersOfRowsInSectionDescription: Int = Legend.SectionDesccription.allCases.count
         
-    @objc func infoButtonTapped() {
-        infoButtonClosure?()
+    func dismissButtonTapped() {
+        dismissButtonClosure?()
     }
 }
 

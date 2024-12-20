@@ -36,4 +36,5 @@ extension String {
     static let wrench: String =  "wrench.and.screwdriver"
     static let gamecontroller: String =  "gamecontroller"
     static let infoButtonIcon: String =  "info.circle"
+    static let dismissButtonIcon: String =  "xmark"
 }

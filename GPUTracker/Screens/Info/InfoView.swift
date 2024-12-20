@@ -34,6 +34,18 @@ class InfoView: UIView {
         return label
     }()
     
+    let dismissButton: UIButton = {
+        let button = UIButton(type: .close)
+        button.setImage(.dismissButtonImage, for: .normal)
+        return button
+    }()
+    
+    var dismissButtonClosure: (() -> Void)?
+    
+    @objc private func closeButtonTapped() {
+        dismissButtonClosure?()
+    }
+
     init() {
         super.init(frame: .zero)
         setupView()
@@ -45,10 +57,12 @@ class InfoView: UIView {
     }
     
     private func setupView() {
+        dismissButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         backgroundColor = .secondarySystemBackground
         [
         infoTableView,
-        appVersionLabel
+        appVersionLabel,
+        dismissButton
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -70,6 +84,13 @@ class InfoView: UIView {
                 equalTo: bottomAnchor,
                 constant: Constants.appVersionLabelBottomInset
             ),
+            dismissButton.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor,
+                constant: Constants.dismissButtonTopInset
+            ),
+            //infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            dismissButton.trailingAnchor.constraint(equalTo: infoTableView.trailingAnchor, constant: Constants.dismissButtonRightInset),
+            //infoTableView.bottomAnchor.constraint(equa
         ])
     }
 }
@@ -78,6 +99,8 @@ class InfoView: UIView {
 extension InfoView {
     private enum Constants {
         static let infoTableViewTopInset: CGFloat = 22.0
+        static let dismissButtonTopInset: CGFloat = 10.0
+        static let dismissButtonRightInset: CGFloat = -20.0
         static let appVersionLabelBottomInset: CGFloat = -7.0
     }
 }

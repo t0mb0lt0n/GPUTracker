@@ -65,4 +65,11 @@ extension UIImage {
         .systemBlue,
         renderingMode: .alwaysOriginal
     ) ?? UIImage()
+    //MARK: - Dismiss button icon
+    static let dismissButtonImage = UIImage(
+        systemName: .dismissButtonIcon
+    )?.withTintColor(
+        .systemRed,
+        renderingMode: .alwaysOriginal
+    ) ?? UIImage()
 }
