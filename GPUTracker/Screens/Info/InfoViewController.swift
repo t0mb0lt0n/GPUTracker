@@ -21,6 +21,10 @@ class InfoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("deinit InfoViewController")
+    }
+
     override func loadView() {
         view = InfoView()
     }

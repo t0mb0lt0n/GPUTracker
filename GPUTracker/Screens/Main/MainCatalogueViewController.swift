@@ -78,14 +78,20 @@ final class MainCatalogueViewController: UIViewController {
     
     @objc private func infoButtonTapped() {
         let infoViewController = InfoViewController()
+        let screenHeight = UIScreen.main.bounds.height
         
         if let sheet = infoViewController.sheetPresentationController {
-            sheet.detents = [.medium()]
             sheet.largestUndimmedDetentIdentifier = nil
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
             sheet.prefersGrabberVisible = true
+            guard screenHeight > Constants.screenHeightRequared else {
+                sheet.detents = [.large()]
+                navigationController?.present(infoViewController, animated: true)
+                return
+            }
+            sheet.detents = [.medium()]
         }
         navigationController?.present(infoViewController, animated: true)
     }
@@ -181,10 +187,10 @@ extension MainCatalogueViewController: UITableViewDataSource {
         let customHeaderView = UIView()
         let developerNameLabel = UILabel(
             frame: CGRect(
-                x: Constants.developerNameXAxis,
-                y: Constants.developerNameYAxis,
-                width: Constants.developerNameWidth,
-                height: Constants.developerNameHeight
+                x: Constants.sectionNameLabelXAxis,
+                y: Constants.sectionNameLabelYAxis,
+                width: Constants.sectionNameLabelWidth,
+                height: Constants.sectionNameLabelHeight
             )
         )
         developerNameLabel.textColor = .systemGray
@@ -237,12 +243,13 @@ extension MainCatalogueViewController: UITableViewDelegate {
 
 extension MainCatalogueViewController {
     private enum Constants {
-        static let developerNameXAxis: Int = 20
-        static let developerNameYAxis: Int = 20
-        static let developerNameBaseLeadingOffset: Int = 20
-        static let developerNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (developerNameXAxis + developerNameBaseLeadingOffset)
-        static let developerNameHeight: Int = 23
+        static let sectionNameLabelXAxis: Int = 20
+        static let sectionNameLabelYAxis: Int = 20
+        static let sectionNameLabelBaseLeadingOffset: Int = 20
+        static let sectionNameLabelWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (sectionNameLabelXAxis + sectionNameLabelBaseLeadingOffset)
+        static let sectionNameLabelHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
+        static let screenHeightRequared: CGFloat = 667.0
     }
 }
