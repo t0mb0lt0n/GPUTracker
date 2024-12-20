@@ -12,11 +12,7 @@ final class InfoViewModel {
     let numberOfSections: Int = Constants.numberOfSections
     let numbersOfRowsInStatusSection: Int = Legend.StatusDescription.allCases.count
     let numbersOfRowsInSectionDescription: Int = Legend.SectionDesccription.allCases.count
-    
-    func updateData() {
-        reloadClosure?()
-    }
-    
+        
     @objc func infoButtonTapped() {
         infoButtonClosure?()
     }

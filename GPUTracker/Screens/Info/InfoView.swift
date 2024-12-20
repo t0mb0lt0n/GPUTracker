@@ -45,6 +45,7 @@ class InfoView: UIView {
     }
     
     private func setupView() {
+        backgroundColor = .secondarySystemBackground
         [
         infoTableView,
         appVersionLabel
@@ -56,14 +57,19 @@ class InfoView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            infoTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            infoTableView.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor,
+                constant: Constants.infoTableViewTopInset
+            ),
             infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             infoTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             appVersionLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            //appVersionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            appVersionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            appVersionLabel.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: Constants.appVersionLabelBottomInset
+            ),
         ])
     }
 }
@@ -71,12 +77,7 @@ class InfoView: UIView {
 //MARK: - Constants
 extension InfoView {
     private enum Constants {
-        static let defaultTopSystemInset: CGFloat = 8.0
-        static let onlineStatusImageViewRightOffset: CGFloat = 11.0
-        static let descriptionValueTextViewLeftInset: CGFloat = 5
-        static let descriptionValueTextViewTopInset: CGFloat = 2.0
-        static let descriptionValueTextViewBottomInset: CGFloat = -5.0
-        static let descriptionNameLabelFontSize: CGFloat = 17.0
-        static let textViewFontSize: CGFloat = 16.0
+        static let infoTableViewTopInset: CGFloat = 22.0
+        static let appVersionLabelBottomInset: CGFloat = -7.0
     }
 }

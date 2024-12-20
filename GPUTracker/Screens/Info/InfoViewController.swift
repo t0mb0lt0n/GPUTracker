@@ -134,29 +134,19 @@ extension InfoViewController: UITableViewDataSource {
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let customHeaderView = UIView()
-        let sectionLabel: [UILabel] = [
-            .init(
+        let sectionLabel: UILabel = .init(
                 frame: CGRect(
-                    x: Constants.onlineStatusSectionNameXAxis,
-                    y: Constants.onlineStatusSectionNameYAxis,
-                    width: Constants.onlineStatusSectionNameWidth,
-                    height: Constants.onlineStatusSectionNameHeight
-                )
-            ),
-            .init(
-                frame: CGRect(
-                    x: Constants.descriptionSectionNameXAxis,
-                    y: Constants.descriptionSectionNameYAxis,
-                    width: Constants.descriptionSectionNameWidth,
-                    height: Constants.descriptionSectionNameHeight
+                    x: Constants.sectionLabelXAxis,
+                    y: Constants.sectionLabelYAxis,
+                    width: Constants.sectionLabelWidth,
+                    height: Constants.sectionLabelHeight
                 )
             )
-        ]
+        sectionLabel.textColor = .systemGray
+        customHeaderView.addSubview(sectionLabel)
         switch section {
         case let sectionNumber:
-            customHeaderView.addSubview(sectionLabel[section])
-            sectionLabel[section].textColor = .systemGray
-            sectionLabel[section].text = String(
+            sectionLabel.text = String(
                 describing: Legend.LegendName.allCases[sectionNumber].rawValue
             )
         }
@@ -175,15 +165,11 @@ extension InfoViewController: UITableViewDelegate {
 
 extension InfoViewController {
     private enum Constants {
-        static let onlineStatusSectionNameXAxis: Int = 20
-        static let onlineStatusSectionNameYAxis: Int = 20
-        static let descriptionSectionNameXAxis: Int = 20
-        static let descriptionSectionNameYAxis: Int = 20
-        static let developerNameBaseLeadingOffset: Int = 20
-        static let onlineStatusSectionNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (onlineStatusSectionNameXAxis + developerNameBaseLeadingOffset)
-        static let descriptionSectionNameWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (descriptionSectionNameXAxis + developerNameBaseLeadingOffset)
-        static let onlineStatusSectionNameHeight: Int = 23
-        static let descriptionSectionNameHeight: Int = 23
+        static let sectionLabelXAxis: Int = 20
+        static let sectionLabelYAxis: Int = 20
+        static let sectionLabelLeadingOffset: Int = 20
+        static let sectionLabelWidth: Int = Int(UIScreen.main.bounds.width) - 2 * (sectionLabelXAxis + sectionLabelLeadingOffset)
+        static let sectionLabelHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
     }
