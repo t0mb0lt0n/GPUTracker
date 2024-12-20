@@ -17,8 +17,8 @@ final class MainView: UIView {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.isScrollEnabled = true
         tableView.register(
-            MainCell.self,
-            forCellReuseIdentifier: MainCell.defaultIdentifier
+            MainTableViewCell.self,
+            forCellReuseIdentifier: MainTableViewCell.defaultIdentifier
         )
         return tableView
     }()

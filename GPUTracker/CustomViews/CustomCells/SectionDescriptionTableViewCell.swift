@@ -1,13 +1,13 @@
 //
-//  InfoTableViewCell.swift
+//  SectionDescriptionTableViewCell.swift
 //  GPUTracker
 //
-//  Created by Alexander on 18.12.2024.
+//  Created by Alexander on 20.12.2024.
 //
 
 import UIKit
 
-final class InfoTableViewCell: UITableViewCell {
+final class SectionDescriptionTableViewCell: UITableViewCell {
     private let onlineStatusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .online
@@ -100,7 +100,7 @@ final class InfoTableViewCell: UITableViewCell {
     }
 }
 //MARK: - MainCell extensions
-extension InfoTableViewCell {
+extension SectionDescriptionTableViewCell {
     final func configurateCell(
         descriptionValue: String,
         onlineStatus: String
@@ -118,7 +118,7 @@ extension InfoTableViewCell {
 }
 
 //MARK: - Constants
-extension InfoTableViewCell {
+extension SectionDescriptionTableViewCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
         static let onlineStatusImageViewWidth: CGFloat = 10.0

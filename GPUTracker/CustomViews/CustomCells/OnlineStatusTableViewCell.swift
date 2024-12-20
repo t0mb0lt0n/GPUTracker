@@ -1,29 +1,26 @@
 //
-//  UniversalCustomCell.swift
+//  InfoTableViewCell.swift
 //  GPUTracker
 //
-//  Created by Alexander on 22.10.2024.
+//  Created by Alexander on 18.12.2024.
 //
 
 import UIKit
 
-final class UniversalCustomCell: UITableViewCell {
-    private let descriptionNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(
-            ofSize: Constants.descriptionNameLabelFontSize,
-            weight: .medium
-        )
-        label.textColor = .black
-        return label
+final class OnlineStatusTableViewCell: UITableViewCell {
+    private let onlineStatusImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .online
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
     }()
-            
+    
     private let descriptionValueTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .clear
         textView.textColor = .systemGray
         textView.font = .systemFont(
-            ofSize: Constants.descriptionValueLabelFontSize,
+            ofSize: Constants.textViewFontSize,
             weight: .regular
         )
         textView.isScrollEnabled = false
@@ -44,19 +41,19 @@ final class UniversalCustomCell: UITableViewCell {
         )
         setupCell(
             selectionStyle: .none,
-            accessoryType: .none
+            accessoryType: .checkmark
         )
         setupConstraints()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        descriptionNameLabel.text = nil
-        descriptionValueTextView.text = nil
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        descriptionValueTextView.text = nil
+        onlineStatusImageView.image = nil
     }
     
     private func setupCell(
@@ -65,80 +62,74 @@ final class UniversalCustomCell: UITableViewCell {
     ) {
         self.selectionStyle = selectionStyle
         self.accessoryType = accessoryType
-        isUserInteractionEnabled = false
         [
-         descriptionNameLabel,
          descriptionValueTextView,
+         onlineStatusImageView
         ].forEach { subView in
             subView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(subView)
         }
     }
-    
+        
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            descriptionNameLabel.topAnchor.constraint(
-                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
-                constant: contentView.layoutMargins.top
-            ),
-            descriptionNameLabel.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor,
-                constant: Constants.descriptionNameLabelLeadingInset
-            ),
-            descriptionNameLabel.trailingAnchor.constraint(
-                equalTo: contentView.trailingAnchor,
-                constant: Constants.descriptionNameLabelTrailingInset
-            ),
-            
             descriptionValueTextView.topAnchor.constraint(
-                equalTo: descriptionNameLabel.bottomAnchor,
+                equalTo: contentView.topAnchor,
                 constant: Constants.descriptionValueTextViewTopInset
+            ),
+            descriptionValueTextView.leadingAnchor.constraint(
+                equalTo: onlineStatusImageView.trailingAnchor,
+                constant: Constants.descriptionValueTextViewLeftInset
             ),
             descriptionValueTextView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: Constants.descriptionValueTextViewRightInset
-            ),
-            descriptionValueTextView.leadingAnchor.constraint(
-                equalTo: contentView.leadingAnchor,
-                constant: Constants.descriptionValueTextViewLeftInset
+                constant: -Constants.descriptionValueTextViewLeftInset
             ),
             descriptionValueTextView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
                 constant: Constants.descriptionValueTextViewBottomInset
             ),
+            onlineStatusImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            onlineStatusImageView.widthAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewWidth),
+            onlineStatusImageView.heightAnchor.constraint(equalToConstant: Constants.onlineStatusImageViewHeight),
+            onlineStatusImageView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Constants.onlineStatusImageViewLeftInset
+            ),
         ])
     }
 }
-//MARK: - UniversalCustomCell extensions
-extension UniversalCustomCell {
+//MARK: - MainCell extensions
+extension OnlineStatusTableViewCell {
     final func configurateCell(
-        descriptionName: String?,
-        descriptionValue: String?
+        descriptionValue: String,
+        onlineStatus: String
     ) {
-        guard
-            let descriptionName,
-            let descriptionValue
-        else { return }
-        descriptionNameLabel.text = descriptionName
+        switch onlineStatus {
+        case .online:
+            onlineStatusImageView.image = .online
+        case .partially:
+            onlineStatusImageView.image = .partially
+        default:
+            onlineStatusImageView.image = .offline
+        }
         descriptionValueTextView.text = descriptionValue
     }
 }
 
 //MARK: - Constants
-extension UniversalCustomCell {
+extension OnlineStatusTableViewCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
-        static let descriptionNameLabelLeadingInset: CGFloat = 20.0
-        static let descriptionNameLabelTrailingInset: CGFloat = -2.0
         static let onlineStatusImageViewWidth: CGFloat = 10.0
         static let onlineStatusImageViewHeight: CGFloat = 10.0
-        static let descriptionValueTextViewLeftInset: CGFloat = 20.0
-        static let descriptionValueTextViewRightInset: CGFloat = -10.0
+        static let onlineStatusImageViewRightOffset: CGFloat = 11.0
+        static let descriptionValueTextViewLeftInset: CGFloat = 10
+        static let onlineStatusImageViewLeftInset: CGFloat = 10
         static let descriptionValueTextViewTopInset: CGFloat = 2.0
         static let descriptionValueTextViewBottomInset: CGFloat = -5.0
         static let lineFragmentPadding: CGFloat = 0.0
         static let descriptionNameLabelFontSize: CGFloat = 17.0
-        static let descriptionValueLabelFontSize: CGFloat = 16.0
         static let textViewFontSize: CGFloat = 16.0
     }
 }

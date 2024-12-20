@@ -127,9 +127,9 @@ extension MainViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: MainCell.defaultIdentifier,
+            withIdentifier: MainTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? MainCell else {
+        ) as? MainTableViewCell else {
             fatalError(.cellError)
         }
         cell.selectionStyle = .default

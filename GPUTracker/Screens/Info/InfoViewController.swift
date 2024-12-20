@@ -79,37 +79,39 @@ extension InfoViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: InfoTableViewCell.defaultIdentifier,
+        guard let statusDescriptionCell = tableView.dequeueReusableCell(
+            withIdentifier: OnlineStatusTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? InfoTableViewCell else {
+        ) as? OnlineStatusTableViewCell else {
             fatalError(.cellError)
         }
+        statusDescriptionCell.setupCellSeparator()
     
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: InfoTableViewCell.defaultIdentifier,
+        guard let sectionDescriptionCell = tableView.dequeueReusableCell(
+            withIdentifier: OnlineStatusTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? InfoTableViewCell else {
+        ) as? OnlineStatusTableViewCell else {
             fatalError(.cellError)
         }
-        cell.setupCellSeparator()
+        sectionDescriptionCell.setupCellSeparator()
 
-        
         switch indexPath.section {
         case 0:
-            cell.configurateCell(
+            statusDescriptionCell.configurateCell(
                 descriptionValue: Legend.StatusDescription.allCases[indexPath.row].rawValue,
                 onlineStatus: String(describing: Legend.StatusDescription.allCases[indexPath.row])
             )
+            return statusDescriptionCell
         case 1:
-            cell.configurateCell(
+            sectionDescriptionCell.configurateCell(
                 descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
                 onlineStatus: .partially
             )
+            return sectionDescriptionCell
         default:
-            cell.textLabel?.text = .failure
+            sectionDescriptionCell.textLabel?.text = .failure
+            return sectionDescriptionCell
         }
-        return cell
     }
     
     //setup height for header in section

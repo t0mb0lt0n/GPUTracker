@@ -22,18 +22,19 @@
 		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */; };
+		119BD5A82D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */; };
 		11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC622CF4CD05001A84C9 /* playstation2.realm */; };
 		11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extension.swift */; };
 		11B11C712D035DE900058A4F /* playstation.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C702D035DE900058A4F /* playstation.realm */; };
 		11B11C742D0370B300058A4F /* dreamCast.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C732D0370B300058A4F /* dreamCast.realm */; };
 		11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */; };
-		11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainCell.swift */; };
-		11B1E1F22D12FF06004BDA9C /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F12D12FF06004BDA9C /* InfoTableViewCell.swift */; };
+		11B152D22BE559D7004F6FBC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */; };
+		11B1E1F22D12FF06004BDA9C /* OnlineStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */; };
 		11B1E1F52D130AF2004BDA9C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F42D130AF2004BDA9C /* InfoView.swift */; };
 		11B1E1F72D130B18004BDA9C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F62D130B18004BDA9C /* InfoViewController.swift */; };
 		11B1E1F92D130B45004BDA9C /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F82D130B45004BDA9C /* InfoViewModel.swift */; };
 		11B1E1FD2D131DD7004BDA9C /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1FC2D131DD7004BDA9C /* Legend.swift */; };
-		11C422B82CC838A70058C627 /* UniversalCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C422B72CC838A70058C627 /* UniversalCustomCell.swift */; };
+		11C422B82CC838A70058C627 /* BasicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C422B72CC838A70058C627 /* BasicTableViewCell.swift */; };
 		11DDC1D82BBABEFB007D8CF3 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */; };
 		11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */; };
 		11DDC1E22BBC7D48007D8CF3 /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */; };
@@ -62,18 +63,19 @@
 		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		11A5FC622CF4CD05001A84C9 /* playstation2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation2.realm; sourceTree = "<group>"; };
 		11A604262CD512B200A16F01 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11B11C702D035DE900058A4F /* playstation.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation.realm; sourceTree = "<group>"; };
 		11B11C732D0370B300058A4F /* dreamCast.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = dreamCast.realm; sourceTree = "<group>"; };
 		11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		11B152D12BE559D7004F6FBC /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
-		11B1E1F12D12FF06004BDA9C /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStatusTableViewCell.swift; sourceTree = "<group>"; };
 		11B1E1F42D130AF2004BDA9C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		11B1E1F62D130B18004BDA9C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		11B1E1F82D130B45004BDA9C /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		11B1E1FC2D131DD7004BDA9C /* Legend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
-		11C422B72CC838A70058C627 /* UniversalCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalCustomCell.swift; sourceTree = "<group>"; };
+		11C422B72CC838A70058C627 /* BasicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableViewCell.swift; sourceTree = "<group>"; };
 		11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		11DDC1D92BBAE057007D8CF3 /* RealmFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFileCreator.swift; sourceTree = "<group>"; };
 		11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
@@ -274,9 +276,10 @@
 		11C422B92CCAEA270058C627 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				11B152D12BE559D7004F6FBC /* MainCell.swift */,
-				11C422B72CC838A70058C627 /* UniversalCustomCell.swift */,
-				11B1E1F12D12FF06004BDA9C /* InfoTableViewCell.swift */,
+				11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */,
+				11C422B72CC838A70058C627 /* BasicTableViewCell.swift */,
+				11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */,
+				119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -404,8 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C422B82CC838A70058C627 /* UniversalCustomCell.swift in Sources */,
-				11B1E1F22D12FF06004BDA9C /* InfoTableViewCell.swift in Sources */,
+				119BD5A82D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift in Sources */,
+				11C422B82CC838A70058C627 /* BasicTableViewCell.swift in Sources */,
+				11B1E1F22D12FF06004BDA9C /* OnlineStatusTableViewCell.swift in Sources */,
 				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
 				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
@@ -423,7 +427,7 @@
 				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				11B1E1F92D130B45004BDA9C /* InfoViewModel.swift in Sources */,
-				11B152D22BE559D7004F6FBC /* MainCell.swift in Sources */,
+				11B152D22BE559D7004F6FBC /* MainTableViewCell.swift in Sources */,
 				1156987729E887AB009B3638 /* MainView.swift in Sources */,
 				11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,

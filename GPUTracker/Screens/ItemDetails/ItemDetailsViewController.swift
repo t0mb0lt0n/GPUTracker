@@ -119,30 +119,30 @@ extension ItemDetailsViewController: UITableViewDataSource {
         )
         
         guard let generalSegmentTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: UniversalCustomCell.defaultIdentifier,
+            withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? UniversalCustomCell else {
+        ) as? BasicTableViewCell else {
             fatalError(.cellError)
         }
         
         guard let consoleComponentsTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: UniversalCustomCell.defaultIdentifier,
+            withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? UniversalCustomCell else {
+        ) as? BasicTableViewCell else {
             fatalError(.cellError)
         }
         
         guard let motherboardComponentsTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: UniversalCustomCell.defaultIdentifier,
+            withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? UniversalCustomCell else {
+        ) as? BasicTableViewCell else {
             fatalError(.cellError)
         }
         
         guard let controllersTableViewCell = tableView.dequeueReusableCell(
-            withIdentifier: UniversalCustomCell.defaultIdentifier,
+            withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? UniversalCustomCell else {
+        ) as? BasicTableViewCell else {
             fatalError(.cellError)
         }
         
