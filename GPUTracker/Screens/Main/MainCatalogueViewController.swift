@@ -12,13 +12,13 @@ protocol RealmUpdateDelegate: AnyObject {
     func updateData(forItemWithName itemIndexName: String)
 }
 
-final class MainViewController: UIViewController {
-    private lazy var mainView = view as! MainView
-    private let viewModel: MainViewModel
+final class MainCatalogueViewController: UIViewController {
+    private lazy var mainView = view as! MainCatalogueView
+    private let viewModel: MainCatalogueViewModel
     private weak var delegate: RealmUpdateDelegate?
     
     init() {
-        viewModel = MainViewModel(
+        viewModel = MainCatalogueViewModel(
             service: .init(
                 withRealmName: .mainProductList
             )
@@ -32,7 +32,7 @@ final class MainViewController: UIViewController {
     }
     
     override func loadView() {
-        view = MainView()
+        view = MainCatalogueView()
     }
     
     override func viewDidLoad() {
@@ -45,8 +45,8 @@ final class MainViewController: UIViewController {
     }
     
     private func setupMainView() {
-        mainView.mainTableView.delegate = self
-        mainView.mainTableView.dataSource = self
+        mainView.mainCatalogueTableView.delegate = self
+        mainView.mainCatalogueTableView.dataSource = self
         mainView.backgroundColor = .tertiarySystemGroupedBackground
         setupNavigationBarStyle(
             isLarge: true,
@@ -73,7 +73,7 @@ final class MainViewController: UIViewController {
     }
     
     private func reloadTableView() {
-        mainView.mainTableView.reloadData()
+        mainView.mainCatalogueTableView.reloadData()
     }
     
     @objc private func infoButtonTapped() {
@@ -92,7 +92,7 @@ final class MainViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension MainViewController: UITableViewDataSource {
+extension MainCatalogueViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSections
     }
@@ -199,7 +199,7 @@ extension MainViewController: UITableViewDataSource {
 }
 
 //MARK: - UITableViewDelegate
-extension MainViewController: UITableViewDelegate {
+extension MainCatalogueViewController: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
@@ -235,7 +235,7 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-extension MainViewController {
+extension MainCatalogueViewController {
     private enum Constants {
         static let developerNameXAxis: Int = 20
         static let developerNameYAxis: Int = 20

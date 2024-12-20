@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         window = UIWindow()
         
-        let mainVC = MainViewController()
+        let mainVC = MainCatalogueViewController()
         let mainNavVC = UINavigationController(rootViewController: mainVC)
         window?.rootViewController = mainNavVC
         window?.makeKeyAndVisible()

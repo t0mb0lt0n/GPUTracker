@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class MainViewModel {
+final class MainCatalogueViewModel {
     private var service: RealmService
     let developerListDataSource: Results<DeveloperList>
     let microsoftSectionDataSource: Results<MicrosoftProductList>

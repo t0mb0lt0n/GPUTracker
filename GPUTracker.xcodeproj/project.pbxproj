@@ -16,10 +16,10 @@
 		113D33542BAB5BAC00CCDDF9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113D33532BAB5BAC00CCDDF9 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		114307B92CEE1FA50055C33A /* playstation3.realm in Resources */ = {isa = PBXBuildFile; fileRef = 114307B82CEE1FA50055C33A /* playstation3.realm */; };
 		1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156985D29E873EE009B3638 /* AppDelegate.swift */; };
-		1156986229E873EE009B3638 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainViewController.swift */; };
+		1156986229E873EE009B3638 /* MainCatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156986129E873EE009B3638 /* MainCatalogueViewController.swift */; };
 		1156986729E873F0009B3638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1156986629E873F0009B3638 /* Assets.xcassets */; };
 		1156986A29E873F0009B3638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1156986829E873F0009B3638 /* LaunchScreen.storyboard */; };
-		1156987729E887AB009B3638 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainView.swift */; };
+		1156987729E887AB009B3638 /* MainCatalogueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156987629E887AB009B3638 /* MainCatalogueView.swift */; };
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */; };
 		119BD5A82D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */; };
@@ -28,7 +28,7 @@
 		11B11C712D035DE900058A4F /* playstation.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C702D035DE900058A4F /* playstation.realm */; };
 		11B11C742D0370B300058A4F /* dreamCast.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C732D0370B300058A4F /* dreamCast.realm */; };
 		11B152CE2BE164F6004F6FBC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */; };
-		11B152D22BE559D7004F6FBC /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */; };
+		11B152D22BE559D7004F6FBC /* MainCatalogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B152D12BE559D7004F6FBC /* MainCatalogueTableViewCell.swift */; };
 		11B1E1F22D12FF06004BDA9C /* OnlineStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */; };
 		11B1E1F52D130AF2004BDA9C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F42D130AF2004BDA9C /* InfoView.swift */; };
 		11B1E1F72D130B18004BDA9C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1E1F62D130B18004BDA9C /* InfoViewController.swift */; };
@@ -41,7 +41,7 @@
 		11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */; };
 		11DDC1FB2BBEDA2F007D8CF3 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */; };
 		11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */; };
-		11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */; };
+		11DDC2012BBEF9AD007D8CF3 /* MainCatalogueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2002BBEF9AD007D8CF3 /* MainCatalogueViewModel.swift */; };
 		11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */; };
 		11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */; };
 		11FBAA472BC47355003F568F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBAA462BC47355003F568F /* CustomTableView.swift */; };
@@ -56,11 +56,11 @@
 		114307B82CEE1FA50055C33A /* playstation3.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation3.realm; sourceTree = "<group>"; };
 		1156985A29E873EE009B3638 /* GPUTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1156985D29E873EE009B3638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1156986129E873EE009B3638 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1156986129E873EE009B3638 /* MainCatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCatalogueViewController.swift; sourceTree = "<group>"; };
 		1156986629E873F0009B3638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1156986929E873F0009B3638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1156986B29E873F0009B3638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1156987629E887AB009B3638 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1156987629E887AB009B3638 /* MainCatalogueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCatalogueView.swift; sourceTree = "<group>"; };
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		11B11C702D035DE900058A4F /* playstation.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation.realm; sourceTree = "<group>"; };
 		11B11C732D0370B300058A4F /* dreamCast.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = dreamCast.realm; sourceTree = "<group>"; };
 		11B152CD2BE164F6004F6FBC /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		11B152D12BE559D7004F6FBC /* MainCatalogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCatalogueTableViewCell.swift; sourceTree = "<group>"; };
 		11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineStatusTableViewCell.swift; sourceTree = "<group>"; };
 		11B1E1F42D130AF2004BDA9C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		11B1E1F62D130B18004BDA9C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		11DDC1F72BBED9DC007D8CF3 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		11DDC1FA2BBEDA2F007D8CF3 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		11DDC1FE2BBEE497007D8CF3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		11DDC2002BBEF9AD007D8CF3 /* MainCatalogueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCatalogueViewModel.swift; sourceTree = "<group>"; };
 		11DDC2042BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewModel.swift; sourceTree = "<group>"; };
 		11DDC2062BC02D48007D8CF3 /* CustomDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDescriptionView.swift; sourceTree = "<group>"; };
 		11FBAA462BC47355003F568F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
@@ -231,9 +231,9 @@
 		11AE40D32BA9F797001B52F8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1156987629E887AB009B3638 /* MainView.swift */,
-				1156986129E873EE009B3638 /* MainViewController.swift */,
-				11DDC2002BBEF9AD007D8CF3 /* MainViewModel.swift */,
+				1156987629E887AB009B3638 /* MainCatalogueView.swift */,
+				1156986129E873EE009B3638 /* MainCatalogueViewController.swift */,
+				11DDC2002BBEF9AD007D8CF3 /* MainCatalogueViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 		11C422B92CCAEA270058C627 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				11B152D12BE559D7004F6FBC /* MainTableViewCell.swift */,
+				11B152D12BE559D7004F6FBC /* MainCatalogueTableViewCell.swift */,
 				11C422B72CC838A70058C627 /* BasicTableViewCell.swift */,
 				11B1E1F12D12FF06004BDA9C /* OnlineStatusTableViewCell.swift */,
 				119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */,
@@ -410,7 +410,7 @@
 				119BD5A82D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift in Sources */,
 				11C422B82CC838A70058C627 /* BasicTableViewCell.swift in Sources */,
 				11B1E1F22D12FF06004BDA9C /* OnlineStatusTableViewCell.swift in Sources */,
-				1156986229E873EE009B3638 /* MainViewController.swift in Sources */,
+				1156986229E873EE009B3638 /* MainCatalogueViewController.swift in Sources */,
 				11DDC1F82BBED9DC007D8CF3 /* ItemDetailsViewController.swift in Sources */,
 				11DDC2052BBFF8A2007D8CF3 /* ItemDetailsViewModel.swift in Sources */,
 				11DDC2072BC02D48007D8CF3 /* CustomDescriptionView.swift in Sources */,
@@ -424,11 +424,11 @@
 				11B1E1FD2D131DD7004BDA9C /* Legend.swift in Sources */,
 				11DDC1FF2BBEE497007D8CF3 /* String+Extension.swift in Sources */,
 				11B1E1F52D130AF2004BDA9C /* InfoView.swift in Sources */,
-				11DDC2012BBEF9AD007D8CF3 /* MainViewModel.swift in Sources */,
+				11DDC2012BBEF9AD007D8CF3 /* MainCatalogueViewModel.swift in Sources */,
 				11DDC1DA2BBAE057007D8CF3 /* RealmFileCreator.swift in Sources */,
 				11B1E1F92D130B45004BDA9C /* InfoViewModel.swift in Sources */,
-				11B152D22BE559D7004F6FBC /* MainTableViewCell.swift in Sources */,
-				1156987729E887AB009B3638 /* MainView.swift in Sources */,
+				11B152D22BE559D7004F6FBC /* MainCatalogueTableViewCell.swift in Sources */,
+				1156987729E887AB009B3638 /* MainCatalogueView.swift in Sources */,
 				11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
 				11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */,

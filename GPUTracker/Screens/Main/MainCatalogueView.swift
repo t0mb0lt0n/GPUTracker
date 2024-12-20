@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class MainView: UIView {
-    lazy var mainTableView: UITableView = {
+final class MainCatalogueView: UIView {
+    lazy var mainCatalogueTableView: UITableView = {
         let tableView = UITableView(
             frame: .zero,
             style: .insetGrouped
@@ -35,9 +35,9 @@ final class MainView: UIView {
 }
 
 //MARK: - MainView extensions
-extension MainView {
+extension MainCatalogueView {
     final private func setupView() {
-        [mainTableView].forEach {
+        [mainCatalogueTableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -45,10 +45,10 @@ extension MainView {
     
     final private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            mainTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            mainTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            mainTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            mainCatalogueTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            mainCatalogueTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            mainCatalogueTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            mainCatalogueTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
