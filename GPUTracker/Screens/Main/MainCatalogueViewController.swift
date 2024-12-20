@@ -86,14 +86,14 @@ final class MainCatalogueViewController: UIViewController {
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
             sheet.prefersGrabberVisible = true
-            guard screenHeight > Constants.screenHeightRequared else {
+            guard screenHeight >= Constants.screenHeightRequared else {
                 sheet.detents = [.large()]
                 navigationController?.present(infoViewController, animated: true)
                 return
             }
             sheet.detents = [.medium()]
+            navigationController?.present(infoViewController, animated: true)
         }
-        navigationController?.present(infoViewController, animated: true)
     }
 }
 
@@ -250,6 +250,6 @@ extension MainCatalogueViewController {
         static let sectionNameLabelHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
-        static let screenHeightRequared: CGFloat = 667.0
+        static let screenHeightRequared: CGFloat = 668.0
     }
 }
