@@ -59,7 +59,6 @@ final class CustomDescriptionView: UIView {
     
     final private func setupConstraints() {
         let screenWidth = UIScreen.main.bounds.width
-        _ = UIScreen.main.bounds.height
         NSLayoutConstraint.activate([
             mainScrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             mainScrollView.leadingAnchor.constraint(equalTo: leadingAnchor),

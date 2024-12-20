@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoView: UIView {
+final class InfoView: UIView {
     lazy var infoTableView: UITableView = {
         let tableView = UITableView(
             frame: .zero,
@@ -29,7 +29,7 @@ class InfoView: UIView {
     
     let appVersionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Version 0.9.8.1"
+        label.text = .currentAppVersion
         label.textColor = .systemGray
         return label
     }()
@@ -88,9 +88,10 @@ class InfoView: UIView {
                 equalTo: safeAreaLayoutGuide.topAnchor,
                 constant: Constants.dismissButtonTopInset
             ),
-            //infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            dismissButton.trailingAnchor.constraint(equalTo: infoTableView.trailingAnchor, constant: Constants.dismissButtonRightInset),
-            //infoTableView.bottomAnchor.constraint(equa
+            dismissButton.trailingAnchor.constraint(
+                equalTo: infoTableView.trailingAnchor,
+                constant: Constants.dismissButtonRightInset
+            ),
         ])
     }
 }
@@ -101,6 +102,6 @@ extension InfoView {
         static let infoTableViewTopInset: CGFloat = 22.0
         static let dismissButtonTopInset: CGFloat = 10.0
         static let dismissButtonRightInset: CGFloat = -20.0
-        static let appVersionLabelBottomInset: CGFloat = -7.0
+        static let appVersionLabelBottomInset: CGFloat = -10.0
     }
 }

@@ -6,6 +6,8 @@
 //
 
 extension String {
+    //MARK: - App Current Version
+    static let currentAppVersion: String = "Version 1.0.0"
     //MARK: - Sony
     static let playstation: String = "playstation"
     static let playstation2: String = "playstation2"

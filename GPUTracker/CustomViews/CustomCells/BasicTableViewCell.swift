@@ -127,11 +127,8 @@ extension BasicTableViewCell {
 //MARK: - Constants
 extension BasicTableViewCell {
     private enum Constants {
-        static let defaultTopSystemInset: CGFloat = 8.0
         static let descriptionNameLabelLeadingInset: CGFloat = 20.0
         static let descriptionNameLabelTrailingInset: CGFloat = -2.0
-        static let onlineStatusImageViewWidth: CGFloat = 10.0
-        static let onlineStatusImageViewHeight: CGFloat = 10.0
         static let descriptionValueTextViewLeftInset: CGFloat = 20.0
         static let descriptionValueTextViewRightInset: CGFloat = -10.0
         static let descriptionValueTextViewTopInset: CGFloat = 2.0
@@ -139,6 +136,5 @@ extension BasicTableViewCell {
         static let lineFragmentPadding: CGFloat = 0.0
         static let descriptionNameLabelFontSize: CGFloat = 17.0
         static let descriptionValueLabelFontSize: CGFloat = 16.0
-        static let textViewFontSize: CGFloat = 16.0
     }
 }

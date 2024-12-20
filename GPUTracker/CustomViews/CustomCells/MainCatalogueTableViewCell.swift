@@ -20,7 +20,6 @@ final class MainTableViewCell: UITableViewCell {
     
     private let onlineStatusImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .online
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView

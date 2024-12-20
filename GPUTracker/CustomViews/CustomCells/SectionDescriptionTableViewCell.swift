@@ -109,8 +109,8 @@ extension SectionDescriptionTableViewCell {
 //MARK: - Constants
 extension SectionDescriptionTableViewCell {
     private enum Constants {
-        static let sectionImageViewWidth: CGFloat = 30.0
-        static let sectionImageViewHeight: CGFloat = 30.0
+        static let sectionImageViewWidth: CGFloat = 28.0
+        static let sectionImageViewHeight: CGFloat = 28.0
         static let descriptionValueLabelLeftInset: CGFloat = 10
         static let descriptionValueLabelRightInset: CGFloat = -10
         static let sectionImageViewLeftInset: CGFloat = 10

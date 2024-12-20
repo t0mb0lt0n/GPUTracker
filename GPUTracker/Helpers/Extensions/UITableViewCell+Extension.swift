@@ -27,8 +27,6 @@ extension UITableViewCell {
 
 extension UITableViewCell {
     private enum Constants {
-        static let separatorRightInset: CGFloat = 0.0
-        static let separatorLeftInset: CGFloat = 30.0
         static let separatorTopInset: CGFloat = 0.0
         static let separatorBottomInset: CGFloat = 0.0
     }

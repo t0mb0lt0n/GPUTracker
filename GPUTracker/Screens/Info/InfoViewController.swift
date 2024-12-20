@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+final class InfoViewController: UIViewController {
     private lazy var mainView = view as! InfoView
     private var viewModel: InfoViewModel
     
@@ -87,15 +87,21 @@ extension InfoViewController: UITableViewDataSource {
         ) as? OnlineStatusTableViewCell else {
             fatalError(.cellError)
         }
-        statusDescriptionCell.setupCellSeparator(withSeparatorLeftInset: 30, andSeparatorRightInset: 0)
-    
+        statusDescriptionCell.setupCellSeparator(
+            withSeparatorLeftInset: Constants.separatorLeftInsetForSectionOnline,
+            andSeparatorRightInset: Constants.separatorRightInset
+        )
+        
         guard let sectionDescriptionCell = tableView.dequeueReusableCell(
             withIdentifier: SectionDescriptionTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? SectionDescriptionTableViewCell else {
             fatalError(.cellError)
         }
-        sectionDescriptionCell.setupCellSeparator(withSeparatorLeftInset: 50, andSeparatorRightInset: 0)
+        sectionDescriptionCell.setupCellSeparator(
+            withSeparatorLeftInset: Constants.separatorLeftInsetForSectionDescription,
+            andSeparatorRightInset: Constants.separatorRightInset
+        )
 
         switch indexPath.section {
         case 0:
@@ -174,6 +180,11 @@ extension InfoViewController {
         static let sectionLabelHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
+        static let separatorLeftInsetForSectionOnline: CGFloat = 30.0
+        static let separatorLeftInsetForSectionDescription: CGFloat = 45.0
+        static let separatorRightInset: CGFloat = 0.0
+
+
     }
 }
 
