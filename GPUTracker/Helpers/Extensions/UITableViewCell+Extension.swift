@@ -12,12 +12,15 @@ extension UITableViewCell {
         String(describing: self)
     }
     
-    func setupCellSeparator() {
+    func setupCellSeparator(
+        withSeparatorLeftInset leftInset: CGFloat,
+        andSeparatorRightInset rightInset: CGFloat
+    ) {
         self.separatorInset = UIEdgeInsets(
             top: Constants.separatorTopInset,
-            left: Constants.separatorLeftInset,
+            left: leftInset,
             bottom: Constants.separatorBottomInset,
-            right: Constants.separatorRightInset
+            right: rightInset
         )
     }
 }

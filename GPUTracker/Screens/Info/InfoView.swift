@@ -20,6 +20,10 @@ class InfoView: UIView {
             OnlineStatusTableViewCell.self,
             forCellReuseIdentifier: OnlineStatusTableViewCell.defaultIdentifier
         )
+        tableView.register(
+            SectionDescriptionTableViewCell.self,
+            forCellReuseIdentifier: SectionDescriptionTableViewCell.defaultIdentifier
+        )
         return tableView
     }()
     

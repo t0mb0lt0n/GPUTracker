@@ -85,15 +85,15 @@ extension InfoViewController: UITableViewDataSource {
         ) as? OnlineStatusTableViewCell else {
             fatalError(.cellError)
         }
-        statusDescriptionCell.setupCellSeparator()
+        statusDescriptionCell.setupCellSeparator(withSeparatorLeftInset: 30, andSeparatorRightInset: 0)
     
         guard let sectionDescriptionCell = tableView.dequeueReusableCell(
-            withIdentifier: OnlineStatusTableViewCell.defaultIdentifier,
+            withIdentifier: SectionDescriptionTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? OnlineStatusTableViewCell else {
+        ) as? SectionDescriptionTableViewCell else {
             fatalError(.cellError)
         }
-        sectionDescriptionCell.setupCellSeparator()
+        sectionDescriptionCell.setupCellSeparator(withSeparatorLeftInset: 50, andSeparatorRightInset: 0)
 
         switch indexPath.section {
         case 0:
@@ -105,7 +105,7 @@ extension InfoViewController: UITableViewDataSource {
         case 1:
             sectionDescriptionCell.configurateCell(
                 descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
-                onlineStatus: .partially
+                sectionImage: Legend.sectionImage[indexPath.row]
             )
             return sectionDescriptionCell
         default:
