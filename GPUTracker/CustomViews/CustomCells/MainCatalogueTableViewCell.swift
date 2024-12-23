@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainTableViewCell: UITableViewCell {
+final class MainCatalogueTableViewCell: UITableViewCell {
     private let descriptionNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(
@@ -67,6 +67,29 @@ final class MainTableViewCell: UITableViewCell {
         onlineStatusImageView.image = nil
     }
     
+    final func setupCellSubviews(
+        descriptionName: String,
+        descriptionValue: String,
+        onlineStatus: String
+    ) {
+        switch onlineStatus {
+        case .online:
+            onlineStatusImageView.image = .online
+        case .partially:
+            onlineStatusImageView.image = .partially
+        default:
+            onlineStatusImageView.image = .offline
+        }
+        descriptionNameLabel.text = descriptionName
+        descriptionValueTextView.text = descriptionValue
+    }
+    
+    final func setupCellSubviewsSafe() {
+        onlineStatusImageView.image = nil
+        descriptionNameLabel.text = .cellError
+        descriptionValueTextView.text = .cellError
+    }
+    
     private func setupCell(
         selectionStyle: UITableViewCell.SelectionStyle,
         accessoryType: UITableViewCell.AccessoryType
@@ -121,28 +144,9 @@ final class MainTableViewCell: UITableViewCell {
         ])
     }
 }
-//MARK: - MainCell extensions
-extension MainTableViewCell {
-    final func setupCellSubviews(
-        descriptionName: String,
-        descriptionValue: String,
-        onlineStatus: String
-    ) {
-        switch onlineStatus {
-        case .online:
-            onlineStatusImageView.image = .online
-        case .partially:
-            onlineStatusImageView.image = .partially
-        default:
-            onlineStatusImageView.image = .offline
-        }
-        descriptionNameLabel.text = descriptionName
-        descriptionValueTextView.text = descriptionValue
-    }
-}
 
 //MARK: - Constants
-extension MainTableViewCell {
+extension MainCatalogueTableViewCell {
     private enum Constants {
         static let defaultTopSystemInset: CGFloat = 8.0
         static let descriptionNameLabelLeadingInset: CGFloat = 20.0

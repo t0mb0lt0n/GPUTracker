@@ -133,10 +133,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: MainTableViewCell.defaultIdentifier,
+            withIdentifier: MainCatalogueTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? MainTableViewCell else {
-            fatalError(.cellError)
+        ) as? MainCatalogueTableViewCell else {
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         cell.selectionStyle = .default
         cell.accessoryType = .disclosureIndicator
@@ -160,7 +161,7 @@ extension MainCatalogueViewController: UITableViewDataSource {
                 onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
             )
         default:
-            cell.textLabel?.text = .failure
+            cell.setupCellSubviewsSafe()
         }
         return cell
     }

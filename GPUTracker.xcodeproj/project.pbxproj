@@ -23,6 +23,7 @@
 		11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */; };
 		11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */; };
 		119BD5A82D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */; };
+		119BD5AB2D1982C2005ADCA7 /* CellError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BD5AA2D1982C2005ADCA7 /* CellError.swift */; };
 		11A5FC632CF4CD05001A84C9 /* playstation2.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11A5FC622CF4CD05001A84C9 /* playstation2.realm */; };
 		11A604272CD512B200A16F01 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A604262CD512B200A16F01 /* UIViewController+Extension.swift */; };
 		11B11C712D035DE900058A4F /* playstation.realm in Resources */ = {isa = PBXBuildFile; fileRef = 11B11C702D035DE900058A4F /* playstation.realm */; };
@@ -64,6 +65,7 @@
 		11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfigurations.swift; sourceTree = "<group>"; };
 		11840A212D11BB0A00938487 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		119BD5A72D1596D0005ADCA7 /* SectionDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		119BD5AA2D1982C2005ADCA7 /* CellError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellError.swift; sourceTree = "<group>"; };
 		11A5FC622CF4CD05001A84C9 /* playstation2.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation2.realm; sourceTree = "<group>"; };
 		11A604262CD512B200A16F01 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		11B11C702D035DE900058A4F /* playstation.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = playstation.realm; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		119BD5A92D1982A0005ADCA7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				119BD5AA2D1982C2005ADCA7 /* CellError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		11AE40D32BA9F797001B52F8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		11AE40D42BA9F7E9001B52F8 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				119BD5A92D1982A0005ADCA7 /* Helpers */,
 				11C422B92CCAEA270058C627 /* CustomCells */,
 				11C422BA2CCAEA460058C627 /* CustomViews */,
 			);
@@ -431,6 +442,7 @@
 				1156987729E887AB009B3638 /* MainCatalogueView.swift in Sources */,
 				11840A222D11BB0A00938487 /* UITableViewCell+Extension.swift in Sources */,
 				1156985E29E873EE009B3638 /* AppDelegate.swift in Sources */,
+				119BD5AB2D1982C2005ADCA7 /* CellError.swift in Sources */,
 				11733BC22BCD3CE100D3A442 /* RealmConfigurations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
