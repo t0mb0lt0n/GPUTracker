@@ -112,7 +112,7 @@ extension InfoViewController: UITableViewDataSource {
             return statusDescriptionCell
         case 1:
             sectionDescriptionCell.setupCellSubviews(
-                descriptionValue: Legend.SectionDesccription.allCases[indexPath.row].rawValue,
+                descriptionValue: Legend.SectionDescription.allCases[indexPath.row].rawValue,
                 sectionImage: Legend.sectionImage[indexPath.row]
             )
             return sectionDescriptionCell

@@ -22,7 +22,7 @@ struct Legend {
         case statusLegend = "Online Status Description"
         case sectionLegend = "Sections Description"
     }
-    enum SectionDesccription: String, CaseIterable {
+    enum SectionDescription: String, CaseIterable {
         case general = "General information."
         case consoleComponents = "Console components info."
         case motherboardComponents = "Detailed MB components info."

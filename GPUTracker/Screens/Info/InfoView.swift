@@ -81,7 +81,7 @@ final class InfoView: UIView {
             
             appVersionLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appVersionLabel.bottomAnchor.constraint(
-                equalTo: bottomAnchor,
+                equalTo: safeAreaLayoutGuide.bottomAnchor,
                 constant: Constants.appVersionLabelBottomInset
             ),
             dismissButton.topAnchor.constraint(

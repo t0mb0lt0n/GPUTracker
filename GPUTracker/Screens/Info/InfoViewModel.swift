@@ -10,7 +10,7 @@ final class InfoViewModel {
     var dismissButtonClosure: (() -> Void)?
     let numberOfSections: Int = Constants.numberOfSections
     let numbersOfRowsInStatusSection: Int = Legend.StatusDescription.allCases.count
-    let numbersOfRowsInSectionDescription: Int = Legend.SectionDesccription.allCases.count
+    let numbersOfRowsInSectionDescription: Int = Legend.SectionDescription.allCases.count
         
     func dismissButtonTapped() {
         dismissButtonClosure?()
