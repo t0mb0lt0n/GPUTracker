@@ -19,7 +19,7 @@ final class MainCatalogueViewController: UIViewController {
     
     init() {
         viewModel = MainCatalogueViewModel(
-            service: .init(
+            withService: .init(
                 withRealmName: .mainProductList
             )
         )
@@ -118,11 +118,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.microsoftSectionDataSource.count
+            return viewModel.microsoftSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 1:
-            return viewModel.sonySectionDataSource.count
+            return viewModel.sonySectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 2:
-            return viewModel.segaSectionDataSource.count
+            return viewModel.segaSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         default:
             return 0
         }
@@ -144,7 +144,7 @@ extension MainCatalogueViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell.setupCellSubviews(
-                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
+                descriptionName: viewModel.microsoftSectionDataSource?[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
@@ -244,6 +244,7 @@ extension MainCatalogueViewController: UITableViewDelegate {
 
 extension MainCatalogueViewController {
     private enum Constants {
+        static let defaultNumberOfRowsInSection: Int = 0
         static let sectionNameLabelXAxis: Int = 20
         static let sectionNameLabelYAxis: Int = 20
         static let sectionNameLabelBaseLeadingOffset: Int = 20

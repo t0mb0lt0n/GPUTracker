@@ -9,35 +9,41 @@ import Foundation
 import RealmSwift
 
 final class MainCatalogueViewModel {
+    private enum Constatnts {
+        static let defaultNumberOfSections: Int = 0
+    }
+    
     private var service: RealmService
-    let developerListDataSource: Results<DeveloperList>
-    let microsoftSectionDataSource: Results<MicrosoftProductList>
-    let sonySectionDataSource: Results<SonyProductList>
-    let segaSectionDataSource: Results<SegaProductList>
+    var developerListDataSource: Results<DeveloperList>
+    //var microsoftSectionDataSource: Results<MicrosoftProductList>
+    //var sonySectionDataSource: Results<SonyProductList>
+    //var segaSectionDataSource: Results<SegaProductList>
     var reloadClosure: (() -> Void)?
     var infoButtonClosure: (() -> Void)?
-    var numberOfSections: Int {
-        [
-        service.data.objects(MicrosoftProductList.self),
-        service.data.objects(SonyProductList.self),
-        service.data.objects(SegaProductList.self)
-        ].count
-    }
+//    var numberOfSections: Int {
+//        developerListDataSource.count
+//    }
     
     func updateData() {
         reloadClosure?()
     }
     
+    func setupDataSources() {
+        guard let data = service.data else {
+            return
+        }
+        developerListDataSource = data.objects(DeveloperList.self)
+        //microsoftSectionDataSource = data.objects(MicrosoftProductList.self)
+        //sonySectionDataSource = data.objects(SonyProductList.self)
+        //segaSectionDataSource = data.objects(SegaProductList.self)
+    }
+    
     @objc func infoButtonTapped() {
         infoButtonClosure?()
     }
-
     
-    init(service: RealmService) {
+    init(withService service: RealmService) {
         self.service = service
-        developerListDataSource = self.service.data.objects(DeveloperList.self)
-        microsoftSectionDataSource = self.service.data.objects(MicrosoftProductList.self)
-        sonySectionDataSource = self.service.data.objects(SonyProductList.self)
-        segaSectionDataSource = self.service.data.objects(SegaProductList.self)
+        setupDataSources()
     }
 }
