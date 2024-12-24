@@ -19,7 +19,7 @@ final class MainCatalogueViewController: UIViewController {
     
     init() {
         viewModel = MainCatalogueViewModel(
-            service: .init(
+            withService: .init(
                 withRealmName: .mainProductList
             )
         )
@@ -118,11 +118,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.microsoftSectionDataSource.count
+            return viewModel.microsoftSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 1:
-            return viewModel.sonySectionDataSource.count
+            return viewModel.sonySectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 2:
-            return viewModel.segaSectionDataSource.count
+            return viewModel.segaSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         default:
             return 0
         }
@@ -133,17 +133,18 @@ extension MainCatalogueViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: MainTableViewCell.defaultIdentifier,
+            withIdentifier: MainCatalogueTableViewCell.defaultIdentifier,
             for: indexPath
-        ) as? MainTableViewCell else {
-            fatalError(.cellError)
+        ) as? MainCatalogueTableViewCell else {
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         cell.selectionStyle = .default
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
             cell.setupCellSubviews(
-                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
+                descriptionName: viewModel.microsoftSectionDataSource?[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
@@ -160,7 +161,7 @@ extension MainCatalogueViewController: UITableViewDataSource {
                 onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
             )
         default:
-            cell.textLabel?.text = .failure
+            cell.setupCellSubviewsSafe()
         }
         return cell
     }
@@ -243,6 +244,7 @@ extension MainCatalogueViewController: UITableViewDelegate {
 
 extension MainCatalogueViewController {
     private enum Constants {
+        static let defaultNumberOfRowsInSection: Int = 0
         static let sectionNameLabelXAxis: Int = 20
         static let sectionNameLabelYAxis: Int = 20
         static let sectionNameLabelBaseLeadingOffset: Int = 20

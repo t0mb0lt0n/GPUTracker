@@ -85,7 +85,8 @@ extension InfoViewController: UITableViewDataSource {
             withIdentifier: OnlineStatusTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? OnlineStatusTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         statusDescriptionCell.setupCellSeparator(
             withSeparatorLeftInset: Constants.separatorLeftInsetForSectionOnline,
@@ -96,7 +97,8 @@ extension InfoViewController: UITableViewDataSource {
             withIdentifier: SectionDescriptionTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? SectionDescriptionTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         sectionDescriptionCell.setupCellSeparator(
             withSeparatorLeftInset: Constants.separatorLeftInsetForSectionDescription,

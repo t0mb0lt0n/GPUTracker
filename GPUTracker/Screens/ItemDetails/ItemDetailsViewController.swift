@@ -122,28 +122,32 @@ extension ItemDetailsViewController: UITableViewDataSource {
             withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? BasicTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         
         guard let consoleComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? BasicTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         
         guard let motherboardComponentsTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? BasicTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         
         guard let controllersTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: BasicTableViewCell.defaultIdentifier,
             for: indexPath
         ) as? BasicTableViewCell else {
-            fatalError(.cellError)
+            assertionFailure(.cellError)
+            return UITableViewCell()
         }
         
         switch tableView.tag {

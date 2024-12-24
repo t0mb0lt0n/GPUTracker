@@ -17,8 +17,8 @@ final class MainCatalogueView: UIView {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.isScrollEnabled = true
         tableView.register(
-            MainTableViewCell.self,
-            forCellReuseIdentifier: MainTableViewCell.defaultIdentifier
+            MainCatalogueTableViewCell.self,
+            forCellReuseIdentifier: MainCatalogueTableViewCell.defaultIdentifier
         )
         return tableView
     }()
