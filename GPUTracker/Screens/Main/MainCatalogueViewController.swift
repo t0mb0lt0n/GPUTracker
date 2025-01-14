@@ -38,22 +38,51 @@ final class MainCatalogueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        viewModel.updateData()
-    }
-    
-    private func setupMainView() {
-        mainView.mainCatalogueTableView.delegate = self
-        mainView.mainCatalogueTableView.dataSource = self
-        mainView.backgroundColor = .tertiarySystemGroupedBackground
         setupNavigationBarStyle(
             isLarge: true,
             title: .mainCatalogue,
             titleColor: .black,
             backBarButtonTitle: .mainCatalogue
         )
+    }
+    
+    override func viewDidLayoutSubviews() {
+        viewModel.updateData()
+    }
+    
+    private func setupNavigationBarStyle(
+        isLarge: Bool,
+        title: String?,
+        titleColor: UIColor?,
+        backBarButtonTitle: String?
+    ) {
+        navigationController?.navigationBar.prefersLargeTitles = isLarge
+        guard
+            let title,
+            let titleColor
+        else
+        { return }
+        self.title = title
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: titleColor
+        ]
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: titleColor
+        ]
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+            title: backBarButtonTitle,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
+        navigationController?.navigationBar.tintColor = titleColor
+        navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .systemBlue
+    }
+    
+    private func setupMainView() {
+        mainView.mainCatalogueTableView.delegate = self
+        mainView.mainCatalogueTableView.dataSource = self
+        mainView.backgroundColor = .tertiarySystemGroupedBackground
         let infoButton: UIBarButtonItem = {
             let button = UIBarButtonItem(
                 image: .infoButtonImage,
