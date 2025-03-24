@@ -152,33 +152,45 @@ extension ItemDetailsViewController: UITableViewDataSource {
         
         switch tableView.tag {
         case 0:
-            if let data = viewModel.generalDataSource?[indexPath.row] {
+            if let generalData = viewModel.generalDataSource?[indexPath.row] {
                 generalSegmentTableViewCell.setupCellSubviews(
-                    descriptionName: data.descriptionName,
-                    descriptionValue: data.descriptionValue
+                    descriptionName: generalData.descriptionName,
+                    descriptionValue: generalData.descriptionValue
                 )
                 return generalSegmentTableViewCell
             } else {
-                return UITableViewCell()
+                return defaultCell
             }
         case 1:
-            consoleComponentsTableViewCell.setupCellSubviews(
-                descriptionName: viewModel.consoleComponentsDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.consoleComponentsDataSource[indexPath.row].descriptionValue
-            )
-            return consoleComponentsTableViewCell
+            if let consoleComponentsData = viewModel.consoleComponentsDataSource?[indexPath.row] {
+                consoleComponentsTableViewCell.setupCellSubviews(
+                    descriptionName: consoleComponentsData.descriptionName,
+                    descriptionValue: consoleComponentsData.descriptionValue
+                )
+                return consoleComponentsTableViewCell
+            } else {
+                return defaultCell
+            }
         case 2:
-            motherboardComponentsTableViewCell.setupCellSubviews(
-                descriptionName: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.motherboardComponentsDataSource[indexPath.row].descriptionValue
-            )
-            return motherboardComponentsTableViewCell
+            if let motherboardComponentsData = viewModel.motherboardComponentsDataSource?[indexPath.row] {
+                motherboardComponentsTableViewCell.setupCellSubviews(
+                    descriptionName: motherboardComponentsData.descriptionName,
+                    descriptionValue: motherboardComponentsData.descriptionValue
+                )
+                return motherboardComponentsTableViewCell
+            } else {
+                return defaultCell
+            }
         case 3:
-            controllersTableViewCell.setupCellSubviews(
-                descriptionName: viewModel.controllersDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.controllersDataSource[indexPath.row].descriptionValue
-            )
-            return controllersTableViewCell
+            if let controllersData = viewModel.controllersDataSource?[indexPath.row] {
+                controllersTableViewCell.setupCellSubviews(
+                    descriptionName: controllersData.descriptionName,
+                    descriptionValue: controllersData.descriptionValue
+                )
+                return controllersTableViewCell
+            } else {
+                return defaultCell
+            }
         default:
             return defaultCell
         }
