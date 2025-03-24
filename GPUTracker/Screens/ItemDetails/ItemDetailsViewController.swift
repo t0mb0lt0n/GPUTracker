@@ -152,11 +152,15 @@ extension ItemDetailsViewController: UITableViewDataSource {
         
         switch tableView.tag {
         case 0:
-            generalSegmentTableViewCell.setupCellSubviews(
-                descriptionName: viewModel.generalDataSource[indexPath.row].descriptionName,
-                descriptionValue: viewModel.generalDataSource[indexPath.row].descriptionValue
-            )
-            return generalSegmentTableViewCell
+            if let data = viewModel.generalDataSource?[indexPath.row] {
+                generalSegmentTableViewCell.setupCellSubviews(
+                    descriptionName: data.descriptionName,
+                    descriptionValue: data.descriptionValue
+                )
+                return generalSegmentTableViewCell
+            } else {
+                return UITableViewCell()
+            }
         case 1:
             consoleComponentsTableViewCell.setupCellSubviews(
                 descriptionName: viewModel.consoleComponentsDataSource[indexPath.row].descriptionName,
