@@ -147,11 +147,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.microsoftSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
+            return viewModel.microsoftSectionDataSource.count
         case 1:
-            return viewModel.sonySectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
+            return viewModel.sonySectionDataSource.count
         case 2:
-            return viewModel.segaSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
+            return viewModel.segaSectionDataSource.count
         default:
             return 0
         }
@@ -173,7 +173,7 @@ extension MainCatalogueViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell.setupCellSubviews(
-                descriptionName: viewModel.microsoftSectionDataSource?[indexPath.row].productName,
+                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
                 descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
                 onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
             )
@@ -195,14 +195,14 @@ extension MainCatalogueViewController: UITableViewDataSource {
         return cell
     }
     
-    //setup height for header in section
+    //setup header height in section
     func tableView(
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
     ) -> CGFloat {
         Constants.heightForHeaderInSection
     }
-    //setup height for footer in section
+    //setup footer height in section
     func tableView(
         _ tableView: UITableView,
         heightForFooterInSection section: Int

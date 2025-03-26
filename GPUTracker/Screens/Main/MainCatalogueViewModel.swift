@@ -15,14 +15,14 @@ final class MainCatalogueViewModel {
     
     private var service: RealmService
     var developerListDataSource: Results<DeveloperList>
-    //var microsoftSectionDataSource: Results<MicrosoftProductList>
-    //var sonySectionDataSource: Results<SonyProductList>
-    //var segaSectionDataSource: Results<SegaProductList>
+    var microsoftSectionDataSource: Results<MicrosoftProductList>
+    var sonySectionDataSource: Results<SonyProductList>
+    var segaSectionDataSource: Results<SegaProductList>
     var reloadClosure: (() -> Void)?
     var infoButtonClosure: (() -> Void)?
-//    var numberOfSections: Int {
-//        developerListDataSource.count
-//    }
+    var numberOfSections: Int {
+        developerListDataSource.count
+    }
     
     func updateData() {
         reloadClosure?()
@@ -33,9 +33,9 @@ final class MainCatalogueViewModel {
             return
         }
         developerListDataSource = data.objects(DeveloperList.self)
-        //microsoftSectionDataSource = data.objects(MicrosoftProductList.self)
-        //sonySectionDataSource = data.objects(SonyProductList.self)
-        //segaSectionDataSource = data.objects(SegaProductList.self)
+        microsoftSectionDataSource = data.objects(MicrosoftProductList.self)
+        sonySectionDataSource = data.objects(SonyProductList.self)
+        segaSectionDataSource = data.objects(SegaProductList.self)
     }
     
     @objc func infoButtonTapped() {
