@@ -80,11 +80,11 @@ final class ItemDetailsViewController: UIViewController {
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             guard let self else { return }
-                self.mainView.itemDescriptionView.generalTableView.reloadData()
-                self.title = self.viewModel.generalDataSource.last?.descriptionValue
-                self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
-                self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
-                self.mainView.itemDescriptionView.controllersTableView.reloadData()
+            self.mainView.itemDescriptionView.generalTableView.reloadData()
+            self.title = self.viewModel.generalDataSource?.last?.descriptionValue ?? .defaultPageTitle
+            self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
+            self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
+            self.mainView.itemDescriptionView.controllersTableView.reloadData()
         }
     }
 }
@@ -97,13 +97,13 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.generalDataSource.count
+            return viewModel.generalDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
         case 1:
-            return viewModel.consoleComponentsDataSource.count
+            return viewModel.consoleComponentsDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
         case 2:
-            return viewModel.motherboardComponentsDataSource.count
+            return viewModel.motherboardComponentsDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
         case 3:
-            return viewModel.controllersDataSource.count
+            return viewModel.controllersDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
         default:
             return 0
         }
@@ -152,7 +152,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
         
         switch tableView.tag {
         case 0:
-            if let generalData = viewModel.generalDataSource?[indexPath.row] {
+            if let generalData = viewModel.generalDataSource?[safe: indexPath.row] {
                 generalSegmentTableViewCell.setupCellSubviews(
                     descriptionName: generalData.descriptionName,
                     descriptionValue: generalData.descriptionValue
@@ -162,7 +162,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 return defaultCell
             }
         case 1:
-            if let consoleComponentsData = viewModel.consoleComponentsDataSource?[indexPath.row] {
+            if let consoleComponentsData = viewModel.consoleComponentsDataSource?[safe: indexPath.row] {
                 consoleComponentsTableViewCell.setupCellSubviews(
                     descriptionName: consoleComponentsData.descriptionName,
                     descriptionValue: consoleComponentsData.descriptionValue
@@ -172,7 +172,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 return defaultCell
             }
         case 2:
-            if let motherboardComponentsData = viewModel.motherboardComponentsDataSource?[indexPath.row] {
+            if let motherboardComponentsData = viewModel.motherboardComponentsDataSource?[safe: indexPath.row] {
                 motherboardComponentsTableViewCell.setupCellSubviews(
                     descriptionName: motherboardComponentsData.descriptionName,
                     descriptionValue: motherboardComponentsData.descriptionValue
@@ -182,7 +182,7 @@ extension ItemDetailsViewController: UITableViewDataSource {
                 return defaultCell
             }
         case 3:
-            if let controllersData = viewModel.controllersDataSource?[indexPath.row] {
+            if let controllersData = viewModel.controllersDataSource?[safe: indexPath.row] {
                 controllersTableViewCell.setupCellSubviews(
                     descriptionName: controllersData.descriptionName,
                     descriptionValue: controllersData.descriptionValue
@@ -209,7 +209,7 @@ extension ItemDetailsViewController: UITableViewDelegate {
 
 extension ItemDetailsViewController: RealmUpdateDelegate {
     func updateData(forItemWithName itemName: String) {
-        title = viewModel.generalDataSource.last?.descriptionValue
+        title = viewModel.generalDataSource?.last?.descriptionValue ?? .defaultPageTitle
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data
@@ -220,11 +220,6 @@ extension ItemDetailsViewController {
     private enum Constatnts {
         static let segmentedControlSelectionOffsetYAxis: Int = 0
         static let fontSize: CGFloat = 17.0
+        static let defaultNumberOfRowsInSection: Int = 0
     }
 }
-
-
-
-
-    
-

@@ -19,6 +19,7 @@ extension String {
     //MARK: - SEGA
     static let dreamCast: String = "dreamCast"
     //MARK: - Others
+    static let defaultPageTitle: String = "Device Name"
     static let realmExtension: String = "realm"
     static let appleBasicCellID = "Apple Basic Cell"
     static let mainProductList: String = "mainProductList"
@@ -35,8 +36,8 @@ extension String {
     static let circleFill: String = "circle.fill"
     static let building: String = "building.columns"
     static let gearshape: String = "gearshape"
-    static let wrench: String =  "wrench.and.screwdriver"
-    static let gamecontroller: String =  "gamecontroller"
-    static let infoButtonIcon: String =  "info.circle"
-    static let dismissButtonIcon: String =  "xmark"
+    static let wrench: String = "wrench.and.screwdriver"
+    static let gamecontroller: String = "gamecontroller"
+    static let infoButtonIcon: String = "info.circle"
+    static let dismissButtonIcon: String = "xmark"
 }
