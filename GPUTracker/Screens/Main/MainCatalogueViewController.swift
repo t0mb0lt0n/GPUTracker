@@ -147,11 +147,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
     ) -> Int {
         switch section {
         case 0:
-            return viewModel.microsoftSectionDataSource.count
+            return viewModel.microsoftSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 1:
-            return viewModel.sonySectionDataSource.count
+            return viewModel.sonySectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 2:
-            return viewModel.segaSectionDataSource.count
+            return viewModel.segaSectionDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         default:
             return 0
         }
@@ -172,23 +172,35 @@ extension MainCatalogueViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         switch indexPath.section {
         case 0:
-            cell.setupCellSubviews(
-                descriptionName: viewModel.microsoftSectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.microsoftSectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.microsoftSectionDataSource[indexPath.row].onlineStatus
-            )
+            if let microsoftData = viewModel.microsoftSectionDataSource?[safe: indexPath.row] {
+                cell.setupCellSubviews(
+                    descriptionName: microsoftData.productName,
+                    descriptionValue: microsoftData.shortDetails,
+                    onlineStatus: microsoftData.onlineStatus
+                )
+            } else {
+                cell.setupCellSubviewsSafe()
+            }
         case 1:
-            cell.setupCellSubviews(
-                descriptionName: viewModel.sonySectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.sonySectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.sonySectionDataSource[indexPath.row].onlineStatus
-            )
+            if let sonyData = viewModel.sonySectionDataSource?[safe: indexPath.row] {
+                cell.setupCellSubviews(
+                    descriptionName: sonyData.productName,
+                    descriptionValue: sonyData.shortDetails,
+                    onlineStatus: sonyData.onlineStatus
+                )
+            } else {
+                cell.setupCellSubviewsSafe()
+            }
         case 2:
-            cell.setupCellSubviews(
-                descriptionName: viewModel.segaSectionDataSource[indexPath.row].productName,
-                descriptionValue: viewModel.segaSectionDataSource[indexPath.row].shortDetails,
-                onlineStatus: viewModel.segaSectionDataSource[indexPath.row].onlineStatus
-            )
+            if let segaData = viewModel.segaSectionDataSource?[safe: indexPath.row] {
+                cell.setupCellSubviews(
+                    descriptionName: segaData.productName,
+                    descriptionValue: segaData.shortDetails,
+                    onlineStatus: segaData.onlineStatus
+                )
+            } else {
+                cell.setupCellSubviewsSafe()
+            }
         default:
             cell.setupCellSubviewsSafe()
         }
@@ -228,7 +240,11 @@ extension MainCatalogueViewController: UITableViewDataSource {
         
         switch section {
         case let sectionNumber:
-            developerNameLabel.text = viewModel.developerListDataSource[sectionNumber].developerName
+            if let developerName = viewModel.developerListDataSource?[safe: sectionNumber]?.developerName {
+                developerNameLabel.text = developerName
+            } else {
+                developerNameLabel.text = .defaultDeveloperName
+            }
         }
         return customHeaderView
     }

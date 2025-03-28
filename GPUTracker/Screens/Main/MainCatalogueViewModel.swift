@@ -14,14 +14,14 @@ final class MainCatalogueViewModel {
     }
     
     private var service: RealmService
-    var developerListDataSource: Results<DeveloperList>
-    var microsoftSectionDataSource: Results<MicrosoftProductList>
-    var sonySectionDataSource: Results<SonyProductList>
-    var segaSectionDataSource: Results<SegaProductList>
+    var developerListDataSource: Results<DeveloperList>?
+    var microsoftSectionDataSource: Results<MicrosoftProductList>?
+    var sonySectionDataSource: Results<SonyProductList>?
+    var segaSectionDataSource: Results<SegaProductList>?
     var reloadClosure: (() -> Void)?
     var infoButtonClosure: (() -> Void)?
     var numberOfSections: Int {
-        developerListDataSource.count
+        developerListDataSource?.count ?? Constatnts.defaultNumberOfSections
     }
     
     func updateData() {
@@ -29,13 +29,18 @@ final class MainCatalogueViewModel {
     }
     
     func setupDataSources() {
-        guard let data = service.data else {
-            return
+        if let data = service.data {
+            developerListDataSource = data.objects(DeveloperList.self)
+            microsoftSectionDataSource = data.objects(MicrosoftProductList.self)
+            sonySectionDataSource = data.objects(SonyProductList.self)
+            segaSectionDataSource = data.objects(SegaProductList.self)
+
+        } else {
+            developerListDataSource = service.createEmptyRealm().objects(DeveloperList.self)
+            microsoftSectionDataSource = service.createEmptyRealm().objects(MicrosoftProductList.self)
+            sonySectionDataSource = service.createEmptyRealm().objects(SonyProductList.self)
+            segaSectionDataSource = service.createEmptyRealm().objects(SegaProductList.self)
         }
-        developerListDataSource = data.objects(DeveloperList.self)
-        microsoftSectionDataSource = data.objects(MicrosoftProductList.self)
-        sonySectionDataSource = data.objects(SonyProductList.self)
-        segaSectionDataSource = data.objects(SegaProductList.self)
     }
     
     @objc func infoButtonTapped() {

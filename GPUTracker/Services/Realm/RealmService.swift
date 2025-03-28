@@ -27,7 +27,7 @@ final class RealmService {
         Constants.defaultRealmSchemaVersion
     )
     
-    static func createEmptyRealm() -> Realm {
+    func createEmptyRealm() -> Realm {
         let emptyRealm = try! Realm()
         return emptyRealm
     }

@@ -20,6 +20,7 @@ extension String {
     static let dreamCast: String = "dreamCast"
     //MARK: - Others
     static let defaultPageTitle: String = "Device Name"
+    static let defaultDeveloperName: String = "Developer Name"
     static let realmExtension: String = "realm"
     static let appleBasicCellID = "Apple Basic Cell"
     static let mainProductList: String = "mainProductList"

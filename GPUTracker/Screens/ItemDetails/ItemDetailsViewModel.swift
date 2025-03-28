@@ -56,6 +56,6 @@ final class ItemDetailsViewModel {
     
     init(forItemWithRealmName name: String) {
         service = .init(withRealmName: name)
-        //setupDataSources()
+        setupDataSources()
     }
 }
