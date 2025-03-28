@@ -257,33 +257,21 @@ extension MainCatalogueViewController: UITableViewDelegate {
         didSelectRowAt indexPath: IndexPath
     ) {
         let itemDetailsVC = ItemDetailsViewController(
-            withViewModel: .init(
-                forItemWithRealmName: .playstation3
-            ),
+            withViewModel: .init(),
             andBarTitle: .playstation3
         )
         delegate = itemDetailsVC
         
         switch indexPath.section {
         case let sectionNumber:
-            self.delegate?.updateData(
-                forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
-            )
-            navigationController?.pushViewController(itemDetailsVC, animated: true)
+            if let itemName = RealmConfiguration.itemList[safe: sectionNumber]?[safe: indexPath.row] {
+                self.delegate?.updateData(
+                    forItemWithName: itemName
+                )
+                navigationController?.pushViewController(itemDetailsVC, animated: true)
+            }
         }
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        accessoryButtonTappedForRowWith indexPath: IndexPath
-    ) {
-        switch indexPath.section {
-        case let sectionNumber:
-            delegate?.updateData(
-                forItemWithName: RealmConfiguration.itemList[sectionNumber][indexPath.row]
-            )
-        }
     }
 }
 

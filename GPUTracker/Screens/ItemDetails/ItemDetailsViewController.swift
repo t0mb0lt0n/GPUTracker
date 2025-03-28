@@ -215,7 +215,7 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         ).data
     }
 }
-
+//MARK: - Constants
 extension ItemDetailsViewController {
     private enum Constatnts {
         static let segmentedControlSelectionOffsetYAxis: Int = 0

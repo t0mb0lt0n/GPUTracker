@@ -13,14 +13,20 @@ final class ItemDetailsViewModel {
     private enum Constants {
         static let initialSegmentIndex: Int = 0
     }
-    
-    private var service: RealmService
     let initialSegmentIndex = Constants.initialSegmentIndex
     var generalDataSource: Results<General>?
     var consoleComponentsDataSource: Results<Components>?
     var motherboardComponentsDataSource: Results<MotherboardComponents>?
     var controllersDataSource: Results<Controllers>?
     var reloadClosure: (() -> Void)?
+    let segmentImages: [UIImage] = {
+        [
+        .generalImage,
+        .consoleComponentsImage,
+        .motherboardComponentsImage,
+        .controllersImage
+        ]
+    }()
     var currentRealm: Realm? {
         didSet {
             guard let data = currentRealm else {
@@ -31,31 +37,7 @@ final class ItemDetailsViewModel {
             motherboardComponentsDataSource = data.objects(MotherboardComponents.self)
             controllersDataSource = data.objects(Controllers.self)
             reloadClosure?()
+            print("ereloaded")
         }
-    }
-    
-    func setupDataSources() {
-        guard let data = service.data else {
-            return
-        }
-        currentRealm = data
-        generalDataSource = data.objects(General.self)
-        consoleComponentsDataSource = data.objects(Components.self)
-        motherboardComponentsDataSource = data.objects(MotherboardComponents.self)
-        controllersDataSource = data.objects(Controllers.self)
-    }
-    
-    let segmentImages: [UIImage] = {
-        [
-        .generalImage,
-        .consoleComponentsImage,
-        .motherboardComponentsImage,
-        .controllersImage
-        ]
-    }()
-    
-    init(forItemWithRealmName name: String) {
-        service = .init(withRealmName: name)
-        setupDataSources()
     }
 }

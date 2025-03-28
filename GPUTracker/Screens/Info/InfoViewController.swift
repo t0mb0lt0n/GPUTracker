@@ -107,16 +107,22 @@ extension InfoViewController: UITableViewDataSource {
 
         switch indexPath.section {
         case 0:
-            statusDescriptionCell.setupCellSubviews(
-                descriptionValue: Legend.StatusDescription.allCases[indexPath.row].rawValue,
-                statusImage: Legend.statusImage[indexPath.row]
-            )
+            if let statusDescription = Legend.StatusDescription.allCases[safe: indexPath.row]?.rawValue,
+               let statusImage = Legend.statusImage[safe: indexPath.row] {
+                statusDescriptionCell.setupCellSubviews(
+                    descriptionValue: statusDescription,
+                    statusImage: statusImage
+                )
+            }
             return statusDescriptionCell
         case 1:
-            sectionDescriptionCell.setupCellSubviews(
-                descriptionValue: Legend.SectionDescription.allCases[indexPath.row].rawValue,
-                sectionImage: Legend.sectionImage[indexPath.row]
-            )
+            if let sectionDescription = Legend.SectionDescription.allCases[safe: indexPath.row]?.rawValue,
+               let sectionImage = Legend.sectionImage[safe: indexPath.row] {
+                sectionDescriptionCell.setupCellSubviews(
+                    descriptionValue: sectionDescription,
+                    sectionImage: sectionImage
+                )
+            }
             return sectionDescriptionCell
         default:
             sectionDescriptionCell.textLabel?.text = .failure

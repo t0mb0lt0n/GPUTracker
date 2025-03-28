@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				11DDC1D72BBABEFB007D8CF3 /* RealmService.swift */,
-				11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */,
 				11733BC12BCD3CE100D3A442 /* RealmConfigurations.swift */,
+				11DDC1E12BBC7D48007D8CF3 /* RealmObjects.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
