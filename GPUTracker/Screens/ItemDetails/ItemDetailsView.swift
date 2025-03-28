@@ -28,10 +28,7 @@ final class ItemDetailsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-//MARK: - ItemDetailsView extensions
-extension ItemDetailsView {
+    
     final private func setupView() {
         segmentedControll.selectedSegmentIndex = Constants.selectedSegmentIndex
         [

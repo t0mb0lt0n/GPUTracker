@@ -99,7 +99,7 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
 extension SectionDescriptionTableViewCell {
     final func setupCellSubviews(
         descriptionValue: String,
-        sectionImage: UIImage
+        sectionImage: UIImage?
     ) {
         sectionImageView.image = sectionImage
         descriptionValueLabel.text = descriptionValue

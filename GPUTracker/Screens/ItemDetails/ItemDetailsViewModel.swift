@@ -19,7 +19,7 @@ final class ItemDetailsViewModel {
     var motherboardComponentsDataSource: Results<MotherboardComponents>?
     var controllersDataSource: Results<Controllers>?
     var reloadClosure: (() -> Void)?
-    let segmentImages: [UIImage] = {
+    let segmentImages: [UIImage?] = {
         [
         .generalImage,
         .consoleComponentsImage,
@@ -37,7 +37,6 @@ final class ItemDetailsViewModel {
             motherboardComponentsDataSource = data.objects(MotherboardComponents.self)
             controllersDataSource = data.objects(Controllers.self)
             reloadClosure?()
-            print("ereloaded")
         }
     }
 }

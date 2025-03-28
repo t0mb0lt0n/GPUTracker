@@ -102,7 +102,7 @@ final class OnlineStatusTableViewCell: UITableViewCell {
 extension OnlineStatusTableViewCell {
     final func setupCellSubviews(
         descriptionValue: String,
-        statusImage: UIImage
+        statusImage: UIImage?
     ) {
         onlineStatusImageView.image = statusImage
         descriptionValueTextView.text = descriptionValue

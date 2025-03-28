@@ -191,8 +191,6 @@ extension InfoViewController {
         static let separatorLeftInsetForSectionOnline: CGFloat = 30.0
         static let separatorLeftInsetForSectionDescription: CGFloat = 45.0
         static let separatorRightInset: CGFloat = 0.0
-
-
     }
 }
 
