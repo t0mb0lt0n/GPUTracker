@@ -7,6 +7,10 @@
 import Foundation
 
 final class InfoViewModel {
+    private enum Constants {
+        static let numberOfSections: Int = 2
+    }
+    
     var dismissButtonClosure: (() -> Void)?
     let numberOfSections: Int = Constants.numberOfSections
     let numbersOfRowsInStatusSection: Int = Legend.StatusDescription.allCases.count
@@ -14,12 +18,5 @@ final class InfoViewModel {
         
     func dismissButtonTapped() {
         dismissButtonClosure?()
-    }
-}
-
-//MARK: - Constants
-extension InfoViewModel {
-    private enum Constants {
-        static let numberOfSections: Int = 2
     }
 }

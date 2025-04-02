@@ -80,8 +80,10 @@ final class MainCatalogueViewController: UIViewController {
     }
     
     private func setupMainView() {
-        mainView.mainCatalogueTableView.delegate = self
-        mainView.mainCatalogueTableView.dataSource = self
+        mainView.setupMainCatalogueTableView(
+            withDelegate: self,
+            andDataSource: self
+        )
         mainView.backgroundColor = .tertiarySystemGroupedBackground
         let infoButton: UIBarButtonItem = {
             let button = UIBarButtonItem(
@@ -102,7 +104,7 @@ final class MainCatalogueViewController: UIViewController {
     }
     
     private func reloadTableView() {
-        mainView.mainCatalogueTableView.reloadData()
+        mainView.mainCatalogueTableViewReloadData()
     }
     
     @objc private func infoButtonTapped() {
@@ -115,7 +117,7 @@ final class MainCatalogueViewController: UIViewController {
             sheet.prefersEdgeAttachedInCompactHeight = true
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
             sheet.prefersGrabberVisible = true
-            guard screenHeight >= Constants.screenHeightRequared else {
+            guard screenHeight > Constants.screenHeightRequared else {
                 sheet.detents = [.large()]
                 navigationController?.present(infoViewController, animated: true)
                 return
@@ -285,6 +287,6 @@ extension MainCatalogueViewController {
         static let sectionNameLabelHeight: Int = 23
         static let heightForFooterInSection: CGFloat = 0.0
         static let heightForHeaderInSection: CGFloat = 50.0
-        static let screenHeightRequared: CGFloat = 668.0
+        static let screenHeightRequared: CGFloat = 736.0
     }
 }

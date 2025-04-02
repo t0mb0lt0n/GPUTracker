@@ -84,10 +84,9 @@ final class SectionDescriptionTableViewCell: UITableViewCell {
             descriptionValueLabel.centerYAnchor.constraint(
                 equalTo: contentView.centerYAnchor
             ),
+            sectionImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             sectionImageView.widthAnchor.constraint(equalToConstant: Constants.sectionImageViewWidth),
             sectionImageView.heightAnchor.constraint(equalToConstant: Constants.sectionImageViewHeight),
-            sectionImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            sectionImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             sectionImageView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
                 constant: Constants.sectionImageViewLeftInset
@@ -114,7 +113,7 @@ extension SectionDescriptionTableViewCell {
         static let descriptionValueLabelLeftInset: CGFloat = 10
         static let descriptionValueLabelRightInset: CGFloat = -10
         static let sectionImageViewLeftInset: CGFloat = 10
-        static let descriptionValueLabelTopInset: CGFloat = 2.0
-        static let descriptionValueLabelBottomInset: CGFloat = -5.0
+        static let descriptionValueLabelTopInset: CGFloat = 9.0
+        static let descriptionValueLabelBottomInset: CGFloat = -9.0
     }
 }

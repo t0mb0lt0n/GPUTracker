@@ -118,8 +118,8 @@ extension OnlineStatusTableViewCell {
         static let onlineStatusImageViewRightOffset: CGFloat = 11.0
         static let descriptionValueTextViewLeftInset: CGFloat = 10
         static let onlineStatusImageViewLeftInset: CGFloat = 10
-        static let descriptionValueTextViewTopInset: CGFloat = 2.0
-        static let descriptionValueTextViewBottomInset: CGFloat = -5.0
+        static let descriptionValueTextViewTopInset: CGFloat = 9.0
+        static let descriptionValueTextViewBottomInset: CGFloat = -9.0
         static let lineFragmentPadding: CGFloat = 0.0
         static let descriptionNameLabelFontSize: CGFloat = 17.0
         static let textViewFontSize: CGFloat = 16.0

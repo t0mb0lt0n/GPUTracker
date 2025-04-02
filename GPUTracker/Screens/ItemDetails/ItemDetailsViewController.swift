@@ -11,6 +11,11 @@ final class ItemDetailsViewController: UIViewController {
     private lazy var mainView = view as! ItemDetailsView
     private let viewModel: ItemDetailsViewModel
     
+    private enum Constants {
+        static let fontSize: CGFloat = 17.0
+        static let defaultNumberOfRowsInSection: Int = 0
+    }
+    
     init(
         withViewModel viewModel: ItemDetailsViewModel,
         andBarTitle barTitle: String
@@ -25,10 +30,6 @@ final class ItemDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        print("deinit ItemDetailsViewController")
-    }
-    
     override func loadView() {
         view = ItemDetailsView()
     }
@@ -38,53 +39,23 @@ final class ItemDetailsViewController: UIViewController {
         setupMainView()
     }
     
-    private func segmentDidChange() {
-        let contentOffset = Int(
-            mainView.itemDescriptionView.generalTableView.frame.width
-        )
-        let segmentIndex = mainView.segmentedControll.selectedSegmentIndex
-        mainView.itemDescriptionView.mainScrollView.setContentOffset(
-            CGPoint(
-                x: contentOffset * segmentIndex,
-                y: Constatnts.segmentedControlSelectionOffsetYAxis
-            ),
-            animated: true
-        )
-    }
-    
     private func setupMainView() {
-        mainView.segmentDidChangeClosure = { [weak self] in
-            self?.segmentDidChange()
-        }
+        mainView.setupItemDescriptionViewTableViews(
+            withDelegate: self,
+            andDataSource: self
+        )
         
-        [
-        mainView.itemDescriptionView.generalTableView,
-        mainView.itemDescriptionView.consoleComponentsTableView,
-        mainView.itemDescriptionView.motherboardComponentsTableView,
-        mainView.itemDescriptionView.controllersTableView
-        ].forEach { [weak self] tableView in
-            tableView.delegate = self
-            tableView.dataSource = self
-        }
-        
-        for (index, value) in viewModel.segmentImages.enumerated() {
-            mainView.segmentedControll.insertSegment(
-                with: value,
-                at: index,
-                animated: false
-            )
-        }
-        mainView.segmentedControll.selectedSegmentIndex = viewModel.initialSegmentIndex
+        mainView.setupSegmentedControl(
+            with: viewModel.segmentImages,
+            andInitialIndex: viewModel.initialSegmentIndex
+        )
     }
     
     private func setupViewModel() {
         viewModel.reloadClosure = { [weak self] in
             guard let self else { return }
-            self.mainView.itemDescriptionView.generalTableView.reloadData()
             self.title = self.viewModel.generalDataSource?.last?.descriptionValue ?? .defaultPageTitle
-            self.mainView.itemDescriptionView.consoleComponentsTableView.reloadData()
-            self.mainView.itemDescriptionView.motherboardComponentsTableView.reloadData()
-            self.mainView.itemDescriptionView.controllersTableView.reloadData()
+            self.mainView.itemDescriptionViewTableViewsReloadData()
         }
     }
 }
@@ -97,15 +68,15 @@ extension ItemDetailsViewController: UITableViewDataSource {
     ) -> Int {
         switch tableView.tag {
         case 0:
-            return viewModel.generalDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
+            return viewModel.generalDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 1:
-            return viewModel.consoleComponentsDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
+            return viewModel.consoleComponentsDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 2:
-            return viewModel.motherboardComponentsDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
+            return viewModel.motherboardComponentsDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         case 3:
-            return viewModel.controllersDataSource?.count ?? Constatnts.defaultNumberOfRowsInSection
+            return viewModel.controllersDataSource?.count ?? Constants.defaultNumberOfRowsInSection
         default:
-            return 0
+            return Constants.defaultNumberOfRowsInSection
         }
     }
     
@@ -213,13 +184,5 @@ extension ItemDetailsViewController: RealmUpdateDelegate {
         viewModel.currentRealm = RealmService(
             withRealmName: itemName
         ).data
-    }
-}
-//MARK: - Constants
-extension ItemDetailsViewController {
-    private enum Constatnts {
-        static let segmentedControlSelectionOffsetYAxis: Int = 0
-        static let fontSize: CGFloat = 17.0
-        static let defaultNumberOfRowsInSection: Int = 0
     }
 }

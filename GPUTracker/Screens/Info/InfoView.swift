@@ -8,7 +8,7 @@
 import UIKit
 
 final class InfoView: UIView {
-    lazy var infoTableView: UITableView = {
+    private lazy var infoTableView: UITableView = {
         let tableView = UITableView(
             frame: .zero,
             style: .insetGrouped
@@ -27,20 +27,28 @@ final class InfoView: UIView {
         return tableView
     }()
     
-    let appVersionLabel: UILabel = {
+    private let appVersionLabel: UILabel = {
         let label = UILabel()
         label.text = .currentAppVersion
         label.textColor = .systemGray
         return label
     }()
     
-    let dismissButton: UIButton = {
+    private let dismissButton: UIButton = {
         let button = UIButton(type: .close)
         button.setImage(.dismissButtonImage, for: .normal)
         return button
     }()
     
     var dismissButtonClosure: (() -> Void)?
+    
+    func setupInfoTableView(
+        withDelegate delegate: UITableViewDelegate,
+        andDataSource dataSource: UITableViewDataSource
+    ) {
+        infoTableView.delegate = delegate
+        infoTableView.dataSource = dataSource
+    }
     
     @objc private func closeButtonTapped() {
         dismissButtonClosure?()
@@ -57,7 +65,10 @@ final class InfoView: UIView {
     }
     
     private func setupView() {
-        dismissButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        dismissButton.addTarget(
+            self, action: #selector(closeButtonTapped),
+            for: .touchUpInside
+        )
         backgroundColor = .secondarySystemBackground
         [
         infoTableView,
@@ -77,7 +88,7 @@ final class InfoView: UIView {
             ),
             infoTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             infoTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            infoTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            infoTableView.bottomAnchor.constraint(equalTo: appVersionLabel.topAnchor),
             
             appVersionLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             appVersionLabel.bottomAnchor.constraint(

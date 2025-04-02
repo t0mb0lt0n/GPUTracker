@@ -21,10 +21,6 @@ final class InfoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        print("deinit InfoViewController")
-    }
-
     override func loadView() {
         view = InfoView()
     }
@@ -35,8 +31,10 @@ final class InfoViewController: UIViewController {
     }
     
     private func setupMainView() {
-        mainView.infoTableView.dataSource = self
-        mainView.infoTableView.delegate = self
+        mainView.setupInfoTableView(
+            withDelegate: self,
+            andDataSource: self
+        )
         mainView.dismissButtonClosure = { [weak self] in
             self?.viewModel.dismissButtonTapped()
         }
@@ -73,7 +71,7 @@ extension InfoViewController: UITableViewDataSource {
         case 1:
             return viewModel.numbersOfRowsInSectionDescription
         default:
-            return 0
+            return Constants.basicNumbersOfRowsInSection
         }
     }
     
@@ -191,6 +189,7 @@ extension InfoViewController {
         static let separatorLeftInsetForSectionOnline: CGFloat = 30.0
         static let separatorLeftInsetForSectionDescription: CGFloat = 45.0
         static let separatorRightInset: CGFloat = 0.0
+        static let basicNumbersOfRowsInSection: Int = 0
     }
 }
 

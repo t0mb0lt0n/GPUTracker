@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainCatalogueView: UIView {
-    lazy var mainCatalogueTableView: UITableView = {
+    private lazy var mainCatalogueTableView: UITableView = {
         let tableView = UITableView(
             frame: .zero,
             style: .insetGrouped
@@ -33,7 +33,19 @@ final class MainCatalogueView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    final private func setupView() {
+    func mainCatalogueTableViewReloadData() {
+        mainCatalogueTableView.reloadData()
+    }
+    
+    func setupMainCatalogueTableView(
+        withDelegate delegate: UITableViewDelegate,
+        andDataSource dataSource: UITableViewDataSource
+    ) {
+        mainCatalogueTableView.delegate = delegate
+        mainCatalogueTableView.dataSource = dataSource
+    }
+    
+    private func setupView() {
         [mainCatalogueTableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
